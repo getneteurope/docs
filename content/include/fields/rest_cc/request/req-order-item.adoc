@@ -1,0 +1,41 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+|amount 
+|O 
+|Number 
+| 
+|Item's price per unit.
+
+|article-number 
+|O 
+|String 
+| 
+|EAN or other article identifier for you.
+
+|name 
+|O 
+|String 
+| 
+|Name of the item in the basket.
+
+|quantity 
+|O 
+|Number 
+| 
+|Total count of items in the order.
+
+|tax-rate 
+|O 
+|Number 
+| 
+|Item's tax rate per unit.
+
+// The following fields are currently not part of the doc:
+//
+// | description | O | String | ?? | ??
+// | tax-amount | O | String | ?? | ??
+// | type | O | Number | ?? | ??
+// | discount | O | Number | ?? | ??
+
+//-

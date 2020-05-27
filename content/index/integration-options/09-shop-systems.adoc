@@ -1,0 +1,485 @@
+[#ShopSystems]
+== Shop Extensions
+
+video::jO_86Hj0I60[youtube, width=640, height=360]
+
+We offer you various shop extensions which you are able to
+use *free-of-charge* to add payment functionality to your online shop
+system. Therefore you only need to download/install our shop extension to
+your online shop and to configure it to your needs.
+
+Some shop systems refer to these shop extensions as "app", as
+"add-on" or as "module". However, for the purpose of better legibility,
+we call all of them "shop extensions" within this documentation.
+
+All our shop extensions require *only PCI SAQ A* certification for credit
+card payments which you may achieve very easily.
+
+You are able to *test the shop extension* features and functionality via
+pre-configured test accounts for each payment method. For going live you
+need your personal credentials which you receive from Wirecard after
+concluding a corresponding contract. Please contact our <<ContactUs, sales and support teams>>.
+
+All our shop extensions are developed and offered as *open source* on link:https://github.com/wirecard[GitHub]. This means you are able
+to use them free-of-charge, have full access to the source code and are
+able to do forks, raise issues or do contributions.
+
+Please have a look on
+our <<ShopSystems_TermsOfUse, Terms of Use and Legal Notice>> before you use our shop extensions in your online
+shop.
+
+.Currently we offer shop extensions for the following shop systems:
+[cols="30,50a,10a,10a"]
+|===
+|Shop System   |Supported Payment Methods |Supported Languages |Documentation
+
+a| Magento 2
+
+- https://github.com/wirecard/magento2-ee/releases[GitHub] |
+      - Credit Card
+      - Alipay Cross-border
+      - giropay
+      - iDEAL
+      - Pay by Bank app
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| Magento 2
+
+//- https://github.com/wirecard/magento2-ee/releases[GitHub]|
+//      - Credit Card
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - Chinese, simplified
+      - Chinese, traditional
+      - English
+      - French
+      - German
+      - Indonesian
+      - Japanese
+      - Korean  |
+
+      - https://github.com/wirecard/magento2-ee/wiki[English]
+      - https://github.com/wirecard/magento2-ee/wiki/Accueil[French]
+
+a| OpenCart
+
+- https://github.com/wirecard/opencart-ee/releases[GitHub]
+- https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34860[Marketplace] |
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - Maestro SecureCode
+      - Masterpass
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| OpenCart
+
+//- https://github.com/wirecard/opencart-ee/releases[GitHub]
+//- https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34860[Marketplace] |
+//      - Credit Card
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - Chinese, simplified
+      - Chinese, traditional
+      - English
+      - German
+      - Indonesian
+      - Japanese
+      - Korean   |
+
+      - https://github.com/wirecard/opencart-ee/wiki[English]
+
+a| OXID
+
+- https://github.com/wirecard/oxid-ee/releases[GitHub]
+- https://exchange.oxid-esales.com/de/Bestellprozess-und-Versand/Bezahlung/Wirecard-OXID-Module-1-3-0-Stable-CE-6-1-x.html[Marketplace]
+ |
+      - Credit Card
+      - Alipay Cross-border
+      - eps-Überweisung
+      - giropay
+      - Guaranteed Invoice (Payolution B2B)
+      - Guaranteed Invoice (Payolution B2C)
+      - iDEAL
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort. 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| OXID
+
+//- https://github.com/wirecard/oxid-ee/releases[GitHub]
+//- https://exchange.oxid-esales.com/de/en/By-Distributor/Wirecard-AG/[Marketplace] |
+//      - Credit Card
+//      - eps-Überweisung
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - English
+      - German  |
+
+      - https://github.com/wirecard/oxid-ee/wiki[English]
+
+a| PrestaShop
+
+- https://github.com/wirecard/prestashop-ee/releases[GitHub] |
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - Przelewy24
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//| PrestaShop
+
+//- https://github.com/wirecard/prestashop-ee/releases[GitHub] |
+//      - Credit Card
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - Chinese, simplified
+      - Chinese, traditional
+      - English
+      - French
+      - German
+      - Indonesian
+      - Japanese
+      - Korean
+      - Polish  |
+
+      - https://github.com/wirecard/prestashop-ee/wiki[English]
+      - https://github.com/wirecard/prestashop-ee/wiki/Accueil[French]
+
+a| Salesforce Commerce Cloud
+
+- https://github.com/wirecard/salesforce-ee/releases[GitHub]
+- https://www.salesforce.com/products/commerce-cloud/partner-marketplace/partners/wire-card/[Marketplace] |
+      - Credit Card
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort. |
+//a| Salesforce Commerce Cloud
+
+//- https://github.com/wirecard/salesforce-ee/releases[GitHub]
+//- https://www.salesforce.com/products/commerce-cloud/partner-marketplace/partners/wire-card/[Marketplace] |
+//      - Credit Card
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - English |
+
+      - https://github.com/wirecard/salesforce-ee/wiki[English]
+
+
+a| SAP Commerce
+
+- https://github.com/wirecard/sap-commerce-ee/releases[GitHub]
+- https://www.sapappcenter.com/apps/28091#!overview[Marketplace] |
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - Masterpass
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| SAP Commerce
+
+//- https://github.com/wirecard/sap-commerce-ee/releases[GitHub]
+//- https://www.sapappcenter.com/apps/28091#!overview[Marketplace] |
+//      - Credit Card
+//      - iDEAL
+//      - PayPal
+//      - SEPA Direct Debit |
+
+      - English
+      - German   |
+
+      - https://github.com/wirecard/sap-commerce-ee/wiki[English]
+
+
+a| Shopify
+
+- https://github.com/wirecard/shopify-ee[GitHub] |
+      - Credit Card
+      - Pay by Bank app
+      - PayPal
+      - SEPA Direct Debit
+      - Sofort.               |
+
+//a|  Shopify
+
+//- https://github.com/wirecard/shopify-ee[GitHub] |
+//      - Credit Card
+//      - PayPal
+//      - SEPA Direct Debit |
+
+      - Chinese, simplified
+      - Chinese, traditional
+      - English
+      - French
+      - German
+      - Indonesian
+      - Japanese
+      - Korean    |
+
+      - https://github.com/wirecard/shopify-ee/wiki[English]
+      - https://github.com/wirecard/shopify-ee/wiki/Accueil[French]
+
+a| Shopware
+
+- https://github.com/wirecard/shopware-ee/releases[GitHub]
+- https://store.shopware.com/en/wirec97652863074f/wirecard-payment-gateway-shop-extension.html[Marketplace]|
+      - Credit Card
+      - Alipay Cross-border
+      - eps-Überweisung
+      - iDEAL
+      - Masterpass
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| Shopware
+
+//- https://github.com/wirecard/shopware-ee/releases[GitHub]
+//- https://store.shopware.com/en/wirec97652863074f/wirecard-payment-gateway-shop-extension.html[Marketplace] |
+//      - Credit Card
+//      - eps-Überweisung
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - English
+      - German   |
+
+      - https://github.com/wirecard/shopware-ee/wiki[English]
+
+a| WooCommerce
+
+- https://github.com/wirecard/woocommerce-ee/releases[GitHub]
+- https://wordpress.org/plugins/wirecard-woocommerce-extension/[Marketplace] |
+      - Credit Card
+      - Alipay Cross-border
+      - eps-Überweisung
+      - iDEAL
+      - Masterpass
+      - Pay by Bank app
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//| WooCommerce
+
+//- https://github.com/wirecard/woocommerce-ee/releases[GitHub]
+//- https://wordpress.org/plugins/wirecard-woocommerce-extension/[Marketplace] |
+//      - Credit Card
+//      - eps-Überweisung
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+
+      - Chinese, simplified
+      - Chinese, traditional
+      - English
+      - French
+      - German
+      - Indonesian
+      - Japanese
+      - Korean   |
+
+      - https://github.com/wirecard/woocommerce-ee/wiki[English]
+      - https://github.com/wirecard/woocommerce-ee/wiki/Accueil[French]
+      - https://github.com/wirecard/woocommerce-ee/wiki/Startseite[German]
+
+a| Magento 1 image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."]
+
+- https://github.com/wirecard/magento-ee/releases[GitHub] |
+      - Credit Card
+      - Alipay Cross-border
+      - eps-Überweisung
+      - giropay
+      - Guaranteed Invoice by payolution
+      - iDEAL
+      - Pay by Bank app
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Credit Transfer
+      - SEPA Direct Debit
+      - Sofort. 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| Magento 1
+
+//- https://github.com/wirecard/magento-ee/releases[GitHub] |
+//      - Credit Card
+//      - eps-Überweisung
+//      - iDEAL
+//      - PayPal
+//      - SEPA Credit Transfer
+//      - SEPA Direct Debit |
+//endif::[]
+
+      - English
+      - German  |
+
+      - https://github.com/wirecard/magento-ee/wiki[English]
+
+
+4+a| *We would like to inform you that on June 1, 2020 all versions of Magento 1 image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] will reach their end of life, as https://magento.com/blog/magento-news/supporting-magento-1-through-june-2020[announced] by Adobe. +
+It is thus necessary to migrate to Magento 2 or another shop system platform before June 1, 2020. +
+If you do not migrate from Magento 1, you may not comply with PCI DSS security standards.* 
+|===
+
+
+If you require another shop system not listed here or if you need
+additional payment methods or languages,
+please <<ContactUs, contact our sales and support teams>>.
+
+.Adding payment methods
+
+Add more payments methods with the
+link:https://github.com/wirecard/paymentSDK-php[Wirecard PHP Payment SDK] or
+our <<PaymentMethods, {payment-gateway} payment methods>>.
+
+Want to contribute? Send us a pull-request on GitHub and we will get in
+touch with you.
+
+
+.Our shop extensions offer the following functionalities:
+
+- *Credit card* payments based on a *seamless integration* via Seamless
+Payment Page, so that your consumers have a perfectly integrated payment
+experience in your online shop.
+- All our shop extensions require *only PCI DSS SAQ A*, which is the
+easiest possible PCI SAQ level, so that you do not need to hassle with
+PCI related details.
+- All *alternative payment methods* are integrated via REST API of our
+{payment-gateway} to offer all features and
+flexibility in integration for each payment method.
+- All payment methods are integrated individually which enables you
+to *configure* them separately to your specific demand.
+- Post-processing operations (like *capture, refund or cancel*) for each
+payment method are directly supported in the back-end of the shop
+system, so that your transactions within Wirecard are synchronized to
+the orders in your online shop.
+- Support of *one-click-checkout for credit card* payments, so that
+recurring consumers of your online shop can easily and fast do their
+further payments.
+- Integration of a *live-chat with our support team* within the
+configuration of the shop extension and offered features and payment
+methods, so that you get a quick and interactive help when and where you
+need it.
+- Integration to *Wirecard Risk Management*, so that you are able to use
+risk and fraud tools to reduce fraudulent transactions in your online
+shop.
+- Regular *updates of all of our shop extensions* to offer you
+compatibility to the current versions of shop systems.
+
+//-
+
+.Advantages of using shop extensions developed and maintained by Wirecard
+
+- All our shop extensions are based on the principles of *open source* development and available for free for everyone.
+- You are able to download, install and configure the shop extension and do
+as many *test transactions* as you want to do.
+- All shop extensions are available with their complete *source code* and *history*
+of all changes, so that you are able to change the
+shop extension to your business need.
+- We offer you *free support by email or phone* if you have any
+questions regarding the installation and configuration of our shop extensions.
+- You and your integrator are able to *raise issues, make pull requests or create forks* within all functionality GitHub offers to you.
+- You are able to *contribute* to improve a shop extension, so that your
+features are also available within all new versions we are releasing.
+
+//-
+
+[#ShopSystems_TermsOfUse]
+=== Terms of Use
+
+. The extensions offered are provided free of charge by Wirecard AG and
+are explicitly not part of the Wirecard AG range of products and
+services.
+. They have been tested and approved for full functionality in the
+standard configuration (status on delivery) of the corresponding shop
+system. They are under General Public License Version 3 (GPLv3) and can
+be used, developed and passed on to third parties under the same terms.
+. However, Wirecard AG does not provide any guarantee or accept any
+liability for any errors occurring when used in an enhanced, customized
+shop system configuration.
+. Operation in an enhanced, customized configuration is at your own
+risk and requires a comprehensive test phase by the user of the extension.
+. Customers use the extensions at their own risk. Wirecard AG does not
+guarantee their full functionality neither does Wirecard AG assume
+liability for any disadvantages related to the use of the extensions.
+Additionally, Wirecard AG does not guarantee the full functionality for
+customized shop systems or installed extensions of other vendors of extensions
+within the same shop system.
+. Customers are responsible for testing the extension's functionality
+before starting productive operation.
+. By installing the extension into the shop system the customer agrees to
+these terms of use. Please do not use the extension if you do not agree to
+these terms of use!
+. Uninstalling the extension may result in the loss of data.
+
+//-
+
+[#ShopSystems_LegalNotes]
+==== Legal Notes
+
+No warranty whatsoever can be granted on any alterations and/or new
+implementations as well as resulting diverging usage not supported or
+described within this documentation.
+
+//-

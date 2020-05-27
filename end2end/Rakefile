@@ -1,0 +1,23 @@
+require 'rake/testtask'
+
+DOCKER_COMPOSE_FLAGS = '--remove-orphans --force-recreate'
+
+namespace :selenium do
+  desc 'Start the Selenium Hub and Nodes via docker-compose'
+  task :up do
+    Dir.chdir(__dir__) do
+      sh "docker-compose up -d #{DOCKER_COMPOSE_FLAGS}"
+    end
+  end
+
+  desc 'Stop the Selenium Hub and Nodes via docker-compose'
+  task :down do
+    Dir.chdir(__dir__) do
+      sh 'docker-compose down'
+    end
+  end
+
+  Rake::TestTask.new(:test) do |t|
+    t.pattern = "#{__dir__}/tests/test_*.rb"
+  end
+end

@@ -1,0 +1,84 @@
+| transaction-id 
+| Response only
+| String 
+| 36 
+| Unique identifier assigned to each transaction.
+
+| transaction-state 	
+| Response only
+| Enumeration 
+| n/a 
+| Current status of a transaction. Typically, a transaction starts ``in-progress`` and finishes in either ``success`` or ``failed`` state. 
+
+| completion-time-stamp 
+| Response only
+| Timestamp 
+| 20
+| The date and time that a transaction state changes to either ``success`` or ``failed`` in GMT. +
+Format: ``{timestamp-pattern}``.
+
+| avs-code 
+| Response only
+| String 
+| 24 
+| Code indicating address verification services results.
+
+| csc-code
+| Response only
+| String 
+| 12 
+| Code indicating Card Verification Value (CVC/CVV) verification results.
+
+| consumer-id  
+| Response only
+| String 
+| 50 
+| Consumer identifier.
+
+| api-id 
+| Response only
+| String 
+| 36 
+| Unique identifier assigned for each API. Always returned in the notification. 
+
+//
+// | signature  
+// |  
+// |  
+// | The Signature info, consisting of ``SignedInfo``, ``SignatureValue`` and ``KeyInfo``.
+
+| instrument-country 
+| Response only
+| String 
+| 256 
+| Retrieves the issuer country of a certain credit card. It returns a two-digit country code, e.g. +
+``DE`` (Germany), +
+``ES`` (Spain), +
+``FR`` (France), or +
+``IT`` (Italy).
+
+| api-transaction-id 
+| Response only
+| String
+| 36 
+| The unique identifier for a transaction submitted via a white-label API.
+
+a| ``merchant-account-id``/@``ref`` 
+| Response only
+| String 
+| n/a 
+| A reference URL to the merchant account. Can be used to retrieve merchant account details over a browser.
+
+a| @``self`` 
+| Response only
+| String 
+| n/a 
+| A reference URL to the payment. Can be used to retrieve payment details over a browser.
+
+| provider-transaction-reference-id 
+| Response only
+| String 
+| 36 
+| Unique transaction reference ID assigned by the provider.
+
+//|===

@@ -1,0 +1,242 @@
+:txTypeName: authorization
+
+[#Klarnav2_TransactionTypes_authorization]
+==== _authorization_/_pending-authorization_
+
+_Klarna_ performs a risk check before accepting an order. 
+
+Furthermore, _Klarna_ flags **some orders** for additional review and transmits ``fraud_status pending`` to _{payment-gateway}_. For this status, _{payment-gateway}_ uses the transaction type ``pending-authorization`` and creates the final authorization transaction once _Klarna_ has completed this additional risk check.
+
+If _Klarna_ accepts the order, it guarantees the payment once the authorized amount is captured.
+
+An ``authorization`` is valid for 28 days (default setting - <<ContactUs, contact Merchant Support>> for changes). This can be extended with an <<Klarnav2_TransactionTypes_authorizationRenewal, ``authorization-renewal``>>.
+
+
+[#KlarnaV2_TransactionTypes_authorization_autoCapture]
+===== auto-capture
+
+For digital goods/services, authorizations can be captured automatically: 
+
+* A <<KlarnaV2_TransactionTypes_captureAuthorization, ``capture-authorization``>> follows automatically straight after a successful ``authorization``.
+* You can also auto-capture <<KlarnaV2_TransactionTypes_authorizationRecurring, recurring payments>>.
+* No changes to your merchant configuration are needed.
+//-
+
+To activate auto-capture, set the <<KlarnaV2_TransactionTypes_authorization_Fields_autocapture, ``auto-capture`` field>> to ``true`` in your authorization request.
+
+NOTE: This feature is only for digital goods/services: +
+The <<KlarnaV2_TransactionTypes_{txTypeName}_Fields_orderItem_type_digital, ``order-item.type``>> of each ``order-item`` must be <<KlarnaV2_TransactionTypes_{txTypeName}_Fields_orderItem_type_digital, ``digital``.>> +
+Otherwise, the authorization cannot be captured automatically.
+
+
+[#KlarnaV2_TransactionTypes_authorization_Workflow]
+===== _authorization_/_pending-authorization_ Workflow
+
+image::images/Klarnav2_workflow_authorization.svg[]
+
+. Consumer checks out products.
+. -> Send an _authorization_ request to _{payment-gateway}_. This request must contain order data (e.g. amount, order number, order items) and consumer data (e.g. name, billing/shipping address).
+. _{payment-gateway}_ forwards the request to _Klarna_.
+. _Klarna_ creates a session token and sends it to _{payment-gateway}_.
+. _{payment-gateway}_ creates a _pending-authorization_ transaction.
+. _Klarna_ performs a basic risk check:
+  - If _Klarna_ accepts the order, it guarantees the payment once the _authorization_ has been captured.
+  - If _Klarna_ does not accept the order, the _authorization_ is
+rejected with a corresponding error code.
+  - In some cases, _Klarna_ performs an <<Klarnav2_TransactionTypes_authorization_advancedRiskCheck, advanced risk check>>.
+. _{payment-gateway}_  forwards the risk check result (with the corresponding status code) to you:
+  - Basic risk check ok: +
+   _{payment-gateway}_ sends you an _authorization_ success response and an <<GeneralPlatformFeatures_IPN_NotificationExamples, Instant Payment Notification (IPN)>>.
+  - Basic risk check failed: +
+   _{payment-gateway}_ sends you an _authorization_ failure response and an <<GeneralPlatformFeatures_IPN_NotificationExamples, IPN>>.
+  - Advanced risk check necessary: +
+   The _authorization_ is pending during the advanced risk check. The payment cannot be immediately authorized.
+  _{payment-gateway}_ sends you a _pending-authorization_ response and an <<GeneralPlatformFeatures_IPN_NotificationExamples, IPN>>.
+. -> Inform your consumer on the payment process outcome.
+
+. [[Klarnav2_TransactionTypes_authorization_advancedRiskCheck]]If _Klarna_ performs an advanced risk check: +
++
+9.1 _Klarna_ sends the advanced risk check result to _{payment-gateway}_. +
+9.2  _{payment-gateway}_ processes the advanced risk check result and sends you an _authorization_ response and an <<GeneralPlatformFeatures_IPN_NotificationExamples, IPN>>. 
++
+[NOTE]
+====
+_{payment-gateway}_ retrieves the risk check result every 2 hours.
+
+If you do not receive an IPN after 26 hours (e.g. due to
+a technical error), you can check the status
+of a _pending-authorization_ by using the feature <<GeneralPlatformFeatures_RetrieveTransaction_TransactionID, Retrieve Transaction by Request ID>>.
+
+  ** If the advanced risk check has been completed, _{payment-gateway}_ returns the new _authorization_ transaction with the response.
+  ** Otherwise, _{payment-gateway}_ returns the HTTP code 404. Please <<ContactUs, contact Wirecard Merchant Support>>
+====
+9.3 -> Inform your consumer on the payment process outcome.
+
+//-
+
+[#KlarnaV2_TransactionTypes_authorization_Fields]
+===== _authorization_ Fields
+
+Fields can be **M**andatory or **O**ptional.
+
+[%autowidth,stripes=none]
+[cols="m,,,,"]
+|===
+|Field |<<APIRef_FieldDefs_Cardinality, M/O>> |Data Type |Size |Description
+
+|merchant-account-id 
+|M 
+|String 
+|36 
+|A unique identifier assigned
+to every merchant account (by {payment-provider-name}).
+
+|request-id 
+|M
+|String 
+|150 
+a|A unique identifier assigned by the merchant
+to each request. Used when searching for or referencing it later.
+
+As the request ID must be unique, ``{{$guid}}`` serves as a placeholder; Postman
+uses it to generate a random ``request-id`` for testing.
+
+Allowed characters:  ``[a-z0-9-\_]``.
+
+|transaction-type 
+|M  
+|String
+|30 
+|The requested transaction type. Set this field to `authorization`.
+
+|requested-amount  
+|M
+|Numeric
+|18,3
+|Total order amount to be reserved. The number of decimal places depends on the currency. +
+The requested amount must be equal to the total amount of all order items.
+
+Use ``.`` (decimal point) as separator.
+
+|[[KlarnaV2_TransactionTypes_authorization_Fields_requestedAmount_currency]]requested-amount@currency 
+|M  
+|String
+|3 
+a|The <<KlarnaV2_CountriesCurrencies, currency>> of the requested/contested
+transaction amount. +
+Format: 3-character abbreviation according to ISO 4217.
+
+|[[KlarnaV2_TransactionTypes_authorization_Fields_autocapture]]auto-capture
+|O
+|Boolean
+|
+a|Set this field to ``true`` to enable <<KlarnaV2_TransactionTypes_authorization_autoCapture, auto-capture.>> +
+If this _authorization_ is successful, it will be <<KlarnaV2_TransactionTypes_authorization_autoCapture, captured automatically.>> +
+For <<KlarnaV2_TransactionTypes_authorization_Fields_orderItem_type_digital, digital goods/services>> only.
+
+|order-number	
+|O 
+|String
+|255 
+|Order number as provided by merchant. +
+If you send it, it shows as "order number" on _Klarna_'s payment confirmation page.
+
+|locale	
+|M 
+|String
+|5 
+|A 5-letter code that indicates what <<KlarnaV2_Locales, language>> the payment page is rendered in (RFC 1766).
+
+|transaction-id 
+|Response only
+|String
+|36
+|A unique identifier assigned for every transaction. Generated by {payment-provider-name}. Used when searching for or referencing it later.
+
+|transaction-state 
+|Response only
+|String
+|12
+a|Transaction status. +
+Possible values: 
+
+  - ``success``
+  - ``failed``
+
+//-
+
+|completion-time-stamp
+|Response only
+|DateTime
+|
+|The timestamp documents the time and date when the transaction was completed.
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_paymentMethod.adoc[tags=**;!optional;!MO;!recurring;!adjust-authorization;!recurringAuthorization]
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_notifications.adoc[]
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_accountHolder.adoc[tags=**;!adjustAuthorization]
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_accountHolderAddress.adoc[tags=**;!adjustAuthorization]
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_shipping.adoc[]
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_orderItems.adoc[]
+
+include::{root}/include/klarna-payments/fields/klarnaPayments_fields_status.adoc[]
+
+4+<.>h|``additional-provider-data.provider-data``
+h|**Contains max. 1 additional data item for _Klarna_.**
+
+|request
+|O
+|String
+|
+|Content should be an object containing any of the keys and sub objects described in https://developers.klarna.com/api/#payments-api-create-a-new-credit-session serialised to JSON. +
+E.g. +
+ `` {"marketplace_seller_info":[{"product_category":"Women''s Fashion","product_name":"Women Sweatshirt"}]})``
+
+|===
+
+[#KlarnaV2_TransactionTypes_authorization_Samples]
+===== _authorization_ Samples
+
+._authorization_ Request
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/Klarnav2_authorization_request.xml[]
+----
+
+._authorization_ Response
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/Klarnav2_authorization_response.xml[]
+----
+
+NOTE: To proceed with a successful authorization transaction, take the URL from ``<payment-method url="http://...">`` from the response, replace ``\&amp;`` with ``&`` and redirect your consumer to this URL.
+
+._authorization_ Notification XML
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/Klarnav2_authorization_notification.xml[]
+----
+
+[#KlarnaV2_TransactionTypes_authorization_autoCapture_Samples]
+===== _authorization_ with auto-capture Samples
+
+._authorization_ with auto-capture Request
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/Klarnav2_authorization_autoCapture_request.xml[]
+----
+
+._authorization_ with auto-capture Response
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/Klarnav2_authorization_autoCapture_response.xml[]
+----
+
+:!txTypeName:
+
+//-
+

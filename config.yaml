@@ -1,0 +1,65 @@
+# Asciidoctor settings
+asciidoc:
+  index:
+    file: index.adoc
+  multipage_level: 2
+
+# Build directories
+build:
+  dir: /tmp/build
+  html:
+    dir: /tmp/build/html
+
+# Custom directory for content defined
+# extensions and processes
+custom:
+  dir: custom
+
+# Enable extensions
+extensions:
+  enable:
+    - IfChecker
+    - IdChecker
+    - LinkChecker
+    - PatternBlacklist
+
+# Enable processes
+processes:
+  pre:
+    enable:
+      - CombineJS
+      - TranspileJS
+  post:
+    enable:
+      - CompileSearchIndex
+      - Rename
+      # - HTMLTest
+      - CodeRayStyleCopy
+
+# Settings for individual checkers/extensions
+checkers:
+  pattern:
+    blacklist: blacklist.txt
+
+# Search index settings
+search:
+  index:
+    file: lunrindex.json
+  db:
+    file: lunrdb.json
+  # Exclude the following file from the search index
+  exclude:
+    - docinfo*.html
+    - index.html
+    - Imprint.html
+    - ContactUs.html
+
+# DEPRECATED
+log:
+  file: /tmp/log.json
+
+# Table of contents settings
+# DO NOT CHANGE
+toc:
+  json_file: toc.json
+  html_file: toc.html

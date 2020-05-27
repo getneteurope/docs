@@ -1,0 +1,300 @@
+:cc-exp-year: 2023
+:cc-exp-month: 01
+
+[#API_CC_TestCards]
+== Test Cards
+In this section we provide test cards for a variety of card brands. 
+These test cards allow you to trigger a certain behaviour when you send them to our
+endpoint. We provide test cards for _3D Secure,_ _3D Secure 2,_ and _Non-3D Secure_ transactions.
+
+.Example
+If you want to provoke the error status code ``500.1072`` ("_Card Not Enrolled_.")
+in combination with a Visa card for a _3D Secure_ transaction, use
+_Card Number_ ``4012000300006002``, _Expiration Date_ ``{cc-exp-month}/{cc-exp-year}`` and _CVC_ ``002``.
+
+[#API_CC_TestCards_3D]
+=== 3D Secure Transactions
+
+When you do a <<CreditCard_PaymentFeatures_3DSecure, _3D Secure_ transaction>>,
+{payment-gateway-abbr} checks with the first request, whether the card is enrolled in _3D Secure_.
+A transaction is _3D Secure_, if the response returns a positive enrollment
+check and a positive authentication result.
+
+include::{root}/include/3-d-secure/3-d-secure_testcards_enrollment-authentication-values.adoc[]
+
+[#API_CC_TestCards_3D_Success]
+.Card Numbers for Successful Transactions
+
+With these card numbers you can provoke a successful response containing the
+status code ``201.0000`` ("The resource was successfully created.").
+
+include::{root}/include/3-d-secure/3-d-secure_testcards_success.adoc[]
+
+[#API_CC_TestCards_3D_Error]
+.Card Numbers for Error Results
+
+With these card numbers you can provoke an error response containing a variety of status codes.
+
+[#API_CC_TestCards_3D_Error_AMEX]
+.American Express
+
+[#API_CC_TestCards_3D_Error_AMEX]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_amex.adoc[]
+
+[#API_CC_TestCards_3D_Error_Diners]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_diners.adoc[]
+
+[#API_CC_TestCards_3D_Error_JCB]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_jcb.adoc[]
+
+[#API_CC_TestCards_3D_Error_Maestro]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_maestro.adoc[]
+
+[#API_CC_TestCards_3D_Error_Mastercard]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_mastercard.adoc[]
+
+[#API_CC_TestCards_3D_Error_UPI]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_upi.adoc[]
+
+[#API_CC_TestCards_3D_Error_Visa]
+include::{root}/include/3-d-secure/3-d-secure_testcards_error_visa.adoc[]
+
+[#CreditCard_3DS2_TestCards]
+=== 3D Secure 2 Transactions
+
+[#CreditCard_3DS2_TestCards_Key]
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_tablekey.adoc[]
+
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_3dsmethod.adoc[]
+
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_authresult.adoc[]
+
+//To test the following 3D Secure 2 cards and transaction, please use the <<CreditCard_TestCredentials, test credentials provided for 3D Secure 1>>.
+
+[#CreditCard_3DS2_TestCards_Success]
+.Successful 3D Secure 2 Transactions
+
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_success-without-challenge.adoc[]
+
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_success-challenge.adoc[]
+
+[#CreditCard_3DS2_TestCards_Error]
+.3D Secure 2 Transactions Resulting in an Error
+With the following card numbers you can provoke error responses.
+
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_error-without-challenge.adoc[]
+
+include::{root}/include/3-d-secure/3-d-secure-2_testcards_error-challenge.adoc[]
+
+
+[#API_CC_TestCards_Non3D_Process]
+=== Non-3D Secure Transactions
+
+This section provides card numbers and CVCs which you can use to provoke certain
+Non-3D responses.
+To obtain the required response, send a
+<<CreditCard_TransactionTypes_Purchase_SendingData_PurchaseUsingCardData, _purchase_>>
+request to our endpoint using the corresponding card details provided here.
+
+For example: If you want to provoke the message "The card type is not processed
+by the authorization center.  Please contact technical support."
+(Status Code = ``500.1061``) for a MAESTRO card,
+send a _purchase_ request and use the Card Number ``6333111900920000``,
+Expiration Date ``{cc-exp-month}/{cc-exp-year}`` and CVC ``999``.
+
+[#API_CC_TestCards_Non3D_Success]
+.Card Numbers for Successful Transactions
+.Status Code 201.0000
+
+The resource was successfully created.
+
+[%autowidth]
+|===
+| Card Brand | Card Number | CVC | Expiration Date | Card Type
+
+| American Express | 375000010000005 | 0005	 | {cc-exp-month}/{cc-exp-year} | ``amex``
+| Diners | 38000001000005 | 005  | {cc-exp-month}/{cc-exp-year} | ``diners``
+| JCB | 3541590100000009	 | 009 | {cc-exp-month}/{cc-exp-year} | ``jcb``
+| Maestro | 6333110100000001 | 001 | {cc-exp-month}/{cc-exp-year} | ``maestro``
+| Mastercard | 5413330100000000 | 999 | {cc-exp-month}/{cc-exp-year} | ``mastercard``
+| VISA | 4012000100000007 | 007 | {cc-exp-month}/{cc-exp-year} | ``visa``
+|===
+
+[#API_CC_TestCards_Non3D_Error]
+.Card Numbers for Error Results
+
+[#API_CC_TestCards_Non3D_Error_AMEX]
+.American Express
+
+Use _Card Type_ ``amex``
+
+[cols="5,45,15,5,5"]
+|===
+2+| If you want to trigger... 3+a| ...Use this card data in the request...
+h| Status Code h| Status Name h| Card Number h| CVC h| Expiration Date
+| 500.1054 | The acquirer returned Pick up card. Please check with Issuer, or use different card. | 375000040004001 | 4001 | {cc-exp-month}/{cc-exp-year}
+| 500.1060 | The acquirer returned Transaction Type not accepted. Please contact technical support. | 375000130040006 | 0006 | {cc-exp-month}/{cc-exp-year}
+| 500.1061 | The card type is not processed by the authorization center. Please contact technical support. | 375000190092004 |2004 | {cc-exp-month}/{cc-exp-year}
+| 500.1062 | The acquirer returned Expired Card. Please check your input or use different card. | 375000110033005 | 3005 | {cc-exp-month}/{cc-exp-year}
+| 500.1063 | The acquirer returned Call Voice-authorization number, Initialization Data. Please check with Issuer. | 375000020002009 | 2009 | {cc-exp-month}/{cc-exp-year}
+| 500.1066 | The acquirer returned Restricted Card. Try another card. Please check with Issuer, or use different card. | 375000170062001 | 2001 | {cc-exp-month}/{cc-exp-year}
+| 500.1067 | The acquirer returned Card issuer temporarily not reachable. Please try again later. | 375000180091008 | 1008 | {cc-exp-month}/{cc-exp-year}
+| 500.1068 | The acquirer returned Processing temporarily not possible. Please try again later. | 375000200096003 | 6003 | {cc-exp-month}/{cc-exp-year}
+| 500.1072 | Card not enrolled: The card is not enrolled / the cardholder is not participating in the 3D Secure program. | 375000150056007 | 6007 | {cc-exp-month}/{cc-exp-year}
+| 500.1091 | Suspicion of Manipulation. Please check with Issuer, or use different card. | 375000120034001 | 4001 | {cc-exp-month}/{cc-exp-year}
+| 500.1094 | The Merchant Account is not properly configured for processing. Please contact technical support. | 375000030003005 | 3005 | {cc-exp-month}/{cc-exp-year}
+| 500.1099 | Transaction processing refused. Please contact technical support. | 375000090021004 |1004 | {cc-exp-month}/{cc-exp-year}
+| 500.1109 | Malformed/Invalid Parameter. Please check your input. | 375000070013005 |3005 | {cc-exp-month}/{cc-exp-year}
+| 500.1117 | Terminal ID Unknown Please contact technical support. | 375000160058001 |8001 | {cc-exp-month}/{cc-exp-year}
+| 500.1118 | Invalid Transaction Please check your input or use different card. | 375000060012009 |2009 | {cc-exp-month}/{cc-exp-year}
+| 500.1156 | The issuer returned Declined. Please check with Issuer, or use different card. | 375000050005005 |5005 | {cc-exp-month}/{cc-exp-year}
+| 500.1157 | The issuer returned Stolen Card. Please check with Issuer, or use different card. | 375000140043008 | 3008 | {cc-exp-month}/{cc-exp-year}
+| 500.1159 | The issuer returned Invalid Card. Please check your input or use different card. | 375000080014001 | 4001 | {cc-exp-month}/{cc-exp-year}
+|===
+
+[#API_CC_TestCards_Non3D_Error_Diners]
+.Diners
+
+Use _Card Type_ ``diners``
+
+[cols="5,45,15,5,5"]
+|===
+2+| If you want to provoke... 3+a| ...Use these card data in the request...
+h| Status Code h| Status Name h| Card Number h| CVC h| Expiration Date
+| 500.1054 | The acquirer returned Pick up card. Please check with Issuer, or use different card. | 38000004000408 | 408 | {cc-exp-month}/{cc-exp-year}
+| 500.1060 | The acquirer returned Transaction Type not accepted. Please contact technical support. | 38000013004003 | 003 | {cc-exp-month}/{cc-exp-year}
+| 500.1061 | The card type is not processed by the authorization center. Please contact technical support. | 38000019009204 | 204 | {cc-exp-month}/{cc-exp-year}
+| 500.1062 | The acquirer returned Expired Card. Please check your input or use different card. | 38000011003304 | 304 | {cc-exp-month}/{cc-exp-year}
+| 500.1063 | The acquirer returned Call Voice-authorization number, Initialization Data. Please check with Issuer. | 38000002000202 | 202 | {cc-exp-month}/{cc-exp-year}
+| 500.1066 | The acquirer returned Restricted Card. Try another card. Please check with Issuer, or use different card. | 38000017006202 | 202 | {cc-exp-month}/{cc-exp-year}
+| 500.1067 | The acquirer returned Card issuer temporarily not reachable. Please try again later. | 38000018009106 | 106 | {cc-exp-month}/{cc-exp-year}
+| 500.1068 | The acquirer returned Processing temporarily not possible. Please try again later. | 38000020009607 | 607 | {cc-exp-month}/{cc-exp-year}
+| 500.1072 | Card not enrolled: The card is not enrolled / the cardholder is not participating in the 3D Secure program. | 38000015005602 | 602 | {cc-exp-month}/{cc-exp-year}
+| 500.1091 | Suspicion of Manipulation. Please check with Issuer, or use different card. | 38000012003402 | 402 | {cc-exp-month}/{cc-exp-year}
+| 500.1094 | The Merchant Account is not properly configured for processing. Please contact technical support. | 38000003000300 | 300 | {cc-exp-month}/{cc-exp-year}
+| 500.1099 | Transaction processing refused. Please contact technical support. | 38000009002102 | 102 | {cc-exp-month}/{cc-exp-year}
+| 500.1109 | Malformed/Invalid Parameter. Please check your input. | 38000007001304 | 304 | {cc-exp-month}/{cc-exp-year}
+| 500.1117 | Terminal ID Unknown Please contact technical support. | 38000016005809 | 809 | {cc-exp-month}/{cc-exp-year}
+| 500.1118 | Invalid Transaction Please check your input or use different card. | 38000006001206 | 206 | {cc-exp-month}/{cc-exp-year}
+| 500.1156 | The issuer returned Declined. Please check with Issuer, or use different card. | 38000005000506 | 506 | {cc-exp-month}/{cc-exp-year}
+| 500.1157 | The issuer returned Stolen Card. Please check with Issuer, or use different card. | 38000014004309 | 309 | {cc-exp-month}/{cc-exp-year}
+| 500.1159 | The issuer returned Invalid Card. Please check your input or use different card. | 38000008001402 | 402 | {cc-exp-month}/{cc-exp-year}
+|===
+
+[#API_CC_TestCards_Non3D_Error_JCB]
+.JCB
+
+Use _Card Type_ ``jcb``
+
+[cols="5,45,15,5,5"]
+|===
+2+| If you want to provoke... 3+a| ...Use these card data in the request...
+h| Status Code h| Status Name h| Card Number h| CVC h| Expiration Date
+| 500.1054 | The acquirer returned Pick up card. Please check with Issuer, or use different card. | 3541590400040002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1060 | The acquirer returned Transaction Type not accepted. Please contact technical support. | 3541591300400007 | 007 | {cc-exp-month}/{cc-exp-year}
+| 500.1061 | The card type is not processed by the authorization center. Please contact technical support. | 3541591900920008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1062 | The acquirer returned Expired Card. Please check your input or use different card. | 3541591100330008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1063 | The acquirer returned Call Voice-authorization number, Initialization Data. Please check with Issuer. | 3541590200020006 |006 | {cc-exp-month}/{cc-exp-year}
+| 500.1066 | The acquirer returned Restricted Card. Try another card. Please check with Issuer, or use different card. | 3541591700620006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1067 | The acquirer returned Card issuer temporarily not reachable. Please try again later. | 3541591800910000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1068 | The acquirer returned Processing temporarily not possible. Please try again later. | 3541592000960001 | 001 | {cc-exp-month}/{cc-exp-year}
+| 500.1072 | Card not enrolled: The card is not enrolled / the cardholder is not participating in the 3D Secure program. | 3541591500560006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1091 | Suspicion of Manipulation. Please check with Issuer, or use different card. | 3541591200340006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1094 | The Merchant Account is not properly configured for processing. Please contact technical support. | 3541590300030004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1099 | Transaction processing refused. Please contact technical support. | 3541590900210006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1109 | Malformed/Invalid Parameter. Please check your input. | 3541590700130008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1117 | Terminal ID Unknown Please contact technical support. | 3541591600580003 | 003 | {cc-exp-month}/{cc-exp-year}
+| 500.1118 | Invalid Transaction Please check your input or use different card. | 3541590600120000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1156 | The issuer returned Declined. Please check with Issuer, or use different card. | 3541590500050000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1157 | The issuer returned Stolen Card. Please check with Issuer, or use different card. | 3541591400430003 | 003 | {cc-exp-month}/{cc-exp-year}
+| 500.1159 | The issuer returned Invalid Card. Please check your input or use different card. | 3541590800140006 | 006 | {cc-exp-month}/{cc-exp-year}
+|===
+
+[#API_CC_TestCards_Non3D_Error_Maestro]
+.Maestro
+
+Use _Card Type_ ``maestro``
+
+[cols="5,45,15,5,5"]
+|===
+2+| If you want to provoke... 3+a| ...Use these card data in the request...
+h| Status Code h| Status Name h| Card Number h| CVC h| Expiration Date
+| 500.1054 | The acquirer returned Pick up card. Please check with Issuer, or use different card. | 6333110400040004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1060 | The acquirer returned Transaction Type not accepted. Please contact technical support. | 6333111300400009 | 009 | {cc-exp-month}/{cc-exp-year}
+| 500.1061 | The card type is not processed by the authorization center. Please contact technical support. | 6333111900920000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1062 | The acquirer returned Expired Card. Please check your input or use different card. | 6333111100330000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1063 | The acquirer returned Call Voice-authorization number, Initialization Data. Please check with Issuer. | 6333110200020008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1066 | The acquirer returned Restricted Card. Try another card. Please check with Issuer, or use different card. | 6333111700620008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1067 | The acquirer returned Card issuer temporarily not reachable. Please try again later. | 6333111800910002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1068 | The acquirer returned Processing temporarily not possible. Please try again later. | 6333112000960003 | 003 | {cc-exp-month}/{cc-exp-year}
+| 500.1072 | Card not enrolled: The card is not enrolled / the cardholder is not participating in the 3D Secure program. | 6333111500560008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1091 | Suspicion of Manipulation. Please check with Issuer, or use different card. | 6333111200340008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1094 | The Merchant Account is not properly configured for processing. Please contact technical support. | 6333110300030006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1099 | Transaction processing refused. Please contact technical support. | 6333110900210008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1109 | Malformed/Invalid Parameter. Please check your input. | 6333110700130000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1117 | Terminal ID Unknown Please contact technical support. | 6333111600580005 | 005 | {cc-exp-month}/{cc-exp-year}
+| 500.1118 | Invalid Transaction Please check your input or use different card. | 6333110600120002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1156 | The issuer returned Declined. Please check with Issuer, or use different card. | 6333110500050002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1157 | The issuer returned Stolen Card. Please check with Issuer, or use different card. | 6333111400430005 | 005 | {cc-exp-month}/{cc-exp-year}
+| 500.1159 | The issuer returned Invalid Card. Please check your input or use different card. | 6333110800140008 | 008 | {cc-exp-month}/{cc-exp-year}
+|===
+
+[#API_CC_TestCards_Non3D_Error_Mastercard]
+.Mastercard
+
+Use _Card Type_ ``mastercard``
+
+[cols="5,45,15,5,5"]
+|===
+2+| If you want to provoke... 3+a| ...Use these card data in the request...
+h| Status Code h| Status Name h| Card Number h| CVC h| Expiration Date
+| 500.1054 | The acquirer returned Pick up card. Please check with Issuer, or use different card. | 5413330400040003 | 003 | {cc-exp-month}/{cc-exp-year}
+| 500.1060 | The acquirer returned Transaction Type not accepted. Please contact technical support. | 5413331300400008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1061 | The card type is not processed by the authorization center. Please contact technical support. | 5413331900920009 | 009 | {cc-exp-month}/{cc-exp-year}
+| 500.1062 | The acquirer returned Expired Card. Please check your input or use different card. | 5413331100330009 | 009 | {cc-exp-month}/{cc-exp-year}
+| 500.1063 | The acquirer returned Call Voice-authorization number, Initialization Data. Please check with Issuer. | 5413330200020007 | 007 | {cc-exp-month}/{cc-exp-year}
+| 500.1066 | The acquirer returned Restricted Card. Try another card. Please check with Issuer, or use different card. | 5413331700620007 | 007 | {cc-exp-month}/{cc-exp-year}
+| 500.1067 | The acquirer returned Card issuer temporarily not reachable. Please try again later. | 5413331800910001 | 001 | {cc-exp-month}/{cc-exp-year}
+| 500.1068 | The acquirer returned Processing temporarily not possible. Please try again later. | 5413332000960002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1072 | Card not enrolled: The card is not enrolled / the cardholder is not participating in the 3D Secure program. | 5413331500560007 | 007 | {cc-exp-month}/{cc-exp-year}
+| 500.1091 | Suspicion of Manipulation. Please check with Issuer, or use different card. | 5413331200340007 | 007 | {cc-exp-month}/{cc-exp-year}
+| 500.1094 | The Merchant Account is not properly configured for processing. Please contact technical support. | 5413330300030005 | 005 | {cc-exp-month}/{cc-exp-year}
+| 500.1099 | Transaction processing refused. Please contact technical support. | 5413330900210007 | 007 | {cc-exp-month}/{cc-exp-year}
+| 500.1109 | Malformed/Invalid Parameter. Please check your input. | 5413330700130009 | 009 | {cc-exp-month}/{cc-exp-year}
+| 500.1117 | Terminal ID Unknown Please contact technical support. | 5413331600580004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1118 | Invalid Transaction Please check your input or use different card. | 5413330600120001 | 001 | {cc-exp-month}/{cc-exp-year}
+| 500.1156 | The issuer returned Declined. Please check with Issuer, or use different card. | 5413330500050001 | 001 | {cc-exp-month}/{cc-exp-year}
+| 500.1157 | The issuer returned Stolen Card. Please check with Issuer, or use different card. | 5413331400430004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1159 | The issuer returned Invalid Card. Please check your input or use different card. | 5413330800140007 | 007 | {cc-exp-month}/{cc-exp-year}
+|===
+
+[#API_CC_TestCards_Non3D_Error_Visa]
+.VISA
+
+Use _Card Type_ ``visa``
+
+[cols="5,45,15,5,5"]
+|===
+2+| If you want to provoke... 3+a| ...Use these card data in the request...
+h| Status Code h| Status Name h| Card Number h| CVC h| Expiration Date
+| 500.1054 | The acquirer returned Pick up card. Please check with Issuer, or use different card. | 4012000400040000 | 999 | {cc-exp-month}/{cc-exp-year}
+| 500.1060 | The acquirer returned Transaction Type not accepted. Please contact technical support. | 4012001300400005 | 005 | {cc-exp-month}/{cc-exp-year}
+| 500.1061 | The card type is not processed by the authorization center. Please contact technical support. | 4012001900920006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1062 | The acquirer returned Expired Card. Please check your input or use different card. | 4012001100330006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1063 | The acquirer returned Call Voice-authorization number, Initialization Data. Please check with Issuer. | 4012000200020004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1066 | The acquirer returned Restricted Card. Try another card. Please check with Issuer, or use different card. | 4012001700620004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1067 | The acquirer returned Card issuer temporarily not reachable. Please try again later. | 4012001800910008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1068 | The acquirer returned Processing temporarily not possible. Please try again later. | 4012002000960009 | 009 | {cc-exp-month}/{cc-exp-year}
+| 500.1072 | Card not enrolled: The card is not enrolled / the cardholder is not participating in the 3D Secure program. | 4012001500560004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1091 | Suspicion of Manipulation. Please check with Issuer, or use different card. | 4012001200340004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1094 | The Merchant Account is not properly configured for processing. Please contact technical support. | 4012000300030002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1099 | Transaction processing refused. Please contact technical support. | 4012000900210004 | 004 | {cc-exp-month}/{cc-exp-year}
+| 500.1109 | Malformed/Invalid Parameter. Please check your input. | 4012000700130006 | 006 | {cc-exp-month}/{cc-exp-year}
+| 500.1117 | Terminal ID Unknown Please contact technical support. | 4012001600580001 | 001 | {cc-exp-month}/{cc-exp-year}
+| 500.1118 | Invalid Transaction Please check your input or use different card. | 4012000600120008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1156 | The issuer returned Declined. Please check with Issuer, or use different card. | 4012000500050008 | 008 | {cc-exp-month}/{cc-exp-year}
+| 500.1157 | The issuer returned Stolen Card. Please check with Issuer, or use different card. | 4012001300430002 | 002 | {cc-exp-month}/{cc-exp-year}
+| 500.1159 | The issuer returned Invalid Card. Please check your input or use different card. | 4012000800140004 | 004 | {cc-exp-month}/{cc-exp-year}
+|===
+
+//-

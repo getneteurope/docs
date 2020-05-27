@@ -1,0 +1,127 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+// tag::cc-base[]
+// tag::pm-base[]
+
+|date-of-birth 
+|O 
+|Date 
+|  
+|Consumer's birth date. +
+Accepted format: ``{date-pattern}``.
+
+|email 
+|M/O
+|String 
+|156 
+|Consumer’s email address as given in your shop. +
+*Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>.
+
+|first-name 
+|M/O
+|String 
+|32 
+|First name of the consumer. +
+*Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>.
+
+|last-name 
+|M/O
+|String 
+|32 
+|Last name of the consumer. +
+*Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>.
+
+// end::cc-base[]
+// end::pm-base[]
+
+// tag::three-ds[]
+
+|email 
+|M
+|String 
+|256 
+|Consumer’s email address as given in your shop. +
+
+|first-name 
+|M
+|String 
+|32 
+|First name of the consumer. +
+
+|last-name 
+|M
+|String 
+|32 
+|Last name of the consumer. +
+
+// end::three-ds[]
+
+// tag::pm-base[]
+// tag::cc-base[]
+
+|gender 
+|O 
+|Enumeration 
+|1 
+|Consumer's gender. +
+Accepted values: +
+
+* ``m`` 
+* ``f``
+
+//-
+
+// tag::three-ds[]
+
+|merchant-crm-id 
+|O 
+|String 
+|64 
+|Consumer identifier in your shop. Requests that contain payment information from the same consumer in the same shop must contain the same string.
+
+|mobile-phone
+|O 
+|String
+|18
+|Mobile phone number provided by the consumer. 
+
+|phone 
+|O 
+|String 
+|18 
+|Phone number provided by the consumer.  
+
+|work-phone
+|O 
+|String
+|18
+|Work phone number provided by the consumer.
+
+// end::three-ds[]
+
+|social-security-number 
+|O 
+|String 
+|14 
+|Consumer's social security number.
+
+|tax-number 
+|O 
+|String 
+|14 
+|This is the tax-number of the consumer.
+
+// tag::three-ds[]
+
+5+|<<{listname}_request_accountinfo, account-info>>
+
+5+|<<{listname}_request_address, address>>
+
+// end::three-ds[]
+
+// end::cc-base[]
+
+// end::pm-base[]
+
+//-

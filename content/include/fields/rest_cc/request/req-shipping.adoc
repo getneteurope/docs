@@ -1,0 +1,108 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+// tag::cc-base[]
+
+|first-name 
+|M/O 
+|String 
+|32 
+|The first name given in the consumer's shipping information. +
+Mandatory for credit card.
+
+|last-name 
+|M/0 
+|String 
+|32 
+|The last name given in the consumer's shipping information. +
+Mandatory for credit card.
+
+|phone 
+|O 
+|String 
+|32 
+|Phone number given in the consumer's shipping information.
+
+|email 
+|O 
+|String 
+|64 
+|Email address given in the consumer's shipping information. 
+
+|return-shipping-company 
+|O 
+|String 
+|36 
+|Company that handles the return delivery.
+
+|return-tracking-number 
+|O 
+|String 
+|64 
+|The delivery tracking number of the return.
+
+|return-tracking-url 
+|O 
+|String 
+|2000 
+|URL for tracking the delivery of the return.
+
+|shipping-company 
+|O 
+|String 
+|64 
+|Company that delivers the order to the recipient.
+
+// tag::three-ds[]
+
+|shipping-method 
+|O 
+|Enumeration 
+| 
+| The shipping method chosen by the consumer. +
+ Use the shipping indicator value that applies most accurately to the shipping method. If the consumer checks out two or more items, use the shipping indicator value for physical goods. If all goods are digital goods, use the shipping indicator value that matches the most expensive item. +
+ Accepted values: +
+
+* ``home_delivery``: Ship to consumer's billing address. +
+* ``verified_address_delivery``: Ship to another address which you know and have verified. +
+* ``other_address_delivery``: Ship to an address that differs from the consumer's billing address. +
+* ``store_pick_up``: "Ship to Store" / Pick-up at local store (store address in shipping address fields). +
+* ``digital_goods``: Digital goods (includes online services, electronic gift cards, and redemption codes). +
+* ``digital_tickets``: Travel and event tickets, not shipped. +
+* ``other_verified``: Other (e.g. gaming, digital services, e-media subscriptions) +
+
+//-
+// end::three-ds[]
+
+// end::cc-base[]
+
+* ``own_delivery``: Ship directly to the consumer's shipping address via your own delivery service. +
+* ``registered_box``: Ship to a delivery box where the consumer needs to be registered to pick them up, e.g. DHL Packstation. +
+* ``unregistered_box``: Ship to a delivery box where the consumer does not need to be registered to pick them up, e.g. Itella smartpost, Hermes PaketShop. +
+* ``pick_up_point``: Ship to a manned pick-up point by an external shipping company. External personnel hands over goods to the consumer.
+
+//-
+
+// tag::cc-base[]
+
+|tracking-number 
+|O 
+|String 
+|64 
+|The shipping tracking number.
+
+|tracking-url 
+|O 
+|String 
+|2000 
+|URL for tracking the shipping.
+
+// tag::three-ds[]
+
+5+|<<{listname}_request_address, address>>
+
+// end::three-ds[]
+
+// end::cc-base[]
+
+//-

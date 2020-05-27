@@ -1,0 +1,133 @@
+[#CreditCard]
+== REST API & {payment-page-v1}
+
+[#CreditCard_PaymentModeCountriesandCurrencies]
+=== Payment Mode, Countries and Currencies
+
+[width=75%,stripes=none,cols="1,2"]
+|===
+h| Payment Mode 
+a|<<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>, <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>
+
+h| Countries 
+| Depends on the licensed area of the financial institution/acquirer. {payment-provider-name} Bank, for example, is licensed to process payments globally.
+
+h| Currencies a|
+VISA and MC support basically all currencies. For more information, go to their respective manuals. JCB and UPI require an explicit setup of transaction currencies as part of the acquirer license agreement.
+|===
+
+[discrete]
+[#CreditCard_CommunicationFormats]
+=== Communication Formats
+
+This table illustrates how _credit card_ notifications are encoded and which formats and methods can be used for requests and responses.
+
+[width=75%,stripes=none]
+|===
+.2+h| Requests | Format | XML
+                | Methods | POST
+.2+h| Responses | Format | XML
+                 | Methods | POST
+h| IPN Encodement 2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN_NotificationExamples, Instant Payment Notification>> to set up IPN.
+|===
+
+[#CreditCard_TestCredentials]
+=== Test Credentials
+
+[cols="h,"]
+|===
+|URL (Endpoint) | ``\https://{rest-api-test-endpoint}``
+|===
+
+Refer to one of the following tables to complete your test
+credentials:
+
+.Non-3D (Manual Card Brand Recognition) Demo
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |1b3be510-a992-48aa-8af9-6ba4c368a0ac
+|Merchant Account Name |{merchant-account-name-cc-cardbrandreco}
+|Username to access Test Account |70000-APIDEMO-CARD
+|Password to access Test Account |ohysS0-dvfMx
+|Secret Key |33a67608-9822-43c2-acc1-faf2947b1be5
+|Mobile SDK Applicable | No
+|===
+
+.Non-3D (Manual Card Brand Recognition) Test
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |9105bb4f-ae68-4768-9c3b-3eda968f57ea
+|Merchant Account Name | {merchant-account-name-cc-cardbrandreco}
+|Username to access Test Account | 70000-APILUHN-CARD
+|Password to access Test Account | 8mhwavKVb91T
+|Secret Key | d1efed51-4cb9-46a5-ba7b-0fdc87a66544
+|Mobile SDK Applicable | Yes
+|===
+
+include::{root}/include/3-d-secure/3-d-secure_testcredentials_manual.adoc[]
+
+.Non-3D (Automatic Card Brand Recognition) Demo
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) | 7a6dd74f-06ab-4f3f-a864-adc52687270a
+|Merchant Account Name | {merchant-account-name-cc-cardbrandreco}
+|Username to access Test Account | 70000-APIDEMO-CARD
+|Password to access Test Account | ohysS0-dvfMx
+|Secret Key | a8c3fce6-8df7-4fd6-a1fd-62fa229c5e55
+|Mobile SDK Applicable | No
+|===
+
+.Non-3D (Automatic Card Brand Recognition) Test
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) | 07edc10b-d3f9-4d12-901f-0db7f4c7e75c
+|Merchant Account Name |{merchant-account-name-cc-cardbrandreco}
+|Username to access Test Account | 70000-APILUHN-CARD
+|Password to access Test Account | 8mhwavKVb91T
+|Secret Key | 65f1d302-b2ac-4c52-8e31-5cc5351a258b
+|Mobile SDK Applicable | Yes
+|===
+
+include::{root}/include/3-d-secure/3-d-secure_testcredentials_automatic.adoc[]
+
+.Original Credit Transaction (OCT) Test
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |86687a11-3f9b-4f30-be54-8f22998b6177
+|Merchant Account Name |Merchant-Test-Accounts
+|Username to access Test Account |70000-APILUHN-CARD
+|Password to access Test Account |8mhwavKVb91T
+|Secret Key |dce5ebea-28f0-4fce-b087-85465a138a83
+|Mobile SDK Applicable |Yes
+|===
+
+.Non-3D Non-Gambling Original Credit Transaction (OCT) Test
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |1d08d0ea-535e-4b1a-b50b-d1591e97b8ea
+|Merchant Account Name |Merchant-Test-Accounts
+|Username to access Test Account |70000-APILUHN-CARD
+|Password to access Test Account |8mhwavKVb91T
+|Secret Key |1ddab375-08da-4704-83da-36610518efcf
+|Mobile SDK Applicable |Yes
+|===
+
+include::{root}/include/3-d-secure/3-d-secure_testcredentials_nongamblingOCT.adoc[]
+
+
+[#CreditCard_Workflow]
+=== Workflow
+
+image::images/11-01-credit-card/CreditCard-referenced-purchase.png[Credit Card referenced purchase]
+
+
+[#CreditCard_PaymentSolutions]
+=== Payment Solutions
+As payment solutions the {payment-gateway} provides _Pay by Link via API_ and _Invoice via Email._ They both are currently only used with a Payment Page integration.
+
+You can find
+
+* _Pay by Link via API_ at <<PPv1_PaymentSolutions_PaybyLinkAPI, {payment-page-v1}>> and <<PPv2_Features_PaybyLinkAPI, {payment-page-v2}>>
+* _Invoice via Email_ at <<PPv1_PaymentSolutions_InvoiceviaEmail, {payment-page-v1}>>
+
+//-

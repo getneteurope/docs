@@ -1,0 +1,84 @@
+name: End 2 End Testing
+
+on: [push, pull_request]
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    env:
+      TOOLCHAIN_PATH: 'toolchain'
+
+    services:
+      nginx:
+        image: nginx
+        ports:
+          - 8888:80
+        volumes:
+          - ${{ github.workspace }}/public:/usr/share/nginx/html:ro
+        options: --name nginx
+      hub:
+        image: selenium/hub:3.14.0-gallium
+        ports:
+          - "4444:4444"
+      firefox:
+        image: selenium/node-firefox:3.14.0-gallium
+        volumes:
+          - /dev/shm:/dev/shm
+        env:
+          HUB_HOST: hub
+      chrome:
+        image: selenium/node-chrome:3.14.0-gallium
+        volumes:
+          - /dev/shm:/dev/shm
+        env:
+          HUB_HOST: hub
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - name: Extract build name
+      shell: bash
+      run: echo "::set-output name=build_name::$(bash .scripts/extract_build_name.sh)"
+      id: extract
+
+    - name: Setup Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6.x'
+
+    - name: Bundle install
+      run: |
+        gem install bundler:2.1.4
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+
+    - name: Build docs
+      run: |
+        bundle exec rake docs:all
+        mv /tmp/build/html public/
+        ls -al public/
+      env:
+        SKIP_RAKE_TEST: 'true'
+
+    # Restart because mounted folder only exists NOW
+    - name: Restart nginx
+      uses: docker://docker
+      with:
+        args: docker restart nginx
+
+    - name: Run end2end tests
+      run: bundle exec rake selenium:test
+
+    - name: Dump Docker logs
+      if: always()
+      run: docker logs $(docker ps --quiet --filter "name=nginx")

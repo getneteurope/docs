@@ -1,0 +1,799 @@
+:date-pattern: YYYY-MM-DD
+:timestamp-pattern: YYYY-MM-DDThh:mm:ssZ
+
+[#CC_Fields]
+== Fields
+
+This is the general field reference for _credit card_ transactions.
+
+====
+- Format: XML 
+- POST requests and responses
+
+//-
+====
+
+We provide the request and the response fields in two separate sections:
+
+- <<CC_Fields_xmlelements_request, _Request_>> contains those fields sent in the request (and usually in the response).
+- <<CC_Fields_xmlelements_response, _Response_>> contains those fields sent in the response only.
+
+//-
+
+The fields are ordered hierarchically and in separate tables. ``payment`` is the top parent element and all fields that are part of ``payment`` are listed <<CC_Fields_xmlelements_request_payment, in the ``payment`` table>>. 
+
+Some fields listed in this table are _complex type_ fields, e.g. ``payment.account-holder``. _Complex type_ fields are parents to further fields. We offer separate field tables for all parent elements and their respective fields.
+
+NOTE: The tables are sorted alphabetically. Use *Ctrl + F* if you are looking for a specific field.
+
+For example, ``payment.account-holder`` is a parent of ``address``. Click on the link in the table to view the fields contained in a _complex type_ field.
+
+
+[#CC_Fields_intro_elements]
+=== Field Definitions
+
+Each field table contains the following columns:
+
+- <<APIRef_FieldDefs_Name, Name>>
+- <<APIRef_FieldDefs_Cardinality, M/O>> (for request elements only)
+- <<APIRef_FieldDefs_DataTypes, Data Type>>
+- <<APIRef_FieldDefs_Size, Size>> (for request elements only)
+
+//-
+
+IMPORTANT: Field definitions may vary by transaction type. Deviations from standard field definitions are given with the respective transaction type.
+
+
+[#CC_Fields_xmlelements]
+=== XML Elements
+Click the X in the respective column for request and response fields.
+
+Please refer to our <<Appendix_Xml, XSD>> for the structural relationship between these fields.
+
+
+[cols="m,,"]
+|===
+| Field | Request | Response
+
+| payment
+| <<CC_Fields_xmlelements_request_payment, X>>
+| <<CC_Fields_xmlelements_response_payment, X>>
+
+| account-holder
+| <<CC_Fields_xmlelements_request_accountholder, X>>
+| 
+
+| account-info
+| <<CC_Fields_xmlelements_request_accountinfo, X>>
+| 
+
+| address
+| <<CC_Fields_xmlelements_request_address, X>>
+| 
+
+| airline-industry
+| <<CC_Fields_xmlelements_request_airlineindustry, X>>
+| 
+
+| audit
+| <<CC_Fields_xmlelements_request_audit, X>>
+| 
+
+| avs
+| 
+| <<CC_Fields_xmlelements_response_avs, X>>
+
+| browser
+| <<CC_Fields_xmlelements_request_browser, X>>
+| 
+
+| card
+| <<CC_Fields_xmlelements_request_card, X>>
+|  
+
+| card-emv
+| <<CC_Fields_xmlelements_request_cardEMV, X>>
+| <<CC_Fields_xmlelements_response_cardEMV, X>>
+
+// | card-pin
+// | <<CC_Fields_xmlelements_cardPIN, X>>
+// | 
+
+// |card-raw
+// | <<CC_Fields_xmlelements_cardRaw, X>>
+// | 
+
+| card-token
+| <<CC_Fields_xmlelements_request_cardtoken, X>>
+| 
+
+| credit-sender-data
+| <<CC_Fields_xmlelements_request_creditsenderdata, X>>
+| 
+
+| cruise-industry
+| <<CC_Fields_xmlelements_request_cruiseindustry, X>>
+| 
+
+| custom-fields
+| <<CC_Fields_xmlelements_request_customfield, X>>
+| <<CC_Fields_xmlelements_response_customfield, X>>
+
+| device
+| <<CC_Fields_xmlelements_request_device, X>>
+| 
+
+| gift-card
+| <<CC_Fields_xmlelements_request_giftcard, X>>
+| 
+
+// | encryption-context
+// | <<CC_Fields_xmlelements_request_encryptionContext, X>>
+// | 
+
+| iso
+| <<CC_Fields_xmlelements_request_ISO, X>>
+| 
+
+| notifications
+| <<CC_Fields_xmlelements_request_notification, X>>
+| 
+
+| order-items
+| <<CC_Fields_xmlelements_request_orderitem, X>>
+| 
+
+| payment-methods
+| <<CC_Fields_xmlelements_request_paymentmethod, X>>
+|
+
+| risk-info
+| <<CC_Fields_xmlelements_request_riskinfo, X>>
+| 
+
+| segment
+| <<CC_Fields_xmlelements_request_segment, X>>
+| 
+
+| shipping
+| <<CC_Fields_xmlelements_request_shipping, X>>
+| 
+
+| status
+| 
+| <<CC_Fields_xmlelements_response_status, X>>
+
+| sub-merchant-info
+| <<CC_Fields_xmlelements_request_submerchantinfo, X>>
+| 
+
+| three-d
+| <<CC_Fields_xmlelements_request_threed, X>>
+| <<CC_Fields_xmlelements_response_threed, X>>
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request]
+=== Request
+
+[#CC_Fields_xmlelements_request_payment]
+.``payment.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-payment.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-payment.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+[#CC_Fields_xmlelements_request_accountholder]
+.``account-holder.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-account-holder.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-account-holder.adoc[tag=cc-base]
+
+|===
+
+//-
+
+:!listname:
+
+[#CC_Fields_xmlelements_request_accountinfo]
+.``account-info.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-account-info.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-account-info.adoc[]
+
+|===
+
+//-
+
+
+[#CC_Fields_xmlelements_request_address]
+.``address.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-address.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-address.adoc[tag=cc-base]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_airlineindustry]
+.``airline-industry.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-airline-industry.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-airline-industry.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+[#CC_Fields_xmlelements_request_audit]
+.``audit.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-audit.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-audit.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_browser]
+.``browser.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-browser.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-browser.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_card]
+.``card.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+[#CC_Fields_xmlelements_request_cardEMV]
+.card.card-emv
+
+For card present transactions.
+
+:listname: CC_Fields_xmlelements
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card-emv.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+// [#CC_Fields_xmlelements_cardPIN]
+// .card.card-pin
+
+// include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
+
+
+// [#CC_Fields_xmlelements_cardRaw]
+// .card.card-raw
+
+// include::{root}/include/fields/rest_cc/request/req-card-raw.adoc[]
+
+
+[#CC_Fields_xmlelements_request_cardtoken]
+.``card-token.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-token.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card-token.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_creditsenderdata]
+.``credit-sender-data.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-credit-sender-data.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-credit-sender-data.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_cruiseindustry]
+.``cruise-industry.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-cruise-industry.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-cruise-industry.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+
+[#CC_Fields_xmlelements_request_customfield]
+.``custom-field.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-custom-field.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-custom-field.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_device]
+.``device.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-device.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-device.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_giftcard]
+.``gift-card.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-gift-cards.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-gift-cards.adoc[]
+
+|===
+
+//-
+
+// [#CC_Fields_xmlelements_request_encryptionContext]
+// .encryption-context
+
+// include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
+
+
+[#CC_Fields_xmlelements_request_ISO]
+.``iso``
+
+For card present transactions.
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-iso.adoc[]
+
+|===
+
+//-
+
+
+[#CC_Fields_xmlelements_request_notification]
+.``notification.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-notification.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-notification.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_orderitem]
+.``order-item.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-order-item.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-order-item.adoc[]
+
+|===
+
+//-
+
+//[#CC_Fields_xmlelements_request_payloadfield]
+//.payload-field
+//
+//``payload-field`` is a child of
+//<<CC_Fields_xmlelements_request_paymentmethod, payment-methods.payload>>.
+
+
+[#CC_Fields_xmlelements_request_paymentmethod]
+.``payment-method.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-payment-method.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-payment-method.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_periodic]
+.``periodic.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-periodic.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-periodic.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_riskinfo]
+.``risk-info.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-risk-info.adoc[]
+
+// Please provide a short explanation for ``risk-info``: Explicit fields for 3D Secure 2? 
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-risk-info.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+
+[#CC_Fields_xmlelements_request_segment]
+.``segment.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-segment.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-segment.adoc[]
+
+|===
+
+//-
+
+
+[#CC_Fields_xmlelements_request_shipping]
+.``shipping.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-shipping.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-shipping.adoc[tag=cc-base]
+
+|===
+
+//-
+
+:!listname:
+
+
+[#CC_Fields_xmlelements_request_submerchantinfo]
+.``sub-merchant-info.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-sub-merchant-info.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-sub-merchant-info.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_threed]
+.``three-d.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-three-d.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+| Fieldname | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-three-d.adoc[tag=cc-base]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_response]
+=== Response
+
+[#CC_Fields_xmlelements_response_payment]
+.``payment.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-payment.adoc[]
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-payment.adoc[]
+
+|===
+
+//-
+
+:!listname:
+
+
+[#CC_Fields_xmlelements_response_avs]
+.``avs.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-avs.adoc[]
+
+:!listname:
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-avs.adoc[]
+
+|===
+
+//-
+
+
+[#CC_Fields_xmlelements_response_customfield]
+.``custom-field.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-custom-field.adoc[]
+
+:!listname:
+
+[cols="30m,48a"]
+|===
+|Field | Description
+
+include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
+
+|===
+
+//-
+
+
+[#CC_Fields_xmlelements_response_cardEMV]
+.``card.card-emv``
+
+For card present transactions.
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-card-emv.adoc[]
+
+|===
+
+//-
+
+
+[#CC_Fields_xmlelements_response_status]
+.``status.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-status.adoc[]
+
+:!listname:
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-status.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_response_threed]
+.``three-d.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-three-d.adoc[]
+
+:!listname:
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-three-d.adoc[]
+
+|===
+
+//-

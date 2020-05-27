@@ -1,0 +1,67 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TOOLCHAIN_PATH: 'toolchain'
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - name: Extract build name
+      shell: bash
+      run: echo "::set-output name=build_name::$(bash .scripts/extract_build_name.sh)"
+      id: extract
+
+    - name: Setup Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6.x'
+
+    - name: Bundle install
+      run: |
+        gem install bundler:2.1.4
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+
+    - name: Build
+      run: |
+        bundle exec rake docs:all
+        cp -r /tmp/build/html public/
+
+    - name: Prepend Build Name
+      if: steps.extract.outputs.build_name != 'master'
+      run: |
+        mkdir -p branches/${{ steps.extract.outputs.build_name }}
+        mv public/* branches/${{ steps.extract.outputs.build_name }}/
+        mv branches public/
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        role-session-name: GithubActions
+        role-duration-seconds: 1200
+
+    - name: Deploy
+      run: bash .scripts/deploy.sh
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PREVIEW }}
+        AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER }}
+

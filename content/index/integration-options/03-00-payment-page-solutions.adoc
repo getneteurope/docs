@@ -1,0 +1,47 @@
+[#PaymentPageSolutions]
+== Payment Page Solutions
+Our payment page solutions maximize the user experience of the checkout
+process by giving you control over its design and feel. With three
+readily available integration options, you decide where and how you want
+your customers to pay, while still enjoying the benefits of a dependable
+payment solution. All you need to get started is PCI SAQ A compliance.
+
+[cols="100,100"]
+[frame=none]
+[grid=none]
+|===
+^.^|  **{payment-page-v2}** ^.^| **{payment-page-v1}** image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."]
+
+|_{payment-page-v2}_ delivers a highly customizable, secure and
+polished checkout experience with multiple integration options. If
+visual design is your main priority, _{payment-page-v2}_ gives you all
+the tools you need to create a great-looking payment page.
+
+<<{payment-page-v2-anchor}, image:images/03-payment-page-solutions/WPP.jpg[{payment-page-v2}, title="Click here to read more"]>>
+
+| _{payment-page-v1}_ offers safe and smooth payment processing available with 3
+different integration options.
+
+<<{payment-page-v1-anchor}, image:images/03-payment-page-solutions/Old_PP.jpg[{payment-page-v1}, title="Click here to read more"]>>
+
+|===
+
+
+.Features
+[%autowidth, width=100%, cols="h,,"]
+|===
+| ^.^| **{payment-page-v2}** ^.^| **{payment-page-v1}** image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."]
+
+| Credit Card support                          ^| ✅                       ^| ✅
+| Integration types                          2+^| Hosted/Embedded/Seamless
+| Multi-language support                       ^| ✅                       ^| ✅
+| Custom CSS                                   ^| ✅                       ^| ✅
+| Ready-to-use integration code in Java/PHP    ^| ✅                       ^| ❌
+| API formats                                  ^| JSON/NVP                 ^| NVP only
+| Customization through GUI designer           ^| ✅                       ^| ❌
+| Multiple themes                              ^| ✅                       ^| ❌
+| Responsive design (mobile & desktop)         ^| ✅                       ^| ✅
+|===
+
+//-
+

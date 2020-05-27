@@ -1,0 +1,37 @@
+{
+  "payment": {
+    "merchant-account-id": {
+      "value": "86451785-3ed0-4aa1-99b2-cc32cf54ce9a"
+    },
+    "request-id": "{{$guid}}",
+    "transaction-type": "debit",
+    "payment-methods": {
+      "payment-method": [
+        {
+          "name": "p24"
+        }
+      ]
+    },
+    "requested-amount": {
+      "currency": "PLN",
+      "value": 10
+    },
+    "account-holder": {
+      "first-name": "John",
+      "last-name": "Doe",
+      "email": "john.doe@{domain}"
+    },
+    "order-number": "180730104557465",
+    "descriptor": "Eshop Order - Shoes",
+    "notifications": {
+      "notification": [
+        {
+          "url": "{{notification_endpoint}}"
+        }
+      ]
+    },
+    "cancel-redirect-url": "https://{pp-redirect-url-cancel}",
+    "success-redirect-url": "https://{pp-redirect-url-success}",
+    "fail-redirect-url": "https://{pp-redirect-url-error}"
+  }
+}
