@@ -34,7 +34,7 @@ processes:
       - CompileSearchIndex
       - Rename
       # - HTMLTest
-      - CodeRayStyleCopy
+      # - CodeRayStyleCopy
 
 # Settings for individual checkers/extensions
 checkers:
