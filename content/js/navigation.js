@@ -164,11 +164,11 @@ function initSearchResultsLinks() {
 function scrollToNavigationItem(id = 'auto') {
   // if no id give, determine ID by URL and hash
   if (id == 'auto') {
-    id = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : window.location.pathname.slice(1,-5);
+    id = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : window.location.pathname.slice(1, -5);
   }
-  toc = document.getElementById('toc')
-  var target = document.getElementById('toc_li_' + id)
-  var pos = parseInt(target.offsetTop - window.innerHeight / 2)
+  var toc = document.getElementById('toc');
+  var target = document.getElementById('toc_li_' + id);
+  var pos = parseInt(target.offsetTop - window.innerHeight / 2);
   setTimeout(() => {
     toc.scroll({ top: pos, left: 0, behavior: 'smooth' });
   }, 350);
