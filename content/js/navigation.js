@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   enableToc();
   initPageLinks();
   trackVisit();
+  scrollToNavigationItem('auto');
 });
 
 /**
@@ -130,7 +131,7 @@ function addClickHander(selector) {
 
     a.addEventListener('click', function (e) {
       console.log('click triggered')
-      const id = a.href.split('.html#') ? a.href.split('.html#')[1] : a.href.splice(0, -5);
+      const id = a.href.split('.html#') ? a.href.split('.html#')[1] : a.href.slice(0, -5);
       console.log(id)
       var toc_anchor = document.querySelector('#toc_li_' + id + ' a');
       console.log(toc_anchor);
@@ -141,6 +142,7 @@ function addClickHander(selector) {
         initBoxes(pageRootElementAnchor);
       }
       scrollToHash(id);
+      scrollToNavigationItem(id);
     })
   });
 }
@@ -155,7 +157,22 @@ function initSearchResultsLinks() {
   addClickHander('div#search-results > li a');
 }
 
-
+/**
+ * Scrolls to and centers the appropriate navigation item
+ * @param {String} id id of target
+ */
+function scrollToNavigationItem(id = 'auto') {
+  // if no id give, determine ID by URL and hash
+  if (id == 'auto') {
+    id = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : window.location.pathname.slice(1,-5);
+  }
+  toc = document.getElementById('toc')
+  var target = document.getElementById('toc_li_' + id)
+  var pos = parseInt(target.offsetTop - window.innerHeight / 2)
+  setTimeout(() => {
+    toc.scroll({ top: pos, left: 0, behavior: 'smooth' });
+  }, 350);
+}
 
 
 
@@ -164,9 +181,9 @@ function initSearchResultsLinks() {
  * SCROLLSPY FOR TOC
  */
 
- /* TODO: rewrite with Intersection_Observer_API for all scroll events
-    see minitoc.js IntersectionObserver
-  */
+/* TODO: rewrite with Intersection_Observer_API for all scroll events
+   see minitoc.js IntersectionObserver
+ */
 
 document.scrollspy = { disabled: false };
 
@@ -243,7 +260,7 @@ function handleScrollEvent(skipScrollSpy = true) {
       if (window.scrollY >= etopY && window.scrollY <= ebottomY) {
         const anchorElement = document.querySelectorAll('#toc_cb_' + element.id + ' + label > a')[0];
         if (anchorElement && lastScroll.navAnchorElement != anchorElement) {
-          if(initBoxes(anchorElement)) {
+          if (initBoxes(anchorElement)) {
             lastScroll.navAnchorElement = anchorElement;
           }
         }
