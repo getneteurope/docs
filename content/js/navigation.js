@@ -98,10 +98,9 @@ function initBoxes(anchorElement) {
   }
 
   requestAnimationFrame(() => {
-    for (var cb of sameLevelCheckboxes.entries()) {
-      var other_cb = cb[1];
-      other_cb.checked = false;
-    }
+    Array.prototype.forEach.call(sameLevelCheckboxes, function (cb) {
+      cb.checked = false;
+    });
     checkbox.checked = true;
     /* tick parent boxes */
     try {
@@ -168,6 +167,9 @@ function scrollToNavigationItem(id = 'auto') {
   }
   var toc = document.getElementById('toc');
   var target = document.getElementById('toc_li_' + id);
+  if (target == null) {
+    return false;
+  }
   var pos = parseInt(target.offsetTop - window.innerHeight / 2);
   setTimeout(() => {
     toc.scroll({ top: pos, left: 0, behavior: 'smooth' });
