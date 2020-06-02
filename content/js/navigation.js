@@ -161,9 +161,15 @@ function initSearchResultsLinks() {
  * @param {String} id id of target
  */
 function scrollToNavigationItem(id = 'auto') {
-  // if no id give, determine ID by URL and hash
+  // if no id given, determine ID by URL and hash
   if (id == 'auto') {
-    id = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : window.location.pathname.slice(1, -5);
+    var pageID = window.location.pathname.slice(1, -5);
+    var sectionID = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : null;
+    if (sectionID == null) {
+      id = pageID;
+    } else {
+      id = sectionID;
+    }
   }
   var toc = document.getElementById('toc');
   var target = document.getElementById('toc_li_' + id);
