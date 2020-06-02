@@ -162,6 +162,7 @@ function initSearchResultsLinks() {
  */
 function scrollToNavigationItem(id = 'auto') {
   setTimeout(() => {
+    console.log('Nav scroll to ' + id);
     // if no id given, determine ID by URL and hash
     if (id == 'auto') {
       var pageID = window.location.pathname.slice(1, -5);
