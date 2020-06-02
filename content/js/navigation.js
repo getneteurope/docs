@@ -161,25 +161,25 @@ function initSearchResultsLinks() {
  * @param {String} id id of target
  */
 function scrollToNavigationItem(id = 'auto') {
-  // if no id given, determine ID by URL and hash
-  if (id == 'auto') {
-    var pageID = window.location.pathname.slice(1, -5);
-    var sectionID = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : null;
-    if (sectionID == null) {
-      id = pageID;
-    } else {
-      id = sectionID;
-    }
-  }
-  var toc = document.getElementById('toc');
-  var target = document.getElementById('toc_li_' + id);
-  if (target == null) {
-    return false;
-  }
-  var pos = parseInt(target.offsetTop - window.innerHeight / 2);
   setTimeout(() => {
+    // if no id given, determine ID by URL and hash
+    if (id == 'auto') {
+      var pageID = window.location.pathname.slice(1, -5);
+      var sectionID = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : null;
+      if (sectionID == null) {
+        id = pageID;
+      } else {
+        id = sectionID;
+      }
+    }
+    var toc = document.getElementById('toc');
+    var target = document.getElementById('toc_li_' + id);
+    if (target == null) {
+      return false;
+    }
+    var pos = parseInt(target.offsetTop - window.innerHeight / 2);
     toc.scroll({ top: pos, left: 0, behavior: 'smooth' });
-  }, 350);
+  }, 1350);
 }
 
 
