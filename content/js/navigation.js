@@ -172,6 +172,7 @@ function scrollToNavigationItem(id = 'auto') {
       } else {
         id = sectionID;
       }
+      console.log('Resolved auto to: ' + id);
     }
     var toc = document.getElementById('toc');
     var target = document.getElementById('toc_li_' + id);
