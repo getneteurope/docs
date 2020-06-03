@@ -161,18 +161,13 @@ function initSearchResultsLinks() {
  * @param {String} id id of target
  */
 function scrollToNavigationItem(id = 'auto') {
+  // TODO: see if we can utilize scrollspy highlight code for getting current nav item but avoid jittery scrolling
   setTimeout(() => {
     console.log('Nav scroll to ' + id);
-    // if no id given, determine ID by URL and hash
+    // if no id given, determine ID by URL filename or hash
     if (id == 'auto') {
-      var pageID = window.location.pathname.slice(1, -5);
-      var sectionID = window.location.href.split('.html#') ? window.location.href.split('.html#')[1] : null;
-      if (sectionID == null) {
-        id = pageID;
-      } else {
-        id = sectionID;
-      }
-      console.log('Resolved auto to: ' + id);
+      id = getIDfromURL();
+      console.log('Resolved auto to: ' + id)
     }
     var toc = document.getElementById('toc');
     var target = document.getElementById('toc_li_' + id);
@@ -184,7 +179,14 @@ function scrollToNavigationItem(id = 'auto') {
   }, 1350);
 }
 
-
+/**
+ * Returns current ID from URL Hash or filename
+ */
+function getIDfromURL() {
+  return window.location.href.split('.html#')[1]
+  ? window.location.href.split('.html#')[1]
+  : window.location.href.split('/').pop().split('#')[0].split('?')[0].slice(0, -5);
+}
 
 
 /**
