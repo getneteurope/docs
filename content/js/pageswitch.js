@@ -93,11 +93,11 @@ if (document.pageswitch.disabled === false) {
   swup.on('contentReplaced', () => {
     //  console.log('_SWUUP: contentReplaced')
     reinitializeAfterPageSwitch();
+    scrollToNavigationItem();
     if (window.location.hash) {
       scrollToHash(window.location.hash.substring(1));
     }
   });
-
 }
 
 /**
