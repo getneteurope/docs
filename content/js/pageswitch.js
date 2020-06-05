@@ -146,6 +146,7 @@ function reinitializeAfterPageSwitch() {
   window.scrollTo(0, 0);
   setBuildDate();
   loadBrowserFixes();
+  initSampleTabs();
 }
 
 /**

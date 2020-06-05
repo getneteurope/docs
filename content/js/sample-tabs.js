@@ -1,3 +1,13 @@
+/**
+ * Wait for DOM to be loaded
+ */
+document.addEventListener('DOMContentLoaded', initSampleTabs);
+
+function initSampleTabs() {
+    enableRequestDetailsHideShow();
+    createSampleTabs();
+}
+
 function enableRequestDetailsHideShow() {
     $('table.r-details > caption').each(function () {
         if ($(this).hasClass('hide-show-enabled')) {
