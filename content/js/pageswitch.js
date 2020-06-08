@@ -178,11 +178,15 @@ function reinitializeAfterPageSwitch() {
 function refreshTitle() {
   //  console.log('refreshTitle');
   var pageTitle;
-  const idMain = document.querySelector('div.sect2 > h3 > a.link');
+  const idMain = document.querySelectorAll('div.sect2 > h3 > a.link, div.sect1 > h2 > a.link')[0];
   if (idMain) pageTitle = idMain.innerText;
 
   const idSecondary = document.querySelector('div.sect3 > h4 > a.link');
   if (window.location.hash && idSecondary) pageTitle += ' - ' + idSecondary.innerText;
 
   if (pageTitle) document.title = pageTitle;
+  var mobilePageHeader = document.getElementById('mobile-pageheader');
+  if (mobilePageHeader) {
+    mobilePageHeader.innerHTML = pageTitle;
+  }
 }

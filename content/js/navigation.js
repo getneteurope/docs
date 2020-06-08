@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageLinks();
   trackVisit();
   scrollToNavigationItem('auto');
+  closeNavMobile();
 });
 
 /**
@@ -138,6 +139,7 @@ function addClickHander(selector) {
       }
       scrollToHash(id);
       scrollToNavigationItem(id);
+      closeNavMobile();
     })
   });
 }
@@ -190,20 +192,29 @@ function addMobileNavFunctions() {
     burger.setAttribute('id', 'burger');
     burger.classList.add('fa');
     burger.innerHTML = '';
+    var mobilePageTitle = document.createElement('span');
+    mobilePageTitle.setAttribute('id', 'mobile-pageheader');
+    burger.appendChild(mobilePageTitle);
     burger.addEventListener('click', () => {
-      document.getElementById('toc').classList.remove('closed');
-      document.getElementById('search-results-wrapper').classList.remove('hidden');
+      openNavMobile();
     });
     document.body.insertBefore(burger, document.getElementById('content'));
   }
   document.getElementById('content').addEventListener('click', function (event) {
     console.log('close nav')
-    document.getElementById('toc').classList.add('closed');
-    document.getElementById('search-results-wrapper').classList.add('hidden');
+    closeNavMobile();
   });
 }
 
+function closeNavMobile() {
+  document.getElementById('toc').classList.add('closed');
+  document.getElementById('search-results-wrapper').classList.add('hidden');
+}
 
+function openNavMobile() {
+  document.getElementById('toc').classList.remove('closed');
+  document.getElementById('search-results-wrapper').classList.remove('hidden');
+}
 
 
 
@@ -306,6 +317,7 @@ function handleScrollEvent(skipScrollSpy = true) {
         }
       }
     })
+    refreshTitle();
   }, { timeout: 500 });
 }
 

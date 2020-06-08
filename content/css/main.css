@@ -1545,28 +1545,34 @@ span.nav-text { color: #425563; font-size: 1.2rem; line-height: 1.2rem; }
   /* line 21, ../../style/sass/components/_mobile.scss */
   h6, h5, h4 { padding-top: 2.5em; }
   /* line 25, ../../style/sass/components/_mobile.scss */
-  #toc.toc2 { width: 19em; position: fixed; height: 100vh; z-index: 2; top: 0; border-bottom: 1px; border-right: 1px; overflow-x: hidden; transition: all 0.5s linear; }
-  /* line 36, ../../style/sass/components/_mobile.scss */
+  #toc.toc2 { width: 19em; position: fixed; z-index: 2; top: 0; border-bottom: 1px; border-right: 1px; overflow-x: hidden; transition: all 0.5s linear; }
+  /* line 35, ../../style/sass/components/_mobile.scss */
   #toc.toc2.closed { margin-left: -19em; }
-  /* line 41, ../../style/sass/components/_mobile.scss */
-  #burger { display: block; padding: 0.5em; position: fixed; left: 0; font-size: 1.8em; border: none; color: #002846; background-color: #fff; z-index: 1; }
-  /* line 53, ../../style/sass/components/_mobile.scss */
+  /* line 39, ../../style/sass/components/_mobile.scss */
+  #toc.toc2 ul { /* because search is hidden, reduce top padding */ padding-top: 8em; }
+  /* line 45, ../../style/sass/components/_mobile.scss */
+  #burger { width: 100vw; display: block; padding: 0.5em; position: fixed; left: 0; font-size: 1.8em; border: none; color: #002846; background-color: #fff; z-index: 1; }
+  /* line 56, ../../style/sass/components/_mobile.scss */
+  #burger #mobile-pageheader { padding-left: 0.4em; font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif; }
+  /* line 62, ../../style/sass/components/_mobile.scss */
   #minitoc { display: none; }
-  /* line 57, ../../style/sass/components/_mobile.scss */
-  #search-results-wrapper { transition: all 0.5s linear; }
-  /* line 60, ../../style/sass/components/_mobile.scss */
+  /* line 66, ../../style/sass/components/_mobile.scss */
+  #search-overlay-wrapper { display: none; }
+  /* line 71, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper { display: none; transition: all 0.5s linear; }
+  /* line 77, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper.hidden { margin-left: -19em; }
-  /* line 64, ../../style/sass/components/_mobile.scss */
+  /* line 81, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper h2 { font-size: 1.2em; color: #fff; }
-  /* line 73, ../../style/sass/components/_mobile.scss */
+  /* line 90, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results li > div a p { color: #fff; font-size: 0.7em; }
-  /* line 78, ../../style/sass/components/_mobile.scss */
+  /* line 95, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results li > div a h4 { padding-top: 0; font-size: 1em; color: #fff; }
-  /* line 84, ../../style/sass/components/_mobile.scss */
+  /* line 101, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results li > div a span.label { font-size: 0.85em; }
-  /* line 92, ../../style/sass/components/_mobile.scss */
+  /* line 109, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results { height: calc(100% - 9em); }
-  /* line 96, ../../style/sass/components/_mobile.scss */
+  /* line 113, ../../style/sass/components/_mobile.scss */
   div#search-results-wrapper { z-index: 2; left: 0; top: 9em; width: 19em; background: unset; background-color: #123; }
-  /* line 104, ../../style/sass/components/_mobile.scss */
+  /* line 121, ../../style/sass/components/_mobile.scss */
   div#search-results-wrapper.open { height: calc(100% - 9em); } }
