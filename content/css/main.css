@@ -1411,43 +1411,43 @@ table.r-details > caption.title.hide-show-enabled { font-style: normal; font-wei
 /* line 5, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 > ul { background-position-x: right; position: absolute; padding-top: 10em; width: 21em; padding-bottom: 3em; }
 /* line 12, ../../style/sass/elements/_global-toc.scss */
-#toc.toc2 a { color: white; }
-/* line 18, ../../style/sass/elements/_global-toc.scss */
+#toc.toc2 a#logo { color: white; background: #112233; }
+/* line 19, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 ul { margin: 0; }
-/* line 21, ../../style/sass/elements/_global-toc.scss */
+/* line 22, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 ul ul { padding: 0; }
-/* line 26, ../../style/sass/elements/_global-toc.scss */
+/* line 27, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="1"] > input[type="checkbox"] + label > a { background-color: rgba(0, 0, 0, 0.2); padding-left: 1em; font-weight: bold; }
-/* line 31, ../../style/sass/elements/_global-toc.scss */
+/* line 32, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="2"] > input[type="checkbox"] + label > a { padding-left: 2em; }
-/* line 34, ../../style/sass/elements/_global-toc.scss */
+/* line 35, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="3"] > input[type="checkbox"] + label > a { padding-left: 3em; font-size: 1.1em; }
-/* line 38, ../../style/sass/elements/_global-toc.scss */
+/* line 39, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="4"] > input[type="checkbox"] + label > a { padding-left: 4em; font-size: 1em; }
-/* line 45, ../../style/sass/elements/_global-toc.scss */
+/* line 46, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"] + label > a { width: 100%; display: inline-block; padding-top: 0.5em; padding-bottom: 0.5em; font-size: 1.2em; }
-/* line 53, ../../style/sass/elements/_global-toc.scss */
+/* line 54, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"] + label > a:hover { background-color: rgba(0, 0, 0, 0.05); color: #8ee6ff; transition: background-color 0.5s ease-out; }
-/* line 60, ../../style/sass/elements/_global-toc.scss */
+/* line 61, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"]:checked + label > a { background-color: rgba(0, 0, 0, 0.12); font-weight: bold; }
-/* line 67, ../../style/sass/elements/_global-toc.scss */
+/* line 68, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="1"] > input[type="checkbox"]:checked + label > a { background-color: rgba(255, 255, 255, 0.08); }
-/* line 73, ../../style/sass/elements/_global-toc.scss */
+/* line 74, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="2"] > input[type="checkbox"]:checked + label > a { background-color: rgba(255, 255, 255, 0.05); }
-/* line 79, ../../style/sass/elements/_global-toc.scss */
+/* line 80, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="3"] > input[type="checkbox"]:checked + label > a { background-color: rgba(255, 255, 255, 0.04); }
-/* line 85, ../../style/sass/elements/_global-toc.scss */
+/* line 86, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="4"] > input[type="checkbox"]:checked + label > a { background-color: rgba(255, 255, 255, 0.03); }
-/* line 91, ../../style/sass/elements/_global-toc.scss */
+/* line 92, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 li[data-level="5"] { display: none; }
-/* line 96, ../../style/sass/elements/_global-toc.scss */
+/* line 97, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"] { display: none; }
-/* line 101, ../../style/sass/elements/_global-toc.scss */
+/* line 102, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"] + label ~ ul { max-height: 0; overflow: hidden; }
-/* line 107, ../../style/sass/elements/_global-toc.scss */
+/* line 108, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"]:checked + label ~ ul { max-height: 500vh; transition: max-height 1s cubic-bezier(1, 0, 0.91, 0.78); }
 
-/* line 118, ../../style/sass/elements/_global-toc.scss */
+/* line 119, ../../style/sass/elements/_global-toc.scss */
 #burger { display: none; }
 
 /* line 1, ../../style/sass/elements/_highlight-hash.scss */
@@ -1553,26 +1553,26 @@ span.nav-text { color: #425563; font-size: 1.2rem; line-height: 1.2rem; }
   /* line 45, ../../style/sass/components/_mobile.scss */
   #burger { width: 100vw; display: block; padding: 0.5em; position: fixed; left: 0; font-size: 1.8em; border: none; color: #002846; background-color: #fff; z-index: 1; }
   /* line 56, ../../style/sass/components/_mobile.scss */
-  #burger #mobile-pageheader { padding-left: 0.4em; font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif; }
-  /* line 62, ../../style/sass/components/_mobile.scss */
+  #burger #mobile-pageheader { white-space: nowrap; padding-left: 0.4em; font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif; }
+  /* line 63, ../../style/sass/components/_mobile.scss */
   #minitoc { display: none; }
-  /* line 66, ../../style/sass/components/_mobile.scss */
+  /* line 67, ../../style/sass/components/_mobile.scss */
   #search-overlay-wrapper { display: none; }
-  /* line 71, ../../style/sass/components/_mobile.scss */
+  /* line 72, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper { display: none; transition: all 0.5s linear; }
-  /* line 77, ../../style/sass/components/_mobile.scss */
+  /* line 78, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper.hidden { margin-left: -19em; }
-  /* line 81, ../../style/sass/components/_mobile.scss */
+  /* line 82, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper h2 { font-size: 1.2em; color: #fff; }
-  /* line 90, ../../style/sass/components/_mobile.scss */
+  /* line 91, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results li > div a p { color: #fff; font-size: 0.7em; }
-  /* line 95, ../../style/sass/components/_mobile.scss */
+  /* line 96, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results li > div a h4 { padding-top: 0; font-size: 1em; color: #fff; }
-  /* line 101, ../../style/sass/components/_mobile.scss */
+  /* line 102, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results li > div a span.label { font-size: 0.85em; }
-  /* line 109, ../../style/sass/components/_mobile.scss */
+  /* line 110, ../../style/sass/components/_mobile.scss */
   #search-results-wrapper ul#search-results { height: calc(100% - 9em); }
-  /* line 113, ../../style/sass/components/_mobile.scss */
+  /* line 114, ../../style/sass/components/_mobile.scss */
   div#search-results-wrapper { z-index: 2; left: 0; top: 9em; width: 19em; background: unset; background-color: #123; }
-  /* line 121, ../../style/sass/components/_mobile.scss */
+  /* line 122, ../../style/sass/components/_mobile.scss */
   div#search-results-wrapper.open { height: calc(100% - 9em); } }
