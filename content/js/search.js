@@ -5,7 +5,6 @@ var selectIdx = 0;
 var overlayOpen = false;
 
 function openOverlay(event) {
-    $('input#search').focus();
     var srw = $('#search-results-wrapper');
 
     // copy element
@@ -35,29 +34,8 @@ function openOverlay(event) {
     overlayOpen = true;
 }
 
-function DISABLEDopenOverlay(event) {
-    $('input#search').focus();
-    var srw = $('#search-results-wrapper');
-    srw.css('visibility', 'hidden'); // make srw invisible first
-    var transition = srw.css('transition'); // store transition for later
-    console.log(transition)
-    srw.css('transition', 'none'); // remove transition because we want to get height in next step
-    srw.addClass('open'); // set to open
-    console.log(srw);
-    console.log('height: ' + srw[0].offsetHeight)
-    var srwHeight = srw[0].offsetHeight;
-    srw.removeClass('open'); // close again
-    srw.css('transition', transition); // add stored transition again
-    // 
-    srw.css('visibility', ''); // make visible again
-    srw.addClass('open'); // set to open
-    $('#content').css('padding-top', srwHeight + 'px');
-    overlayOpen = true;
-}
-
 function closeOverlay(event) {
     var srw = $('#search-results-wrapper');
-    var srwHeight = srw.height();
     srw.removeClass('open');
     $('#content').css('padding-top', '');
     overlayOpen = false;

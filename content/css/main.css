@@ -510,566 +510,578 @@ p a > code:hover { color: rgba(0, 0, 0, 0.9); }
 /* line 382, ../../style/sass/components/_asciidoc.scss */
 #toctitle { color: #002846; font-size: 1.2em; }
 
-@media only screen and (min-width: 768px) { /* line 391, ../../style/sass/components/_asciidoc.scss */
-  #toctitle { font-size: 1.375em; }
-  /* line 396, ../../style/sass/components/_asciidoc.scss */
-  body.toc2 { padding-left: 15em; padding-right: 0; }
-  /* line 401, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 { margin-top: 0 !important; background: #ebebeb; position: fixed; width: 15em; left: 0; top: 0; border-right: 1px solid #e7e7e9; border-top-width: 0 !important; border-bottom-width: 0 !important; z-index: 1000; padding: 1.25em 1em; height: 100%; overflow: auto; }
-  /* line 416, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 #toctitle { margin-top: 0; margin-bottom: 0.8rem; font-size: 1.2em; }
-  /* line 421, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 > ul { font-size: 0.9em; margin-bottom: 0; }
-  /* line 426, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 ul ul { margin-left: 0; padding-left: 1em; }
-  /* line 430, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
-  /* line 437, ../../style/sass/components/_asciidoc.scss */
-  body.toc2.toc-right { padding-left: 0; padding-right: 15em; }
-  /* line 441, ../../style/sass/components/_asciidoc.scss */
-  body.toc2.toc-right #toc.toc2 { border-right-width: 0; border-left: 1px solid #e7e7e9; left: auto; right: 0; } }
-@media only screen and (min-width: 1280px) { /* line 451, ../../style/sass/components/_asciidoc.scss */
+/* line 390, ../../style/sass/components/_asciidoc.scss */
+#toctitle { font-size: 1.375em; }
+
+/* line 394, ../../style/sass/components/_asciidoc.scss */
+div#content { padding-right: 0; }
+
+/* line 397, ../../style/sass/components/_asciidoc.scss */
+body.toc2 { padding-left: 20em; padding-right: 0; }
+
+/* line 402, ../../style/sass/components/_asciidoc.scss */
+#toc.toc2 { margin-top: 0 !important; background: #ebebeb; position: fixed; width: 20em; left: 0; top: 0; border-right: 1px solid #e7e7e9; border-top-width: 0 !important; border-bottom-width: 0 !important; z-index: 1000; padding: 1.25em 1em; height: 100%; overflow: auto; }
+/* line 417, ../../style/sass/components/_asciidoc.scss */
+#toc.toc2 #toctitle { margin-top: 0; margin-bottom: 0.8rem; font-size: 1.2em; }
+/* line 422, ../../style/sass/components/_asciidoc.scss */
+#toc.toc2 > ul { font-size: 0.9em; margin-bottom: 0; }
+/* line 427, ../../style/sass/components/_asciidoc.scss */
+#toc.toc2 ul ul { margin-left: 0; padding-left: 1em; }
+/* line 431, ../../style/sass/components/_asciidoc.scss */
+#toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
+
+/* line 438, ../../style/sass/components/_asciidoc.scss */
+body.toc2.toc-right { padding-left: 0; padding-right: 15em; }
+/* line 442, ../../style/sass/components/_asciidoc.scss */
+body.toc2.toc-right #toc.toc2 { border-right-width: 0; border-left: 1px solid #e7e7e9; left: auto; right: 0; }
+
+/* line 450, ../../style/sass/components/_asciidoc.scss */
+div#content { padding-right: 0; }
+
+@media only screen and (min-width: 1440px) { /* line 458, ../../style/sass/components/_asciidoc.scss */
+  div#content { padding-right: 16em; }
+  /* line 462, ../../style/sass/components/_asciidoc.scss */
   body.toc2 { padding-left: 20em; padding-right: 0; }
-  /* line 456, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 { width: 20em; }
-  /* line 459, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 #toctitle { font-size: 1.375em; }
-  /* line 463, ../../style/sass/components/_asciidoc.scss */
-  #toc.toc2 > ul { font-size: 0.95em; }
   /* line 467, ../../style/sass/components/_asciidoc.scss */
+  #toc.toc2 { width: 20em; }
+  /* line 470, ../../style/sass/components/_asciidoc.scss */
+  #toc.toc2 #toctitle { font-size: 1.375em; }
+  /* line 474, ../../style/sass/components/_asciidoc.scss */
+  #toc.toc2 > ul { font-size: 0.95em; }
+  /* line 478, ../../style/sass/components/_asciidoc.scss */
   #toc.toc2 ul ul { padding-left: 1.25em; }
-  /* line 472, ../../style/sass/components/_asciidoc.scss */
+  /* line 483, ../../style/sass/components/_asciidoc.scss */
   body.toc2.toc-right { padding-left: 0; padding-right: 20em; } }
-/* line 479, ../../style/sass/components/_asciidoc.scss */
+/* line 490, ../../style/sass/components/_asciidoc.scss */
 #content #toc { border-style: solid; border-width: 1px; border-color: #d2d2d2; margin-bottom: 1.25em; padding: 1.25em; background: #ebebeb; -webkit-border-radius: 4px; border-radius: 4px; }
 /* line 44, ../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 #content #toc > :first-child { margin-top: 0; }
 /* line 45, ../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 #content #toc > :last-child { margin-bottom: 0; }
 
-/* line 485, ../../style/sass/components/_asciidoc.scss */
+/* line 496, ../../style/sass/components/_asciidoc.scss */
 #footer { max-width: 100%; background: #000f23; padding: 1.25em; }
 
-/* line 492, ../../style/sass/components/_asciidoc.scss */
+/* line 503, ../../style/sass/components/_asciidoc.scss */
 #footer-text { color: #fff0dc; line-height: 1.44; }
 
-/* line 497, ../../style/sass/components/_asciidoc.scss */
+/* line 508, ../../style/sass/components/_asciidoc.scss */
 #content { margin-bottom: 0.625em; }
 
-/* line 501, ../../style/sass/components/_asciidoc.scss */
+/* line 512, ../../style/sass/components/_asciidoc.scss */
 .sect1 { padding-bottom: 0.625em; }
 
-@media only screen and (min-width: 768px) { /* line 507, ../../style/sass/components/_asciidoc.scss */
+@media only screen and (min-width: 768px) { /* line 518, ../../style/sass/components/_asciidoc.scss */
   #content { margin-bottom: 1.25em; }
-  /* line 511, ../../style/sass/components/_asciidoc.scss */
+  /* line 522, ../../style/sass/components/_asciidoc.scss */
   .sect1 { padding-bottom: 1.25em; } }
-/* line 516, ../../style/sass/components/_asciidoc.scss */
+/* line 527, ../../style/sass/components/_asciidoc.scss */
 .sect1:last-child { padding-bottom: 0; }
 
-/* line 520, ../../style/sass/components/_asciidoc.scss */
+/* line 531, ../../style/sass/components/_asciidoc.scss */
 .sect1 + .sect1 { border-top: 1px solid #e7e7e9; }
 
-/* line 526, ../../style/sass/components/_asciidoc.scss */
+/* line 537, ../../style/sass/components/_asciidoc.scss */
 #content h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor, #content h7 > a.anchor { position: absolute; z-index: 1001; width: 1.5ex; margin-left: -1.5ex; display: block; text-decoration: none !important; visibility: hidden; text-align: center; font-weight: normal; }
-/* line 538, ../../style/sass/components/_asciidoc.scss */
+/* line 549, ../../style/sass/components/_asciidoc.scss */
 #content h1 > a.anchor:before, h2 > a.anchor:before, h3 > a.anchor:before, #toctitle > a.anchor:before, .sidebarblock > .content > .title > a.anchor:before, h4 > a.anchor:before, h5 > a.anchor:before, h6 > a.anchor:before, #content h7 > a.anchor:before { content: "\00A7"; font-size: 0.85em; display: block; padding-top: 0.1em; }
-/* line 548, ../../style/sass/components/_asciidoc.scss */
+/* line 559, ../../style/sass/components/_asciidoc.scss */
 #content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover, #content h7:hover > a.anchor, #content h7 > a.anchor:hover { visibility: visible; }
-/* line 552, ../../style/sass/components/_asciidoc.scss */
+/* line 563, ../../style/sass/components/_asciidoc.scss */
 #content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link, #content h7 > a.link { color: #002846; text-decoration: none; }
-/* line 555, ../../style/sass/components/_asciidoc.scss */
+/* line 566, ../../style/sass/components/_asciidoc.scss */
 #content h1 > a.link:hover, h2 > a.link:hover, h3 > a.link:hover, #toctitle > a.link:hover, .sidebarblock > .content > .title > a.link:hover, h4 > a.link:hover, h5 > a.link:hover, h6 > a.link:hover, #content h7 > a.link:hover { color: #00192d; }
 
-/* line 570, ../../style/sass/components/_asciidoc.scss */
+/* line 581, ../../style/sass/components/_asciidoc.scss */
 details, .audioblock, .imageblock, .literalblock, .listingblock, .stemblock, .videoblock { margin-bottom: 1.25em; }
 
-/* line 574, ../../style/sass/components/_asciidoc.scss */
+/* line 585, ../../style/sass/components/_asciidoc.scss */
 details > summary:first-of-type { cursor: pointer; display: list-item; outline: none; margin-bottom: 0.75em; }
 
-/* line 599, ../../style/sass/components/_asciidoc.scss */
+/* line 610, ../../style/sass/components/_asciidoc.scss */
 .admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-rendering: optimizeLegibility; text-align: left; font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif; font-size: 1.5rem; font-style: italic; }
 
-/* line 616, ../../style/sass/components/_asciidoc.scss */
+/* line 627, ../../style/sass/components/_asciidoc.scss */
 table.tableblock.fit-content > caption.title { white-space: nowrap; width: 0; }
 
-/* line 634, ../../style/sass/components/_asciidoc.scss */
+/* line 645, ../../style/sass/components/_asciidoc.scss */
 .paragraph.lead > p, #preamble > .sectionbody > [class="paragraph"]:first-of-type p { font-size: 1.21875em; line-height: 1.6; color: #002846; }
 
-/* line 642, ../../style/sass/components/_asciidoc.scss */
+/* line 653, ../../style/sass/components/_asciidoc.scss */
 table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p { font-size: inherit; }
 
-/* line 646, ../../style/sass/components/_asciidoc.scss */
+/* line 657, ../../style/sass/components/_asciidoc.scss */
 .admonitionblock > table { border-collapse: separate; border: 0; background: none; width: 100%; }
-/* line 651, ../../style/sass/components/_asciidoc.scss */
+/* line 662, ../../style/sass/components/_asciidoc.scss */
 .admonitionblock > table td.icon { text-align: center; width: 80px; }
-/* line 655, ../../style/sass/components/_asciidoc.scss */
-.admonitionblock > table td.icon img { max-width: none; }
-/* line 658, ../../style/sass/components/_asciidoc.scss */
-.admonitionblock > table td.icon .title { font-weight: bold; font-family: "Wirecard", "Open Sans", "DejaVu Sans", sans-serif; text-transform: uppercase; }
 /* line 666, ../../style/sass/components/_asciidoc.scss */
+.admonitionblock > table td.icon img { max-width: none; }
+/* line 669, ../../style/sass/components/_asciidoc.scss */
+.admonitionblock > table td.icon .title { font-weight: bold; font-family: "Wirecard", "Open Sans", "DejaVu Sans", sans-serif; text-transform: uppercase; }
+/* line 677, ../../style/sass/components/_asciidoc.scss */
 .admonitionblock > table td.content { padding-left: 1.125em; padding-right: 1.25em; border-left: 1px solid #dddddf; color: rgba(0, 0, 0, 0.6); }
-/* line 676, ../../style/sass/components/_asciidoc.scss */
+/* line 687, ../../style/sass/components/_asciidoc.scss */
 .admonitionblock > table td.content > :last-child > :last-child { margin-bottom: 0; }
 
-/* line 682, ../../style/sass/components/_asciidoc.scss */
+/* line 693, ../../style/sass/components/_asciidoc.scss */
 .exampleblock > .content { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: white; -webkit-border-radius: 4px; border-radius: 4px; }
 /* line 44, ../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .exampleblock > .content > :first-child { margin-top: 0; }
 /* line 45, ../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .exampleblock > .content > :last-child { margin-bottom: 0; }
 
-/* line 695, ../../style/sass/components/_asciidoc.scss */
+/* line 706, ../../style/sass/components/_asciidoc.scss */
 .sidebarblock { border-style: solid; border-width: 1px; border-color: #cccccc; margin-bottom: 1.25em; padding: 1.25em; background: #e6e6e6; -webkit-border-radius: 4px; border-radius: 4px; }
 /* line 44, ../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .sidebarblock > :first-child { margin-top: 0; }
 /* line 45, ../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .sidebarblock > :last-child { margin-bottom: 0; }
-/* line 700, ../../style/sass/components/_asciidoc.scss */
+/* line 711, ../../style/sass/components/_asciidoc.scss */
 .sidebarblock > .content > .title { color: #002846; margin-top: 0; text-align: center; }
 
-/* line 724, ../../style/sass/components/_asciidoc.scss */
+/* line 735, ../../style/sass/components/_asciidoc.scss */
 .exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child { margin-bottom: 0; }
 
-/* line 730, ../../style/sass/components/_asciidoc.scss */
+/* line 741, ../../style/sass/components/_asciidoc.scss */
 .literalblock pre, .listingblock > .content > pre { -webkit-border-radius: 4px; border-radius: 4px; word-wrap: break-word; overflow-x: auto; padding: 1em; font-size: 0.8125em; }
-@media only screen and (min-width: 768px) { /* line 730, ../../style/sass/components/_asciidoc.scss */
+@media only screen and (min-width: 768px) { /* line 741, ../../style/sass/components/_asciidoc.scss */
   .literalblock pre, .listingblock > .content > pre { font-size: 0.90625em; } }
-@media only screen and (min-width: 1280px) { /* line 730, ../../style/sass/components/_asciidoc.scss */
+@media only screen and (min-width: 1280px) { /* line 741, ../../style/sass/components/_asciidoc.scss */
   .literalblock pre, .listingblock > .content > pre { font-size: 1em; } }
 
-/* line 755, ../../style/sass/components/_asciidoc.scss */
+/* line 766, ../../style/sass/components/_asciidoc.scss */
 .literalblock pre, .listingblock > .content > pre:not(.highlight), .listingblock > .content > pre[class="highlight"], .listingblock > .content > pre[class^="highlight "] { background: #f7f7f8; }
 
-/* line 759, ../../style/sass/components/_asciidoc.scss */
+/* line 770, ../../style/sass/components/_asciidoc.scss */
 .literalblock.output pre { color: #f7f7f8; background-color: rgba(0, 0, 0, 0.9); }
 
-/* line 765, ../../style/sass/components/_asciidoc.scss */
+/* line 776, ../../style/sass/components/_asciidoc.scss */
 .listingblock > .content { position: relative; }
 
-/* line 770, ../../style/sass/components/_asciidoc.scss */
+/* line 781, ../../style/sass/components/_asciidoc.scss */
 .listingblock code[data-lang]:before { display: none; content: attr(data-lang); position: absolute; font-size: 0.75em; top: 0.425rem; right: 0.5rem; line-height: 1; text-transform: uppercase; color: inherit; opacity: 0.5; }
 
-/* line 784, ../../style/sass/components/_asciidoc.scss */
+/* line 795, ../../style/sass/components/_asciidoc.scss */
 .listingblock:hover code[data-lang]:before { display: block; }
 
-/* line 788, ../../style/sass/components/_asciidoc.scss */
+/* line 799, ../../style/sass/components/_asciidoc.scss */
 .listingblock.terminal pre .command:before { content: attr(data-prompt); padding-right: 0.5em; color: inherit; opacity: 0.5; }
 
-/* line 795, ../../style/sass/components/_asciidoc.scss */
+/* line 806, ../../style/sass/components/_asciidoc.scss */
 .listingblock.terminal pre .command:not([data-prompt]):before { content: "$"; }
 
-/* line 800, ../../style/sass/components/_asciidoc.scss */
+/* line 811, ../../style/sass/components/_asciidoc.scss */
 .listingblock pre.highlightjs { padding: 0; }
-/* line 802, ../../style/sass/components/_asciidoc.scss */
+/* line 813, ../../style/sass/components/_asciidoc.scss */
 .listingblock pre.highlightjs > code { padding: 1em; -webkit-border-radius: 4px; border-radius: 4px; }
 
-/* line 811, ../../style/sass/components/_asciidoc.scss */
+/* line 822, ../../style/sass/components/_asciidoc.scss */
 .listingblock pre.prettyprint { border-width: 0; }
 
-/* line 817, ../../style/sass/components/_asciidoc.scss */
+/* line 828, ../../style/sass/components/_asciidoc.scss */
 .prettyprint { background: #f7f7f8; }
 
-/* line 821, ../../style/sass/components/_asciidoc.scss */
+/* line 832, ../../style/sass/components/_asciidoc.scss */
 pre.prettyprint .linenums { line-height: 1.45; margin-left: 2em; }
 
-/* line 826, ../../style/sass/components/_asciidoc.scss */
+/* line 837, ../../style/sass/components/_asciidoc.scss */
 pre.prettyprint li { background: none; list-style-type: inherit; padding-left: 0; }
 
-/* line 832, ../../style/sass/components/_asciidoc.scss */
+/* line 843, ../../style/sass/components/_asciidoc.scss */
 pre.prettyprint li code[data-lang]:before { opacity: 1; }
 
-/* line 836, ../../style/sass/components/_asciidoc.scss */
+/* line 847, ../../style/sass/components/_asciidoc.scss */
 pre.prettyprint li:not(:first-child) code[data-lang]:before { display: none; }
 
-/* line 841, ../../style/sass/components/_asciidoc.scss */
+/* line 852, ../../style/sass/components/_asciidoc.scss */
 table.linenotable { border-collapse: separate; border: 0; margin-bottom: 0; background: none; }
-/* line 846, ../../style/sass/components/_asciidoc.scss */
-table.linenotable td[class] { color: inherit; vertical-align: top; padding: 0; line-height: inherit; white-space: normal; }
-/* line 854, ../../style/sass/components/_asciidoc.scss */
-table.linenotable td.code { padding-left: 0.75em; }
 /* line 857, ../../style/sass/components/_asciidoc.scss */
+table.linenotable td[class] { color: inherit; vertical-align: top; padding: 0; line-height: inherit; white-space: normal; }
+/* line 865, ../../style/sass/components/_asciidoc.scss */
+table.linenotable td.code { padding-left: 0.75em; }
+/* line 868, ../../style/sass/components/_asciidoc.scss */
 table.linenotable td.linenos { border-right: 1px solid currentColor; opacity: 0.35; padding-right: 0.5em; }
 
-/* line 866, ../../style/sass/components/_asciidoc.scss */
+/* line 877, ../../style/sass/components/_asciidoc.scss */
 pre.pygments .lineno { border-right: 1px solid currentColor; opacity: 0.35; display: inline-block; margin-right: 0.75em; }
-/* line 871, ../../style/sass/components/_asciidoc.scss */
+/* line 882, ../../style/sass/components/_asciidoc.scss */
 pre.pygments .lineno:before { content: ""; margin-right: -0.125em; }
 
-/* line 886, ../../style/sass/components/_asciidoc.scss */
+/* line 897, ../../style/sass/components/_asciidoc.scss */
 .quoteblock { margin: 0 1em 1.25em 1.5em; display: table; }
-/* line 889, ../../style/sass/components/_asciidoc.scss */
+/* line 900, ../../style/sass/components/_asciidoc.scss */
 .quoteblock:not(.excerpt) > .title { margin-left: -1.5em; margin-bottom: 0.75em; }
-/* line 894, ../../style/sass/components/_asciidoc.scss */
+/* line 905, ../../style/sass/components/_asciidoc.scss */
 .quoteblock blockquote, .quoteblock p { color: #002846; font-size: 1.15rem; line-height: 1.75; word-spacing: 0.1em; letter-spacing: 0; font-style: italic; text-align: justify; }
-/* line 904, ../../style/sass/components/_asciidoc.scss */
+/* line 915, ../../style/sass/components/_asciidoc.scss */
 .quoteblock blockquote { margin: 0; padding: 0; border: 0; }
-/* line 909, ../../style/sass/components/_asciidoc.scss */
+/* line 920, ../../style/sass/components/_asciidoc.scss */
 .quoteblock blockquote:before { content: "\201c"; float: left; font-size: 2.75em; font-weight: bold; line-height: 0.6em; margin-left: -0.6em; color: #002846; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
-/* line 922, ../../style/sass/components/_asciidoc.scss */
+/* line 933, ../../style/sass/components/_asciidoc.scss */
 .quoteblock blockquote > .paragraph:last-child p { margin-bottom: 0; }
-/* line 927, ../../style/sass/components/_asciidoc.scss */
+/* line 938, ../../style/sass/components/_asciidoc.scss */
 .quoteblock .attribution { margin-top: 0.75em; margin-right: 0.5ex; text-align: right; }
 
-/* line 934, ../../style/sass/components/_asciidoc.scss */
+/* line 945, ../../style/sass/components/_asciidoc.scss */
 .verseblock { margin: 0 1em 1.25em 1em; }
-/* line 937, ../../style/sass/components/_asciidoc.scss */
+/* line 948, ../../style/sass/components/_asciidoc.scss */
 .verseblock pre { font-family: "Open Sans", "DejaVu Sans", sans; font-size: 1.15rem; color: #002846; font-weight: 300; text-rendering: optimizeLegibility; }
-/* line 944, ../../style/sass/components/_asciidoc.scss */
+/* line 955, ../../style/sass/components/_asciidoc.scss */
 .verseblock pre strong { font-weight: 400; }
-/* line 949, ../../style/sass/components/_asciidoc.scss */
+/* line 960, ../../style/sass/components/_asciidoc.scss */
 .verseblock .attribution { margin-top: 1.25rem; margin-left: 0.5ex; }
 
-/* line 957, ../../style/sass/components/_asciidoc.scss */
+/* line 968, ../../style/sass/components/_asciidoc.scss */
 .quoteblock .attribution, .verseblock .attribution { font-size: 0.9375em; line-height: 1.45; font-style: italic; }
-/* line 961, ../../style/sass/components/_asciidoc.scss */
+/* line 972, ../../style/sass/components/_asciidoc.scss */
 .quoteblock .attribution br, .verseblock .attribution br { display: none; }
-/* line 964, ../../style/sass/components/_asciidoc.scss */
+/* line 975, ../../style/sass/components/_asciidoc.scss */
 .quoteblock .attribution cite, .verseblock .attribution cite { display: block; letter-spacing: -0.025em; color: rgba(0, 0, 0, 0.6); }
 
-/* line 978, ../../style/sass/components/_asciidoc.scss */
-.quoteblock.abstract blockquote:before, .quoteblock.excerpt blockquote:before, .quoteblock .quoteblock blockquote:before { display: none; }
-/* line 983, ../../style/sass/components/_asciidoc.scss */
-.quoteblock.abstract blockquote, .quoteblock.abstract p, .quoteblock.excerpt blockquote, .quoteblock.excerpt p, .quoteblock .quoteblock blockquote, .quoteblock .quoteblock p { line-height: 1.6; word-spacing: 0; }
 /* line 989, ../../style/sass/components/_asciidoc.scss */
-.quoteblock.abstract { margin: 0 1em 1.25em 1em; display: block; }
-/* line 992, ../../style/sass/components/_asciidoc.scss */
-.quoteblock.abstract > .title { margin: 0 0 0.375em 0; font-size: 1.15em; text-align: center; }
+.quoteblock.abstract blockquote:before, .quoteblock.excerpt blockquote:before, .quoteblock .quoteblock blockquote:before { display: none; }
+/* line 994, ../../style/sass/components/_asciidoc.scss */
+.quoteblock.abstract blockquote, .quoteblock.abstract p, .quoteblock.excerpt blockquote, .quoteblock.excerpt p, .quoteblock .quoteblock blockquote, .quoteblock .quoteblock p { line-height: 1.6; word-spacing: 0; }
 /* line 1000, ../../style/sass/components/_asciidoc.scss */
+.quoteblock.abstract { margin: 0 1em 1.25em 1em; display: block; }
+/* line 1003, ../../style/sass/components/_asciidoc.scss */
+.quoteblock.abstract > .title { margin: 0 0 0.375em 0; font-size: 1.15em; text-align: center; }
+/* line 1011, ../../style/sass/components/_asciidoc.scss */
 .quoteblock.excerpt > blockquote, .quoteblock .quoteblock { padding: 0 0 0.25em 1em; border-left: 0.25em solid #dddddf; }
-/* line 1006, ../../style/sass/components/_asciidoc.scss */
+/* line 1017, ../../style/sass/components/_asciidoc.scss */
 .quoteblock.excerpt, .quoteblock .quoteblock { margin-left: 0; }
-/* line 1008, ../../style/sass/components/_asciidoc.scss */
+/* line 1019, ../../style/sass/components/_asciidoc.scss */
 .quoteblock.excerpt blockquote, .quoteblock.excerpt p, .quoteblock .quoteblock blockquote, .quoteblock .quoteblock p { color: inherit; font-size: 1.0625rem; }
-/* line 1013, ../../style/sass/components/_asciidoc.scss */
+/* line 1024, ../../style/sass/components/_asciidoc.scss */
 .quoteblock.excerpt .attribution, .quoteblock .quoteblock .attribution { color: inherit; text-align: left; margin-right: 0; }
 
-/* line 1022, ../../style/sass/components/_asciidoc.scss */
+/* line 1033, ../../style/sass/components/_asciidoc.scss */
 table.tableblock { max-width: 100%; border-collapse: separate; }
 
-/* line 1027, ../../style/sass/components/_asciidoc.scss */
+/* line 1038, ../../style/sass/components/_asciidoc.scss */
 p.tableblock:last-child { margin-bottom: 0; }
 
-/* line 1032, ../../style/sass/components/_asciidoc.scss */
+/* line 1043, ../../style/sass/components/_asciidoc.scss */
 td.tableblock > .content { margin-bottom: 1.25em; }
-/* line 1034, ../../style/sass/components/_asciidoc.scss */
+/* line 1045, ../../style/sass/components/_asciidoc.scss */
 td.tableblock > .content > :last-child { margin-bottom: -1.25em; }
 
-/* line 1040, ../../style/sass/components/_asciidoc.scss */
+/* line 1051, ../../style/sass/components/_asciidoc.scss */
 table.tableblock, th.tableblock, td.tableblock { border: 0 solid #dedede; }
 
-/* line 1045, ../../style/sass/components/_asciidoc.scss */
+/* line 1056, ../../style/sass/components/_asciidoc.scss */
 table.grid-all > thead > tr > .tableblock, table.grid-all > tbody > tr > .tableblock { border-width: 0 1px 1px 0; }
 
-/* line 1049, ../../style/sass/components/_asciidoc.scss */
+/* line 1060, ../../style/sass/components/_asciidoc.scss */
 table.grid-all > tfoot > tr > .tableblock { border-width: 1px 1px 0 0; }
 
-/* line 1053, ../../style/sass/components/_asciidoc.scss */
+/* line 1064, ../../style/sass/components/_asciidoc.scss */
 table.grid-cols > * > tr > .tableblock { border-width: 0 1px 0 0; }
 
-/* line 1058, ../../style/sass/components/_asciidoc.scss */
+/* line 1069, ../../style/sass/components/_asciidoc.scss */
 table.grid-rows > thead > tr > .tableblock, table.grid-rows > tbody > tr > .tableblock { border-width: 0 0 1px 0; }
 
-/* line 1062, ../../style/sass/components/_asciidoc.scss */
+/* line 1073, ../../style/sass/components/_asciidoc.scss */
 table.grid-rows > tfoot > tr > .tableblock { border-width: 1px 0 0 0; }
 
-/* line 1067, ../../style/sass/components/_asciidoc.scss */
+/* line 1078, ../../style/sass/components/_asciidoc.scss */
 table.grid-all > * > tr > .tableblock:last-child, table.grid-cols > * > tr > .tableblock:last-child { border-right-width: 0; }
 
-/* line 1074, ../../style/sass/components/_asciidoc.scss */
+/* line 1085, ../../style/sass/components/_asciidoc.scss */
 table.grid-all > tbody > tr:last-child > .tableblock, table.grid-all > thead:last-child > tr > .tableblock, table.grid-rows > tbody > tr:last-child > .tableblock, table.grid-rows > thead:last-child > tr > .tableblock { border-bottom-width: 0; }
 
-/* line 1078, ../../style/sass/components/_asciidoc.scss */
+/* line 1089, ../../style/sass/components/_asciidoc.scss */
 table.frame-all { border-width: 1px; }
 
-/* line 1082, ../../style/sass/components/_asciidoc.scss */
+/* line 1093, ../../style/sass/components/_asciidoc.scss */
 table.frame-sides { border-width: 0 1px; }
 
-/* line 1086, ../../style/sass/components/_asciidoc.scss */
+/* line 1097, ../../style/sass/components/_asciidoc.scss */
 table.frame-topbot, table.frame-ends { border-width: 1px 0; }
 
-/* line 1093, ../../style/sass/components/_asciidoc.scss */
+/* line 1104, ../../style/sass/components/_asciidoc.scss */
 table.stripes-all tr, table.stripes-odd tr:nth-of-type(odd), table.stripes-even tr:nth-of-type(even), table.stripes-hover tr:hover { background: #f8f8f7; }
 
-/* line 1106, ../../style/sass/components/_asciidoc.scss */
+/* line 1117, ../../style/sass/components/_asciidoc.scss */
 th.halign-left, td.halign-left { text-align: left; }
 
-/* line 1106, ../../style/sass/components/_asciidoc.scss */
+/* line 1117, ../../style/sass/components/_asciidoc.scss */
 th.halign-right, td.halign-right { text-align: right; }
 
-/* line 1106, ../../style/sass/components/_asciidoc.scss */
+/* line 1117, ../../style/sass/components/_asciidoc.scss */
 th.halign-center, td.halign-center { text-align: center; }
 
-/* line 1113, ../../style/sass/components/_asciidoc.scss */
+/* line 1124, ../../style/sass/components/_asciidoc.scss */
 th.valign-top, td.valign-top { vertical-align: top; }
 
-/* line 1113, ../../style/sass/components/_asciidoc.scss */
+/* line 1124, ../../style/sass/components/_asciidoc.scss */
 th.valign-bottom, td.valign-bottom { vertical-align: bottom; }
 
-/* line 1113, ../../style/sass/components/_asciidoc.scss */
+/* line 1124, ../../style/sass/components/_asciidoc.scss */
 th.valign-middle, td.valign-middle { vertical-align: middle; }
 
-/* line 1120, ../../style/sass/components/_asciidoc.scss */
+/* line 1131, ../../style/sass/components/_asciidoc.scss */
 table thead th, table tfoot th { font-weight: bold; }
 
-/* line 1125, ../../style/sass/components/_asciidoc.scss */
+/* line 1136, ../../style/sass/components/_asciidoc.scss */
 tbody tr th { display: table-cell; line-height: 1.6; background: #f7f8f7; }
 
-/* line 1134, ../../style/sass/components/_asciidoc.scss */
+/* line 1145, ../../style/sass/components/_asciidoc.scss */
 tbody tr th, tbody tr th p, tfoot tr th, tfoot tr th p { color: #000f23; font-weight: bold; }
 
-/* line 1140, ../../style/sass/components/_asciidoc.scss */
+/* line 1151, ../../style/sass/components/_asciidoc.scss */
 p.tableblock > code:only-child { background: none; padding: 0; }
 
-/* line 1145, ../../style/sass/components/_asciidoc.scss */
+/* line 1156, ../../style/sass/components/_asciidoc.scss */
 p.tableblock { font-size: 1em; }
 
-/* line 1155, ../../style/sass/components/_asciidoc.scss */
+/* line 1166, ../../style/sass/components/_asciidoc.scss */
 ol { margin-left: 1.75em; }
 
-/* line 1159, ../../style/sass/components/_asciidoc.scss */
+/* line 1170, ../../style/sass/components/_asciidoc.scss */
 ul li ol { margin-left: 1.5em; }
 
-/* line 1163, ../../style/sass/components/_asciidoc.scss */
+/* line 1174, ../../style/sass/components/_asciidoc.scss */
 dl dd { margin-left: 1.125em; }
 
-/* line 1169, ../../style/sass/components/_asciidoc.scss */
+/* line 1180, ../../style/sass/components/_asciidoc.scss */
 dl dd:last-child, dl dd:last-child > :last-child { margin-bottom: 0; }
 
-/* line 1180, ../../style/sass/components/_asciidoc.scss */
+/* line 1191, ../../style/sass/components/_asciidoc.scss */
 ol > li p, ul > li p, ul dd, ol dd, .olist .olist, .ulist .ulist, .ulist .olist, .olist .ulist { margin-bottom: 0.625em; }
 
-/* line 1187, ../../style/sass/components/_asciidoc.scss */
+/* line 1198, ../../style/sass/components/_asciidoc.scss */
 ul.checklist, ul.none, ol.none, ul.no-bullet, ol.no-bullet, ol.unnumbered, ul.unstyled, ol.unstyled { list-style-type: none; }
 
-/* line 1191, ../../style/sass/components/_asciidoc.scss */
+/* line 1202, ../../style/sass/components/_asciidoc.scss */
 ul.no-bullet, ol.no-bullet, ol.unnumbered { margin-left: 0.625em; }
 
-/* line 1195, ../../style/sass/components/_asciidoc.scss */
+/* line 1206, ../../style/sass/components/_asciidoc.scss */
 ul.unstyled, ol.unstyled { margin-left: 0; }
 
-/* line 1199, ../../style/sass/components/_asciidoc.scss */
+/* line 1210, ../../style/sass/components/_asciidoc.scss */
 ul.checklist { margin-left: 0.625em; }
 
-/* line 1205, ../../style/sass/components/_asciidoc.scss */
+/* line 1216, ../../style/sass/components/_asciidoc.scss */
 ul.checklist li > p:first-child > .fa-square-o:first-child, ul.checklist li > p:first-child > .fa-check-square-o:first-child { width: 1.25em; font-size: 0.8em; position: relative; bottom: 0.125em; }
 
-/* line 1212, ../../style/sass/components/_asciidoc.scss */
+/* line 1223, ../../style/sass/components/_asciidoc.scss */
 ul.checklist li > p:first-child > input[type="checkbox"]:first-child { margin-right: 0.25em; }
 
-/* line 1216, ../../style/sass/components/_asciidoc.scss */
+/* line 1227, ../../style/sass/components/_asciidoc.scss */
 ul.inline { display: -ms-flexbox; display: -webkit-box; display: flex; -ms-flex-flow: row wrap; -webkit-flex-flow: row wrap; flex-flow: row wrap; list-style: none; margin: 0 0 0.625em -1.25em; }
 
-/* line 1227, ../../style/sass/components/_asciidoc.scss */
+/* line 1238, ../../style/sass/components/_asciidoc.scss */
 ul.inline > li { margin-left: 1.25em; }
 
-/* line 1233, ../../style/sass/components/_asciidoc.scss */
+/* line 1244, ../../style/sass/components/_asciidoc.scss */
 .unstyled dl dt { font-weight: normal; font-style: normal; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.arabic { list-style-type: decimal; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.decimal { list-style-type: decimal-leading-zero; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.loweralpha { list-style-type: lower-alpha; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.upperalpha { list-style-type: upper-alpha; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.lowerroman { list-style-type: lower-roman; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.upperroman { list-style-type: upper-roman; }
 
-/* line 1239, ../../style/sass/components/_asciidoc.scss */
+/* line 1250, ../../style/sass/components/_asciidoc.scss */
 ol.lowergreek { list-style-type: lower-greek; }
 
-/* line 1255, ../../style/sass/components/_asciidoc.scss */
+/* line 1266, ../../style/sass/components/_asciidoc.scss */
 .hdlist > table, .colist > table { border: 0; background: none; }
-/* line 1258, ../../style/sass/components/_asciidoc.scss */
+/* line 1269, ../../style/sass/components/_asciidoc.scss */
 .hdlist > table > tbody > tr, .colist > table > tbody > tr { background: none; }
 
-/* line 1264, ../../style/sass/components/_asciidoc.scss */
+/* line 1275, ../../style/sass/components/_asciidoc.scss */
 td.hdlist1, td.hdlist2 { vertical-align: top; padding: 0 0.625em; }
 
-/* line 1269, ../../style/sass/components/_asciidoc.scss */
+/* line 1280, ../../style/sass/components/_asciidoc.scss */
 td.hdlist1 { font-weight: bold; padding-bottom: 1.25em; }
 
-/* line 1275, ../../style/sass/components/_asciidoc.scss */
+/* line 1286, ../../style/sass/components/_asciidoc.scss */
 .literalblock + .colist, .listingblock + .colist { margin-top: -0.5em; }
 
-/* line 1282, ../../style/sass/components/_asciidoc.scss */
+/* line 1293, ../../style/sass/components/_asciidoc.scss */
 .colist td:not([class]):first-child { padding: 0.4em 0.75em 0 0.75em; line-height: 1; vertical-align: top; }
-/* line 1286, ../../style/sass/components/_asciidoc.scss */
+/* line 1297, ../../style/sass/components/_asciidoc.scss */
 .colist td:not([class]):first-child img { max-width: none; }
-/* line 1292, ../../style/sass/components/_asciidoc.scss */
+/* line 1303, ../../style/sass/components/_asciidoc.scss */
 .colist td:not([class]):last-child { padding: 0.25em 0; }
 
-/* line 1304, ../../style/sass/components/_asciidoc.scss */
+/* line 1315, ../../style/sass/components/_asciidoc.scss */
 .thumb, .th { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px #dddddd; box-shadow: 0 0 0 1px #dddddd; }
 
-/* line 1327, ../../style/sass/components/_asciidoc.scss */
+/* line 1338, ../../style/sass/components/_asciidoc.scss */
 .imageblock.left { margin: 0.25em 0.625em 1.25em 0; }
-/* line 1330, ../../style/sass/components/_asciidoc.scss */
+/* line 1341, ../../style/sass/components/_asciidoc.scss */
 .imageblock.right { margin: 0.25em 0 1.25em 0.625em; }
-/* line 1337, ../../style/sass/components/_asciidoc.scss */
+/* line 1348, ../../style/sass/components/_asciidoc.scss */
 .imageblock > .title { margin-bottom: 0; }
-/* line 1342, ../../style/sass/components/_asciidoc.scss */
+/* line 1353, ../../style/sass/components/_asciidoc.scss */
 .imageblock.thumb, .imageblock.th { border-width: 6px; }
-/* line 1344, ../../style/sass/components/_asciidoc.scss */
+/* line 1355, ../../style/sass/components/_asciidoc.scss */
 .imageblock.thumb > .title, .imageblock.th > .title { padding: 0 0.125em; }
 
-/* line 1359, ../../style/sass/components/_asciidoc.scss */
-.image.left, .image.right { margin-top: 0.25em; margin-bottom: 0.25em; display: inline-block; line-height: 0; }
-/* line 1366, ../../style/sass/components/_asciidoc.scss */
-.image.left { margin-right: 0.625em; }
 /* line 1370, ../../style/sass/components/_asciidoc.scss */
+.image.left, .image.right { margin-top: 0.25em; margin-bottom: 0.25em; display: inline-block; line-height: 0; }
+/* line 1377, ../../style/sass/components/_asciidoc.scss */
+.image.left { margin-right: 0.625em; }
+/* line 1381, ../../style/sass/components/_asciidoc.scss */
 .image.right { margin-left: 0.625em; }
 
-/* line 1384, ../../style/sass/components/_asciidoc.scss */
+/* line 1395, ../../style/sass/components/_asciidoc.scss */
 a.image { text-decoration: none; display: inline-block; }
-/* line 1389, ../../style/sass/components/_asciidoc.scss */
+/* line 1400, ../../style/sass/components/_asciidoc.scss */
 a.image object { pointer-events: none; }
 
-/* line 1396, ../../style/sass/components/_asciidoc.scss */
+/* line 1407, ../../style/sass/components/_asciidoc.scss */
 sup.footnote, sup.footnoteref { font-size: 0.875em; position: static; vertical-align: super; }
-/* line 1400, ../../style/sass/components/_asciidoc.scss */
+/* line 1411, ../../style/sass/components/_asciidoc.scss */
 sup.footnote a, sup.footnoteref a { text-decoration: none; }
-/* line 1402, ../../style/sass/components/_asciidoc.scss */
+/* line 1413, ../../style/sass/components/_asciidoc.scss */
 sup.footnote a:active, sup.footnoteref a:active { text-decoration: underline; }
 
-/* line 1408, ../../style/sass/components/_asciidoc.scss */
+/* line 1419, ../../style/sass/components/_asciidoc.scss */
 #footnotes { padding-top: 0.75em; padding-bottom: 0.75em; margin-bottom: 0.625em; }
-/* line 1412, ../../style/sass/components/_asciidoc.scss */
+/* line 1423, ../../style/sass/components/_asciidoc.scss */
 #footnotes hr { width: 20%; min-width: 6.25em; margin: -0.25em 0 0.75em 0; border-width: 1px 0 0 0; }
-/* line 1418, ../../style/sass/components/_asciidoc.scss */
+/* line 1429, ../../style/sass/components/_asciidoc.scss */
 #footnotes .footnote { padding: 0 0.375em 0 0.225em; line-height: 1.3334; font-size: 0.875em; margin-left: 1.2em; margin-bottom: 0.2em; }
-/* line 1424, ../../style/sass/components/_asciidoc.scss */
+/* line 1435, ../../style/sass/components/_asciidoc.scss */
 #footnotes .footnote a:first-of-type { font-weight: bold; text-decoration: none; margin-left: -1.05em; }
-/* line 1431, ../../style/sass/components/_asciidoc.scss */
+/* line 1442, ../../style/sass/components/_asciidoc.scss */
 #footnotes .footnote:last-of-type { margin-bottom: 0; }
-/* line 1436, ../../style/sass/components/_asciidoc.scss */
+/* line 1447, ../../style/sass/components/_asciidoc.scss */
 #content #footnotes { margin-top: -0.625em; margin-bottom: 0; padding: 0.75em 0; }
 
-/* line 1444, ../../style/sass/components/_asciidoc.scss */
+/* line 1455, ../../style/sass/components/_asciidoc.scss */
 .gist .file-data > table { border: 0; background: #fff; width: 100%; margin-bottom: 0; }
-/* line 1449, ../../style/sass/components/_asciidoc.scss */
+/* line 1460, ../../style/sass/components/_asciidoc.scss */
 .gist .file-data > table td.line-data { width: 99%; }
 
-/* line 1456, ../../style/sass/components/_asciidoc.scss */
+/* line 1467, ../../style/sass/components/_asciidoc.scss */
 div.unbreakable { page-break-inside: avoid; }
 
-/* line 1460, ../../style/sass/components/_asciidoc.scss */
+/* line 1471, ../../style/sass/components/_asciidoc.scss */
 .big { font-size: larger; }
 
-/* line 1464, ../../style/sass/components/_asciidoc.scss */
+/* line 1475, ../../style/sass/components/_asciidoc.scss */
 .small { font-size: smaller; }
 
-/* line 1469, ../../style/sass/components/_asciidoc.scss */
+/* line 1480, ../../style/sass/components/_asciidoc.scss */
 .underline { text-decoration: underline; }
 
-/* line 1469, ../../style/sass/components/_asciidoc.scss */
+/* line 1480, ../../style/sass/components/_asciidoc.scss */
 .overline { text-decoration: overline; }
 
-/* line 1469, ../../style/sass/components/_asciidoc.scss */
+/* line 1480, ../../style/sass/components/_asciidoc.scss */
 .line-through { text-decoration: line-through; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .aqua { color: #00bfbf; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .aqua-background { background-color: #00fafa; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .black { color: black; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .black-background { background-color: black; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .blue { color: #0000bf; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .blue-background { background-color: #0000fa; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .fuchsia { color: #bf00bf; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .fuchsia-background { background-color: #fa00fa; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .gray { color: #606060; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .gray-background { background-color: #7d7d7d; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .green { color: #006000; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .green-background { background-color: #007d00; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .lime { color: #00bf00; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .lime-background { background-color: #00fa00; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .maroon { color: #600000; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .maroon-background { background-color: #7d0000; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .navy { color: #000060; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .navy-background { background-color: #00007d; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .olive { color: #606000; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .olive-background { background-color: #7d7d00; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .purple { color: #600060; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .purple-background { background-color: #7d007d; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .red { color: #bf0000; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .red-background { background-color: #fa0000; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .silver { color: #909090; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .silver-background { background-color: #bcbcbc; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .teal { color: #006060; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .teal-background { background-color: #007d7d; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .white { color: #bfbfbf; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .white-background { background-color: #fafafa; }
 
-/* line 1476, ../../style/sass/components/_asciidoc.scss */
+/* line 1487, ../../style/sass/components/_asciidoc.scss */
 .yellow { color: #bfbf00; }
 
-/* line 1480, ../../style/sass/components/_asciidoc.scss */
+/* line 1491, ../../style/sass/components/_asciidoc.scss */
 .yellow-background { background-color: #fafa00; }
 
 /* line 3, ../../style/sass/components/_awesome-icons.scss */
@@ -1199,66 +1211,69 @@ p { margin-bottom: 1.25rem; }
   #footer-text { color: rgba(0, 0, 0, 0.6); font-size: 0.9em; } }
 @media amzn-kf8 { /* line 136, ../../style/sass/components/_print.scss */
   #header, #content, #footnotes, #footer { padding: 0; } }
-/* line 62, ../../style/sass/main.scss */
+/* line 61, ../../style/sass/main.scss */
 body { overscroll-behavior: none; }
 
-/* line 66, ../../style/sass/main.scss */
-div#content { min-height: 100vh; max-width: 82.5em; padding-right: 16em; }
+/* line 65, ../../style/sass/main.scss */
+div#content { min-height: 100vh; max-width: 82.5em; }
+
+/* line 70, ../../style/sass/main.scss */
+#logo { display: block; position: fixed; width: 19em; z-index: 2; }
 
 /* hide global headline which appears on all pages */
-/* line 74, ../../style/sass/main.scss */
+/* line 79, ../../style/sass/main.scss */
 div#header > h1 { display: none; }
 
 /* increase size of h2, h3, h4, h5, relative to now missing h1 */
-/* line 78, ../../style/sass/main.scss */
+/* line 83, ../../style/sass/main.scss */
 h2#Home { display: none; }
 
-/* line 79, ../../style/sass/main.scss */
+/* line 84, ../../style/sass/main.scss */
 h2 { font-size: 2.75em; font-weight: bold; }
 
-/* line 81, ../../style/sass/main.scss */
+/* line 86, ../../style/sass/main.scss */
 h3, #toctitle, .sidebarblock > .content > .title { font-size: 2.6125em; font-weight: bold; }
 
-/* line 83, ../../style/sass/main.scss */
+/* line 88, ../../style/sass/main.scss */
 h4 { font-size: 1.7875em; font-weight: bold; }
 
-/* line 85, ../../style/sass/main.scss */
+/* line 90, ../../style/sass/main.scss */
 h5 { font-size: 1.5375em; font-weight: bold; }
 
-/* line 87, ../../style/sass/main.scss */
+/* line 92, ../../style/sass/main.scss */
 h6 { font-size: 1.375em; font-weight: bold; }
 
-/* line 91, ../../style/sass/main.scss */
+/* line 96, ../../style/sass/main.scss */
 h7 { font-size: 1.175em; font-weight: bold; }
 
-/* line 94, ../../style/sass/main.scss */
+/* line 99, ../../style/sass/main.scss */
 table.tableblock > .title, div.listingblock > .title { font-size: 1.15em; }
 
-/* line 95, ../../style/sass/main.scss */
+/* line 100, ../../style/sass/main.scss */
 .imageblock > .title { font-size: 1.15em; }
 
-/* line 96, ../../style/sass/main.scss */
+/* line 101, ../../style/sass/main.scss */
 #toctitle, .sidebarblock > .content > .title { font-size: 1.6875em; }
 
-/* line 101, ../../style/sass/main.scss */
+/* line 106, ../../style/sass/main.scss */
 h1 > a:hover, h2 > a:hover, h3 > a:hover, #toctitle > a:hover, .sidebarblock > .content > .title > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover { color: #002846; }
-/* line 105, ../../style/sass/main.scss */
+/* line 110, ../../style/sass/main.scss */
 h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor { display: none; }
-/* line 111, ../../style/sass/main.scss */
+/* line 116, ../../style/sass/main.scss */
 h1 > a.link:hover::after, h2 > a.link:hover::after, h3 > a.link:hover::after, #toctitle > a.link:hover::after, .sidebarblock > .content > .title > a.link:hover::after, h4 > a.link:hover::after, h5 > a.link:hover::after, h6 > a.link:hover::after { font-family: "FontAwesome"; content: "\f0c1" !important; line-height: inherit; font-size: smaller; padding-left: 10px; }
 
-/* line 125, ../../style/sass/main.scss */
+/* line 130, ../../style/sass/main.scss */
 a:hover { color: #ff7373; }
 
-/* line 131, ../../style/sass/main.scss */
+/* line 136, ../../style/sass/main.scss */
 ul, ol, dl { font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; list-style-position: outside; font-family: inherit; }
 
-/* line 140, ../../style/sass/main.scss */
+/* line 145, ../../style/sass/main.scss */
 td.tableblock div.content div.paragraph p { font-size: 1em !important; }
 
-/* line 147, ../../style/sass/main.scss */
+/* line 152, ../../style/sass/main.scss */
 #footer { display: none; /* hide by default */ background-color: rgba(0, 0, 0, 0.05); }
-/* line 150, ../../style/sass/main.scss */
+/* line 155, ../../style/sass/main.scss */
 #footer #footer-text { color: #a2aaad; text-align: right; }
 
 /* line 4, ../../style/sass/elements/_default.scss */
@@ -1394,7 +1409,7 @@ table.r-details > caption.title.hide-show-enabled { font-style: normal; font-wei
 /* line 3, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 { background: #112233; /* overwrite asciidoctor default margins,paddings */ padding: 0; /* indent manually to allow <a> width of 100% */ /* have a span the whole width of the TOC to avoid doing this with JS trickery */ /* do not display anything below level 5 in main toc */ /* do not display a real checkbox in front of the label*/ /* hide children of unchecked toc items */ /* show children of checked toc items */ }
 /* line 5, ../../style/sass/elements/_global-toc.scss */
-#toc.toc2 > ul { background-position-x: right; }
+#toc.toc2 > ul { background-position-x: right; position: absolute; padding-top: 10em; width: 21em; padding-bottom: 3em; }
 /* line 12, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 a { color: white; }
 /* line 18, ../../style/sass/elements/_global-toc.scss */
@@ -1432,6 +1447,9 @@ table.r-details > caption.title.hide-show-enabled { font-style: normal; font-wei
 /* line 107, ../../style/sass/elements/_global-toc.scss */
 #toc.toc2 input[type="checkbox"]:checked + label ~ ul { max-height: 500vh; transition: max-height 1s cubic-bezier(1, 0, 0.91, 0.78); }
 
+/* line 118, ../../style/sass/elements/_global-toc.scss */
+#burger { display: none; }
+
 /* line 1, ../../style/sass/elements/_highlight-hash.scss */
 h2:target, h3:target, #toctitle:target, .sidebarblock > .content > .title:target, h4:target, h5:target, h6:target { animation-name: headline-target-animation; animation-duration: 0.8s; animation-delay: 0.5s; }
 
@@ -1439,65 +1457,72 @@ h2:target, h3:target, #toctitle:target, .sidebarblock > .content > .title:target
   50% { opacity: 0.2; } }
 
 /* disable scrolling for body */
-/* line 7, ../../style/sass/elements/_search.scss */
+/* line 5, ../../style/sass/elements/_search.scss */
 body.no-scroll { overflow: hidden; }
 
 /* SEARCH FIELD */
-/* line 12, ../../style/sass/elements/_search.scss */
+/* line 10, ../../style/sass/elements/_search.scss */
 input#search { display: block; width: 85%; border-radius: 5px; border: 1px solid #425563; padding: 0.5em; font-size: 1em; box-sizing: unset; margin: auto; background-color: rgba(0, 0, 0, 0.1); color: white; margin-bottom: 1em; }
-/* line 13, ../../style/sass/elements/_search.scss */
+
+/* line 24, ../../style/sass/elements/_search.scss */
 input#search:hover { cursor: pointer; }
 
 /* CLOSE BUTTON */
-/* line 30, ../../style/sass/elements/_search.scss */
-#btn-search-close { display: block; position: absolute; top: 3em; right: 26em; color: white; font-size: 1.2em; background-color: #ff7373; height: 2em; width: 2em; cursor: pointer; }
-/* line 41, ../../style/sass/elements/_search.scss */
-#btn-search-close:hover { background-color: white; color: #ff7373; }
+/* line 29, ../../style/sass/elements/_search.scss */
+#btn-search-close { color: white; font-size: 1.2em; background-color: #ff7373; height: 2em; width: 100%; cursor: pointer; margin: 1em 0 1em 0; }
 
 /* SEARCH RESULTS */
-/* line 48, ../../style/sass/elements/_search.scss */
+/* line 42, ../../style/sass/elements/_search.scss */
 ul#search-results { display: none; }
-/* line 50, ../../style/sass/elements/_search.scss */
+
+/* line 46, ../../style/sass/elements/_search.scss */
 ul#search-results li { display: none; }
 
 /* INSTRUCTIONS */
-/* line 54, ../../style/sass/elements/_search.scss */
+/* line 51, ../../style/sass/elements/_search.scss */
 #instructions { display: none; position: fixed; bottom: 50px; border: 2px solid #425563; border-radius: 15px; box-sizing: border-box; background-color: white; margin-left: 10em; }
-@media only screen and (min-width: 768px) { /* line 54, ../../style/sass/elements/_search.scss */
-  #instructions { left: 15em; width: calc(75% - 15em); } }
-@media only screen and (min-width: 1280px) { /* line 54, ../../style/sass/elements/_search.scss */
-  #instructions { left: 20em; width: calc(75% - 20em); } }
-/* line 72, ../../style/sass/elements/_search.scss */
+
+/* line 76, ../../style/sass/elements/_search.scss */
 #instructions > div { display: none; padding: 10px; }
 
-/* line 78, ../../style/sass/elements/_search.scss */
+/* line 81, ../../style/sass/elements/_search.scss */
 span.nav-key { border: 1px solid #425563; border-radius: 3px; padding: 3px 5px; background-color: #ebebeb; color: #425563; font-weight: bold; min-width: 2em; }
 
-/* line 87, ../../style/sass/elements/_search.scss */
+/* line 91, ../../style/sass/elements/_search.scss */
 span.nav-text { color: #425563; font-size: 1.2rem; line-height: 1.2rem; }
 
-/* line 93, ../../style/sass/elements/_search.scss */
-#search-results-wrapper { display: none; z-index: 1; position: fixed; top: 0; background-color: white; overflow: scroll; height: 100vh; width: 82.5em; padding-left: 0.9375em; padding-right: 16em; margin-left: auto; margin-right: auto; /* SEARCH RESULTS */ /* END SEARCH RESULTS */ }
-/* line 107, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results { display: block; list-style: none; max-width: 62.5em; width: 75%; margin-bottom: 150px; }
-/* line 120, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results li { display: block; margin-bottom: 10px; }
-/* line 123, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results li > div { width: inherit; border-radius: 15px; position: relative; border: 1px solid #425563; }
-/* line 129, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results li > div * { margin: 0px; text-decoration: none; }
-/* line 134, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results li > div a h4, #search-results-wrapper ul#search-results li > div a p { margin-left: 40px; margin-right: 40px; margin-top: 10px; color: #002846 !important; }
-/* line 140, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results li > div a span.label { position: absolute; top: -1px; right: -1px; border-top-right-radius: 15px; border-bottom-left-radius: 15px; color: white; background-color: #425563; padding: 4px 10px; font-weight: bold; }
-/* line 151, ../../style/sass/elements/_search.scss */
+/* line 97, ../../style/sass/elements/_search.scss */
+#search-overlay-wrapper { position: absolute; display: inline-block; padding-top: 6em; background-color: #112233; width: 19em; z-index: 1; }
+
+/* line 106, ../../style/sass/elements/_search.scss */
+#search-results-wrapper { width: 35em; right: 0; position: fixed; z-index: 1; top: 0; background: linear-gradient(0deg, #e7e7e7 0%, #e7e7e7 60%, #ffffff 100%); padding: 1.5em; transition: all 0.2s ease; overflow: hidden; padding-top: 0; padding-bottom: 0; max-height: 0; box-shadow: inset 0px 0px 15px #888; box-shadow: none; }
+/* line 122, ../../style/sass/elements/_search.scss */
+#search-results-wrapper.open { max-height: 100vh; }
+
+/* line 127, ../../style/sass/elements/_search.scss */
+#search-results-wrapper ul#search-results { display: block; list-style: none; overflow-x: hidden; margin-top: 0em; margin: 0; min-height: 2em; transition: all 0.5s ease; }
+
+/* line 137, ../../style/sass/elements/_search.scss */
+#search-results-wrapper ul#search-results li { display: block; margin-bottom: 2em; }
+
+/* line 142, ../../style/sass/elements/_search.scss */
+#search-results-wrapper ul#search-results li > div { position: relative; }
+
+/* line 146, ../../style/sass/elements/_search.scss */
+#search-results-wrapper ul#search-results li > div * { margin: 0; text-decoration: none; }
+
+/* line 152, ../../style/sass/elements/_search.scss */
+#search-results-wrapper ul#search-results li > div a h4, #search-results-wrapper ul#search-results li > div a p { color: #002846; }
+
+/* line 156, ../../style/sass/elements/_search.scss */
+#search-results-wrapper ul#search-results li > div a span.label { display: inline-block; color: white; background-color: #425563; padding: 0.25em 0.6em; font-weight: bold; margin-top: 0.1em; }
+
+/* line 165, ../../style/sass/elements/_search.scss */
 #search-results-wrapper ul#search-results li > div a:hover { text-decoration: none; color: #002846; }
-/* line 158, ../../style/sass/elements/_search.scss */
-#search-results-wrapper ul#search-results li.selected > div { border: 1px solid #2983fb; background-color: rgba(41, 131, 251, 0.2); }
-/* line 161, ../../style/sass/elements/_search.scss */
+
+/* line 170, ../../style/sass/elements/_search.scss */
 #search-results-wrapper ul#search-results li.selected > div a > span.label { background-color: #2983fb; }
 
-/* END SEARCH RESULTS WRAPPER */
 /* line 1, ../../style/sass/elements/_minitoc.scss */
 #minitoc { background-color: transparent; position: fixed; right: -4em; transition: height 500ms ease-in-out; overflow: hidden; font-size: 0.9em; width: 15em; margin-right: 5vw; z-index: 1; }
 /* line 12, ../../style/sass/elements/_minitoc.scss */
@@ -1512,3 +1537,36 @@ span.nav-text { color: #425563; font-size: 1.2rem; line-height: 1.2rem; }
 #minitoc li.active { border-left: 3px solid #002846; padding-left: 18px; }
 /* line 42, ../../style/sass/elements/_minitoc.scss */
 #minitoc li.active a { font-weight: bold; }
+
+@media only screen and (max-width: 768px) { /* line 9, ../../style/sass/components/_mobile.scss */
+  div#content { position: absolute; left: 0; padding-right: 0; }
+  /* line 15, ../../style/sass/components/_mobile.scss */
+  div.sect3 { padding-top: 2em; }
+  /* line 21, ../../style/sass/components/_mobile.scss */
+  h6, h5, h4 { padding-top: 2.5em; }
+  /* line 25, ../../style/sass/components/_mobile.scss */
+  #toc.toc2 { width: 19em; position: fixed; height: 100vh; z-index: 2; top: 0; border-bottom: 1px; border-right: 1px; overflow-x: hidden; transition: all 0.5s linear; }
+  /* line 36, ../../style/sass/components/_mobile.scss */
+  #toc.toc2.closed { margin-left: -19em; }
+  /* line 41, ../../style/sass/components/_mobile.scss */
+  #burger { display: block; padding: 0.5em; position: fixed; left: 0; font-size: 1.8em; border: none; color: #002846; background-color: #fff; z-index: 1; }
+  /* line 53, ../../style/sass/components/_mobile.scss */
+  #minitoc { display: none; }
+  /* line 57, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper { transition: all 0.5s linear; }
+  /* line 60, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper.hidden { margin-left: -19em; }
+  /* line 64, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper h2 { font-size: 1.2em; color: #fff; }
+  /* line 73, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper ul#search-results li > div a p { color: #fff; font-size: 0.7em; }
+  /* line 78, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper ul#search-results li > div a h4 { padding-top: 0; font-size: 1em; color: #fff; }
+  /* line 84, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper ul#search-results li > div a span.label { font-size: 0.85em; }
+  /* line 92, ../../style/sass/components/_mobile.scss */
+  #search-results-wrapper ul#search-results { height: calc(100% - 9em); }
+  /* line 96, ../../style/sass/components/_mobile.scss */
+  div#search-results-wrapper { z-index: 2; left: 0; top: 9em; width: 19em; background: unset; background-color: #123; }
+  /* line 104, ../../style/sass/components/_mobile.scss */
+  div#search-results-wrapper.open { height: calc(100% - 9em); } }

@@ -111,9 +111,9 @@ function scrollToHash(id) {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView();
-    
+
     // var adjustOffsetBy = 20;
-    
+
     // console.log('adjust by: ' + adjustOffsetBy);
     // $('html, body').stop().animate({
     //     'scrollTop': element.offsetTop + adjustOffsetBy
@@ -164,7 +164,7 @@ function reinitializeAfterPageSwitch() {
   setBuildDate();
   loadBrowserFixes();
   initSampleTabs();
-  if(overlayOpen == true) {
+  if (overlayOpen == true) {
     openOverlay();
   } // to adjust div#content padding-top if search field is open,
   addMobileNavFunctions();

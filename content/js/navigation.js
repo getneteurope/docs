@@ -186,21 +186,16 @@ function getIDfromURL() {
 
 function addMobileNavFunctions() {
   if (!document.getElementById('burger')) {
-    var burger = document.createElement('button');
+    var burger = document.createElement('div');
     burger.setAttribute('id', 'burger');
     burger.classList.add('fa');
     burger.innerHTML = '';
-    burger.addEventListener('click', ()=>{
+    burger.addEventListener('click', () => {
       document.getElementById('toc').classList.remove('closed');
       document.getElementById('search-results-wrapper').classList.remove('hidden');
     });
-    document.getElementById('toc').insertBefore(burger, document.getElementById('logo'));
+    document.body.insertBefore(burger, document.getElementById('content'));
   }
-
-
-  var specifiedElement = document.getElementById('toc');
-
-  //I'm using "click" but it works with any event
   document.getElementById('content').addEventListener('click', function (event) {
     console.log('close nav')
     document.getElementById('toc').classList.add('closed');
