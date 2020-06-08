@@ -107,9 +107,26 @@ if (document.pageswitch.disabled === false) {
 function scrollToHash(id) {
   //  console.log('scrollToHash id: ' + id);
   document.scrollspy.disabled = true;
+
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView();
+    
+    // var adjustOffsetBy = 20;
+    
+    // console.log('adjust by: ' + adjustOffsetBy);
+    // $('html, body').stop().animate({
+    //     'scrollTop': element.offsetTop + adjustOffsetBy
+    // }, 900, 'swing', function () {
+    //     window.location.hash = id;
+    // });
+
+    // var srw = document.getElementById('search-results-wrapper');
+    // if(srw) {
+    //   var offsetToAdd = srw.offsetHeight;
+    //   document.getElementById('#content').style.paddingTop = offsetToAdd + 'px';
+    // }  
+
     /* because scrollIntoView has no callback */
     setTimeout(() => {
       handleScrollEvent();
@@ -147,6 +164,10 @@ function reinitializeAfterPageSwitch() {
   setBuildDate();
   loadBrowserFixes();
   initSampleTabs();
+  if(overlayOpen == true) {
+    openOverlay();
+  } // to adjust div#content padding-top if search field is open,
+  addMobileNavFunctions();
 }
 
 /**

@@ -179,7 +179,7 @@ function handleMiniTocClick(id) {
   event.stopPropagation();
   event.preventDefault();
   console.log('minitoc click, target: ' + id);
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  scrollToHash(id);
 }
 
 /**

@@ -5,17 +5,61 @@ var selectIdx = 0;
 var overlayOpen = false;
 
 function openOverlay(event) {
-    $('#search-results-wrapper').show();
     $('input#search').focus();
-    $('div#content').addClass('blur');
-    $('body').addClass('no-scroll');
+    var srw = $('#search-results-wrapper');
+
+    // copy element
+    var clone = srw.clone();
+
+    // remove transition
+    clone.css('transition', 'none');
+    clone.css('visibility', 'hidden');
+
+    // add max-height from .open
+    clone.css('max-height', '60vh');
+
+    // get height
+    clone.appendTo('body');
+    var srwHeight = clone.height();
+    console.log('clone height: ' + srwHeight);
+
+    // remove copy
+    clone.remove();
+
+    // add open to real element
+    srw.addClass('open');
+
+    // set padding of content
+    //$('#content').css('padding-top', srwHeight + 'px');
+
+    overlayOpen = true;
+}
+
+function DISABLEDopenOverlay(event) {
+    $('input#search').focus();
+    var srw = $('#search-results-wrapper');
+    srw.css('visibility', 'hidden'); // make srw invisible first
+    var transition = srw.css('transition'); // store transition for later
+    console.log(transition)
+    srw.css('transition', 'none'); // remove transition because we want to get height in next step
+    srw.addClass('open'); // set to open
+    console.log(srw);
+    console.log('height: ' + srw[0].offsetHeight)
+    var srwHeight = srw[0].offsetHeight;
+    srw.removeClass('open'); // close again
+    srw.css('transition', transition); // add stored transition again
+    // 
+    srw.css('visibility', ''); // make visible again
+    srw.addClass('open'); // set to open
+    $('#content').css('padding-top', srwHeight + 'px');
     overlayOpen = true;
 }
 
 function closeOverlay(event) {
-    $('#search-results-wrapper').hide();
-    $('div#content').removeClass('blur');
-    $('body').removeClass('no-scroll');
+    var srw = $('#search-results-wrapper');
+    var srwHeight = srw.height();
+    srw.removeClass('open');
+    $('#content').css('padding-top', '');
     overlayOpen = false;
 }
 
@@ -43,19 +87,19 @@ $(document).ready(function () {
     var wrapper = $('<div id="search-results-wrapper"><div class="sect1"><h2>Search Results <span id="num-results">...</span></h2></div></div>');
     var btnCloseSearch = $('<button type="button" id="btn-search-close" class="close fa"></button>');
     var resultsList = $('<ul id="search-results">');
-    btnCloseSearch.appendTo(wrapper);
     resultsList.appendTo(wrapper);
+    btnCloseSearch.appendTo(wrapper);
     wrapper.insertBefore('div#content');
 
     // open/close overlay depending on where the user clicks
-    $('#search').on('click', (event) =>{
+    $('#search').on('click', (event) => {
         event.stopPropagation();
-        openOverlay();
+        if ($('#search').val() != '') openOverlay();
     });
     //$('#search').on('blur', closeOverlay);
     $('#btn-search-close').click(closeOverlay);
 
-    $(window).keyup(function (event) {
+    $('#search').keyup(function (event) {
         var keyCode = event.keyCode || event.which;
         switch (keyCode) {
             case 38: // arrow up
@@ -67,11 +111,11 @@ $(document).ready(function () {
     });
 
     // TODO fix scrolling when navigating with arrow keys and overflow: scroll
-    $(window).keyup(function (event) {
-        // return if overlay is not open, i.e. do nothing
-        if (!overlayOpen)
-            return;
+    $('#search').keyup(function (event) {
 
+        if ($('#search').val() == '') {
+            closeOverlay();
+        }
         var keyCode = event.keyCode || event.which;
         var selected = $('.selected');
         var next = null;
@@ -103,10 +147,11 @@ $(document).ready(function () {
                 break;
             default:
                 var searchTerm = $('#search').val();
-                if(searchTerm != '') {
+                if (searchTerm != '') {
                     var results = search(searchTerm);
                     $('#num-results').text('(' + results.length + ')');
                     render(results);
+                    openOverlay();
                 }
                 else {
                     $('#num-results').text('...');
@@ -157,7 +202,7 @@ function search(term) {
 
 // show the search results in the list ul#serach-results
 function render(results) {
-
+    $('#search-results-wrapper').addClass('open');
     var resultsList = $('ul#search-results');
     console.log(results);
     resultsList.empty();
@@ -179,8 +224,17 @@ function render(results) {
 function formatEntry(entry, count) {
     var dbentry = db[entry.ref];
     var div = $('<div/>');
-    var link = $('<a/>').attr('href', dbentry.file + '#' + entry.ref).attr('onclick', 'closeOverlay()');
+    var link = $('<a/>').attr('href', dbentry.file + '#' + entry.ref);
+    link.on('click', (event) => {
+        console.log('click on link')
+        openOverlay();
+        // console.log('ele top at: ' + $('#' + entry.ref)[0].offsetTop);
+        // var srwHeight = $('#search-results-wrapper').height();
+        // var ePos = $('#' + entry.ref)[0].offsetTop;
+        // var scollPos = ePos + srwHeight;
 
+    });
+    // scroll to element + overlayHeight
     link.append($('<h4>').text(dbentry.title));
     link.append($('<p/>').text(dbentry.body));
     if (dbentry.parents !== null && dbentry.parents.length > 0)

@@ -33,11 +33,6 @@ function trackVisit(...args) {
  */
 function enableToc() {
   console.log('enableToc');
-  /* scroll toc to currents main section */
-  const pageID = document.querySelector('body').getAttribute('id');
-
-  /* TODO: doesn#t work. minor issue but check why */
-  document.querySelector('#toc_cb_' + pageID).scrollIntoView({ behavior: "smooth" });
 
   /* if page is openen with a deep link (hash), check the correct box (if it exists) */
   var hash = window.location.hash.substring(1);
@@ -55,6 +50,7 @@ function enableToc() {
       closeOverlay();
     })
   })
+  addMobileNavFunctions();
   document.tocInitialized = true;
 }
 
@@ -184,9 +180,36 @@ function scrollToNavigationItem(id = 'auto') {
  */
 function getIDfromURL() {
   return window.location.href.split('.html#')[1]
-  ? window.location.href.split('.html#')[1]
-  : window.location.href.split('/').pop().split('#')[0].split('?')[0].slice(0, -5);
+    ? window.location.href.split('.html#')[1]
+    : window.location.href.split('/').pop().split('#')[0].split('?')[0].slice(0, -5);
 }
+
+function addMobileNavFunctions() {
+  if (!document.getElementById('burger')) {
+    var burger = document.createElement('button');
+    burger.setAttribute('id', 'burger');
+    burger.classList.add('fa');
+    burger.innerHTML = '';
+    burger.addEventListener('click', ()=>{
+      document.getElementById('toc').classList.remove('closed');
+      document.getElementById('search-results-wrapper').classList.remove('hidden');
+    });
+    document.getElementById('toc').insertBefore(burger, document.getElementById('logo'));
+  }
+
+
+  var specifiedElement = document.getElementById('toc');
+
+  //I'm using "click" but it works with any event
+  document.getElementById('content').addEventListener('click', function (event) {
+    console.log('close nav')
+    document.getElementById('toc').classList.add('closed');
+    document.getElementById('search-results-wrapper').classList.add('hidden');
+  });
+}
+
+
+
 
 
 /**
