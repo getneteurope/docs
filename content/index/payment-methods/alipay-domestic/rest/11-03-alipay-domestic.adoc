@@ -46,7 +46,7 @@ For transaction type details which are not given here look at
 |For the transaction type _debit._
 |``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
 |For the transaction types _refund-debit_ and _refund-request._
-|``\https://{test-instance-hostname}/engine/rest/payments/``
+|``\https://{rest-api-test-endpoint}``
 
 h| Merchant Account ID (MAID)
 2+| 3ed75e0a-d70a-421f-a047-c70ba54b9317

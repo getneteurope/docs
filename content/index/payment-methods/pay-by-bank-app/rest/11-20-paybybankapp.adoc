@@ -46,7 +46,7 @@ merchandise |
 |===
 .2+h| URL(s) Endpoints |
 For the transaction type _debit_.        |``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
-                       |For the transaction type _refund-debit_. |``\https://{test-instance-hostname}/engine/rest/payments/``
+                       |For the transaction type _refund-debit_. |``\https://{rest-api-test-endpoint}``
 h| Merchant Account ID (MAID)
 2+|Please contact <<ContactUs, merchant support>> for complete test credentials.
 
