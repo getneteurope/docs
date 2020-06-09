@@ -17,7 +17,7 @@ Enter the endpoint. +
 Depending on payment method and transaction, the testing endpoint is either +
 ``\https://{rest-api-test-endpoint}`` +
 or +
-``\https://{test-instance-hostname}/engine/rest/paymentmethods/``.
+``\https://{rest-api-test-apm-endpoint}``.
 
 . *Authorization:* +
 Select Authorization Type ``Basic Auth`` and enter the test credentials (Username/Password). +

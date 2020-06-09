@@ -108,7 +108,7 @@ a|For transaction types
 * ``authorization`` +
 * ``credit``
 //-
-|``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+|``\https://{rest-api-test-apm-endpoint}``
 a|For transaction types
 
 * ``capture-authorization``

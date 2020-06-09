@@ -97,7 +97,7 @@ been returned.
 |===
 .2+h| URLs (Endpoints)
 | For transaction type _authorization_.
-| ``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+| ``\https://{rest-api-test-apm-endpoint}``
 | For transaction types _capture-authorization_, _refund-capture_ and _void-authorization._
 | ``\https://{rest-api-test-endpoint}``
 h| Merchant Account ID (MAID)

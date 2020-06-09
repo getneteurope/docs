@@ -131,7 +131,7 @@ For the initial authorization of recurring payments: +
 * transaction type ``authorization`` **and** sequence-type ``first``
 //-
 
-| ``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+| ``\https://{rest-api-test-apm-endpoint}``
 
 a| For transaction types 
 
