@@ -1472,7 +1472,7 @@ include::{root}/samples/xml/CreditCardSamplesPaymentFacilitatorTransactions_XML_
 .NVP Authorization Request (Successful)
 [source,nvp,subs=attributes+]
 ----
-POST https://{rest-api-test-endpoint}/ HTTP/1.1
+POST https://{rest-api-test-endpoint} HTTP/1.1
 Content-Type: application/x-www-form-urlencoded;charset=UTF-8
 Content-Length: 810
 Host: {test-instance-hostname}
