@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageLinks();
   trackVisit();
   scrollToNavigationItem('auto');
+  closeNavMobile();
 });
 
 /**
@@ -33,11 +34,6 @@ function trackVisit(...args) {
  */
 function enableToc() {
   console.log('enableToc');
-  /* scroll toc to currents main section */
-  const pageID = document.querySelector('body').getAttribute('id');
-
-  /* TODO: doesn#t work. minor issue but check why */
-  document.querySelector('#toc_cb_' + pageID).scrollIntoView({ behavior: "smooth" });
 
   /* if page is openen with a deep link (hash), check the correct box (if it exists) */
   var hash = window.location.hash.substring(1);
@@ -55,6 +51,7 @@ function enableToc() {
       closeOverlay();
     })
   })
+  addMobileNavFunctions();
   document.tocInitialized = true;
 }
 
@@ -142,6 +139,7 @@ function addClickHander(selector) {
       }
       scrollToHash(id);
       scrollToNavigationItem(id);
+      closeNavMobile();
     })
   });
 }
@@ -184,9 +182,40 @@ function scrollToNavigationItem(id = 'auto') {
  */
 function getIDfromURL() {
   return window.location.href.split('.html#')[1]
-  ? window.location.href.split('.html#')[1]
-  : window.location.href.split('/').pop().split('#')[0].split('?')[0].slice(0, -5);
+    ? window.location.href.split('.html#')[1]
+    : window.location.href.split('/').pop().split('#')[0].split('?')[0].slice(0, -5);
 }
+
+function addMobileNavFunctions() {
+  if (!document.getElementById('burger')) {
+    var burger = document.createElement('div');
+    burger.setAttribute('id', 'burger');
+    burger.classList.add('fa');
+    burger.innerHTML = '';
+    var mobilePageTitle = document.createElement('span');
+    mobilePageTitle.setAttribute('id', 'mobile-pageheader');
+    burger.appendChild(mobilePageTitle);
+    burger.addEventListener('click', () => {
+      openNavMobile();
+    });
+    document.body.insertBefore(burger, document.getElementById('content'));
+  }
+  document.getElementById('content').addEventListener('click', function (event) {
+    console.log('close nav')
+    closeNavMobile();
+  });
+}
+
+function closeNavMobile() {
+  document.getElementById('toc').classList.add('closed');
+  document.getElementById('search-results-wrapper').classList.add('hidden');
+}
+
+function openNavMobile() {
+  document.getElementById('toc').classList.remove('closed');
+  document.getElementById('search-results-wrapper').classList.remove('hidden');
+}
+
 
 
 /**
@@ -288,6 +317,7 @@ function handleScrollEvent(skipScrollSpy = true) {
         }
       }
     })
+    refreshTitle();
   }, { timeout: 500 });
 }
 
