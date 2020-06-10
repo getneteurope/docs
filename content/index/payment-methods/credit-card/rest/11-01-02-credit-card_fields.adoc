@@ -335,7 +335,7 @@ include::{root}/include/fields/rest_cc/request/req-card.adoc[]
 
 :listname: CC_Fields_xmlelements
 
-include::{root}/include/field-list-headers/rest_cc/response/req-card-emv.adoc[]
+include::{root}/include/field-list-headers/rest_cc/request/req-card-emv.adoc[]
 
 [cols="30m,6,9,7,48a"]
 |===
