@@ -3,7 +3,7 @@
 === Carrier Billing: Debit
 
 [#CarrierBilling_Debit_Samples_JSON]
-[discrete.tab-content.tab]
+[discrete.tab-content.tab-json]
 ==== JSON
 
 [.r-details]
@@ -47,7 +47,7 @@ include::{root}/auto-generated/samples/json/CarrierBilling_Debit_response.json[]
 ----
 
 [#CarrierBilling_Debit_Samples_NVP]
-[discrete.tab-content.tab]
+[discrete.tab-content.tab-nvp]
 ==== NVP
 
 [.r-details]
@@ -96,7 +96,7 @@ include::{root}/auto-generated/samples/nvp/CarrierBilling_Debit_response.nvp[]
 include::{root}/auto-generated/samples/nvp/CarrierBilling_Debit_response_tbl.adoc[]
 
 [#CarrierBilling_Debit_Samples_XML]
-[discrete.tab-content.tab]
+[discrete.tab-content.tab-xml]
 ==== XML
 
 [.r-details]
