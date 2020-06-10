@@ -331,11 +331,11 @@ include::{root}/include/fields/rest_cc/request/req-card.adoc[]
 :!listname:
 
 [#CC_Fields_xmlelements_request_cardEMV]
-.card.card-emv
-
-For card present transactions.
+.``card-emv``
 
 :listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/req-card-emv.adoc[]
 
 [cols="30m,6,9,7,48a"]
 |===
@@ -745,9 +745,13 @@ include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
 
 
 [#CC_Fields_xmlelements_response_cardEMV]
-.``card.card-emv``
+.``card-emv``
 
-For card present transactions.
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-card-emv.adoc[]
+
+:!listname:
 
 [cols="30m,9,7,48a"]
 |===

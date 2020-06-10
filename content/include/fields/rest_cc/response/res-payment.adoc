@@ -23,9 +23,20 @@ Format: ``{timestamp-pattern}``
 | This is the result of address validation.
 
 | csc-code  
-| String 
-| 12 
-| Code indicating Card Verification Value (CVC/CVV) verification results.
+| Enumeration 
+| 1 
+| Code indicating Card Verification Value (CVC/CVV) verification results. +
+Accepted values: +
+
+* ``M`` - Matched (correct) CVC-2 +
+* ``N`` - Not Valid CVC-2 +
+* ``P`` - Processing not performed +
+* ``S`` - The CVV2 should be on the card but the merchant indicates it is not +
+* ``U`` - Unregistered Issuer +
+* ``Y`` - CVC-1 incorrect +
+* ``Z`` - Unknown (Unknown CVC Status) 
+
+//-
 
 | consumer-id  
 | String 

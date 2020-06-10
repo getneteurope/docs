@@ -1,0 +1,3 @@
+``card-emv`` a child of <<{listname}_request_payment, payment.card.>>.
+
+It is used for card present transactions. You can find additional ``card-emv`` fields in the <<{listname}_response_cardEMV, Response > ``card-emv``>> section.
