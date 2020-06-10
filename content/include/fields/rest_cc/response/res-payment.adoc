@@ -23,7 +23,7 @@ Format: ``{timestamp-pattern}``
 | This is the result of address validation.
 
 | csc-code  
-| Enumeration 
+| String 
 | 1 
 | Code indicating Card Verification Value (CVC/CVV) verification results. +
 Accepted values: +
