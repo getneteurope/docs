@@ -940,23 +940,31 @@ If one or more ``transaction-id``s are invalid or missing, Account Updater
 
 Invalid records are marked accordingly in the response error file.
 
-NOTE: Even if a request file contains invalid or missing ``transaction-id``s, records with valid ``transaction-id``s  are processed as normal, and you can retrieve a response success file from ``FLIX``/``to …​``/``new``.
+NOTE: Even if a request file contains invalid or missing ``transaction-id``s, records with valid ``transaction-id``s  are processed as normal, and you can retrieve a response success file from ``FLIX``/``to ...``/``new``.
 --
 
 
-[#CreditCard_PaymentFeatures_VOP]
-=== Visa Offers Platform
 
-_Visa_ provides a loyalty program called _Visa Offers._ With the _Visa Offers Platform (VOP)_ you can enroll your consumers' cards and check their loyality based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
+[#CreditCard_PaymentFeatures_LoyaltyPrograms]
+=== Loyalty Programs
 
-[#CreditCard_PaymentFeatures_VOP_TransactionTypes]
+Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard Rewards Program_ (MRP). With these loyalty programs you can enroll your consumers' cards and record their loyality based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
+
+// ggf heißt das Mastercard Programm "Mastercard® Card Linked Services". Muss von Maria geklärt werden.
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
 
-_Visa Offers Platform_ uses the transaction type _enrollment_ only.
-It is needed to enroll a card in the _Visa Offers Platform._
+Enroll a card in the loyalty program with the transaction type _enrollment_.
 
-[#CreditCard_PaymentFeatures_VOP_TestCredentials]
+NOTE: The transaction type _enrollment_ for loyalty programs is different to the transaction type _check-enrollment_ for <<3DS2_checkenrollment, 3DS2 payment processes>>.
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials]
 ==== Test Credentials
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_VOP]
+[discrete]
+._VOP_
 
 |===
 h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
@@ -966,24 +974,48 @@ h|Password | woU6xxn17HhSi-
 h|Secret Key | d40ec430-89eb-4c52-ba2c-98d9e8910fb3
 |===
 
-[#CreditCard_PaymentFeatures_VOP_Workflow]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_MRP]
+[discrete]
+._MRP_
+
+|===
+h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
+h|Merchant Account ID (MAID) | 3a645860-9f9d-4846-83a3-aa3451f842c4
+h|Username | 61613-MCRewards
+h|Password | TqlXmquI8jB2 
+h|Secret Key | ca0cd974-8523-4bba-8cca-0572f9f30c74
+|===
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_VOPMRP]
+[discrete]
+._VOP_ and _MRP_
+
+|===
+h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
+h|Merchant Account ID (MAID) | 2df5742a-ee65-4bf4-8a5a-8b23f960c3e7
+h|Username | 61613-ShopBack
+h|Password | 5WKJIj9UMbf9
+h|Secret Key | 361c4cf1-b71b-4996-9c05-2d0eac7bfeb3
+|===
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Workflow]
 ==== Workflow
 
 .Enroll Card
 
-. Merchant sends enrollment request.
-. {payment-gateway} returns enrollment response.
+. Merchant sends _enrollment_ request.
+. {payment-gateway} returns _enrollment_ response.
 
 //-
 
-.Add Card
+.Add Card (VOP only)
 
 . Merchant sends add card request.
 . {payment-gateway} returns add card response.
 
-//-
+//which transaction type do you use for "Add Card"?
 
-[#CreditCard_PaymentFeatures_VOP_Fields]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields]
 ==== Fields
 
 A field can either be *mandatory* (M) or *optional* (O).
@@ -995,6 +1027,12 @@ A field can either be *mandatory* (M) or *optional* (O).
 //-
 
 .Enrollment Request
+
+Transaction type must be ``enrollment``.
+
+// transaction type size: 22 (given here) or 30 (given in the CC table)?
+// payment-method[@name] size 9 (given here) or 15 (given in the CC table)?
+
 [%autowidth]
 [cols="m,,,,"]
 |===
@@ -1002,125 +1040,27 @@ A field can either be *mandatory* (M) or *optional* (O).
 
 5+h| payment
 
-| merchant-account-id
-| M
-| String
-| 36
-| Unique identifier for a merchant account.
-
-| request-id
-| M
-| String
-| 150
-| Identification number of the request. It has to be unique for each request.
-
-| transaction-type
-| M
-| String
-| 22
-| Type of the transaction. Must be ``enrollment``.
-
-| payment-methods/payment-method[@name]
-| M
-| String
-| 9
-| Name of the payment method. Must be ``creditcard``.
-
-| api-id
-| O
-| String
-| 36
-| The ``api-id`` is always returned in the notification.
-
-| consumer-id
-| M/O
-| String
-| 50
-a| Identifier for the consumer. +
+| consumer-id | M/O | String | 50 a| Identifier for the consumer. +
 At least one of the following must be present: ``consumer-id``, ``email`` or ``phone.`` +
-
-The ``consumer-id`` is mandatory for <<CreditCard_PaymentFeatures_VOP_Samples_TokenizedenrollmentRequest, Enroll Card with Token>>.
-
-5+h| card
-
-| card-type
-| M
-| String
-| 15
-| Card type of the consumer. Must be ``visa``.
-
-| account-number
-| M
-| String
-| 36
-| Card account number of the consumer.
-
-| expiration-year
-| M
-| Numeric
-| 4
-| Expiration year of the consumer's card.
-
-| expiration-month
-| M
-| Numeric
-| 2
-| Expiration month of the consumer's card.
-
-| security-code
-| O
-| String
-| 4
-| Security code of the consumer's card.
+The ``consumer-id`` is mandatory for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, Enroll Card with Token>>.
 
 5+h| account-holder
 
-| email
-| M/O
-| String
-| 64
-| Email address of the consumer. +
+| email | M/O | String | 64 | Email address of the consumer. +
 At least one of the following must be present: ``consumer-id``, ``email`` or ``phone``.
 
-// | phone
-// | M/O
-// | String
-// | 32
-// | This is the phone number of the consumer. At least one of the following must be present: consumer-id, email or phone. +
+| phone | M/O | String | 32 | This is the phone number of the consumer. At least one of the following must be present: consumer-id, email or phone. +
+Example: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the _phone_ field.
 
-// NOTE: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the _phone_ field.
-
-| phone-country-code
-| M/O
-| String
-| 64
+| phone-country-code | M/O | String | 64
 a| Country identifying information for the contact. +
 Must be present if phone number is used. +
-
-If +1 999 555 0100 is the phone number in international format, then ``1`` is the value of the ``phone-country-code`` field.
+Example: If +1 999 555 0100 is the phone number in international format, then ``1`` is the value of the ``phone-country-code`` field.
 
 5+h| card-token
 
-| token-id
-| O
-| String
-| 36
-| Token corresponding to ``card.account-number`` of the consumer.
+| masked-account-number | O | String | 36 | Masked version of ``card.account-number`` of the consumer, e.g. ``440804+++******+++7893``.
 
-| masked-account-number
-| O
-| String
-| 36
-| Masked version of ``card.account-number`` of the consumer, e.g. ``440804+++******+++7893``.
-
-5+h| loyality-card
-
-| promotion-code
-| O
-| Numeric
-| 36
-| Promotional code associated with the enrollment of the user. +
-_Visa Offers Platform_ sets the PromoCode to upper case upon receipt. Alphanumeric. No special characters.
 |===
 
 //-
@@ -1131,260 +1071,800 @@ _Visa Offers Platform_ sets the PromoCode to upper case upon receipt. Alphanumer
 |===
 |Field | Datatype | Description
 
-3+h| payment
+// | instrument-country | 
 
-| transaction-id
-| String
-| Unique identifier for a transaction. It is generated by {payment-provider-name}.
+// >>>>> the following sentence must be added to CC field table: https://docs.wirecard.com/CC_Main.html#CC_Fields_xmlelements_response_payment
+// Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
+// What is meant with "engine"?
 
-| instrument-country
-| String
-a| The instrument country retrieves the issuer country of a certain credit card. It returns a two-digit country code. +
+// >>>>> card-data must be integrated in CC field table
+// 3+h| card-data
 
-Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
+// | issuer-name | String a| Name of the card issuer. +
+// Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
 
-3+h| statuses
 
-| status
-| String
-| Status of a transaction.
+// >>>>> loyalty fields belong to loyalty-card. loyalty-card must be integrated in CC field response table "https://docs.wirecard.com/CC_Main.html#CC_Fields_xmlelements_response_loyalty-card"
+// 3+h| loyalty-card
 
-| status@code
-| String
-| Code of the status of a transaction.
-
-| status@description
-| String
-| Description of the status code of a transaction.
-
-| status@severity
-| String
-| Provides information if a status is a ``warning``, an ``error`` or an ``information``.
-
-3+h| card-data
-
-| issuer-name
-| String
-a| Name of the card issuer. +
-
-Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
-
-3+h| loyalty
-
-| user-id
-| String
-| Unique _VOP_ user ID generated by the _VOP_ system upon successful enrollment.
-
-| card-id
-| String
-| Unique _VOP_ card ID generated by the _VOP_ system upon successful enrollment.
+// | user-id | String | Unique loyalty program user ID generated by the issuer (or scheme?) upon successful enrollment.
+// | card-id | String | Unique loyalty program card ID generated by the issuer (or scheme?) upon successful enrollment.
+// >>>>> ask Pavol: issuer or scheme?
+// Tell Pavol: Both "user-id" and "card-id" are now response fields (according to VOP description) and contradicting MRP description (says, it's used in request as well).
 |===
 
 .Add Card Request
+
+Card type must be ``visa`` or ``mastercard``.
+
 [%autowidth]
 [cols="m,,,,"]
 |===
 |Field | Request | Datatype | Size | Description
 
-5+h| payment
 
-| merchant-account-id
-| M
-| String
-| 36
-| Unique identifier for a merchant account.
+// >>>>> the following element must be added to CC field table: https://docs.wirecard.com/CC_Main.html#CC_Fields_xmlelements_request_payment
+// 5+h| loyalty-card
 
-| request-id
-| M
-| String
-| 150
-| Identification number of the request. It has to be unique for each request.
+// | promotion-code | O | Numeric | 36 | Promotional code associated with the enrollment of the user. +
+// _Visa Offers Platform_ sets the PromoCode to upper case upon receipt. Alphanumeric. No special characters.
 
-| transaction-type
-| M
-| String
-| 22
-| Type of the transaction. Must be ``enrollment``.
+// | product-code ||| Bank product code
+// Info for "product-code" is rather poor. It's only available in the MRP table, not in the VOP table.
 
-| payment-methods/payment-method[@name]
-| M
-| String
-| 9
-| Name of the payment method. Must be ``creditcard``.
+// Loyalty belongs to loyalty-card
+// 5+h| loyalty
 
-| api-id
-| O
-| String
-| 36
-| The ``api-id`` is always returned in the notification.
-
-5+h| card
-
-| card-type
-| M
-| String
-| 15
-| Card type of the consumer. Must be ``visa`` or ``mastercard``.
-
-| account-number
-| M
-| String
-| 36
-| Card account number of the consumer.
-
-| expiration-year
-| M
-| Numeric
-| 4
-| Expiration year of the consumer's card.
-
-| expiration-month
-| M
-| Numeric
-| 2
-| Expiration month of the consumer's card.
-
-| security-code
-| O
-| String
-| 4
-| Security code of the consumer's card.
-
-5+h| card-token
-
-| token-id
-| O
-| String
-| 36
-| Token corresponding to ``card.account-number`` of the consumer.
-
-| masked-account-number
-| O
-| String
-| 36
-| Masked version of _card.account-number_ of the consumer, e.g. ``440804+++******+++7893``.
-
-5+h| loyality-card
-
-| promotion-code
-| O
-| Numeric
-| 36
-| Promotional code associated with the enrollment of the user. +
-_Visa Offers Platform_ sets the PromoCode to upper case upon receipt. Alphanumeric. No special characters.
-
-5+h| loyalty
-
-| user-id
-| M
-| String
-| 36
-| Unique _Visa Offers Platform_ user ID generated by the _VOP_ system upon successful enrollment.
-
-| card-id
-| O
-| String
-| 36
-| Unique _Visa Offers Platform_ card ID generated by the _VOP_ system upon successful enrollment.
+// | user-id | M | String | 36 | Unique _Visa Offers Platform_ user ID generated by the _VOP_ system upon successful enrollment.
+// | card-id | O | String | 36 | Unique _Visa Offers Platform_ card ID generated by the _VOP_ system upon successful enrollment.
+// Tell Pavol: Both "user-id" and "card-id" are now response fields (according to VOP description) and contradicting MRP description (says, it's used in request as well).
+// 
 |===
 
-.Add Card Response
-[%autowidth]
-[cols="m,,"]
-|===
-|Field | Datatype | Description
-
-3+h| payment
-
-| transaction-id
-| String
-| Unique identifier for a transaction. It is generated by {payment-provider-name}.
-
-| instrument-country
-| String
-a| Country code of the card issuer. +
-
-Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
-
-3+h| statuses
-
-| status
-| String
-| Status of a transaction.
-
-| status@code
-| String
-| Code of the status of a transaction.
-
-| status@description
-| String
-| Description of the status code of a transaction.
-
-| status@severity
-| String
-| Provides information if a status is a ``warning``, an ``error`` or an ``information``.
-
-3+h| card-data
-
-| issuer-name
-| String
-a| Name of the card issuer. +
-
-Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
-|===
-
-
-[#CreditCard_PaymentFeatures_VOP_Samples]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples]
 ==== Samples
 
-IMPORTANT: For a successful test each request requires a _Visa_ credit card number that has not been used before. Make sure to change the credit card number with every new request.
+IMPORTANT: For a successful test each request requires a _Visa_ or _Mastercard_ credit card number that has not been used before. Make sure to change the credit card number with every new request.
 
-[#CreditCard_PaymentFeatures_VOP_Samples_EnrollmentRequest]
-._Enrollment_ Request
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/CC_PaymentFeatures_VOP_Enrollment_request.xml[]
-----
-
-[#CreditCard_PaymentFeatures_VOP_Samples_EnrollmentResponse]
-._Enrollment_ Response
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest]
+.VOP _Enrollment_ Request
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_VOP_Enrollment_response.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_request.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_VOP_Samples_TokenizeRequest]
-._Tokenize_ Request
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/CC_PaymentFeatures_VOP_Tokenize_request.xml[]
-----
-
-[#CreditCard_PaymentFeatures_VOP_Samples_TokenizeResponse]
-._Tokenize_ Response
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse]
+.VOP _Enrollment_ Response
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_VOP_Tokenize_response.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_response.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_VOP_Samples_TokenizedenrollmentRequest]
-._Tokenized-Enrollment_ Request
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/CC_PaymentFeatures_VOP_TokenizedEnrollment_request.xml[]
-----
-
-[#CreditCard_PaymentFeatures_VOP_Samples_TokenizedenrollmentResponse]
-._Tokenized-Enrollment_ Response
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest]
+.VOP _Tokenize_ Request
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_VOP_TokenizedEnrollment_response.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Tokenize_request.xml[]
 ----
 
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeResponse]
+.VOP _Tokenize_ Response
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Tokenize_response.xml[]
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest]
+.VOP _Tokenized-Enrollment_ Request
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnrollment_request.xml[]
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentResponse]
+.VOP _Tokenized-Enrollment_ Response
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnrollment_response.xml[]
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest]
+.MRP _Enrollment_ Request
+
+[source,xml,subs=attributes+]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <request-id>7d3a7724-936f-42fc-9288-838fc3a9dfdb</request-id>
+    <transaction-type>enrollment</transaction-type>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>example@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>123 anystreet</street1>
+            <city>Brantford</city>
+            <state>ON</state>
+            <country>CA</country>
+        </address>
+    </account-holder>
+    <card>
+        <account-number>5498340000110138</account-number>
+        <expiration-month>01</expiration-month>
+        <expiration-year>2021</expiration-year>
+        <card-type>mastercard</card-type>
+    <card-security-code>123</card-security-code>
+    </card>
+    <loyalty-card>
+        <user-id>MTF5498340000110138</user-id>
+        <promotion-code>SHOPBACKVN</promotion-code>
+        <product-code>MCCSHOPBACK</product-code>
+    </loyalty-card>
+    <ip-address>127.0.0.1</ip-address>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+</payment>
+----
+
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_request.xml[]
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse]
+.MRP _Enrollment_ Response
+
+[source,xml,subs=attributes+]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://localhost:8060/engine/rest/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328/payments/c89d7677-89cb-4ea8-a5ba-4f0a4f03df10">
+    <merchant-account-id ref="https://localhost:8060/engine/rest/config/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328">fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <transaction-id>c89d7677-89cb-4ea8-a5ba-4f0a4f03df10</transaction-id>
+    <request-id>7d3a7724-936f-42fc-9288-838fc3a9dfdb</request-id>
+    <transaction-type>enrollment</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2019-06-10T15:29:09.000+02:00</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="loyalty:The resource was successfully created." severity="information"/>
+    </statuses>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>example@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>123 anystreet</street1>
+            <city>Brantford</city>
+            <state>ON</state>
+            <country>CA</country>
+        </address>
+    </account-holder>
+    <loyalty-card>
+        <user-id>MTF5498340000110138</user-id>
+        <card-id>00102086300001429511</card-id>
+    </loyalty-card>
+    <card-token>
+        <token-id>5409951223660138</token-id>
+        <masked-account-number>549834******0138</masked-account-number>
+    </card-token>
+    <ip-address>127.0.0.1</ip-address>
+    <descriptor>demo descriptor</descriptor>
+    <payment-methods>
+        <payment-method name="creditcard"/>
+    </payment-methods>
+    <api-id>elastic-api</api-id>
+    <instrument-country>SG</instrument-country>
+</payment>
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeRequest]
+.MRP _Tokenize_ Request
+
+[source,xml,subs=attributes+]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <request-id>016ec656-0d6b-4300-a2d2-d6aad84bc104</request-id>
+    <transaction-type>tokenize</transaction-type>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>example@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>123 anystreet</street1>
+            <city>Brantford</city>
+            <state>ON</state>
+            <country>CA</country>
+        </address>
+    </account-holder>
+    <card>
+        <account-number>5498340000110138</account-number>
+        <expiration-month>01</expiration-month>
+        <expiration-year>2021</expiration-year>
+        <card-type>mastercard</card-type>
+    <card-security-code>123</card-security-code>
+    </card>
+    <ip-address>127.0.0.1</ip-address>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+</payment>
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeResponse]
+.MRP _Tokenize_ Response
+
+[source,xml,subs=attributes+]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://localhost:8060/engine/rest/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328/payments/cf41a924-9f22-4436-b9e3-0515ed6c6406">
+    <merchant-account-id ref="https://localhost:8060/engine/rest/config/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328">fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <transaction-id>cf41a924-9f22-4436-b9e3-0515ed6c6406</transaction-id>
+    <request-id>016ec656-0d6b-4300-a2d2-d6aad84bc104</request-id>
+    <transaction-type>tokenize</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2019-06-10T15:35:49.000+02:00</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>example@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>123 anystreet</street1>
+            <city>Brantford</city>
+            <state>ON</state>
+            <country>CA</country>
+        </address>
+    </account-holder>
+    <card-token>
+        <token-id>5409951223660138</token-id>
+        <masked-account-number>549834******0138</masked-account-number>
+    </card-token>
+    <ip-address>127.0.0.1</ip-address>
+    <payment-methods>
+        <payment-method name="creditcard"/>
+    </payment-methods>
+    <api-id>elastic-api</api-id>
+</payment>
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenRequest]
+.MRP _Enroll with Token_ Request
+
+[source,xml,subs=attributes+]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <request-id>93cb233c-1d99-4f90-a530-f344ed627813</request-id>
+    <transaction-type>enrollment</transaction-type>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+ <card-token>
+        <token-id>5409951223660138</token-id>      
+    </card-token>
+    <loyalty-card>
+        <user-id>MTF5498340000110138</user-id>
+      <promotion-code>SHOPBACKVN</promotion-code>
+      <product-code>MCCSHOPBACK</product-code>
+    </loyalty-card>
+</payment>
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenResponse]
+.MRP _Enroll with Token_ Response
+
+[source,xml,subs=attributes+]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://localhost:8060/engine/rest/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328/payments/0f730256-c372-43db-9393-0b11aa639536">
+    <merchant-account-id ref="https://localhost:8060/engine/rest/config/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328">fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <transaction-id>0f730256-c372-43db-9393-0b11aa639536</transaction-id>
+    <request-id>93cb233c-1d99-4f90-a530-f344ed627813</request-id>
+    <transaction-type>enrollment</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2019-06-10T15:44:30.000+02:00</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="loyalty:The resource was successfully created." severity="information"/>
+    </statuses>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>example@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>123 anystreet</street1>
+            <city>Brantford</city>
+            <state>ON</state>
+            <country>CA</country>
+        </address>
+    </account-holder>
+    <loyalty-card>
+        <user-id>MTF5498340000110138</user-id>
+        <card-id>00102086300001429511</card-id>
+    </loyalty-card>
+    <card-token>
+        <token-id>5409951223660138</token-id>
+        <masked-account-number>549834******0138</masked-account-number>
+    </card-token>
+    <descriptor>demo descriptor</descriptor>
+    <custom-fields>
+        <custom-field field-name="elastic-api.card_id" field-value="6665597c-8935-11e9-a1e8-9cb6d0c49af8"/>
+    </custom-fields>
+    <payment-methods>
+        <payment-method name="creditcard"/>
+    </payment-methods>
+     <api-id>elastic-api</api-id>
+    <instrument-country>SG</instrument-country>
+</payment>
+----
 //-
+
+
+
+
+
+
+
+
+
+
+
+
+
+// [#CreditCard_PaymentFeatures_VOP]
+// === Visa Offers Platform
+
+// _Visa_ provides a loyalty program called _Visa Offers._ With the _Visa Offers Platform (VOP)_ you can enroll your consumers' cards and check their loyality based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
+
+// [#CreditCard_PaymentFeatures_VOP_TransactionTypes]
+// ==== Transaction Types
+
+// _Visa Offers Platform_ uses the transaction type _enrollment_ only.
+// It is needed to enroll a card in the _Visa Offers Platform._
+
+// [#CreditCard_PaymentFeatures_VOP_TestCredentials]
+// ==== Test Credentials
+
+// |===
+// h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
+// h|Merchant Account ID (MAID) | f82ea856-be50-4899-988d-697574df65f0
+// h|Username | 61613-VisaOffers
+// h|Password | woU6xxn17HhSi-
+// h|Secret Key | d40ec430-89eb-4c52-ba2c-98d9e8910fb3
+// |===
+
+// [#CreditCard_PaymentFeatures_VOP_Workflow]
+// ==== Workflow
+
+// .Enroll Card
+
+// . Merchant sends enrollment request.
+// . {payment-gateway} returns enrollment response.
+
+// //-
+
+// .Add Card
+
+// . Merchant sends add card request.
+// . {payment-gateway} returns add card response.
+
+// //-
+
+// [#CreditCard_PaymentFeatures_VOP_Fields]
+// ==== Fields
+
+// A field can either be *mandatory* (M) or *optional* (O).
+
+// - If a field is *mandatory,* it must be included in the request and contain a value. Without this field, the request will fail.
+// - If a field is *optional,* it can, but does not have to be included in the request. Including optional fields can have certain advantages.
+// - Some optional fields can be mandatory for individual requests, depending on merchant account settings for additional features. We list them as *M/O.*
+
+// //-
+
+// .Enrollment Request
+// [%autowidth]
+// [cols="m,,,,"]
+// |===
+// |Field | Request | Datatype | Size | Description
+
+// 5+h| payment
+
+// | merchant-account-id
+// | M
+// | String
+// | 36
+// | Unique identifier for a merchant account.
+
+// | request-id
+// | M
+// | String
+// | 150
+// | Identification number of the request. It has to be unique for each request.
+
+// | transaction-type
+// | M
+// | String
+// | 22
+// | Type of the transaction. Must be ``enrollment``.
+
+// | payment-methods/payment-method[@name]
+// | M
+// | String
+// | 9
+// | Name of the payment method. Must be ``creditcard``.
+
+// | api-id
+// | O
+// | String
+// | 36
+// | The ``api-id`` is always returned in the notification.
+
+// | consumer-id
+// | M/O
+// | String
+// | 50
+// a| Identifier for the consumer. +
+// At least one of the following must be present: ``consumer-id``, ``email`` or ``phone.`` +
+
+// The ``consumer-id`` is mandatory for <<CreditCard_PaymentFeatures_VOP_Samples_TokenizedenrollmentRequest, Enroll Card with Token>>.
+
+// 5+h| card
+
+// | card-type
+// | M
+// | String
+// | 15
+// | Card type of the consumer. Must be ``visa``.
+
+// | account-number
+// | M
+// | String
+// | 36
+// | Card account number of the consumer.
+
+// | expiration-year
+// | M
+// | Numeric
+// | 4
+// | Expiration year of the consumer's card.
+
+// | expiration-month
+// | M
+// | Numeric
+// | 2
+// | Expiration month of the consumer's card.
+
+// | security-code
+// | O
+// | String
+// | 4
+// | Security code of the consumer's card.
+
+// 5+h| account-holder
+
+// | email
+// | M/O
+// | String
+// | 64
+// | Email address of the consumer. +
+// At least one of the following must be present: ``consumer-id``, ``email`` or ``phone``.
+
+// // | phone
+// // | M/O
+// // | String
+// // | 32
+// // | This is the phone number of the consumer. At least one of the following must be present: consumer-id, email or phone. +
+
+// // NOTE: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the _phone_ field.
+
+// | phone-country-code
+// | M/O
+// | String
+// | 64
+// a| Country identifying information for the contact. +
+// Must be present if phone number is used. +
+
+// If +1 999 555 0100 is the phone number in international format, then ``1`` is the value of the ``phone-country-code`` field.
+
+// 5+h| card-token
+
+// | token-id
+// | O
+// | String
+// | 36
+// | Token corresponding to ``card.account-number`` of the consumer.
+
+// | masked-account-number
+// | O
+// | String
+// | 36
+// | Masked version of ``card.account-number`` of the consumer, e.g. ``440804+++******+++7893``.
+
+// 5+h| loyality-card
+
+// | promotion-code
+// | O
+// | Numeric
+// | 36
+// | Promotional code associated with the enrollment of the user. +
+// _Visa Offers Platform_ sets the PromoCode to upper case upon receipt. Alphanumeric. No special characters.
+// |===
+
+// //-
+
+// .Enrollment Response
+// [%autowidth]
+// [cols="m,,"]
+// |===
+// |Field | Datatype | Description
+
+// 3+h| payment
+
+// | transaction-id
+// | String
+// | Unique identifier for a transaction. It is generated by {payment-provider-name}.
+
+// | instrument-country
+// | String
+// a| The instrument country retrieves the issuer country of a certain credit card. It returns a two-digit country code. +
+
+// Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
+
+// 3+h| statuses
+
+// | status
+// | String
+// | Status of a transaction.
+
+// | status@code
+// | String
+// | Code of the status of a transaction.
+
+// | status@description
+// | String
+// | Description of the status code of a transaction.
+
+// | status@severity
+// | String
+// | Provides information if a status is a ``warning``, an ``error`` or an ``information``.
+
+// 3+h| card-data
+
+// | issuer-name
+// | String
+// a| Name of the card issuer. +
+
+// Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
+
+// 3+h| loyalty
+
+// | user-id
+// | String
+// | Unique _VOP_ user ID generated by the _VOP_ system upon successful enrollment.
+
+// | card-id
+// | String
+// | Unique _VOP_ card ID generated by the _VOP_ system upon successful enrollment.
+// |===
+
+// .Add Card Request
+// [%autowidth]
+// [cols="m,,,,"]
+// |===
+// |Field | Request | Datatype | Size | Description
+
+// 5+h| payment
+
+// | merchant-account-id
+// | M
+// | String
+// | 36
+// | Unique identifier for a merchant account.
+
+// | request-id
+// | M
+// | String
+// | 150
+// | Identification number of the request. It has to be unique for each request.
+
+// | transaction-type
+// | M
+// | String
+// | 22
+// | Type of the transaction. Must be ``enrollment``.
+
+// | payment-methods/payment-method[@name]
+// | M
+// | String
+// | 9
+// | Name of the payment method. Must be ``creditcard``.
+
+// | api-id
+// | O
+// | String
+// | 36
+// | The ``api-id`` is always returned in the notification.
+
+// 5+h| card
+
+// | card-type
+// | M
+// | String
+// | 15
+// | Card type of the consumer. Must be ``visa`` or ``mastercard``.
+
+// | account-number
+// | M
+// | String
+// | 36
+// | Card account number of the consumer.
+
+// | expiration-year
+// | M
+// | Numeric
+// | 4
+// | Expiration year of the consumer's card.
+
+// | expiration-month
+// | M
+// | Numeric
+// | 2
+// | Expiration month of the consumer's card.
+
+// | security-code
+// | O
+// | String
+// | 4
+// | Security code of the consumer's card.
+
+// 5+h| card-token
+
+// | token-id
+// | O
+// | String
+// | 36
+// | Token corresponding to ``card.account-number`` of the consumer.
+
+// | masked-account-number
+// | O
+// | String
+// | 36
+// | Masked version of _card.account-number_ of the consumer, e.g. ``440804+++******+++7893``.
+
+// 5+h| loyality-card
+
+// | promotion-code
+// | O
+// | Numeric
+// | 36
+// | Promotional code associated with the enrollment of the user. +
+// _Visa Offers Platform_ sets the PromoCode to upper case upon receipt. Alphanumeric. No special characters.
+
+// 5+h| loyalty
+
+// | user-id
+// | M
+// | String
+// | 36
+// | Unique _Visa Offers Platform_ user ID generated by the _VOP_ system upon successful enrollment.
+
+// | card-id
+// | O
+// | String
+// | 36
+// | Unique _Visa Offers Platform_ card ID generated by the _VOP_ system upon successful enrollment.
+// |===
+
+// .Add Card Response
+// [%autowidth]
+// [cols="m,,"]
+// |===
+// |Field | Datatype | Description
+
+// 3+h| payment
+
+// | transaction-id
+// | String
+// | Unique identifier for a transaction. It is generated by {payment-provider-name}.
+
+// | instrument-country
+// | String
+// a| Country code of the card issuer. +
+
+// Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
+
+// 3+h| statuses
+
+// | status
+// | String
+// | Status of a transaction.
+
+// | status@code
+// | String
+// | Code of the status of a transaction.
+
+// | status@description
+// | String
+// | Description of the status code of a transaction.
+
+// | status@severity
+// | String
+// | Provides information if a status is a ``warning``, an ``error`` or an ``information``.
+
+// 3+h| card-data
+
+// | issuer-name
+// | String
+// a| Name of the card issuer. +
+
+// Returned only if engine has enabled FEATURE_CARD_TYPE_SERVICE or X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE header is sent with request.
+// |===
+
+
+// [#CreditCard_PaymentFeatures_VOP_Samples]
+// ==== Samples
+
+// IMPORTANT: For a successful test each request requires a _Visa_ credit card number that has not been used before. Make sure to change the credit card number with every new request.
+
+// [#CreditCard_PaymentFeatures_VOP_Samples_EnrollmentRequest]
+// ._Enrollment_ Request
+
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/CC_PaymentFeatures_VOP_Enrollment_request.xml[]
+// ----
+
+// [#CreditCard_PaymentFeatures_VOP_Samples_EnrollmentResponse]
+// ._Enrollment_ Response
+
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/CC_PaymentFeatures_VOP_Enrollment_response.xml[]
+// ----
+
+// [#CreditCard_PaymentFeatures_VOP_Samples_TokenizeRequest]
+// ._Tokenize_ Request
+
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/CC_PaymentFeatures_VOP_Tokenize_request.xml[]
+// ----
+
+// [#CreditCard_PaymentFeatures_VOP_Samples_TokenizeResponse]
+// ._Tokenize_ Response
+
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/CC_PaymentFeatures_VOP_Tokenize_response.xml[]
+// ----
+
+// [#CreditCard_PaymentFeatures_VOP_Samples_TokenizedenrollmentRequest]
+// ._Tokenized-Enrollment_ Request
+
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/CC_PaymentFeatures_VOP_TokenizedEnrollment_request.xml[]
+// ----
+
+// [#CreditCard_PaymentFeatures_VOP_Samples_TokenizedenrollmentResponse]
+// ._Tokenized-Enrollment_ Response
+
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/CC_PaymentFeatures_VOP_TokenizedEnrollment_response.xml[]
+// ----
+
+// //-
