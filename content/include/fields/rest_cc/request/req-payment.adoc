@@ -213,6 +213,8 @@ Accepted values: +
 
 5+|<<{listname}_request_device, ``device``>>
 
+5+|<<{listname}_request_loyaltycard, ``loyalty-card``>>
+
 5+|<<{listname}_request_notification, notifications.notification>>
 
 5+|<<{listname}_request_orderitem, order-items.order-item>>

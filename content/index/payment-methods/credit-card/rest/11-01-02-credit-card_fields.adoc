@@ -93,7 +93,7 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 
 | card-data
 | 
-| <<CC_Fields_xmlelements_request_carddata, X>> 
+| <<CC_Fields_xmlelements_response_carddata, X>> 
 
 | card-emv
 | <<CC_Fields_xmlelements_request_cardEMV, X>>
@@ -516,7 +516,7 @@ include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc
 
 [cols="30m,9,7,48a"]
 |===
-|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+|Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
 
 include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 

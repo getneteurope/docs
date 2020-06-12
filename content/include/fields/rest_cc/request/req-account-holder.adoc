@@ -16,7 +16,8 @@ Accepted format: ``{date-pattern}``.
 |String 
 |156 
 |Consumer’s email address as given in your shop. +
-*Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>.
+*Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>. +
+When using a credit card for a <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>>, At least one of the following must be present: ``consumer-id``, ``email`` or ``phone``.
 
 |first-name 
 |M/O
@@ -90,7 +91,7 @@ Accepted values: +
 |O 
 |String 
 |18 
-|Phone number provided by the consumer.  
+|Phone number provided by the consumer. 
 
 |work-phone
 |O 
