@@ -1525,32 +1525,34 @@ span.nav-text { color: #425563; font-size: 1.2rem; line-height: 1.2rem; }
 
 /* line 1, ../../style/sass/elements/_minitoc.scss */
 #minitoc { background-color: #ebebeb; transition: all 0.5s ease; border-radius: 1em; border: 1em solid #ebebeb; position: fixed; right: -4em; transition: height 500ms ease-in-out; overflow: hidden; font-size: 0.9em; width: 15em; margin-right: 5vw; z-index: 1; }
-/* line 15, ../../style/sass/elements/_minitoc.scss */
+/* line 2, ../../style/sass/elements/_minitoc.scss */
+#minitoc:empty { border: none; }
+/* line 18, ../../style/sass/elements/_minitoc.scss */
 #minitoc li { border-left: 1px solid #d0d3d4; overflow: hidden; text-overflow: ellipsis; padding-left: 20px; list-style: none; }
-/* line 22, ../../style/sass/elements/_minitoc.scss */
+/* line 25, ../../style/sass/elements/_minitoc.scss */
 #minitoc li a { height: 100%; display: inline-block; width: 100%; text-decoration: none; color: #002846; }
-/* line 31, ../../style/sass/elements/_minitoc.scss */
+/* line 34, ../../style/sass/elements/_minitoc.scss */
 #minitoc li:hover > a { color: #ff7373; }
-/* line 35, ../../style/sass/elements/_minitoc.scss */
+/* line 38, ../../style/sass/elements/_minitoc.scss */
 #minitoc li#minitoc-header { font-size: 1.2em; font-weight: bold; border-left: none; }
-/* line 41, ../../style/sass/elements/_minitoc.scss */
+/* line 44, ../../style/sass/elements/_minitoc.scss */
 #minitoc li.active { border-left: 3px solid #002846; padding-left: 18px; }
-/* line 45, ../../style/sass/elements/_minitoc.scss */
+/* line 48, ../../style/sass/elements/_minitoc.scss */
 #minitoc li.active a { font-weight: bold; }
 
-@media only screen and (min-width: 768px) { /* line 53, ../../style/sass/elements/_minitoc.scss */
+@media only screen and (min-width: 768px) { /* line 56, ../../style/sass/elements/_minitoc.scss */
   #minitoc li { height: 0; }
-  /* line 56, ../../style/sass/elements/_minitoc.scss */
+  /* line 59, ../../style/sass/elements/_minitoc.scss */
   #minitoc li:hover { height: auto; }
-  /* line 61, ../../style/sass/elements/_minitoc.scss */
-  #minitoc li#minitoc-header { height: auto; }
   /* line 64, ../../style/sass/elements/_minitoc.scss */
+  #minitoc li#minitoc-header { height: auto; }
+  /* line 67, ../../style/sass/elements/_minitoc.scss */
   #minitoc li#minitoc-header::after { position: absolute; content: "\f0d7"; display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; margin-left: -1.2em; margin-top: 0.25em; }
-  /* line 77, ../../style/sass/elements/_minitoc.scss */
+  /* line 80, ../../style/sass/elements/_minitoc.scss */
   #minitoc:hover li { height: auto; } }
-@media only screen and (min-width: 1440px) { /* line 86, ../../style/sass/elements/_minitoc.scss */
+@media only screen and (min-width: 1440px) { /* line 89, ../../style/sass/elements/_minitoc.scss */
   #minitoc li { height: auto; }
-  /* line 89, ../../style/sass/elements/_minitoc.scss */
+  /* line 92, ../../style/sass/elements/_minitoc.scss */
   #minitoc li#minitoc-header::after { content: unset; } }
 @media only screen and (max-width: 768px) { /* line 9, ../../style/sass/components/_mobile.scss */
   div#content { position: absolute; left: 0; padding-right: 0; }
