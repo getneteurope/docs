@@ -950,7 +950,7 @@ NOTE: Even if a request file contains invalid or missing ``transaction-id``s, re
 
 Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard Rewards Program_ (MRP). With these loyalty programs you can enroll your consumers' cards and record their loyality based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
 
-// ggf heißt das Mastercard Programm "Mastercard® Card Linked Services". Muss von Maria geklärt werden.
+// >>>>> ggf heißt das Mastercard Programm "Mastercard® Card Linked Services". Muss von Maria geklärt werden.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
@@ -1030,8 +1030,8 @@ A field can either be *mandatory* (M) or *optional* (O).
 
 Transaction type must be ``enrollment``.
 
-// transaction type size: 22 (given here) or 30 (given in the CC table)?
-// payment-method[@name] size 9 (given here) or 15 (given in the CC table)?
+// transaction type size: 22 (given at https://confluence.wirecard.sys/display/EE/EE+-+Visa+Offers+Platform) or 30 (given in the CC table)?
+// payment-method[@name] size 9 (given at https://confluence.wirecard.sys/display/EE/EE+-+Visa+Offers+Platform) or 15 (given in the CC table)?
 
 [%autowidth]
 [cols="m,,,,"]
@@ -1123,6 +1123,8 @@ Card type must be ``visa`` or ``mastercard``.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples]
 ==== Samples
+
+// >>>>> Pavol: Is it necessary to provide individual samples for VOP and MRP? Or is it enough just to exchange MAID, user and PW?
 
 IMPORTANT: For a successful test each request requires a _Visa_ or _Mastercard_ credit card number that has not been used before. Make sure to change the credit card number with every new request.
 

@@ -1,0 +1,8 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+``card-data`` is a child of <<{listname}_response_payment, payment>>.
+
+It is used with the issuers' <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>>.
+
+//-
