@@ -55,43 +55,43 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 |===
 | Field | Request | Response
 
-| payment
+| ``payment``
 | <<CC_Fields_xmlelements_request_payment, X>>
 | <<CC_Fields_xmlelements_response_payment, X>>
 
-| account-holder
+| ``account-holder``
 | <<CC_Fields_xmlelements_request_accountholder, X>>
 | 
 
-| account-info
+| ``account-info``
 | <<CC_Fields_xmlelements_request_accountinfo, X>>
 | 
 
-| address
+| ``address``
 | <<CC_Fields_xmlelements_request_address, X>>
 | 
 
-| airline-industry
+| ``airline-industry``
 | <<CC_Fields_xmlelements_request_airlineindustry, X>>
 | 
 
-| audit
+| ``audit``
 | <<CC_Fields_xmlelements_request_audit, X>>
 | 
 
-| avs
+| ``avs``
 | 
 | <<CC_Fields_xmlelements_response_avs, X>>
 
-| browser
+| ``browser``
 | <<CC_Fields_xmlelements_request_browser, X>>
 | 
 
-| card
+| ``card``
 | <<CC_Fields_xmlelements_request_card, X>>
 |  
 
-| card-emv
+| ``card-emv``
 | <<CC_Fields_xmlelements_request_cardEMV, X>>
 | <<CC_Fields_xmlelements_response_cardEMV, X>>
 
@@ -111,71 +111,71 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_cardRAWenccontext, X>>
 | 
 
-| card-token
+| ``card-token``
 | <<CC_Fields_xmlelements_request_cardtoken, X>>
 | 
 
-| credit-sender-data
+| ``credit-sender-data``
 | <<CC_Fields_xmlelements_request_creditsenderdata, X>>
 | 
 
-| cruise-industry
+| ``cruise-industry``
 | <<CC_Fields_xmlelements_request_cruiseindustry, X>>
 | 
 
-| custom-fields
+| ``custom-fields``
 | <<CC_Fields_xmlelements_request_customfield, X>>
 | <<CC_Fields_xmlelements_response_customfield, X>>
 
-| device
+| ``device``
 | <<CC_Fields_xmlelements_request_device, X>>
 | 
 
-| gift-card
+| ``gift-card``
 | <<CC_Fields_xmlelements_request_giftcard, X>>
 | 
 
-// | encryption-context
+// | ``encryption-context``
 // | <<CC_Fields_xmlelements_request_encryptionContext, X>>
 // | 
 
-| iso
+| ``iso``
 | <<CC_Fields_xmlelements_request_ISO, X>>
 | 
 
-| notifications
+| ``notifications``
 | <<CC_Fields_xmlelements_request_notification, X>>
 | 
 
-| order-items
+| ``order-items``
 | <<CC_Fields_xmlelements_request_orderitem, X>>
 | 
 
-| payment-methods
+| ``payment-methods``
 | <<CC_Fields_xmlelements_request_paymentmethod, X>>
 |
 
-| risk-info
+| ``risk-info``
 | <<CC_Fields_xmlelements_request_riskinfo, X>>
 | 
 
-| segment
+| ``segment``
 | <<CC_Fields_xmlelements_request_segment, X>>
 | 
 
-| shipping
+| ``shipping``
 | <<CC_Fields_xmlelements_request_shipping, X>>
 | 
 
-| status
+| ``status``
 | 
 | <<CC_Fields_xmlelements_response_status, X>>
 
-| sub-merchant-info
+| ``sub-merchant-info``
 | <<CC_Fields_xmlelements_request_submerchantinfo, X>>
 | 
 
-| three-d
+| ``three-d``
 | <<CC_Fields_xmlelements_request_threed, X>>
 | <<CC_Fields_xmlelements_response_threed, X>>
 |===
@@ -339,11 +339,11 @@ include::{root}/include/fields/rest_cc/request/req-card.adoc[]
 :!listname:
 
 [#CC_Fields_xmlelements_request_cardEMV]
-.card-emv
-
-For card present transactions.
+.``card-emv.``
 
 :listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-emv.adoc[]
 
 [cols="30m,6,9,7,48a"]
 |===
@@ -541,7 +541,7 @@ include::{root}/include/fields/rest_cc/request/req-gift-cards.adoc[]
 //-
 
 [#CC_Fields_xmlelements_request_ISO]
-.``iso``
+.``iso.``
 
 For card present transactions.
 
@@ -803,9 +803,13 @@ include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
 
 
 [#CC_Fields_xmlelements_response_cardEMV]
-.``card.card-emv``
+.``card-emv.``
 
-For card present transactions.
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-card-emv.adoc[]
+
+:!listname:
 
 [cols="30m,9,7,48a"]
 |===
