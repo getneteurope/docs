@@ -1,17 +1,3 @@
-For card present payments.
-
-Consumer's **P**ersonal **I**dentification **N**umber data are always encrypted.
-
-Card present transaction processing can be initiated by
-
-* a **point of sale terminal** (PIN pad) transaction processed online (and/or offline). The terminal accepts, encrypts and forwards the cardholder's PIN.
-* a **mobile device** transaction using a mobile SDK. +
-For mobile device initiated transactions, there is typically a backend server that integrates to the Payment Gateway for payment transactions processing. This is to ensure that the credentials connecting to the gateway are not published in mass consumer devices.
-//-
-
-[%autowidth,cols="m,,,,a"]
-|===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
 
 | data 
 | M 
@@ -48,4 +34,4 @@ Allowed values: +
 //-
 
 Mandatory for online PIN.
-|===
+

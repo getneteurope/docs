@@ -95,13 +95,21 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_cardEMV, X>>
 | <<CC_Fields_xmlelements_response_cardEMV, X>>
 
-// | card-pin
-// | <<CC_Fields_xmlelements_cardPIN, X>>
-// | 
+| card-pin
+| <<CC_Fields_xmlelements_cardPIN, X>>
+| 
 
-// |card-raw
-// | <<CC_Fields_xmlelements_cardRaw, X>>
-// | 
+| card-pin.encryption-context
+| <<CC_Fields_xmlelements_cardPINenccontext, X>>
+| 
+
+|card-raw
+| <<CC_Fields_xmlelements_cardRAW, X>>
+| 
+
+|card-raw.encryption-context
+| <<CC_Fields_xmlelements_cardRAWenccontext, X>>
+| 
 
 | card-token
 | <<CC_Fields_xmlelements_request_cardtoken, X>>
@@ -331,7 +339,7 @@ include::{root}/include/fields/rest_cc/request/req-card.adoc[]
 :!listname:
 
 [#CC_Fields_xmlelements_request_cardEMV]
-.card.card-emv
+.card-emv
 
 For card present transactions.
 
@@ -349,17 +357,73 @@ include::{root}/include/fields/rest_cc/request/req-card-emv.adoc[]
 
 :!listname:
 
-// [#CC_Fields_xmlelements_cardPIN]
-// .card.card-pin
+[#CC_Fields_xmlelements_cardPIN]
+.card-pin
 
-// include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
+:listname: CC_Fields_xmlelements
 
+include::{root}/include/field-list-headers/rest_cc/request/req-card-pin.adoc[]
 
-// [#CC_Fields_xmlelements_cardRaw]
-// .card.card-raw
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
 
-// include::{root}/include/fields/rest_cc/request/req-card-raw.adoc[]
+include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
 
+|===
+
+:!listname:
+
+[#CC_Fields_xmlelements_cardPINenccontext]
+.card-pin.encryption-context
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-pin-encryption-context.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card-pin-encryption-context.adoc[]
+
+|===
+
+:!listname:
+
+[#CC_Fields_xmlelements_cardRaw]
+.card-raw
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-raw.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card-raw.adoc[]
+
+|===
+
+:!listname:
+
+[#CC_Fields_xmlelements_cardRAWenccontext]
+.card-raw.encryption-context
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-raw-encryption-context.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card-raw-encryption-context.adoc[]
+
+|===
+
+:!listname:
 
 [#CC_Fields_xmlelements_request_cardtoken]
 .``card-token.``
@@ -475,12 +539,6 @@ include::{root}/include/fields/rest_cc/request/req-gift-cards.adoc[]
 |===
 
 //-
-
-// [#CC_Fields_xmlelements_request_encryptionContext]
-// .encryption-context
-
-// include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
-
 
 [#CC_Fields_xmlelements_request_ISO]
 .``iso``
