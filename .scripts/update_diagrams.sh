@@ -72,8 +72,8 @@ _parse_args() {
     done
 }
 
-_main() {
-    _log green bold "Update Diagrams"
+_fetch() {
+    _log blue bold "# Fetch zip"
     _log blue bold "Selecting workflow with name 'CI'..."
 
     # workflow ID
@@ -94,7 +94,7 @@ _main() {
     _log blue bold "Fetching artifact..."
     gh_curl -s "$ARTIFACTS_URL" >"$JSON"
     NAME=$(jq -r '.artifacts[0].name' "$JSON")
-    DOWNLOAD_URL=$(jq -r '.artifacts[0].archive_download_url' "$JSON")
+    DOWNLOAD_URL=$(jq -r '.artifacts[] | select(.name == "diagrams") | .archive_download_url' "$JSON")
     _log blue "    name: $NAME"
 
     _log blue bold "Downloading artifact..."
@@ -102,7 +102,16 @@ _main() {
     _log blue "    out: $ZIP"
 
     gh_curl -s -L -o "$ZIP" "${DOWNLOAD_URL}"
+}
 
+_update() {
+    _log blue bold "# Update diagrams"
+}
+
+_main() {
+    _log green bold "UPDATE DIAGRAMS"
+    _fetch
+    _update
     _log green bold "DONE"
 }
 
