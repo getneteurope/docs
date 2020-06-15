@@ -1,13 +1,5 @@
 // This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
 // The shortcut guarantees that the target of the link remains in the current environment.
 
-For card present payments.
-
-Consumer's **P**ersonal **I**dentification **N**umber data are always encrypted.
-
-Card present transaction processing can be initiated by
-
-* a **point of sale terminal** (PIN pad) transaction processed online (and/or offline). The terminal accepts, encrypts and forwards the cardholder's PIN.
-* a **mobile device** transaction using a mobile SDK. +
-For mobile device initiated transactions, there is typically a backend server that integrates to the Payment Gateway for payment transactions processing. This is to ensure that the credentials connecting to the gateway are not published in mass consumer devices.
+Header for card.card-raw.encryption-context.
 //-

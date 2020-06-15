@@ -1,3 +1,5 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
 
 | data 
 | M 
@@ -34,4 +36,6 @@ Allowed values: +
 //-
 
 Mandatory for online PIN.
+
+5+|<<{listname}_request_cardPINenccontext, encryption-context>>
 
