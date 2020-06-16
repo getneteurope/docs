@@ -374,23 +374,6 @@ include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
 
 :!listname:
 
-[#CC_Fields_xmlelements_request_cardPINenccontext]
-.card-pin.encryption-context
-
-:listname: CC_Fields_xmlelements
-
-include::{root}/include/field-list-headers/rest_cc/request/req-card-pin-encryption-context.adoc[]
-
-[cols="30m,6,9,7,48a"]
-|===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
-
-include::{root}/include/fields/rest_cc/request/req-card-pin-encryption-context.adoc[]
-
-|===
-
-:!listname:
-
 [#CC_Fields_xmlelements_request_cardRaw]
 .card-raw
 
@@ -520,6 +503,23 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 |===
 
 //-
+
+[#CC_Fields_xmlelements_request_card_EncContext]
+.encryption-context
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-encryption-context.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
+
+|===
+
+:!listname:
 
 [#CC_Fields_xmlelements_request_giftcard]
 .``gift-card.``

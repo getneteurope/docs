@@ -1,0 +1,11 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+``encryption-context`` is a child of
+
+* <<CC_Fields_xmlelements_request_cardPIN, card.card-pin.>>  
+* <<CC_Fields_xmlelements_request_cardRAW, card.card-raw.>> 
+
+``card.card-pin`` and ``card.card-raw`` are used for card present payments.
+
+//-
