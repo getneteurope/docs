@@ -7,7 +7,6 @@ source "$(dirname $0)/utils.sh"
 # Temp files
 JSON="$(mktemp)"
 TMPDIR="/tmp/docs-diagrams" # "$(mktemp -d)"
-mkdir -p "$TMPDIR"
 ZIP="$TMPDIR/docs-diagrams-master.zip"
 
 # Token
@@ -26,6 +25,10 @@ gh_curl() {
 
 # Main
 _check() {
+    _log blue bold "Running sanity checks..."
+    # make sure TMPDIR is present and empty
+    rm -rf "$TMPDIR"
+    mkdir -p "$TMPDIR"
     # jq must be installed
     if ! command -v jq >/dev/null; then
         _log red bold "jq is required but not installed."
@@ -59,8 +62,8 @@ _check() {
 _parse_args() {
     while [[ "$#" -gt 0 ]]; do
         case "$1" in
-            --url)
-                ARG_URL="$2"
+            --branch)
+                ARG_BRANCH="$2"
                 shift
                 ;;
             *)
@@ -73,7 +76,6 @@ _parse_args() {
 }
 
 _fetch() {
-    _log blue bold "# Fetch zip"
     _log blue bold "Selecting workflow with name 'CI'..."
 
     # workflow ID
@@ -82,8 +84,8 @@ _fetch() {
     _log blue "    id: $WORKFLOW_ID"
 
     # workflow runs
-    BRANCH="master"
-    _log blue bold "Finding last successful run on '${BRANCH}'..."
+    BRANCH="${ARG_BRANCH:-master}"
+    _log blue bold "Selecting last successful run on branch '${BRANCH}'..."
     PARAMS="branch=${BRANCH}&status=success"
     gh_curl -s "${GITHUB_API}/repos/${REPO}/actions/workflows/${WORKFLOW_ID}/runs?${PARAMS}" >"$JSON"
     RUN_ID=$(jq -r '.workflow_runs[0].id' "$JSON")
@@ -105,16 +107,47 @@ _fetch() {
 }
 
 _update() {
-    _log blue bold "# Update diagrams"
+    # unzip
+    _log blue bold "Unpacking artifact..."
+    _log blue "    zip: $ZIP"
+    ( cd "$TMPDIR" && unzip $(basename "$ZIP") ) >/dev/null
+    # remove zip file after unpacking
+    rm -rf "$ZIP"
+    NAME_MAP="${TMPDIR}/names.txt"
+    _log blue bold "Copy artifacts and update Asciidoc links..."
+    # move files and update image links in asciidoc
+    while read -r line; do
+        old="$(echo $line | cut -d':' -f1)"
+        new="$(echo $line | cut -d':' -f2)"
+        _log yellow bold "${new} -> ${old}"
+        # DEBUG
+        for ext in png svg; do
+            old_count="$(find content/images -type f -name "${old}.${ext}" | wc -l | tr -d ' ')"
+            if (( old_count < 1 )); then
+                _log red bold "[SKIP] Could not find file: ${old}.${ext}"
+                continue
+            elif (( old_count > 1 )); then
+                _log red bold "[SKIP] Found ${old_count} occurences: ${old}.${ext}"
+                continue
+            fi
+            old_path="$(find content/images -type f -name "${old}.${ext}")"
+            new_path="$(find $TMPDIR -type f -name "${new}.${ext}")"
+            echo "${new_path} -> ${old_path}"
+        done
+        # DEBUG END
+    done < "$NAME_MAP"
 }
 
 _main() {
-    _log green bold "UPDATE DIAGRAMS"
     _fetch
     _update
     _log green bold "DONE"
 }
 
+_log red bold "DEPRECATED"
+exit 1
+
+_log green bold "UPDATE DIAGRAMS"
 _check
 _parse_args $@
 _main

@@ -16,6 +16,15 @@ References the Github Actions environment variables `GITHUB_REF`.
 Download the default Vale styles from the official errata-ai repository.
 Needed for Vale to create a baseline of rules.
 
-## `update_diagrams.sh`
+## **DEPRECATED** `update_diagrams.sh`
 Update all diagrams with the latest `artifacts.zip` from [wirecard/docs-diagrams](https://github.com/wirecard/docs-diagrams).
 This zip contains all PDF and SVG artifacts plus a `names.txt` which is the filename mapping from old diagram filename to new diagram filename.
+
+
+## `update_diagrams.py`
+Update all diagrams with the latest `artifacts.zip` from [wirecard/docs-diagrams](https://github.com/wirecard/docs-diagrams).
+This zip contains all PDF and SVG artifacts plus a `names.txt` which is the filename mapping from old diagram filename to new diagram filename.
+
+Python3 requirements:
+* `requests`
+* `termcolor`
