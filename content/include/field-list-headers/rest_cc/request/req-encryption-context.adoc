@@ -3,8 +3,8 @@
 
 ``encryption-context`` is a child of
 
-* <<CC_Fields_xmlelements_request_cardPIN, payment.card.card-pin.>>  
-* <<CC_Fields_xmlelements_request_cardRAW, payment.card.card-raw.>> 
+* <<{listname}_request_cardPIN, payment.card.card-pin.>>  
+* <<{listname}_request_cardRAW, payment.card.card-raw.>> 
 
 ``payment.card.card-pin`` and ``payment.card.card-raw`` are used for card present payments.
 
