@@ -3,21 +3,19 @@
 | M/O
 | String 
 | 40
-| Encryption context value.
+| Encryption context value. +
 
 | version 
 | M/O
 | String 
 | 3 
-| Encryption context version +
-Mandatory for online PIN.
+| Encryption context version. +
 
 | algorithm
 | M/O
 | String 
 | 10 
-| Encryption context algorithm +
-Mandatory for online PIN.
+| Encryption context algorithm. +
 
 | parameter 
 | M/O
@@ -25,13 +23,12 @@ Mandatory for online PIN.
 | 30
 | Encryption context parameter (hex encoded) to determine the key for decryption. +
 For PIN management: If ``dukpt`` is used as encryption algorithm, this contains the KSN. +
-Mandatory for online PIN.
 
 | padding
 | M/O
 | String 
 | 5
 | Encryption context padding. +
-Mandatory for online PIN. +
-Allowed value: +
+Accepted value: +
+
 ``pkcs``
