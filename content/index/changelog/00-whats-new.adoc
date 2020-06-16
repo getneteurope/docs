@@ -6,6 +6,9 @@
 === 2020-06
 
 .2020-06-10
+- <<CC_Fields_xmlelements_request_cardPIN, ``card-pin``>>, <<CC_Fields_xmlelements_request_cardRAW, ``card-raw``>> and <<CC_Fields_xmlelements_request_card_EncContext, ``encryption-context``>>- New fields for card present transactions.
+
+.2020-06-10
 - <<PPv2_SEPADirectDebit, SEPA Direct Debit>> - Updated documentation for {payment-page-v2}.
 
 //-

@@ -134,7 +134,7 @@ include::{root}/include/fields/api/request/req-card.adoc[]
 :!listname:
 
 [#API_Fields_xmlelements_request_cardEMV]
-==== card-emv.
+==== card-emv
 
 :listname: API_Fields_xmlelements
 
@@ -147,7 +147,7 @@ include::{root}/include/fields/api/request/req-card-emv.adoc[tags="**;!responseH
 :!listname:
 
 [#API_Fields_xmlelements_request_cardPIN]
-==== ``card-pin.``
+==== card-pin.
 
 :listname: API_Fields_xmlelements
 
@@ -164,7 +164,7 @@ include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
 :!listname:
 
 [#API_Fields_xmlelements_request_cardRAW]
-==== ``card-raw.``
+==== card-raw
 
 :listname: API_Fields_xmlelements
 
@@ -235,7 +235,7 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 // include::{root}/include/fields/api/request/req-device-SDK.adoc[]
 
 [#API_Fields_xmlelements_request_card_EncContext]
-==== ``encryption-context.``
+==== encryption-context
 
 :listname: API_Fields_xmlelements
 
