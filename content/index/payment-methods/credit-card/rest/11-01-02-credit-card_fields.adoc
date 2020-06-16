@@ -99,16 +99,8 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_cardPIN, X>>
 | 
 
-| card-pin.encryption-context
-| <<CC_Fields_xmlelements_request_cardPINenccontext, X>>
-| 
-
 |card-raw
 | <<CC_Fields_xmlelements_request_cardRAW, X>>
-| 
-
-|card-raw.encryption-context
-| <<CC_Fields_xmlelements_request_cardRAWenccontext, X>>
 | 
 
 | ``card-token``
@@ -131,13 +123,13 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_device, X>>
 | 
 
+| encryption-context
+| <<CC_Fields_xmlelements_request_card_EncContext, X>>
+| 
+
 | ``gift-card``
 | <<CC_Fields_xmlelements_request_giftcard, X>>
 | 
-
-// | ``encryption-context``
-// | <<CC_Fields_xmlelements_request_encryptionContext, X>>
-// | 
 
 | ``iso``
 | <<CC_Fields_xmlelements_request_ISO, X>>
@@ -358,7 +350,7 @@ include::{root}/include/fields/rest_cc/request/req-card-emv.adoc[]
 :!listname:
 
 [#CC_Fields_xmlelements_request_cardPIN]
-.card-pin
+.``card-pin.``
 
 :listname: CC_Fields_xmlelements
 
@@ -374,8 +366,8 @@ include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
 
 :!listname:
 
-[#CC_Fields_xmlelements_request_cardRaw]
-.card-raw
+[#CC_Fields_xmlelements_request_cardRAW]
+.``card-raw.``
 
 :listname: CC_Fields_xmlelements
 
@@ -488,7 +480,7 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 //-
 
 [#CC_Fields_xmlelements_request_card_EncContext]
-.encryption-context
+.``encryption-context.``
 
 :listname: CC_Fields_xmlelements
 

@@ -37,5 +37,5 @@ Allowed values: +
 
 Mandatory for online PIN.
 
-5+|<<{listname}_request_cardPINenccontext, encryption-context>>
+5+|<<{listname}_request_card_EncContext, encryption-context>>
 

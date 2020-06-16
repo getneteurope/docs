@@ -25,5 +25,5 @@ Allowed values: +
 | Raw data format. +
 Mandatory if ``card-raw.data`` is submitted.
 
-5+|<<{listname}_request_cardRAWenccontext, encryption-context>>
+5+|<<{listname}_request_card_EncContext, encryption-context>>
 

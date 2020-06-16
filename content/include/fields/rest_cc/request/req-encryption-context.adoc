@@ -1,14 +1,3 @@
-``encryption-context`` is a child of
-
-* <<API_Fields_xmlelements_cardPIN, card-pin>>.
-* <<API_Fields_xmlelements_cardRAW, card-raw>>.
-//-
-
-It specifies the encryption format of PIN/raw card data.
-
-[%autowidth,cols="m,,,,a"]
-|===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
 
 | value 
 | M/O
@@ -46,4 +35,3 @@ Mandatory for online PIN.
 Mandatory for online PIN. +
 Allowed value: +
 ``pkcs``
-|===
