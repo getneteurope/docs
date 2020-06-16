@@ -177,10 +177,11 @@ def update(old_path = Path.cwd() / 'content' / 'images',
 
     # run the actual replace
     cprint('Replace', 'blue')
-    for basename, old_new_pairs in move_map:
+    for basename, move_pairs in move_map.items():
         cprint(basename, 'yellow')
-        for old, new in old_new_pairs:
-            shutil.copy(new, old)
+        for pair in move_pairs:
+            for (new, old) in pair.items():
+                shutil.copy(new, old)
 
 
 def main():
