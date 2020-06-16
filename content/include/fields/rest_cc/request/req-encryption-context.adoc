@@ -1,16 +1,4 @@
 
-| value 
-| M/O
-| String 
-| 40
-| Encryption context value. +
-
-| version 
-| M/O
-| String 
-| 3 
-| Encryption context version. +
-
 | algorithm
 | M/O
 | String 
@@ -32,3 +20,17 @@ For PIN management: If ``dukpt`` is used as encryption algorithm, this contains 
 Accepted value: +
 
 ``pkcs``
+
+| value 
+| M/O
+| String 
+| 40
+| Encryption context value. +
+
+| version 
+| M/O
+| String 
+| 3 
+| Encryption context version. +
+
+//-
