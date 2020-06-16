@@ -391,23 +391,6 @@ include::{root}/include/fields/rest_cc/request/req-card-raw.adoc[]
 
 :!listname:
 
-[#CC_Fields_xmlelements_request_cardRAWenccontext]
-.card-raw.encryption-context
-
-:listname: CC_Fields_xmlelements
-
-include::{root}/include/field-list-headers/rest_cc/request/req-card-raw-encryption-context.adoc[]
-
-[cols="30m,6,9,7,48a"]
-|===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
-
-include::{root}/include/fields/rest_cc/request/req-card-raw-encryption-context.adoc[]
-
-|===
-
-:!listname:
-
 [#CC_Fields_xmlelements_request_cardtoken]
 .``card-token.``
 
