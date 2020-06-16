@@ -91,7 +91,7 @@
 //-
 
 .2020-04-10
-- <<API_Fields_xmlelements_cardEMV, ``card-emv``>> and <<API_Fields_xmlelements_request_ISO, ``iso``>> - New fields for card present transactions.
+- <<API_Fields_xmlelements_request_cardEMV, ``card-emv``>> and <<API_Fields_xmlelements_request_ISO, ``iso``>> - New fields for card present transactions.
 
 //-
 
