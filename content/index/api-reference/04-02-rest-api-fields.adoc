@@ -147,7 +147,7 @@ include::{root}/include/fields/api/request/req-card-emv.adoc[tags="**;!responseH
 :!listname:
 
 [#API_Fields_xmlelements_request_cardPIN]
-.``card-pin.``
+==== ``card-pin.``
 
 :listname: API_Fields_xmlelements
 
@@ -164,7 +164,7 @@ include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
 :!listname:
 
 [#API_Fields_xmlelements_request_cardRAW]
-.``card-raw.``
+==== ``card-raw.``
 
 :listname: API_Fields_xmlelements
 
@@ -234,10 +234,22 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 
 // include::{root}/include/fields/api/request/req-device-SDK.adoc[]
 
-// [#API_Fields_xmlelements_card_encryptionContext]
-// ==== encryption-context
+[#API_Fields_xmlelements_request_card_EncContext]
+==== ``encryption-context.``
 
-// include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
+:listname: API_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-encryption-context.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
+
+|===
+
+:!listname:
 
 
 [#API_Fields_xmlelements_request_ISO]
