@@ -7,4 +7,6 @@ Consumer's **P**ersonal **I**dentification **N**umber data are always encrypted.
 
 Card present transaction processing can be initiated by a POS terminal (PIN pad) transaction processed online (and/or offline). The terminal accepts, encrypts and forwards the cardholder's PIN.
 
+NOTE: *All* ``card-pin`` fields are mandatory for payment processes with online PIN.
+
 //-
