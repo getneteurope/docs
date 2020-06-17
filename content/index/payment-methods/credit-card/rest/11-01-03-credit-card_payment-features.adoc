@@ -1030,9 +1030,6 @@ A field can either be *mandatory* (M) or *optional* (O).
 
 Transaction type must be ``enrollment``.
 
-// transaction type size: 22 (given at https://confluence.wirecard.sys/display/EE/EE+-+Visa+Offers+Platform) or 30 (given in the CC table)?
-// payment-method[@name] size 9 (given at https://confluence.wirecard.sys/display/EE/EE+-+Visa+Offers+Platform) or 15 (given in the CC table)?
-
 [%autowidth]
 [cols="m,,,,"]
 |===
@@ -1095,7 +1092,7 @@ Example: If +1 999 555 0100 is the phone number in international format, then ``
 
 .Add Card Request
 
-Card type must be ``visa`` or ``mastercard``.
+Card type must be ``visa``.
 
 [%autowidth]
 [cols="m,,,,"]

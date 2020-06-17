@@ -1,16 +1,15 @@
 
 | promotion-code 
 | O
-| numeric or string?
-// clarify with Pavol
+| String
 | 36
 | Promotional code associated with the enrollment of the user. Issuer sets the loyalty program promotion code to upper case upon receipt. Alphanumeric. No special characters. 
 
 | product-code
 | M
-| numeric or string?
-// clarify with Pavol
+| String
 | 36 ?
-| Bank product code
+| Bank product code. The issuer provides this code. +
+*To be used with _Mastercard Rewards Program_ only*.
 
 //-
