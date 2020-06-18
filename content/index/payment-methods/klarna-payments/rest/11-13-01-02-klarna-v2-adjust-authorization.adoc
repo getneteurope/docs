@@ -109,7 +109,7 @@ Use ``.`` (decimal point) as separator.
 |M 
 |String
 |3 
-a| Amount <<KlarnaV2_CountriesCurrencies, currency>> of requested-amount. +
+a| Currency <<KlarnaV2_CountriesCurrencies, currency>> of requested-amount. +
 This is net order amount (without tax-amount). +
 Format: 3-character abbreviation according to ISO 4217.
 
