@@ -168,7 +168,7 @@ Klarna needs as much information as possible for two reasons.
 
 .National Input Requirements Details
 
-[%autowidth]
+[%autowidth,cols="h,a,a,a,a,a,a,a,a,a,a,a",stripes=none]
 |===
 | |Austria | Denmark | Finland | Germany | Netherlands | Norway | Sweden | Switzerland | UK | US |Australia 
 | Email | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png | include::{root}/content/icons/icon-positive.png
