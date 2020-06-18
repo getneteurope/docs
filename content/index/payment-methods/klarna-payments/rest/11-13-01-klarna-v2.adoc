@@ -171,6 +171,7 @@ Klarna needs as much information as possible for two reasons.
 [%autowidth,cols="h,a,a,a,a,a,a,a,a,a,a,a",stripes=none]
 |===
 | |Austria | Denmark | Finland | Germany | Netherlands | Norway | Sweden | Switzerland | UK | US |Australia 
+
 | Email | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[] | image:icons/icon-positive.png[]
 | Gender | derived | from PNO | from PNO | derived | derived | from PNO | from PNO | derived | derived | image:icons/icon-negative.png[] | image:icons/icon-negative.png[] 
 | NIN* | image:icons/icon-negative.png[] | image:icons/icon-question.png[] | image:icons/icon-question.png[] | image:icons/icon-negative.png[] | image:icons/icon-negative.png[] | image:icons/icon-question.png[] | image:icons/icon-question.png[] | image:icons/icon-negative.png[] | image:icons/icon-negative.png[] | image:icons/icon-negative.png[] | image:icons/icon-negative.png[] 
