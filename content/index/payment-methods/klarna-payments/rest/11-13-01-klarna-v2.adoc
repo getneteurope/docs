@@ -168,7 +168,7 @@ Klarna needs as much information as possible for two reasons.
 
 .National Input Requirements Details
 
-[%autowidth,cols="h,a,a,a,a,a,a,a,a,a,a,a",stripes=none]
+[%autowidth,cols="h,a^.^,a^.^,a^.^,a^.^,a^.^,a^.^,a^.^,a^.^,a^.^,a^.^,a^.^",stripes=none]
 |===
 | |Austria | Denmark | Finland | Germany | Netherlands | Norway | Sweden | Switzerland | UK | US |Australia 
 
