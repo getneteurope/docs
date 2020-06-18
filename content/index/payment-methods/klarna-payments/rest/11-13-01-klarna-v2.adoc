@@ -34,8 +34,8 @@ NOTE: _Klarna_ accepts only physical persons as consumers.
 [%autowidth,cols="h,",stripes=none]
 [cols="1h,5"]
 |===
-|Countries |Austria, Denmark, Finland, Germany, Netherlands, Norway, Sweden, Switzerland, UK
-|Currencies | CHF, DKK, EUR, GBP, NOK, SEK
+|Countries |Austria, Denmark, Finland, Germany, Netherlands, Norway, Sweden, Switzerland, UK, Australia
+|Currencies | CHF, DKK, EUR, GBP, NOK, SEK, AUD
 |===
 
 [#KlarnaV2_CountriesProductMatrix]
@@ -63,6 +63,8 @@ NOTE: _Klarna_ accepts only physical persons as consumers.
 |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
 |UK	
 |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+|Australia	
+|``klarna-paylater``
 |===
 
 [#KlarnaV2_Locales]
@@ -100,6 +102,9 @@ NOTE: _Klarna_ accepts only physical persons as consumers.
 |SE
 |SEK
 |sv-se, en-se
+|AU
+|AUD
+|en-au
 |===
 
 [#KlarnaV2_CommunicationFormats]
