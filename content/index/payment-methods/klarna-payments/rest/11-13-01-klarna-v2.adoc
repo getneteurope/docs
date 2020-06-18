@@ -188,6 +188,8 @@ Klarna needs as much information as possible for two reasons.
 |===
 * NIN = National Identification Number
 
+image:content/icons/icon-positive.png[]
+
 [#KlarnaV2_TransactionTypes]
 === Transaction Types
 
