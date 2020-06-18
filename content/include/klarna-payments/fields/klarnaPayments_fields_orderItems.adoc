@@ -56,9 +56,9 @@ Must not be sent in requests that contain ``order-items`` with ``order-item-type
 a|Tax value of the order item. +
 Must be specified with currency, e.g.: <tax-amount currency="GBP">9.09</tax-amount>. +
 Must be calculated correctly, otherwise request fails. +
-Recommended formula by Klarna: total-amount - (total-amount / total-amount + tax-rate * total-amount)
+Recommended formula by Klarna: ``tax-amount`` = ``amount`` - (``amount`` / (1 + ``tax-rate``))
 Mandatory if ``tax-rate`` is specified. +
-Must not be sent in requests that contain ``order-items`` with ``order-item-type`` ``sales_tax`` or ``store_credit``.
+Must not be sent in requests that contain ``order-items`` with ``type`` = ``sales_tax`` or ``store_credit``.
 
 |discount	
 |O
