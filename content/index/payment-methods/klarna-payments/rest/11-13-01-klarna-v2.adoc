@@ -166,6 +166,8 @@ Klarna needs as much information as possible for two reasons.
 * Klarna offers credit to consumers. For a proper assessment of risk and fraud, Klarna needs consumer data of high quality in a standardized format. 
 * Klarna is part of the order management-process.
 
+.National Input Requirements Details
+
 [%autowidth]
 |===
 | |Austria | Denmark | Finland | Germany | Netherlands | Norway | Sweden | Switzerland | UK | US |Australia 
