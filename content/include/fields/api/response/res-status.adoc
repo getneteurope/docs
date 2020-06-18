@@ -3,20 +3,20 @@
 |===
 | Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
 
-a| @``code``
+| code
 | Response only
 | String
 | 12
 | The status code of a transaction. Primarily used in conjunction with the transaction state to determine the exact details of the status of the transaction. +
 <<StatusCodes_InDetail, -> Complete list of status codes>>.
 
-a| @``description``
+| description
 | Response only
 | String
 | 512
 | Text used to describe the transaction status.
 
-a| @``severity``
+| severity
 | Response only
 | Enumeration
 | 20
