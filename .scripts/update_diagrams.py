@@ -16,7 +16,6 @@ ZIP = DOWNLOAD_DIR / 'docs-diagrams-master.zip'
 
 TOKEN_CACHE = Path.home() / '.tecdoc' / 'ght'
 
-GITHUB_TOKEN = None
 GITHUB_REPO  = 'wirecard/docs-diagrams'
 GITHUB_URL   = 'https://github.com'
 GITHUB_API   = 'https://api.github.com'
@@ -40,19 +39,22 @@ def cprint(msg, color, indent=0):
     """
     print(f"{' ' * indent}{colored(msg, color)}")
 
-def _get(url,
-         headers={'Authorization': f'token {GITHUB_TOKEN}', 'Accept': 'application/vnd.github.v3.raw'},
-         params=None, stream=False):
+def _get(url, headers=None, params=None, stream=False):
     """
     Send a request to url and return the response.
 
     :param url: the url
-    :param headers: HTTP headers (default includes Github Token for Authorization
-    and Accept for Github API)
+    :param headers: HTTP headers (Github Auth Token and Accept header for Github API are
+    added in this method)
     :param params: additional parameters, i.e. query string (URL encoding is not handled here)
     :param stream: stream the data in chunks instead of receiving everything at once
     :returns: HTTP response
     """
+    default_headers = {'Authorization': f'token {GITHUB_TOKEN}', 'Accept': 'application/vnd.github.v3.raw'}
+    if headers is None:
+        headers = default_headers
+    else:
+        headers.update(default_headers)
     response = requests.get(url=url, headers=headers, params=params, stream=stream)
     return response
 
@@ -134,7 +136,12 @@ def fetch(workflow_name='CI', branch='master', artifact_name='diagrams'):
     cprint(f"Fetching workflow with name '{workflow_name}'", 'blue')
     url = f"{GITHUB_API}/repos/{GITHUB_REPO}/actions/workflows"
     resp = _get(url)
-    workflows = resp.json()['workflows']
+    try:
+        workflows = resp.json()['workflows']
+    except KeyError:
+        cprint('ERROR', 'red')
+        cprint(resp.json(), 'red')
+        sys.exit(5)
     idx = [w['name'] for w in workflows].index('CI')
     workflow_id = workflows[idx]['id']
     cprint(f"id: {workflow_id}", 'blue', indent=4)
