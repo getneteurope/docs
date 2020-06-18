@@ -1,7 +1,7 @@
 // This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
 // The shortcut guarantees that the target of the link remains in the current environment.
 
-``card-pin`` is a child of <<{listname}_request_card, payment.card.>>. ``card-pin`` is used for card present payments.
+``card-pin`` is a child of <<{listname}_request_card, payment.card>>. ``card-pin`` is used for card present payments.
 
 Consumer's **P**ersonal **I**dentification **N**umber data are always encrypted.
 
