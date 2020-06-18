@@ -160,6 +160,4 @@ NOTE: {{txnId}} serves as placeholder. Enter the ``transaction-id`` of the prece
 include::{root}/samples/xml/Klarnav2_authorizationRenewal_response.xml[]
 ----
 
-:!txTypeName:
-
 //-

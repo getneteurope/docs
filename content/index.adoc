@@ -15,8 +15,10 @@
 :stylesheet: main.css
 
 // ifdef::backend-pdf[:autofit-option:]
-ifdef::backend-pdf[:source-highlighter: rouge]
-ifndef::backend-pdf[:multipage-level: 2]
+ifdef::backend-pdf[]
+:source-highlighter: rouge
+:multipage-level: 2
+endif::[]
 
 :sectanchors:
 :sectlinks:
