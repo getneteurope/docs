@@ -17,9 +17,7 @@ For PIN management: If ``dukpt`` is used as encryption algorithm, this contains 
 | String 
 | 5
 | Encryption context padding. +
-Accepted value: +
-
-``pkcs``
+Accepted value: ``pkcs``
 
 | value 
 | M/O
