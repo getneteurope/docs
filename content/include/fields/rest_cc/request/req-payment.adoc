@@ -183,6 +183,24 @@ Accepted values: +
 * ``11`` = Quasi-Cash Transaction +
 * ``28`` = Prepaid Activation and Load 
 
+|authorization-reason
+|O
+|Enumeration
+|
+|``authorization-reason`` is a 3D Secure 2 field. It is available for the following transactions types: +
+
+* authorization
+* preauthorization 
+* purchase +
+
+Accepted values: +
+
+* ``resubmission`` = an indicator used when the original purchase took place, but the authorization was not executed at the time the goods or services were provided.
+* ``delayed-charges`` = an indicator for an additional account charge performed after the original services have been provided. It is typically used by hotels, cruise lines and vehicle rental services.
+* ``reauthorization`` = an indicator used in the event of a purchase made after the original purchase in different specific conditions. It is typically found in delayed/split shipments and extended stays/rentals scenarios. 
+* ``no-show`` =  an indicator enabling you to charge for services that the consumer agreed to purchase, but failed to fulfill the agreement terms.
+* ``deferred-authorization`` = an indicator for cases when an authorization is completed at a later time, after the initial authorization failed/was delayed due to connectivity, system issues or other technical limitations.
+
 //-
 
 5+|<<{listname}_request_accountholder, account-holder>>
