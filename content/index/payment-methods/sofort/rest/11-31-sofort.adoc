@@ -38,13 +38,16 @@ at <<AppendixB,  Transaction Types>>.
 |===
 |Transaction Type |Description
 
-| check-signature |Validates digital signature for a _Payment Page_
-transaction.
+| check-signature |Validates digital signature for a _Payment Page_ transaction.
 
-| get-url |A step in a group of transactions where the provider or
-bank's URL is retrieved for the Account Holder to be redirected to.
+| get-url |A step in a group of transactions where the provider or bank's URL is retrieved for the Account Holder to be redirected to.
 
 | debit |Moves funds from the Consumer Account to the Merchant Account.
+
+| revoke-debit | Automats the Sofort revocation process. It handles transactions successfully processed by WPG but not processed by Sofort.. Repairs an incorrect success debit transaction.
+
+// vhauss: need to clarify this description with BA
+
 |===
 
 [#Sofort_ReferenceTransaction]
@@ -306,5 +309,62 @@ include::{root}/samples/xml/sofortbanking_get-url_request_failure.xml[]
 ----
 include::{root}/samples/xml/sofortbanking_get-url_response_failure.xml[]
 ----
+
+.XML revoke-debit Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>6c0e7efd-ee58-40f7-9bbd-5e7337a052cd</merchant-account-id>
+  <transaction-type>revoke-debit</transaction-type>
+  <request-id>${unique for each request}</request-id>
+  <parent-transaction-id>8b2e2afe-89d3-4a82-87c5-673deb017abf</parent-transaction-id>
+  <payment-methods>
+    <payment-method name="sofortbanking"/>
+  </payment-methods>
+</payment>
+----
+// include::{root}/samples/xml/_request_success.xml[]
+
+.XML revoke-debit Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+<payment self="http://localhost:8080/engine/rest/merchants/9416f6b7-3b18-4069-a388-c418f203882a/payments/4dec5394-feb8-448f-a817-5a50e845c44d" xmlns="http://www.elastic-payments.com/schema/payment">
+   <merchant-account-id ref="http://localhost:8080/engine/rest/config/merchants/9416f6b7-3b18-4069-a388-c418f203882a">9416f6b7-3b18-4069-a388-c418f203882a</merchant-account-id>
+   <transaction-id>4dec5394-feb8-448f-a817-5a50e845c44d</transaction-id>
+   <request-id>${unique for each request}</request-id>
+   <transaction-type>revoke-debit</transaction-type>
+   <transaction-state>success</transaction-state>
+   <completion-time-stamp>2020-02-11T10:30:08.000+01:00</completion-time-stamp>
+   <statuses>
+      <status code="201.0000" description="success" severity="information"/>
+   </statuses>
+   <requested-amount currency="EUR">1.01</requested-amount>
+   <parent-transaction-id>8b2e2afe-89d3-4a82-87c5-673deb017abf</parent-transaction-id>
+   <account-holder>
+      <first-name>Max</first-name>
+      <last-name>MusterMann</last-name>
+   </account-holder>
+   <descriptor>status-received-credited</descriptor>
+   <notifications>
+      <notification transaction-state="success" url="http://localhost:8080/merchant/rest/success__alternative?state=success"/>
+   </notifications>
+   <payment-methods>
+      <payment-method name="sofortbanking"/>
+   </payment-methods>
+   <parent-transaction-amount currency="EUR">1.010000</parent-transaction-amount>
+   <bank-account>
+      <iban>DE16888888880023456789</iban>
+      <bic>PNAGDE00000</bic>
+      <account-number>23456789</account-number>
+      <bank-code>88888888</bank-code>
+   </bank-account>
+   <api-id>elastic-api</api-id>
+   <cancel-redirect-url>http://127.0.0.1:8080/cancel</cancel-redirect-url>
+   <success-redirect-url>http://127.0.0.1:8080/success</success-redirect-url>
+</payment>
+----
+include::{root}/samples/xml/_response_success.xml[]
 
 //-
