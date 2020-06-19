@@ -2,7 +2,7 @@
 // The shortcut guarantees that the target of the link remains in the current environment.
 
 // tag::pm-base[]
-// tag:: cc-base[]
+// tag::cc-base[]
 
 |merchant-account-id 
 | M/O 
