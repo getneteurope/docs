@@ -1036,6 +1036,9 @@ Loyalty program specific field information is given here.
 
 //-
 
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_request]
+===== Request
+
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_request_payment]
 .``payment.``
 
@@ -1071,6 +1074,41 @@ include::{root}/include/fields/rest_cc/request/req-account-holder.adoc[tag=loyal
 //-
 
 :!listname:
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_request_loyaltycard]
+.``loyalty-card.``
+
+:listname: CreditCard_PaymentFeatures_LoyaltyPrograms_Fields
+
+include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
+
+|===
+
+//-
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_response]
+===== Response
+
+[#CC_Fields_xmlelements_response_loyaltycard]
+.``loyalty-card.``
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
+
+|===
+
+//-
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples]
 ==== Samples
