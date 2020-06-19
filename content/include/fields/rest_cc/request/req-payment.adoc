@@ -2,6 +2,7 @@
 // The shortcut guarantees that the target of the link remains in the current environment.
 
 // tag::pm-base[]
+// tag:: cc-base[]
 
 |merchant-account-id 
 | M/O 
@@ -74,6 +75,14 @@ a|Determines a transaction's behavior during transaction processing and merchant
 |32 
 |The order number which you can provide. +
 Allowed characters: ASCII character code 32-38 and 40-126.
+
+| consumer-id  
+| M/O
+| String 
+| 50 
+| The ID of the consumer. +
+``consumer-id`` is used wit <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP only. It is mandatory in a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Tokenized-Enrollment_ request>>. +
+When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
 
 |parent-transaction-id 
 |M/O 
@@ -244,5 +253,19 @@ Accepted values: +
 // end::pm-base[]
 
 // end::three-ds[]
+
+// end::cc-base[]
+
+// tag::loyalty-prog[]
+
+| consumer-id  
+| M/O
+| String 
+| 50 
+| The ID of the consumer. +
+``consumer-id`` is used wit VOP only. It is mandatory in a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Tokenized-Enrollment_ request>>. +
+When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
+
+// end::loyalty-prog[]
 
 //-

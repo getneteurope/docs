@@ -17,7 +17,7 @@ Accepted format: ``{date-pattern}``.
 |156 
 |Consumer’s email address as given in your shop. +
 *Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>. +
-When using a credit card for a <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>>, At least one of the following must be present: ``consumer-id``, ``email`` or ``phone``.
+When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP, at least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
 
 |first-name 
 |M/O
@@ -88,10 +88,11 @@ Accepted values: +
 |Mobile phone number provided by the consumer. 
 
 |phone 
-|O 
+|M/O 
 |String 
 |18 
-|Phone number provided by the consumer. 
+|Phone number provided by the consumer. +
+When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP, at least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
 
 |work-phone
 |O 
@@ -124,5 +125,32 @@ Accepted values: +
 // end::cc-base[]
 
 // end::pm-base[]
+
+// tag::loyalty-prog[]
+
+|email 
+|M/O
+|String 
+|156 
+|Consumer’s email address as given in your shop. +
+At least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
+
+|phone 
+|M/O 
+|String 
+|18 
+|Phone number provided by the consumer. +
+At least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``. +
+Example: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the _phone_ field.
+
+| phone-country-code 
+| M/O 
+| String 
+| 64
+a| Country identifying information for the contact. +
+Must be present if phone number is used. +
+Example: If +1 999 555 0100 is the phone number in international format, then ``1`` is the value of the ``phone-country-code`` field.
+
+// end::loyalty-prog[]
 
 //-
