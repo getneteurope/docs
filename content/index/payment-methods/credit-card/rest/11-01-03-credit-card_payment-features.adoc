@@ -1006,7 +1006,7 @@ h|Secret Key | 361c4cf1-b71b-4996-9c05-2d0eac7bfeb3
 Transaction type must be ``enrollment``.
 
 . Merchant sends _enrollment_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest, MRP>>.
-. {payment-gateway} returns _enrollment_ <CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse, MRP>> response.
+. {payment-gateway} returns _enrollment_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse, MRP>> response.
 
 //-
 
@@ -1014,8 +1014,8 @@ Transaction type must be ``enrollment``.
 
 Card type must be ``visa``.
 
-. Merchant sends add Visa card <<, request>>.
-. {payment-gateway} returns add Visa card <<, response>>.
+. Merchant sends add Visa card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest, request>>.
+. {payment-gateway} returns add Visa card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardResponse, response>>.
 
 //which transaction type do you use for "Add Card"?
 
@@ -1291,7 +1291,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
 </payment>
 ----
 
-// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_request.xml[]
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Enrollment_request.xml[]
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse]
 .MRP _Enrollment_ Response
@@ -1338,6 +1338,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
     <instrument-country>SG</instrument-country>
 </payment>
 ----
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Enrollment_response.xml[]
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeRequest]
 .MRP _Tokenize_ Request
@@ -1374,6 +1375,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
   </payment-methods>
 </payment>
 ----
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Tokenize_request.xml[]
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeResponse]
 .MRP _Tokenize_ Response
@@ -1414,6 +1416,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
     <api-id>elastic-api</api-id>
 </payment>
 ----
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Tokenize_response.xml[]
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenRequest]
 .MRP _Enroll with Token_ Request
@@ -1438,6 +1441,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
     </loyalty-card>
 </payment>
 ----
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_EnrollwToken_request.xml[]
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenResponse]
 .MRP _Enroll with Token_ Response
@@ -1486,6 +1490,8 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
     <instrument-country>SG</instrument-country>
 </payment>
 ----
+// include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_EnrollwToken_response.xml[]
+
 //-
 
 
