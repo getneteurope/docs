@@ -81,7 +81,7 @@ Allowed characters: ASCII character code 32-38 and 40-126.
 | String 
 | 50 
 | The ID of the consumer. +
-``consumer-id`` is used wit <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP only. It is mandatory in a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Tokenized-Enrollment_ request>>. +
+``consumer-id`` is used with <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP only. It is mandatory in a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Tokenized-Enrollment_ request>>. +
 When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
 
 |parent-transaction-id 
@@ -263,7 +263,7 @@ Accepted values: +
 | String 
 | 50 
 | The ID of the consumer. +
-``consumer-id`` is used wit VOP only. It is mandatory in a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Tokenized-Enrollment_ request>>. +
+``consumer-id`` is used with VOP only. It is mandatory in a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Tokenized-Enrollment_ request>>. +
 When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
 
 // end::loyalty-prog[]
