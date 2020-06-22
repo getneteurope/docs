@@ -8,7 +8,7 @@
 | String 
 | 36	
 | The embossed or encoded number that identifies the card issuer to which a transaction is to be routed and the account to which it is to be charged, unless specific instructions indicate otherwise. In the case of a credit card, this is the primary account number. +
-Mandatory for credit card transactions if <<{listname}_Fields_xmlelements_request_cardtoken,``card-token``>> is not used.
+Mandatory for credit card transactions if <<{listname}_request_cardtoken,``card-token``>> is not used.
 
 | account-type
 | O
@@ -78,4 +78,11 @@ Mandatory for one-click checkout.
 | String	
 | 40 
 | "Track" of information on a credit card that usually contains credit card number and expiration date.
+
+5+|<<{listname}_request_cardEMV, card-emv>>
+
+5+|<<{listname}_request_cardPIN, card-pin>>
+
+5+|<<{listname}_request_cardRAW, card-raw>>
+
 |===
