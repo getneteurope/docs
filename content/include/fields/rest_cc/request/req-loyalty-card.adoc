@@ -1,6 +1,6 @@
 
 | user-id
-| M
+| M/O
 | String
 | 36
 | The issuer bank supplies a unique id for a consumer’s account. +
@@ -13,7 +13,7 @@
 | Promotional code associated with the enrollment of the consumer. Issuer sets the loyalty program promotion code to upper case upon receipt.
 
 | product-code
-| M
+| M/O
 | String
 | 36 ?
 | The issuer bank provides this code. +

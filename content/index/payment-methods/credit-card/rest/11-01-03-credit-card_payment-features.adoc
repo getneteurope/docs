@@ -1018,7 +1018,7 @@ See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_S
 
 .Add Card (VOP only)
 
-Card type must be ``visa``.
+Card type must be ``visa`` and transaction type must be ``enrollment``.
 
 . Merchant sends add Visa card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest, request>>.
 . {payment-gateway} returns add Visa card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardResponse, response>>.
