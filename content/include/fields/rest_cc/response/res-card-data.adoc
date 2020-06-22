@@ -3,6 +3,9 @@
 | String
 | 50 
 | Name of the card issuer. +
-Returned only if {payment-gateway} has enabled ``FEATURE_CARD_TYPE_SERVICE`` or ``X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE`` header is sent with request.
+Returned only if 
+
+* {payment-gateway} has enabled ``FEATURE_CARD_TYPE_SERVICE`` or +
+* ``X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE`` header is sent with request.
 
 //-

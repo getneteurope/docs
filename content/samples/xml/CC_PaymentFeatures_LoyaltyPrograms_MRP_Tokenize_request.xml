@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <request-id>016ec656-0d6b-4300-a2d2-d6aad84bc104</request-id>
+    <transaction-type>tokenize</transaction-type>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>example@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>123 anystreet</street1>
+            <city>Brantford</city>
+            <state>ON</state>
+            <country>CA</country>
+        </address>
+    </account-holder>
+    <card>
+        <account-number>5498340000110138</account-number>
+        <expiration-month>01</expiration-month>
+        <expiration-year>2021</expiration-year>
+        <card-type>mastercard</card-type>
+    <card-security-code>123</card-security-code>
+    </card>
+    <ip-address>127.0.0.1</ip-address>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+</payment>

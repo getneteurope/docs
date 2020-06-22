@@ -5,8 +5,10 @@
     <payment-methods>
         <payment-method name="creditcard"/>
     </payment-methods>
-    <consumer-id>1234567</consumer-id>
     <card-token>
-        <token-id>4958399496676142</token-id>      
+        <token-id>4516758689085824</token-id>      
     </card-token>
+    <loyalty-card>
+        <user-id>9h373dc1-3d44-431d-8cf0-8719700613k2</user-id>
+    </loyalty-card>
 </payment>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
+    <request-id>93cb233c-1d99-4f90-a530-f344ed627813</request-id>
+    <transaction-type>enrollment</transaction-type>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+ <card-token>
+        <token-id>5409951223660138</token-id>      
+    </card-token>
+    <loyalty-card>
+        <user-id>MTF5498340000110138</user-id>
+      <promotion-code>SHOPBACKVN</promotion-code>
+      <product-code>MCCSHOPBACK</product-code>
+    </loyalty-card>
+</payment>

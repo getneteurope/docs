@@ -1,0 +1,17 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>ff39e6fd-35f4-11e5-9e9b-f81654632328</merchant-account-id>
+  <request-id>49995104-ac8a-464c-b0c1-f4269cb29cae</request-id>
+  <transaction-type>enrollment</transaction-type>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+  <card>
+    <card-type>visa</card-type>
+    <account-number>4444111155553333</account-number>
+    <expiration-year>2100</expiration-year>
+    <expiration-month>12</expiration-month>
+  </card>
+  <loyalty-card>
+    <user-id>be35247c-9375-4e4f-8db1-00b2563db857</user-id>
+  </loyalty-card>
+</payment>
