@@ -1,8 +1,11 @@
 
-| issuer-name 
+| card-id
 | String
-| 50 
-| Name of the card issuer. +
-Returned only if {payment-gateway} has enabled ``FEATURE_CARD_TYPE_SERVICE`` or ``X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE`` header is sent with request.
+| 36
+| The loyalty program assignes an ID for the consumer's card account (RANAC for each card).
+
+// vhauss: Pavol > 
+// 1) What means RANAC?
+// 2) Is this description ok?
 
 //-

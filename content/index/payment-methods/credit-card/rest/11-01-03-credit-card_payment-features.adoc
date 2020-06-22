@@ -1097,6 +1097,17 @@ include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_response]
 ===== Response
 
+[#CC_Fields_xmlelements_response_carddata]
+.``card-data.``
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-card-data.adoc[]
+
+|===
+
 [#CC_Fields_xmlelements_response_loyaltycard]
 .``loyalty-card.``
 

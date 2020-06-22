@@ -1,15 +1,22 @@
 
+| user-id
+| M
+| String
+| 36
+| The issuer bank supplies a unique id for a consumer’s account. +
+*Send ``user-id`` in the request with _Mastercard Rewards Program_ only*
+
 | promotion-code 
 | O
 | String
 | 36
-| Promotional code associated with the enrollment of the user. Issuer sets the loyalty program promotion code to upper case upon receipt. Alphanumeric. No special characters. 
+| Promotional code associated with the enrollment of the consumer. Issuer sets the loyalty program promotion code to upper case upon receipt.
 
 | product-code
 | M
 | String
 | 36 ?
-| Bank product code. The issuer provides this code. +
-*To be used with _Mastercard Rewards Program_ only*.
+| The issuer bank provides this code. +
+*Send ``product-code`` with _Mastercard Rewards Program_ only*.
 
 //-
