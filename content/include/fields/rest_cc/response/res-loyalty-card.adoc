@@ -8,4 +8,10 @@
 // 1) What means RANAC?
 // 2) Is this description ok?
 
+| user-id
+| String
+| 36
+| The issuer bank supplies a unique id for a consumer’s account. +
+*VOP returns this value in the response.*
+
 //-

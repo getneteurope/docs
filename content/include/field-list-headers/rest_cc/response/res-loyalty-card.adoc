@@ -5,4 +5,10 @@
 
 It is used with the issuers' <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>>.
 
+// tag::loyalty-prog[]
+
+``loyalty-card`` is a child of ``payment``.
+
+// end::loyalty-prog[]
+
 //-

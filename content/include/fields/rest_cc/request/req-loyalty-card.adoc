@@ -4,7 +4,7 @@
 | String
 | 36
 | The issuer bank supplies a unique id for a consumer’s account. +
-*Send ``user-id`` in the request with _Mastercard Rewards Program_ only*
+*Send ``user-id`` in the request with _Mastercard Rewards Program_ only*.
 
 | promotion-code 
 | O
