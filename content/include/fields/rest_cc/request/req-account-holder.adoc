@@ -147,7 +147,7 @@ Example: If +1 999 555 0100 is the phone number in international format, then ``
 | M/O 
 | String 
 | 64
-a| Country identifying information for the contact. +
+a| Country identifying information for the consumer. +
 Must be present if phone number is used. +
 Example: If +1 999 555 0100 is the phone number in international format, then ``1`` is the value of the ``phone-country-code`` field.
 

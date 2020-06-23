@@ -4,10 +4,6 @@
 | 36
 | The loyalty program assignes an ID for the consumer's card account (RANAC for each card).
 
-// vhauss: Pavol > 
-// 1) What means RANAC?
-// 2) Is this description ok?
-
 | user-id
 | String
 | 36
