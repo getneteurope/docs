@@ -236,5 +236,7 @@ include::{root}/samples/xml/Klarnav2_authorization_autoCapture_request.xml[]
 include::{root}/samples/xml/Klarnav2_authorization_autoCapture_response.xml[]
 ----
 
+:!txTypeName:
+
 //-
 

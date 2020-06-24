@@ -1,15 +1,15 @@
 
-| code
+a| @code
 | String 
 | 12 
 | This is the <<StatusCodes_InDetail, code of the status>> of a transaction.
 
-| description
+a| @description
 | String 
 | 256 
 | This is the description of the status code of a transaction.
 
-| severity
+a| @severity
 | Enumeration 
 | 20 
 | This field gives information about the severity. It can be either ``warning``, ``error`` or ``information``.
