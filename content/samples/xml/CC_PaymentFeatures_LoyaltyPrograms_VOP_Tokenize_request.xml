@@ -1,5 +1,5 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>1b3be510-a992-48aa-8af9-6ba4c368a0ac</merchant-account-id>
+    <merchant-account-id>f82ea856-be50-4899-988d-697574df65f0</merchant-account-id>
     <request-id>{{$guid}}</request-id>
     <transaction-type>tokenize</transaction-type>
     <requested-amount currency="EUR">5.00</requested-amount>

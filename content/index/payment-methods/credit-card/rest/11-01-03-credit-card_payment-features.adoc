@@ -948,9 +948,7 @@ NOTE: Even if a request file contains invalid or missing ``transaction-id``s, re
 [#CreditCard_PaymentFeatures_LoyaltyPrograms]
 === Loyalty Programs
 
-Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard Rewards Program_ (MRP). With these loyalty programs you can enroll your consumers' cards and record their loyality based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
-
-// >>>>> ggf heißt das Mastercard Programm "Mastercard® Card Linked Services". Muss von Maria geklärt werden.
+Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard Rewards Program_ (MRP). With these loyalty programs you can enroll your consumers' cards and record their loyalty based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
@@ -1005,7 +1003,7 @@ h|Secret Key | 361c4cf1-b71b-4996-9c05-2d0eac7bfeb3
 
 Transaction type must be ``enrollment``.
 
-. Merchant sends _enrollment_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest, MRP>>.
+. You send _enrollment_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest, MRP>>.
 . {payment-gateway} returns _enrollment_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse, MRP>> response.
 
 [NOTE]
@@ -1020,8 +1018,8 @@ See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_S
 
 Card type must be ``visa`` and transaction type must be ``enrollment``.
 
-. Merchant sends add Visa card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest, request>>.
-. {payment-gateway} returns add Visa card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardResponse, response>>.
+. You send an Add Visa Card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest, request>>.
+. {payment-gateway} returns an Add Visa Card <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardResponse, response>>.
 
 [NOTE]
 ====
