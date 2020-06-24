@@ -1128,7 +1128,10 @@ include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples]
 ==== Samples
 
-IMPORTANT: For a successful test each request requires a _Visa_ or _Mastercard_ credit card number that has not been used before. Make sure to change the credit card number with every new request.
+--
+IMPORTANT: For a successful test use a new set of ``payment.card`` values in each VOP or MRP request that has not been used before. +
+For your convenience you can use this https://generator-credit-card.com[credit card generator] for Visa and Mastercard.
+--
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest]
 .VOP _Enrollment_ Request
@@ -1211,7 +1214,11 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest]
-.MRP _Enrollment_ Request
+.MRP _Enrollment_ Request 
+
+--
+IMPORTANT: When you test the enrollment of a Mastercard, you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+--
 
 [source,xml,subs=attributes+]
 ----
@@ -1244,6 +1251,10 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Tokenize_resp
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenRequest]
 .MRP _Enroll with Token_ Request
+
+--
+IMPORTANT: When you test the enrollment of a tokenized Mastercard, use the ``token-id`` you received in the MRP _Tokenize_ Response and change the ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+--
 
 [source,xml,subs=attributes+]
 ----
