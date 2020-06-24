@@ -266,4 +266,6 @@ include::{root}/samples/xml/Klarnav2_authorization_recurring_autoCapture_final_r
 include::{root}/samples/xml/Klarnav2_authorization_recurring_autoCapture_final_response.xml[]
 ----
 
+:!txTypeName: 
+
 //-
