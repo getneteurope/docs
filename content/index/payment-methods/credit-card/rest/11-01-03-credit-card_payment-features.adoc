@@ -1029,7 +1029,7 @@ If you want to add a tokenized Visa card, you can send a <<CreditCard_PaymentFea
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields]
 ==== Fields
 
-Most of the fields used for the loyalty programs are the same as the <<RestApi_Fields, REST API Fields>>. +
+Most of the fields used for the loyalty programs are the same as the <<CC_Fields, Credit Card fields>>. +
 Loyalty program specific field information is given here.
 
 //-
