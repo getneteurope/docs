@@ -4,8 +4,8 @@
     <request-id>{{$guid}}</request-id>
     <transaction-type>enrollment</transaction-type>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
+        <first-name>Zoe</first-name>
+        <last-name>Wayne</last-name>
         <email>example@example.com</email>
         <phone></phone>
         <address>
@@ -16,14 +16,14 @@
         </address>
     </account-holder>
     <card>
-        <account-number>5498340000110138</account-number>
-        <expiration-month>01</expiration-month>
+        <account-number>5488219180070225</account-number>
+        <expiration-month>10</expiration-month>
         <expiration-year>2021</expiration-year>
         <card-type>mastercard</card-type>
-    <card-security-code>123</card-security-code>
+    <card-security-code>438</card-security-code>
     </card>
     <loyalty-card>
-        <user-id>MTF5498340000110138</user-id>
+        <user-id>MTF5497340000110138</user-id>
         <promotion-code>SHOPBACKVN</promotion-code>
         <product-code>MCCSHOPBACK</product-code>
     </loyalty-card>

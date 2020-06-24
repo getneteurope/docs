@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://localhost:8060/engine/rest/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328/payments/cf41a924-9f22-4436-b9e3-0515ed6c6406">
-    <merchant-account-id ref="https://localhost:8060/engine/rest/config/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328">fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
-    <transaction-id>cf41a924-9f22-4436-b9e3-0515ed6c6406</transaction-id>
-    <request-id>016ec656-0d6b-4300-a2d2-d6aad84bc104</request-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.wirecard.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/ea65d5c6-3650-41ef-a366-c9f251c319f8">
+    <merchant-account-id ref="https://api-test.wirecard.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+    <transaction-id>ea65d5c6-3650-41ef-a366-c9f251c319f8</transaction-id>
+    <request-id>58c91353-16ac-4fb4-ae42-1c990a897446</request-id>
     <transaction-type>tokenize</transaction-type>
     <transaction-state>success</transaction-state>
-    <completion-time-stamp>2019-06-10T15:35:49.000+02:00</completion-time-stamp>
+    <completion-time-stamp>2020-06-24T08:36:40.000Z</completion-time-stamp>
     <statuses>
         <status code="201.0000" description="The resource was successfully created." severity="information"/>
     </statuses>
@@ -21,9 +21,14 @@
             <country>CA</country>
         </address>
     </account-holder>
+    <card>
+        <expiration-month>12</expiration-month>
+        <expiration-year>2020</expiration-year>
+        <card-type>mastercard</card-type>
+    </card>
     <card-token>
-        <token-id>5409951223660138</token-id>
-        <masked-account-number>549834******0138</masked-account-number>
+        <token-id>5412005276353442</token-id>
+        <masked-account-number>556623******3442</masked-account-number>
     </card-token>
     <ip-address>127.0.0.1</ip-address>
     <payment-methods>

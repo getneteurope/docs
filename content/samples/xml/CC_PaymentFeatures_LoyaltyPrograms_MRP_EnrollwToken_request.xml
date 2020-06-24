@@ -7,10 +7,10 @@
     <payment-method name="creditcard"/>
   </payment-methods>
  <card-token>
-        <token-id>5409951223660138</token-id>      
+        <token-id>5412005276353442</token-id>
     </card-token>
     <loyalty-card>
-        <user-id>MTF5498340000110138</user-id>
+        <user-id>MTF5498341000110138</user-id>
       <promotion-code>SHOPBACKVN</promotion-code>
       <product-code>MCCSHOPBACK</product-code>
     </loyalty-card>

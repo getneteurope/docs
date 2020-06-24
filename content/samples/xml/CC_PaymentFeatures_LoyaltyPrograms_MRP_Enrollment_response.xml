@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://localhost:8060/engine/rest/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328/payments/c89d7677-89cb-4ea8-a5ba-4f0a4f03df10">
-    <merchant-account-id ref="https://localhost:8060/engine/rest/config/merchants/fbffe6fd-35f4-11e5-9e9b-f81651111328">fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
-    <transaction-id>c89d7677-89cb-4ea8-a5ba-4f0a4f03df10</transaction-id>
-    <request-id>7d3a7724-936f-42fc-9288-838fc3a9dfdb</request-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.wirecard.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/09b7a8f0-2565-43f9-8385-1a0e5f8f6cc2">
+    <merchant-account-id ref="https://api-test.wirecard.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+    <transaction-id>09b7a8f0-2565-43f9-8385-1a0e5f8f6cc2</transaction-id>
+    <request-id>f70fb019-e239-4793-b312-e7352c9eff96</request-id>
     <transaction-type>enrollment</transaction-type>
     <transaction-state>success</transaction-state>
-    <completion-time-stamp>2019-06-10T15:29:09.000+02:00</completion-time-stamp>
+    <completion-time-stamp>2020-06-24T08:25:30.000Z</completion-time-stamp>
     <statuses>
         <status code="201.0000" description="loyalty:The resource was successfully created." severity="information"/>
     </statuses>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
+        <first-name>Zoe</first-name>
+        <last-name>Wayne</last-name>
         <email>example@example.com</email>
         <phone></phone>
         <address>
@@ -22,18 +22,23 @@
         </address>
     </account-holder>
     <loyalty-card>
-        <user-id>MTF5498340000110138</user-id>
-        <card-id>00102086300001429511</card-id>
+        <user-id>MTF5497340000110138</user-id>
+        <card-id>00713548870075448843</card-id>
     </loyalty-card>
+    <card>
+        <expiration-month>10</expiration-month>
+        <expiration-year>2021</expiration-year>
+        <card-type>mastercard</card-type>
+    </card>
     <card-token>
-        <token-id>5409951223660138</token-id>
-        <masked-account-number>549834******0138</masked-account-number>
+        <token-id>5922008592030225</token-id>
+        <masked-account-number>548821******0225</masked-account-number>
     </card-token>
     <ip-address>127.0.0.1</ip-address>
-    <descriptor>demo descriptor</descriptor>
+    <descriptor></descriptor>
     <payment-methods>
         <payment-method name="creditcard"/>
     </payment-methods>
     <api-id>elastic-api</api-id>
-    <instrument-country>SG</instrument-country>
+    <instrument-country>FR</instrument-country>
 </payment>
