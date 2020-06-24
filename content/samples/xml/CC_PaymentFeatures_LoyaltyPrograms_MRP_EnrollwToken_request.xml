@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
-    <request-id>93cb233c-1d99-4f90-a530-f344ed627813</request-id>
+    <merchant-account-id>3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+    <request-id>{{$guid}}</request-id>
     <transaction-type>enrollment</transaction-type>
   <payment-methods>
     <payment-method name="creditcard"/>

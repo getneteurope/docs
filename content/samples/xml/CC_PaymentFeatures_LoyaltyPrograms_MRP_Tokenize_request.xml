@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>fbffe6fd-35f4-11e5-9e9b-f81651111328</merchant-account-id>
-    <request-id>016ec656-0d6b-4300-a2d2-d6aad84bc104</request-id>
+    <merchant-account-id>3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+    <request-id>{{$guid}}</request-id>
     <transaction-type>tokenize</transaction-type>
     <account-holder>
         <first-name>John</first-name>
