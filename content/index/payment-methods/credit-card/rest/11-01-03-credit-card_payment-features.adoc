@@ -1010,7 +1010,7 @@ Transaction type must be ``enrollment``.
 
 [NOTE]
 ====
-If you want to enroll the cards with <<CreditCard_PaymentFeatures_Tokenization, tokenized cards>>, you can send a tokenize request first. +
+If you want to enroll to the loyalty programs with <<CreditCard_PaymentFeatures_Tokenization, tokenized cards>>, you can send a tokenize request first. +
 See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest, VOP>> and <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeRequest, MRP>>.
 ====
 
