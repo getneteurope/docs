@@ -2,7 +2,7 @@
 | card-id
 | String
 | 36
-| The loyalty program assignes an ID for the consumer's card account (RANAC for each card).
+| The loyalty program assignes an ID for the consumer's card account.
 
 | user-id
 | String

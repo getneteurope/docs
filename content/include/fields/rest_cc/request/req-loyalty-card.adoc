@@ -4,7 +4,7 @@
 | String
 | 36
 | The issuer bank supplies a unique id for a consumer’s account. +
-*You cannot send ``user-id`` in the request for _VOP_ card enrollment*.
+*Madatory when you enroll a card for _MRP_ or add a card for _VOP_. You cannot send it in the request for _VOP_ card enrollment*.
 
 | promotion-code 
 | O
@@ -15,8 +15,9 @@
 | product-code
 | M/O
 | String
-| 36 ?
+| 36
 | The issuer bank provides this code. +
-*Send ``product-code`` with _Mastercard Rewards Program_ only*.
+*Mandatory for _MRP_ enrollment or enrollment with token*. +
+*Not used with _VOP_.*
 
 //-

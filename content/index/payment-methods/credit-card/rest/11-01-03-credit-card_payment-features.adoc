@@ -957,7 +957,7 @@ Some schemes provide a loyalty program for your consumers. _Visa_'s program is c
 
 Enroll a card in the loyalty program with the transaction type _enrollment_.
 
-NOTE: The transaction type _enrollment_ for loyalty programs is different to the transaction type _check-enrollment_ for <<3DS2_checkenrollment, 3DS2 payment processes>>.
+NOTE: The transaction type _enrollment_ for loyalty programs may not be confused with the transaction type _check-enrollment_ for <<3DS2_checkenrollment, 3DS2 payment processes>>.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials]
 ==== Test Credentials
