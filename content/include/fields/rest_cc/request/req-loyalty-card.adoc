@@ -4,7 +4,7 @@
 | String
 | 36
 | The issuer bank supplies a unique id for a consumer’s account. +
-*Madatory when you enroll a card for _MCLS_ or add a card for _VOP_. You cannot send it in the request for _VOP_ card enrollment*.
+*Madatory for MCLS _Enroll Card _ or VOP _Add Card_. You cannot send it in a VOP _Enroll Card_ request.*
 
 | promotion-code 
 | O
@@ -17,7 +17,7 @@
 | String
 | 36
 | The issuer bank provides this code. +
-*Mandatory for _MCLS_ enrollment or enrollment with token*. +
+*Mandatory for MCLS _Enroll Card_ or _Enroll Tokenized Card_*.
 *Not used with _VOP_.*
 
 //-

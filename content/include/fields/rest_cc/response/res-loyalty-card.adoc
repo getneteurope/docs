@@ -8,6 +8,6 @@
 | String
 | 36
 | The issuer bank supplies a unique id for a consumer’s account. +
-*VOP returns this value in the response for a card enrollment.*
+*VOP returns this value in the _Enroll Card_ response.*
 
 //-
