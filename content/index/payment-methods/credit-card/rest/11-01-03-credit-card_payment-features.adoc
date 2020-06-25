@@ -1150,6 +1150,10 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_re
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest]
 .VOP _Add Card_ Request
 
+--
+IMPORTANT: When you test to add a Visa card, you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+--
+
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCard_request.xml[]
