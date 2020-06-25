@@ -948,7 +948,7 @@ NOTE: Even if a request file contains invalid or missing ``transaction-id``s, re
 [#CreditCard_PaymentFeatures_LoyaltyPrograms]
 === Loyalty Programs
 
-Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard Rewards Program_ (MRP). With these loyalty programs you can enroll your consumers' cards and record their loyalty based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
+Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard® Card Linked Services_ (MCLS). With these loyalty programs you can enroll your consumers' cards and record their loyalty based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
@@ -972,9 +972,9 @@ h|Password | woU6xxn17HhSi-
 h|Secret Key | d40ec430-89eb-4c52-ba2c-98d9e8910fb3
 |===
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_MRP]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_MCLS]
 [discrete]
-._MRP_
+._MCLS_
 
 |===
 h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
@@ -984,9 +984,9 @@ h|Password | TqlXmquI8jB2
 h|Secret Key | ca0cd974-8523-4bba-8cca-0572f9f30c74
 |===
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_VOPMRP]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_VOPMCLS]
 [discrete]
-._VOP_ and _MRP_
+._VOP_ and _MCLS_
 
 |===
 h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
@@ -1003,13 +1003,13 @@ h|Secret Key | 361c4cf1-b71b-4996-9c05-2d0eac7bfeb3
 
 Transaction type must be ``enrollment``.
 
-. You send _enrollment_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest, MRP>>.
-. {payment-gateway} returns _enrollment_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse, MRP>> response.
+. You send _enrollment_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest, MCLS>>.
+. {payment-gateway} returns _enrollment_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentResponse, MCLS>> response.
 
 [NOTE]
 ====
 If you want to enroll to the loyalty programs with <<CreditCard_PaymentFeatures_Tokenization, tokenized cards>>, you can send a tokenize request first. +
-See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest, VOP>> and <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeRequest, MRP>>.
+See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest, VOP>> and <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_TokenizeRequest, MCLS>>.
 ====
 
 //-
@@ -1127,7 +1127,7 @@ include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
 ==== Samples
 
 --
-IMPORTANT: For a successful test use a new set of ``payment.card`` values in each VOP or MRP request that has not been used before. +
+IMPORTANT: For a successful test use a new set of ``payment.card`` values in each VOP or MCLS request that has not been used before. +
 For your convenience you can use this https://generator-credit-card.com[credit card generator] for Visa and Mastercard.
 --
 
@@ -1211,8 +1211,8 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokenized_response.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentRequest]
-.MRP _Enrollment_ Request 
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest]
+.MCLS _Enrollment_ Request 
 
 --
 IMPORTANT: When you test the enrollment of a Mastercard, you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
@@ -1220,51 +1220,51 @@ IMPORTANT: When you test the enrollment of a Mastercard, you have to not only <<
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Enrollment_request.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Enrollment_request.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollmentResponse]
-.MRP _Enrollment_ Response
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Enrollment_response.xml[]
-----
-
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeRequest]
-.MRP _Tokenize_ Request
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentResponse]
+.MCLS _Enrollment_ Response
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Tokenize_request.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Enrollment_response.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_TokenizeResponse]
-.MRP _Tokenize_ Response
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_TokenizeRequest]
+.MCLS _Tokenize_ Request
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_Tokenize_response.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_request.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenRequest]
-.MRP _Enroll with Token_ Request
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_TokenizeResponse]
+.MCLS _Tokenize_ Response
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_response.xml[]
+----
+
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollwTokenRequest]
+.MCLS _Enroll with Token_ Request
 
 --
-IMPORTANT: When you test the enrollment of a tokenized Mastercard, use the ``token-id`` you received in the MRP _Tokenize_ Response and change the ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+IMPORTANT: When you test the enrollment of a tokenized Mastercard, use the ``token-id`` you received in the MCLS _Tokenize_ Response and change the ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
 --
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_EnrollwToken_request.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_EnrollwToken_request.xml[]
 ----
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MRP_EnrollwTokenResponse]
-.MRP _Enroll with Token_ Response
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollwTokenResponse]
+.MCLS _Enroll with Token_ Response
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MRP_EnrollwToken_response.xml[]
+include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_EnrollwToken_response.xml[]
 ----
 
 //-
