@@ -1003,8 +1003,8 @@ h|Secret Key | 361c4cf1-b71b-4996-9c05-2d0eac7bfeb3
 
 Transaction type must be ``enrollment``.
 
-. You send _enrollment_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest, MCLS>>.
-. {payment-gateway} returns _enrollment_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentResponse, MCLS>> response.
+. You send _Enroll Card_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest, MCLS>>.
+. {payment-gateway} returns _Enroll Card_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentResponse, MCLS>> response.
 
 [NOTE]
 ====
@@ -1132,7 +1132,7 @@ For your convenience you can use this https://generator-credit-card.com[credit c
 --
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest]
-.VOP _Enrollment_ Request
+.VOP _Enroll Card_ Request
 
 [source,xml,subs=attributes+]
 ----
@@ -1140,7 +1140,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_re
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse]
-.VOP _Enrollment_ Response
+.VOP _Enroll Card_ Response
 
 [source,xml,subs=attributes+]
 ----
@@ -1151,7 +1151,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_re
 .VOP _Add Card_ Request
 
 --
-IMPORTANT: When you test to add a Visa card, you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+IMPORTANT: In this test request you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
 --
 
 [source,xml,subs=attributes+]
@@ -1184,7 +1184,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Tokenize_resp
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest]
-.VOP _Tokenized-Enrollment_ Request
+.VOP _Enroll Tokenized Card_ Request
 
 [source,xml,subs=attributes+]
 ----
@@ -1192,7 +1192,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentResponse]
-.VOP _Tokenized-Enrollment_ Response
+.VOP _Enroll Tokenized Card_ Response
 
 [source,xml,subs=attributes+]
 ----
@@ -1200,7 +1200,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_TokenizedEnro
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardTokenizedRequest]
-.VOP _Add Card Tokenized_ Request
+.VOP _Add Tokenized Card_ Request
 
 [source,xml,subs=attributes+]
 ----
@@ -1208,7 +1208,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardTokenizedResponse]
-.VOP _Add Card Tokenized_ Response
+.VOP _Add Tokenized Card_ Response
 
 [source,xml,subs=attributes+]
 ----
@@ -1216,10 +1216,10 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest]
-.MCLS _Enrollment_ Request 
+.MCLS _Enroll Card_ Request 
 
 --
-IMPORTANT: When you test the enrollment of a Mastercard, you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+IMPORTANT: In this test request you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
 --
 
 [source,xml,subs=attributes+]
@@ -1228,7 +1228,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Enrollment_r
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentResponse]
-.MCLS _Enrollment_ Response
+.MCLS _Enroll Card_ Response
 
 [source,xml,subs=attributes+]
 ----
@@ -1252,10 +1252,10 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_res
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollwTokenRequest]
-.MCLS _Enroll with Token_ Request
+.MCLS _Enroll Tokenized Card_ Request
 
 --
-IMPORTANT: When you test the enrollment of a tokenized Mastercard, use the ``token-id`` you received in the MCLS _Tokenize_ Response and change the ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+IMPORTANT: In this test request use the ``token-id`` you received in the MCLS _Tokenize_ Response and change the ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
 --
 
 [source,xml,subs=attributes+]
@@ -1264,7 +1264,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_EnrollwToken
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollwTokenResponse]
-.MCLS _Enroll with Token_ Response
+.MCLS _Enroll Tokenized Card_ Response
 
 [source,xml,subs=attributes+]
 ----
