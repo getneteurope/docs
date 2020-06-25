@@ -984,18 +984,6 @@ h|Password | TqlXmquI8jB2
 h|Secret Key | ca0cd974-8523-4bba-8cca-0572f9f30c74
 |===
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_VOPMCLS]
-[discrete]
-._VOP_ and _MCLS_
-
-|===
-h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
-h|Merchant Account ID (MAID) | 2df5742a-ee65-4bf4-8a5a-8b23f960c3e7
-h|Username | 61613-ShopBack
-h|Password | 5WKJIj9UMbf9
-h|Secret Key | 361c4cf1-b71b-4996-9c05-2d0eac7bfeb3
-|===
-
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Workflow]
 ==== Workflow
 
