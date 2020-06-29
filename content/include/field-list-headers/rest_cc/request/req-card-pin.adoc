@@ -1,0 +1,12 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+``card-pin`` is a child of <<{listname}_request_card, payment.card>>. ``card-pin`` is used for card present payments.
+
+Consumer's **P**ersonal **I**dentification **N**umber data are always encrypted.
+
+A card present payment process can be initiated by a POS terminal (PIN pad) transaction processed online (and/or offline). The terminal accepts, encrypts and forwards the cardholder's PIN.
+
+NOTE: *All* ``card-pin`` fields are mandatory for payment processes with online PIN.
+
+//-
