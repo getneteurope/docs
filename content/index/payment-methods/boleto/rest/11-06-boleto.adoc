@@ -53,7 +53,7 @@ For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB, 
 [#Boleto_Workflow_Debit]
 ==== _debit_
 
-image::images/11-06-boleto/Boleto_Debit_Workflow.png[Boleto Debit Workflow]
+image::images/diagrams/boleto_debit.svg[Boleto Debit Workflow]
 
 . Merchant sends the payment request to _{payment-gateway-abbr}_.
 . {payment-gateway-abbr} creates the order request and sends it to _moip._
@@ -79,7 +79,7 @@ image::images/11-06-boleto/Boleto_Debit_Workflow_receipt.png[Boleto Debit Workfl
 [#Boleto_Workflow_Refund]
 ==== _refund_
 
-image::images/11-06-boleto/Boleto_Refund_Workflow.png[Boleto Refund Workflow]
+image::images/diagrams/boleto_refund.svg[Boleto Refund Workflow]
 
 .  Merchant requests the refund.
 .  {payment-gateway-abbr} creates ``refund-request`` and sends it to _moip._

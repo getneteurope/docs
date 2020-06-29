@@ -66,7 +66,7 @@ h|Bank account credentials |Select Sweden (SWED Bank) and use 1111111111
 [#Trustly_Workflow]
 === Workflow
 
-image::images/11-32-trustly/trustly-workflow.png[TrustlyWorkflow]
+image::images/diagrams/trustly.svg[TrustlyWorkflow]
 
 . Consumer adds items to his shopping chart.
 . The merchant displays all available payment methods.

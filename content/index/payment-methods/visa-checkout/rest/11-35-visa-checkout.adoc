@@ -75,7 +75,7 @@ API Key has to be additionally provided.
 [#VISACheckout_PaymentPage]
 ==== Payment Page
 
-image::images/11-35-visa-checkout/VisaCheckout_workflow_hpp.png[Visa Checkout workflow for Payment Page]
+image::images/diagrams/visa_checkout_hpp.svg[Visa Checkout workflow for Payment Page]
 
 The Payment Page workflow follows the usual Payment Page integration and
 flow.
@@ -100,7 +100,7 @@ completion of the payment process to the consumer.
 [#VISACheckout_RESTAPI_Integration_with_CallID]
 ==== REST API Integration with Call ID
 
-image::images/11-35-visa-checkout/VisaCheckout_workflow_restapi_with_callid.png[Visa Checkout workflow for REST API with call ID]
+image::images/diagrams/visa_rest-api-with-call-id.svg[Visa Checkout workflow for REST API with call ID]
 
 . Consumer adds items to shopping basket.
 . Consumer selects Payment Method _VCO_.
@@ -120,7 +120,7 @@ image::images/11-35-visa-checkout/VisaCheckout_workflow_restapi_with_callid.png[
 [#VISACheckout_RESTAPI_Integration_without_CallID]
 ==== REST API Integration without Call ID
 
-image::images/11-35-visa-checkout/VisaCheckout_workflow_restapi_without_callid.png[Visa Checkout workflow for REST API without call ID]
+image::images/diagrams/visa_rest-api-without-call-id.svg[Visa Checkout workflow for REST API without call ID]
 
 The workflow for _REST API Integration without Call ID_ is similar to
 the workflow for PP with the exception that the merchant displays the

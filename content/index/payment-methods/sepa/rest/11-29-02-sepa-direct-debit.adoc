@@ -242,7 +242,7 @@ can be used with both SEPA payment methods: _SEPA Credit Transfer_ and _SEPA Dir
 [#SEPADirectDebit_Workflow]
 === Workflow
 
-image::images/11-29-02-sepa-direct-debit/SEPA_Direct_Debit_Successful.png[SEPA Direct Debit Workflow]
+image::images/diagrams/sepa_direct-debit.svg[SEPA Direct Debit Workflow]
 
 . The transaction type within the request must be _debit_ or _pending-debit._
 . If the request is successful, a response will be returned with status

@@ -89,7 +89,7 @@ verification:
 
 *REST API: Standard Checkout*
 
-image::images/11-38-paylib/Paylib_Workflow_debit.png[Paylib Workflow debit]
+image::images/diagrams/paylib_debit.svg[Paylib Workflow debit]
 
 . The consumer adds items to the shopping basket.
 . The consumer selects the payment method _Paylib_.
