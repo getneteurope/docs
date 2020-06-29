@@ -133,14 +133,12 @@ When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, l
 |String 
 |156 
 |Consumer’s email address as given in your shop. +
-At least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
 
 |phone 
 |M/O 
 |String 
 |18 
 |Phone number provided by the consumer. +
-At least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``. +
 Example: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the _phone_ field.
 
 | phone-country-code 
@@ -148,7 +146,7 @@ Example: If +1 999 555 0100 is the phone number in international format, then ``
 | String 
 | 64
 a| Country identifying information for the consumer. +
-Must be present if phone number is used. +
+*Mandatory* if phone number is used. +
 Example: If +1 999 555 0100 is the phone number in international format, then ``1`` is the value of the ``phone-country-code`` field.
 
 // end::loyalty-prog[]
