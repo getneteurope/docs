@@ -5,4 +5,4 @@
 With the ``account-holder`` you can provide detailed information about the consumer. 
 
 NOTE: The cardinality of the ``account-holder`` fields can vary, depending which field you use. +
-At least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
+At least one of the following must be present if used with VOP: ``payment.consumer-id``, ``email`` or ``phone``.
