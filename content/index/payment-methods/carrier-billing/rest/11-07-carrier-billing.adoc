@@ -86,7 +86,7 @@ transaction can be requested by sending a <<GeneralPlatformFeatures_RetrieveTran
 [#CarrierBilling_Workflow_REST]
 ==== Using ReST API
 
-image::images/11-07-carrier-billing/carrierbilling_workflow_rest.png[CarrierBilling Workflow REST]
+image::images/diagrams/carrierbilling_rest-api.svg[CarrierBilling Workflow REST]
 
 .  On the merchant site.
 .  Consumers select _carrier billing._
@@ -99,7 +99,7 @@ image::images/11-07-carrier-billing/carrierbilling_workflow_rest.png[CarrierBill
 [#CarrierBilling_Workflow_PP]
 ==== Using Payment Page
 
-image::images/11-07-carrier-billing/carrierbilling_workflow_pp.png[CarrierBilling Workflow PP]
+image::images/diagrams/carrierbilling_pp.svg[CarrierBilling Workflow PP]
 
 .  On the _Payment Page._
 .  Consumers select _carrier billing._

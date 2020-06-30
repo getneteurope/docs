@@ -70,7 +70,7 @@ Please contact chinapaymentgateway@wirecard.com for an Alipay buyer test account
 === Workflow
 
 ._debit_ Workflow
-image::images/11-03-alipay-domestic/AlipayDom_Workflow_debit.png[Alipay Domestic _debit_ Workflow]
+image::images/diagrams/alipay-dom_debit.svg[Alipay Domestic _debit_ Workflow]
 
 . Consumer adds items to shopping basket.
 . Consumer selects Payment Method _Alipay Domestic._

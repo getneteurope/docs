@@ -110,7 +110,7 @@ or by specifying an extension.
 [#MultiPaymentApi_Workflow]
 === Workflow
 
-image::images/06-00-multi-payment-api/transaction-brace.png[Multipayments Workflow]
+image::images/06-00-multi-payment-api/int-guides-mpAPI-workflow.png[Multipayments Workflow]
 
 First, the _Multi Payment API_ validates the incoming
 multi payment request. This validation includes

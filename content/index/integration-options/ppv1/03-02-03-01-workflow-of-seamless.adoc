@@ -9,5 +9,3 @@ secure TLS channel, so the data is securely transported. The high-level
 diagram below shows the checkout flow with the optional order summary
 page between the payment data collection page and the actual payment:
 
-.Seamless Integration Workflow
-image::images/03-02-03-01-workflow-of-seamless/seamless-workflow.png[Seamless Integration Workflow]

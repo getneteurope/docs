@@ -115,7 +115,7 @@ could have cancelled the order already).
 [#Przelewy24_debitProcessUsingtheReSTAPI]
 ===== Payment Process Using the ReST API
 
-image::images/11-27-przelewy24/Przelewy24_Debit_TX_ReST.png[Payment Process Using ReST API]
+image::images/diagrams/przelewy24_debit_rest.svg[Payment Process Using ReST API]
 
 . The consumer initiates a transaction (currency is set to ``PLN``).
 . The merchant sends a request with the consumer's data to the
@@ -142,7 +142,7 @@ definition in the field ``notifications/notification/@url`` in the request
 ===== Payment Process Using the Payment Page
 
 .Payment Process Using Payment Page
-image::images/11-27-przelewy24/Przelewy24_Debit_TX_PPage.png[Payment Process Using Payment Page]
+image::images/diagrams/przelewy24_debit_pp.svg[Payment Process Using Payment Page]
 
 . The consumer initiates a transaction (currency is set to PLN).
 . The merchant sends a request with the consumer's data to the
@@ -198,7 +198,7 @@ subsequent notification.
 ===== _refund_ Process Using the ReST API
 
 .refund Process Using the ReST API
-image::images/11-27-przelewy24/Przelewy24_Refund_TX_ReST.png[refund Process Using the ReST API]
+image::images/diagrams/przelewy24_refund_rest.svg[refund Process Using the ReST API]
 
 . The merchant initiates a ``refund`` transaction.
 . The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request

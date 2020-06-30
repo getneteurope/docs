@@ -44,7 +44,7 @@ at <<AppendixB,  Transaction Types>>.
 
 [#POLi_Workflow]
 === Workflow
-image::images/11-26-poli/poli_workflow.png[POLi Workflow]
+image::images/diagrams/poli.svg[POLi Workflow]
 
 . The consumer selects to pay with _POLi_ on the merchant's payment
 page. +

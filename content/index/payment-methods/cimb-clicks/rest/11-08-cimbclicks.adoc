@@ -38,7 +38,7 @@ here, look at <<AppendixB,  Transaction Types>>.
 [#CIMBClicks_Workflow]
 === Workflow
 
-image::images/11-08-cimbclicks/cimb_clicks_Workflow.png[CIMB Clicks Workflow,height=250]
+image::images/diagrams/cimbclicks_workflow.svg[CIMB Clicks Workflow,height=250]
 
 . Consumer selects to pay with _CIMB Clicks_ on the merchant's payment
 page.

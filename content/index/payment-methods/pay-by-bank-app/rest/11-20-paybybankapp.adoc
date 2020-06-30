@@ -83,7 +83,7 @@ a|yes
 [#API_PaybyBankapp_Workflow_debit]
 ==== _debit_
 
-image::images/11-20-paybybankapp/paybybank_debit_workflow.png[Pay by Bank app Debit Workflow, height=250]
+image::images/diagrams/paybybank_debit.svg[Pay by Bank app Debit Workflow, height=250]
 
 . Consumers select products/services on merchant's website. (This can
 happen either with a desktop browser or a mobile device browser. See
@@ -105,7 +105,7 @@ notification to provider and merchants.
 [#API_PaybyBankapp_Workflow_refundrequest]
 ==== _refund-request_
 
-image::images/11-20-paybybankapp/paybybank_refund_workflow.png[Pay by Bank app Refund Workflow, height=250]
+image::images/diagrams/paybybank_refund.svg[Pay by Bank app Refund Workflow, height=250]
 
 . Consumers request a refund from merchant.
 . Merchants send _refund_ request to Wirecard.
