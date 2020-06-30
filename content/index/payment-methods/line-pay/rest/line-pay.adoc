@@ -1,5 +1,6 @@
 [#API_LinePay]
 == REST API
+
 _LINE Pay_ is a type of 
 // <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
@@ -74,10 +75,12 @@ h|Password |3!3013=D3fD8X7
 [#API_LinePay_Workflow]
 === Workflow
 
+image::images/line-pay/linepay-flow.jpg[LINE Pay payment flow, height=400]
+
 [#API_LinePay_Fields]
 === Fields
 
-The fields used for _Alipay Cross-border_ requests, responses and notifications are the same as the <<RestApi_Fields, REST API Fields>>.
+The fields used for _LINE Pay_ requests, responses and notifications are the same as described in the <<RestApi_Fields, REST API Field Table>>.
 
 [#API_LinePay_Samples]
 === Samples
