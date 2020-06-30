@@ -122,11 +122,6 @@ A void is only possible as long as no money transfer has been initiated.
 As soon as {payment-gateway-abbr} has initiated the payment flow to the acquirer the
 merchants must return the funds to the consumer via a refund process.
 
-[#CreditCard_TransactionTypes_VoidRefund_Void]
-==== void
-
-image::images/11-01-01-credit-card_transaction-types/CC_void_refund_void.png[void]
-
 [#CreditCard_TransactionTypes_VoidRefund_Void_Workflow]
 .Workflow
 
