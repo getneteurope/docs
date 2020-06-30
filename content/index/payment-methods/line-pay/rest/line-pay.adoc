@@ -49,13 +49,13 @@ For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB, 
 |===
 |Transaction Type |Link to the sample
 
-| _pending-debit_ | <<, _pending-debit_ samples>>
-| _debit_ | <<, _debit_ samples>>
-| _refund-debit_ | <<, _refund-debit_ samples>>
-| _pending-authorization_ | <<, _pending-authorization_ samples>>
-| _capture-authorization_ | <<, _capture-authorization_ samples>>
-| _void-authorization_ | <<, _void-authorization_ samples>>
-| _refund-authorization_ | <<, _refund-authorization_ samples>>
+| _pending-debit_ | <<API_LinePay_Samples_PendingDebit, _pending-debit_ sample>>
+| _debit_ | <<API_LinePay_Samples_PendingDebit_RecRec, _debit_ sample>>
+| _refund-debit_ | <<, _refund-debit_ sample>>
+| _pending-authorization_ | <<, _pending-authorization_ sample>>
+| _capture-authorization_ | <<, _capture-authorization_ sample>>
+| _void-authorization_ | <<, _void-authorization_ sample>>
+| _refund-authorization_ | <<, _refund-authorization_ sample>>
 
 |===
 
@@ -80,7 +80,7 @@ image::images/line-pay/linepay-flow.jpg[LINE Pay payment flow, height=400]
 [#API_LinePay_Fields]
 === Fields
 
-The fields used for _LINE Pay_ requests, responses and notifications are the same as described in the <<RestApi_Fields, REST API Field Table>>.
+Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [#API_LinePay_Samples]
 === Samples
@@ -215,7 +215,7 @@ The fields used for _LINE Pay_ requests, responses and notifications are the sam
 // include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecRec]
-==== _pending-debit_ (Recurring/Recurring) 
+==== _debit_ (Recurring/Recurring) 
 
 .XML Request (Successful)
 
@@ -277,7 +277,7 @@ The fields used for _LINE Pay_ requests, responses and notifications are the sam
 // include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecFinal]
-==== _pending-debit_ (Recurring/Final) 
+==== _debit_ (Recurring/Final) 
 
 .XML Request (Successful)
 
