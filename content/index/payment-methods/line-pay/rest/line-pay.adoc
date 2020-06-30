@@ -51,11 +51,11 @@ For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB, 
 
 | _pending-debit_ | <<API_LinePay_Samples_PendingDebit, _pending-debit_ sample>>
 | _debit_ | <<API_LinePay_Samples_PendingDebit_RecRec, _debit_ sample>>
-| _refund-debit_ | <<, _refund-debit_ sample>>
-| _pending-authorization_ | <<, _pending-authorization_ sample>>
-| _capture-authorization_ | <<, _capture-authorization_ sample>>
-| _void-authorization_ | <<, _void-authorization_ sample>>
-| _refund-authorization_ | <<, _refund-authorization_ sample>>
+| _refund-debit_ | <<API_LinePay_Samples_RefundDebit, _refund-debit_ sample>>
+| _pending-authorization_ | <<API_LinePay_Samples_PendingAuth, _pending-authorization_ sample>>
+| _void-authorization_ | <<API_LinePay_Samples_VoidAuth, _void-authorization_ sample>>
+| _capture-authorization_ | <<API_LinePay_Samples_CaptureAuth, _capture-authorization_ sample>>
+| _refund-capture_ | <<API_LinePay_Samples_RefundCapture, _refund-capture_ sample>>
 
 |===
 
@@ -556,7 +556,7 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 // include::{root}/samples/xml/_response_success.xml[]
 
-[#API_LinePay_Samples_RefundAuth]
+[#API_LinePay_Samples_RefundCapture]
 ==== _refund-capture_
 
 .XML Request (Successful)
