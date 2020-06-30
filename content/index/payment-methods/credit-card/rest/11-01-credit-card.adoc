@@ -114,13 +114,6 @@ include::{root}/include/3-d-secure/3-d-secure_testcredentials_automatic.adoc[]
 
 include::{root}/include/3-d-secure/3-d-secure_testcredentials_nongamblingOCT.adoc[]
 
-////
-[#CreditCard_Workflow]
-=== Workflow
-
-image::images/11-01-credit-card/CreditCard-referenced-purchase.png[Credit Card referenced purchase]
-////
-
 [#CreditCard_PaymentSolutions]
 === Payment Solutions
 As payment solutions the {payment-gateway} provides _Pay by Link via API_ and _Invoice via Email._ They both are currently only used with a Payment Page integration.
