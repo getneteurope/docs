@@ -81,14 +81,14 @@ For <<Glossary_TransactionType, transaction type>> details that are not given he
 
 .What you need:
 
-* an https://developer.apple.com[Apple Developer account] that is enrolled in the https://developer.apple.com/programs[Apple Developer Program], and a Wirecard test account.
+* an https://developer.apple.com[Apple Developer account] that is enrolled in the https://developer.apple.com/programs/[Apple Developer Program], and a Wirecard test account.
 
 //-
 
 Please be aware that your consumers will only be able to see the _Apple Pay_ payment method if they:
 
 * are using an https://support.apple.com/en-us/HT208531[_Apple Pay_-compatible device].
-* are using the https://www.apple.com/safari[Safari browser] (when paying on the web).
+* are using the https://www.apple.com/safari/[Safari browser] (when paying on the web).
 
 //-
 
@@ -186,7 +186,7 @@ NOTE: Only required for enabling _Apple Pay_ on the web.
 
 . https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2Fresources%2F&rv=1[Sign in to the Apple Developer Portal]. 
 . Follow Apple’s instructions to register a merchant domain. Use the Merchant Identifier you created at Step 1.
-* When entering your domain names, you must register both top-level (e.g. http://wirecard.com/[{domain}]) and all subdomains where the _Apple Pay_ logo will be displayed (e.g. http://wirecard.com/[{documentation-url}]). +
+* When entering your domain names, you must register both top-level (e.g. ``wirecard.com``) and all subdomains where the _Apple Pay_ logo will be displayed (e.g. ``doc.wirecard.com``). +
 ** You can register multiple domains under the same Merchant ID. This is often necessary if you use different domains in various geographies. +
 ** Domain registration expires with SSL expiration. 
 
@@ -215,8 +215,8 @@ NOTE: Merchant Identity Certificates expire in 25 months.
 
 All web pages that incorporate _Apple Pay_ must support TLS 1.2. In addition, _Apple Pay_ must be served over HTTPS.
 
-You can find additional information in https://developer.apple.com/library/content/ApplePay_Guide/Configuration.html[Apple’s own documentation]. +
-If you have any questions, contact https://doc.wirecard.com/ContactUs.html[Merchant Support].
+You can find additional information in https://developer.apple.com/library/archive/ApplePay_Guide/Configuration.html[Apple’s own documentation]. +
+If you have any questions, contact <<ContactUs, Merchant Support>>.
 
 [#ApplePay_Testing]
 === Testing
@@ -225,7 +225,7 @@ If you have any questions, contact https://doc.wirecard.com/ContactUs.html[Merch
 
 After you’ve set up your account:
 
-. https://developer.apple.com/support/apple-pay-sandbox/[Add a test card] to the Wallet app.
+. https://developer.apple.com/apple-pay/sandbox-testing/[Add a test card] to the Wallet app.
 . Integrate paymentSDK into your application.
 . Conduct testing.
 . Add a live card to the Wallet app and set the {payment-gateway} instance to production mode (do not forget to use production credentials - ``MAID``/``AppleMerchantID``/``csr``).
@@ -255,7 +255,7 @@ There is no public merchant account available. _Apple Pay_ can be enabled provid
 [#ApplePay_SDK_Integration]
 === Apple Pay SDK Integration
 
-image::images/11-04-apple-pay/ApplePay_SDK_Integration.png[ApplePay SDK Integration, width=950]
+image::images/diagrams/apple-pay_short.svg[ApplePay SDK Integration, width=950]
 
 //-
 
@@ -438,13 +438,13 @@ It is important to note that fraud is rarely an issue with _Apple Pay_. We hear 
 2+|Payments made using _Apple Pay_ in stores are card present transactions. Payments made using _Apple Pay_ within apps or on the web are card not present transactions.
 
 |How do I let my consumers know that they can pay with _Apple Pay_?
-2+a|. Display the https://support.apple.com/kb/HT208087[payment symbols for your region and the _Apple Pay_ mark] prominently on your point-of-sale terminal to let your consumers know they can use _Apple Pay_ in your store. +
+2+a|. Display the https://support.apple.com/en-us/HT208087[payment symbols for your region and the _Apple Pay_ mark] prominently on your point-of-sale terminal to let your consumers know they can use _Apple Pay_ in your store. +
 . http://images.apple.com/apple-pay/downloads/Apple_Pay_Payment_Mark.zip[Download the _Apple Pay_ mark] to use within email, on your terminal screen, and on your website. +
 . https://mapsconnect.apple.com/[Add _Apple Pay_ to your Maps listing]. +
 . https://www.applepaysupplies.com/[Order _Apple Pay_ decals] to put on your storefront window and register. 
 //-
 
-Go to https://developer.apple.com/apple-pay[_Apple Pay_ for developers] to learn how to let consumers know they can use _Apple Pay_ within your app or website.
+Go to https://developer.apple.com/apple-pay/[_Apple Pay_ for developers] to learn how to let consumers know they can use _Apple Pay_ within your app or website.
 
 |Are there any prohibited uses for _Apple Pay_?
 2+|For prohibited uses of _Apple Pay_, please see Apple’s https://developer.apple.com/apple-pay/acceptable-use-guidelines-for-websites/[Acceptable Use Guidelines].
@@ -453,7 +453,7 @@ Go to https://developer.apple.com/apple-pay[_Apple Pay_ for developers] to learn
 2+|For regulations on using _Apple Pay_ APIs, please see Apple’s https://developer.apple.com/apple-pay/acceptable-use-guidelines-for-websites/[Acceptable Use Guidelines].
 
 |How do I learn more about _Apple Pay_?
-2+|Check the http://www.apple.com/apple-pay[_Apple Pay_ webpage] or mailto:crm@wirecard.com[contact our Customer Relations team].
+2+|Check the https://www.apple.com/apple-pay/[_Apple Pay_ webpage] or mailto:crm@wirecard.com[contact our Customer Relations team].
 |===
 
 [%autowidth, cols="s,,"]
@@ -496,7 +496,7 @@ If you are enrolling your organization, you will need an Apple ID with https://s
 2+|If this were to occur, it might indicate that you need to regenerate your Payment Processing Certificate. Payment Processing Certificates from Apple expire in 18-25 months. Contact {payment-provider-name} support at mailto:support@wirecard.com[support@wirecard.com].
 
 |Are there design guidelines for using _Apple Pay_?
-2+|Your use of _Apple Pay_ must adhere to the branding and user interface guidelines described in the https://developer.apple.com/apple-pay/Apple-Pay-Identity-Guidelines.pdf[_Apple Pay_ Marketing Guidelines] and https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/[Human Interface Guidelines].
+2+|Your use of _Apple Pay_ must adhere to the branding and user interface guidelines described in the https://developer.apple.com/apple-pay/marketing/[_Apple Pay_ Marketing Guidelines] and https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/[Human Interface Guidelines].
 |===
 
 [%autowidth, cols="s,,"]
@@ -510,18 +510,18 @@ s| Question 2+s| Answer
 If you want to learn about available card schemes for your geography, reach out to our sales team. 
 
 |My Wirecard POS terminal is already NFC/contactless payment capable. Can I accept _Apple Pay_ right away?
-2+|If you accept contactless payments today, you’re likely able to accept _Apple Pay_ for those networks without any changes. If you’re not already accepting contactless payments, contact {payment-provider-name} to make sure that your point-of-sale setup can accept _Apple Pay_ and ask us to enable it. To learn more, see our https://support.apple.com/kb/HT205747[_Apple Pay_ merchant checklist].
+2+|If you accept contactless payments today, you’re likely able to accept _Apple Pay_ for those networks without any changes. If you’re not already accepting contactless payments, contact {payment-provider-name} to make sure that your point-of-sale setup can accept _Apple Pay_ and ask us to enable it. To learn more, see our https://support.apple.com/en-us/HT205747[_Apple Pay_ merchant checklist].
 
 |When consumers pay with _Apple Pay_, do they need to sign a receipt or enter a PIN?
-2+|Generally speaking, no, consumers do not need to enter a PIN or sign a receipt, but when paying in stores with _Apple Pay_ in some countries and regions, https://support.apple.com/kb/ht207435[if the consumer's transaction exceeds a certain amount], they might need to enter their PIN. In some cases, they might need to sign a receipt or use a different payment method.
+2+|Generally speaking, no, consumers do not need to enter a PIN or sign a receipt, but when paying in stores with _Apple Pay_ in some countries and regions, https://support.apple.com/en-us/HT207435[if the consumer's transaction exceeds a certain amount], they might need to enter their PIN. In some cases, they might need to sign a receipt or use a different payment method.
 
 |How do I process returns with _Apple Pay_?
 2+|Use the Device Account Number to find the purchase and process the return, just like you would with a traditional credit, debit, or prepaid card payment. In Japan, you can also use the transaction ID on the receipt to find the purchase and process the return.
 To see the last four digits of the Device Account Number, ask the consumer to go to Wallet, tap the card, and tap on the top-right corner of the display.
-You can also have the consumer hold their iPhone or Apple Watch near the reader, select the card that they used to make the original payment, and authorize the return with https://support.apple.com/kb/HT208109[Face ID], Touch ID, or a passcode.
+You can also have the consumer hold their iPhone or Apple Watch near the reader, select the card that they used to make the original payment, and authorize the return with https://support.apple.com/en-us/HT208109[Face ID], Touch ID, or a passcode.
 
 |Is there a limit to the transaction amount that consumers can use _Apple Pay_ for in my store?
-2+|_Apple Pay_ allows your consumers to make easy and secure contactless payments of any amount. Read about https://support.apple.com/kb/HT207435[transaction limits].
+2+|_Apple Pay_ allows your consumers to make easy and secure contactless payments of any amount. Read about https://support.apple.com/en-us/HT207435[transaction limits].
 |===
 
 
@@ -536,7 +536,7 @@ s| Question 2+s| Answer
 2+|Business Chat allows consumers to ask for information, schedule appointments, and even make purchases right in Messages on their iPhone or iPad. This makes connecting with your brand as simple as texting any of their favorite contacts.
 
 |How do I start accepting _Apple Pay_ in Business Chat?
-2+|To accept _Apple Pay_ in https://support.apple.com/kb/HT208642[Business Chat], go to https://developer.apple.com/business-chat/[Business Chat for developers] to learn how to get started.
+2+|To accept _Apple Pay_ in https://support.apple.com/en-us/HT208642[Business Chat], go to https://developer.apple.com/business-chat/[Business Chat for developers] to learn how to get started.
 |===
 
 //-
