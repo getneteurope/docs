@@ -85,7 +85,7 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 [#API_LinePay_Samples_PendingDebit]
 ==== _pending-debit_
 
-.XML _pending-debit_ Request (Successful)
+.XML Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -96,8 +96,8 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
   <transaction-type>pending-debit</transaction-type>
   <requested-amount currency="THB">40.00</requested-amount>
   <account-holder>
-    <first-name>John</first-name>
-    <last-name>Doe</last-name>
+    <first-name>Paul</first-name>
+    <last-name>Peterson</last-name>
   </account-holder>
   <order-number>1549286434185</order-number>
   <descriptor>Payment description</descriptor>
@@ -111,7 +111,7 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 
 // include::{root}/samples/xml/_request_success.xml[]
 
-.XML _pending-debit_ Response (Successful)
+.XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -128,8 +128,8 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
     </statuses>
     <requested-amount currency="THB">40.00</requested-amount>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
+        <first-name>Paul</first-name>
+        <last-name>Peterson</last-name>
     </account-holder>
     <order-number>1549286434185</order-number>
     <descriptor>Payment description</descriptor>
@@ -144,9 +144,9 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 // include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecFirst]
-==== _pending-debit_
+==== _pending-debit_ (Recurring/First) 
 
-.XML _pending-debit_ (Recurring/First) Request (Successful)
+.XML Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -156,8 +156,8 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
   <transaction-type>pending-debit</transaction-type>
   <requested-amount currency="THB">2.00</requested-amount>
   <account-holder>
-    <first-name>John</first-name>
-    <last-name>Doe</last-name>
+    <first-name>Paul</first-name>
+    <last-name>Peterson</last-name>
   </account-holder>
   <order-number>1551342687432</order-number>
   <descriptor>Payment description</descriptor>
@@ -175,7 +175,7 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 
 // include::{root}/samples/xml/_request_success.xml[]
 
-.XML _pending-debit_ (Recurring/First) Response (Successful)
+.XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -192,8 +192,8 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
     </statuses>
     <requested-amount currency="THB">2.00</requested-amount>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
+        <first-name>Paul</first-name>
+        <last-name>Peterson</last-name>
     </account-holder>
     <order-number>1551342687432</order-number>
     <descriptor>Payment description</descriptor>
@@ -212,9 +212,9 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 // include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecRec]
-==== _pending-debit_
+==== _pending-debit_ (Recurring/Recurring) 
 
-.XML _pending-debit_ (Recurring/Recurring) Request (Successful)
+.XML Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -235,7 +235,7 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 
 // include::{root}/samples/xml/_request_success.xml[]
 
-.XML _pending-debit_ (Recurring/Recurring) Response (Successful)
+.XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -253,8 +253,8 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
     <requested-amount currency="THB">2.00</requested-amount>
     <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
+        <first-name>Paul</first-name>
+        <last-name>Peterson</last-name>
     </account-holder>
     <order-number>1551342687432</order-number>
     <descriptor>Payment description</descriptor>
@@ -274,9 +274,9 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 // include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecFinal]
-==== _pending-debit_
+==== _pending-debit_ (Recurring/Final) 
 
-.XML _pending-debit_ (Recurring/Final) Request (Successful)
+.XML Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -297,7 +297,7 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
 
 // include::{root}/samples/xml/_request_success.xml[]
 
-.XML _pending-debit_ (Recurring/Final) Response (Successful)
+.XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -315,8 +315,8 @@ The fields used for _Alipay Cross-border_ requests, responses and notifications 
     <requested-amount currency="THB">2.00</requested-amount>
     <parent-transaction-id>8ea5fb2d-2e2d-4177-95fc-491035b726b2</parent-transaction-id>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
+        <first-name>Paul</first-name>
+        <last-name>Peterson</last-name>
     </account-holder>
     <order-number>1551342687432</order-number>
     <descriptor>Payment description</descriptor>
