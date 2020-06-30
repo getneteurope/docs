@@ -26,7 +26,7 @@ Make sure to distinguish between the terms *authentication* and *authorization:*
 [#3DS2_worfklow_3DS2FF]
 === 3D Secure 2.1 Frictionless Flow
 
-image::images/16-05-appendix-f/3DSfrictionless.svg[3D Secure 2 Frictionless Workflow, align="center"]
+image::images/diagrams/3ds-frictionless.svg[3D Secure 2 Frictionless Workflow, align="center"]
 
 *1.* _Check-Enrollment_: Checks if the consumer’s card is enrolled in the 3D Secure 2 program. +
 *1.1* Consumer (cardholder) checkout on your payment page. +
@@ -54,7 +54,7 @@ image::images/16-05-appendix-f/3DSfrictionless.svg[3D Secure 2 Frictionless Work
 [#3DS2_worfklow_3DS2CF]
 === 3D Secure 2.1 Challenge Flow
 
-image::images/16-05-appendix-f/3DSchallenge.svg[3D Secure 2 Challenge Workflow, align="center"]
+image::images/diagrams/3ds-challenge.svg[3D Secure 2 Challenge Workflow, align="center"]
 
 *1.* _Check-Enrollment_: Checks if the consumer’s card is enrolled in the 3D Secure 2 program. +
 *1.1* Consumer (cardholder) checkout on your payment page. +
@@ -87,7 +87,7 @@ image::images/16-05-appendix-f/3DSchallenge.svg[3D Secure 2 Challenge Workflow, 
 [#3DS2_IntegrationGuide_REST_worfklow_3DS2FBF]
 *3D Secure 2.1 Flow with Fallback to 3D Secure 1 (in case the issuer does not support 3D Secure 2)*
 
-image::images/16-05-appendix-f/3DSfallback.svg[3D Secure 2 Fallback Workflow, align="center"]
+image::images/diagrams/3ds-fallback.svg[3D Secure 2 Fallback Workflow, align="center"]
 
 *1.* _Check-Enrollment_: Checks if the consumer’s card is enrolled in the 3D Secure 2 program. +
 *1.1* Consumer (cardholder) checkout on your payment page. +

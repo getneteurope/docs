@@ -74,7 +74,7 @@ A _purchase_ can be a stand-alone transaction. It may be followed by a
 _void-purchase,_ a _referenced-purchase_ or a _refund-purchase_. A
 _refund-purchase_ may be followed by a _void-refund-purchase_.
 
-image::images/11-01-01-03-credit-card_transaction-types_purchase/CC_purchase_complete_sequence_StartEnd.png[purchase_sequence]
+image::images/diagrams/cc-purchase-flow.svg[purchase_sequence]
 
 See details for <<CreditCard_TransactionTypes_VoidRefund, void and refund>>.
 
@@ -256,7 +256,7 @@ same as ``<transaction-id>`` of the initial _purchase_.
 [#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions_Workflow]
 _Workflow_
 
-image::images/11-01-01-03-credit-card_transaction-types_purchase/CC_purchaseReferencing_flow.png[ReferencingPurchaseTransactions_Workflow]
+image::images/diagrams/cc_purchase-referencing.svg[ReferencingPurchaseTransactions_Workflow]
 
 [#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions_PurchaseRequestFirst]
 *_purchase_ Request (recurring/first)*

@@ -114,7 +114,7 @@ are shipped in separate shipments.
 [#API_PaymentInvoice_GuaranteedInvoice]
 ===== {payment-provider-name} Payment on Invoice
 
-image::images/11-11-guaranteed-invoice/guaranteed_invoice_workflow.png[{payment-provider-name} Payment on Invoice Workflow, width=950, align="center"]
+image::images/diagrams/guaranteed-invoice.svg[{payment-provider-name} Payment on Invoice Workflow, width=950, align="center"]
 
 . Consumer adds items to shopping basket.
 . Consumer selects the payment method _{payment-provider-name} Payment on Invoice._

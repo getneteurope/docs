@@ -71,7 +71,7 @@ h|Secret Key | Payment Page |980624d8-3be5-40c8-afca-5347e087a338
 [#API_WeChatQRPay_Workflow]
 === Workflow
 
-image::images/11-36-wechat-qrpay/WeChat_QRCode_flowchart.png[WeChat QRPay Workflow]
+image::images/diagrams/wechat-qr-pay_workflow.svg[WeChat QRPay Workflow]
 
 . Consumers approach the cashier to pay for the selected items.
 . The merchants create a request to the {payment-gateway} to generate the QR code so that the consumers can execute the

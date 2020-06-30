@@ -55,7 +55,7 @@ at <<AppendixB,  Transaction Types>>.
 [#TrustPay_debitTransaction]
 ==== _debit_ Transaction
 
-image::images/11-33-trustpay/TrustPay_workflow_debit.png[TrustPay workflow for debit]
+image::images/diagrams/trustpay_debit.svg[TrustPay workflow for debit]
 
 . The consumer initiates a payment.
 . The merchant redirects the consumer to the _TrustPay_ site.
@@ -118,7 +118,7 @@ merchant's site.
 [#TrustPay_DirectBankingExtension_Workflow]
 ===== Workflow
 
-image::images/11-33-trustpay/TrustPay_directbankingextension_workflow.png[TrustPay Direct Banking Extension workflow.png]
+image::images/diagrams/trustpay_direct-banking-extension.svg[TrustPay Direct Banking Extension workflow.png]
 
 This workflow is almost identical to <<TrustPay_debitTransaction, _debit_ Transaction>>, except that the consumer doesn't need to select a bank.
 
@@ -168,7 +168,7 @@ The following scenarios are covered:
 [#TrustPay_OfflinePayment_SuccessfulWorkflow]
 ===== Successful Workflow
 
-image::images/11-33-trustpay/TrustPay_workflow_pending_debit_debit_success.png[TrustPay workflow for pending debit and debit]
+image::images/diagrams/trustpay_pending-debit_debit_success.svg[TrustPay workflow for pending debit and debit]
 
 . The consumer initiates a payment.
 . TrustPay redirects the consumer to the merchant and sends a
