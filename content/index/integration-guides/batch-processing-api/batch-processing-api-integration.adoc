@@ -37,8 +37,6 @@ data when processing test batch files. Please always use
 [#BatchProcessingApi_Workflow]
 === Workflow
 
-image::images/05-00-batch-processing-api/workflow-batch-processing-api.png[Batch Processing API Workflow]
-
 . The Merchant Operator applies <<BatchProcessingApi_PGP, Pretty Good Privacy>>
 (PGP) encryption using Wirecard's public key and uploads the encrypted request
 file via SFTP to the ``from/new`` folder (eg: ``from<foldername>/new`` folder).

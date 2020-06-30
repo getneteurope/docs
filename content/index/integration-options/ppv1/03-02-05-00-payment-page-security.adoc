@@ -35,8 +35,6 @@ IMPORTANT: It is important that the Secret Key is never shared with anyone and i
 protected within the Merchant Website (only used in server side code for
 generating the request signature or validating the response signature).
 
-image:images/03-02-05-00-payment-page-security/transparent-post-secret-key.png[Secret Key Exchange Workflow]
-
 The Secret Key will be communicated at the time of Merchant Account
 setup. Please contact your support representative if you did not receive
 a Secret Key or require Secret Key regeneration.

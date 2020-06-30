@@ -178,7 +178,7 @@ the <<RestApi_Fields, API field list>>.
 [#GooglePay_Workflow]
 === Workflow
 
-image::images/11-39-google-pay/GooglePay_Workflow.png[Google Pay Workflow, width=950]
+image::images/diagrams/google-pay_workflow.svg[Google Pay Workflow, width=950]
 
 [#GooglePay_Samples]
 === Samples

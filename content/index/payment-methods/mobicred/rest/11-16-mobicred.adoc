@@ -61,7 +61,7 @@ here, look at <<AppendixB,  Transaction Types>>.
 [#mobicred_Workflow]
 === Workflow
 
-image::images/11-16-mobicred/mobicred-workflow.png[mobicred Workflow]
+image::images/diagrams/mobicred.svg[mobicred Workflow]
 
 [#mobicred_Fields]
 === Fields

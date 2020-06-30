@@ -84,7 +84,7 @@ the consumer must be redirected to. The consumer is redirected back to
 merchant's shop after the transaction is approved, and the merchant
 receives a payment notification from Wirecard.
 
-image::images/11-10-giropay/giropay_Workflow.png[giropay Workflow]
+image::images/diagrams/giropay_debit.svg[giropay Workflow]
 
 . Consumer adds items to his/her shopping basket.
 . Consumer selects _giropay_.
