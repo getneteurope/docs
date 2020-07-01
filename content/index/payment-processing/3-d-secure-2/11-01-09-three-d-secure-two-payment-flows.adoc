@@ -327,7 +327,7 @@ Card-on-file flagging required: Yes
 [#API_CC_3DS2_PaymentFlows_RecurringMIT_StoringCCAndSubscription_AuthAndVoid]
 ==== Storing Card Credentials (Reserve and Void Amount) with Authentication
 
-image::images/diagrams/api_cc_3ds2_recurring-mit_storing-with-auth.svg[]
+image::images/API_CC_3DS2_PaymentFlows_RecurringMIT_StoringCCAndSubscription_AuthAndVoid.svg[]
 
 . *Check-enrollment*: This is the initial request and initiates
 the payment session. New 3D Secure 2 fields can be found in
