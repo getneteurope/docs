@@ -187,11 +187,13 @@ Accepted values: +
 |O
 |Enumeration
 |
-|``authorization-reason`` is a 3D Secure 2 field. It is available for the following transactions types: +
+|``authorization-reason`` is an industry-specific indicator for merchant-initiated transactions (MIT). It is used to fulfill a business practice as a follow-up to an original cardholder-merchant interaction that could not be completed with a single transaction. +
+This indicator is available for the following transaction types: +
 
 * authorization
 * preauthorization 
-* purchase +
+* purchase 
+* referenced-purchase +
 
 Accepted values: +
 

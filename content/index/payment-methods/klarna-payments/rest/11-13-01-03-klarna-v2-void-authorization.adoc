@@ -22,7 +22,7 @@ To refer to a specific _authorization_, _adjust-authorization_ or _pending-autho
 [#KlarnaV2_TransactionTypes_voidAuthorization_Workflow]
 ===== _void-authorization_ Workflow
 
-image::images/Klarnav2_workflow_voidAuthorization.svg[]
+image::images/diagrams/klarna_v2_void-authorization.svg[]
 
 . -> Send a _void-authorization_ request. This request must contain the ``parent-transaction-id``. Enter the ``transaction-id`` of the preceding _authorization_, _adjust-authorization_ or _pending-authorization_ that is to be canceled.
 . _{payment-gateway}_ checks if parts of this order have already been captured:
@@ -175,5 +175,7 @@ NOTE: {{txnId}} serves as placeholder. Enter the ``transaction-id`` of the prece
 ----
 include::{root}/samples/xml/Klarnav2_voidAuthorization_response.xml[]
 ----
+
+:!txTypeName:
 
 //-

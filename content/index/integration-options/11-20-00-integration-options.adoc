@@ -404,7 +404,7 @@ on any Website by following a few steps.
 This sequence diagram shows the interaction between the components of the
 M-COMM journey.
 
-image::images/11-20-00-integration-options/interaction_mcommjourney.jpg[image,height=250]
+image::images/diagrams/pay-by-bank-app_interaction-mcomm.svg[image,height=250]
 
 [#API_PBBA_Integrate_BrandIntegrateWeb_InteractionECOMM]
 .Interaction of the E-COMM Journey Components
@@ -412,7 +412,7 @@ image::images/11-20-00-integration-options/interaction_mcommjourney.jpg[image,he
 This sequence diagram shows the interaction between the
 components of the E-COMM journey.
 
-image::images/11-20-00-integration-options/interaction_ecommjourney.jpg[image,height=250]
+image::images/diagrams/pay-by-bank-app_interaction-ecomm.svg[image,height=250]
 
 [#API_PBBA_Integrate_BrandIntegrateWeb_InteractionECOMM_PayConnect]
 .Interaction of the E-COMM _PayConnect_ Journey Components
@@ -420,7 +420,7 @@ image::images/11-20-00-integration-options/interaction_ecommjourney.jpg[image,he
 This sequence diagram shows the interaction between the
 components of the E-COMM _PayConnect_ journey.
 
-image::images/11-20-00-integration-options/interaction_ecommjourney_payconnect.jpg[image,height=250]
+image::images/diagrams/pay-by-bank-app_interaction-ecomm-payconnect.svg[image,height=250]
 
 [#API_PBBA_Integrate_BrandIntegrateWeb_MerchantButtonSetup]
 ==== _PBBA_ Branded and Integrated _Web Merchant Button_ Setup
@@ -463,7 +463,7 @@ include::{root}/samples/xml/API_PBBA_IntegrateBrandIntegrateWebMerchantButtonSet
 
 When merchants want to post _Request To Pay_, they need to call the
 {payment-gateway}'s endpoint 
-``\https://{test-instance-hostname}/engine/rest/paymentmethods/`` with
+``\https://{rest-api-test-apm-endpoint}`` with
 transaction type _debit_ following the
 <<API_PaybyBankapp, _PBBA_ REST API documentation>>.
 

@@ -23,7 +23,7 @@ To refer to a specific _capture-authorization_, you need the ``parent-transactio
 [#KlarnaV2_TransactionTypes_refundCapture_Workflow]
 ===== _refund-capture_ Workflow
 
-image::images/Klarnav2_workflow_refundAuthorization.svg[]
+image::images/diagrams/klarna_v2_refund-capture-authorization.svg[]
 
 . -> Send a _refund-capture_ request. This request must contain the ``parent-transaction-id``. Enter the ``transaction-id`` of the preceding _capture-authorization_ response.
 
@@ -180,5 +180,7 @@ NOTE: {{txnId}} serves as placeholder. Enter the ``transaction-id`` of the prece
 ----
 include::{root}/samples/xml/Klarnav2_refundCapture_response.xml[]
 ----
+
+:!txTypeName:
 
 //-

@@ -32,7 +32,7 @@ Otherwise, the authorization cannot be captured automatically.
 [#KlarnaV2_TransactionTypes_authorization_Workflow]
 ===== _authorization_/_pending-authorization_ Workflow
 
-image::images/Klarnav2_workflow_authorization.svg[]
+image::images/diagrams/klarna_v2_authorization.svg[]
 
 . Consumer checks out products.
 . -> Send an _authorization_ request to _{payment-gateway}_. This request must contain order data (e.g. amount, order number, order items) and consumer data (e.g. name, billing/shipping address).
@@ -235,6 +235,8 @@ include::{root}/samples/xml/Klarnav2_authorization_autoCapture_request.xml[]
 ----
 include::{root}/samples/xml/Klarnav2_authorization_autoCapture_response.xml[]
 ----
+
+:!txTypeName:
 
 //-
 

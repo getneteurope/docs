@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', setBuildDate);
  * Note: builddate should not be a ID but a class
  */
 function setBuildDate() {
-  var buildDateElement = document.querySelector('.builddate > p');
+  var buildDateElement = document.querySelector('#builddate > p');
   if(!buildDateElement) return;
   const buildDate = buildDateElement.innerText;
   var timeZone;
