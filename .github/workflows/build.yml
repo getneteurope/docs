@@ -45,26 +45,36 @@ jobs:
         bundle exec rake docs:all
         cp -r /tmp/build/html public/
 
-    - name: Prepend Build Name
-      if: steps.extract.outputs.build_name != 'master'
-      run: |
-        mkdir -p branches/${{ steps.extract.outputs.build_name }}
-        mv public/* branches/${{ steps.extract.outputs.build_name }}/
-        mv branches public/
+    # DISABLED FOR THIS BRANCH ONLY
+    # - name: Prepend Build Name
+    #   if: steps.extract.outputs.build_name != 'master'
+    #   run: |
+    #     mkdir -p branches/${{ steps.extract.outputs.build_name }}
+    #     mv public/* branches/${{ steps.extract.outputs.build_name }}/
+    #     mv branches public/
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+    # - name: Configure AWS Credentials
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: ${{ secrets.AWS_REGION }}
+    #     role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+    #     role-session-name: GithubActions
+    #     role-duration-seconds: 1200
+
+    # - name: Deploy to S3
+    #   run: bash .scripts/deploy.sh
+    #   env:
+    #     AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PREVIEW }}
+    #     AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER }}
+
+    - name: Deploy to Github Pages
+      if: steps.extract.outputs.build_name == 'GHDEPLOY'
+      uses: crazy-max/ghaction-github-pages@v2.1.0
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
-        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-        role-session-name: GithubActions
-        role-duration-seconds: 1200
-
-    - name: Deploy
-      run: bash .scripts/deploy.sh
+        target_branch: gh-pages
+        keep_history: true
+        build_dir: public
       env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PREVIEW }}
-        AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER }}
-
+        GH_PAT: ${{ secrets.DOCBOT_GH_PAT }}
