@@ -1,7 +1,7 @@
 [#API_LinePay]
 == REST API
 
-_LINE Pay_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
+_LINE Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 // vhauss >>>>> Don't forget to add LINE Pay to the online payment methods and the other payment method lists:
 // see table under #API_PM_APM_PaymentMode
