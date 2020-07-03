@@ -1,9 +1,11 @@
 [#TrustPay]
-== REST API & {payment-page-v1}
+== REST API 
+
 _TrustPay_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>> or <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>> (depending on 3rd party provider/bank).
 
 [#TrustPay_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | CZ, SK
@@ -12,8 +14,10 @@ _TrustPay_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online 
 
 [#TrustPay_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _TrustPay_ notifications are encoded and
 which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| Requests/Responses | Format  | XML

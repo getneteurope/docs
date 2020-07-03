@@ -1,5 +1,5 @@
 [#Bancontact]
-== REST API & {payment-page-v1}
+== REST API
 _Bancontact_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#Bancontact_PaymentModeCountriesandCurrencies]

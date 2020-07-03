@@ -1,9 +1,11 @@
 [#MOLPay]
-== REST API & {payment-page-v1}
+== REST API
+
 _MOLPay_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#MOLPay_PaymentMode]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 |Countries
@@ -15,6 +17,7 @@ _MOLPay_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Ba
 
 [#MOLPay_Channels]
 ==== Available Payment Methods (Channels)
+
 This table shows all available channels through which a consumer can make a payment:
 [width=75%,stripes=none]
 [frame=all]

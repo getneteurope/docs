@@ -1,9 +1,11 @@
 [#API_Masterpass]
-== REST API & {payment-page-v1}/v2
+== REST API & {payment-page-v2}
+
 _Masterpass_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_Masterpass_General_PaymentMode]
 === Countries and Currencies
+
 [width=75%, cols="1h,3",stripes=none]
 |===
 |Countries |International
@@ -12,8 +14,10 @@ _Masterpass_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_Masterpass_General_Communication]
 === Communication Formats
+
 This table illustrates how _Masterpass_ notifications are encoded and
 which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h|Requests/Responses |Format |XML

@@ -1,6 +1,6 @@
 
 [#GooglePay]
-== REST API & {payment-page-v1}
+== REST API
 
 [#GooglePay_Introduction]
 === Introduction

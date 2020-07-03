@@ -1,5 +1,5 @@
 [#mobicred]
-== REST API & {payment-page-v1}
+== REST API
 _mobicred_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#mobicred_PaymentModeCountriesandCurrencies]

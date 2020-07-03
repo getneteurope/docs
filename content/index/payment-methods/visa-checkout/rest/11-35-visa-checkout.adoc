@@ -1,9 +1,11 @@
 [#VISACheckout]
-== REST API & {payment-page-v1}
+== REST API 
+
 _VISA Checkout_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#VISACheckout_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 |Countries    |International
@@ -12,8 +14,10 @@ _VISA Checkout_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#VISACheckout_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _VISA Checkout_ notifications are encoded and
 which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h|Requests/Responses |Format   |XML
