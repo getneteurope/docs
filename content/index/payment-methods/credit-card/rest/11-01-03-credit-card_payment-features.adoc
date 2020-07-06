@@ -1247,7 +1247,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_res
 .MCLS _Enroll Tokenized Card_ Request
 
 --
-NOTE: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response and the ``payment.loyalty-card.user-id``. The bank generates the ``user-id`` to identify the consumer's account.
+NOTE: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response. Use the ``payment.loyalty-card.user-id`` which the bank generated to identify the consumer's account.
 --
 
 [source,xml,subs=attributes+]
