@@ -948,14 +948,14 @@ NOTE: Even if a request file contains invalid or missing ``transaction-id``s, re
 [#CreditCard_PaymentFeatures_LoyaltyPrograms]
 === Loyalty Programs
 
-Some schemes provide a loyalty program for your consumers. _Visa_'s program is called _Visa Offers Platform_ (VOP), _Mastercard_'s program is called _Mastercard® Card Linked Services_ (MCLS). With these loyalty programs you can enroll your consumers' cards and record their loyalty based on the expenses made with the enrolled card. Schemes convert the tracked expenses into loyalty points. You can check in with the platform and allow your consumers to redeem the collected loyalty points.
+Visa and Mastercard provide a loyalty program for your consumers. _Visa_'s _Visa Offers Platform_ (VOP) and _Mastercard_'s _Mastercard® Card Linked Services_ (MCLS). These loyalty programs allow you to enroll your consumers' cards and let them earn loyalty points based on the payments made with these cards. The corresponding loyalty platform converts the tracked expenses into loyalty points. Both platforms have additional functionalities for you to connect to, such as loyalty calculation or redemption.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
 
-Enroll a card in the loyalty program with the transaction type _enrollment_.
+Enroll a card with the corresponding loyalty program with the transaction type _enrollment_.
 
-NOTE: The transaction type _enrollment_ for loyalty programs may not be confused with the transaction type _check-enrollment_ for <<3DS2_checkenrollment, 3DS2 payment processes>>.
+NOTE: The transaction type _enrollment_ for loyalty programs must not be confused with the transaction type _check-enrollment_ for <<3DS2_checkenrollment, 3DS2 payment processes>>.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials]
 ==== Test Credentials
@@ -1004,7 +1004,7 @@ See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_S
 
 .Add Card (VOP only)
 
-Card type must be ``visa`` and transaction type must be ``enrollment``.
+With VOP you can add additional cards to the same consumer's account. Card type must be ``visa`` and transaction type must be ``enrollment``.
 
 . You send an _Add Card_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest, request>>.
 . {payment-gateway} returns an _Add Card_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardResponse, response>>.
@@ -1139,7 +1139,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_re
 .VOP _Add Card_ Request
 
 --
-IMPORTANT: In this test request you have to not only <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, change the values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+NOTE: VOP generates a ``payment.loyalty-card.user-id`` after a successful enrollment.
 --
 
 [source,xml,subs=attributes+]
@@ -1211,7 +1211,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 .MCLS _Enroll Card_ Request 
 
 --
-IMPORTANT: In this test request you have to not only change the <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples, values for ``payment.card``>> but also for ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+NOTE: You must send the ``payment.loyalty-card.user-id``. The bank generates this id to identify the consumer's account.
 --
 
 [source,xml,subs=attributes+]
@@ -1247,7 +1247,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_res
 .MCLS _Enroll Tokenized Card_ Request
 
 --
-IMPORTANT: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response and change the ``payment.loyalty-card.user-id``. You can change the ``user-id`` arbitrarily.
+NOTE: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response and the ``payment.loyalty-card.user-id``. The bank generates the ``user-id`` to identify the consumer's account.
 --
 
 [source,xml,subs=attributes+]

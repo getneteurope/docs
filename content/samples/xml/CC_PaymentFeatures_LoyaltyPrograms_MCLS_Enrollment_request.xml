@@ -24,8 +24,8 @@
     </card>
     <loyalty-card>
         <user-id>MTF5497340000110138</user-id>
-        <promotion-code>SHOPBACKVN</promotion-code>
-        <product-code>MCCSHOPBACK</product-code>
+        <promotion-code>VISATEST</promotion-code>
+        <product-code>MASTERCARDTEST</product-code>
     </loyalty-card>
     <ip-address>127.0.0.1</ip-address>
   <payment-methods>

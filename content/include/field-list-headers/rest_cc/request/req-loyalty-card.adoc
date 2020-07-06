@@ -3,6 +3,6 @@
 
 ``loyalty-card`` is a child of <<{listname}_request_payment, payment>>.
 
-It is used with the issuers' <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>>.
+It is used with <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>>.
 
 //-
