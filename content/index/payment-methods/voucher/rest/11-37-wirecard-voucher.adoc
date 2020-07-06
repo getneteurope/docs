@@ -1,8 +1,9 @@
 [#WirecardVoucher]
 == REST API & {payment-page-v2}
 
-_Wirecard Voucher_ is a type of <<PaymentMethods_PaymentMode_Voucher, voucher>> payment.
+Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
 
+_Wirecard Voucher_ is a type of <<PaymentMethods_PaymentMode_Voucher, voucher>> payment.
 [#WirecardVoucher_GeneralInformation_PaymentMode]
 === Countries and Currencies
 

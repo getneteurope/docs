@@ -5,6 +5,8 @@
 [#GooglePay_Introduction]
 === Introduction
 
+Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
+
 {payment-provider-name} lets merchants take advantage of fast, cashless payments for
 products and services via a mobile device with Google Pay™. +
 Google Pay is the fast, simple way to pay at millions of places - on

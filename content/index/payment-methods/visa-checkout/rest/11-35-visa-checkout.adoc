@@ -1,8 +1,9 @@
 [#VISACheckout]
 == REST API 
 
-_VISA Checkout_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
+Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
 
+_VISA Checkout_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 [#VISACheckout_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
 

@@ -1,9 +1,13 @@
 [#Klarna]
 == REST API
+
+Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
+
 _Klarna_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#Klarna_CountriesandCurrencies]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | DE, AT, NL, SE, NO, DK, FI
@@ -12,9 +16,11 @@ _Klarna_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline 
 
 [#Klarna_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _Klarna Invoice and Klarna Installments_
 notifications are encoded and which formats and methods can be used for
 requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| Requests/Responses | Format   | XML, JSON

@@ -1,5 +1,8 @@
 [#API_AlipayQRPay]
 == REST API
+
+Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
+
 _Alipay QR Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_AlipayQRPay_GeneralInformation_PaymentMode]
@@ -20,6 +23,7 @@ NOTE: One merchant account only supports one settlement currency.
 
 [#API_AlipayQRPay_GeneralInformation_Communication]
 === Communication Formats
+
 This table illustrates how _Alipay QR Pay_ notifications are encoded and which formats and methods can be used for requests and responses.
 
 [width=75%,stripes=none]

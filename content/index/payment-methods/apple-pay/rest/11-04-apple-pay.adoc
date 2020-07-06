@@ -1,6 +1,8 @@
 [#ApplePay]
 == REST API
 
+Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
+
 NOTE: Apple Pay is fully PSD2 compliant. +
 {payment-provider-name} ensures that you will stay PSD2 compliant without any additional changes to your existing implementation.
 
