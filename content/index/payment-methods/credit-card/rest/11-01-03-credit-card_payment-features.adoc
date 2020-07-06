@@ -1138,10 +1138,6 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Enrollment_re
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardRequest]
 .VOP _Add Card_ Request
 
---
-NOTE: VOP generates a ``payment.loyalty-card.user-id`` after a successful enrollment.
---
-
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCard_request.xml[]
@@ -1210,10 +1206,6 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest]
 .MCLS _Enroll Card_ Request 
 
---
-NOTE: You must send the ``payment.loyalty-card.user-id``. The bank generates this id to identify the consumer's account.
---
-
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Enrollment_request.xml[]
@@ -1247,7 +1239,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_res
 .MCLS _Enroll Tokenized Card_ Request
 
 --
-NOTE: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response. Use the ``payment.loyalty-card.user-id`` which the bank generated to identify the consumer's account.
+NOTE: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response. 
 --
 
 [source,xml,subs=attributes+]
