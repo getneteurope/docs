@@ -3,8 +3,8 @@
 | M/O
 | String
 | 36
-| The issuer bank supplies a unique id for a consumer’s account. +
-MCLS and VOP provide one ``user-id`` per consumer. The ``user-id`` can be used with several cards.
+| VOP: unique Id which is returned after the first enrollment. The ``user-id`` can be used subsequently to Add card. +
+MCLS: unique ID for a consumer's account.
 *Mandatory for MCLS _Enroll Card_ or VOP _Add Card_. You cannot send it in a VOP _Enroll Card_.*
 
 | promotion-code 
