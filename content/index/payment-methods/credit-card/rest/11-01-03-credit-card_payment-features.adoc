@@ -962,7 +962,7 @@ NOTE: The transaction type _enrollment_ for loyalty programs must not be confuse
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_VOP]
 [discrete]
-._VOP_
+.VOP
 
 |===
 h|Endpoint  | ``\https://{rest-api-test-endpoint}``
@@ -974,7 +974,7 @@ h|Secret Key | d40ec430-89eb-4c52-ba2c-98d9e8910fb3
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TestCredentials_MCLS]
 [discrete]
-._MCLS_
+.MCLS
 
 |===
 h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
@@ -1171,7 +1171,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_Tokenize_resp
 .VOP _Enroll Tokenized Card_ Request
 
 --
-IMPORTANT: In this test request use the ``token-id`` you received in the VOP _Tokenize Card_ Response.
+NOTE: Use the ``token-id`` you received in the VOP _Tokenize Card_ response.
 --
 
 [source,xml,subs=attributes+]
@@ -1204,7 +1204,11 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 ----
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest]
-.MCLS _Enroll Card_ Request 
+.MCLS _Enroll Card_ Request
+
+--
+NOTE: The ``user-id`` must be unique with each enrollment.
+--
 
 [source,xml,subs=attributes+]
 ----
@@ -1239,7 +1243,8 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_res
 .MCLS _Enroll Tokenized Card_ Request
 
 --
-NOTE: In this test request use the ``token-id`` you received in the MCLS _Tokenize Card_ Response. 
+NOTE: Use the ``token-id`` you received in the MCLS _Tokenize Card_ response. +
+The ``user-id`` must be unique with each enrollment.
 --
 
 [source,xml,subs=attributes+]

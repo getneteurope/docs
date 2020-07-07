@@ -4,15 +4,14 @@
     <transaction-type>tokenize</transaction-type>
     <requested-amount currency="EUR">5.00</requested-amount>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
-        <email>john.doe@{domain}</email>
+        <first-name>Manon</first-name>
+        <last-name>Mertens</last-name>
+        <email>m.mertens@example.com</email>
         <address>
-            <street1>2200 Pacific Hwy</street1>
-            <city>San Diego</city>
-            <state>US</state>
-            <country>CA</country>
-            <postal-code>92101</postal-code>
+            <street1>Rue de la Loi 1</street1>
+            <city>Brussels</city>
+            <country>BE</country>
+            <postal-code>1000</postal-code>
         </address>
     </account-holder>
     <card>

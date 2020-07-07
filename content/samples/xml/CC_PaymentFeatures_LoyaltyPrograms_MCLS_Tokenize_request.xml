@@ -4,15 +4,14 @@
     <request-id>{{$guid}}</request-id>
     <transaction-type>tokenize</transaction-type>
     <account-holder>
-        <first-name>John</first-name>
-        <last-name>Doe</last-name>
-        <email>example@example.com</email>
+        <first-name>Manon</first-name>
+        <last-name>Mertens</last-name>
+        <email>m.mertens@example.com</email>
         <phone></phone>
         <address>
-            <street1>123 anystreet</street1>
-            <city>Brantford</city>
-            <state>ON</state>
-            <country>CA</country>
+            <street1>Rue de la Loi 1</street1>
+            <city>Brussels</city>
+            <country>BE</country>
         </address>
     </account-holder>
     <card>

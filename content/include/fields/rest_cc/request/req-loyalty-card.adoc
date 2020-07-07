@@ -3,8 +3,11 @@
 | M/O
 | String
 | 36
-| VOP: unique Id which is returned after the first enrollment. The ``user-id`` can be used subsequently to Add card. +
-MCLS: unique ID for a consumer's account.
+| VOP: Unique ID which is returned in the response of _Enroll Card_. The ``user-id`` can be used subsequently to _Add Card_. +
+MCLS: Unique ID for a consumer's account.
+
+//-
+
 *Mandatory for MCLS _Enroll Card_ or VOP _Add Card_. You cannot send it in a VOP _Enroll Card_.*
 
 | promotion-code 
@@ -19,6 +22,6 @@ MCLS: unique ID for a consumer's account.
 | 36
 | The issuer bank provides this code. +
 *Mandatory for MCLS _Enroll Card_ or _Enroll Tokenized Card_*.
-*Not used with _VOP_.*
+*Not used with VOP.*
 
 //-

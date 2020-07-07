@@ -10,15 +10,14 @@
         <status code="201.0000" description="loyalty:The resource was successfully created." severity="information"/>
     </statuses>
     <account-holder>
-        <first-name>Zoe</first-name>
-        <last-name>Wayne</last-name>
-        <email>example@example.com</email>
+        <first-name>Manon</first-name>
+        <last-name>Mertens</last-name>
+        <email>m.mertens@example.com</email>
         <phone></phone>
         <address>
-            <street1>123 anystreet</street1>
-            <city>Brantford</city>
-            <state>ON</state>
-            <country>CA</country>
+            <street1>Rue de la Loi 1</street1>
+            <city>Brussels</city>
+            <country>BE</country>
         </address>
     </account-holder>
     <loyalty-card>
