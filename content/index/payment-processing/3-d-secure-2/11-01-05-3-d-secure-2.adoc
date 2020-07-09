@@ -105,10 +105,10 @@ a| To learn more about how you can benefit from implementing 3D Secure 2, watch 
 
 '''
 
-[#CreditCard_PSD2_SCA]
+[#CreditCard_3DS2_PSD2]
 === Recurring MIT and PSD2
 
-[#CreditCard_PSD2_SCA_Grandfathering]
+[#CreditCard_3DS2_PSD2_Grandfathering]
 ==== Grandfathering
 
 Since 14 September 2019, the PSD 2 Regulatory Technical Standard requires SCA for 3D Secure 2 payment processes. This also applies to recurring payments (see 
