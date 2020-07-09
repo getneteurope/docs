@@ -106,7 +106,7 @@ a| To learn more about how you can benefit from implementing 3D Secure 2, watch 
 '''
 
 [#CreditCard_3DS2_PSD2]
-=== Recurring MIT and PSD2
+=== Recurring MIT and PSD 2
 
 [#CreditCard_3DS2_PSD2_Grandfathering]
 ==== Grandfathering
