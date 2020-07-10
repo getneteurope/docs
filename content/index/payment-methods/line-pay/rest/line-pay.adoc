@@ -57,18 +57,140 @@ For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB, 
 [#API_LinePay_TestCredentials]
 === Test Credentials
 
-[%autowidth.stretch,stripes=none]
-|===
-h|Endpoint | ``\https://{rest-api-test-apm-endpoint}``
-h|Merchant Account ID (MAID) | 9a04f328-ea7e-487c-bccd-87fd56f0dc09
-h|Username |16390-testing
-h|Password |3!3013=D3fD8X7
-|===
+// [%autowidth.stretch,stripes=none]
+// |===
+// h|Endpoint | ``\https://{rest-api-test-apm-endpoint}``
+// h|Merchant Account ID (MAID) | 9a04f328-ea7e-487c-bccd-87fd56f0dc09
+// h|Username |16390-testing
+// h|Password |3!3013=D3fD8X7
+// |===
 
 [#API_LinePay_Workflow]
 === Workflow
 
 image::images/line-pay/linepay-flow.jpg[LINE Pay payment flow, height=400]
+
+==== Request Payment 
+
+The payment reservation process, which differs depending on LINE Pay users' access environment, is shown below:
+
+.PC: Payment reservation process
+// Is this an authorization?
+
+image::images/line-pay/Fig-3_pc_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
+
+. The consumer selects LINE Pay in the checkout page of your online shop.                   
+. You call LINE Pay's "Payment Reserve API" to create payment reservation information.
+// Which transaction type is used here?
+. LINE Pay sends you a ``transaction-id`` and a "paymentUrl". The ``transaction-id`` is required to confirm the payment. 
+// Is "paymentUrl" = redirect URL?
+. You send the paymentUrl.
+. The consumer goes through channel web login to authenticate as a LINE user. (This is a process of verifying if the user LINE before using services. The channel web login process is skipped if the merchant can access the LINE user information and forward mid when reserving payment.) 
+. The LINE Pay server pushes a payment request to LINE after the user successfully logs in to LINE.
+. LINE Pay sends anotification of the payment request to the consumer's LINE app and moves the consumer to the payment screen.
+
+.Mobile: Payment reservation process
+
+image::images/line-pay/Fig-4_mobile_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
+
+. The consumer selects LINE Pay in the checkout page of your online shop.                 
+. You call LINE Pay's "Payment Reserve API" to create payment reservation information.
+. LINE Pay sends you a ``transaction-id`` and a "paymentUrl". The ``transaction-id`` is required to confirm the payment. 
+. You send the paymentUrl.
+. You Use the paymentUrl to redirect the consumer to the payment screen in the LINE Pay app. The paymentUrl is divided into web and app, depending on the integration environment.
+. You check, whether the consumer has installed the LINE Pay app.
+• web: LINE Pay provides a web screen. The Merchant checks whether the app is installed before redirecting the user to LINE Pay payment screen.
+• app: An app scheme URL to directly move to the LINE Pay payment screen. For how to check whether the LINE app is installed and available versions of LINE Pay (for Android only), please refer to "How to use PaymentUrl App Guide." 
+
+==== Payment Completion
+// Is this a capture
+
+After selecting a payment method (credit card or balance) to process the payment, the LINE Pay user moves to the "confirmUrl" (added by transactionId in LINE Pay) received from the Merchant when the payment is reserved. Then, the Merchant calls the "Payment confirm API " to complete the payment.
+
+.PC: Payment completion
+
+image::images/line-pay/Fig-5_pc_payment-completion.jpg[LINE Pay pc payment reservation, height=400]
+
+. The LINE Pay user selects a payment method on the LINE Pay payment screen and enters the password. 
+. LINE Pay stores the payment method information and sets the payment status to ‘authorized’. 
+. The LINE Pay user checks the payment information screen. 
+. When the transaction becomes payable on the Awaiting Payment screen, the user is redirected to the "confirmUrl" received from the Merchant when the payment is reserved. 
+. The Merchant calls the Confirm Payment API to complete the payment. 
+
+.Mobile: Payment completion
+
+image::images/line-pay/Fig-6_mobile_payment-completion.jpg[LINE Pay pc payment reservation, height=400]
+
+. The LINE Pay user selects a payment method on the LINE Pay payment screen and enters the password. 
+. LINE Pay stores the payment method information and sets the payment status to ‘authorized’. 
+. After checking the payment information screen on the LINE app, the LINE Pay user clicks ‘OK’ on the bottom to move to the "confirmUrl" received when the payment is reserved. 
+. The Merchant calls the Confirm Payment API to complete the payment. 
+
+==== Capture Payment
+
+You capture a payment in two steps. First you authorize the payment and then you capture it.
+//When the authorization of payment is separated from the capture of the authorized payment.
+
+The overall process is similar to those above, but the Merchant should set "capture" to "false" in the authorization request. 
+// The overall process is similar to those above, but the Merchant should set "capture" as "false" when calling the Reserve Payment API. 
+
+After receiving a succesful authorization response you can either capture the payment or void the authorization.
+// When the Merchant calls the Confirm Payment API, the payment status is saved as AUTHORIZATION. 
+
+// When capturing the payment, 
+// • To capture the payment: Call the Capture API to complete the payment. 
+// • Not to capture the payment: Call the Void Authorization API to cancel the authorization of payment. 
+
+==== Server to server communication
+
+When Calling confirmUrl from Server to Server 
+
+The payment can be made by only the communication between the Merchant server and the LINE Pay server, with delivering confirmUrl.
+
+.Prior Conditions 
+
+oneTimeKey Valid Time : 10 minutes(From the time that user approaches to the oneTimeKey code page.) 
+oneTimeKey and Payment reserve will be deleted at the same time 
+
+Integration Flow 
+
+Figure 8 OneTimeKeyIssuance and Payment reserve 
+
+. Merchant reads oneTimeKey code (barcode or QR Code) that LINE Pay user shows. 
+. Merchant reserves Payment with oneTimeKey information that Merchant gets. 
+. After Payment reserve process completes, LINE Pay user confirms Payment Request via LINE. 
+. LINE Pay user selects a Payment method on the Payment Screen and Enters a Password on the same screen. 
+. After LINE Pay user checks a payment information screen, For reserving a payment, the flow is different depending on confirmUrlType. 
+• CLIENT(Default Value) : ConfirmUrl opens on an user’s browser. After directing to the browser, calling a payment confirm API; it completes a payment. 
+• SERVER : [Appendix] Please refer to “When Calling ConfirmURL from Server-to-Server” 
+
+Merchant Server calls Payment Confirm API and completes a Payment process. When incorrect response is occurred from ConfirmUrl, Merchant cannot call Confirm API.
+
+. When reserving the payment, the Merchant should pass confirmUrlType : "SERVER". 
+. The LINE Pay user selects a payment method and enters the password after entering the LINE Pay payment screen. 
+. The LINE Pay server saves the payment information and calls the confirmUrl received from the Merchant when the payment is reserved. [Appendix] “Please refer to the case of Calling Confirm Url from Server-to-Server” 
+. The Merchant server calls the Confirm Payment API to complete the payment. Please note that the Merchant server can call the Confirm Payment API only after the response for the ConfirmUrl is successfully sent. 
+
+==== Preapproved Payment
+
+Payment Request - Payment Screen 
+
+The overall flow is the same as the normal payment, except that "payType" should be set as "PREAPPROVED." 
+
+Payment Screen - Payment Completion and regKey (for preapproved payment) Issuance 
+
+A regKey is delivered with the response information of payment confirmation additionally. The Merchant must save this key to use preapproved payment later. 
+
+Preapproved Payment 
+
+Figure 9 Preapproved Payment 
+
+When the payment is confirmed, the Merchant server calls "Preapproved Payment API " by using the regKey to make a payment. The LINE Pay user does not intervene during the payment process, but can be notified when the payment is completed. 
+
+regKey (for Preapproved Payment) Expiration 
+
+You can call the Expire regKey API so that unnecessary regKeys expire. For more information, refer to “Expire regKey” 
+
 
 [#API_LinePay_Fields]
 === Fields
