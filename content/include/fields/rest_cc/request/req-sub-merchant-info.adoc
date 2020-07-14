@@ -33,7 +33,7 @@ If ``country`` is neither ``US`` nor ``CA``, do not send this field.
 | street 
 | M/O 
 | String 
-| 128 
+| 38 
 | Street in which the sub-merchant is located.
 
 | postal-code 
