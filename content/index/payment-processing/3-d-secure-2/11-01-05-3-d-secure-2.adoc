@@ -111,10 +111,10 @@ a| To learn more about how you can benefit from implementing 3D Secure 2, watch 
 [#CreditCard_3DS2_PSD2_Grandfathering]
 ==== Grandfathering
 
-Since 14 September 2019, the PSD 2 Regulatory Technical Standard has required SCA for 3D Secure 2 payment processes. This also applies to recurring payments (see 
-https://ec.europa.eu/transparency/regdoc/rep/3/2017/EN/C-2017-7782-F1-EN-MAIN-PART-1.PDF[Article 14 RTS]). From that day on, each first transaction of a recurring merchant-initiated transaction (MIT) must meet the standards of PSD 2.
+Since 14 September 2019, the PSD 2 Regulatory Technical Standard requires SCA for 3D Secure 2 payment processes. This also applies to recurring payments (see 
+https://ec.europa.eu/transparency/regdoc/rep/3/2017/EN/C-2017-7782-F1-EN-MAIN-PART-1.PDF[Article 14 RTS]). From that day on, every first transaction of a recurring merchant-initiated transaction (MIT) must meet the standards of PSD 2.
 
-A special status applies to ongoing recurring MITs whose first transaction was processed before 14 September 2019. Recurring MITs of that kind are "grandfathered".
+However, a _special exemptive status_ applies to ongoing recurring MITs whose _first transaction was processed before 14 September 2019._ Recurring MITs of that kind are being "grandfathered".
 
 If {payment-provider-name} is your acquirer, the {payment-gateway} can "grandfather" a recurring MIT if you provide the referencing ``transaction-id`` from the *first* ``authorization`` or ``purchase`` transaction.
  
