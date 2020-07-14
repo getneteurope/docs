@@ -1,6 +1,14 @@
 [#WhatsNew]
 == Changelog
 
+[#WhatsNew_2020_07]
+[discrete]
+=== 2020-07
+
+.2020-07-14
+- <<CreditCard_3DS2_PSD2_Grandfathering, 3D Secure 2 Recurring Merchant-Initiated Transactions (MIT)>> - Added information on exemption for certain recurring MIT transactions.
+
+
 [#WhatsNew_2020_06]
 [discrete]
 === 2020-06
