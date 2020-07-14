@@ -895,7 +895,7 @@ m| true
 [#API_CC_3DS2_PaymentFlows_InstallmentMIT_SubsequentNoAuth_TwoStep]
 ==== Option 2: Two-Step Merchant Initiated Transaction (MIT)
 
-image::images/API_CC_3DS2_PaymentFlows_InstallmentMIT_SubsequentNoAuth_TwoStep.svg[]
+image::images/diagrams/api_cc_3ds2_installment-mit_subsequent_no-auth_two-step.svg[]
 
 . *Authorization*: The *authorization* in the transaction flow must reference the initial ``installment`` transaction. Include the ``transaction-id`` from the _initial_ *purchase* response in the ``parent-transaction-id`` field. Set ``sequence-type`` to ``recurring`` or ``final``.
 +
@@ -1195,7 +1195,7 @@ m| true
 [#API_CC_3DS2_PaymentFlows_MITUCOF_Subsequent_NoAuth_TwoStepMIT]
 ==== Option 2: Two-Step Merchant Initiated Transaction (MIT)
 
-image::images/API_CC_3DS2_PaymentFlows_MITUCOF_Subsequent_NoAuth_TwoStepMIT.svg[]
+image::images/diagrams/api_cc_3ds2_mit-with-ucof_subsequent_no-auth_two-step.svg[]
 
 . *Authorization*: The *authorization* in the transaction flow must reference the initial ``ucof`` transaction. Include the ``transaction-id`` from the _initial_ *purchase* response in the ``parent-transaction-id`` field. Set ``sequence-type`` to ``recurring`` or ``final``.
 +
@@ -1527,7 +1527,7 @@ m| true
 [#API_CC_3DS2_PaymentFlows_MITUCOF_StoringCard_TwoStepMIT]
 ==== Option 2: Two-Step Merchant Initiated Transaction (MIT)
 
-image::images/API_CC_3DS2_PaymentFlows_MITUCOF_StoringCard_TwoStepMIT.svg[]
+image::images/diagrams/api_cc_3ds2_mit-with-ucof_storing-card_two-step.svg[]
 
 . *Authorization*: The *authorization* in the transaction flow must reference the initial ``ucof`` transaction. Include the ``transaction-id`` from the _initial_ *authorization* response in the ``parent-transaction-id`` field. Set ``sequence-type`` to ``recurring`` or ``final``.
 +
