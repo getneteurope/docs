@@ -139,7 +139,7 @@ When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, l
 |String 
 |18 
 |Phone number provided by the consumer. +
-Example: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the _phone_ field.
+Example: If +1 999 555 0100 is the phone number in international format, then ``9995550100`` is the value of the ``phone`` field.
 
 | phone-country-code 
 | M/O 

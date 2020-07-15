@@ -946,14 +946,14 @@ NOTE: Even if a request file contains invalid or missing ``transaction-id``s, re
 
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms]
-=== Loyalty Programs
+=== Loyalty Programs 
 
 Visa and Mastercard provide a loyalty program for your consumers, _Visa_'s _Visa Offers Platform_ (VOP) and _Mastercard_'s _Mastercard® Card Linked Services_ (MCLS). These loyalty programs allow you to enroll your consumers' cards and let them earn loyalty points based on the payments made with these cards. The corresponding loyalty platform converts the tracked expenses into loyalty points. Both platforms have additional functionalities for you to connect to, such as loyalty calculation or redemption.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
 
-Enroll a card with the corresponding loyalty program with the transaction type _enrollment_.
+Enroll a card in the corresponding loyalty program with the transaction type _enrollment_.
 
 NOTE: The transaction type _enrollment_ for loyalty programs must not be confused with the transaction type _check-enrollment_ for <<3DS2_checkenrollment, 3DS2 payment processes>>.
 
@@ -996,7 +996,7 @@ Transaction type must be ``enrollment``.
 
 [NOTE]
 ====
-If you want to enroll to the loyalty programs with a <<CreditCard_PaymentFeatures_Tokenization, tokenized card>>, you can send a _Tokenize Card_ request first. +
+If you want to enroll in the loyalty programs with a <<CreditCard_PaymentFeatures_Tokenization, tokenized card>>, you can send a _Tokenize Card_ request first. +
 See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest, VOP>> and <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_TokenizeRequest, MCLS>>.
 ====
 
