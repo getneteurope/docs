@@ -1,28 +1,31 @@
-[%autowidth,cols="m,,,,a"]
-|===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
 
 | data 
 | O 
 | String
 | 256
 | Encrypted card details directly from card reader. +
-If ``card-raw.data`` is submitted, all ``card-raw`` fields are mandatory.
+
 
 | encoding 
 | M/O 
 | String 
 | 6
 | Raw card data encoding method. +
-Mandatory if ``card-raw.data`` is submitted. +
-Allowed values: +
-``hex`` +
-``base64`` +
+Accepted values: +
+
+* ``hex`` +
+* ``base64`` +
+
+//-
 
 | format 
 | M/O 
 | String 
 | 30
 | Raw data format. +
-Mandatory if ``card-raw.data`` is submitted.
-|===
+
+5+|<<{listname}_request_card_EncContext, encryption-context>>
+
+//-

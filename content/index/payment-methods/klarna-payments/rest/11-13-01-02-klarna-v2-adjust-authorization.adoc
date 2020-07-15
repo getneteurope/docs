@@ -32,8 +32,6 @@ To refer to a specific _authorization_ or _adjust-authorization_, you need the `
 [#KlarnaV2_TransactionTypes_adjustAuthorization_Workflow]
 ===== _adjust-authorization_ Workflow
 
-image::images/Klarnav2_workflow_adjustAuthorization.svg[]
-
 . -> Send an _adjust-authorization_ request. This request must contain the ``parent-transaction-id``. Enter the ``transaction-id`` of the preceding _authorization_ or _adjust-authorization_ response.
 
 . _{payment-gateway}_ updates the initial (or already adjusted) authorization and forwards the request to _Klarna_. 
@@ -97,7 +95,7 @@ Allowed characters:  ``[a-z0-9-\_]``.
 |requested-amount  
 |M
 |Numeric
-|18,3
+|18.3
 |Total order amount to be reserved. The number of decimal places depends on the currency. +
 The requested amount must be equal to the sum of all order item amounts. +
 For ``klarna-debit``, ``klarna-transfer`` and ``klarna-financing``, it must not exceed the amount of the preceding _authorization_. +
@@ -129,7 +127,7 @@ If you send it, it shows as "order number" on _Klarna_'s payment confirmation pa
 |parent-transaction-amount
 |Response only
 |String 
-|18,3
+|18.3
 |``requested-amount`` of the preceding _authorization_ or _adjust-authorization_.
 
 |parent-transaction-amount@currency

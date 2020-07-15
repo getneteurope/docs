@@ -237,34 +237,6 @@ a| SAP Commerce
       - https://github.com/wirecard/sap-commerce-ee/wiki[English]
 
 
-a| Shopify
-
-- https://github.com/wirecard/shopify-ee[GitHub] |
-      - Credit Card
-      - Pay by Bank app
-      - PayPal
-      - SEPA Direct Debit
-      - Sofort.               |
-
-//a|  Shopify
-
-//- https://github.com/wirecard/shopify-ee[GitHub] |
-//      - Credit Card
-//      - PayPal
-//      - SEPA Direct Debit |
-
-      - Chinese, simplified
-      - Chinese, traditional
-      - English
-      - French
-      - German
-      - Indonesian
-      - Japanese
-      - Korean    |
-
-      - https://github.com/wirecard/shopify-ee/wiki[English]
-      - https://github.com/wirecard/shopify-ee/wiki/Accueil[French]
-
 a| Shopware
 
 - https://github.com/wirecard/shopware-ee/releases[GitHub]

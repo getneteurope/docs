@@ -32,7 +32,7 @@ Otherwise, the authorization cannot be captured automatically.
 [#KlarnaV2_TransactionTypes_authorization_Workflow]
 ===== _authorization_/_pending-authorization_ Workflow
 
-image::images/Klarnav2_workflow_authorization.svg[]
+image::images/diagrams/klarna_v2_authorization.svg[]
 
 . Consumer checks out products.
 . -> Send an _authorization_ request to _{payment-gateway}_. This request must contain order data (e.g. amount, order number, order items) and consumer data (e.g. name, billing/shipping address).
@@ -112,7 +112,7 @@ Allowed characters:  ``[a-z0-9-\_]``.
 |requested-amount  
 |M
 |Numeric
-|18,3
+|18.3
 |Total order amount to be reserved. The number of decimal places depends on the currency. +
 The requested amount must be equal to the total amount of all order items.
 

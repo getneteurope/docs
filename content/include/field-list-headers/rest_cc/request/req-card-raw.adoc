@@ -1,0 +1,11 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+``card-raw`` is a child of <<{listname}_request_card, payment.card>>. +
+
+``card-raw`` data is used, when the consumer uses a mobile device in a card present payment process. +
+For mobile device initiated transactions, there is typically a backend server that integrates to the {payment-gateway} for payment transactions processing. This is to ensure that the credentials connecting to the gateway are not published in mass consumer devices.
+
+NOTE: If ``card-raw.data`` is submitted, all the other ``card-raw`` fields below are mandatory.
+
+//-

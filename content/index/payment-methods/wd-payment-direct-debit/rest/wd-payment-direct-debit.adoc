@@ -93,9 +93,9 @@ are shipped in separate shipments.
 
 [%autowidth.stretch,stripes=none]
 |===
-.2+h| URLs (Endpoints)            | For transaction type ``authorization`` | `\https://{test-instance-hostname}/engine/rest/paymentmethods`
+.2+h| URLs (Endpoints)            | For transaction type ``authorization`` | `\https://{rest-api-test-apm-endpoint}`
                                   | For transaction types ``capture-authorization``, ``refund-capture``,
-                                    ``void-authorization`` and ``credit``  |``\https://{test-instance-hostname}/engine/rest/payments``
+                                    ``void-authorization`` and ``credit``  |``\https://{rest-api-test-endpoint}``
    h| Merchant Account ID (MAID)
                                 2+| 3cfb0fb7-59e2-4d92-847f-37121d633844
    h| Username                  2+| 16390-testing
@@ -112,7 +112,7 @@ are shipped in separate shipments.
 [#API_PaymentDirectDebit_GuaranteedDirectDebit]
 ===== {payment-provider-name} Payment Guaranteed Direct Debit
 
-image::images/11-43-guaranteed-direct-debit/guaranteed_DD_workflow.png[{payment-provider-name} Payment Guaranteed Direct Debit Workflow, width=950, align="center"]
+image::images/diagrams/guaranteed-direct-debit.svg[{payment-provider-name} Payment Guaranteed Direct Debit Workflow, width=950, align="center"]
 
 . Consumer adds items to shopping basket.
 . Consumer selects the payment method _{payment-provider-name} Payment Guaranteed Direct Debit_.
@@ -171,7 +171,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |_requested-amount_
 |M
 |Numeric
-|18,3
+|18.3
 |This is the amount of the transaction. The amount of the decimal place depends on the currency. The amount must be between a defined minimum value and a defined maximum value.
 
 |_requested-amount@currency_

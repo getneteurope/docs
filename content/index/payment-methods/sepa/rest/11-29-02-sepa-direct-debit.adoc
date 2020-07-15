@@ -232,7 +232,7 @@ can be used with both SEPA payment methods: _SEPA Credit Transfer_ and _SEPA Dir
 
 [cols="30h, 70"]
 |===
-| URLs (Endpoints) |``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+| URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
 | Merchant Account ID (MAID) | 933ad170-88f0-4c3d-a862-cff315ecfbc0
 | Username | 16390-testing
 | Password | 3!3013=D3fD8X7
@@ -242,7 +242,7 @@ can be used with both SEPA payment methods: _SEPA Credit Transfer_ and _SEPA Dir
 [#SEPADirectDebit_Workflow]
 === Workflow
 
-image::images/11-29-02-sepa-direct-debit/SEPA_Direct_Debit_Successful.png[SEPA Direct Debit Workflow]
+image::images/diagrams/sepa_direct-debit.svg[SEPA Direct Debit Workflow]
 
 . The transaction type within the request must be _debit_ or _pending-debit._
 . If the request is successful, a response will be returned with status

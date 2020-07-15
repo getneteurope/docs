@@ -23,7 +23,7 @@ To refer to a specific _capture-authorization_, you need the ``parent-transactio
 [#KlarnaV2_TransactionTypes_refundCapture_Workflow]
 ===== _refund-capture_ Workflow
 
-image::images/Klarnav2_workflow_refundAuthorization.svg[]
+image::images/diagrams/klarna_v2_refund-capture-authorization.svg[]
 
 . -> Send a _refund-capture_ request. This request must contain the ``parent-transaction-id``. Enter the ``transaction-id`` of the preceding _capture-authorization_ response.
 
@@ -79,7 +79,7 @@ Allowed characters:  ``[a-z0-9-\_]``.
 |requested-amount  
 |M
 |Numeric
-|18,3
+|18.3
 a|Total order amount to be reserved. The number of decimal places depends on the currency. 
 
 The requested amount must not exceed the amount of the preceding _capture-authorization_ transaction.
@@ -109,7 +109,7 @@ Format: 3-character abbreviation according to ISO 4217.
 |parent-transaction-amount
 |Response only
 |String 
-|18,3
+|18.3
 |``requested-amount`` of the preceding _capture-authorization_.
 
 |parent-transaction-amount@currency
