@@ -65,7 +65,7 @@ For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB, 
 // h|Password |3!3013=D3fD8X7
 // |===
 
-For LINE Pay we cannot provide a general set of test credentials. For a successful test you must register to LINE Pay's platform. Additionally, depending on your use cases, LINE Pay configures a different set of features. +
+For LINE Pay we cannot provide a general set of test credentials. For a successful test you must register to LINE Pay's platform. Additionally, depending on your use cases, LINE Pay configures an individual set of features tailored for you. +
 Ask <<ContactUs, Merchant Support>> for details.
 
 [#API_LinePay_Workflow]
