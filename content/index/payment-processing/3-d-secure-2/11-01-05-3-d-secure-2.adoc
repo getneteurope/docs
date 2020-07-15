@@ -32,10 +32,10 @@ a|image::images/icons/processing.png[processing_icon, width=20%]
 //-
 
 a|image::images/icons/speechbubble.png[speechbubble_icon, width=20%] 
-https://www.wirecard.com/3d-secure-2/#faq[*FAQs*]
+https://www.{domain}/3d-secure-2/#faq[*FAQs*]
 
 a|image::images/icons/latest-news.png[latest-news_icon, width=20%]
-https://www.wirecard.com/3d-secure-2/#s19392[*Latest News*]
+https://www.{domain}/3d-secure-2/#s19392[*Latest News*]
 |===
 
 include::{root}/index/payment-processing/3-d-secure-2/3-d-secure-1.adoc[leveloffset=+2]
