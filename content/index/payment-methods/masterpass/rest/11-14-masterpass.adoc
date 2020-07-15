@@ -1,7 +1,7 @@
 [#API_Masterpass]
 == REST API & {payment-page-v2}
 
-Please note that you can use the REST API documentation for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. +
 
 _Masterpass_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
@@ -52,7 +52,7 @@ here, look at <<AppendixB,  Transaction Types>>.
 [%autowidth]
 |===
 .2+h|URL(s) Endpoints          |Hosted Payment Page |``\https://{test-instance-hostname}/engine/hpp/``
-                               |REST API |``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+                               |REST API |``\https://{rest-api-test-apm-endpoint}``
 h| Merchant Account ID (MAID) 2+|8bc8ed6d-81a8-43be-bd7b-75b008f89fa6
 h|Username                   2+|70000-APITEST-AP
 h|Password                   2+|qD2wzQ_hrc!8
