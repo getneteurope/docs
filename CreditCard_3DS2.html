@@ -5041,6 +5041,12 @@
 <li id="toc_li_CreditCard_3DS2" data-level="2">
 <input id="toc_cb_CreditCard_3DS2" type="checkbox" checked><label for="toc_cb_CreditCard_3DS2"><a href="CreditCard_3DS2.html">3D Secure 2</a></label>
 <ul>
+<li id="toc_li_CreditCard_3DS2_PSD2" data-level="3">
+<input id="toc_cb_CreditCard_3DS2_PSD2" type="checkbox"><label for="toc_cb_CreditCard_3DS2_PSD2"><a href="CreditCard_3DS2.html#CreditCard_3DS2_PSD2">Recurring MIT and PSD 2</a></label>
+<ul><li id="toc_li_CreditCard_3DS2_PSD2_Grandfathering" data-level="4">
+<input id="toc_cb_CreditCard_3DS2_PSD2_Grandfathering" type="checkbox" disabled><label for="toc_cb_CreditCard_3DS2_PSD2_Grandfathering"><a href="CreditCard_3DS2.html#CreditCard_3DS2_PSD2_Grandfathering">Grandfathering</a></label>
+</li></ul>
+</li>
 <li id="toc_li_CreditCard_3DS2_PMs" data-level="3">
 <input id="toc_cb_CreditCard_3DS2_PMs" type="checkbox" disabled><label for="toc_cb_CreditCard_3DS2_PMs"><a href="CreditCard_3DS2.html#CreditCard_3DS2_PMs">Supported Card Brands</a></label>
 </li>
@@ -6171,6 +6177,91 @@ To make the experience more convenient for consumers, authentication can be comp
 </tbody>
 </table>
 <hr>
+<div class="sect3">
+<h4 id="CreditCard_3DS2_PSD2">
+<a class="anchor" href="#CreditCard_3DS2_PSD2"></a><a class="link" href="#CreditCard_3DS2_PSD2">Recurring MIT and PSD 2</a>
+</h4>
+<div class="sect4">
+<h5 id="CreditCard_3DS2_PSD2_Grandfathering">
+<a class="anchor" href="#CreditCard_3DS2_PSD2_Grandfathering"></a><a class="link" href="#CreditCard_3DS2_PSD2_Grandfathering">Grandfathering</a>
+</h5>
+<div class="paragraph">
+<p>Since 14 September 2019, the PSD 2 Regulatory Technical Standard requires SCA for 3D Secure 2 payment processes. This also applies to recurring payments (see
+<a href="https://ec.europa.eu/transparency/regdoc/rep/3/2017/EN/C-2017-7782-F1-EN-MAIN-PART-1.PDF">Article 14 RTS</a>). From that day on, every first transaction of a recurring merchant-initiated transaction (MIT) must meet the standards of PSD 2.</p>
+</div>
+<div class="paragraph">
+<p>However, a <em>special exemptive status</em> applies to ongoing recurring MITs whose <em>first transaction was processed before 14 September 2019.</em> Recurring MITs of that kind are being "grandfathered".</p>
+</div>
+<div class="paragraph">
+<p>If Wirecard is your acquirer, the Wirecard Payment Gateway can "grandfather" a recurring MIT if you provide the referencing <code>transaction-id</code> from the <strong>first</strong> <code>authorization</code> or <code>purchase</code> transaction.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Conditions to grandfather a recurring MIT</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Transaction Date</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">&lt;transaction-type&gt;</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">&lt;transaction-id&gt;</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">&lt;sequence-type&gt;</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">&lt;periodic-type&gt;</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">&lt;parent-transaction-id&gt;</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First Transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Before 14 September 2019</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a) <code>authorization</code> or<br>
+                                                 b) <code>purchase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e.g. 12345</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>first</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>recurring</code> or<br>
+                                                                                         <code>installment</code> or<br>
+                                                                                         <code>UCOF</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recurring Transactions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After 14 September 2019</p></td>
+<td class="tableblock halign-left valign-top"><div class="content">
+<div class="paragraph">
+<p>a) <code>authorization</code> or<br>
+                                                     a) <code>referenced-authorization</code> or<br>
+                                                     b) <code>purchase</code> or<br>
+                                                     b) <a href="CC_Main.html#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions"><code>referenced-purchase</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div>
+</div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e.g. 56789</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>recurring</code> or<br>
+                                           <code>final</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>recurring</code> or<br>
+                                                       <code>installment</code> or<br>
+                                                       <code>UCOF</code><br>
+                                                       must be the same as in the first transaction.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e.g. 12345</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Wirecard will then identify the correct Trace ID (Mastercard) or Transaction Identifier (Visa) of this recurring MIT and send it to the issuer.</p>
+</div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="CreditCard_3DS2_PMs">
 <a class="anchor" href="#CreditCard_3DS2_PMs"></a><a class="link" href="#CreditCard_3DS2_PMs">Supported Card Brands</a>
@@ -9251,6 +9342,63 @@ Accepted values:<br></p>
 </div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>authorization-reason</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enumeration</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content">
+<div class="paragraph">
+<p><code>authorization-reason</code> is an industry-specific indicator for merchant-initiated transactions (MIT). It is used to fulfill a business practice as a follow-up to an original cardholder-merchant interaction that could not be completed with a single transaction.<br>
+This indicator is available for the following transaction types:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>authorization</p>
+</li>
+<li>
+<p>preauthorization</p>
+</li>
+<li>
+<p>purchase</p>
+</li>
+<li>
+<p>referenced-purchase<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Accepted values:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>resubmission</code> = an indicator used when the original purchase took place, but the authorization was not executed at the time the goods or services were provided.</p>
+</li>
+<li>
+<p><code>delayed-charges</code> = an indicator for an additional account charge performed after the original services have been provided. It is typically used by hotels, cruise lines and vehicle rental services.</p>
+</li>
+<li>
+<p><code>reauthorization</code> = an indicator used in the event of a purchase made after the original purchase in different specific conditions. It is typically found in delayed/split shipments and extended stays/rentals scenarios.</p>
+</li>
+<li>
+<p><code>no-show</code> =  an indicator enabling you to charge for services that the consumer agreed to purchase, but failed to fulfill the agreement terms.</p>
+</li>
+<li>
+<p><code>deferred-authorization</code> = an indicator for cases when an authorization is completed at a later time, after the initial authorization failed/was delayed due to connectivity, system issues or other technical limitations.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div>
+</div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><code><a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields_request_accountholder">account-holder</a></code></p></td>
 </tr>
 <tr>
@@ -11672,7 +11820,7 @@ Card-on-file flagging required: Yes</p>
 </h6>
 <div class="imageblock">
 <div class="content">
-<img src="images/API_CC_3DS2_PaymentFlows_RecurringMIT_StoringCCAndSubscription_AuthAndVoid.svg" alt="API CC 3DS2 PaymentFlows RecurringMIT StoringCCAndSubscription AuthAndVoid">
+<img src="images/diagrams/api_cc_3ds2_recurring-mit_storing-with-auth.svg" alt="api cc 3ds2 recurring mit storing with auth">
 </div>
 </div>
 <div class="olist arabic">
@@ -12743,7 +12891,7 @@ Set the <code>periodic-type</code> to <code>installment</code>.
 </h6>
 <div class="imageblock">
 <div class="content">
-<img src="images/API_CC_3DS2_PaymentFlows_InstallmentMIT_SubsequentNoAuth_TwoStep.svg" alt="API CC 3DS2 PaymentFlows InstallmentMIT SubsequentNoAuth TwoStep">
+<img src="images/diagrams/api_cc_3ds2_installment-mit_subsequent_no-auth_two-step.svg" alt="api cc 3ds2 installment mit subsequent no auth two step">
 </div>
 </div>
 <div class="olist arabic">
@@ -13311,7 +13459,7 @@ Set the <code>periodic-type</code> to <code>ucof</code>.
 </h6>
 <div class="imageblock">
 <div class="content">
-<img src="images/API_CC_3DS2_PaymentFlows_MITUCOF_Subsequent_NoAuth_TwoStepMIT.svg" alt="API CC 3DS2 PaymentFlows MITUCOF Subsequent NoAuth TwoStepMIT">
+<img src="images/diagrams/api_cc_3ds2_mit-with-ucof_subsequent_no-auth_two-step.svg" alt="api cc 3ds2 mit with ucof subsequent no auth two step">
 </div>
 </div>
 <div class="olist arabic">
@@ -13949,7 +14097,7 @@ Set the <code>periodic-type</code> to <code>ucof</code>.
 </h6>
 <div class="imageblock">
 <div class="content">
-<img src="images/API_CC_3DS2_PaymentFlows_MITUCOF_StoringCard_TwoStepMIT.svg" alt="API CC 3DS2 PaymentFlows MITUCOF StoringCard TwoStepMIT">
+<img src="images/diagrams/api_cc_3ds2_mit-with-ucof_storing-card_two-step.svg" alt="api cc 3ds2 mit with ucof storing card two step">
 </div>
 </div>
 <div class="olist arabic">
@@ -16227,7 +16375,7 @@ are out of scope of SCA (Strong Customer Authentication). To process MOTO transa
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-01 13:54:12 UTC
+Last updated 2020-07-15 12:31:28 UTC
 </div>
 </div>
 

@@ -5041,6 +5041,12 @@
 <li id="toc_li_CreditCard_3DS2" data-level="2">
 <input id="toc_cb_CreditCard_3DS2" type="checkbox"><label for="toc_cb_CreditCard_3DS2"><a href="CreditCard_3DS2.html">3D Secure 2</a></label>
 <ul>
+<li id="toc_li_CreditCard_3DS2_PSD2" data-level="3">
+<input id="toc_cb_CreditCard_3DS2_PSD2" type="checkbox"><label for="toc_cb_CreditCard_3DS2_PSD2"><a href="CreditCard_3DS2.html#CreditCard_3DS2_PSD2">Recurring MIT and PSD 2</a></label>
+<ul><li id="toc_li_CreditCard_3DS2_PSD2_Grandfathering" data-level="4">
+<input id="toc_cb_CreditCard_3DS2_PSD2_Grandfathering" type="checkbox" disabled><label for="toc_cb_CreditCard_3DS2_PSD2_Grandfathering"><a href="CreditCard_3DS2.html#CreditCard_3DS2_PSD2_Grandfathering">Grandfathering</a></label>
+</li></ul>
+</li>
 <li id="toc_li_CreditCard_3DS2_PMs" data-level="3">
 <input id="toc_cb_CreditCard_3DS2_PMs" type="checkbox" disabled><label for="toc_cb_CreditCard_3DS2_PMs"><a href="CreditCard_3DS2.html#CreditCard_3DS2_PMs">Supported Card Brands</a></label>
 </li>
@@ -9455,7 +9461,7 @@ Accepted values:<br></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
-<p>The URL to which the consumer is redirected during payment processing. This is normally a page on your website.</p>
+<p>The URL to which the consumer is redirected during payment processing. This is normally a page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -9468,12 +9474,12 @@ Accepted values:<br></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>success-redirect-url</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
-<p>The URL to which the consumer is redirected after a successful payment. This is normally a success confirmation page on your website.</p>
+<p>The URL to which the consumer is redirected after a successful payment. This is normally a success confirmation page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -9486,12 +9492,12 @@ Accepted values:<br></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cancel-redirect-url</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
-<p>The URL to which the consumer is redirected after the payment has been canceled. This is normally a page on your website.</p>
+<p>The URL to which the consumer is redirected after the payment has been canceled. This is normally a page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -9509,7 +9515,7 @@ Accepted values:<br></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
-<p>The URL to which the consumer is redirected after an unsuccessful payment. This is normally a page on your website notifying the consumer of a failed payment, often suggesting the option to try another payment method.</p>
+<p>The URL to which the consumer is redirected after an unsuccessful payment. This is normally a page on your website notifying the consumer of a failed payment, often suggesting the option to try another payment method. Enter a value in the request if you want to send your consumer to a different page than defined in your integration.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -9606,6 +9612,63 @@ Accepted values:<br></p>
 </li>
 <li>
 <p><code>28</code> = Prepaid Activation and Load</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div>
+</div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>authorization-reason</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enumeration</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content">
+<div class="paragraph">
+<p><code>authorization-reason</code> is an industry-specific indicator for merchant-initiated transactions (MIT). It is used to fulfill a business practice as a follow-up to an original cardholder-merchant interaction that could not be completed with a single transaction.<br>
+This indicator is available for the following transaction types:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>authorization</p>
+</li>
+<li>
+<p>preauthorization</p>
+</li>
+<li>
+<p>purchase</p>
+</li>
+<li>
+<p>referenced-purchase<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Accepted values:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>resubmission</code> = an indicator used when the original purchase took place, but the authorization was not executed at the time the goods or services were provided.</p>
+</li>
+<li>
+<p><code>delayed-charges</code> = an indicator for an additional account charge performed after the original services have been provided. It is typically used by hotels, cruise lines and vehicle rental services.</p>
+</li>
+<li>
+<p><code>reauthorization</code> = an indicator used in the event of a purchase made after the original purchase in different specific conditions. It is typically found in delayed/split shipments and extended stays/rentals scenarios.</p>
+</li>
+<li>
+<p><code>no-show</code> =  an indicator enabling you to charge for services that the consumer agreed to purchase, but failed to fulfill the agreement terms.</p>
+</li>
+<li>
+<p><code>deferred-authorization</code> = an indicator for cases when an authorization is completed at a later time, after the initial authorization failed/was delayed due to connectivity, system issues or other technical limitations.</p>
 </li>
 </ul>
 </div>
@@ -14054,7 +14117,7 @@ If <code>country</code> is neither <code>US</code> nor <code>CA</code>, do not s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>street</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M/O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">128</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">38</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
 <p>Street in which the sub-merchant is located.</p>
@@ -30551,7 +30614,7 @@ Example of data content: <code>data = {"bin": "549415"}</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-01 13:54:12 UTC
+Last updated 2020-07-15 12:31:28 UTC
 </div>
 </div>
 
