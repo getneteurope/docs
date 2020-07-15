@@ -73,34 +73,31 @@ Ask <<ContactUs, Merchant Support>> for details.
 
 image::images/line-pay/linepay-flow.jpg[LINE Pay payment flow, height=400]
 
-==== Request Payment (pending-debit?)
-// Is this a pending-debit?
+==== pending-debit or pending-authorization
 
-The payment reservation process depends on the consumer's access environment.
+The workflow depends on the device with which the consumer performs the payment process.
 
-.PC: Payment reservation process
-
+.Consumer uses a PC
 
 image::images/line-pay/Fig-3_pc_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
 
 . The consumer selects LINE Pay in the checkout page of your online shop.                   
-. You call LINE Pay's "Payment Reserve API" to create payment reservation information.
+. WPG calls LINE Pay's "Payment Reserve API" to create payment reservation information.
 // Which transaction type is used here?
-. LINE Pay sends you a ``transaction-id`` and a ``payment-method @Url``. The ``transaction-id`` is required to confirm the payment. 
-// Is "paymentUrl" = ``payment-method @Url``?
-. You send the paymentUrl.
-. The consumer goes through channel web login to authenticate as a LINE user. (This is a process of verifying if the user LINE before using services. The channel web login process is skipped if the merchant can access the LINE user information and forward mid when reserving payment.) 
-. The LINE Pay server pushes a payment request to LINE after the user successfully logs in to LINE.
-. LINE Pay sends anotification of the payment request to the consumer's LINE app and moves the consumer to the payment screen.
+. LINE Pay sends a ``transaction-id`` and a ``payment-method @Url`` to WPG. The ``transaction-id`` is required to confirm the payment. 
+. WPG send the ``payment-method @Url`` to the consumer's device.
+. The consumer goes through channel web login to authenticate as a LINE user. (This is a process of verifying if the user LINE before using services. The channel web login process is skipped if WPG can access the LINE user information and forward mid when reserving payment.) 
+. LINE Pay pushes a payment request to LINE after the user successfully logs in to LINE.
+. LINE Pay sends a debit or authorization notification of the payment request to the consumer's LINE app and moves the consumer to the payment screen.
 
-.Mobile: Payment reservation process
+.Consumer uses a mobile device
 
 image::images/line-pay/Fig-4_mobile_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
 
 . The consumer selects LINE Pay in the checkout page of your online shop.                 
-. You call LINE Pay's "Payment Reserve API" to create payment reservation information.
-. LINE Pay sends you a ``transaction-id`` and a "paymentUrl". The ``transaction-id`` is required to confirm the payment. 
-. You send the paymentUrl.
+. WPG call LINE Pay's "Payment Reserve API" to create payment reservation information.
+. LINE Pay sends a ``transaction-id`` and a ``payment-method @Url`` to WPG. The ``transaction-id`` is required to confirm the payment. 
+. WPG sends the ``payment-method @Url`` to the consumer's device.
 . You Use the paymentUrl to redirect the consumer to the payment screen in the LINE Pay app. The paymentUrl is divided into web and app, depending on the integration environment.
 . You check, whether the consumer has installed the LINE Pay app.
 • web: LINE Pay provides a web screen. The Merchant checks whether the app is installed before redirecting the user to LINE Pay payment screen.
