@@ -807,13 +807,13 @@ a| *500.1159*
 | 999.9999 | error       | System error | System error.
 | A        | information | Street Address Match | Only Street Address match.
 | C        | information | Postal Code Match | Only Postal Code match.
-| CVC_M    | information | Matched (correct) CVC-2 | Matched (correct) CVC-2.
-| CVC_N    | information | Not valid CVC-2 | Not valid CVC-2.
-| CVC_P    | information | Processing not performed | Processing not performed.
-| CVC_S    | information | The CVV2 should be on the card but the merchant indicates it is not. | The CVV2 should be on the card but the merchant indicates it is not.
-| CVC_U    | information | Unregistered Issuer | Unregistered Issuer.
-| CVC_Y    | information | CVC-1 incorrect | CVC-1 incorrect.
-| CVC_Z    | information | Unknown | Unknown CVC status.
+// | CVC_M    | information | Matched (correct) CVC-2 | Matched (correct) CVC-2.
+// | CVC_N    | information | Not valid CVC-2 | Not valid CVC-2.
+// | CVC_P    | information | Processing not performed | Processing not performed.
+// | CVC_S    | information | The CVV2 should be on the card but the merchant indicates it is not. | The CVV2 should be on the card but the merchant indicates it is not.
+// | CVC_U    | information | Unregistered Issuer | Unregistered Issuer.
+// | CVC_Y    | information | CVC-1 incorrect | CVC-1 incorrect.
+// | CVC_Z    | information | Unknown | Unknown CVC status.
 | E        | information | Error | AVS not performed due to an error or insufficient data.
 | F        | information | Exact Match | Both address and postal code match.
 | N        | information | Not Match | Both Street Address and Postal Code does not match.
@@ -821,5 +821,7 @@ a| *500.1159*
 | U        | information | AVS Unavailable | The address information is unavailable or the Issuer does not support AVS.
 | Z        | information | Unknown | Unknown AVS status.
 |===
+
+Status values for ``csc-code`` you can find in the <<CC_Fields_xmlelements_response_payment, response field list for Credit Card>>.
 
 //--

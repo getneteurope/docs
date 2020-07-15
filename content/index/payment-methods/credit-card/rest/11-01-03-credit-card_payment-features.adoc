@@ -171,7 +171,7 @@ the actual credit card information.
 [#CreditCard_PaymentFeatures_Tokenization_TokenizeCreditCard_Workflow]
 *Workflow*
 
-image::images/11-01-03-credit-card_payment-features/Create_TokenID_Workflow.png[Create_TokenID_Workflow]
+image::images/diagrams/cc-workflow-tokenization.svg[Create_TokenID_Workflow]
 
 
 [#CreditCard_PaymentFeatures_Tokenization_TokenizeCreditCard_Fields]
@@ -402,7 +402,7 @@ as ``purchase``, ``capture`` or ``credit``. ``authorization`` is not supported.
 [#CreditCard_PaymentFeatures_DynamicDescriptor_HowItWorks_Workflow]
 *Workflow*
 
-image::images/11-01-03-credit-card_payment-features/CreditCard_DynamicDescriptor_Workflow.png[CreditCard DynamicDescriptor Workflow]
+image::images/diagrams/cc_dynamic-descriptor.svg[CreditCard DynamicDescriptor Workflow]
 
 
 . The consumer shops at the merchant's site and enters his card
@@ -452,7 +452,7 @@ For details contact <<ContactUs, Merchant Support>>.
 [#CreditCard_PaymentFeatures_PaymentFacilitator_HowItWorks]
 ==== How It Works
 
-image::images/11-01-03-credit-card_payment-features/Enable_payment_facilitator.png[CreditCard_PaymentFacilitator_Workflow]
+image::images/diagrams/cc_payment_facilitator.svg[CreditCard_PaymentFacilitator_Workflow]
 
 
 See the
@@ -723,7 +723,7 @@ To activate and configure Account Updater, contact <<ContactUs, merchant support
 
 Updating account information requires action on the merchant side (step 1 and step 6):
 
-image::images/11-01-03-credit-card_payment-features/Account_Updater_Workflow.png[Account Updater Workflow]
+image::images/diagrams/cc_account-updater.svg[Account Updater Workflow]
 
 . Upload <<CreditCard_PaymentFeatures_AccountUpdater_Files_Request, request file>>:
 .. Log in to the SFTP server with your SFTP credentials. If you do not have the appropriate URL or credentials, contact <<ContactUs, merchant support>>. +
@@ -959,7 +959,7 @@ It is needed to enroll a card in the _Visa Offers Platform._
 ==== Test Credentials
 
 |===
-h|Endpoint  | ``\https://{test-instance-hostname}/engine/rest/payments/``
+h|Endpoint  | ``\https://{rest-api-test-endpoint}``
 h|Merchant Account ID (MAID) | f82ea856-be50-4899-988d-697574df65f0
 h|Username | 61613-VisaOffers
 h|Password | woU6xxn17HhSi-

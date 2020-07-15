@@ -21,8 +21,10 @@ NOTE: Please contact <<ContactUs, merchant support>> for the exact URL.
 Merchants using HPP can offer <<PPv1_PaymentSolutions_PaybyLink, credit card payments via a hyperlink>>
 from their own newsletter.
 
+//// 
 [#PP_HPP_CheckoutScheme]
 === Hosted Payment Page Checkout Scheme
 
 .Hosted Payment Page: Scheme of checkout flow
 image::images/03-02-01-00-pp-hosted-payment-page/HPP_Checkout_Flow.png[HPP Checkout Flow]
+////

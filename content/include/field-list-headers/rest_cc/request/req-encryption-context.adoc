@@ -1,0 +1,13 @@
+// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
+// The shortcut guarantees that the target of the link remains in the current environment.
+
+``encryption-context`` is a child of
+
+* <<{listname}_request_cardPIN, payment.card.card-pin.>>  
+* <<{listname}_request_cardRAW, payment.card.card-raw.>> 
+
+``payment.card.card-pin`` and ``payment.card.card-raw`` are used for card present payments.
+
+NOTE: *All* ``encryption-context`` fields are mandatory for payment processes with online PIN.
+
+//-

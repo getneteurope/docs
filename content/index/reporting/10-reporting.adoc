@@ -31,8 +31,6 @@ recommended to run a program to facilitate the reconciliation process of
 the downloaded files. The program used must be able to handle the CSV
 file format.
 
-image::images/10-reporting/workflow-reconciliation.png[Workflow of Reconciliation Process]
-
 To reconcile your transactions, compare the reference transaction
 ID in the reconciliation file with a transaction ID that is already
 available in your system. You will be able to see if another transaction
