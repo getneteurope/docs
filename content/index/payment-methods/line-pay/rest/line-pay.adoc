@@ -1,7 +1,7 @@
 [#API_LinePay]
 == REST API
 
-_LINE Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
+_LINE Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>> payment.
 
 // vhauss >>>>> Don't forget to add LINE Pay to the online payment methods and the other payment method lists:
 // see table under #API_PM_APM_PaymentMode
@@ -57,8 +57,6 @@ For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB, 
 [#API_LinePay_TestCredentials]
 === Test Credentials
 
-Please ask <<ContactUs, Merchant Support>> for details.
-
 // [%autowidth.stretch,stripes=none]
 // |===
 // h|Endpoint | ``\https://{rest-api-test-apm-endpoint}``
@@ -66,6 +64,9 @@ Please ask <<ContactUs, Merchant Support>> for details.
 // h|Username |16390-testing
 // h|Password |3!3013=D3fD8X7
 // |===
+
+For LINE Pay we cannot provide a general set of test credentials. For a successful test you must register to LINE Pay's platform. Additionally, depending on your use cases, LINE Pay configures a different set of features. +
+Ask <<ContactUs, Merchant Support>> for details.
 
 [#API_LinePay_Workflow]
 === Workflow
