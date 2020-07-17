@@ -998,13 +998,13 @@ h|Secret Key | ca0cd974-8523-4bba-8cca-0572f9f30c74
 
 Transaction type must be ``enrollment``.
 
-. You send an _Enroll Card_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest, MCLS>>.
+. Send an _Enroll Card_ request, either for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentRequest, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentRequest, MCLS>>.
 . {payment-gateway} returns an _Enroll Card_ <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_EnrollmentResponse, VOP>> or <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_EnrollmentResponse, MCLS>> response.
 
 [NOTE]
 ====
 If you want to enroll in the loyalty programs with a <<CreditCard_PaymentFeatures_Tokenization, tokenized card>>, you can send a _Tokenize Card_ request first. +
-See the corresponding samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest, VOP>> and <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_TokenizeRequest, MCLS>>.
+See the respective samples for <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizeRequest, VOP>> and <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_MCLS_TokenizeRequest, MCLS>>.
 ====
 
 //-
@@ -1214,7 +1214,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_VOP_AddCardTokeni
 .MCLS _Enroll Card_ Request
 
 --
-NOTE: The ``user-id`` must be unique with each enrollment.
+NOTE: The ``user-id`` must be unique for each enrollment.
 --
 
 [source,xml,subs=attributes+]
@@ -1251,7 +1251,7 @@ include::{root}/samples/xml/CC_PaymentFeatures_LoyaltyPrograms_MCLS_Tokenize_res
 
 --
 NOTE: Use the ``token-id`` you received in the MCLS _Tokenize Card_ response. +
-The ``user-id`` must be unique with each enrollment.
+The ``user-id`` must be unique for each enrollment.
 --
 
 [source,xml,subs=attributes+]
