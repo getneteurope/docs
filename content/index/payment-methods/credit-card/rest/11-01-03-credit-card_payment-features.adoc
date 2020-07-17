@@ -948,7 +948,14 @@ NOTE: Even if a request file contains invalid or missing ``transaction-id``s, re
 [#CreditCard_PaymentFeatures_LoyaltyPrograms]
 === Loyalty Programs 
 
-Visa and Mastercard provide a loyalty program for your consumers, _Visa_'s _Visa Offers Platform_ (VOP) and _Mastercard_'s _Mastercard® Card Linked Services_ (MCLS). These loyalty programs allow you to enroll your consumers' cards and let them earn loyalty points based on the payments made with these cards. The corresponding loyalty platform converts the tracked expenses into loyalty points. Both platforms have additional functionalities for you to connect to, such as loyalty calculation or redemption.
+Visa and Mastercard provide these loyalty programs for your consumers: 
+
+* _Visa_'s _Visa Offers Platform_ (VOP) 
+* _Mastercard_'s _Mastercard® Card Linked Services_ (MCLS). 
+
+//-
+
+These programs allow you to enroll your consumers' cards and let them earn loyalty points based on the payments made with their cards. Both platforms have additional functionalities for you to connect to, such as loyalty calculation and redemption.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_TransactionTypes]
 ==== Transaction Types
