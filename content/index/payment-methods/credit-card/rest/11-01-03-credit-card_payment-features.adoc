@@ -1040,8 +1040,6 @@ include::{root}/include/fields/rest_cc/request/req-payment.adoc[tag=loyalty-prog
 
 |===
 
-//-
-
 :!listname:
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_request_accountholder]
