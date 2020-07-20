@@ -1014,16 +1014,11 @@ With VOP you can add additional cards to the same consumer's account. Card type 
 If you want to add a tokenized Visa card, you can send a <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_AddCardTokenizedRequest, _Tokenize Card_ request>> first. 
 ====
 
-[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields]
-==== Fields
-
-Most of the fields used for the loyalty programs are the same as the <<CC_Fields, Credit Card fields>>. +
-Loyalty program specific field information is given here.
-
-//-
-
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_request]
-===== Request
+==== Request Fields
+
+Most of the request fields used for the loyalty programs are the same as the <<CC_Fields_xmlelements_request, Credit Card request fields>>. +
+Loyalty program specific field information is given here.
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_request_payment]
 .``payment.``
@@ -1081,7 +1076,10 @@ include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 //-
 
 [#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_response]
-===== Response
+==== Response Fields
+
+Most of the response fields used for the loyalty programs are the same as the <<CC_Fields_xmlelements_response, Credit Card response fields>>. +
+Loyalty program specific field information is given here.
 
 [#CC_Fields_xmlelements_response_carddata]
 .``card-data.``
