@@ -2,12 +2,12 @@
 | card-id
 | String
 | 36
-| The loyalty program assignes an ID for the consumer's card account.
+| The loyalty program assigns an ID for the consumer's card account.
 
 | user-id
 | String
 | 36
-| The issuer bank supplies a unique id for a consumer’s account. +
+| The issuer bank supplies a unique ID for a consumer’s account. +
 *VOP returns this value in the _Enroll Card_ response.*
 
 //-
