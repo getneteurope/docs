@@ -1049,7 +1049,7 @@ include::{root}/include/fields/rest_cc/request/req-payment.adoc[tag=loyalty-prog
 
 :listname: CreditCard_PaymentFeatures_LoyaltyPrograms_Fields
 
-// include::{root}/include/field-list-headers/rest_cc/request/req-account-holder_loyal-prog.adoc[]
+include::{root}/include/field-list-headers/rest_cc/request/req-account-holder_loyal-prog.adoc[]
 
 [cols="30m,6,9,7,48a"]
 |===
