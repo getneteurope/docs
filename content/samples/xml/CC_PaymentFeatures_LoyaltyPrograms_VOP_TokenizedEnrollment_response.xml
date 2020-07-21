@@ -13,8 +13,8 @@
         <issuer-name>Barclays Bank PLC</issuer-name>
     </card-data>
     <card-token>
-        <token-id>4958399496676142</token-id>
-        <masked-account-number>444411******4145</masked-account-number>
+        <token-id>4242796444090018</token-id>
+        <masked-account-number>420000******0018</masked-account-number>
     </card-token>
     <descriptor>demo descriptor</descriptor>
     <payment-methods>

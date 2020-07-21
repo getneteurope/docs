@@ -21,7 +21,7 @@
         </address>
     </account-holder>
     <loyalty-card>
-        <user-id>MTF5497340000110138</user-id>
+        <user-id>MTF5498340000110138</user-id>
         <card-id>00713548870075448843</card-id>
     </loyalty-card>
     <card>
@@ -31,7 +31,7 @@
     </card>
     <card-token>
         <token-id>5922008592030225</token-id>
-        <masked-account-number>548821******0225</masked-account-number>
+        <masked-account-number>549834******0138</masked-account-number>
     </card-token>
     <ip-address>127.0.0.1</ip-address>
     <descriptor></descriptor>
