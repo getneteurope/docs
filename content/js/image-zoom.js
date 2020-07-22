@@ -11,26 +11,26 @@ function zoomImage(e) {
 
 function addZoomToLargeImages() {
   const contentWrapperWidth = $('div#content').width();
-  $('img').each(function (i, img) {
-      if ($(img).attr('data-has-zoom') == 'true' ||
-          $(img).attr('no-zoom')) {
+  $('img').each(function (i, image) {
+      if ($(image).attr('data-has-zoom') == 'true' ||
+          $(image).attr('no-zoom')) {
           return true;
       }
-      const hasZoomClass = $(img).parent().parent().hasClass('zoom');
-      $(img).attr('data-has-zoom', 'true');
-      const originalWidth = img.width;
-      const originalHeight = img.height;
+      const hasZoomClass = $(image).parent().parent().hasClass('zoom');
+      $(image).attr('data-has-zoom', 'true');
+      console.log($(image).attr('src'))
+      var zb = $('<div class="zoom-box fa fa-search-plus">');
+      $(image).parent().append(zb)
+      const originalWidth = image.width;
+      const originalHeight = image.height;
       // svg naturalWidth === 0, therefore do not use < for comparison
       requestIdleCallback(function () {
-          if (img.src.match(new RegExp('\.svg$'))) {
-              img.width = contentWrapperWidth;
+          if (image.src.match(new RegExp('\.svg$'))) {
+            image.width = contentWrapperWidth;
           }
           // do not give zoom to "one liner images"
-          if ((img.width / img.height < 10 && (img.width > contentWrapperWidth * 0.95)) || hasZoomClass) {
-              // add attribute for click zoom functionality from zoom-vanilla.js
-              $(img).attr('data-action', 'zoom');
-              // disable mouseover looking glass zoom effect upon popular request :)
-              //$(img).wrap('<figure class="zoom" onmousemove="zoomImage(event)" style="background-image: url(' + img.src + ')"></figure>');
+          if ((image.width / image.height < 10 && (image.width > contentWrapperWidth * 0.95)) || hasZoomClass) {
+              $(image).attr('data-action', 'zoom');
           }
       });
       return true;
