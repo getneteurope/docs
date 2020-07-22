@@ -6,6 +6,9 @@
         <payment-method name="creditcard"/>
     </payment-methods>
     <card-token>
-        <token-id>4242796444090018</token-id>
+        <token-id>4516758689085824</token-id>      
     </card-token>
+    <loyalty-card>
+        <user-id>9h373dc1-3d44-431d-8cf0-8719700613k2</user-id>
+    </loyalty-card>
 </payment>
