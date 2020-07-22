@@ -1,6 +1,13 @@
 [#WhatsNew]
 == Changelog
 
+[#WhatsNew_2020_07]
+[discrete]
+=== 2020-07
+
+.2020-07-24
+- <<GooglePay, Google Pay™>> - Updated Merchant End to End Testing for REST API.
+
 [#WhatsNew_2020_06]
 [discrete]
 === 2020-06
