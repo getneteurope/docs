@@ -38,11 +38,6 @@ Accepted values: +
 
 //-
 
-| consumer-id  
-| String 
-| 50 
-| The ID of the consumer.
-
 | api-id 
 | String 
 | 36 
@@ -62,12 +57,17 @@ Accepted values: +
 * ``DE`` (Germany), +
 * ``ES`` (Spain), +
 * ``FR`` (France), or +
-* ``IT`` (Italy).
+* ``IT`` (Italy). +
+Returned only if {payment-gateway} has enabled ``FEATURE_CARD_TYPE_SERVICE`` or ``X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE`` header is sent with request.
 
 //-
 4+| <<{listname}_response_avs, avs>>
 
+4+| <<{listname}_response_carddata, card-data>>
+
 4+|<<{listname}_response_customfield, custom-fields.custom-field>>.
+
+4+| <<{listname}_response_loyaltycard, loyalty-card>>
 
 4+|<<{listname}_response_status, statuses.status>>.
 

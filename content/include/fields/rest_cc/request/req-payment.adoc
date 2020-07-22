@@ -2,6 +2,7 @@
 // The shortcut guarantees that the target of the link remains in the current environment.
 
 // tag::pm-base[]
+// tag::cc-base[]
 
 |merchant-account-id 
 | M/O 
@@ -75,6 +76,14 @@ a|Determines a transaction's behavior during transaction processing and merchant
 |The order number which you can provide. +
 Allowed characters: ASCII character code 32-38 and 40-126.
 
+| consumer-id  
+| M/O
+| String 
+| 50 
+| The ID of the consumer. +
+In <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>> ``consumer-id`` is used with VOP only. It is mandatory to <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Enroll Tokenized Card_>>. +
+When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
+
 |parent-transaction-id 
 |M/O 
 |String 
@@ -123,25 +132,25 @@ Accepted values: +
 |O 
 |String 
 |256 
-|The URL to which the consumer is redirected during payment processing. This is normally a page on your website.
+|The URL to which the consumer is redirected during payment processing. This is normally a page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |success-redirect-url 
-|M 
+|O 
 |String 
 |256 
-|The URL to which the consumer is redirected after a successful payment. This is normally a success confirmation page on your website.
+|The URL to which the consumer is redirected after a successful payment. This is normally a success confirmation page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |cancel-redirect-url 
-|M 
+|O 
 |String 
 |256 
-|The URL to which the consumer is redirected after the payment has been canceled. This is normally a page on your website.
+|The URL to which the consumer is redirected after the payment has been canceled. This is normally a page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |fail-redirect-url 
 |O	
 |String
 |256	
-|The URL to which the consumer is redirected after an unsuccessful payment. This is normally a page on your website notifying the consumer of a failed payment, often suggesting the option to try another payment method.
+|The URL to which the consumer is redirected after an unsuccessful payment. This is normally a page on your website notifying the consumer of a failed payment, often suggesting the option to try another payment method. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |locale 
 |O 
@@ -183,6 +192,26 @@ Accepted values: +
 * ``11`` = Quasi-Cash Transaction +
 * ``28`` = Prepaid Activation and Load 
 
+|authorization-reason
+|O
+|Enumeration
+|
+|``authorization-reason`` is an industry-specific indicator for merchant-initiated transactions (MIT). It is used to fulfill a business practice as a follow-up to an original cardholder-merchant interaction that could not be completed with a single transaction. +
+This indicator is available for the following transaction types: +
+
+* authorization
+* preauthorization 
+* purchase 
+* referenced-purchase +
+
+Accepted values: +
+
+* ``resubmission`` = an indicator used when the original purchase took place, but the authorization was not executed at the time the goods or services were provided.
+* ``delayed-charges`` = an indicator for an additional account charge performed after the original services have been provided. It is typically used by hotels, cruise lines and vehicle rental services.
+* ``reauthorization`` = an indicator used in the event of a purchase made after the original purchase in different specific conditions. It is typically found in delayed/split shipments and extended stays/rentals scenarios. 
+* ``no-show`` =  an indicator enabling you to charge for services that the consumer agreed to purchase, but failed to fulfill the agreement terms.
+* ``deferred-authorization`` = an indicator for cases when an authorization is completed at a later time, after the initial authorization failed/was delayed due to connectivity, system issues or other technical limitations.
+
 //-
 
 5+|<<{listname}_request_accountholder, account-holder>>
@@ -213,6 +242,8 @@ Accepted values: +
 
 5+|<<{listname}_request_device, ``device``>>
 
+5+|<<{listname}_request_loyaltycard, ``loyalty-card``>>
+
 5+|<<{listname}_request_notification, notifications.notification>>
 
 5+|<<{listname}_request_orderitem, order-items.order-item>>
@@ -242,5 +273,19 @@ Accepted values: +
 // end::pm-base[]
 
 // end::three-ds[]
+
+// end::cc-base[]
+
+// tag::loyalty-prog[]
+
+| consumer-id  
+| M/O
+| String 
+| 50 
+| The ID of the consumer. +
+``consumer-id`` is used with VOP only. It is mandatory to <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Enroll Tokenized Card_>>. +
+When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
+
+// end::loyalty-prog[]
 
 //-
