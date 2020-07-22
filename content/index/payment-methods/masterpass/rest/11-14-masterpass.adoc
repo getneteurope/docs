@@ -46,7 +46,7 @@ here, look at <<AppendixB,  Transaction Types>>.
 [%autowidth]
 |===
 .2+h|URL(s) Endpoints          |Hosted Payment Page |``\https://{test-instance-hostname}/engine/hpp/``
-                               |REST API |``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+                               |REST API |``\https://{rest-api-test-apm-endpoint}``
 h| Merchant Account ID (MAID) 2+|8bc8ed6d-81a8-43be-bd7b-75b008f89fa6
 h|Username                   2+|70000-APITEST-AP
 h|Password                   2+|qD2wzQ_hrc!8
@@ -62,7 +62,7 @@ h|Secret Key                 2+|87e1c187-363f-41d8-abab-7bae0fb03eca
 The Payment Page flow follows the usual Payment Page integration and
 flow.
 
-image::images/11-14-masterpass/pp_standardcheckout.png[Workflow PP Standard Checkout]
+image::images/diagrams/masterpass_pp_standardcheckout.svg[Workflow PP Standard Checkout]
 
 . Consumers add items to shopping basket.
 . Merchants redirect consumers to {payment-gateway} for
@@ -86,7 +86,7 @@ completion of the payment process to the consumer.
 [#API_Masterpass_Workflows_API_Standard]
 ==== REST API: Standard Checkout
 
-image::images/11-14-masterpass/api_standardcheckout.png[Workflow REST Standard Checkout]
+image::images/diagrams/masterpass_api_standardcheckout.svg[Workflow REST Standard Checkout]
 
 . Consumers add items to shopping basket.
 . Consumers select payment method _Masterpass_.
@@ -117,7 +117,7 @@ with or without a checkout.
 [#API_Masterpass_Workflows_API_Express_Initial_PairingCheckout]
 
 .Initial - Pairing and Checkout
-image::images/11-14-masterpass/api_initial_pairingcheckout.png[Workflow REST Express Checkout - Pairing and Checkout]
+image::images/diagrams/masterpass_api_initial_pairing-checkout.svg[Workflow REST Express Checkout - Pairing and Checkout]
 
 . Consumers add items to shopping basket.
 . Consumers select payment method _Masterpass_.
@@ -149,7 +149,7 @@ completion of the payment process to the consumers.
 [#API_Masterpass_Workflows_API_Express_Initial_Pairing]
 .Initial - Pairing Only
 
-image::images/11-14-masterpass/api_initial_pairingonly.png[Workflow REST Express Checkout - Pairing]
+image::images/diagrams/masterpass_api_initial_pairing-only.svg[Workflow REST Express Checkout - Pairing]
 
 . Consumers add items to shopping basket.
 . Consumers select payment method _Masterpass_.
@@ -173,7 +173,7 @@ to consumers.
 [#API_Masterpass_Workflows_API_Express_Subsequent_Express]
 .Subsequent - Express Checkout
 
-image::images/11-14-masterpass/api_subsequent_expresscheckout.png[Workflow REST Express Checkout - Express]
+image::images/diagrams/masterpass_api_subsequent_express-checkout.svg[Workflow REST Express Checkout - Express]
 
 . Merchants initiate a _precheckout_ transaction with request-type
 precheckout.

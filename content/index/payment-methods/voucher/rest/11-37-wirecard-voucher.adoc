@@ -110,7 +110,7 @@ Not reloadable, please use small amounts.
 [#WirecardVoucher_Workflow]
 === Workflow
 
-image::images/11-37-wirecard-voucher/WirecardVoucher_Workflow.png[Wirecard Voucher Workflow]
+image::images/diagrams/wirecard-voucher.svg[Wirecard Voucher Workflow]
 
 [#WirecardVoucher_Fields]
 === Fields

@@ -98,7 +98,7 @@ provide the consumer data to guarantee a successful refund. +
 [#Sofort_Workflow]
 === Workflow
 
-image::images/11-31-sofort/Sofort_successful_transaction.png[Workflow of Successful Transaction]
+image::images/diagrams/sofort_success-transaction.svg[Workflow of Successful Transaction]
 
 . Consumer chooses Sofort on the merchant's payment page
 . Consumer is re-directed and logs in to his/her online banking account

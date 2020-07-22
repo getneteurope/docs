@@ -89,7 +89,7 @@ image::images/11-05-bancontact/Bancontact_error_code.png[Bancontact error code]
 [#Bancontact_UsingReSTAPI]
 ==== Using ReST API
 
-image::images/11-05-bancontact/Bancontact_workflow_debit_restapi.png[Bancontact workflow debit using ReST API]
+image::images/diagrams/bancontact_debit-rest-api.svg[Bancontact workflow debit using ReST API]
 
 . Consumer wants to pay a product/service.
 . Consumer selects payment method _Bancontact (BC)._

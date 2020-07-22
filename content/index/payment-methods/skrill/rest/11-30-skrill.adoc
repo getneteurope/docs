@@ -60,7 +60,7 @@ h| Secret Key                  | 3bd04dcc-84b2-4b1c-952a-e438c8ae6e1d
 [#SkrillDigitalWallet_Workflow]
 === Workflow
 
-image::images/11-30-skrill/Skrill_Workflow.png[Skrill Workflow]
+image::images/diagrams/skrill.svg[Skrill Workflow]
 
 . The consumer initiates a payment.
 . The merchant redirects the consumer to the _Skrill Digital Wallet_
