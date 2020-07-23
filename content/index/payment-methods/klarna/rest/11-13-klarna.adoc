@@ -3051,7 +3051,7 @@ include::{root}/samples/xml/klarna-invoice_void-authorization_response_success_d
 ==== capture-authorization
 
 --
-NOTE: Refer to the "XML Klarna Invoice authorization request for DE" sample to test these capture-authorization samples.
+NOTE: Refer to the <<Klarna_Samples_authorization, "XML Klarna Invoice authorization request for DE" sample>> to test these capture-authorization samples.
 --
 
 .XML Klarna Invoice Full capture-authorization Request (Successful)
