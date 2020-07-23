@@ -2266,11 +2266,11 @@
 <li id="toc_li_GooglePay_MerchantEndToEndTesting" data-level="4">
 <input id="toc_cb_GooglePay_MerchantEndToEndTesting" type="checkbox"><label for="toc_cb_GooglePay_MerchantEndToEndTesting"><a href="GooglePay_Main.html#GooglePay_MerchantEndToEndTesting">Merchant End to End Testing</a></label>
 <ul>
-<li id="toc_li_GooglePay_MerchantEndToEndTesting_NonTokenized" data-level="5">
-<input id="toc_cb_GooglePay_MerchantEndToEndTesting_NonTokenized" type="checkbox" disabled><label for="toc_cb_GooglePay_MerchantEndToEndTesting_NonTokenized"><a href="GooglePay_Main.html#GooglePay_MerchantEndToEndTesting_NonTokenized">1. Testing with a non-tokenized card (google-pay cryptogram contains the PAN)</a></label>
-</li>
 <li id="toc_li_GooglePay_MerchantEndToEndTesting_Tokenized" data-level="5">
-<input id="toc_cb_GooglePay_MerchantEndToEndTesting_Tokenized" type="checkbox" disabled><label for="toc_cb_GooglePay_MerchantEndToEndTesting_Tokenized"><a href="GooglePay_Main.html#GooglePay_MerchantEndToEndTesting_Tokenized">2. Testing with a tokenized card (google-pay cryptogram contains a token)</a></label>
+<input id="toc_cb_GooglePay_MerchantEndToEndTesting_Tokenized" type="checkbox" disabled><label for="toc_cb_GooglePay_MerchantEndToEndTesting_Tokenized"><a href="GooglePay_Main.html#GooglePay_MerchantEndToEndTesting_Tokenized">1. Testing with a tokenized card (Google Pay™ cryptogram contains a token)</a></label>
+</li>
+<li id="toc_li_GooglePay_MerchantEndToEndTesting_NonTokenized" data-level="5">
+<input id="toc_cb_GooglePay_MerchantEndToEndTesting_NonTokenized" type="checkbox" disabled><label for="toc_cb_GooglePay_MerchantEndToEndTesting_NonTokenized"><a href="GooglePay_Main.html#GooglePay_MerchantEndToEndTesting_NonTokenized">2. Testing with a non-tokenized card (Google Pay™ cryptogram contains the PAN)</a></label>
 </li>
 </ul>
 </li>
@@ -6274,86 +6274,107 @@ cards, and get personalized suggestions to help you save time and money.</p>
 <a class="anchor" href="#GooglePay_MerchantEndToEndTesting"></a><a class="link" href="#GooglePay_MerchantEndToEndTesting">Merchant End to End Testing</a>
 </h5>
 <div class="sect5">
-<h6 id="GooglePay_MerchantEndToEndTesting_NonTokenized">
-<a class="anchor" href="#GooglePay_MerchantEndToEndTesting_NonTokenized"></a><a class="link" href="#GooglePay_MerchantEndToEndTesting_NonTokenized">1. Testing with a non-tokenized card (google-pay cryptogram contains the PAN)</a>
+<h6 id="GooglePay_MerchantEndToEndTesting_Tokenized">
+<a class="anchor" href="#GooglePay_MerchantEndToEndTesting_Tokenized"></a><a class="link" href="#GooglePay_MerchantEndToEndTesting_Tokenized">1. Testing with a tokenized card (Google Pay™ cryptogram contains a token)</a>
 </h6>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a credit card to your google account</p>
+<p>Add a 'contactless' enabled credit card using Google Pay™ app in your android phone.<br></p>
 </li>
 <li>
-<p>Follow Google Pay instruction to create a test app to generate a
-test cryptogram.<br></p>
+<p>Follow the Google Pay™ instructions to create a test app to generate a test cryptogram.<br></p>
 <div class="ulist">
 <ul>
 <li>
 <p>For in-app integration, please refer to<br>
 <a href="https://developers.google.com/pay/api/android/guides/setup" class="bare">https://developers.google.com/pay/api/android/guides/setup</a>
 &amp;<br>
-<a href="https://developers.google.com/pay/api/android/guides/tutorial" class="bare">https://developers.google.com/pay/api/android/guides/tutorial</a><br></p>
+<a href="https://developers.google.com/pay/api/android/guides/tutorial" class="bare">https://developers.google.com/pay/api/android/guides/tutorial</a>.<br></p>
 </li>
 <li>
 <p>For web integration, please refer to<br>
 <a href="https://developers.google.com/pay/api/web/guides/setup" class="bare">https://developers.google.com/pay/api/web/guides/setup</a>
 &amp;<br>
-<a href="https://developers.google.com/pay/api/web/guides/tutorial" class="bare">https://developers.google.com/pay/api/web/guides/tutorial</a></p>
+<a href="https://developers.google.com/pay/api/web/guides/tutorial" class="bare">https://developers.google.com/pay/api/web/guides/tutorial</a>.<br></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Modify to use 'wirecard' as the GATEWAY_TOKENIZATION_NAME and the
-provided merchant-account-id as  gatewayMerchantId in
-GATEWAY_TOKENIZATION_PARAMETERS</p>
+<p>Modify to use <code>wirecard</code> as the <code>GATEWAY_TOKENIZATION_NAME</code> and <code>merchant-account-id</code> as <code>gatewayMerchantId</code> in <code>GATEWAY_TOKENIZATION_PARAMETERS</code>.</p>
 </li>
 <li>
-<p>Create the request payload with the test cryptogram and send it to
-Wirecard Payment Gateway for processing (Please refer to the sample request
-payload with google-pay cryptogram below)</p>
+<p>Google Pay™ returns a payment token response in JSON format:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+<span class="key"><span class="delimiter">"</span><span class="content">signature</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">MEUCIFXY8mm4DSujSeC4LXwi2kECjP/x0ImV0j/4v5VRTZ3sAiEA0L+nBAo6Oa/3z/jKaj1pa1grtK7qshJlpeq3HqU82WU</span><span class="char">\u003d</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">protocolVersion</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">ECv1</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">signedMessage</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">
+{</span><span class="char">\"</span><span class="content">encryptedMessage</span><span class="char">\"</span><span class="content">:</span><span class="char">\"</span><span class="content">a8nDFDlmwnVVWx+WkN49hMaF30Kam7tDr8d4YUjNid/ug0JrWd9f3bCadKWq+aNydcKJIOnUeiyCFCXOSQCnZfXuLu2Xscus8X0VSOijUyj91aKR35aOMPK4Wt7tJDMmfTTph/nUqoeGGu5VFPnP7yz/G6tY5hVqZKLBD9w2WDeOg5h/P/37QsZEJEEzZS8cAEG7uAdXs+ZG/EzKdiQvtH7Awg12tk7kJZbrkFIOf7YN28ntJcBurqYPxR3MedoLIU+GOHVqrO6QH2pB/xw8acRYPL/Sihv1aalpHLL7mmxTAURN/D/pLZLcsQZimtjHa6ZeUeCJyGFNhQ8DF9Rex1hSl1x1SB1bDhJuU2FUCGtSbuNYhhdQ1Az9UD6BAtgNJ/6xecCtASDusRu1pzgZhNJGwAYt1zu77aguvuvVgpVWttlXeeyjzWMPD7w7NytcLDk9+GpNoAf5QLHyEDXbFoJ9DzBDg3vNpu2I8KkUtmf06TOANmsKG4YLKlDr4tT+0gpqVie+jXKu8PL+GpUdODGnQlvDWO3fqkgX1uK417TDxP9FZ4HDG71Rb1RA+JBJ+XSPzkV0HpOCH7giHKkCYwkdLyiPPJPyw7C4Zg7j/vzYFv9NJV2G9w</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\"</span><span class="content">,</span><span class="char">\"</span><span class="content">ephemeralPublicKey</span><span class="char">\"</span><span class="content">:</span><span class="char">\"</span><span class="content">BHBhrSltfbOtCRFcxrtdbL4JZJt6SFuEuMGjtU8ueRT7ZrR6y02KnTw+dl3LAB+iVzys3sJSC2hVW4PuZXc6tMU</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\"</span><span class="content">,</span><span class="char">\"</span><span class="content">tag</span><span class="char">\"</span><span class="content">:</span><span class="char">\"</span><span class="content">hLqNmvlMiHyJbXakq+/gj21VjULzeL2jwqwmCis4qTM</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\"</span><span class="content">}</span><span class="delimiter">"</span></span>
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create an <code>authorization</code> or <code>purchase</code> request. In this request you must pass the Google Pay™ payment token response as a <strong>Base64-encoded</strong> value in the <code>cryptogram-value</code> field.</p>
+</li>
+<li>
+<p>Send this request to Wirecard Payment Gateway for processing. For details see the <a href="GooglePay_Main.html#GooglePay_Samples_Authorization"><code>authorization</code></a> or <a href="GooglePay_Main.html#GooglePay_Samples_Purchase"><code>purchase</code></a> request containing the <strong>Base64-encoded</strong> Google Pay™ cryptogram.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect5">
-<h6 id="GooglePay_MerchantEndToEndTesting_Tokenized">
-<a class="anchor" href="#GooglePay_MerchantEndToEndTesting_Tokenized"></a><a class="link" href="#GooglePay_MerchantEndToEndTesting_Tokenized">2. Testing with a tokenized card (google-pay cryptogram contains a token)</a>
+<h6 id="GooglePay_MerchantEndToEndTesting_NonTokenized">
+<a class="anchor" href="#GooglePay_MerchantEndToEndTesting_NonTokenized"></a><a class="link" href="#GooglePay_MerchantEndToEndTesting_NonTokenized">2. Testing with a non-tokenized card (Google Pay™ cryptogram contains the PAN)</a>
 </h6>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a contactless enabled credit card using google-pay app in your
-android phone</p>
+<p>Add a credit card to your google account.</p>
 </li>
 <li>
-<p>Follow Google Pay instruction to create a test app to generate a
-test cryptogram.<br></p>
+<p>Follow the Google Pay™ instructions to create a test app to generate a test cryptogram.<br></p>
 <div class="ulist">
 <ul>
 <li>
 <p>For in-app integration, please refer to<br>
 <a href="https://developers.google.com/pay/api/android/guides/setup" class="bare">https://developers.google.com/pay/api/android/guides/setup</a>
 &amp;<br>
-<a href="https://developers.google.com/pay/api/android/guides/tutorial" class="bare">https://developers.google.com/pay/api/android/guides/tutorial</a></p>
+<a href="https://developers.google.com/pay/api/android/guides/tutorial" class="bare">https://developers.google.com/pay/api/android/guides/tutorial</a>.<br></p>
 </li>
 <li>
 <p>For web integration, please refer to<br>
 <a href="https://developers.google.com/pay/api/web/guides/setup" class="bare">https://developers.google.com/pay/api/web/guides/setup</a>
 &amp;<br>
-<a href="https://developers.google.com/pay/api/web/guides/tutorial" class="bare">https://developers.google.com/pay/api/web/guides/tutorial</a></p>
+<a href="https://developers.google.com/pay/api/web/guides/tutorial" class="bare">https://developers.google.com/pay/api/web/guides/tutorial</a>.<br></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Modify to use 'wirecard' as the GATEWAY_TOKENIZATION_NAME and the
-provided merchant-account-id as gatewayMerchantId in
-GATEWAY_TOKENIZATION_PARAMETERS</p>
+<p>Modify to use <code>wirecard</code> as the <code>GATEWAY_TOKENIZATION_NAME</code> and <code>merchant-account-id</code> as <code>gatewayMerchantId</code> in <code>GATEWAY_TOKENIZATION_PARAMETERS</code>.<br></p>
 </li>
 <li>
-<p>Create the request payload with that test cryptogram and send it to
-the Wirecard Payment Gateway for processing (Please refer to the sample request
-payload with google-pay cryptogram below).</p>
+<p>Google Pay™ returns a payment token response in JSON format:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+<span class="key"><span class="delimiter">"</span><span class="content">signature</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">MEQCIGyEZLxhuh8fgy1x7D94V3iStGxbtCa1+mwBpWRdDN0wAiAspFlGpA4WDxSiczGqaQpBTQkqQx5N9WCZrFeFdSFxlQ</span><span class="char">\u003d</span><span class="char">\u003d</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">protocolVersion</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">ECv1</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">signedMessage</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">
+{</span><span class="char">\"</span><span class="content">encryptedMessage</span><span class="char">\"</span><span class="content">:</span><span class="char">\"</span><span class="content">WGUmFopxWWCw8q2f3MPhKPB9f5pWlmup/6pHayUryEOWbqeqWb8H6BzcaUjpaRP+zvMdTxxGFkaOCGF+xV2Ri80rK06ROl9cetlmCOqwvyrDF6bg1OE4U/6wiQNSmQQ4HhDRx12yZK8SbfACd3Ne1UqjDAZxghchZ5KhKNi1YDAGeeUNijfBzt0wyoW/P97pRm5jj6NrIxceMIjiMZPS5et/tLJcRbAE0KUR6CnIP+XbBskTZ8k5iG1myEBBai9rM3f7OxddkKQxdO5azEIe4IKcbVweOFhzpKIQxBz/Z6El/18GsWdvaJYcN2fFMNlTnD6EAwxDoQtLqk47vj3GQZMqeLNjaH/Su2HqaxJXIY18M9Wfq2Fe6dhpV/DkzkYSNQlq9vYIyTye3Q/iouas3UuE6O01zCOYOSPGeqvUnxJpLFBa0aVlRVSAmAezcxqQFkMN4lNC47EXB0buF7l9bDiwa22ESpeJszivwoq0fA</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\"</span><span class="content">,</span><span class="char">\"</span><span class="content">ephemeralPublicKey</span><span class="char">\"</span><span class="content">:</span><span class="char">\"</span><span class="content">BEyGrSxe/7xn8ULcMlhZaJTmGgBlP9Q0H4JnTom4OAB49L5e0BTUnoEuPilEhPmaFQJlVCcuOzI/F5nvojmZyiI</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\"</span><span class="content">,</span><span class="char">\"</span><span class="content">tag</span><span class="char">\"</span><span class="content">:</span><span class="char">\"</span><span class="content">auN1jOSVfQY6VPO4IFMzNdDV0kvueGAPi4fNN9IhtX4</span><span class="char">\\</span><span class="content">u003d</span><span class="char">\"</span><span class="content">}</span><span class="delimiter">"</span></span>
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create an <code>authorization</code> or <code>purchase</code> request. In this request you must pass the Google Pay™ payment token response as a <strong>Base64-encoded</strong> value in the <code>cryptogram-value</code> field.</p>
+</li>
+<li>
+<p>Send this request to Wirecard Payment Gateway for processing. For details see the <a href="GooglePay_Main.html#GooglePay_Samples_Authorization"><code>authorization</code></a> or <a href="GooglePay_Main.html#GooglePay_Samples_Purchase"><code>purchase</code></a> request containing the <strong>Base64-encoded</strong> Google Pay™ cryptogram.</p>
 </li>
 </ol>
 </div>
@@ -6742,7 +6763,7 @@ the <a href="RestApi_Fields.html">API field list</a>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-23 11:22:47 UTC
+Last updated 2020-07-23 11:40:37 UTC
 </div>
 </div>
 
