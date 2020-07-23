@@ -531,10 +531,10 @@ If the voucher is based on the overall basket amount and a partial
 capture (article + voucher) is going to be performed, followed by a
 cancellation of the remaining (not captured) articles, the merchant has
 the possibility to change (decrease) the amount of the voucher before
-activation using adjust authorization request. After a capture it will
+activation using _adjust-authorization_ request. After a capture it will
 not be possible to decrease the amount of the already captured voucher.
 
-Voucher is refunded like all other articles (using refund-capture call
+Voucher is refunded like all other articles (using _refund-capture_ call
 without any order items or including all order items). It must be
 possible to identify every voucher through its unique article number. If
 you refund a voucher, it means its amount is subtracted from the total
@@ -1285,7 +1285,7 @@ an information.
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent authorization or adjust-authorization
+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction.
 |
 
@@ -1398,7 +1398,7 @@ an information.
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent authorization or adjust-authorization
+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction to be prolonged.
 |
 
@@ -1504,7 +1504,7 @@ an information.
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent authorization or adjust-authorization
+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction to be voided.
 |
 
@@ -1581,7 +1581,7 @@ payment instructions.
 2+a|The delivery method of the invoice/payment instructions. 
 
 * For ``klarna-install``, this field is optional. Accepted values: ``mail`` or ``email``. +
-* For ``klarna-invoice``, this field is **mandatory** and must be set to ``email``.
+* For ``klarna-invoice``, this field is **mandatory** in a _capture-authorization_ request and must be set to ``email``.
 
 //-
 Regardless of this element, the link to the invoice/payment instructions
@@ -1858,7 +1858,7 @@ an information.
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent authorization or adjust-authorization
+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction.
 |
 
@@ -2086,7 +2086,7 @@ an information.
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent authorization or adjust-authorization
+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction.
 |
 
@@ -2858,109 +2858,109 @@ Settlement reports are collected in <<Reporting_DataReconciliation, reconciliati
 [#Klarna_Samples_authorization]
 ==== authorization
 
-.XML Klarna Invoice authorization request for DE (successful)
+.XML Klarna Invoice _authorization_ request for DE (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_de_DE_fc5d7e.xml[]
 ----
 
-.XML Klarna Invoice authorization Response for DE (successful)
+.XML Klarna Invoice _authorization_ Response for DE (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_de_DE.xml[]
 ----
 
-.XML Klarna Installments authorization request for DE (successful)
+.XML Klarna Installments _authorization_ request for DE (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-install_authorization_request_success_de_DE.xml[]
 ----
 
-.XML Klarna Installments authorization Response for DE (successful)
+.XML Klarna Installments _authorization_ Response for DE (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-install_authorization_response_success_de_DE.xml[]
 ----
 
-.XML Klarna Invoice authorization request for NL (successful)
+.XML Klarna Invoice _authorization_ request for NL (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_nl_NL.xml[]
 ----
 
-.XML Klarna Invoice authorization Response for NL (successful)
+.XML Klarna Invoice _authorization_ Response for NL (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_nl_NL.xml[]
 ----
 
-.XML Klarna Invoice authorization request for AT (successful)
+.XML Klarna Invoice _authorization_ request for AT (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_de_AT.xml[]
 ----
 
-.XML Klarna Invoice authorization response for AT (successful)
+.XML Klarna Invoice _authorization_ response for AT (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_de_AT.xml[]
 ----
 
-.XML Klarna Invoice authorization request for SE (successful)
+.XML Klarna Invoice _authorization_ request for SE (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_sv_SE.xml[]
 ----
 
-.XML Klarna Invoice authorization Response for SE (successful)
+.XML Klarna Invoice _authorization_ Response for SE (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_sv_SE.xml[]
 ----
 
-.XML Klarna Invoice authorization request for NO (successful)
+.XML Klarna Invoice _authorization_ request for NO (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_nb_NO.xml[]
 ----
 
-.XML Klarna Invoice authorization Response for NO (successful)
+.XML Klarna Invoice _authorization_ Response for NO (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_nb_NO.xml[]
 ----
 
-.XML Klarna Invoice authorization request for FI (successful)
+.XML Klarna Invoice _authorization_ request for FI (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_fi_FI.xml[]
 ----
 
-.XML Klarna Invoice authorization Response for FI (successful)
+.XML Klarna Invoice _authorization_ Response for FI (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_fi_FI.xml[]
 ----
 
-.XML Klarna Invoice authorization request for DK (successful)
+.XML Klarna Invoice _authorization_ request for DK (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request_success_da_DK.xml[]
 ----
 
-.XML Klarna Invoice authorization Response for DK (successful)
+.XML Klarna Invoice _authorization_ Response for DK (successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response_success_da_DK.xml[]
 ----
 
-.XML Klarna Invoice authorization Request (Failed)
+.XML Klarna Invoice _authorization_ Request (Failed)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_request__de_DE.xml[]
 ----
 
-.XML Klarna Invoice authorization Response (Failed)
+.XML Klarna Invoice _authorization_ Response (Failed)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization_response__de_DE.xml[]
@@ -2981,25 +2981,25 @@ include::{root}/samples/xml/klarna-invoice_pending-authorization_response_succes
 [#Klarna_Samples_adjustAuthorization]
 ==== adjust-authorization
 
-.XML Klarna Invoice adjust-authorization Request (Successful)
+.XML Klarna Invoice _adjust-authorization_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_adjust-authorization_request_success_4f7d426f.xml[]
 ----
 
-.XML Klarna Invoice adjust-authorization Response (Successful)
+.XML Klarna Invoice _adjust-authorization_ Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_adjust-authorization_response_success_de_DE_4f7d426f.xml[]
 ----
 
-.XML Klarna Invoice adjust-authorization Request (Failed)
+.XML Klarna Invoice _adjust-authorization_ Request (Failed)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_adjust-authorization_request__4b417698.xml[]
 ----
 
-.XML Klarna Invoice adjust-authorization Response (Failed)
+.XML Klarna Invoice _adjust-authorization_ Response (Failed)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_adjust-authorization_response__nl_NL_4b417698.xml[]
@@ -3008,25 +3008,25 @@ include::{root}/samples/xml/klarna-invoice_adjust-authorization_response__nl_NL_
 [#Klarna_Samples_authorizationRenewal]
 ==== authorization-renewal
 
-.XML Klarna Invoice authorization-renewal Request (Successful)
+.XML Klarna Invoice _authorization-renewal_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization-renewal_request_success_7965e582.xml[]
 ----
 
-.XML Klarna Invoice authorization-renewal Response(Successful)
+.XML Klarna Invoice _authorization-renewal_ Response(Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization-renewal_response_success_nb_NO_7965e582.xml[]
 ----
 
-.XML Klarna Invoice authorization-renewal Request (Failed)
+.XML Klarna Invoice _authorization-renewal_ Request (Failed)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization-renewal_request__fe2d42db.xml[]
 ----
 
-.XML Klarna Invoice authorization-renewal Response(Failed)
+.XML Klarna Invoice _authorization-renewal_ Response(Failed)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_authorization-renewal_response__fi_FI_fe2d42db.xml[]
@@ -3035,13 +3035,13 @@ include::{root}/samples/xml/klarna-invoice_authorization-renewal_response__fi_FI
 [#Klarna_Samples_voidAuthorization]
 ==== void-authorization
 
-.XML Klarna Invoice void-authorization Request (Successful)
+.XML Klarna Invoice _void-authorization_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_void-authorization_request_success_b9e50fc5.xml[]
 ----
 
-.XML Klarna Invoice void-authorization Response(Successful)
+.XML Klarna Invoice _void-authorization_ Response(Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_void-authorization_response_success_de_DE_b9e50fc5.xml[]
@@ -3051,28 +3051,28 @@ include::{root}/samples/xml/klarna-invoice_void-authorization_response_success_d
 ==== capture-authorization
 
 --
-NOTE: Refer to the <<Klarna_Samples_authorization, "XML Klarna Invoice authorization request for DE" sample>> to test these capture-authorization samples.
+NOTE: Refer to the <<Klarna_Samples_authorization, "XML Klarna Invoice _authorization_ request for DE" sample>> to test these _capture-authorization_ samples.
 --
 
-.XML Klarna Invoice Full capture-authorization Request (Successful)
+.XML Klarna Invoice Full _capture-authorization_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_capture-authorization_request_success_35bdae97.xml[]
 ----
 
-.XML Klarna Invoice Full capture-authorization Response (Successful)
+.XML Klarna Invoice Full _capture-authorization_ Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_capture-authorization_response_success_de_DE_35bdae97.xml[]
 ----
 
-.XML Klarna Invoice Partial capture-authorization Request (Successful)
+.XML Klarna Invoice Partial _capture-authorization_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_capture-authorization_request_success_b9e50fc5.xml[]
 ----
 
-.XML Klarna Invoice Partial capture-authorization Response (Successful)
+.XML Klarna Invoice Partial _capture-authorization_ Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_capture-authorization_response_success_de_DE_b9e50fc5.xml[]
@@ -3081,25 +3081,25 @@ include::{root}/samples/xml/klarna-invoice_capture-authorization_response_succes
 [#Klarna_Samples_refundCapture]
 ==== refund-capture
 
-.XML Klarna Invoice Full refund-capture Request (Successful)
+.XML Klarna Invoice Full _refund-capture_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_refund-capture_request_success_82e6ce09.xml[]
 ----
 
-.XML Klarna Invoice Full refund-capture Response (Successful)
+.XML Klarna Invoice Full _refund-capture_ Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_refund-capture_response_success_82e6ce09.xml[]
 ----
 
-.XML Klarna Invoice Partial refund-capture Request (Successful)
+.XML Klarna Invoice Partial _refund-capture_ Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_refund-capture_request_success_b8b35f2d.xml[]
 ----
 
-.XML Klarna Invoice Partial refund-capture Response (Successful)
+.XML Klarna Invoice Partial _refund-capture_ Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/klarna-invoice_refund-capture_response_success_de_DE_b8b35f2d.xml[]
