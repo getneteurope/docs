@@ -613,14 +613,14 @@ conditional *C* in a transaction process.
 |===
 |Field |Request   |Response |Data Type |Size |Description |Usage remarks
 
-|merchant-account-id |M |M |Alphanumeric |36 |Unique identifier for a
-merchant account |
+|merchant-account-id |M |M |Alphanumeric |36 2+|Unique identifier for a
+merchant account 
 
 |request-id |M |M |Alphanumeric |150 |This is the identification number
 of the request. |It has to be unique for each request.
 
-|transaction-type |M |M |Enumeration |30 |The type for the transaction -
-_authorization_ |
+|transaction-type |M |M |Enumeration |30 2+|The type for the transaction -
+_authorization_ 
 
 |requested-amount |M |M |Numeric |18.3 |Amount of the order to be
 reserved. The amount of the decimal place is dependent of the currency.
@@ -631,7 +631,7 @@ items.
 the order to be reserved. |Currency, country of the consumer and
 language must match.
 
-|account-holder |M |M |Complex |  |The end consumer. |
+|account-holder |M |M |Complex |  2+|The end consumer. 
 
 |account-holder.social-security-number |C |C |Alphanumeric |14 |Social
 security number of the end consumer. |Mandatory for SE, DM, FI, NO.
@@ -639,14 +639,14 @@ security number of the end consumer. |Mandatory for SE, DM, FI, NO.
 |account-holder.date-of-birth |C |C |Date |  |Birth date of the
 end consumer. |Mandatory for DE, AT, NL.
 
-|account-holder.first-name |M |M |Alphanumeric |32 |First name of the
-end consumer. |
+|account-holder.first-name |M |M |Alphanumeric |32 2+|First name of the
+end consumer. 
 
-|account-holder.last-name |M |M |Alphanumeric |32 |Last name of the
-end consumer. |
+|account-holder.last-name |M |M |Alphanumeric |32 2+|Last name of the
+end consumer. 
 
-|account-holder.email |M |M |Alphanumeric |64 |Email address of the
-end consumer. |
+|account-holder.email |M |M |Alphanumeric |64 2+|Email address of the
+end consumer. 
 
 |account-holder.gender |C |C |Alphanumeric |1 |Gender of the
 end consumer. |Mandatory for DE, AT, NL.
@@ -656,11 +656,11 @@ end consumer. |Phone numbers need to be validated. Click
 <<Klarna_phoneNumberValidation, here>>
 for details.
 
-|account-holder.address |M |M |Complex |  |The address of the
-end consumer. |
+|account-holder.address |M |M |Complex |  2+|The address of the
+end consumer. 
 
-|account-holder.address.street1 |M |M |Alphanumeric |128 |Street name of
-the end consumer. |
+|account-holder.address.street1 |M |M |Alphanumeric |128 2+|Street name of
+the end consumer. 
 
 |account-holder.address.street2 |M |M |Alphanumeric |128 |House number
 of the end consumer. |Mandatory for DE and NL.
@@ -668,18 +668,18 @@ of the end consumer. |Mandatory for DE and NL.
 |account-holder.address.house-extension |C |C |Alphanumeric |32 |House
 extension of the end consumer. |Mandatory for NL.
 
-|account-holder.address.city |M |M |Alphanumeric |32 |City of the
-end consumer. |
+|account-holder.address.city |M |M |Alphanumeric |32 2+|City of the
+end consumer. 
 
 |account-holder.address.country |M |M |Alphanumeric |3 |Country of the
 end consumer. |Currency, country of the consumer and language must
 match.
 
-|account-holder.address.postal-code |M |M |Alphanumeric |16 |Postal code
-of the the end consumer. |
+|account-holder.address.postal-code |M |M |Alphanumeric |16 2+|Postal code
+of the the end consumer. 
 
-|shipping |M |M |Complex |  |The shipping information of the recipient.
-|
+|shipping |M |M |Complex |  2+|The shipping information of the recipient.
+
 
 |shipping.first-name |M |M |Alphanumeric |32 |First name of the
 recipient. |Must be identical to the first name of the invoice recipient
@@ -689,18 +689,18 @@ recipient. |Must be identical to the first name of the invoice recipient
 |Must be identical to the last name of the invoice recipient (account
 holder).
 
-|shipping.email |M |M |Alphanumeric |64 |Email address of the recipient.
-|
+|shipping.email |M |M |Alphanumeric |64 2+|Email address of the recipient.
+
 
 |shipping.phone |M |M |Alphanumeric |32 |The phone number of the
 recipient. |Phone numbers need to be validated. Click
 <<Klarna_phoneNumberValidation, here>>
 for details.
 
-|shipping.address |M |M |Complex |  |The address of the recipient. |
+|shipping.address |M |M |Complex |  2+|The address of the recipient. 
 
-|shipping.address.street1 |M |M |Alphanumeric |128 |Street name of the
-recipient. |
+|shipping.address.street1 |M |M |Alphanumeric |128 2+|Street name of the
+recipient. 
 
 |shipping.address.street2 |M |M |Alphanumeric |128 |House number of the
 recipient. |Mandatory for DE and NL.
@@ -708,20 +708,20 @@ recipient. |Mandatory for DE and NL.
 |shipping.address.house-extension |C |C |Alphanumeric |32 |House
 extension of the recipient. |Mandatory for NL.
 
-|shipping.address.city |M |M |Alphanumeric |32 |City of the recipient.
-|
+|shipping.address.city |M |M |Alphanumeric |32 2+|City of the recipient.
+
 
 |shipping.address.country |M |M |Alphanumeric |3 |Country of the
 recipient. |Country of the consumer and of the recipient must be the
 same.
 
-|shipping.address.postal-code |M |M |Alphanumeric |16 |Postal code of
-the the recipient. |
+|shipping.address.postal-code |M |M |Alphanumeric |16 2+|Postal code of
+the the recipient. 
 
-|ip-address |M |M |Alphanumeric |15 |Global (internet) IP address of the
+|ip-address |M |M |Alphanumeric |15 2+|Global (internet) IP address of the
 consumer's computer. |
 
-|order-number |O |O |Alphanumeric |64 |Order number of the merchant. |
+|order-number |O |O |Alphanumeric |64 2+|Order number of the merchant. 
 
 |order-detail |O |O |Alphanumeric |  |Message or other important
 information to the consumer on the invoice. |Requires a setting which
@@ -735,28 +735,28 @@ can be made by <<ContactUs, Merchant Support>>.
 not provided derived from the consumer's country. |Currency, country of
 the consumer and language must match.
 
-|order-items |M |M |Complex |  |List of order items. |
+|order-items |M |M |Complex |  2+|List of order items. 
 
-|order-items.order-item |M |M |Complex |  |Order item. |
+|order-items.order-item |M |M |Complex |  2+|Order item. 
 
-|order-items.order-item.quantity |M |M |Numeric |  |Quantity of the
-order item. |
+|order-items.order-item.quantity |M |M |Numeric |  2+|Quantity of the
+order item. 
 
-|order-items.order-item.article-number |M |M |Alphanumeric |256 |Article
-ID unique for the order. |
+|order-items.order-item.article-number |M |M |Alphanumeric |256 2+|Article
+ID unique for the order. 
 
 |order-items.order-item.name |M |M
 |Alphanumeric |256 |Order item name. |
 
-|order-items.order-item.amount |M |M |Numeric |18.3 |Price of one order
-item unit. |
+|order-items.order-item.amount |M |M |Numeric |18.3 2+|Price of one order
+item unit. 
 
 |order-items.order-item.amount@currency |M |M |Alphanumeric |3 |Currency
 of the order item. |Order item currency must match the order currency
 (requested amount currency).
 
-|order-items.order-item.tax-rate |M |M |Numeric |5,2 |Tax rate as
-percentage value or the order item. |
+|order-items.order-item.tax-rate |M |M |Numeric |5,2 2+|Tax rate as
+percentage value or the order item. 
 
 |order-items.order-item.discount |O |O |Numeric |18.3 |The discount
 value as percentage value for one order item. |Currently not supported
@@ -768,54 +768,54 @@ order item: _shipment_fee, handling_fee, discount_. If not provided, it
 is treated as a regular article. |Discount is currently not supported
 yet and will be treated as a regular article.
 
-|additional-merchant-data |O |O |Alphanumeric |  |Special data might be
+|additional-merchant-data |O |O |Alphanumeric |  2+|Special data might be
 needed for specific merchant categories like travel or event tickets in
 addition to order items. The benefit for the merchant is that Klarna
 will be better able to score the merchant's consumers which in turn will
 result in a higher acceptance rate. It will be decided before the
 integration if additional data is required. For details regarding the
 content and format of this field please see
-<<Klarna_AdditionalMerchantData, Extra Merchant Data>> chapter. |
+<<Klarna_AdditionalMerchantData, Extra Merchant Data>> chapter. 
 
-|transaction-id |  |M |Alphanumeric |36 |Transaction ID is the unique
-identifier for a transaction. It is generated by Wirecard. |
+|transaction-id |  |M |Alphanumeric |36 2+|Transaction ID is the unique
+identifier for a transaction. It is generated by Wirecard. 
 
-|request-id |M |M |Alphanumeric |150 |Identification number of the
-request generated by merchant. It has to be unique for each request. |
+|request-id |M |M |Alphanumeric |150 2+|Identification number of the
+request generated by merchant. It has to be unique for each request. 
 
-|transaction-state |  |M |Alphanumeric |12 |Transaction status _success_
-/ _failed._ |
+|transaction-state |  |M |Alphanumeric |12 2+|Transaction status _success_
+/ _failed._ 
 
-|completion-time-stamp |  |M |DateTime |  |Timestamp of completion of
-request. |
+|completion-time-stamp |  |M |DateTime |  2+|Timestamp of completion of
+request. 
 
-|statuses |  |M |Complex |  |List of transaction statuses. |
+|statuses |  |M |Complex |  2+|List of transaction statuses. 
 
-|statuses.status |  |M |Complex |  |Transaction status. |
+|statuses.status |  |M |Complex |  2+|Transaction status. 
 
-|statuses.status.code |  |M |Alphanumeric |12 |Status code of the
-transaction. |
+|statuses.status.code |  |M |Alphanumeric |12 2+|Status code of the
+transaction. 
 
-|statuses.status.description |  |M |Alphanumeric |256 |Description to
-the status code of the transaction. |
+|statuses.status.description |  |M |Alphanumeric |256 2+|Description to
+the status code of the transaction. 
 
-|statuses.status.severity |  |M |Enumeration |20 |This field gives
+|statuses.status.severity |  |M |Enumeration |20 2+|This field gives
 information if a status is a _warning_, an _error_ or an _information_.
-|
 
-|statuses.status@provider-code |  |O |Alphanumeric |34 |Original Klarna
-error code |
 
-|statuses.status@provider-message |  |O |Alphanumeric |  |Error message
-to be shown to the end consumer as required by Klarna |
+|statuses.status@provider-code |  |O |Alphanumeric |34 2+|Original Klarna
+error code 
 
-|statuses.status@provider-transaction-id |  |O |Alphanumeric |36 |Klarna
-reservation number |
+|statuses.status@provider-message |  |O |Alphanumeric |  2+|Error message
+to be shown to the end consumer as required by Klarna 
 
-|notifications.notification@url |O |O |Alphanumeric |256 |URL to be used
+|statuses.status@provider-transaction-id |  |O |Alphanumeric |36 2+|Klarna
+reservation number 
+
+|notifications.notification@url |O |O |Alphanumeric |256 2+|URL to be used
 for the Instant Payment Notification for pending reservations.
 It overwrites the notification URL that is set up in the merchant
-configuration. |
+configuration. 
 
 |custom-fields.custom-field/@field-name |C |C |Alphanumeric |36 |The
 name of the custom field keeping the value of the selected Klarna pclass
@@ -831,8 +831,8 @@ Klarna's identifier of the chosen installment plan (for details please
 see
 <<Klarna_InstallmentCalculator, Klarna Installment Calculator service for guaranteed payment on installments>>).
 
-|payment-methods.payment-method-name |M |M |Alphanumeric |15 |Name of
-the payment method: _klarna-invoice_, _klarna-install_ |
+|payment-methods.payment-method-name |M |M |Alphanumeric |15 2+|Name of
+the payment method: _klarna-invoice_, _klarna-install_ 
 |===
 
 [#Klarna_Fields_adjustAuthorization]
@@ -846,8 +846,8 @@ the payment method: _klarna-invoice_, _klarna-install_ |
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |request-id
 |M
@@ -862,8 +862,8 @@ the payment method: _klarna-invoice_, _klarna-install_ |
 |M
 |Enumeration
 |30
-|The type for a transaction – _adjust-authorization_.
-|
+2+|The type for a transaction - _adjust-authorization_.
+
 
 |requested-amount
 |M
@@ -887,8 +887,8 @@ dependent of the currency.
 |O
 |Complex
 |
-|The end consumer whose data has changed.
-|
+2+|The end consumer whose data has changed.
+
 
 |account-holder.social-security-number
 |C
@@ -911,24 +911,24 @@ dependent of the currency.
 |M
 |Alphanumeric
 |32
-|First name of the end consumer.
-|
+2+|First name of the end consumer.
+
 
 |account-holder.last-name
 |M
 |M
 |Alphanumeric
 |32
-|Last name of the end consumer.
-|
+2+|Last name of the end consumer.
+
 
 |account-holder.email
 |M
 |M
 |Alphanumeric
 |64
-|Email address of the end consumer.
-|
+2+|Email address of the end consumer.
+
 
 |account-holder.gender
 |C
@@ -953,16 +953,16 @@ for details.
 |M
 |Complex
 |
-|The address of the end consumer.
-|
+2+|The address of the end consumer.
+
 
 |account-holder.address.street1
 |M
 |M
 |Alphanumeric
 |128
-|Street name of the end consumer.
-|
+2+|Street name of the end consumer.
+
 
 |account-holder.address.street2
 |M
@@ -985,8 +985,8 @@ for details.
 |M
 |Alphanumeric
 |32
-|City of the end consumer.
-|
+2+|City of the end consumer.
+
 
 
 |account-holder.address.country
@@ -1002,16 +1002,16 @@ for details.
 |M
 |Alphanumeric
 |16
-|Postal code of the the end consumer.
-|
+2+|Postal code of the the end consumer.
+
 
 |shipping
 |O
 |O
 |complex
 |
-|The changed shipping data of the recipient.
-|
+2+|The changed shipping data of the recipient.
+
 
 
 |shipping.first-name
@@ -1019,24 +1019,24 @@ for details.
 |M
 |Alphanumeric
 |32
-|First name of the recipient.
-|
+2+|First name of the recipient.
+
 
 |shipping.last-name
 |M
 |M
 |Alphanumeric
 |32
-|Last name of the recipient.
-|
+2+|Last name of the recipient.
+
 
 |shipping.email
 |M
 |M
 |Alphanumeric
 |64
-|Email address of the recipient.
-|
+2+|Email address of the recipient.
+
 
 |shipping.phone
 |M
@@ -1053,16 +1053,16 @@ for details.
 |M
 |Complex
 |
-|The address of the recipient.
-|
+2+|The address of the recipient.
+
 
 |shipping.address.street1
 |M
 |M
 |Alphanumeric
 |128
-|Street name of the recipient.
-|
+2+|Street name of the recipient.
+
 
 |shipping.address.street2
 |M
@@ -1085,8 +1085,8 @@ for details.
 |M
 |Alphanumeric
 |32
-|City of the recipient.
-|
+2+|City of the recipient.
+
 
 |shipping.address.country
 |M
@@ -1101,16 +1101,16 @@ for details.
 |M
 |Alphanumeric
 |16
-|Postal code of the the recipient.
-|
+2+|Postal code of the the recipient.
+
 
 |order-number
 |O
 |O
 |Alphanumeric
 |64
-|Changed order number of the merchant.
-|
+2+|Changed order number of the merchant.
+
 
 |order-items
 |O
@@ -1126,40 +1126,40 @@ transaction.
 |O
 |Complex
 |
-|Order item.
-|
+2+|Order item.
+
 
 |order-items.order-item.quantity
 |M
 |M
 |Numeric
 |
-|Quantity of the order item.
-|
+2+|Quantity of the order item.
+
 
 |order-items.order-item.article-number
 |M
 |M
 |Alphanumeric
 |256
-|Article ID unique for the order.
-|
+2+|Article ID unique for the order.
+
 
 |order-items.order-item.name
 |M
 |M
 |Alphanumeric
 |256
-|Order item name.
-|
+2+|Order item name.
+
 
 |order-items.order-item.amount
 |M
 |M
 |Numeric
 |18,6
-|Price of one order item unit.
-|
+2+|Price of one order item unit.
+
 
 |order-items.order-item.amount@currency
 |M
@@ -1175,8 +1175,8 @@ currency).
 |M
 |Numeric
 |5,2
-|Tax rate as percentage value or the order item.
-|
+2+|Tax rate as percentage value or the order item.
+
 
 |order-items.order-item.discount
 |O
@@ -1202,66 +1202,66 @@ article.
 |M
 |Alphanumeric
 |36
-|Transaction ID is the unique identifier for a transaction. It is
+2+|Transaction ID is the unique identifier for a transaction. It is
 generated by Wirecard.
-|
+
 
 |transaction-state
 |
 |M
 |Enumeration
 |12
-|Transaction status _success_ / _failed_
-|
+2+|Transaction status _success_ / _failed_
+
 
 |completion-time-stamp
 |
 |M
 |DateTime
 |
-|Timestamp of completion of request.
-|
+2+|Timestamp of completion of request.
+
 
 |statuses
 |
 |M
 |Complex
 |
-|List of transaction statuses
-|
+2+|List of transaction statuses
+
 
 |statuses.status
 |
 |M
 |Complex
 |
-|Transaction status.
-|
+2+|Transaction status.
+
 
 |statuses.status.code
 |
 |M
 |Alphanumeric
 |12
-|Status code of the transaction.
-|
+2+|Status code of the transaction.
+
 
 |statuses.status.description
 |
 |M
 |Alphanumeric
 |256
-|Description to the status code of the transaction.
-|
+2+|Description to the status code of the transaction.
+
 
 |statuses.status.severity
 |
 |M
 |Enumeration
 |20
-|This field gives information if a status is a warning, an error or
+2+|This field gives information if a status is a warning, an error or
 an information.
-|
+
 
 
 |statuses.status@provider-code
@@ -1269,33 +1269,33 @@ an information.
 |O
 |Alphanumeric
 |34
-|Original Klarna error code
-|
+2+|Original Klarna error code
+
 
 |statuses.status@provider-message
 |
 |O
 |Alphanumeric
 |
-|Error message to be shown to the end consumer as required by Klarna
-|
+2+|Error message to be shown to the end consumer as required by Klarna
+
 
 |parent-transaction-id
 |M
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent _authorization_ or adjust-authorization
+2+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction.
-|
+
 
 |payment-methods.payment-method-name
 |M
 |M
 |Enumeration
 |15
-|Name of the payment method: _klarna-invoice_, _klarna-install_
-|
+2+|Name of the payment method: _klarna-invoice_, _klarna-install_
+
 |===
 
 [#Klarna_Fields_authorizationRenewal]
@@ -1309,8 +1309,8 @@ transaction.
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |request-id
 |M
@@ -1325,90 +1325,90 @@ transaction.
 |M
 |Enumeration
 |30
-|The type for a transaction – _authorization-renewal_
-|
+2+|The type for a transaction - _authorization-renewal_
+
 
 |expiration-date
 |
 |M
 |dateTime
 |
-|The new expiration timestamp
-|
+2+|The new expiration timestamp
+
 
 |statuses
 |
 |M
 |Complex
 |
-|List of transaction statuses
-|
+2+|List of transaction statuses
+
 
 |statuses.status
 |
 |M
 |Complex
 |
-|Transaction status.
-|
+2+|Transaction status.
+
 
 |statuses.status.code
 |
 |M
 |Alphanumeric
 |12
-|Status code of the transaction.
-|
+2+|Status code of the transaction.
+
 
 |statuses.status.description
 |
 |M
 |Alphanumeric
 |256
-|Description to the status code of the transaction.
-|
+2+|Description to the status code of the transaction.
+
 
 |statuses.status.severity
 |
 |M
 |Enumeration
 |20
-|This field gives information if a status is a warning, an error or
+2+|This field gives information if a status is a warning, an error or
 an information.
-|
+
 
 |statuses.status@provider-code
 |
 |O
 |Alphanumeric
 |34
-|Original Klarna error code
-|
+2+|Original Klarna error code
+
 
 |statuses.status@provider-message
 |
 |O
 |Text
 |
-|Error message to be shown to the end consumer as required by Klarna
-|
+2+|Error message to be shown to the end consumer as required by Klarna
+
 
 |parent-transaction-id
 |M
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent _authorization_ or adjust-authorization
+2+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction to be prolonged.
-|
+
 
 |payment-methods.payment-method-name
 |M
 |M
 |Enumeration
 |15
-|Name of the payment method: _klarna-invoice_, _klarna-install_
-|
+2+|Name of the payment method: _klarna-invoice_, _klarna-install_
+
 |===
 
 [#Klarna_Fields_voidAuthorization]
@@ -1422,8 +1422,8 @@ transaction to be prolonged.
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |request-id
 |M
@@ -1438,32 +1438,32 @@ transaction to be prolonged.
 |M
 |Enumeration
 |30
-|The type for a transaction – _void-authorization_
-|
+2+|The type for a transaction - _void-authorization_
+
 
 |statuses
 |
 |M
 |Complex
 |
-|List of transaction statuses
-|
+2+|List of transaction statuses
+
 
 |statuses.status
 |
 |M
 |Complex
 |
-|Transaction status.
-|
+2+|Transaction status.
+
 
 |statuses.status.code
 |
 |M
 |Alphanumeric
 |12
-|Status code of the transaction.
-|
+2+|Status code of the transaction.
+
 
 
 |statuses.status.description
@@ -1471,50 +1471,50 @@ transaction to be prolonged.
 |M
 |Alphanumeric
 |256
-|Description to the status code of the transaction.
-|
+2+|Description to the status code of the transaction.
+
 
 |statuses.status.severity
 |
 |M
 |Alphanumeric
 |20
-|This field gives information if a status is a warning, an error or
+2+|This field gives information if a status is a warning, an error or
 an information.
-|
+
 
 |statuses.status@provider-code
 |
 |O
 |Alphanumeric
 |34
-|Original Klarna error code
-|
+2+|Original Klarna error code
+
 
 |statuses.status@provider-message
 |
 |O
 |Alphanumeric
 |
-|Error message to be shown to the end consumer as required by Klarna
-|
+2+|Error message to be shown to the end consumer as required by Klarna
+
 
 |parent-transaction-id
 |M
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent _authorization_ or adjust-authorization
+2+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction to be voided.
-|
+
 
 |payment-methods.payment-method-name
 |M
 |M
 |Alphanumeric
 |15
-|Name of the payment method: _klarna-invoice_, _klarna-install_
-|
+2+|Name of the payment method: _klarna-invoice_, _klarna-install_
+
 |===
 
 [#Klarna_Fields_captureAuthorization]
@@ -1528,8 +1528,8 @@ transaction to be voided.
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |request-id
 |M
@@ -1544,8 +1544,8 @@ transaction to be voided.
 |M
 |Enumeration
 |30
-|The type for a transaction – _capture-authorization_
-|
+2+|The type for a transaction - _capture-authorization_
+
 
 |requested-amount
 |M
@@ -1592,8 +1592,8 @@ document is provided in ``payment-methods/payment-method/@url``.
 |M
 |Alphanumeric
 |32
-|The OCR number identifying the captured order
-|
+2+|The OCR number identifying the captured order
+
 
 |invoice.invoice_url
 |
@@ -1619,48 +1619,48 @@ invoice/payment instructions.
 |O
 |Alphanumeric
 |64
-|Order number of the merchant if not provided with the authorization.
-|
+2+|Order number of the merchant if not provided with the authorization.
+
 
 |order-items
 |O
 |O
 |Complex
 |
-|The list of the order items for partial capture.
-|
+2+|The list of the order items for partial capture.
+
 
 |order-items.order-item
 |O
 |O
 |Complex
 |
-|Order item.
-|
+2+|Order item.
+
 
 |order-items.order-item.quantity
 |M
 |M
 |Numeric
 |
-|Quantity of the order item.
-|
+2+|Quantity of the order item.
+
 
 |order-items.order-item.article-number
 |M
 |M
 |Alphanumeric
 |256
-|Article ID unique for the order.
-|
+2+|Article ID unique for the order.
+
 
 |order-items.order-item.name
 |M
 |M
 |Alphanumeric
 |256
-|Order item name.
-|
+2+|Order item name.
+
 
 |order-items.order-item.amount
 |M
@@ -1685,31 +1685,31 @@ currency).
 |O
 |Alphanumeric
 |64
-|Tracking number for the outgoing parcel
-|
+2+|Tracking number for the outgoing parcel
+
 
 |shipping.tracking-url
 |O
 |O
 |Alphanumeric
 |2000
-|URL to the shipping company's page for the outgoing parcel
-|
+2+|URL to the shipping company's page for the outgoing parcel
+
 
 |shipping.shipping-company
 |O
 |O
 |Alphanumeric
 |64
-|The name of the shipping company for the outgoing parcel
-|
+2+|The name of the shipping company for the outgoing parcel
+
 
 |shipping.shipping-method
 |O
 |O
 |Enumeration
 |
-a|
+2+a|
 .Use one of the following options
 - store_pick_up - An online purchase is picked up in the
 merchants own physical store.
@@ -1730,31 +1730,30 @@ address via merchants own delivery service.
 
 //-
 
-|
 
 |shipping.return-tracking-number
 |O
 |O
 |Alphanumeric
 |64
-|Tracking number for the return parcel
-|
+2+|Tracking number for the return parcel
+
 
 |shipping.return-tracking-url
 |O
 |O
 |Alphanumeric
 |2000
-|URL to the shipping company's page for the return parcel
-|
+2+|URL to the shipping company's page for the return parcel
+
 
 |shipping.return-shipping-company
 |O
 |O
 |Alphanumeric
 |36
-|The name of the shipping company for the return parcel
-|
+2+|The name of the shipping company for the return parcel
+
 
 |transaction-id
 |
@@ -1769,106 +1768,106 @@ address via merchants own delivery service.
 |M
 |Alphanumeric
 |12
-|Transaction status _success_ / _failed_
-|
+2+|Transaction status _success_ / _failed_
+
 
 |completion-time-stamp
 |
 |M
 |DateTime
 |
-|Timestamp of completion of request.
-|
+2+|Timestamp of completion of request.
+
 
 |statuses
 |
 |M
 |Complex
 |
-|List of transaction statuses
-|
+2+|List of transaction statuses
+
 
 |statuses.status
 |
 |M
 |Complex
 |
-|Transaction status.
-|
+2+|Transaction status.
+
 
 |statuses.status.code
 |
 |M
 |Alphanumeric
 |12
-|Status code of the transaction.
-|
+2+|Status code of the transaction.
+
 
 |statuses.status.description
 |
 |M
 |Alphanumeric
 |256
-|Description to the status code of the transaction.
-|
+2+|Description to the status code of the transaction.
+
 
 |statuses.status.severity
 |
 |M
 |Enumeration
 |20
-|This field gives information if a status is a warning, an error or
+2+|This field gives information if a status is a warning, an error or
 an information.
-|
+
 
 |statuses.status@provider-code
 |
 |O
 |Alphanumeric
 |34
-|Original Klarna error code
-|
+2+|Original Klarna error code
+
 
 |statuses.status@provider-message
 |
 |O
 |Alphanumeric
 |
-|Error message to be shown to the end consumer as required by Klarna
-|
+2+|Error message to be shown to the end consumer as required by Klarna
+
 
 |statuses.status@provider-transaction-id
 |
 |O
 |Alphanumeric
 |36
-|Klarna invoice number (OCR number)
-|
+2+|Klarna invoice number (OCR number)
+
 
 |invoice/invoice-number
 |
 |M
 |Alphanumeric
 |36
-|Klarna invoice number (OCR number)
-|
+2+|Klarna invoice number (OCR number)
+
 
 |parent-transaction-id
 |M
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent _authorization_ or adjust-authorization
+2+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction.
-|
+
 
 |payment-methods.payment-method-name
 |M
 |M
 |Enumeration
 |15
-|Name of the payment method: _klarna-invoice_, _klarna-install_
-|
+2+|Name of the payment method: _klarna-invoice_, _klarna-install_
+
 |===
 
 [#Klarna_Fields_refundCapture]
@@ -1882,8 +1881,8 @@ transaction.
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |request-id
 |M
@@ -1898,8 +1897,8 @@ transaction.
 |M
 |Alphanumeric
 |30
-|The type for a transaction – _refund-capture_
-|
+2+|The type for a transaction - _refund-capture_
+
 
 |requested-amount
 |M
@@ -1923,48 +1922,48 @@ dependent of the currency.
 |O
 |Complex
 |
-|List of order items to be refunded.
-|
+2+|List of order items to be refunded.
+
 
 |order-items.order-item
 |O
 |O
 |Complex
 |
-|Order item.
-|
+2+|Order item.
+
 
 |order-items.order-item.quantity
 |M
 |M
 |Numeric
 |
-|Quantity of the order item.
-|
+2+|Quantity of the order item.
+
 
 |order-items.order-item.article-number
 |M
 |M
 |Alphanumeric
 |256
-|Article ID unique for the order.
-|
+2+|Article ID unique for the order.
+
 
 |order-items.order-item.name
 |M
 |M
 |Alphanumeric
 |256
-|Order item name.
-|
+2+|Order item name.
+
 
 |order-items.order-item.amount
 |M
 |M
 |Numeric
 |18,6
-|Price of one order item unit.
-|
+2+|Price of one order item unit.
+
 
 |order-items.order-item.amount@currency
 |M
@@ -1980,8 +1979,8 @@ currency).
 |M
 |Numeric
 |5,2
-|Tax rate as percentage value or the order item.
-|
+2+|Tax rate as percentage value or the order item.
+
 
 |order-items.order-item.type
 |O
@@ -1990,9 +1989,9 @@ currency).
 |
 a|
 .Order item types
-- shipment_fee, handling_fee – marks the item as a new additional
+- shipment_fee, handling_fee - marks the item as a new additional
 fee decreasing the total refund amount
-- discount – marks the item as a voucher (good-will refund)
+- discount - marks the item as a voucher (good-will refund)
 increasing the total refund amount.
 
 //-
@@ -2004,41 +2003,41 @@ increasing the total refund amount.
 |M
 |Alphanumeric
 |36
-|Transaction ID is the unique identifier for a transaction. It is
+2+|Transaction ID is the unique identifier for a transaction. It is
 generated by Wirecard.
-|
+
 
 |transaction-state
 |
 |M
 |Alphanumeric
 |12
-|Transaction status _success_ / _failed_
-|
+2+|Transaction status _success_ / _failed_
+
 
 |completion-time-stamp
 |
 |M
 |DateTime
 |
-|Timestamp of completion of request.
-|
+2+|Timestamp of completion of request.
+
 
 |statuses
 |
 |M
 |Complex
 |
-|List of transaction statuses
-|
+2+|List of transaction statuses
+
 
 |statuses.staus
 |
 |M
 |Complex
 |
-|Transaction status.
-|
+2+|Transaction status.
+
 
 |statuses.status.code
 |
@@ -2053,50 +2052,50 @@ generated by Wirecard.
 |M
 |Alphanumeric
 |256
-|Description to the status code of the transaction.
-|
+2+|Description to the status code of the transaction.
+
 
 |statuses.status.severity
 |
 |M
 |Enumeration
 |20
-|This field gives information if a status is a warning, an error or
+2+|This field gives information if a status is a warning, an error or
 an information.
-|
+
 
 |statuses.status@provider-code
 |
 |O
 |Alphanumeric
 |34
-|Original Klarna error code
-|
+2+|Original Klarna error code
+
 
 |statuses.status@provider-message
 |
 |O
 |Text
 |
-|Error message to be shown to the end consumer as required by Klarna
-|
+2+|Error message to be shown to the end consumer as required by Klarna
+
 
 |parent-transaction-id
 |M
 |M
 |Alphanumeric
 |36
-|Transaction ID of the parent _authorization_ or adjust-authorization
+2+|Transaction ID of the parent _authorization_ or adjust-authorization
 transaction.
-|
+
 
 |payment-methods.payment-method-name
 |M
 |M
 |Enumeration
 |15
-|Name of the payment method: _klarna-invoice_, _klarna-install_
-|
+2+|Name of the payment method: _klarna-invoice_, _klarna-install_
+
 |===
 
 [#Klarna_Fields_getAdress]
@@ -2110,16 +2109,16 @@ transaction.
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |get-address-request.payment-method
 |M
 |M
 |Enumeration
 |15
-|Name of the payment method: _klarna-invoice_ or _klarna-install_.
-|
+2+|Name of the payment method: _klarna-invoice_ or _klarna-install_.
+
 
 |get-address-request.social-security-number
 |M
@@ -2128,7 +2127,7 @@ transaction.
 |14
 |Social security number of the end consumer which addresses have to be
 returned by the service.
-|It has the following format for SE: (yy)yymmdd-nnnn where yymmdd – the
+|It has the following format for SE: (yy)yymmdd-nnnn where yymmdd - the
 date of birth of the consumer. It can be sent with or without dash "-"
 or with or without the two first numbers in the year.
 
@@ -2145,72 +2144,72 @@ or with or without the two first numbers in the year.
 |M
 |Alphanumeric
 |15
-|Global (internet) IP address of the consumers computer.
-|
+2+|Global (internet) IP address of the consumers computer.
+
 
 |get-address-response.addresses
 |
 |M
 |Complex
 |
-|The list of found addresses.
-|
+2+|The list of found addresses.
+
 
 |get-address-response.addresses.address
 |
 |M
 |Complex
 |
-|The found address.
-|
+2+|The found address.
+
 
 |get-address-response.addresses.address.first-name
 |
 |M
 |Alphanumeric
 |32
-|First name of the person registered for the current address.
-|
+2+|First name of the person registered for the current address.
+
 
 |response.addresses.address.last-name
 |
 |M
 |Alphanumeric
 |32
-|Last name of the person registered for the current address.
-|
+2+|Last name of the person registered for the current address.
+
 
 |get-address-response.addresses.address.street
 |
 |M
 |Alphanumeric
 |128
-|Street name + house number of the found address.
-|
+2+|Street name + house number of the found address.
+
 
 |get-address-response.addresses.address.house-number
 |
 |M
 |Alphanumeric
 |
-|Empty for Klarna.
-|
+2+|Empty for Klarna.
+
 
 |get-address-response.addresses.address.postal-code
 |
 |M
 |Alphanumeric
 |16
-|Postal code of the found address.
-|
+2+|Postal code of the found address.
+
 
 |get-address-response.addresses.address.city
 |
 |M
 |Alphanumeric
 |32
-|City of the found address.
-|
+2+|City of the found address.
+
 |===
 
 [#Klarna_Fields_installmentCalculator]
@@ -2224,16 +2223,16 @@ or with or without the two first numbers in the year.
 |
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |installment-calculator-request.payment-method
 |M
 |
 |Enumeration
 |15
-|Name of the payment method: _klarna-install_
-|
+2+|Name of the payment method: _klarna-install_
+
 
 |installment-calculator-request.amount
 |M
@@ -2248,33 +2247,33 @@ or with or without the two first numbers in the year.
 |
 |Alphanumeric
 |3
-|Amount currency of the order.
-|
+2+|Amount currency of the order.
+
 
 |installment-calculator-request.locale
 |M
 |
 |Alphanumeric
 |5
-|Locale code containing country and language code. E.g. de_de. The
+2+|Locale code containing country and language code. E.g. de_de. The
 language defines the localized labels of the result fields.
-|
+
 
 |installment-calculator-response.merchant-account-id
 |
 |M
 |Alphanumeric
 |36
-|Unique identifier for a merchant account.
-|
+2+|Unique identifier for a merchant account.
+
 
 |installment-calculator-response.payment-method
 |
 |M
 |Enumeration
 |15
-|Name of the payment method: klarna-install
-|
+2+|Name of the payment method: klarna-install
+
 
 |installment-calculator-response.amount
 |
@@ -2289,76 +2288,76 @@ language defines the localized labels of the result fields.
 |M
 |Alphanumeric
 |3
-|Amount currency of the order.
-|
+2+|Amount currency of the order.
+
 
 |installment-calculator-response.locale
 |
 |M
 |Alphanumeric
 |5
-|Locale code containing country and language code. E.g. de_de. The
+2+|Locale code containing country and language code. E.g. de_de. The
 language defines the localized labels of the result fields.
-|
+
 
 |installment-calculator-response.state
 |
 |M
 |Enumeration
 |
-|The state of the response: success, failed.
-|
+2+|The state of the response: success, failed.
+
 
 |installment-calculator-response.statuses
 |
 |M
 |Complex
 |
-|List of response statuses.
-|
+2+|List of response statuses.
+
 
 |installment-calculator-response.statuses.status
 |
 |M
 |Complex
 |
-|Response status
-|
+2+|Response status
+
 
 |installment-calculator-response.statuses.status@code
 |
 |M
 |Alphanumeric
 |12
-|The status code of the response. For the complete list of status codes
+2+|The status code of the response. For the complete list of status codes
 please see
 <<StatusCodes, Status Codes and Transaction Status>>.
-|
+
 
 |installment-calculator-response.statuses.status@description
 |
 |M
 |Alphanumeric
 |256
-|The description to the status code of the response.
-|
+2+|The description to the status code of the response.
+
 
 |installment-calculator-response.statuses.status@severity
 |
 |M
 |Enumeration
 |
-|This field gives information if a status is a warning, an error or
+2+|This field gives information if a status is a warning, an error or
 an information.
-|
+
 
 |installment-calculator-response.statuses.status@provider-code
 |
 |O
 |Alphanumeric
 |34
-|Original Klarna error code.
-|
+2+|Original Klarna error code.
+
 
 |installment-calculator-response.statuses.status@provider-message
 |
@@ -2373,25 +2372,25 @@ an information.
 |O
 |Complex
 |
-|List of available installment plans.
-|
+2+|List of available installment plans.
+
 
 |installment-calculator-response.installments.installment
 |
 |O
 |Complex
 |
-|Installment plan.
-|
+2+|Installment plan.
+
 
 |installment-calculator-response.installments.installment.product-id
 |
 |M
 |Numeric
 |
-|The Klarna ID uniquely identifying the corresponding payment option /
+2+|The Klarna ID uniquely identifying the corresponding payment option /
 installment plan.
-|
+
 
 |installment-calculator-response.installments.installment.name
 |
@@ -2422,9 +2421,9 @@ installment plan.
 |O
 |Alphanumeric
 |
-|Payment option group: invoice for payment on invoice and for "Buy now,
+2+|Payment option group: invoice for payment on invoice and for "Buy now,
 pay in X months", part_payment for payment by installments.
-|
+
 
 |installment-calculator-response.installments.installment.type@title
 |
@@ -2439,8 +2438,8 @@ pay in X months", part_payment for payment by installments.
 |O
 |Complex
 |
-|The details of the installment plan.
-|
+2+|The details of the installment plan.
+
 
 |installment-calculator-response.installments.installment.details.interest-rate
 |
@@ -2455,16 +2454,16 @@ pay in X months", part_payment for payment by installments.
 |O
 |Alphanumeric
 |
-|Title to display the interest rate in the corresponding language.
-|
+2+|Title to display the interest rate in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.details.interest-rate@symbol
 |
 |
 |Alphanumeric
 |
-|The unit of the interest rate. Usually %.
-|
+2+|The unit of the interest rate. Usually %.
+
 
 |installment-calculator-response.installments.installment.details.monthly-invoice-fee
 |
@@ -2479,8 +2478,8 @@ pay in X months", part_payment for payment by installments.
 |O
 |Alphanumeric
 |
-|Title to display the monthly invoice fee in the corresponding language.
-|
+2+|Title to display the monthly invoice fee in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.details.monthly-invoice-fee@symbol
 |
@@ -2503,8 +2502,8 @@ pay in X months", part_payment for payment by installments.
 |O
 |Alphanumeric
 |
-|Title to display the setup fee in the corresponding language.
-|
+2+|Title to display the setup fee in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.details.setup.fee@symbol
 |
@@ -2529,8 +2528,8 @@ payment amount.
 |O
 |Alphanumeric
 |
-|Title to display the monthly payment in the corresponding language.
-|
+2+|Title to display the monthly payment in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.details.monthly-pay@symbol
 |
@@ -2553,17 +2552,17 @@ payment amount.
 |O
 |Alphanumeric
 |
-|Title to display the annual percentage rate in the corresponding
+2+|Title to display the annual percentage rate in the corresponding
 language.
-|
+
 
 |installment-calculator-response.installments.installment.details.annual-percentage-rate@symbol
 |
 |O
 |Alphanumeric
 |
-|The unit of the annual percentage rate. Usually %.
-|
+2+|The unit of the annual percentage rate. Usually %.
+
 
 |installment-calculator-response.installments.installment.details.months
 |
@@ -2578,9 +2577,9 @@ language.
 |O
 |Alphanumeric
 |
-|Title to display the number of installments (months) in the
+2+|Title to display the number of installments (months) in the
 corresponding language.
-|
+
 
 |installment-calculator-response.installments.installment.details.month
 |
@@ -2595,8 +2594,8 @@ corresponding language.
 |O
 |Alphanumeric
 |
-|The name of the month in the corresponding language.
-|
+2+|The name of the month in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.details.total-credit-purchase-price
 |
@@ -2612,8 +2611,8 @@ fee, administrative fees and interest rates.
 |O
 |Alphanumeric
 |
-|Title to display the total amount in the corresponding language.
-|
+2+|Title to display the total amount in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.details.total-credit-purchase-price@symbol
 |
@@ -2636,8 +2635,8 @@ fee, administrative fees and interest rates.
 |O
 |Alphanumeric
 |
-|Title to display the payment option in the corresponding language.
-|
+2+|Title to display the payment option in the corresponding language.
+
 
 |installment-calculator-response.installments.installment.description
 |
