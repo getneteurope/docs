@@ -1068,8 +1068,6 @@ function addZoomToLargeImages() {
     var hasZoomClass = $(image).parent().parent().hasClass('zoom');
     $(image).attr('data-has-zoom', 'true');
     console.log($(image).attr('src'));
-    var zb = $('<div class="zoom-box fa fa-search-plus">');
-    $(image).parent().append(zb);
     var originalWidth = image.width;
     var originalHeight = image.height;
     // svg naturalWidth === 0, therefore do not use < for comparison
@@ -1080,6 +1078,8 @@ function addZoomToLargeImages() {
       // do not give zoom to "one liner images"
       if (image.width / image.height < 10 && image.width > contentWrapperWidth * 0.95 || hasZoomClass) {
         $(image).attr('data-action', 'zoom');
+        var zb = $('<div class="zoom-box fa fa-search-plus">');
+        $(image).parent().append(zb);
       }
     });
     return true;
