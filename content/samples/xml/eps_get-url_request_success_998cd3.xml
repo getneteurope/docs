@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>1f629760-1a66-4f83-a6b4-6a35620b4a6d</merchant-account-id>
-    <request-id>38f2ceae-7843-48f5-b059-3506b0c35376</request-id>
+    <request-id>{{$guid}}</request-id>
     <transaction-type>get-url</transaction-type>
     <requested-amount currency="EUR">1.99</requested-amount>
     <payment-methods>
