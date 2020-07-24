@@ -236,7 +236,7 @@ https://coderstoolbox.net/string/#!encoding=xml&action=decode&charset=us_ascii
 ==== _get-url_ with Bank Selection in Merchant Shop
 
 [#eps_Ueberweisung_Success]
-===== Successful Request/Response and Notification
+===== Successful Request/Response and _debit_ Notification
 
 .XML get-url Request (Successful)
 
@@ -373,7 +373,7 @@ include::{root}/samples/xml/eps_debit_unknown_.xml[]
 .XML refund-debit Request (Success)
 
 --
-NOTE: Use the value of the ``transaction-id`` from the _get-url_ notification in the field ``parent-transaction-id``
+NOTE: Use the value of the ``transaction-id`` from the <<eps_Ueberweisung_Success, _get-url_ notification>> in the field ``parent-transaction-id``
 --
 
 [source,xml,subs=attributes+]
@@ -382,7 +382,7 @@ NOTE: Use the value of the ``transaction-id`` from the _get-url_ notification in
 <merchant-account-id>3a4dae58-469f-4d86-9f32-35cabd1657ce</merchant-account-id>
 <request-id>{{$guid}}</request-id>
 <transaction-type>refund-debit</transaction-type>
-<parent-transaction-id>016c2f78-f247-4fba-99f0-950ea10ab49e</parent-transaction-id>
+<parent-transaction-id>03685043-2db2-4f9b-a672-925ce7243e91</parent-transaction-id>
 <requested-amount currency="EUR">1.01</requested-amount>
 <payment-methods>
 <payment-method name="eps"/>
