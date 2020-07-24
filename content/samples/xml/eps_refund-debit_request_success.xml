@@ -1,0 +1,10 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+<merchant-account-id>3a4dae58-469f-4d86-9f32-35cabd1657ce</merchant-account-id>
+<request-id>{{$guid}}</request-id>
+<transaction-type>refund-debit</transaction-type>
+<parent-transaction-id>03685043-2db2-4f9b-a672-925ce7243e91</parent-transaction-id>
+<requested-amount currency="EUR">1.01</requested-amount>
+<payment-methods>
+<payment-method name="eps"/>
+</payment-methods>
+</payment>
