@@ -86,6 +86,7 @@ Expand the *Miscellaneous* section to:
 * Switch between currency symbol and/or currency name (ISO 4217 code) for the *Amount* format. You can cancel the currency symbol selection only if the currency name is selected and vice versa.
 * Add further input fields (*Card form fields*) for additional consumer information (e.g. address, email, phone).
 * Determine where you want to place the *CANCEL PAYMENT* button. By default, it is displayed as a command in the hamburger menu.
+* Display a secure SSL encryption/payment badge. Click the *Secure Badge* list and select either *No Secure Badge* or one of the six available badge types. Note that *Security Badge Type 5* is presented in a white font and is only visible on darker backgrounds.
 
 //-
 

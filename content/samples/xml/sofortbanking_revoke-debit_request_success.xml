@@ -1,0 +1,9 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>9416f6b7-3b18-4069-a388-c418f203882a</merchant-account-id>
+  <transaction-type>revoke-debit</transaction-type>
+  <request-id>${unique for each request}</request-id>
+  <parent-transaction-id>8b2e2afe-89d3-4a82-87c5-673deb017abf</parent-transaction-id>
+  <payment-methods>
+    <payment-method name="sofortbanking"/>
+  </payment-methods>
+</payment>

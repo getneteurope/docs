@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.wirecard.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/ea65d5c6-3650-41ef-a366-c9f251c319f8">
+    <merchant-account-id ref="https://api-test.wirecard.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+    <transaction-id>ea65d5c6-3650-41ef-a366-c9f251c319f8</transaction-id>
+    <request-id>58c91353-16ac-4fb4-ae42-1c990a897446</request-id>
+    <transaction-type>tokenize</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2020-06-24T08:36:40.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <account-holder>
+        <first-name>Manon</first-name>
+        <last-name>Mertens</last-name>
+        <email>m.mertens@example.com</email>
+        <phone></phone>
+        <address>
+            <street1>Rue de la Loi 1</street1>
+            <city>Brussels</city>
+            <country>BE</country>
+        </address>
+    </account-holder>
+    <card>
+        <expiration-month>12</expiration-month>
+        <expiration-year>2020</expiration-year>
+        <card-type>mastercard</card-type>
+    </card>
+    <card-token>
+        <token-id>5412005276353442</token-id>
+        <masked-account-number>556623******3442</masked-account-number>
+    </card-token>
+    <ip-address>127.0.0.1</ip-address>
+    <payment-methods>
+        <payment-method name="creditcard"/>
+    </payment-methods>
+    <api-id>elastic-api</api-id>
+</payment>

@@ -75,6 +75,7 @@ This transaction type *is not included in default configuration*. +
 For further information please contact: {e-mail-support}
 
 | _credit_ | Moves funds from the merchant account to the cardholder's account.
+| _enrollment_ | Enrolls a credit card for a <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>>.
 | _original-credit_ |Moves funds to the cardholder's account, *without* referring to an eligible _purchase_ or _capture_ (i.e. non-referenced). This transaction type can be used for gambling and non-gambling processes.
 
 | [[CreditCard_TransactionTypesList_Purchase]] <<CreditCard_TransactionTypes_Purchase, _purchase_>>
