@@ -369,11 +369,14 @@ include::{root}/samples/xml/eps_get-url_response_failure_3fadb2.xml[]
 include::{root}/samples/xml/eps_debit_unknown_.xml[]
 ----
 
+[#eps_Ueberweisung_QueryResult]
+==== _refund-debit_
+
 [#eps_Ueberweisung_RefundDebit]
 .XML refund-debit Request (Success)
 
 --
-NOTE: Use the value of the ``transaction-id`` from the <<eps_Ueberweisung_Success, _get-url_ notification>> in the field ``parent-transaction-id``
+NOTE: Use the value of the ``transaction-id`` from the <<eps_Ueberweisung_Success, _get-url_ notification>> in the field ``parent-transaction-id``.
 --
 
 [source,xml,subs=attributes+]
