@@ -259,13 +259,14 @@ available.
  
 To receive IPNs, ensure that your firewall settings allow a connection between the {payment-gateway} and your server. 
 
-Add the following {payment-gateway} IP addresses to your firewall rules.
+Add the following {payment-gateway} IP addresses to your firewall rules:
 
 ----
 195.93.244.97
 195.93.244.106
 195.93.245.129
 ----
+
 The IP-address from which you receive your IPN depends on your specific configuration. 
 
 //-
