@@ -66,7 +66,7 @@ h| Secret Key (Payment Page) 3+| f6486298-85b0-40a2-956f-eaa52f6b6aa5
 [#monetaRu_Workflow]
 === Workflow
 
-image::images/11-17-moneta-ru/moneta-ru-workflow.png[moneta.ru Workflow]
+image::images/diagrams/moneta-ru_workflow.svg[moneta.ru Workflow]
 
 [#monetaRu_Fields]
 === Fields

@@ -37,7 +37,7 @@ or a
 <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_RefundCapture, _refund-capture_>>
 follows a _capture-authorization._
 
-image::images/11-01-01-02-credit-card_transaction-types_capture-authorization/CC_authorization_capture_sequence.png[capture-authorization_sequence]
+image::images/diagrams/cc-capture-authorization-flow.svg[capture-authorization_sequence]
 
 See details for <<CreditCard_TransactionTypes_VoidRefund, void and refund>>.
 

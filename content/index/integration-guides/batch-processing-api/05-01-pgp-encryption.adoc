@@ -68,8 +68,6 @@ Since the Public Key Infrastructure (PKI) is used for all message
 exchanges, it is necessary that public keys are exchanged between
 platforms prior to integration.
 
-image::images/05-01-pgp-encryption/public-key-exchange.png[Public Key Exchange]
-
 [#BatchProcessingApi_PGP_PublicKey_Sandbox]
 ==== Sandbox Public Key
 

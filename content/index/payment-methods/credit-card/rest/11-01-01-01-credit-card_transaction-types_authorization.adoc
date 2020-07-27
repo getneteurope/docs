@@ -61,7 +61,7 @@ A _capture-authorization_ may be followed by either a
 <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_VoidCapture, _void-capture_>> or a
 <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_RefundCapture, _refund-capture_>>.
 
-image::images/11-01-01-01-credit-card_transaction-types_authorization/CC_authorization_capture_sequence.png[authorization sequence]
+image::images/diagrams/cc-capture-authorization-flow.svg[authorization sequence]
 
 See details for <<CreditCard_TransactionTypes_VoidRefund, void and refund>>.
 

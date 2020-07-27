@@ -75,6 +75,7 @@ This transaction type *is not included in default configuration*. +
 For further information please contact: {e-mail-support}
 
 | _credit_ | Moves funds from the merchant account to the cardholder's account.
+| _enrollment_ | Enrolls a credit card for a <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>>.
 | _original-credit_ |Moves funds to the cardholder's account, *without* referring to an eligible _purchase_ or _capture_ (i.e. non-referenced). This transaction type can be used for gambling and non-gambling processes.
 
 | [[CreditCard_TransactionTypesList_Purchase]] <<CreditCard_TransactionTypes_Purchase, _purchase_>>
@@ -122,11 +123,6 @@ A void is only possible as long as no money transfer has been initiated.
 As soon as {payment-gateway-abbr} has initiated the payment flow to the acquirer the
 merchants must return the funds to the consumer via a refund process.
 
-[#CreditCard_TransactionTypes_VoidRefund_Void]
-==== void
-
-image::images/11-01-01-credit-card_transaction-types/CC_void_refund_void.png[void]
-
 [#CreditCard_TransactionTypes_VoidRefund_Void_Workflow]
 .Workflow
 
@@ -138,12 +134,12 @@ the ``<transaction-id>`` of the transaction that shall be voided.
 
 Here is an example how to void a _capture_.
 
-image::images/11-01-01-credit-card_transaction-types/CC_void-capture_flow.png[void_workflow]
+image::images/diagrams/cc_void-capture.svg[void_workflow]
 
 [#CreditCard_TransactionTypes_VoidRefund_Refund]
 ==== refund
 
-image::images/11-01-01-credit-card_transaction-types/CC_void_refund_refund.png[refund]
+image::images/diagrams/cc_void-refund.svg[refund]
 
 [#CreditCard_TransactionTypes_VoidRefund_Refund_Workflow]
 .Workflow
@@ -156,7 +152,7 @@ to the ``<transaction-id>`` of the transaction that shall be refunded.
 
 Here is an example how to refund a _capture_.
 
-image::images/11-01-01-credit-card_transaction-types/CC_refund-capture_flow.png[refund_workflow]
+image::images/diagrams/cc_refund-capture.svg[refund_workflow]
 
 
 [#CreditCard_TransactionTypes_OctEligibility]

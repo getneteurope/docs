@@ -66,7 +66,7 @@ h|Secret Key 2+| adfce2f5-5659-4e91-bc19-9e6658b22a04
 [#Interac_Workflow]
 === Workflow
 
-image::images/11-45-interac/Interac_workflow.png[InteracWorkflow]
+image::images/diagrams/interac.svg[InteracWorkflow]
 
 . The consumer adds items to the shopping cart.
 . The merchant displays all available payment methods.
