@@ -71,102 +71,123 @@ Ask <<ContactUs, Merchant Support>> for details.
 [#API_LinePay_Workflow]
 === Workflow
 
+. The consumer adds items to the shopping basket.
+. You redirect the consumer to {payment-gateway-abbr}.
+. {payment-gateway-abbr} displays all the available payment methods.
+. The consumer selects LINE Pay.
+. {payment-gateway-abbr} sends a _pending-debit_ request (_reserve payment_) to LINE Pay.
+. LINE Pay includes a redirect URL in the _pending-debit_ response and sends it to {payment-gateway-abbr}. 
+. LINE Pay waits for the consumer's interaction.
+. {payment-gateway-abbr} asks the consumer to continue with the LINE Pay app.
+. The consumer enters the credentials to continue the payment process.
+. LINE Pay verfies the consumer's password.
+. LINE Pay displays the payment status in the consumer's LINE Pay app.
+. LINE Pay sends the payment status to {payment-gateway-abbr}.
+. LINE Pay redirects the consumer to {payment-gateway-abbr}.
+. {payment-gateway-abbr} uses {payment-page-v2-abbr} to update the payment process.
+. {payment-gateway-abbr} confirms the payment process to LINE Pay.
+. LINE Pay processes the confirmation information.
+. LINE Pay sends a confirmation response to {payment-gateway-abbr}.
+. {payment-gateway-abbr} sends a _debit_ notification to you.
+. {payment-gateway-abbr} redirects the consumer to your checkout page.
+. You process the _debit_ notification.
+
 // image::images/line-pay/linepay-flow.jpg[LINE Pay payment flow, height=400]
 
-==== pending-debit or pending-authorization
+// ==== pending-debit or pending-authorization
 
-The workflow depends on the device with which the consumer performs the payment process.
+// The workflow depends on the device with which the consumer performs the payment process.
 
---
-NOTE: The flows below also apply for ``pending-authorization`` in combination with an ``authorization`` notification.
---
+// --
+// NOTE: The flows below also apply for ``pending-authorization`` in combination with an ``authorization`` notification.
+// --
 
-.Consumer uses a PC
+// .Consumer uses a PC
 
-// image::images/line-pay/Fig-3_pc_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
+// // image::images/line-pay/Fig-3_pc_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
 
-. The consumer selects LINE Pay in the checkout page of your online shop.                   
-. WPG sends a ``pendig-debit`` request to LINE Pay's "Payment Reserve API" to create a payment reservation information.
-. LINE Pay generates the WPG LinePay plugin URL with the status ``reserved``.
-// vhauss: >>>>> Which transaction type is used here?
-. LINE Pay sends a ``transaction-id`` and a ``payment-method @Url`` to WPG. The ``transaction-id`` is required to confirm the payment. 
-. WPG sends the ``payment-method @Url`` to the consumer's device.
-. The consumer goes through channel web login to authenticate as a LINE user. (This is a process to verify the consumer as a LINE user. The channel web login process is skipped if WPG can access the LINE user information and forward mid when reserving payment.) 
-// vhauss: >>>>> What is "mid"?
-. The consumer logs in to LINE.
-. LINE Pay pushes a payment request to LINE.
-. LINE Pay redirects the consumer to the LINE Pay checkout page.
+// . The consumer selects LINE Pay in the checkout page of your online shop.                   
+// . WPG sends a ``pendig-debit`` request to LINE Pay's "Payment Reserve API" to create a payment reservation information.
+// . LINE Pay generates the WPG LinePay plugin URL with the status ``reserved``.
+// // vhauss: >>>>> Which transaction type is used here?
+// . LINE Pay sends a ``transaction-id`` and a ``payment-method @Url`` to WPG. The ``transaction-id`` is required to confirm the payment. 
+// . WPG sends the ``payment-method @Url`` to the consumer's device.
+// . The consumer goes through channel web login to authenticate as a LINE user. (This is a process to verify the consumer as a LINE user. The channel web login process is skipped if WPG can access the LINE user information and forward mid when reserving payment.) 
+// // vhauss: >>>>> What is "mid"?
+// . The consumer logs in to LINE.
+// . LINE Pay pushes a payment request to LINE.
+// . LINE Pay redirects the consumer to the LINE Pay checkout page.
 
-.Consumer uses a mobile device
+// .Consumer uses a mobile device
 
-// image::images/line-pay/Fig-4_mobile_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
+// // image::images/line-pay/Fig-4_mobile_payment-reservation-process.jpg[LINE Pay pc payment reservation, height=400]
 
-. The consumer selects LINE Pay on the checkout page of your online shop.                 
-. WPG sends a ``pendig-debit`` request to LINE Pay's "Payment Reserve API" to create a payment reservation information.
-. LINE Pay generates the WPG LinePay plugin URL with the status ``reserved``.
-// is WPG LinePay plugin URL = ``confirmURL``
-. LINE Pay sends a ``transaction-id`` and a ``payment-method @Url`` to WPG. The ``transaction-id`` is required to confirm the payment. 
-. WPG sends the ``payment-method @Url`` to the consumer's device.
-. WPG checks, whether the consumer has installed the LINE Pay app.
-. WPG uses the ``payment-method @Url`` to redirect the consumer to the checkout page in the LINE Pay app. The ``payment-method @Url`` is divided into web and app, depending on the integration environment.
-• web: LINE Pay provides a web screen. 
-• app: LINE Pay provides an app scheme URL to directly move the consumer to the LINE Pay checkout page. 
+// . The consumer selects LINE Pay on the checkout page of your online shop.                 
+// . WPG sends a ``pendig-debit`` request to LINE Pay's "Payment Reserve API" to create a payment reservation information.
+// . LINE Pay generates the WPG LinePay plugin URL with the status ``reserved``.
+// // is WPG LinePay plugin URL = ``confirmURL``
+// . LINE Pay sends a ``transaction-id`` and a ``payment-method @Url`` to WPG. The ``transaction-id`` is required to confirm the payment. 
+// . WPG sends the ``payment-method @Url`` to the consumer's device.
+// . WPG checks, whether the consumer has installed the LINE Pay app.
+// . WPG uses the ``payment-method @Url`` to redirect the consumer to the checkout page in the LINE Pay app. The ``payment-method @Url`` is divided into web and app, depending on the integration environment.
+// • web: LINE Pay provides a web screen. 
+// • app: LINE Pay provides an app scheme URL to directly move the consumer to the LINE Pay checkout page. 
 
-=== debit notification or authorization notification
+// === debit notification or authorization notification
 
-// After selecting a payment method, either credit card or balance, LINE Pay redirects the consumer to the WPG LinePay plugin URL. With this URL WPG receives the ``debit`` notification which contains the payment status from LinePay. Then, the WPG calls the "Payment confirm API" to complete the payment.
+// // After selecting a payment method, either credit card or balance, LINE Pay redirects the consumer to the WPG LinePay plugin URL. With this URL WPG receives the ``debit`` notification which contains the payment status from LinePay. Then, the WPG calls the "Payment confirm API" to complete the payment.
 
-// Why does it say Payment Method = "credit card" or "balance" and not LINE Pay?
+// // Why does it say Payment Method = "credit card" or "balance" and not LINE Pay?
 
-The workflow depends on the device with which the consumer performs the payment process.
+// The workflow depends on the device with which the consumer performs the payment process.
 
-.Consumer uses a PC
+// .Consumer uses a PC
 
-// image::images/line-pay/Fig-5_pc_payment-completion.jpg[LINE Pay pc payment reservation, height=400]
+// // image::images/line-pay/Fig-5_pc_payment-completion.jpg[LINE Pay pc payment reservation, height=400]
 
-. The consumer selects LINE Pay in the checkout page of your online shop and enters the password. 
-. LINE Pay stores the payment method information and sets the payment status to ``authorized``. 
-. The consumer checks the payment information screen. 
-. When the transaction becomes payable on the awaiting checkout page, LINE Pay redirects the consumer to the WPG LinePay plugin URL. 
-. WPG calls the Confirm Payment API to complete the payment. 
-// is the call of the "Confirm Payment API" identical to "send the debit notification" to LINE Pay?
+// . The consumer selects LINE Pay in the checkout page of your online shop and enters the password. 
+// . LINE Pay stores the payment method information and sets the payment status to ``authorized``. 
+// . The consumer checks the payment information screen. 
+// . When the transaction becomes payable on the awaiting checkout page, LINE Pay redirects the consumer to the WPG LinePay plugin URL. 
+// . WPG calls the Confirm Payment API to complete the payment. 
+// // is the call of the "Confirm Payment API" identical to "send the debit notification" to LINE Pay?
 
-.Consumer uses a mobile device
+// .Consumer uses a mobile device
 
-// image::images/line-pay/Fig-6_mobile_payment-completion.jpg[LINE Pay pc payment reservation, height=400]
+// // image::images/line-pay/Fig-6_mobile_payment-completion.jpg[LINE Pay pc payment reservation, height=400]
 
-. The consumer selects LINE Pay in the checkout page of your online shop and enters the password. 
-. LINE Pay stores the payment method information and sets the payment status to ‘authorized’. 
-. The consumer checks the payment information screen on the LINE app, and clicks ‘OK’
-. WPG reserves the payment and generates a "confirmUrl"
-. WPG redirects the consumer to the ``confirmURL``. 
-. WPG calls the Confirm Payment API to complete the payment. 
-// is the call of the "Confirm Payment API" identical to "send the debit notification" to LINE Pay?
+// . The consumer selects LINE Pay in the checkout page of your online shop and enters the password. 
+// . LINE Pay stores the payment method information and sets the payment status to ‘authorized’. 
+// . The consumer checks the payment information screen on the LINE app, and clicks ‘OK’
+// . WPG reserves the payment and generates a "confirmUrl"
+// . WPG redirects the consumer to the ``confirmURL``. 
+// . WPG calls the Confirm Payment API to complete the payment. 
+// // is the call of the "Confirm Payment API" identical to "send the debit notification" to LINE Pay?
 
-==== Recurring Payments
+// ==== Recurring Payments
 
-The overall payment process is identical to ``pendig-debit`` and ``debit`` notification, except that LINE Pay's ``payType`` is set to ``preapproved`` in a recurring payment.
+// The overall payment process is identical to ``pendig-debit`` and ``debit`` notification, except that LINE Pay's ``payType`` is set to ``preapproved`` in a recurring payment.
 
-LINE Pay sends a ``regKey`` in the response of the ``preapproved`` transaction. You must save the ``regKey`` for the upcoming recurring payments.  
+// LINE Pay sends a ``regKey`` in the response of the ``preapproved`` transaction. You must save the ``regKey`` for the upcoming recurring payments.  
 
-// image::images/line-pay/Fig-9_preapproved-payment.jpg[LINE Pay pc payment reservation, height=400]
+// // image::images/line-pay/Fig-9_preapproved-payment.jpg[LINE Pay pc payment reservation, height=400]
 
-When the payment is confirmed, you send a capture request which contains the ``regKey`.
-// Who confirms the payment and how?
-// When the payment is confirmed, the Merchant server calls "Preapproved Payment API" by using the ``regKey`` to make a payment. The LINE Pay user does not intervene during the payment process, but can be notified when the payment is completed. 
+// When the payment is confirmed, you send a capture request which contains the ``regKey`.
+// // Who confirms the payment and how?
+// // When the payment is confirmed, the Merchant server calls "Preapproved Payment API" by using the ``regKey`` to make a payment. The LINE Pay user does not intervene during the payment process, but can be notified when the payment is completed. 
 
-If you don't need the ``regKey`` any longer you can call the Expire ``regKey`` API. This API espires an unnecessary ``regKey``.
+// If you don't need the ``regKey`` any longer you can call the Expire ``regKey`` API. This API espires an unnecessary ``regKey``.
 
-==== Capture Payment 
+// ==== Capture Payment 
 
-You capture a payment in two steps. First you authorize the payment and then you capture it.
-//When the authorization of payment is separated from the capture of the authorized payment.
+// You capture a payment in two steps. First you authorize the payment and then you capture it.
+// //When the authorization of payment is separated from the capture of the authorized payment.
 
-The overall process is similar to those above, but the Merchant must set ``capture`` to ``false`` in the authorization request. 
-// The overall process is similar to those above, but the Merchant should set "capture" as "false" when calling the Reserve Payment API. 
+// The overall process is similar to those above, but the Merchant must set ``capture`` to ``false`` in the authorization request. 
+// // The overall process is similar to those above, but the Merchant should set "capture" as "false" when calling the Reserve Payment API. 
 
-. When you receive a succesful authorization response you can either capture the payment or void the authorization.
-. When you receive a succesful capture response you can refund the payment.
+// . When you receive a succesful authorization response you can either capture the payment or void the authorization.
+// . When you receive a succesful capture response you can refund the payment.
 // When the Merchant calls the Confirm Payment API, the payment status is saved as AUTHORIZATION. 
 
 // When capturing the payment, 
