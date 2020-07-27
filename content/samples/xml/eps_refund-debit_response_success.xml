@@ -11,7 +11,7 @@ xmlns="http://www.elastic-payments.com/schema/payment" self="http://127.0.0.1:80
         <status code="201.0000" description="eps:The resource was successfully created." severity="information"/>
     </statuses>
     <requested-amount currency="EUR">1.01</requested-amount>
-    <parent-transaction-id>016c2f78-f247-4fba-99f0-950ea10ab49e</parent-transaction-id>
+    <parent-transaction-id>03685043-2db2-4f9b-a672-925ce7243e91</parent-transaction-id>
     <account-holder>
         <first-name>John</first-name>
         <last-name>Doe</last-name>
