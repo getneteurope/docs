@@ -108,62 +108,14 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_pending-debit_request_success.xml[]
-
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>pending-debit</transaction-type>
-  <requested-amount currency="THB">40.00</requested-amount>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1549286434185</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay" />
-  </payment-methods>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_pending-debit_response_success.xml[]
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-    <transaction-id>d8dede27-ff91-43cf-95f8-b60040680c6b</transaction-id>
-    <request-id>c0b424e6-310e-4aa7-b9c4-ba27a972e2a7</request-id>
-    <transaction-type>pending-debit</transaction-type>
-    <transaction-state>success</transaction-state>
-    <completion-time-stamp>2020-06-30T08:06:08.000Z</completion-time-stamp>
-    <statuses>
-        <status code="201.0000" description="The resource was successfully created." severity="information"/>
-    </statuses>
-    <requested-amount currency="THB">40.00</requested-amount>
-    <account-holder>
-        <first-name>Paul</first-name>
-        <last-name>Peterson</last-name>
-    </account-holder>
-    <order-number>1549286434185</order-number>
-    <descriptor>Payment description</descriptor>
-    <payment-methods>
-        <payment-method url="https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDA4MDYwODwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4yOTEyNjQ4NTE0NjM2MDY3MzY2MjwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwNDAwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT5kOGRlZGUyNy1mZjkxLTQzY2YtOTVmOC1iNjAwNDA2ODBjNmI8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NDkyODY0MzQxODU8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmMwYjQyNGU2LTMxMGUtNGFhNy1iOWM0LWJhMjdhOTcyZTJhNzwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BNTVBMzcxOTI1OUUzQzM5Q0YzQTk1ODRGRjdGMjQyMjJBODk0QjRFRTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D" name="linepay"/>
-    </payment-methods>
-    <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-    <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecFirst]
 ==== _pending-debit_ (Recurring/First) 
@@ -173,69 +125,14 @@ include::{root}/samples/xml/line-pay/line-pay_pending-debit_response_success.xml
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>pending-debit</transaction-type>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <periodic>
-    <periodic-type>recurring</periodic-type>
-    <sequence-type>first</sequence-type>
-  </periodic>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_response_success.xml[]
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-    <transaction-id>92db460a-905b-432e-9105-36ebd86282bf</transaction-id>
-    <request-id>a0e8035c-dcfe-4513-914f-40dad5a6385f</request-id>
-    <transaction-type>pending-debit</transaction-type>
-    <transaction-state>success</transaction-state>
-    <completion-time-stamp>2020-06-30T11:15:08.000Z</completion-time-stamp>
-    <statuses>
-        <status code="201.0000" description="The resource was successfully created." severity="information"/>
-    </statuses>
-    <requested-amount currency="THB">2.00</requested-amount>
-    <account-holder>
-        <first-name>Paul</first-name>
-        <last-name>Peterson</last-name>
-    </account-holder>
-    <order-number>1551342687432</order-number>
-    <descriptor>Payment description</descriptor>
-    <payment-methods>
-        <payment-method url="https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDExMTUwNzwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT42NTU4NzQ0NjA0OTE2NDI4NzA4NzwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT45MmRiNDYwYS05MDViLTQzMmUtOTEwNS0zNmViZDg2MjgyYmY8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmEwZTgwMzVjLWRjZmUtNDUxMy05MTRmLTQwZGFkNWE2Mzg1ZjwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BQUVFRjMxM0Q1QTE1RkQ4Qjc0OEY0QkU1REY1MUNFOTcyMTY2ODA0NTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D" name="linepay"/>
-    </payment-methods>
-    <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-    <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-    <periodic>
-        <periodic-type>recurring</periodic-type>
-        <sequence-type>first</sequence-type>
-    </periodic>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecRec]
 ==== _debit_ (Recurring/Recurring) 
@@ -245,63 +142,14 @@ include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_resp
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>debit</transaction-type>
-  <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <periodic>
-    <periodic-type>recurring</periodic-type>
-    <sequence-type>recurring</sequence-type>
-  </periodic>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_response_success.xml[]
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-    <transaction-id>8ea5fb2d-2e2d-4177-95fc-491035b726b2</transaction-id>
-    <request-id>b13fc069-c0bd-4db5-888f-52109c498218</request-id>
-    <transaction-type>debit</transaction-type>
-    <transaction-state>success</transaction-state>
-    <completion-time-stamp>2020-06-30T11:16:33.000Z</completion-time-stamp>
-    <statuses>
-        <status code="201.0000" description="The resource was successfully created." severity="information"/>
-    </statuses>
-    <requested-amount currency="THB">2.00</requested-amount>
-    <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
-    <account-holder>
-        <first-name>Paul</first-name>
-        <last-name>Peterson</last-name>
-    </account-holder>
-    <order-number>1551342687432</order-number>
-    <descriptor>Payment description</descriptor>
-    <payment-methods>
-        <payment-method url="https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDExMTYzMzwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4xMzQzMTM2NTg2Nzc1NTE2MzkxMzwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT44ZWE1ZmIyZC0yZTJkLTQxNzctOTVmYy00OTEwMzViNzI2YjI8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmIxM2ZjMDY5LWMwYmQtNGRiNS04ODhmLTUyMTA5YzQ5ODIxODwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BNzFGNkVDOUZGNTQ1MDk3RDg2ODdCNzMwQ0NBMjMyNzNFNEZERUIyOTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D" name="linepay"/>
-    </payment-methods>
-    <api-id>---</api-id>
-    <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-    <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-    <periodic>
-        <periodic-type>recurring</periodic-type>
-        <sequence-type>recurring</sequence-type>
-    </periodic>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingDebit_RecFinal]
 ==== _debit_ (Recurring/Final) 
@@ -311,63 +159,14 @@ include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_response
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>debit</transaction-type>
-  <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <periodic>
-    <periodic-type>recurring</periodic-type>
-    <sequence-type>final</sequence-type>
-  </periodic>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_response_success.xml[]
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-    <transaction-id>819b4aed-41ee-4ee6-9822-2e2f4aeca704</transaction-id>
-    <request-id>2747b197-5f0e-4833-aea1-920bd216b650</request-id>
-    <transaction-type>debit</transaction-type>
-    <transaction-state>success</transaction-state>
-    <completion-time-stamp>2020-06-30T07:28:35.000Z</completion-time-stamp>
-    <statuses>
-        <status code="201.0000" description="The resource was successfully created." severity="information"/>
-    </statuses>
-    <requested-amount currency="THB">2.00</requested-amount>
-    <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
-    <account-holder>
-        <first-name>Paul</first-name>
-        <last-name>Peterson</last-name>
-    </account-holder>
-    <order-number>1551342687432</order-number>
-    <descriptor>Payment description</descriptor>
-    <payment-methods>
-        <payment-method url="https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDA3MjgzNTwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4xOTc2MTkxMTAzMDk2ODcyNjI5OTwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT44MTliNGFlZC00MWVlLTRlZTYtOTgyMi0yZTJmNGFlY2E3MDQ8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPjI3NDdiMTk3LTVmMGUtNDgzMy1hZWExLTkyMGJkMjE2YjY1MDwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BODAxOTdCMzVERjI5QjcyNzdGODk0NjA5RThFNDgxRDVFQTFFQUUyMDwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D" name="linepay"/>
-    </payment-methods>
-    <api-id>---</api-id>
-    <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-    <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-    <periodic>
-        <periodic-type>recurring</periodic-type>
-        <sequence-type>final</sequence-type>
-    </periodic>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_RefundDebit]
 ==== _refund-debit_
@@ -377,54 +176,14 @@ include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_response_suc
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_refund-debit_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <transaction-type>refund-debit</transaction-type>
-  <request-id>{{$guid}}</request-id>
-  <parent-transaction-id>392e9311-1917-4e95-a7a0-68db64da130a</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_refund-debit_response_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <transaction-id>0c92478c-df87-4943-827c-697ada54e84e</transaction-id>
-  <request-id>4d82d877-f211-463f-a282-7446cc85a6b7</request-id>
-  <transaction-type>refund-debit</transaction-type>
-  <transaction-state>success</transaction-state>
-  <completion-time-stamp>2019-02-28T08:32:11.000Z</completion-time-stamp>
-  <statuses>
-    <status code="201.0000" description="The resource was successfully created." severity="information"/>
-  </statuses>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <parent-transaction-id>392e9311-1917-4e95-a7a0-68db64da130a</parent-transaction-id>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <api-id>---</api-id>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_PendingAuth]
 ==== _pending-authorization_
@@ -434,60 +193,14 @@ include::{root}/samples/xml/line-pay/line-pay_refund-debit_response_success.xml[
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_pending-authorization_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>pending-authorization</transaction-type>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_pending-authorization_response_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</transaction-id>
-  <request-id>ec669242-a90f-4ee7-aad4-f5af9a0889e1</request-id>
-  <transaction-type>pending-authorization</transaction-type>
-  <transaction-state>success</transaction-state>
-  <completion-time-stamp>2019-02-28T08:31:29.000Z</completion-time-stamp>
-  <statuses>
-    <status code="201.0000" description="The resource was successfully created." severity="information"/>
-  </statuses>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method url="https://sandbox-api-pay.line.me/linepay/v2/web/payment/wait?transactionReserveId=MTM1ODU4NDcyMzc2NzA2Njg4MA==" name="linepay"/>
-  </payment-methods>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 [#API_LinePay_Samples_VoidAuth]
 ==== _void-authorization_
@@ -497,51 +210,13 @@ include::{root}/samples/xml/line-pay/line-pay_pending-authorization_response_suc
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_void-authorization_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>void-authorization</transaction-type>
-  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_void-authorization_response_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <transaction-id>b7183071-3669-40d1-8cb1-642f495c0aec</transaction-id>
-  <request-id>291f22ab-343e-4702-b3a9-ffe4322bdf0b</request-id>
-  <transaction-type>void-authorization</transaction-type>
-  <transaction-state>success</transaction-state>
-  <completion-time-stamp>2019-02-28T08:31:58.000Z</completion-time-stamp>
-  <statuses>
-    <status code="201.0000" description="The resource was successfully created." severity="information"/>
-  </statuses>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <api-id>---</api-id>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
 
 // include::{root}/samples/xml/_response_success.xml[]
@@ -554,51 +229,13 @@ include::{root}/samples/xml/line-pay/line-pay_void-authorization_response_succes
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_capture-authorization_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>capture-authorization</transaction-type>
-  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_capture-authorization_response_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <transaction-id>76a16306-904f-4491-8f5c-811fda31d668</transaction-id>
-  <request-id>c414b976-105f-4fab-bfd4-18f14b720668</request-id>
-  <transaction-type>capture-authorization</transaction-type>
-  <transaction-state>success</transaction-state>
-  <completion-time-stamp>2019-02-28T08:31:40.000Z</completion-time-stamp>
-  <statuses>
-    <status code="201.0000" description="The resource was successfully created." severity="information"/>
-  </statuses>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <api-id>---</api-id>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
 
 // include::{root}/samples/xml/_response_success.xml[]
@@ -611,53 +248,13 @@ include::{root}/samples/xml/line-pay/line-pay_capture-authorization_response_suc
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_refund-capture_request_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>refund-capture</transaction-type>
-  <parent-transaction-id>76a16306-904f-4491-8f5c-811fda31d668</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-</payment>
 ----
-
-// include::{root}/samples/xml/_request_success.xml[]
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/line-pay/line-pay_refund-capture_response_success.xml[]
-
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
-  <transaction-id>7bbd9f0b-99ef-4eeb-89d1-0b436be07942</transaction-id>
-  <request-id>c40bcb24-473c-4efd-9467-9589a943fe85</request-id>
-  <transaction-type>refund-capture</transaction-type>
-  <transaction-state>success</transaction-state>
-  <completion-time-stamp>2019-02-28T08:31:43.000Z</completion-time-stamp>
-  <statuses>
-    <status code="201.0000" description="The resource was successfully created." severity="information"/>
-  </statuses>
-  <requested-amount currency="THB">2.00</requested-amount>
-  <parent-transaction-id>76a16306-904f-4491-8f5c-811fda31d668</parent-transaction-id>
-  <account-holder>
-    <first-name>Paul</first-name>
-    <last-name>Peterson</last-name>
-  </account-holder>
-  <order-number>1551342687432</order-number>
-  <descriptor>Payment description</descriptor>
-  <payment-methods>
-    <payment-method name="linepay"/>
-  </payment-methods>
-  <api-id>---</api-id>
-  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
-  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
-</payment>
 ----
-
-// include::{root}/samples/xml/_response_success.xml[]
 
 //-
