@@ -90,6 +90,8 @@ Ask <<ContactUs, Merchant Support>> for details.
 .	{payment-gateway-abbr} redirects the consumer to your checkout page.
 .	You process the _debit_/_authorization_ notification and display the payment status to the consumer.
 
+//-
+
 [#API_LinePay_Fields]
 === Fields
 
@@ -105,6 +107,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_pending-debit_request_success.xml[]
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -125,12 +129,14 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 </payment>
 ----
 
-// include::{root}/samples/xml/_request_success.xml[]
+
 
 .XML Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_pending-debit_response_success.xml[]
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -166,6 +172,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_pending-debit_recurring-first_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
@@ -195,6 +203,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_pending-debit_recurring-first_response_success.xml[]
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -234,6 +244,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_debit_recurring-recurring_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
@@ -255,6 +267,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_debit_recurring-recurring_response_success.xml[]
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -296,11 +310,13 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_debit_recurring-final_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
   <transaction-type>debit</transaction-type>
-  <parent-transaction-id>8ea5fb2d-2e2d-4177-95fc-491035b726b2</parent-transaction-id>
+  <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
   <payment-methods>
     <payment-method name="linepay"/>
   </payment-methods>
@@ -317,6 +333,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_debit_recurring-final_response_success.xml[]
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -329,7 +347,7 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
         <status code="201.0000" description="The resource was successfully created." severity="information"/>
     </statuses>
     <requested-amount currency="THB">2.00</requested-amount>
-    <parent-transaction-id>8ea5fb2d-2e2d-4177-95fc-491035b726b2</parent-transaction-id>
+    <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
     <account-holder>
         <first-name>Paul</first-name>
         <last-name>Peterson</last-name>
@@ -358,6 +376,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_refund-debit_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <transaction-type>refund-debit</transaction-type>
@@ -375,6 +395,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_refund-debit_response_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <transaction-id>0c92478c-df87-4943-827c-697ada54e84e</transaction-id>
@@ -411,6 +433,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_pending-authorization_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
@@ -436,6 +460,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_pending-authorization_response_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</transaction-id>
@@ -470,11 +496,13 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_void-authorization_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
   <transaction-type>void-authorization</transaction-type>
-  <parent-transaction-id>e762192b-ffb5-4447-a4a0-4fc1cf9d300a</parent-transaction-id>
+  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
   <payment-methods>
     <payment-method name="linepay"/>
   </payment-methods>
@@ -487,6 +515,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_void-authorization_response_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <transaction-id>b7183071-3669-40d1-8cb1-642f495c0aec</transaction-id>
@@ -498,7 +528,7 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
     <status code="201.0000" description="The resource was successfully created." severity="information"/>
   </statuses>
   <requested-amount currency="THB">2.00</requested-amount>
-  <parent-transaction-id>e762192b-ffb5-4447-a4a0-4fc1cf9d300a</parent-transaction-id>
+  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
   <account-holder>
     <first-name>Paul</first-name>
     <last-name>Peterson</last-name>
@@ -523,11 +553,13 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_capture-authorization_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
   <transaction-type>capture-authorization</transaction-type>
-  <parent-transaction-id>2636cd44-bd57-427f-a502-702f9c59598f</parent-transaction-id>
+  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
   <payment-methods>
     <payment-method name="linepay"/>
   </payment-methods>
@@ -540,6 +572,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_capture-authorization_response_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <transaction-id>76a16306-904f-4491-8f5c-811fda31d668</transaction-id>
@@ -551,7 +585,7 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
     <status code="201.0000" description="The resource was successfully created." severity="information"/>
   </statuses>
   <requested-amount currency="THB">2.00</requested-amount>
-  <parent-transaction-id>2636cd44-bd57-427f-a502-702f9c59598f</parent-transaction-id>
+  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
   <account-holder>
     <first-name>Paul</first-name>
     <last-name>Peterson</last-name>
@@ -576,6 +610,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_refund-capture_request_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <request-id>{{$guid}}</request-id>
@@ -593,6 +629,8 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/line-pay_refund-capture_response_success.xml[]
+
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
   <transaction-id>7bbd9f0b-99ef-4eeb-89d1-0b436be07942</transaction-id>
