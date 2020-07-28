@@ -107,7 +107,7 @@ Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_pending-debit_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_request_success.xml[]
 
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
@@ -135,7 +135,7 @@ include::{root}/samples/xml/line-pay_pending-debit_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_pending-debit_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_response_success.xml[]
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
@@ -172,7 +172,7 @@ include::{root}/samples/xml/line-pay_pending-debit_response_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_pending-debit_recurring-first_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -203,7 +203,7 @@ include::{root}/samples/xml/line-pay_pending-debit_recurring-first_request_succe
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_pending-debit_recurring-first_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_response_success.xml[]
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
@@ -244,7 +244,7 @@ include::{root}/samples/xml/line-pay_pending-debit_recurring-first_response_succ
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_debit_recurring-recurring_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -267,7 +267,7 @@ include::{root}/samples/xml/line-pay_debit_recurring-recurring_request_success.x
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_debit_recurring-recurring_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_response_success.xml[]
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
@@ -310,7 +310,7 @@ include::{root}/samples/xml/line-pay_debit_recurring-recurring_response_success.
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_debit_recurring-final_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -333,7 +333,7 @@ include::{root}/samples/xml/line-pay_debit_recurring-final_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_debit_recurring-final_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_response_success.xml[]
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
@@ -376,7 +376,7 @@ include::{root}/samples/xml/line-pay_debit_recurring-final_response_success.xml[
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_refund-debit_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_refund-debit_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -395,7 +395,7 @@ include::{root}/samples/xml/line-pay_refund-debit_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_refund-debit_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_refund-debit_response_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -433,7 +433,7 @@ include::{root}/samples/xml/line-pay_refund-debit_response_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_pending-authorization_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_pending-authorization_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -460,7 +460,7 @@ include::{root}/samples/xml/line-pay_pending-authorization_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_pending-authorization_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_pending-authorization_response_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -496,7 +496,7 @@ include::{root}/samples/xml/line-pay_pending-authorization_response_success.xml[
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_void-authorization_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_void-authorization_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -515,7 +515,7 @@ include::{root}/samples/xml/line-pay_void-authorization_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_void-authorization_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_void-authorization_response_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -553,7 +553,7 @@ include::{root}/samples/xml/line-pay_void-authorization_response_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_capture-authorization_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_capture-authorization_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -572,7 +572,7 @@ include::{root}/samples/xml/line-pay_capture-authorization_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_capture-authorization_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_capture-authorization_response_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -610,7 +610,7 @@ include::{root}/samples/xml/line-pay_capture-authorization_response_success.xml[
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_refund-capture_request_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_refund-capture_request_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
@@ -629,7 +629,7 @@ include::{root}/samples/xml/line-pay_refund-capture_request_success.xml[]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/line-pay_refund-capture_response_success.xml[]
+include::{root}/samples/xml/line-pay/line-pay_refund-capture_response_success.xml[]
 
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
   <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
