@@ -1,8 +1,11 @@
 [#eNETS]
 == {payment-page-v1}
-_eNETS Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
-NOTE: This payment method is available for integration with <<PP, {payment-page-v1}>> only.  
+====
+NOTE: This payment method is available for integration with <<PP, {payment-page-v1}>> only.
+====
+
+_eNETS Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.  
 
 [#eNETS_GeneralInformation_Countries]
 === Countries and Currencies
