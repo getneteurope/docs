@@ -189,21 +189,11 @@ for further information about retrieving transaction details.
 [#eps_Fields]
 === Fields
 
-The fields used for _eps-Überweisung_ requests, responses and
-notifications are the same as the ReST API Fields.
+The fields used for _eps-Überweisung_ requests, responses and notifications are the same as the ReST API Fields.
 Please refer to the <<RestApi_Fields, REST API field list>>. Only the fields listed below have different properties,
 especially according to size.
 
-The following elements are mandatory (M), optional (O) or conditional
-\(C) for a request/response/notification. If the respective cell is
-empty, the field is disregarded or not sent.
-
-[#eps_Fields_DueDate]
-==== Due Date
-
-_Due Date_ is an _eps-Überweisung_ specific field.
-
-include::{root}/include/fields/due-date.adoc[]
+``descriptor``is an optional (O) field in the request. If the field is empty, it is disregarded or not sent.
 
 [cols=",,,,v", options="header"]
 [frame=all]
@@ -216,7 +206,7 @@ include::{root}/include/fields/due-date.adoc[]
 |*Description*
 |descriptor
 |O
-|xs:string
+|String
 |140
 a|[#eps_Fields_Descriptor]
 The remittance identifier. Limit of 35 characters for structured purpose
@@ -229,6 +219,13 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 Ä Ö Ü ä ö ü ß
 Space
 |===
+
+[#eps_Fields_DueDate]
+==== Due Date
+
+_Due Date_ is an _eps-Überweisung_ specific field.
+
+include::{root}/include/fields/due-date.adoc[]
 
 [#eps_Samples]
 === Samples
