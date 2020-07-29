@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="http://localhost:8080/engine/rest/merchants/ff39e6fd-35f4-11e5-9e9b-f81654632328/payments/6ff0b237-9cd1-4d2e-97cd-4aca1a60a89c">
+    <merchant-account-id ref="http://localhost:8080/engine/rest/config/merchants/ff39e6fd-35f4-11e5-9e9b-f81654632328">ff39e6fd-35f4-11e5-9e9b-f81654632328</merchant-account-id>
+    <transaction-id>6ff0b237-9cd1-4d2e-97cd-4aca1a60a89c</transaction-id>
+    <request-id>c7ea688a-7c5b-4566-9d16-cb3f0df31dcc</request-id>
+    <transaction-type>enrollment</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2018-08-17T11:28:00.000+02:00</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="loyality:The resource was successfully created." severity="information"/>
+    </statuses>
+    <card-data>
+        <issuer-name>Barclays Bank PLC</issuer-name>
+    </card-data>
+    <card-token>
+        <token-id>4242796444090018</token-id>
+        <masked-account-number>420000******0018</masked-account-number>
+    </card-token>
+    <descriptor>demo descriptor</descriptor>
+    <payment-methods>
+        <payment-method name="creditcard"/>
+    </payment-methods>
+    <api-id>elastic-api</api-id>
+    <consumer-id>1234567</consumer-id>
+    <instrument-country>GB</instrument-country>
+    <loyalty-card>
+        <user-id>9h373dc1-3d44-431d-8cf0-8719700613k2</user-id>
+        <card-id>2d87111e-00d1-45a2-91eb-2ec20fcfa92s</card-id>
+    </loyalty-card>
+</payment>

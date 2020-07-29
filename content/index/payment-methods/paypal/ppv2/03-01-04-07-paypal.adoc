@@ -2,14 +2,16 @@
 [#PPv2_PayPal]
 == {payment-page-v2} 
 
+====
+{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentMethods_PayPal, REST API>> integration guide.
+====
+
 [#PPv2_PayPal_General]
 === General Information
 
 This is a reference page for _PayPal_. Here you'll find all the
 information necessary for integrating this payment method in
-your Hosted and Embedded Payment Page. +
-
-Go to the <<API_PaymentMethods_PayPal, REST API>> documentation for information on {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration.
+your Hosted and Embedded Payment Page. 
 
 .Are you unfamiliar with {payment-page-v2} ({payment-page-v2-abbr})?
 

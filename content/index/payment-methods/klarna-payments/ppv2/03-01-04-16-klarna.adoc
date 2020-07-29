@@ -3,13 +3,13 @@
 [#PPv2_Klarna]
 == {payment-page-v2}
 
+====
+{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<KlarnaV2, REST API>> integration guide.
+====
+
 include::{root}/include/ppv2-general-information.adoc[]
 
-Go to the <<KlarnaV2, REST API>> documentation for information on {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
-
 Below, we provide a sample request for the available transaction type <<PPv2_Klarna_TransactionType_authorization, authorization>>, including a field list with short descriptions.
-
-Below, we provide a field list with short descriptions.
 
 For more details on the ``redirect-url``, see the 
 <<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>> 
@@ -23,7 +23,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 [#PPv2_Klarna_About]
 === About _{payment-method-name}_
 
-_{payment-method-name}_ offer 3 payment options for consumers to pay when and how they prefer to: 
+_{payment-method-name}_ offers three payment options for consumers to pay when and how they prefer: 
 
 * **Pay now:** +
     - Quick and easy direct payments with 

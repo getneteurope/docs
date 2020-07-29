@@ -2,14 +2,16 @@
 [#PPv2_paysafecard]
 == {payment-page-v2}
 
+====
+{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<paysafecard, REST API>> integration guide.
+====
+
 [#PPv2_paysafecard_General]
 === General Information
 
 This is a reference page for _paysafecard_. Here you find all the
 information necessary for integrating this payment method in
-your Hosted and Embedded Payment Page. +
-
-Go to the <<paysafecard, REST API>> documentation for information on {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration.
+your Hosted and Embedded Payment Page. 
 
 .Are you unfamiliar with {payment-page-v2} ({payment-page-v2-abbr})?
 
@@ -23,7 +25,7 @@ All <<PPv2, {payment-page-v2-abbr}>> integrations share a
 
 Below, you find example requests for <<PPv2_paysafecard_TransactionType_debit, _debit_>>,
 <<PPv2_paysafecard_TransactionType_authorization, _authorization_>> and
-<<PPv2_paysafecard_TransactionType_capture, _capture-authorization_>>
+<<PPv2_paysafecard_TransactionType_capture, _capture-authorization_>>,
 including field lists with short descriptions.
 
 These requests are designed for the testing environment and do not
