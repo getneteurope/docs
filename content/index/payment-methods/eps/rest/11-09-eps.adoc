@@ -189,8 +189,8 @@ for further information about retrieving transaction details.
 [#eps_4mobile]
 === eps4mobile
 
-With eps4mobile {payment-gateway-abbr} can forward a QR-code to the consumer.
-If you want to use this feature contact <<ContactUs, Merchant Support>> for details.
+With _eps4mobile_ {payment-gateway-abbr} can forward a QR-code to the consumer.
+If you want to use _eps4mobile_, contact <<ContactUs, Merchant Support>> for details.
 
 [#eps_Fields]
 === Fields
