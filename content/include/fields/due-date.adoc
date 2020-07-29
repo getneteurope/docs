@@ -1,0 +1,5 @@
+The due date is the day when the funds will be cleared on the debtors bank account. {payment-provider-name} can calculate the best (earliest) due date for you. When ``due-date`` is left empty in the request, {payment-provider-name} will calculate the due date for you automatically.
+
+You may, however, send in a due date inside the request if a specific date is requested. This date may only be used if it passes validation. If validation is not passed, {payment-provider-name} will return a failed transaction and the transaction must be re-submitted.
+
+WARNING: If you send an incorrect due date, {payment-provider-name} cannot replace it with a correct due date calculated by the system as this would change the content of the transaction you sent.

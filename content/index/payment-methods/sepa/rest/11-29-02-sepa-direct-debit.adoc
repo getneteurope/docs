@@ -473,19 +473,7 @@ lifecycle of a payment is identifiable. Wirecard generates this ID for the merch
 [#SEPADirectDebit_Fields_SpecificFields_DueDate]
 .Due Date
 
-The due date is the day when the funds will be cleared on the debtors
-bank account. Wirecard can calculate the best (earliest) due date for
-the Merchant. When the Due Date field in the request is left empty,
-Wirecard will calculate the due date for the merchant automatically.
-
-The merchant may, however, send in a due date inside the request if a
-specific date is requested. This date may only be used if it passes
-validation. If validation is not passed, Wirecard will return a failed
-transaction and the transaction must be re-submitted.
-
-WARNING: Wirecard cannot replace an incorrect due date sent in by the merchant
-with a correct due date calculated by the system as this would change
-the content of the transaction sent in by the merchant.
+include::{root}/include/fields/due-date.adoc[]
 
 [#SEPADirectDebit_Fields_SpecificFields_DueDate_DueDateCalculation]
 *Calculating the Due Date*
