@@ -5,6 +5,9 @@
 [discrete]
 === 2020-07
 
+.2020-07-31
+- <<API_LinePay, LINE Pay>> - New payment method available for REST API.
+
 .2020-07-24
 - <<GooglePay, Google Pay™>> - Updated Merchant End to End Testing for REST API.
 - <<CreditCard_PaymentFeatures_LoyaltyPrograms, Loyalty Programs>> - _Visa Offers Platform_ and _Mastercard® Card Linked Services_ available for REST API.

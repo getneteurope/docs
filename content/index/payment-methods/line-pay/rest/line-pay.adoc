@@ -72,7 +72,7 @@ Ask <<ContactUs, Merchant Support>> for details.
 === Workflow
 
 .	The consumer adds items to the shopping basket.
-.	You redirect the consumer to {payment-gateway-abbr} (with an _auto-sale_/_pending-debit_/_pending-authorization_ request).
+.	You redirect the consumer to {payment-gateway-abbr} (with an _auto-sale_ or _pending-debit_ or _pending-authorization_ request).
 .	{payment-gateway-abbr} displays all the available payment methods.
 .	The consumer selects LINE Pay.
 .	{payment-gateway-abbr} sends a reserve payment request to LINE Pay.
@@ -86,9 +86,9 @@ Ask <<ContactUs, Merchant Support>> for details.
 .	LINE Pay redirects the consumer to {payment-gateway-abbr}.
 .	{payment-gateway-abbr} sends a confirmation request to LINE Pay.
 .	LINE Pay processes the confirmation information and sends a confirmation response to {payment-gateway-abbr}.
-.	{payment-gateway-abbr} sends a _debit_/_authorization_ notification to you.
+.	{payment-gateway-abbr} sends a _debit_ or _authorization_ notification to you.
 .	{payment-gateway-abbr} redirects the consumer to your checkout page.
-.	You process the _debit_/_authorization_ notification and display the payment status to the consumer.
+.	You process the _debit_ or _authorization_ notification and display the payment status to the consumer.
 
 //-
 
