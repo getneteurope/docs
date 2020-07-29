@@ -186,6 +186,13 @@ the consumer has been redirected to the shop.
 See <<GeneralPlatformFeatures_RetrieveTransaction, Retrieve a Transaction>>
 for further information about retrieving transaction details.
 
+[#eps_Fields_DueDate]
+==== Due Date
+
+_Due Date_ is an _eps-Überweisung_ specific field.
+
+include::{root}/include/fields/due-date.adoc[]
+
 [#eps_Fields]
 === Fields
 
@@ -219,13 +226,6 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 Ä Ö Ü ä ö ü ß
 Space
 |===
-
-[#eps_Fields_DueDate]
-==== Due Date
-
-_Due Date_ is an _eps-Überweisung_ specific field.
-
-include::{root}/include/fields/due-date.adoc[]
 
 [#eps_Samples]
 === Samples
