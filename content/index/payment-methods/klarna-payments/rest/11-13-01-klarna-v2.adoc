@@ -45,27 +45,58 @@ NOTE: _Klarna_ accepts only physical persons as consumers.
 |===
 |Country |Available Payment Options
 
-|Austria
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
-|Denmark
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
-|Finland
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
-|Germany
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
-|Netherlands
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
-|Norway	
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
-|Sweden	
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
-|Switzerland
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
-|UK	
-|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
-|Australia	
+|Australia
 |``klarna-paylater``
+|Austria
+|``klarna-paylater``, ``klarna-slice-it`` (klarna-finance)
+|Denmark
+|``klarna-paylater``, ``klarna-slice-it``
+|Finland
+|``klarna-paylater``, ``klarna-slice-it``
+|Germany
+|``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-slice-it``
+|Netherlands
+|``klarna-debit``, ``klarna-paylater``
+|Norway
+|``klarna-paylater``, ``klarna-slice-it``
+|Sweden
+|``klarna-debit``, ``klarna-paylater``, ``klarna-slice-it``
+|Switzerland
+|``klarna-transfer``
+|UK
+|``klarna-paylater``, ``klarna-slice-it``
 |===
+
+// ``klarna-debit` = ``klarna-pay-now`` ?????
+// ``klarna-transfer`` = ``klarna-pay-now`` ?????
+// ``klarna-finance`` = ``klarna-slice-it`` ?????
+
+// [%autowidth,cols="h,a",stripes=none]
+// [cols="1,2"]
+// |===
+// |Country |Available Payment Options
+
+// |Australia	
+// |``klarna-paylater``
+// |Austria
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
+// |Denmark
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+// |Finland
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+// |Germany
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+// |Netherlands
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
+// |Norway	
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+// |Sweden	
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+// |Switzerland
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``
+// |UK	
+// |``klarna-debit``, ``klarna-transfer``, ``klarna-paylater``, ``klarna-financing``
+// |===
 
 [#KlarnaV2_Locales]
 ==== Supported Country/Currency/Locale Combinations
