@@ -40,8 +40,7 @@ at <<AppendixB,  Transaction Types>>.
 |Transaction Type |Description |Link to samples
 
 | _get-url_ | Initiation of a transaction triggering the redirect of the consumer to the eps system. | See <<eps_Ueberweisung_Success, _get-url_ samples>>
-| _debit_ | Created during payment processing and finalized after consumer TAN confirmation/cancel etc. using eps system payment confirmation. | See <<eps_Samples, _debit_ samples>>
-// As a matter of fact, there is no debit transaction as such. We only get a debit notification togehter with the get-url response. We probably should add "Notification" to the transaction type name. 
+| _debit_ notification | Created during payment processing and finalized after consumer TAN confirmation/cancel etc. using eps system payment confirmation. | See <<eps_Samples, _debit_ samples>> 
 | _refund-debit_ | Returns funds from the merchant to the account holder. Refers to the _debit_ notification of the preceeding _get-url_ transaction. | See <<eps_Ueberweisung_RefundDebit, _refund-debit_ samples>>
 |===
 
@@ -376,7 +375,7 @@ include::{root}/samples/xml/eps_debit_unknown_.xml[]
 .XML refund-debit Request (Success)
 
 --
-NOTE: Use the value of the ``transaction-id`` from the <<eps_Ueberweisung_Success, _get-url_ notification>> in the field ``parent-transaction-id``.
+NOTE: Use the value of the ``transaction-id`` from the <<eps_Ueberweisung_Success, _debit_ notification>> in the field ``parent-transaction-id``.
 --
 
 [source,xml,subs=attributes+]
