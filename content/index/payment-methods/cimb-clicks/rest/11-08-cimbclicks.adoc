@@ -28,7 +28,7 @@ here, look at <<AppendixB,  Transaction Types>>.
 
 [cols="35h,65",stripes=none]
 |===
-|URLs (Endpoint)            | ``\https://{test-instance-hostname}/engine/rest/paymentmethods``
+|URLs (Endpoint)            | ``\https://{rest-api-test-apm-endpoint}``
 |Merchant Account ID (MAID) |Please contact <<ContactUs, merchant support>> for complete test credentials.
 |Username                   |Please contact <<ContactUs, merchant support>> for complete test credentials.
 |Password                   |Please contact <<ContactUs, merchant support>> for complete test credentials.
@@ -38,7 +38,7 @@ here, look at <<AppendixB,  Transaction Types>>.
 [#CIMBClicks_Workflow]
 === Workflow
 
-image::images/11-08-cimbclicks/cimb_clicks_Workflow.png[CIMB Clicks Workflow,height=250]
+image::images/diagrams/cimbclicks_workflow.svg[CIMB Clicks Workflow,height=250]
 
 . Consumer selects to pay with _CIMB Clicks_ on the merchant's payment
 page.

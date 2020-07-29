@@ -108,14 +108,14 @@ a|For transaction types
 * ``authorization`` +
 * ``credit``
 //-
-|``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+|``\https://{rest-api-test-apm-endpoint}``
 a|For transaction types
 
 * ``capture-authorization``
 * ``void-authorization``
 //-
 
-|``\https://{test-instance-hostname}/engine/rest/payments/``
+|``\https://{rest-api-test-endpoint}``
 h|Merchant Account ID (MAID)
 2+|493f9abe-0028-4631-b72e-836a7e3695af
 h|Username
@@ -143,7 +143,7 @@ h|Secret Key
 [#paysafecard_debit_RESTAPI]
 ===== Payment Process Using REST API
 
-image::images/11-25-paysafecard/paysafecard_workflow_debit_REST.png[Debit Workflow with RestAPI, width=950]
+image::images/diagrams/paysafecard_debit_rest-api.svg[Debit Workflow with RestAPI, width=950]
 
 . Consumer initiates a transaction.
 . Send a request with transaction type _debit_ and consumer's data to
@@ -162,7 +162,7 @@ page.
 [#paysafecard_debit_HPP]
 ===== Payment Process Using HPP
 
-image::images/11-25-paysafecard/paysafecard_workflow_debit_HPP.png[Debit Workflow with HPP, width=950]
+image::images/diagrams/paysafecard_debit_hpp.svg[Debit Workflow with HPP, width=950]
 
 . Consumer selects payment method _paysafecard_.
 . {payment-gateway-abbr} redirects consumer from website to _paysafecard_ landing page.
@@ -174,7 +174,7 @@ image::images/11-25-paysafecard/paysafecard_workflow_debit_HPP.png[Debit Workflo
 [#paysafecard_authorization]
 ==== authorization
 
-image::images/11-25-paysafecard/paysafecard_workflow_authorization.png[Authorization Workflow, width=950]
+image::images/diagrams/paysafecard_authorization.svg[Authorization Workflow, width=950]
 
 . Consumer initiates a transaction.
 . Send a request with transaction type _authorization_ and consumer's

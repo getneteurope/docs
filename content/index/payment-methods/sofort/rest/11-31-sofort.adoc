@@ -67,7 +67,7 @@ provide the consumer data to guarantee a successful refund. +
 
 [cols="35h,65"]
 |===
-| URLs (Endpoints) |``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+| URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
 | Merchant Account ID (MAID) | 6c0e7efd-ee58-40f7-9bbd-5e7337a052cd
 | Username | 16390-testing
 | Password | 3!3013=D3fD8X7
@@ -98,7 +98,7 @@ provide the consumer data to guarantee a successful refund. +
 [#Sofort_Workflow]
 === Workflow
 
-image::images/11-31-sofort/Sofort_successful_transaction.png[Workflow of Successful Transaction]
+image::images/diagrams/sofort_success-transaction.svg[Workflow of Successful Transaction]
 
 . Consumer chooses Sofort on the merchant's payment page
 . Consumer is re-directed and logs in to his/her online banking account

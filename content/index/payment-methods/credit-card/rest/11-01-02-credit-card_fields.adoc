@@ -91,17 +91,21 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_card, X>>
 |  
 
+| card-data
+| 
+| <<CC_Fields_xmlelements_response_carddata, X>> 
+
 | card-emv
 | <<CC_Fields_xmlelements_request_cardEMV, X>>
 | <<CC_Fields_xmlelements_response_cardEMV, X>>
 
-// | card-pin
-// | <<CC_Fields_xmlelements_cardPIN, X>>
-// | 
+| card-pin
+| <<CC_Fields_xmlelements_request_cardPIN, X>>
+| 
 
-// |card-raw
-// | <<CC_Fields_xmlelements_cardRaw, X>>
-// | 
+| card-raw
+| <<CC_Fields_xmlelements_request_cardRAW, X>>
+| 
 
 | card-token
 | <<CC_Fields_xmlelements_request_cardtoken, X>>
@@ -123,17 +127,21 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_device, X>>
 | 
 
+| encryption-context
+| <<CC_Fields_xmlelements_request_card_EncContext, X>>
+| 
+
 | gift-card
 | <<CC_Fields_xmlelements_request_giftcard, X>>
 | 
 
-// | encryption-context
-// | <<CC_Fields_xmlelements_request_encryptionContext, X>>
-// | 
-
 | iso
 | <<CC_Fields_xmlelements_request_ISO, X>>
 | 
+
+| loyalty-card
+| <<CC_Fields_xmlelements_request_loyaltycard, X>>
+| <<CC_Fields_xmlelements_response_loyaltycard, X>>
 
 | notifications
 | <<CC_Fields_xmlelements_request_notification, X>>
@@ -169,7 +177,7 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 
 | three-d
 | <<CC_Fields_xmlelements_request_threed, X>>
-| <<CC_Fields_xmlelements_response_threed, X>>
+| <<CC_Fields_xmlelements_response_threed, X>> 
 |===
 
 //-
@@ -188,7 +196,7 @@ include::{root}/include/field-list-headers/rest_cc/request/req-payment.adoc[]
 |===
 | Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
 
-include::{root}/include/fields/rest_cc/request/req-payment.adoc[]
+include::{root}/include/fields/rest_cc/request/req-payment.adoc[tag=cc-base]
 
 |===
 
@@ -331,11 +339,11 @@ include::{root}/include/fields/rest_cc/request/req-card.adoc[]
 :!listname:
 
 [#CC_Fields_xmlelements_request_cardEMV]
-.card.card-emv
-
-For card present transactions.
+.``card-emv.``
 
 :listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-emv.adoc[]
 
 [cols="30m,6,9,7,48a"]
 |===
@@ -349,17 +357,39 @@ include::{root}/include/fields/rest_cc/request/req-card-emv.adoc[]
 
 :!listname:
 
-// [#CC_Fields_xmlelements_cardPIN]
-// .card.card-pin
+[#CC_Fields_xmlelements_request_cardPIN]
+.``card-pin.``
 
-// include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
+:listname: CC_Fields_xmlelements
 
+include::{root}/include/field-list-headers/rest_cc/request/req-card-pin.adoc[]
 
-// [#CC_Fields_xmlelements_cardRaw]
-// .card.card-raw
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
 
-// include::{root}/include/fields/rest_cc/request/req-card-raw.adoc[]
+include::{root}/include/fields/rest_cc/request/req-card-pin.adoc[]
 
+|===
+
+:!listname:
+
+[#CC_Fields_xmlelements_request_cardRAW]
+.``card-raw.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-card-raw.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-card-raw.adoc[]
+
+|===
+
+:!listname:
 
 [#CC_Fields_xmlelements_request_cardtoken]
 .``card-token.``
@@ -457,6 +487,23 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 
 //-
 
+[#CC_Fields_xmlelements_request_card_EncContext]
+.``encryption-context.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-encryption-context.adoc[]
+
+[cols="30m,6,9,7,48a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
+
+|===
+
+:!listname:
+
 [#CC_Fields_xmlelements_request_giftcard]
 .``gift-card.``
 
@@ -476,14 +523,8 @@ include::{root}/include/fields/rest_cc/request/req-gift-cards.adoc[]
 
 //-
 
-// [#CC_Fields_xmlelements_request_encryptionContext]
-// .encryption-context
-
-// include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
-
-
 [#CC_Fields_xmlelements_request_ISO]
-.``iso``
+.``iso.``
 
 For card present transactions.
 
@@ -492,6 +533,25 @@ For card present transactions.
 | Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
 
 include::{root}/include/fields/rest_cc/request/req-iso.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_request_loyaltycard]
+.``loyalty-card.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc[]
+
+:!listname:
+
+[cols="30m,6,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 
 |===
 
@@ -723,6 +783,25 @@ include::{root}/include/fields/rest_cc/response/res-avs.adoc[]
 
 //-
 
+[#CC_Fields_xmlelements_response_carddata]
+.``card-data.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-card-data.adoc[]
+
+:!listname:
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-card-data.adoc[]
+
+|===
+
+//-
+
 
 [#CC_Fields_xmlelements_response_customfield]
 .``custom-field.``
@@ -745,15 +824,38 @@ include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
 
 
 [#CC_Fields_xmlelements_response_cardEMV]
-.``card.card-emv``
+.``card-emv.``
 
-For card present transactions.
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-card-emv.adoc[]
+
+:!listname:
 
 [cols="30m,9,7,48a"]
 |===
 |Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
 
 include::{root}/include/fields/rest_cc/response/res-card-emv.adoc[]
+
+|===
+
+//-
+
+[#CC_Fields_xmlelements_response_loyaltycard]
+.``loyalty-card.``
+
+:listname: CC_Fields_xmlelements
+
+include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.adoc[]
+
+:!listname:
+
+[cols="30m,9,7,48a"]
+|===
+|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
+include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
 
 |===
 

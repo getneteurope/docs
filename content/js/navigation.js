@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   trackVisit();
   scrollToNavigationItem('auto');
   closeNavMobile();
+  addMobileNavFunctions();
+  addZoomToLargeImages();
 });
 
 /**
@@ -207,13 +209,19 @@ function addMobileNavFunctions() {
 }
 
 function closeNavMobile() {
-  document.getElementById('toc').classList.add('closed');
-  document.getElementById('search-results-wrapper').classList.add('hidden');
+  var toc = document.getElementById('toc');
+  if (toc) toc.classList.add('closed');
+
+  var srw = document.getElementById('search-results-wrapper');
+  if (srw) srw.classList.add('hidden');
 }
 
 function openNavMobile() {
-  document.getElementById('toc').classList.remove('closed');
-  document.getElementById('search-results-wrapper').classList.remove('hidden');
+  var toc = document.getElementById('toc');
+  if (toc) toc.classList.remove('closed');
+  
+  var srw = document.getElementById('search-results-wrapper');
+  if (srw) srw.classList.remove('hidden');
 }
 
 

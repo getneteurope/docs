@@ -24,13 +24,19 @@ Format: ``{timestamp-pattern}``
 
 | csc-code  
 | String 
-| 12 
-| Code indicating Card Verification Value (CVC/CVV) verification results.
+| 1 
+| Code indicating Card Verification Value (CVC/CVV) verification results. +
+Accepted values: +
 
-| consumer-id  
-| String 
-| 50 
-| The ID of the consumer.
+* ``M`` - Matched (correct) CVC-2 +
+* ``N`` - Not Valid CVC-2 +
+* ``P`` - Processing not performed +
+* ``S`` - The CVV2 should be on the card but the merchant indicates it is not +
+* ``U`` - Unregistered Issuer +
+* ``Y`` - CVC-1 incorrect +
+* ``Z`` - Unknown (Unknown CVC Status) 
+
+//-
 
 | api-id 
 | String 
@@ -51,12 +57,17 @@ Format: ``{timestamp-pattern}``
 * ``DE`` (Germany), +
 * ``ES`` (Spain), +
 * ``FR`` (France), or +
-* ``IT`` (Italy).
+* ``IT`` (Italy). +
+Returned only if {payment-gateway} has enabled ``FEATURE_CARD_TYPE_SERVICE`` or ``X-WD-Toggle-EnableFeature=FEATURE_CARD_TYPE_SERVICE`` header is sent with request.
 
 //-
 4+| <<{listname}_response_avs, avs>>
 
+4+| <<{listname}_response_carddata, card-data>>
+
 4+|<<{listname}_response_customfield, custom-fields.custom-field>>.
+
+4+| <<{listname}_response_loyaltycard, loyalty-card>>
 
 4+|<<{listname}_response_status, statuses.status>>.
 

@@ -1,0 +1,3 @@
+``card-emv`` a child of the request element <<{listname}_request_card, payment.card>>.
+
+It is used for card present transactions. Here we show the response fields of ``card-emv``. 

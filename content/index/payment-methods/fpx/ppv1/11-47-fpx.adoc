@@ -56,7 +56,7 @@ h| Password | 1234
 [#FPX_Workflow]
 === Workflow
 
-image::images/FPX_workflow.svg[]
+image::images/diagrams/fpx.svg[]
 
 . Consumer adds items to shopping basket and proceeds to checkout.
 . Merchant sends consumer's payment request to {payment-gateway-abbr} for processing.

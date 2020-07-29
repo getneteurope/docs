@@ -97,9 +97,9 @@ been returned.
 |===
 .2+h| URLs (Endpoints)
 | For transaction type _authorization_.
-| ``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+| ``\https://{rest-api-test-apm-endpoint}``
 | For transaction types _capture-authorization_, _refund-capture_ and _void-authorization._
-| ``\https://{test-instance-hostname}/engine/rest/payments/``
+| ``\https://{rest-api-test-endpoint}``
 h| Merchant Account ID (MAID)
 2+| 2048677d-57f4-44b0-8d67-9014c6631d5f
 h| Username
@@ -143,7 +143,7 @@ Invoice B2C captures the full amount only when *all the ordered goods*
 are ready for delivery.
 ====
 
-image::images/11-23-payolution/payolution_InvoiceB2C_authorization_captureAuthorization.png[payolution Invoice B2C, width=950, align="right"]
+image::images/diagrams/payolution_inv-b2c_auth_capt-auth.svg[payolution Invoice B2C, width=950, align="right"]
 
 [#payolution_InvoiceB2B]
 ==== Invoice B2B (_authorization, capture-authorization_)
@@ -161,7 +161,7 @@ Invoice B2B captures the full amount only when *all ordered goods* are
 ready for delivery.
 ====
 
-image::images/11-23-payolution/payolution_InvoiceB2B_authorization_captureAuthorization.png[payolution Invoice B2B, width=950, align="right"]
+image::images/diagrams/payolution_inv-b2b_auth_capt-auth.svg[payolution Invoice B2B, width=950, align="right"]
 
 [#payolution_Installment]
 ==== Installment (_authorization, capture-authorization_)
@@ -175,7 +175,7 @@ _Capture-authorization_ must be triggered *immediately after the
 authorization* response has arrived.
 ====
 
-image::images/11-23-payolution/payolution_Installment_authorization_captureAuthorization.png[payolution Installment, width=950, align="right"]
+image::images/diagrams/payolution_install_auth_capt-auth.svg[payolution Installment, width=950, align="right"]
 
 [#payolution_Reversal]
 ==== Reversal (_void-authorization_)
@@ -197,7 +197,7 @@ Only the fully authorized amount that has not been captured can be
 voided. Partial void authorizations are not possible.
 ====
 
-image::images/11-23-payolution/payolution_reversal_voidAuthorization.png[payolution Reversal, width=950, align="right"]
+image::images/diagrams/payolution_reversal_void-auth.svg[payolution Reversal, width=950, align="right"]
 
 [#payolution_Refund]
 ==== Refund (_refund-capture_)
@@ -227,7 +227,7 @@ ready for delivery.
 Sends _refund-capture_ request with the amount of returned items.
 ====
 
-image::images/11-23-payolution/payolution_refund_refundCapture.png[payolution Refund, width=950, align="right"]
+image::images/diagrams/payolution_refund_refund-capt.svg[payolution Refund, width=950, align="right"]
 
 [#payolution_Fields]
 === Fields

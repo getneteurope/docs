@@ -53,7 +53,7 @@ which formats can be used for requests and responses.
 [#eNETS_Workflow]
 === Workflow
 
-image::images/eNETS_workflow.svg[]
+image::images/diagrams/enets.svg[]
 
 . Consumer adds items to shopping basket and proceeds to checkout.
 . Merchant sends consumer's payment request to {payment-gateway-abbr} for processing.

@@ -42,7 +42,7 @@ The *Payment Page Designer* menu is divided into eight sections:
 * <<PPD_customize_colors, Colors>>
 * <<PPD_customize_effects, Effects>>
 * <<PPD_customize_css, Custom CSS>>
-* <<PPD_customize_payment-request, Payment request (for preview only)>>
+* <<PPD_customize_PaymentRequest, Payment request (for preview only)>>
 
 //-
 
@@ -86,6 +86,7 @@ Expand the *Miscellaneous* section to:
 * Switch between currency symbol and/or currency name (ISO 4217 code) for the *Amount* format. You can cancel the currency symbol selection only if the currency name is selected and vice versa.
 * Add further input fields (*Card form fields*) for additional consumer information (e.g. address, email, phone).
 * Determine where you want to place the *CANCEL PAYMENT* button. By default, it is displayed as a command in the hamburger menu.
+* Display a secure SSL encryption/payment badge. Click the *Secure Badge* list and select either *No Secure Badge* or one of the six available badge types. Note that *Security Badge Type 5* is presented in a white font and is only visible on darker backgrounds.
 
 //-
 
@@ -131,7 +132,7 @@ NOTE: *Blur Effect* and *Opacity* can only be used if you have uploaded a logo o
 .Custom CSS
 Expand the *Custom CSS* to further personalize your style sheet and save it (i.e. <<PPD_customize_save, export it to a theme>>).
 
-[#PPD_customize_payment-request]
+[#PPD_customize_PaymentRequest]
 .Payment request (for preview only)
 
 Expand the *Payment request* section to change the values of a potential payment request (e.g. requested-amount.value, requested-amount.currency, order-item.name, order-item.description). The *Live Preview* displays your modifications immediately. +

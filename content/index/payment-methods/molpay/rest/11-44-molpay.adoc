@@ -206,7 +206,7 @@ YES indicates that the transaction type is sent in the request, in the response/
 |===
 h|URL (Endpoint)
 |For transaction type ``debit`` (REST API)
-|``\https://{test-instance-hostname}/engine/rest/paymentmethods/``
+|``\https://{rest-api-test-apm-endpoint}``
 h|Merchant Account ID (MAID)
 2+|0518ac4e-a622-48d8-87f5-a04835ded715
 h|Username
@@ -225,7 +225,7 @@ h|Secret Key
 [#MOLPay_debit_RESTAPI]
 ===== Payment Process Using REST API
 
-image::images/11-44-molpay/MOLPay_workflow_debit_RESTAPI.png[Debit Workflow with REST API, width=950]
+image::images/diagrams/molpay_debit_rest-api.svg[Debit Workflow with REST API, width=950]
 
 . Consumer initiates a debit transaction.
 . Merchant sends a request to the {payment-gateway-abbr} endpoint. This request must contain 
@@ -244,7 +244,7 @@ image::images/11-44-molpay/MOLPay_workflow_debit_RESTAPI.png[Debit Workflow with
 [#MOLPay_debit_HPP]
 ===== Payment Process Using HPP
 
-image::images/11-44-molpay/MOLPay_workflow_debit_HPP.png[Debit Workflow with HPP, width=950]
+image::images/diagrams/molpay_debit_hpp.svg[Debit Workflow with HPP, width=950]
 
 . Consumer selects one of the _MOLPay_ payment methods (channel).
 . {payment-gateway-abbr} redirects the consumer to _MOLPay_'s landing page.
