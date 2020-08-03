@@ -31,8 +31,7 @@ include::{root}/include/list-eps-banks.adoc[leveloffset=+4]
 [#eps_Transactions_TransactionTypes]
 ==== Transaction Types
 
-For <<Glossary_TransactionType, transaction type>> details which are not given here, look
-at <<AppendixB,  Transaction Types>>.
+For <<Glossary_TransactionType, transaction type>> details which are not given here, look at <<AppendixB,  Transaction Types>>.
 
 [%autowidth.strech,stripes=none]
 [stripes=none]
@@ -48,13 +47,17 @@ at <<AppendixB,  Transaction Types>>.
 ==== Reference Transaction
 NOTE: For additional information regarding referenced transaction functionality, see <<GeneralPlatformFeatures_CrossPayment, Cross-Payment-Methods Referencing>>.
 
-[#eps_Transactions_Restrictions]
-==== Restrictions
-NOTE: When using _eps-Überweisung_, some banks do not transmit consumer data
-(e.g. account details) to {payment-gateway}. As these fields
-are mandatory for a refund (e.g. via SEPA _Credit Transfer_), the
-merchant is obliged to provide the consumer data to guarantee a
-successful _refund_.
+[#eps_Transactions_Refund]
+==== _eps-Überweisung_ and Refunds
+
+If you want to have a successful _refund_ you must
+
+* have a contractual agreement with your eps-acquirer.
+* send the consumer data (even though consumer data (e.g. account details) is optional with _eps-Überweisung_).
+
+// NOTE: When using _eps-Überweisung_, some banks do not transmit consumer data (e.g. account details) to {payment-gateway}. As these fields are mandatory for a refund (e.g. via SEPA _Credit Transfer_), you must send the consumer data to guarantee a successful _refund_.
+
+// vhauss: Here I suggest the following: To the second bullet point I'd add: See field table for details and I'd add the explicit fields which need to be mandatory for an _eps_ refund. This is what we usually do (e.g. 3DS2).
 
 [#eps_TestCredentials]
 === Test Credentials
