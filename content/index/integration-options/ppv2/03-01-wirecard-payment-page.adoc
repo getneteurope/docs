@@ -85,7 +85,7 @@ See the list of all supported payment methods below:
 * <<PPv2_giropay, giropay>>
 * <<PPv2_ideal, iDEAL>>
 * <<PPv2_Klarna, Klarna Payments>>
-* <<API_Masterpass, Masterpass>>
+* <<PPv2_masterpass, Masterpass>>
 * <<PPv2_paydirekt, paydirekt>>
 * <<PPv2_paylib, Paylib>>
 * <<PPv2_PayPal, PayPal>>
