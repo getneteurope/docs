@@ -5,7 +5,7 @@ var trackingEnabled = true;
 // -- adjust to your matomo configuration --
 var matomoEnabled = true;
 var matomoSiteID = '1';
-var matomoHostname = 'your-hostname.matomo.cloud';
+var matomoHostname = 'wirecard.matomo.cloud';
 // -- adjust to your matomo configuration --
 
 /**
