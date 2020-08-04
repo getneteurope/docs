@@ -80,35 +80,17 @@ These types of transactions can only be exempted from Strong Customer Authentica
 [#CreditCard_PSD2_SCA_Exemptions_OutOfScope]
 === Transactions not within the scope of SCA
 
+- Merchant-Initiated Transactions (MIT) +
+* SCA must apply when the consumer initiates the first in a series of recurring transactions with the same amount and the same merchant. +
+* SCA does NOT apply to all subsequent recurring transactions. +
 
-[cols=""]
-|===
-| [[CreditCard_PSD2_SCA_Exemptions_Recurring]] *Merchant-Initiated Transactions (MIT)*
-a| - SCA must apply when the consumer initiates the first in a series of recurring transactions with the same amount and the same merchant. +
-- SCA does NOT apply to all subsequent recurring transactions. 
+NOTE: Merchant-initiated transactions must be flagged accordingly. For more information on MITs, go to <<API_CC_3DS2_PaymentFlows, 3D Secure 2 Payment Flows>>. 
 
-//-
-
-[NOTE]
-==== 
-Merchant-initiated transactions must be flagged accordingly. For more information on MITs, go to <<API_CC_3DS2_PaymentFlows, 3D Secure 2 Payment Flows>>.
-====
-
-//-
-
-|===
-
-[cols=""]
-|===
-| [[CreditCard_PSD2_SCA_Exemptions_Corporate]] *Secure Corporate Transactions*
-a| - SCA does NOT apply to secure B2B payments via dedicated payment processes and protocols which are not available to consumers. +
-- If you or your payment service provider identify a transaction as exempted from secure corporate payment, you can send the transaction directly for authorization by using the appropriate flag. +
+- Secure Corporate Transactions +
+* SCA does NOT apply to secure B2B payments via dedicated payment processes and protocols which are not available to consumers. +
+* If you or your payment service provider identify a transaction as exempted from secure corporate payment, you can send the transaction directly for authorization by using the appropriate flag. +
 The issuer remains responsible for exemption validation and should not request SCA for transactions exempted from secure corporate payment. Issuers and their ACS must identify cards of this type based on the product/PAN and communicate to acquirers (via their ACS) that SCA is not required. +
-If the issuer identifies a transaction not exempted from secure corporate payment, they must perform a soft decline.
-
-//-
-
-|===
+If the issuer identifies a transaction not exempted from secure corporate payment, they must perform a soft decline. +
 
 - Card payments taken via mail (e.g. email, fax, order form) or phone (MOTO transactions)
 - "One-leg out transactions", i.e. transactions where either the issuer or the acquirer is not located within the European Economic Area (EEA)
