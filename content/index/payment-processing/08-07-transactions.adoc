@@ -238,7 +238,7 @@ m|request-id |M |Alphanumeric |150
 [#GeneralPlatformFeatures_RetrieveTransaction_RequestID_Sample]
 .Sample URL to a Merchant's Endpoint
 
-``\https://{rest-api-test-merchant-endpoint}ba261be8-af94-11df-ab78-00163e5eafd7/payments/search?payment.request-id=048b27e0-9c31-4cab-9eab-3b72b1b4d498``
+``\https://{rest-api-test-retrieve-transaction}ba261be8-af94-11df-ab78-00163e5eafd7/payments/search?payment.request-id=048b27e0-9c31-4cab-9eab-3b72b1b4d498``
 
 [#GeneralPlatformFeatures_RetrieveTransaction_RequestID_Response]
 .Response when retrieving a transaction
