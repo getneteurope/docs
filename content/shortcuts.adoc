@@ -5,10 +5,8 @@
 
 :domain: wirecard.com
 :documentation-url: doc.{domain}
+:payment-gateway: {payment-provider-name} Payment Gateway
 :payment-gateway-abbr: WPG
-:payment-page-abbr: WPP
-:payment-page-anchor: WPP
-:payment-page-abbr-lower-case: wpp
 :payment-provider-name-lower-case: wirecard
 :payment-provider-name: Wirecard
 :payment-redirect-url-hostname: www.wirecard.com
@@ -16,12 +14,15 @@
 :checkout-page-html-hostname: www.wirecard.com
 :pay-button-name: wirecard
 :three-d-s-pw: wirecard
+:enterprise-portal-url: wep.{domain}/
 
 // == Integration Options
 
+:payment-page-abbr: WPP
+:payment-page-anchor: WPP
+:payment-page-abbr-lower-case: wpp
 :payment-page-function-short: WPP
 :payment-page-function: WirecardPaymentPage
-:payment-gateway: {payment-provider-name} Payment Gateway
 :payment-page-v1: {payment-provider-name} Payment Page v1
 :payment-page-v1-abbr: {payment-page-abbr} v1
 :payment-page-v1-anchor: PP
@@ -49,10 +50,10 @@
 :test-instance-hostname: api-test.{domain}
 :pp-test-instance-hostname: wpp-test.{domain}
 :pp-demoshop-instance-hostname: demoshop-test.{domain}
+:3dsecure-test-instance-hostname: 3dsecure-test.{domain}
 
 // == Features
 
-:3dsecure-test-instance-hostname: 3dsecure-test.{domain}
 :data-warehouse: {payment-provider-name} Data Warehouse
 :e-mail-support: support@{domain}
 :merchant-account-name-cc-cardbrandreco: {payment-provider-name} CC/EFT Simu3D no CVC
@@ -66,6 +67,5 @@
 :pp-redirect-url-error: {pp-demoshop-instance-hostname}/demoshop/#/error
 :enterprise-portal-name: {payment-provider-name} Enterprise Portal
 :enterprise-portal-abbr: WEP
-:enterprise-portal-url: wep.{domain}/
 
-:mermaid-config: config/mermaid-default-theme.json
+// :mermaid-config: config/mermaid-default-theme.json > wird nicht benutzt
