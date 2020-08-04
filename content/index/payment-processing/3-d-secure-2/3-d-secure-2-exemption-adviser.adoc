@@ -9,7 +9,7 @@ The card issuing bank can also apply an exemption from SCA regardless of whether
 
 [WARNING]
 ====
-If the exemption is granted, liability protection is not offered, and the liability remains with you, the merchant (acquirer), in cases of chargebacks. 
+If the exemption is granted, liability protection is not offered, and the liability remains with you, the merchant (acquirer), in case of chargebacks. 
 For details on when the liability protection is granted, go to the <<3DSecureLiabilityShiftRules, liability shift rules overview>>.
 ====
 
@@ -21,7 +21,7 @@ The following SCA exemptions can be applied:
 a| - SCA does NOT apply to transactions below 30 EUR. +
 - SCA does NOT apply when the cumulative amount of previous transactions since the last Strong Customer Authentication does not exceed 100 EUR. +
 - SCA does NOT apply when five or less consecutive individual online transactions have been made. Remember that in this case, none of those two-to-five payments have been over 30 EUR, and their total does not exceed 100 EUR. +
-_The issuer keeps track of the number of transactions and the cumulative transaction amount, reseting those counters each time SCA is performed._
+_The issuer keeps track of the number of transactions and the cumulative transaction amount, reseting the counts each time SCA is performed._
 
 //-
 
@@ -113,6 +113,7 @@ If the issuer identifies a transaction not exempted from secure corporate paymen
 - Card payments taken via mail (e.g. email, fax, order form) or phone (MOTO transactions)
 - "One-leg out transactions", i.e. transactions where either the issuer or the acquirer is not located within the European Economic Area (EEA)
 - Transactions using anonymous prepaid cards +
+
 NOTE: These transactions are in scope of AMLD5. As {payment-provider-name} is AMLD5-compliant, different acceptance rules apply.
 
 //-
