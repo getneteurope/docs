@@ -1,6 +1,15 @@
 [#WhatsNew]
 == Changelog
 
+[#WhatsNew_2020_08]
+[discrete]
+=== 2020-08
+
+.2020-08-05
+- <<CreditCard_3DS2_Exemption_Adviser, 3D Secure 2 Exemption Adviser>> - Added information on SCA exemption for 3D Secure 2 transactions.
+
+//-
+
 [#WhatsNew_2020_07]
 [discrete]
 === 2020-07
@@ -9,8 +18,12 @@
 - <<GooglePay, Google Pay™>> - Updated Merchant End to End Testing for REST API.
 - <<CreditCard_PaymentFeatures_LoyaltyPrograms, Loyalty Programs>> - _Visa Offers Platform_ and _Mastercard® Card Linked Services_ available for REST API.
 
+//-
+
 .2020-07-14
 - <<CreditCard_3DS2_PSD2_Grandfathering, 3D Secure 2 Recurring Merchant-Initiated Transactions (MIT)>> - Added information on exemption for certain recurring MIT transactions.
+
+//-
 
 [#WhatsNew_2020_06]
 [discrete]
