@@ -13,7 +13,8 @@ If the exemption is granted, liability protection is not offered, and the liabil
 For details on when the liability protection is granted, go to the <<3DSecureLiabilityShiftRules, liability shift rules overview>>.
 ====
 
-The following SCA exemptions can be applied:
+[#CreditCard_PSD2_SCA_Exemptions]
+=== SCA Exemptions
 
 [cols=""]
 |===
@@ -78,7 +79,7 @@ These types of transactions can only be exempted from Strong Customer Authentica
 
 
 [#CreditCard_PSD2_SCA_Exemptions_OutOfScope]
-=== Transactions not within the scope of SCA
+=== Out of Scope for SCA
 
 - Merchant-Initiated Transactions (MIT) +
 * SCA must apply when the consumer initiates the first in a series of recurring transactions with the same amount and the same merchant. +
