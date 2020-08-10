@@ -205,6 +205,35 @@ a| Salesforce Commerce Cloud
 
       - https://github.com/wirecard/salesforce-ee/wiki[English]
 
+a| SAP Commerce
+
+- https://github.com/wirecard/sap-commerce-ee/releases[GitHub]
+- https://www.sapappcenter.com/apps/28091#!overview[Marketplace] |
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - Masterpass
+      - Payment In Advance
+      - Payment On Invoice
+      - PayPal
+      - SEPA Direct Debit
+      - Sofort.
+      - UnionPay International 
+      - {payment-provider-name} Payment on Invoice |
+
+//a| SAP Commerce
+
+//- https://github.com/wirecard/sap-commerce-ee/releases[GitHub]
+//- https://www.sapappcenter.com/apps/28091#!overview[Marketplace] |
+//      - Credit Card
+//      - iDEAL
+//      - PayPal
+//      - SEPA Direct Debit |
+
+      - English
+      - German   |
+
+      - https://github.com/wirecard/sap-commerce-ee/wiki[English]
 
 a| Shopware
 
