@@ -7,7 +7,7 @@ _eps-Überweisung_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer,
 [width=75%,cols="1h,3",stripes=none]
 |===
 |*Countries* |AT, DE (giropay interoperability)
-|*Currencies* |EUR
+|*Currencies* | EUR
 |===
 
 [#eps_GeneralInformation_Communication]
