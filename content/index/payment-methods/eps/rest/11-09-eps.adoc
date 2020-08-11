@@ -53,11 +53,7 @@ NOTE: For additional information regarding referenced transaction functionality,
 If you want to have a successful _refund_ you must
 
 * have a contractual agreement with your eps-acquirer which allows for refund transactions.
-* send the consumer data (even though consumer data (e.g. account details) is optional with _eps-Überweisung_).
-
-// NOTE: When using _eps-Überweisung_, some banks do not transmit consumer data (e.g. account details) to {payment-gateway}. As these fields are mandatory for a refund (e.g. via SEPA _Credit Transfer_), you must send the consumer data to guarantee a successful _refund_.
-
-// vhauss: Here I'd suggest the following: To the second bullet point I'd add: See field table for details and I'd add the explicit fields which need to be mandatory for an _eps_ refund. This is what we usually do (e.g. 3DS2).
+* some banks do not transmit consumer data (e.g. account details) to {payment-gateway}. As these fields are mandatory for a refund, you must send the consumer data to guarantee a successful _refund_.
 
 [#eps_TestCredentials]
 === Test Credentials
