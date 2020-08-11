@@ -215,7 +215,9 @@ especially according to size.
 |O
 |String
 |140
-a|[#eps_Fields_Descriptor]
+a|
+[#eps_Fields_Descriptor]
+
 The remittance identifier. Limit of 35 characters for structured purpose
 or 140 characters for unstructured purpose. Applied only if not already
 configured during merchant setup. Supports only limited character set:
