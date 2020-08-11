@@ -171,6 +171,8 @@ include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_response_suc
 [#API_LinePay_Samples_RefundDebit]
 ==== _refund-debit_
 
+NOTE: Use the value of the <transaction-id> from the debit notification, which was send for the corresponding pending-debit transaction.
+
 .XML Request (Successful)
 
 [source,xml,subs=attributes+]
