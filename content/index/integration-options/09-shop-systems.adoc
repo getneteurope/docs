@@ -205,7 +205,6 @@ a| Salesforce Commerce Cloud
 
       - https://github.com/wirecard/salesforce-ee/wiki[English]
 
-
 a| SAP Commerce
 
 - https://github.com/wirecard/sap-commerce-ee/releases[GitHub]
@@ -235,7 +234,6 @@ a| SAP Commerce
       - German   |
 
       - https://github.com/wirecard/sap-commerce-ee/wiki[English]
-
 
 a| Shopware
 

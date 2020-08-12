@@ -1,9 +1,11 @@
 [#Sofort]
 == REST API & {payment-page-v1}
+
 _Sofort_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#Sofort_PaymentMode]
 === Countries and Currencies
+
 [width=75%,stripes=none,cols="1,3"]
 |===
 h|Countries |AT, BE, CH, CZ, DE, ES, IT, HU, NL, PL, SK and UK
@@ -15,8 +17,10 @@ CZK and HUF are valid _Sofort_ currencies but cannot be tested.
 
 [#Sofort_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _Sofort_ notifications are encoded and
 which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| *Requests/Responses* | Format | Please contact <<ContactUs, Merchant Support>> for Format.
@@ -274,6 +278,7 @@ The following is the general form of the link to the badge:
 
 ``\https://cdn.klarna.com/1.0/shared/image/generic/badge/xx_XX/pay_now/standard/pink.png?width=300``
 
+
 [#Sofort_Samples]
 === Samples
 
@@ -305,20 +310,6 @@ include::{root}/samples/xml/sofortbanking_get-url_request_failure.xml[]
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/sofortbanking_get-url_response_failure.xml[]
-----
-
-.XML revoke-debit Request (Successful)
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/sofortbanking_revoke-debit_request_success.xml[]
-----
-
-.XML revoke-debit Response (Successful)
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/sofortbanking_revoke-debit_response_success.xml[]
 ----
 
 //-
