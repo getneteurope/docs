@@ -3,9 +3,6 @@
 
 _LINE Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>> payment.
 
-// vhauss >>>>> Don't forget to add LINE Pay to the online payment methods and the other payment method lists:
-// see table under #API_PM_APM_PaymentMode
-
 [#API_LinePay_Introduction_General]
 === General Information
 
