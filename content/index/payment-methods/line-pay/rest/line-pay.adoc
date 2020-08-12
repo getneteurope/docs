@@ -72,22 +72,22 @@ Ask <<ContactUs, Merchant Support>> for details.
 === Workflow
 
 .	The consumer adds items to the shopping basket.
-.	You redirect the consumer to {payment-gateway-abbr} (with an _auto-sale_ or _pending-debit_ or _pending-authorization_ request).
-.	{payment-gateway-abbr} displays all the available payment methods.
+.	You redirect the consumer to Payment Gateway (with an _auto-sale_ or _pending-debit_ or _pending-authorization_ request).
+.	Payment Gateway displays all the available payment methods.
 .	The consumer selects LINE Pay.
-.	{payment-gateway-abbr} sends a reserve payment request to LINE Pay.
-.	LINE Pay includes a redirect URL in the response and sends it to {payment-gateway-abbr}.
+.	Payment Gateway sends a reserve payment request to LINE Pay.
+.	LINE Pay includes a redirect URL in the response and sends it to Payment Gateway.
 .	LINE Pay waits for the consumer’s interaction.
-.	{payment-gateway-abbr} redirects the consumer to LINE Pay’s page, which prompts the consumer to continue with the LINE Pay app.
+.	Payment Gateway edirects the consumer to LINE Pay’s page, which prompts the consumer to continue with the LINE Pay app.
 .	The consumer enters the credentials to continue the payment process.
 .	LINE Pay verifies the consumer’s password.
 .	LINE Pay displays the payment status in the consumer’s LINE Pay app.
-.	LINE Pay sends the payment status to {payment-gateway-abbr}.
-.	LINE Pay redirects the consumer to {payment-gateway-abbr}.
-.	{payment-gateway-abbr} sends a confirmation request to LINE Pay.
-.	LINE Pay processes the confirmation information and sends a confirmation response to {payment-gateway-abbr}.
-.	{payment-gateway-abbr} sends a _debit_ or _authorization_ notification to you.
-.	{payment-gateway-abbr} redirects the consumer to your checkout page.
+.	LINE Pay sends the payment status to Payment Gateway.
+.	LINE Pay redirects the consumer to Payment Gateway.
+.	Payment Gateway sends a confirmation request to LINE Pay.
+.	LINE Pay processes the confirmation information and sends a confirmation response to Payment Gateway.
+.	Payment Gateway sends a _debit_ or _authorization_ notification to you.
+.	Payment Gateway redirects the consumer to your checkout page.
 .	You process the _debit_ or _authorization_ notification and display the payment status to the consumer.
 
 //-
