@@ -189,9 +189,15 @@ for further information about retrieving transaction details.
 [#eps_4mobile]
 === eps4mobile
 
+eps4mobile offers the following scenarios:
+
+*POS2App via QR-Code*
+
 When using _eps4mobile_ {payment-gateway-abbr} forwards a QR-code to the consumer in the online shop or a POS/mPOS screen. The QR-code is scanned and eps-payment is processed via their mobile banking app.
 
-As a second option, the consumer is redirected from the online shop to their mobile banking app after initiating an eps-payment on their smartphone.
+*App2App*
+
+The consumer is redirected from the online shop to their mobile banking app after initiating an eps-payment on their smartphone.
 
 Note that you do not need to send any bank details or bank selection in the request.
 
@@ -244,6 +250,27 @@ You must decode the URL first to link to the correct page. You can use
 any tool that decodes URLs. Maybe you want to try Coder's Toolbox,
 available at:
 https://coderstoolbox.net/string/#!encoding=xml&action=decode&charset=us_ascii
+
+[#eps_4_mobile_debit]
+==== _debit_ with _eps4mobile_
+
+[#eps_4_mobile_debit_Success]
+===== Successful Request/Response and Notification
+
+
+.XML debit Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/eps_mobile_debit_request.xml[]
+----
+
+.XML debit Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/eps_mobile_debit_response.xml[]
+----
 
 [#eps_Ueberweisung_GetUrlWithBankSelectionInMerchantShop]
 ==== _get-url_ with Bank Selection in Merchant Shop
