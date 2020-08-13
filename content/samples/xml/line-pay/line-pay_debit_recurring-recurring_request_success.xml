@@ -1,0 +1,13 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>debit</transaction-type>
+  <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
+  <payment-methods>
+    <payment-method name="linepay"/>
+  </payment-methods>
+  <periodic>
+    <periodic-type>recurring</periodic-type>
+    <sequence-type>recurring</sequence-type>
+  </periodic>
+</payment>
