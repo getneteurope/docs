@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>804b6225-9a9c-43b4-9a0a-5dbfa76cdc74</merchant-account-id>
+    <transaction-id>87106e0d-de62-4f89-b525-75e9e091348f</transaction-id>
+    <request-id>14f584e1-5436-4f1e-bcec-1dbbb65eeffc</request-id>
+    <transaction-type>debit</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2020-08-10T08:13:18.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="EUR">1.23</requested-amount>
+    <account-holder>
+        <first-name>Firstname</first-name>
+        <last-name>Lastname</last-name>
+        <email>first.last@email.com</email>
+    </account-holder>
+    <notifications>
+        <notification url="https://rbaskets.in/ikxqe9f"></notification>
+    </notifications>
+    <payment-methods>
+        <payment-method url="https://routing.eps.or.at/appl/epsSO-test/transinit/bankauswahl_prepare.html?lang=de&amp;caiSO=%2BeENADLKuZVIdV6QMGA5wXDYq" name="eps"/>
+    </payment-methods>
+    <authorization-code>epspayment://eps.or.at/?transactionid=epsKDO8O0MF1</authorization-code>
+    <cancel-redirect-url>http://localhost/qpay-test/success.php?state=cancel</cancel-redirect-url>
+    <fail-redirect-url>http://localhost/qpay-test/success.php?state=fail</fail-redirect-url>
+    <success-redirect-url>http://localhost/qpay-test/success.php?state=success</success-redirect-url>
+</payment>
