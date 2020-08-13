@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>804b6225-9a9c-43b4-9a0a-5dbfa76cdc74</merchant-account-id>
+    <request-id>{{$guid}}</request-id>
+    <transaction-type>debit</transaction-type>
+    <requested-amount currency="EUR">1.23</requested-amount>
+    <account-holder>
+        <first-name>Firstname</first-name>
+        <last-name>Lastname</last-name>
+        <email>first.last@email.com</email>
+    </account-holder>
+    <payment-methods>
+        <payment-method name="eps"/>
+    </payment-methods>
+    <success-redirect-url>http://localhost/qpay-test/success.php?state=success</success-redirect-url>
+    <fail-redirect-url>http://localhost/qpay-test/success.php?state=fail</fail-redirect-url>
+    <cancel-redirect-url>http://localhost/qpay-test/success.php?state=cancel</cancel-redirect-url>
+    <notifications>
+        <notification url="https://rbaskets.in/ikxqe9f" />
+    </notifications>
+</payment>
