@@ -30,7 +30,7 @@
 <script src="js/sample-tabs.js" noblob></script>
 <script src="js/tracker.js" noblob></script>
 </head>
-<body id="SEPACreditTransfer_Rest" class="article toc2 toc-left">
+<body id="LinePay_Main" class="article toc2 toc-left">
 <div id="toc" class="toc2">
 <a id="logo" href="index.html"><img src="images/logo.png" alt="Logo"></a><div id="search-overlay-wrapper">
     <div id="search-overlay">
@@ -2748,7 +2748,7 @@
 </ul>
 </li>
 <li id="toc_li_LinePay_Main" data-level="2">
-<input id="toc_cb_LinePay_Main" type="checkbox"><label for="toc_cb_LinePay_Main"><a href="LinePay_Main.html">LINE Pay</a></label>
+<input id="toc_cb_LinePay_Main" type="checkbox" checked><label for="toc_cb_LinePay_Main"><a href="LinePay_Main.html">LINE Pay</a></label>
 <ul><li id="toc_li_API_LinePay" data-level="3">
 <input id="toc_cb_API_LinePay" type="checkbox"><label for="toc_cb_API_LinePay"><a href="LinePay_Main.html#API_LinePay">REST API</a></label>
 <ul>
@@ -4157,7 +4157,7 @@
 </ul>
 </li>
 <li id="toc_li_SEPACreditTransfer_Rest" data-level="2">
-<input id="toc_cb_SEPACreditTransfer_Rest" type="checkbox" checked><label for="toc_cb_SEPACreditTransfer_Rest"><a href="SEPACreditTransfer_Rest.html">SEPA Credit Transfer</a></label>
+<input id="toc_cb_SEPACreditTransfer_Rest" type="checkbox"><label for="toc_cb_SEPACreditTransfer_Rest"><a href="SEPACreditTransfer_Rest.html">SEPA Credit Transfer</a></label>
 <ul><li id="toc_li_SEPACreditTransfer" data-level="3">
 <input id="toc_cb_SEPACreditTransfer" type="checkbox"><label for="toc_cb_SEPACreditTransfer"><a href="SEPACreditTransfer_Rest.html#SEPACreditTransfer">REST API</a></label>
 <ul>
@@ -5832,23 +5832,24 @@
 </div>
 <div id="content">
 <div class="sect2">
-<h3 id="SEPACreditTransfer_Rest">
-<a class="anchor" href="#SEPACreditTransfer_Rest"></a><a class="link" href="#SEPACreditTransfer_Rest">SEPA Credit Transfer</a>
+<h3 id="LinePay_Main">
+<a class="anchor" href="#LinePay_Main"></a><a class="link" href="#LinePay_Main">LINE Pay</a>
 </h3>
 <div class="sect3">
-<h4 id="SEPACreditTransfer">
-<a class="anchor" href="#SEPACreditTransfer"></a><a class="link" href="#SEPACreditTransfer">REST API</a>
+<h4 id="API_LinePay">
+<a class="anchor" href="#API_LinePay"></a><a class="link" href="#API_LinePay">REST API</a>
 </h4>
 <div class="paragraph">
-<p><em>SEPA Credit Transfer</em> is a type of <a href="PaymentMethods.html#PaymentMethods_PaymentMode_OfflineBankTransfer">Offline Bank Transfer</a>.</p>
-</div>
-<div class="paragraph">
-<p>Wirecard Payment Gateway supports referenced and non-referenced <em>SEPA Credit Transfer</em> options.</p>
+<p><em>LINE Pay</em> is a type of <a href="PaymentMethods.html#PaymentMethods_PaymentMode_Wallet">Wallet</a> payment.</p>
 </div>
 <div class="sect4">
-<h5 id="SEPACreditTransfer_PaymentModeCountriesandCurrencies">
-<a class="anchor" href="#SEPACreditTransfer_PaymentModeCountriesandCurrencies"></a><a class="link" href="#SEPACreditTransfer_PaymentModeCountriesandCurrencies">Countries and Currencies</a>
+<h5 id="API_LinePay_Introduction_General">
+<a class="anchor" href="#API_LinePay_Introduction_General"></a><a class="link" href="#API_LinePay_Introduction_General">General Information</a>
 </h5>
+<div class="sect5">
+<h6 id="API_LinePay_Introduction_General_PaymentMode">
+<a class="anchor" href="#API_LinePay_Introduction_General_PaymentMode"></a><a class="link" href="#API_LinePay_Introduction_General_PaymentMode">Countries and Currencies</a>
+</h6>
 <table class="tableblock frame-all grid-all stripes-none" style="width: 75%;">
 <colgroup>
 <col style="width: 25%;">
@@ -5857,23 +5858,22 @@
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Countries</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Please contact <a href="ContactUs.html">Merchant Support</a> for Countries.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thailand</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Currencies</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Please contact <a href="ContactUs.html">Merchant Support</a> for Currencies.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USD, JPY, TWD, THB</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="SEPACreditTransfer_CommunicationFormats">
-<a class="anchor" href="#SEPACreditTransfer_CommunicationFormats"></a><a class="link" href="#SEPACreditTransfer_CommunicationFormats">Communication Formats</a>
-</h5>
+<div class="sect5">
+<h6 id="API_LinePay_Introduction_General_CommunicationFormats">
+<a class="anchor" href="#API_LinePay_Introduction_General_CommunicationFormats"></a><a class="link" href="#API_LinePay_Introduction_General_CommunicationFormats">Communication Formats</a>
+</h6>
 <div class="paragraph">
-<p>This table illustrates how <em>SEPA Credit Transfer</em> notifications are
-encoded and which formats and methods can be used for requests and
-responses.</p>
+<p>This table illustrates how <em>LINE Pay</em> notifications are encoded and which formats and methods can be used for
+requests and responses.</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-none" style="width: 75%;">
 <colgroup>
@@ -5893,663 +5893,387 @@ responses.</p>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">IPN Encodement</p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Please follow the instructions given
-at <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification</a> to set up IPN.</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Follow the instructions given at
+<a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification</a> to set up IPN.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="SEPACreditTransfer_Transactions">
-<a class="anchor" href="#SEPACreditTransfer_Transactions"></a><a class="link" href="#SEPACreditTransfer_Transactions">Transactions</a>
-</h5>
-<div class="sect5">
-<h6 id="SEPACreditTransfer_TransactionTypes">
-<a class="anchor" href="#SEPACreditTransfer_TransactionTypes"></a><a class="link" href="#SEPACreditTransfer_TransactionTypes">Transaction Types</a>
-</h6>
-<div class="paragraph">
-<p>For <a href="Glossary.html#Glossary_TransactionType">transaction type</a> details which are not given here look
-at <a href="AppendixB.html">Transaction Types</a>.</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content">
+<div class="sect4">
+<h5 id="API_LinePay_TransactionTypes">
+<a class="anchor" href="#API_LinePay_TransactionTypes"></a><a class="link" href="#API_LinePay_TransactionTypes">Transaction Types</a>
+</h5>
+<div class="paragraph">
+<p>For <a href="Glossary.html#Glossary_TransactionType">transaction type</a> details look at <a href="AppendixB.html">Transaction Types</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-none fit-content stretch">
 <colgroup>
-<col>
 <col>
 <col>
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Transaction Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Link to the Samples</th>
+<th class="tableblock halign-left valign-top">Link to the sample</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>authorization</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verifies payment details for structural validity and /
-or generates a reference ID for the merchant (not mandatory).</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>pending-debit</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_PendingDebit"><em>pending-debit</em> sample</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>pending-credit</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction is processed in the Wirecard Payment Gateway.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="SEPACreditTransfer_Rest.html#SEPACreditTransfer_Samples_PendingCredit">samples</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>debit</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_PendingDebit_RecRec"><em>debit</em> sample</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>void-pending-credit</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Voids a <em>pending-credit</em>.<br>
-Only available when the <a href="SEPA.html#SEPA_TransactionType_Void_Restrictions">restrictions</a> are met.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="SEPACreditTransfer_Rest.html#SEPACreditTransfer_Samples_VoidPendingCredit">samples</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>refund-debit</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_RefundDebit"><em>refund-debit</em> sample</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>credit</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction is processed by Wirecard Bank.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>pending-authorization</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_PendingAuth"><em>pending-authorization</em> sample</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>credit-return</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The payment is returned by the consumer bank. See <a href="SEPA.html#SEPA_ReturnCodes">Return Codes</a>.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Recurring Transactions are <strong>not</strong> supported for <em>SEPA Credit Transfer</em>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The transaction type within the request must be <em>credit</em> or
-<em>pending-credit.</em> A <em>credit</em> will be transformed into a <em>pending-credit</em> by default.
-</td>
-</tr>
-</table>
-</div>
-<div id="SEPACreditTransfer_TransactionTypes_refund" class="paragraph">
-<div class="title"><em>refund</em></div>
-<p><em>SEPA Credit Transfer</em> may be used as a method for merchants to return
-funds to consumers. If it is being used as a way for the merchant to
-refund a specific <em>debit</em> transaction, it is recommended that a
-<em>parent-transaction ID</em> (i.e. the <em>transaction ID</em> of the successful
-<em>Debit</em>) is included in the request in order to be able to match the
-<em>refund</em> to the original transaction.</p>
-</div>
-<div id="SEPACreditTransfer_TransactionTypes_void" class="paragraph">
-<div class="title"><em>void</em></div>
-<p>SEPA <em>void</em> can be used with both SEPA payment methods: <em>SEPA Credit Transfer</em> and <em>SEPA Direct Debit.</em></p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="SEPACreditTransfer_Transactions_ExecutionDate">
-<a class="anchor" href="#SEPACreditTransfer_Transactions_ExecutionDate"></a><a class="link" href="#SEPACreditTransfer_Transactions_ExecutionDate">Execution Date</a>
-</h6>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This is the date on which the transfer will be executed. According to
-SEPA regulations, it is required to be one (1) business day after it has
-entered the banking system. This date is set by Wirecard during
-processing and is not part of the request or the response.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="SEPACreditTransfer_TestCredentials">
-<a class="anchor" href="#SEPACreditTransfer_TestCredentials"></a><a class="link" href="#SEPACreditTransfer_TestCredentials">Test Credentials</a>
-</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">URLs (Endpoints)</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://api-test.wirecard.com/engine/rest/paymentmethods/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>void-authorization</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_VoidAuth"><em>void-authorization</em> sample</a></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Merchant Account ID (MAID)</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">59a01668-693b-49f0-8a1f-f3c1ba025d45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>capture-authorization</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_CaptureAuth"><em>capture-authorization</em> sample</a></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Username</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16390-testing</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Password</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3!3013=D3fD8X7</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Secret Key</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Please contact <a href="ContactUs.html">merchant support</a> for complete test credentials.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>refund-capture</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LinePay_Main.html#API_LinePay_Samples_RefundCapture"><em>refund-capture</em> sample</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="SEPACreditTransfer_Workflow">
-<a class="anchor" href="#SEPACreditTransfer_Workflow"></a><a class="link" href="#SEPACreditTransfer_Workflow">Workflow</a>
+<h5 id="API_LinePay_TestCredentials">
+<a class="anchor" href="#API_LinePay_TestCredentials"></a><a class="link" href="#API_LinePay_TestCredentials">Test Credentials</a>
 </h5>
-<div class="imageblock">
-<div class="content">
-<img src="images/diagrams/sepa_credit-transfer.svg" alt="SEPA Credit Transfer Workflow">
+<div class="paragraph">
+<p>For LINE Pay we cannot provide a general set of test credentials. For a successful test you must register to LINE Pay’s platform. Additionally, depending on your use cases, LINE Pay configures an individual set of features tailored for you.<br>
+Ask <a href="ContactUs.html">Merchant Support</a> for details.</p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="API_LinePay_Workflow">
+<a class="anchor" href="#API_LinePay_Workflow"></a><a class="link" href="#API_LinePay_Workflow">Workflow</a>
+</h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The transaction type within the request must be <em>credit</em> or <em>pending-credit.</em></p>
+<p>The consumer adds items to the shopping basket.</p>
 </li>
 <li>
-<p>If the request is successful, a response will be returned with status
-<em>Success</em>. This response means that the transaction has entered the
-Wirecard Payment Gateway successfully. The transaction itself is in a <em>pending</em>
-status, waiting to be sent to the merchant’s bank.</p>
+<p>You redirect the consumer to Payment Gateway (with an <em>auto-sale</em> or <em>pending-debit</em> or <em>pending-authorization</em> request).</p>
 </li>
 <li>
-<p>If the request is not successful, a response will be returned with
-status <em>Failed</em>. <strong>The response always contains a status code and a description.</strong>
-Please read this description carefully as it will help to
-understand why the transaction request has failed and what needs to be
-fixed in order to send a successful transaction request.</p>
+<p>Payment Gateway displays all the available payment methods.</p>
 </li>
 <li>
-<p>Once the transaction has been successfully sent to and processed by
-the bank, a new transaction with type <em>credit</em> will be created in status
-<em>Success</em>. This process usually takes up to 2 business days. The
-transaction will then be forwarded the Central Bank for processing.</p>
+<p>The consumer selects LINE Pay.</p>
 </li>
 <li>
-<p>If the transaction has been rejected by the merchant’s bank, a
-<em>credit</em> transaction on status <em>Failed</em> will be created and the
-transaction will not be sent to the Central Bank.</p>
+<p>Payment Gateway sends a reserve payment request to LINE Pay.</p>
 </li>
 <li>
-<p>The merchant will receive a notification of the <em>credit</em> transaction.</p>
+<p>LINE Pay includes a redirect URL in the response and sends it to Payment Gateway.</p>
+</li>
+<li>
+<p>LINE Pay waits for the consumer’s interaction.</p>
+</li>
+<li>
+<p>Payment Gateway edirects the consumer to LINE Pay’s page, which prompts the consumer to continue with the LINE Pay app.</p>
+</li>
+<li>
+<p>The consumer enters the credentials to continue the payment process.</p>
+</li>
+<li>
+<p>LINE Pay verifies the consumer’s password.</p>
+</li>
+<li>
+<p>LINE Pay displays the payment status in the consumer’s LINE Pay app.</p>
+</li>
+<li>
+<p>LINE Pay sends the payment status to Payment Gateway.</p>
+</li>
+<li>
+<p>LINE Pay redirects the consumer to Payment Gateway.</p>
+</li>
+<li>
+<p>Payment Gateway sends a confirmation request to LINE Pay.</p>
+</li>
+<li>
+<p>LINE Pay processes the confirmation information and sends a confirmation response to Payment Gateway.</p>
+</li>
+<li>
+<p>Payment Gateway sends a <em>debit</em> or <em>authorization</em> notification to you.</p>
+</li>
+<li>
+<p>Payment Gateway redirects the consumer to your checkout page.</p>
+</li>
+<li>
+<p>You process the <em>debit</em> or <em>authorization</em> notification and display the payment status to the consumer.</p>
 </li>
 </ol>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Although a transaction has been successfully processed by the merchant’s
-bank, the transaction may still be reversed by the consumer’s bank for
-reasons such as insufficient funds, account owner deceased, bank account
-closed, etc. In this case, a <em>credit-return</em> transaction will be created
-and matched to the original <em>credit</em> transaction to ensure the merchant
-has a complete overview for his debtor management. For a full list of
-<em>credit-return</em> reasons, please refer to the list of <a href="SEPA.html#SEPA_ReturnCodes">SEPA Return Codes</a>.
-</td>
-</tr>
-</table>
 </div>
+<div class="sect4">
+<h5 id="API_LinePay_Fields">
+<a class="anchor" href="#API_LinePay_Fields"></a><a class="link" href="#API_LinePay_Fields">Fields</a>
+</h5>
 <div class="paragraph">
-<p>The merchant can request the status of the transaction at any time by
-sending a "<a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_RetrieveTransaction_TransactionID">Retrieve Transaction by Transaction ID</a>"
-or "<a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_RetrieveTransaction_RequestID">Retrieve Transaction by Request ID</a>".</p>
+<p>Find details for the fields in the <a href="RestApi_Fields.html">REST API Field Table</a>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="SEPACreditTransfer_Fields">
-<a class="anchor" href="#SEPACreditTransfer_Fields"></a><a class="link" href="#SEPACreditTransfer_Fields">Fields</a>
+<h5 id="API_LinePay_Samples">
+<a class="anchor" href="#API_LinePay_Samples"></a><a class="link" href="#API_LinePay_Samples">Samples</a>
 </h5>
-<div class="paragraph">
-<p>The fields used for SEPA <em>Credit Transfer</em> requests, responses and
-notifications are the same as the REST API fields. Please refer to:
-<a href="RestApi_Fields.html">REST API Fields</a>.</p>
-</div>
-<div class="paragraph">
-<p>Only the fields listed below have different properties.</p>
-</div>
-<div class="paragraph">
-<p>The following elements are mandatory (M), optional (O) or conditional
-(C) for a request/response/notification.</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Request</th>
-<th class="tableblock halign-left valign-top">Response</th>
-<th class="tableblock halign-left valign-top">Notification</th>
-<th class="tableblock halign-left valign-top">Datatype</th>
-<th class="tableblock halign-left valign-top">Size</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">descriptor</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>Description on the settlement of the account holder’s account about a
-transaction.</p>
-</div>
-<div class="paragraph">
-<p>For SEPA Credit Transfer transactions, it will be combined with the
-Provider Transaction Reference ID and the merchant’s static
-descriptor and will appear on the consumer’s bank account statement.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">payment-methods.payment-method-Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>This is the name of the payment method <em>sepacredit</em>.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">api-id</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">api-id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>The API id is always returned in the notification. For SEPA it is
-"---"</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bank-account.bic</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8 or 11</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>This is the Business Identifier Code of the bank of the end-consumer. In SEPA Area where <a href="SEPA.html#SEPA_Reporting_IbanOnly">IBAN Only</a> is enabled, BIC is an optional field.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bank-account.iban</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">34</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>This is the International Bank Account Number of the end-consumer.</p>
-</div>
-<div class="paragraph">
-<p>If no parent-transaction-id is provided, it remains mandatory.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">provider-transaction-reference-id</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>This ID provides a reference for the complete end-to-end lifecycle of a
-SEPA Credit Transfer transaction. It is used as a reference within the
-banking system to ensure all transactions referencing each other (eg: a
-<em>credit</em> and a <em>debit-return</em>) are matched and that the complete
-lifecycle of a payment is identifiable. Wirecard generates this ID for
-the merchant.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">account-holder.last-name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
-<td class="tableblock halign-left valign-top"><div class="content">
-<div class="paragraph">
-<p>This is the last name of the end-consumer.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div>
-</div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="SEPACreditTransfer_Samples">
-<a class="anchor" href="#SEPACreditTransfer_Samples"></a><a class="link" href="#SEPACreditTransfer_Samples">Samples</a>
-</h5>
-<div class="paragraph">
-<p>Go to <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Notification Examples</a>, if you want to see corresponding notification samples.</p>
-</div>
 <div class="sect5">
-<h6 id="SEPACreditTransfer_Samples_PendingCredit">
-<a class="anchor" href="#SEPACreditTransfer_Samples_PendingCredit"></a><a class="link" href="#SEPACreditTransfer_Samples_PendingCredit"><em>pending-credit</em></a>
+<h6 id="API_LinePay_Samples_PendingDebit">
+<a class="anchor" href="#API_LinePay_Samples_PendingDebit"></a><a class="link" href="#API_LinePay_Samples_PendingDebit"><em>pending-debit</em></a>
 </h6>
-<div id="SEPACreditTransfer_Samples_PendingCredit_Xml" class="paragraph">
-<p><strong>XML</strong></p>
-</div>
 <div class="listingblock">
-<div class="title">XML Pending-Credit Request (Successful)</div>
+<div class="title">XML Request (Successful)</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
 <span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
-    <span class="tag">&lt;request-id&gt;</span>${unique for each request}<span class="tag">&lt;/request-id&gt;</span>
-    <span class="tag">&lt;transaction-type&gt;</span>pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
-    <span class="comment">&lt;!-- optional  &lt;parent-transaction-id&gt;a31d8dcc-fedc-11e4-8671-005056a97162&lt;/parent-transaction-id&gt; --&gt;</span>
-    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>0.11<span class="tag">&lt;/requested-amount&gt;</span>
-    <span class="tag">&lt;account-holder&gt;</span>
-        <span class="tag">&lt;first-name&gt;</span>John<span class="tag">&lt;/first-name&gt;</span>
-        <span class="tag">&lt;last-name&gt;</span>Doe<span class="tag">&lt;/last-name&gt;</span>
-        <span class="tag">&lt;email&gt;</span>john.doe@example.com<span class="tag">&lt;/email&gt;</span>
-        <span class="tag">&lt;address&gt;</span>
-            <span class="tag">&lt;street1&gt;</span>Example Street 1<span class="tag">&lt;/street1&gt;</span>
-            <span class="tag">&lt;city&gt;</span>Example City<span class="tag">&lt;/city&gt;</span>
-            <span class="tag">&lt;country&gt;</span>DE<span class="tag">&lt;/country&gt;</span>
-        <span class="tag">&lt;/address&gt;</span>
-    <span class="tag">&lt;/account-holder&gt;</span>
-    <span class="comment">&lt;!-- optional  &lt;order-number&gt;4509334&lt;/order-number&gt; --&gt;</span>
-    <span class="comment">&lt;!-- optional   &lt;descriptor&gt;test&lt;/descriptor&gt; --&gt;</span>
-    <span class="tag">&lt;payment-methods&gt;</span>
-        <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;/payment-methods&gt;</span>
-    <span class="tag">&lt;bank-account&gt;</span>
-        <span class="tag">&lt;iban&gt;</span>HU29117080012054779400000000<span class="tag">&lt;/iban&gt;</span>
-        <span class="tag">&lt;bic&gt;</span>GENODEF1OGK<span class="tag">&lt;/bic&gt;</span>
-    <span class="tag">&lt;/bank-account&gt;</span>
-    <span class="comment">&lt;!-- optional  &lt;cancel-redirect-url&gt;http://sandbox-engine.thesolution.com/shop_urlViaRequest/cancel.html&lt;/cancel-redirect-url&gt; --&gt;</span><span class="tag">&lt;/payment&gt;</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">XML Pending-Credit Response (Successful)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
-<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
-  <span class="tag">&lt;transaction-id&gt;</span>d1bb484a-2d12-4f2c-91fa-138b34197497<span class="tag">&lt;/transaction-id&gt;</span>
-  <span class="tag">&lt;request-id&gt;</span>cca8ea3c-6203-459f-9cbf-8705fd0f3800<span class="tag">&lt;/request-id&gt;</span>
-  <span class="tag">&lt;transaction-type&gt;</span>pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
-  <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
-  <span class="tag">&lt;completion-time-stamp&gt;</span>2018-04-13T08:39:19.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
-  <span class="tag">&lt;statuses&gt;</span>
-    <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-  <span class="tag">&lt;/statuses&gt;</span>
-  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>0.11<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>pending-debit<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>40.00<span class="tag">&lt;/requested-amount&gt;</span>
   <span class="tag">&lt;account-holder&gt;</span>
-    <span class="tag">&lt;first-name&gt;</span>John<span class="tag">&lt;/first-name&gt;</span>
-    <span class="tag">&lt;last-name&gt;</span>Doe<span class="tag">&lt;/last-name&gt;</span>
-    <span class="tag">&lt;email&gt;</span>john.doe@example.com<span class="tag">&lt;/email&gt;</span>
-    <span class="tag">&lt;address&gt;</span>
-      <span class="tag">&lt;street1&gt;</span>Example Street 1<span class="tag">&lt;/street1&gt;</span>
-      <span class="tag">&lt;city&gt;</span>Example City<span class="tag">&lt;/city&gt;</span>
-      <span class="tag">&lt;country&gt;</span>DE<span class="tag">&lt;/country&gt;</span>
-    <span class="tag">&lt;/address&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
   <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1549286434185<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
   <span class="tag">&lt;payment-methods&gt;</span>
-    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
   <span class="tag">&lt;/payment-methods&gt;</span>
-  <span class="tag">&lt;bank-account&gt;</span>
-    <span class="tag">&lt;iban&gt;</span>HU29117080012054779400000000<span class="tag">&lt;/iban&gt;</span>
-    <span class="tag">&lt;bic&gt;</span>GENODEF1OGK<span class="tag">&lt;/bic&gt;</span>
-  <span class="tag">&lt;/bank-account&gt;</span>
-  <span class="tag">&lt;provider-transaction-reference-id&gt;</span>BA89E3BADC<span class="tag">&lt;/provider-transaction-reference-id&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
 <span class="tag">&lt;/payment&gt;</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">XML Pending-Credit Request (Failure)</div>
+<div class="title">XML Response (Successful)</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
 <span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
-    <span class="tag">&lt;request-id&gt;</span>${unique for each request}<span class="tag">&lt;/request-id&gt;</span>
-    <span class="tag">&lt;transaction-type&gt;</span>pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
-    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>10.01<span class="tag">&lt;/requested-amount&gt;</span>
+    <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+    <span class="tag">&lt;transaction-id&gt;</span>d8dede27-ff91-43cf-95f8-b60040680c6b<span class="tag">&lt;/transaction-id&gt;</span>
+    <span class="tag">&lt;request-id&gt;</span>c0b424e6-310e-4aa7-b9c4-ba27a972e2a7<span class="tag">&lt;/request-id&gt;</span>
+    <span class="tag">&lt;transaction-type&gt;</span>pending-debit<span class="tag">&lt;/transaction-type&gt;</span>
+    <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+    <span class="tag">&lt;completion-time-stamp&gt;</span>2020-06-30T08:06:08.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+    <span class="tag">&lt;statuses&gt;</span>
+        <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/statuses&gt;</span>
+    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>40.00<span class="tag">&lt;/requested-amount&gt;</span>
     <span class="tag">&lt;account-holder&gt;</span>
-        <span class="tag">&lt;first-name&gt;</span>John<span class="tag">&lt;/first-name&gt;</span>
-        <span class="tag">&lt;last-name&gt;</span>Doe<span class="tag">&lt;/last-name&gt;</span>
+        <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+        <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
     <span class="tag">&lt;/account-holder&gt;</span>
+    <span class="tag">&lt;order-number&gt;</span>1549286434185<span class="tag">&lt;/order-number&gt;</span>
+    <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
     <span class="tag">&lt;payment-methods&gt;</span>
-        <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;payment-method</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDA4MDYwODwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4yOTEyNjQ4NTE0NjM2MDY3MzY2MjwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwNDAwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT5kOGRlZGUyNy1mZjkxLTQzY2YtOTVmOC1iNjAwNDA2ODBjNmI8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NDkyODY0MzQxODU8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmMwYjQyNGU2LTMxMGUtNGFhNy1iOWM0LWJhMjdhOTcyZTJhNzwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BNTVBMzcxOTI1OUUzQzM5Q0YzQTk1ODRGRjdGMjQyMjJBODk0QjRFRTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/payment-methods&gt;</span>
-    <span class="tag">&lt;bank-account&gt;</span>
-        <span class="tag">&lt;bic&gt;</span>WIREDEMMXXX<span class="tag">&lt;/bic&gt;</span>
-    <span class="tag">&lt;/bank-account&gt;</span><span class="tag">&lt;/payment&gt;</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">XML Pending-Credit Response (Failure)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
-<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
- <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
- <span class="tag">&lt;transaction-id&gt;</span>c9d5f0c2-9331-4c7e-afd6-e1eb407243ad<span class="tag">&lt;/transaction-id&gt;</span>
- <span class="tag">&lt;request-id&gt;</span>54d9d8fd-f33b-43b7-8f0e-753ba16991f0<span class="tag">&lt;/request-id&gt;</span>
- <span class="tag">&lt;transaction-type&gt;</span>pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
- <span class="tag">&lt;transaction-state&gt;</span>failed<span class="tag">&lt;/transaction-state&gt;</span>
- <span class="tag">&lt;completion-time-stamp&gt;</span>2018-04-13T08:42:39.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
- <span class="tag">&lt;statuses&gt;</span>
-  <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">400.1081</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The Bank Account IBAN information has not been provided.  Please check your input and try again.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">error</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
- <span class="tag">&lt;/statuses&gt;</span>
- <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>10.01<span class="tag">&lt;/requested-amount&gt;</span>
- <span class="tag">&lt;account-holder&gt;</span>
-  <span class="tag">&lt;first-name&gt;</span>John<span class="tag">&lt;/first-name&gt;</span>
-  <span class="tag">&lt;last-name&gt;</span>Doe<span class="tag">&lt;/last-name&gt;</span>
- <span class="tag">&lt;/account-holder&gt;</span>
- <span class="tag">&lt;payment-methods&gt;</span>
-  <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
- <span class="tag">&lt;/payment-methods&gt;</span>
- <span class="tag">&lt;bank-account&gt;</span>
-  <span class="tag">&lt;bic&gt;</span>WIREDEMMXXX<span class="tag">&lt;/bic&gt;</span>
- <span class="tag">&lt;/bank-account&gt;</span>
+    <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+    <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
 <span class="tag">&lt;/payment&gt;</span></code></pre>
-</div>
-</div>
-<div id="SEPACreditTransfer_Samples_PendingCredit_Json" class="paragraph">
-<p><strong>JSON</strong></p>
-</div>
-<div class="listingblock">
-<div class="title">JSON Pending-Credit Request (Successful)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span class="key"><span class="delimiter">"</span><span class="content">payment</span><span class="delimiter">"</span></span> : {
-    <span class="key"><span class="delimiter">"</span><span class="content">merchant-account-id</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">4c901196-eff7-411e-82a3-5ef6b6860d64</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">request-id</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">${unique for each request}</span><span class="delimiter">"</span></span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">transaction-type</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">pending-credit</span><span class="delimiter">"</span></span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">requested-amount</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span> : <span class="float">0.11</span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">currency</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">account-holder</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">first-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">John</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">last-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Doe</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">email</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">daemonize@yahoo.co.uk</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">address</span><span class="delimiter">"</span></span> : {
-        <span class="key"><span class="delimiter">"</span><span class="content">street1</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Tiefstraße 3</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">city</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">München</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">country</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">DE</span><span class="delimiter">"</span></span>
-      }
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">payment-methods</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">payment-method</span><span class="delimiter">"</span></span> : [ {
-        <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span>
-      } ]
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">bank-account</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">iban</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">HU29117080012054779400000000</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">bic</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">GENODEF1OGK</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">mandate</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">mandate-id</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">12345678</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">signed-date</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">2014-05-06</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">consumer</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">first-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">last-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">JSON Pending-Credit Response (Successful)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json"> {
-  <span class="key"><span class="delimiter">"</span><span class="content">payment</span><span class="delimiter">"</span></span> : {
-    <span class="key"><span class="delimiter">"</span><span class="content">merchant-account-id</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">4c901196-eff7-411e-82a3-5ef6b6860d64</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">transaction-id</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">7c55532a-34f9-11e5-b074-005056a96a54</span><span class="delimiter">"</span></span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">request-id</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">${request}</span><span class="delimiter">"</span></span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">transaction-type</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">pending-credit</span><span class="delimiter">"</span></span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">transaction-state</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">success</span><span class="delimiter">"</span></span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">completion-time-stamp</span><span class="delimiter">"</span></span> : <span class="integer">1438068184000</span>,
-    <span class="key"><span class="delimiter">"</span><span class="content">statuses</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">status</span><span class="delimiter">"</span></span> : [ {
-        <span class="key"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">code</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">description</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">severity</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span>
-      } ]
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">requested-amount</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span> : <span class="float">0.11</span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">currency</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">account-holder</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">first-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">John</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">last-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Doe</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">email</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">daemonize@yahoo.co.uk</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">address</span><span class="delimiter">"</span></span> : {
-        <span class="key"><span class="delimiter">"</span><span class="content">street1</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Tiefstraße 3</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">city</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">München</span><span class="delimiter">"</span></span>,
-        <span class="key"><span class="delimiter">"</span><span class="content">country</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">DE</span><span class="delimiter">"</span></span>
-      }
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">payment-methods</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">payment-method</span><span class="delimiter">"</span></span> : [ {
-        <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span>
-      } ]
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">bank-account</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">iban</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">HU29117080012054779400000000</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">bic</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">GENODEF1OGK</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">mandate</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">mandate-id</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">12345678</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">signed-date</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">2014-05-06</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">consumer</span><span class="delimiter">"</span></span> : {
-      <span class="key"><span class="delimiter">"</span><span class="content">first-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">last-name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>
-    },
-    <span class="key"><span class="delimiter">"</span><span class="content">provider-transaction-reference-id</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">FD787FBC69</span><span class="delimiter">"</span></span>
-  }
-}</code></pre>
 </div>
 </div>
 </div>
 <div class="sect5">
-<h6 id="SEPACreditTransfer_Samples_VoidPendingCredit">
-<a class="anchor" href="#SEPACreditTransfer_Samples_VoidPendingCredit"></a><a class="link" href="#SEPACreditTransfer_Samples_VoidPendingCredit"><em>void-pending-credit</em></a>
+<h6 id="API_LinePay_Samples_PendingDebit_RecFirst">
+<a class="anchor" href="#API_LinePay_Samples_PendingDebit_RecFirst"></a><a class="link" href="#API_LinePay_Samples_PendingDebit_RecFirst"><em>pending-debit</em> (Recurring/First)</a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>pending-debit<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;periodic&gt;</span>
+    <span class="tag">&lt;periodic-type&gt;</span>recurring<span class="tag">&lt;/periodic-type&gt;</span>
+    <span class="tag">&lt;sequence-type&gt;</span>first<span class="tag">&lt;/sequence-type&gt;</span>
+  <span class="tag">&lt;/periodic&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">XML Response (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+    <span class="tag">&lt;transaction-id&gt;</span>92db460a-905b-432e-9105-36ebd86282bf<span class="tag">&lt;/transaction-id&gt;</span>
+    <span class="tag">&lt;request-id&gt;</span>a0e8035c-dcfe-4513-914f-40dad5a6385f<span class="tag">&lt;/request-id&gt;</span>
+    <span class="tag">&lt;transaction-type&gt;</span>pending-debit<span class="tag">&lt;/transaction-type&gt;</span>
+    <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+    <span class="tag">&lt;completion-time-stamp&gt;</span>2020-06-30T11:15:08.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+    <span class="tag">&lt;statuses&gt;</span>
+        <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/statuses&gt;</span>
+    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+    <span class="tag">&lt;account-holder&gt;</span>
+        <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+        <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+    <span class="tag">&lt;/account-holder&gt;</span>
+    <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+    <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+    <span class="tag">&lt;payment-methods&gt;</span>
+        <span class="tag">&lt;payment-method</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDExMTUwNzwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT42NTU4NzQ0NjA0OTE2NDI4NzA4NzwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT45MmRiNDYwYS05MDViLTQzMmUtOTEwNS0zNmViZDg2MjgyYmY8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmEwZTgwMzVjLWRjZmUtNDUxMy05MTRmLTQwZGFkNWE2Mzg1ZjwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BQUVFRjMxM0Q1QTE1RkQ4Qjc0OEY0QkU1REY1MUNFOTcyMTY2ODA0NTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/payment-methods&gt;</span>
+    <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+    <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+    <span class="tag">&lt;periodic&gt;</span>
+        <span class="tag">&lt;periodic-type&gt;</span>recurring<span class="tag">&lt;/periodic-type&gt;</span>
+        <span class="tag">&lt;sequence-type&gt;</span>first<span class="tag">&lt;/sequence-type&gt;</span>
+    <span class="tag">&lt;/periodic&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_PendingDebit_RecRec">
+<a class="anchor" href="#API_LinePay_Samples_PendingDebit_RecRec"></a><a class="link" href="#API_LinePay_Samples_PendingDebit_RecRec"><em>debit</em> (Recurring/Recurring)</a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>debit<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>92db460a-905b-432e-9105-36ebd86282bf<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;periodic&gt;</span>
+    <span class="tag">&lt;periodic-type&gt;</span>recurring<span class="tag">&lt;/periodic-type&gt;</span>
+    <span class="tag">&lt;sequence-type&gt;</span>recurring<span class="tag">&lt;/sequence-type&gt;</span>
+  <span class="tag">&lt;/periodic&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">XML Response (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+    <span class="tag">&lt;transaction-id&gt;</span>8ea5fb2d-2e2d-4177-95fc-491035b726b2<span class="tag">&lt;/transaction-id&gt;</span>
+    <span class="tag">&lt;request-id&gt;</span>b13fc069-c0bd-4db5-888f-52109c498218<span class="tag">&lt;/request-id&gt;</span>
+    <span class="tag">&lt;transaction-type&gt;</span>debit<span class="tag">&lt;/transaction-type&gt;</span>
+    <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+    <span class="tag">&lt;completion-time-stamp&gt;</span>2020-06-30T11:16:33.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+    <span class="tag">&lt;statuses&gt;</span>
+        <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/statuses&gt;</span>
+    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+    <span class="tag">&lt;parent-transaction-id&gt;</span>92db460a-905b-432e-9105-36ebd86282bf<span class="tag">&lt;/parent-transaction-id&gt;</span>
+    <span class="tag">&lt;account-holder&gt;</span>
+        <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+        <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+    <span class="tag">&lt;/account-holder&gt;</span>
+    <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+    <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+    <span class="tag">&lt;payment-methods&gt;</span>
+        <span class="tag">&lt;payment-method</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDExMTYzMzwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4xMzQzMTM2NTg2Nzc1NTE2MzkxMzwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT44ZWE1ZmIyZC0yZTJkLTQxNzctOTVmYy00OTEwMzViNzI2YjI8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmIxM2ZjMDY5LWMwYmQtNGRiNS04ODhmLTUyMTA5YzQ5ODIxODwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BNzFGNkVDOUZGNTQ1MDk3RDg2ODdCNzMwQ0NBMjMyNzNFNEZERUIyOTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/payment-methods&gt;</span>
+    <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+    <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+    <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+    <span class="tag">&lt;periodic&gt;</span>
+        <span class="tag">&lt;periodic-type&gt;</span>recurring<span class="tag">&lt;/periodic-type&gt;</span>
+        <span class="tag">&lt;sequence-type&gt;</span>recurring<span class="tag">&lt;/sequence-type&gt;</span>
+    <span class="tag">&lt;/periodic&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_PendingDebit_RecFinal">
+<a class="anchor" href="#API_LinePay_Samples_PendingDebit_RecFinal"></a><a class="link" href="#API_LinePay_Samples_PendingDebit_RecFinal"><em>debit</em> (Recurring/Final)</a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>debit<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>92db460a-905b-432e-9105-36ebd86282bf<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;periodic&gt;</span>
+    <span class="tag">&lt;periodic-type&gt;</span>recurring<span class="tag">&lt;/periodic-type&gt;</span>
+    <span class="tag">&lt;sequence-type&gt;</span>final<span class="tag">&lt;/sequence-type&gt;</span>
+  <span class="tag">&lt;/periodic&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">XML Response (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+    <span class="tag">&lt;transaction-id&gt;</span>819b4aed-41ee-4ee6-9822-2e2f4aeca704<span class="tag">&lt;/transaction-id&gt;</span>
+    <span class="tag">&lt;request-id&gt;</span>2747b197-5f0e-4833-aea1-920bd216b650<span class="tag">&lt;/request-id&gt;</span>
+    <span class="tag">&lt;transaction-type&gt;</span>debit<span class="tag">&lt;/transaction-type&gt;</span>
+    <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+    <span class="tag">&lt;completion-time-stamp&gt;</span>2020-06-30T07:28:35.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+    <span class="tag">&lt;statuses&gt;</span>
+        <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/statuses&gt;</span>
+    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+    <span class="tag">&lt;parent-transaction-id&gt;</span>92db460a-905b-432e-9105-36ebd86282bf<span class="tag">&lt;/parent-transaction-id&gt;</span>
+    <span class="tag">&lt;account-holder&gt;</span>
+        <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+        <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+    <span class="tag">&lt;/account-holder&gt;</span>
+    <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+    <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+    <span class="tag">&lt;payment-methods&gt;</span>
+        <span class="tag">&lt;payment-method</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDA3MjgzNTwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4xOTc2MTkxMTAzMDk2ODcyNjI5OTwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT44MTliNGFlZC00MWVlLTRlZTYtOTgyMi0yZTJmNGFlY2E3MDQ8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPjI3NDdiMTk3LTVmMGUtNDgzMy1hZWExLTkyMGJkMjE2YjY1MDwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BODAxOTdCMzVERjI5QjcyNzdGODk0NjA5RThFNDgxRDVFQTFFQUUyMDwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/payment-methods&gt;</span>
+    <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+    <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+    <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+    <span class="tag">&lt;periodic&gt;</span>
+        <span class="tag">&lt;periodic-type&gt;</span>recurring<span class="tag">&lt;/periodic-type&gt;</span>
+        <span class="tag">&lt;sequence-type&gt;</span>final<span class="tag">&lt;/sequence-type&gt;</span>
+    <span class="tag">&lt;/periodic&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_RefundDebit">
+<a class="anchor" href="#API_LinePay_Samples_RefundDebit"></a><a class="link" href="#API_LinePay_Samples_RefundDebit"><em>refund-debit</em></a>
 </h6>
 <div class="admonitionblock note">
 <table>
@@ -6558,104 +6282,254 @@ the merchant.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p><strong>Void-Pending-Credit Restrictions</strong></p>
-</div>
-<div class="paragraph">
-<p><em>void-pending-credit</em> transactions can be sent until the transaction is
-not sent to the bank.</p>
-</div>
+Use the value of the &lt;transaction-id&gt; from the debit notification, which was sent for the corresponding pending-debit transaction.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>XML</strong></p>
-</div>
 <div class="listingblock">
-<div class="title">XML Void-Pending-Credit Request (Successful)</div>
+<div class="title">XML Request (Successful)</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
-<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
-    <span class="tag">&lt;request-id&gt;</span>${unique for each request}<span class="tag">&lt;/request-id&gt;</span>
-    <span class="tag">&lt;transaction-type&gt;</span>void-pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
-    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>0.15<span class="tag">&lt;/requested-amount&gt;</span>
-    <span class="tag">&lt;parent-transaction-id&gt;</span>${derived from former pending-credit transaction}<span class="tag">&lt;/parent-transaction-id&gt;</span>
-    <span class="tag">&lt;payment-methods&gt;</span>
-        <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;/payment-methods&gt;</span>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>refund-debit<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>392e9311-1917-4e95-a7a0-68db64da130a<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
 <span class="tag">&lt;/payment&gt;</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">XML Void-Pending-Credit Response (Successful)</div>
+<div class="title">XML Response (Successful)</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
-<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
- <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
- <span class="tag">&lt;transaction-id&gt;</span>75abb31d-30fc-472e-97d8-67081dbd9e6c<span class="tag">&lt;/transaction-id&gt;</span>
- <span class="tag">&lt;request-id&gt;</span>cf9fddf3-97e8-4fef-989d-0b0274ceab17<span class="tag">&lt;/request-id&gt;</span>
- <span class="tag">&lt;transaction-type&gt;</span>void-pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
- <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
- <span class="tag">&lt;completion-time-stamp&gt;</span>2018-04-13T08:45:05.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
- <span class="tag">&lt;statuses&gt;</span>
-  <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">200.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The request completed successfully.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
- <span class="tag">&lt;/statuses&gt;</span>
- <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>0.15<span class="tag">&lt;/requested-amount&gt;</span>
- <span class="tag">&lt;parent-transaction-id&gt;</span>8938d389-6575-4467-95e4-ca9cf89266b9<span class="tag">&lt;/parent-transaction-id&gt;</span>
- <span class="tag">&lt;account-holder&gt;</span>
-  <span class="tag">&lt;first-name&gt;</span>John<span class="tag">&lt;/first-name&gt;</span>
-  <span class="tag">&lt;last-name&gt;</span>Doe<span class="tag">&lt;/last-name&gt;</span>
-  <span class="tag">&lt;email&gt;</span>john.doe@example.com<span class="tag">&lt;/email&gt;</span>
-  <span class="tag">&lt;address&gt;</span>
-   <span class="tag">&lt;street1&gt;</span>Example Street 1<span class="tag">&lt;/street1&gt;</span>
-   <span class="tag">&lt;city&gt;</span>Example City<span class="tag">&lt;/city&gt;</span>
-   <span class="tag">&lt;country&gt;</span>DE<span class="tag">&lt;/country&gt;</span>
-  <span class="tag">&lt;/address&gt;</span>
- <span class="tag">&lt;/account-holder&gt;</span>
- <span class="tag">&lt;payment-methods&gt;</span>
-  <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
- <span class="tag">&lt;/payment-methods&gt;</span>
- <span class="tag">&lt;bank-account&gt;</span>
-  <span class="tag">&lt;iban&gt;</span>HU29117080012054779400000000<span class="tag">&lt;/iban&gt;</span>
-  <span class="tag">&lt;bic&gt;</span>GENODEF1OGK<span class="tag">&lt;/bic&gt;</span>
- <span class="tag">&lt;/bank-account&gt;</span>
- <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;transaction-id&gt;</span>0c92478c-df87-4943-827c-697ada54e84e<span class="tag">&lt;/transaction-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>4d82d877-f211-463f-a282-7446cc85a6b7<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>refund-debit<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+  <span class="tag">&lt;completion-time-stamp&gt;</span>2019-02-28T08:32:11.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+  <span class="tag">&lt;statuses&gt;</span>
+    <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/statuses&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>392e9311-1917-4e95-a7a0-68db64da130a<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_PendingAuth">
+<a class="anchor" href="#API_LinePay_Samples_PendingAuth"></a><a class="link" href="#API_LinePay_Samples_PendingAuth"><em>pending-authorization</em></a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>pending-authorization<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
 <span class="tag">&lt;/payment&gt;</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">XML Void-Pending-Credit Request (Failed)</div>
+<div class="title">XML Response (Successful)</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
-<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;merchant-account-id&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
-    <span class="tag">&lt;request-id&gt;</span>${unique for each request}<span class="tag">&lt;/request-id&gt;</span>
-    <span class="tag">&lt;transaction-type&gt;</span>void-pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
-    <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>10.00<span class="tag">&lt;/requested-amount&gt;</span>
-    <span class="tag">&lt;payment-methods&gt;</span>
-        <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;/payment-methods&gt;</span><span class="tag">&lt;/payment&gt;</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;transaction-id&gt;</span>c1d9ad1d-ad82-476f-a93d-90febfd08663<span class="tag">&lt;/transaction-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>ec669242-a90f-4ee7-aad4-f5af9a0889e1<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>pending-authorization<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+  <span class="tag">&lt;completion-time-stamp&gt;</span>2019-02-28T08:31:29.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+  <span class="tag">&lt;statuses&gt;</span>
+    <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/statuses&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://sandbox-api-pay.line.me/linepay/v2/web/payment/wait?transactionReserveId=MTM1ODU4NDcyMzc2NzA2Njg4MA==</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_VoidAuth">
+<a class="anchor" href="#API_LinePay_Samples_VoidAuth"></a><a class="link" href="#API_LinePay_Samples_VoidAuth"><em>void-authorization</em></a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>void-authorization<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>c1d9ad1d-ad82-476f-a93d-90febfd08663<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">XML Void-Pending-Credit Response (Failed)</div>
+<div class="title">XML Response (Successful)</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
-<span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
- <span class="tag">&lt;merchant-account-id</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">unknown</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>59a01668-693b-49f0-8a1f-f3c1ba025d45<span class="tag">&lt;/merchant-account-id&gt;</span>
- <span class="tag">&lt;request-id&gt;</span>41595b1c-8994-4c2e-ae05-d48c00471b29<span class="tag">&lt;/request-id&gt;</span>
- <span class="tag">&lt;transaction-type&gt;</span>void-pending-credit<span class="tag">&lt;/transaction-type&gt;</span>
- <span class="tag">&lt;transaction-state&gt;</span>failed<span class="tag">&lt;/transaction-state&gt;</span>
- <span class="tag">&lt;completion-time-stamp&gt;</span>2018-04-13T08:47:59.131Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
- <span class="tag">&lt;statuses&gt;</span>
-  <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">400.1021</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The Parent Transaction Id is required, and not provided.  Please check your input and try again.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">error</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
- <span class="tag">&lt;/statuses&gt;</span>
- <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">EUR</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>10.00<span class="tag">&lt;/requested-amount&gt;</span>
- <span class="tag">&lt;payment-methods&gt;</span>
-  <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sepacredit</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
- <span class="tag">&lt;/payment-methods&gt;</span>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;transaction-id&gt;</span>b7183071-3669-40d1-8cb1-642f495c0aec<span class="tag">&lt;/transaction-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>291f22ab-343e-4702-b3a9-ffe4322bdf0b<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>void-authorization<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+  <span class="tag">&lt;completion-time-stamp&gt;</span>2019-02-28T08:31:58.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+  <span class="tag">&lt;statuses&gt;</span>
+    <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/statuses&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>c1d9ad1d-ad82-476f-a93d-90febfd08663<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_CaptureAuth">
+<a class="anchor" href="#API_LinePay_Samples_CaptureAuth"></a><a class="link" href="#API_LinePay_Samples_CaptureAuth"><em>capture-authorization</em></a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>capture-authorization<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>c1d9ad1d-ad82-476f-a93d-90febfd08663<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">XML Response (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;transaction-id&gt;</span>76a16306-904f-4491-8f5c-811fda31d668<span class="tag">&lt;/transaction-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>c414b976-105f-4fab-bfd4-18f14b720668<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>capture-authorization<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+  <span class="tag">&lt;completion-time-stamp&gt;</span>2019-02-28T08:31:40.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+  <span class="tag">&lt;statuses&gt;</span>
+    <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/statuses&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>c1d9ad1d-ad82-476f-a93d-90febfd08663<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="API_LinePay_Samples_RefundCapture">
+<a class="anchor" href="#API_LinePay_Samples_RefundCapture"></a><a class="link" href="#API_LinePay_Samples_RefundCapture"><em>refund-capture</em></a>
+</h6>
+<div class="listingblock">
+<div class="title">XML Request (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>{{$guid}}<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>refund-capture<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>76a16306-904f-4491-8f5c-811fda31d668<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+<span class="tag">&lt;/payment&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">XML Response (Successful)</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;payment</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/payment</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:ns2</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.elastic-payments.com/schema/epa/transaction</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;merchant-account-id&gt;</span>9a04f328-ea7e-487c-bccd-87fd56f0dc09<span class="tag">&lt;/merchant-account-id&gt;</span>
+  <span class="tag">&lt;transaction-id&gt;</span>7bbd9f0b-99ef-4eeb-89d1-0b436be07942<span class="tag">&lt;/transaction-id&gt;</span>
+  <span class="tag">&lt;request-id&gt;</span>c40bcb24-473c-4efd-9467-9589a943fe85<span class="tag">&lt;/request-id&gt;</span>
+  <span class="tag">&lt;transaction-type&gt;</span>refund-capture<span class="tag">&lt;/transaction-type&gt;</span>
+  <span class="tag">&lt;transaction-state&gt;</span>success<span class="tag">&lt;/transaction-state&gt;</span>
+  <span class="tag">&lt;completion-time-stamp&gt;</span>2019-02-28T08:31:43.000Z<span class="tag">&lt;/completion-time-stamp&gt;</span>
+  <span class="tag">&lt;statuses&gt;</span>
+    <span class="tag">&lt;status</span> <span class="attribute-name">code</span>=<span class="string"><span class="delimiter">"</span><span class="content">201.0000</span><span class="delimiter">"</span></span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">The resource was successfully created.</span><span class="delimiter">"</span></span> <span class="attribute-name">severity</span>=<span class="string"><span class="delimiter">"</span><span class="content">information</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/statuses&gt;</span>
+  <span class="tag">&lt;requested-amount</span> <span class="attribute-name">currency</span>=<span class="string"><span class="delimiter">"</span><span class="content">THB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>2.00<span class="tag">&lt;/requested-amount&gt;</span>
+  <span class="tag">&lt;parent-transaction-id&gt;</span>76a16306-904f-4491-8f5c-811fda31d668<span class="tag">&lt;/parent-transaction-id&gt;</span>
+  <span class="tag">&lt;account-holder&gt;</span>
+    <span class="tag">&lt;first-name&gt;</span>Paul<span class="tag">&lt;/first-name&gt;</span>
+    <span class="tag">&lt;last-name&gt;</span>Peterson<span class="tag">&lt;/last-name&gt;</span>
+  <span class="tag">&lt;/account-holder&gt;</span>
+  <span class="tag">&lt;order-number&gt;</span>1551342687432<span class="tag">&lt;/order-number&gt;</span>
+  <span class="tag">&lt;descriptor&gt;</span>Payment description<span class="tag">&lt;/descriptor&gt;</span>
+  <span class="tag">&lt;payment-methods&gt;</span>
+    <span class="tag">&lt;payment-method</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">linepay</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/payment-methods&gt;</span>
+  <span class="tag">&lt;api-id&gt;</span>---<span class="tag">&lt;/api-id&gt;</span>
+  <span class="tag">&lt;cancel-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/cancel<span class="tag">&lt;/cancel-redirect-url&gt;</span>
+  <span class="tag">&lt;success-redirect-url&gt;</span>https://demoshop-test.wirecard.com/demoshop/#/success<span class="tag">&lt;/success-redirect-url&gt;</span>
 <span class="tag">&lt;/payment&gt;</span></code></pre>
 </div>
 </div>
@@ -6664,7 +6538,7 @@ not sent to the bank.</p>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← <a href="SEPA.html">SEPA</a> |  <a href="SEPADirectDebit_Rest.html">SEPA Direct Debit</a> →</p>
+<p>← <a href="KlarnaV2_Main.html">Klarna Payments</a> |  <a href="Masterpass_Main.html">Masterpass</a> →</p>
 </div>
 </div>
 <div id="footer">
