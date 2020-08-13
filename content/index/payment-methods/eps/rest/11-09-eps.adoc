@@ -189,17 +189,20 @@ for further information about retrieving transaction details.
 [#eps_4mobile]
 === eps4mobile
 
-eps4mobile offers the following scenarios:
+When using _eps4mobile_, a QR-code URL is sent by {payment-gateway-abbr}. The QR-code URL follows a specific format, starting with ``epspayment://eps.or.at/transactionid=<session-id>``. 
+``epspayment`` is a specific protocol (note: protocol as in https) required of all participating banking apps.
+
+Note that you do not need to send any bank details or bank selection in the request.
+
+The following two mobile scenarios are possible:
 
 *POS2App via QR-Code*
 
-When using _eps4mobile_ {payment-gateway-abbr} forwards a QR-code to the consumer in the online shop or a POS/mPOS screen. The QR-code is scanned and eps-payment is processed via their mobile banking app.
+A QR-code is generated and displayed to the consumer in the online shop or a POS/mPOS screen. The QR-code is scanned and eps-payment is processed via the consumer's mobile banking app.
 
 *App2App*
 
 The consumer is redirected from the online shop to their mobile banking app after initiating an eps-payment on their smartphone.
-
-Note that you do not need to send any bank details or bank selection in the request.
 
 If you want to use _eps4mobile_, contact <<ContactUs, Merchant Support>> for details. 
 
