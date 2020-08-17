@@ -176,7 +176,7 @@ notification was sent the status is final.
 |===
 |URL
 
-|``\https://{test-instance-hostname}/engine/rest/merchants/{merchant-account-id}/payments/{transaction-id}``
+|``\https://{rest-api-test-retrieve-transaction}{merchant-account-id}/payments/{transaction-id}``
 |===
 
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_Fields]
@@ -195,7 +195,7 @@ m|transaction-id |M |Alphanumeric |36
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_SampleURL]
 .Sample URL to a Merchant's Endpoint
 
-``\https://{test-instance-hostname}/engine/rest/merchants/ba261be8-af94-11df-ab7800163e5eafd7/payments/048b27e0-9c31-4cab-9eab-3b72b1b4d498``
+``\https://{rest-api-test-retrieve-transaction}ba261be8-af94-11df-ab7800163e5eafd7/payments/048b27e0-9c31-4cab-9eab-3b72b1b4d498``
 
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_Response]
 .Response when retrieving a transaction
@@ -224,7 +224,7 @@ specifying an extension.
 [cols="h,"]
 |===
 |URL
-|``\https://{test-instance-hostname}/engine/rest/merchants/\{merchant-account-id}/payments/search?payment.request-id=\{request-id}``
+|``\https://{rest-api-test-retrieve-transaction}\{merchant-account-id}/payments/search?payment.request-id=\{request-id}``
 |===
 
 [#GeneralPlatformFeatures_RetrieveTransaction_RequestID_Fields]
@@ -243,7 +243,7 @@ m|request-id |M |Alphanumeric |150
 [#GeneralPlatformFeatures_RetrieveTransaction_RequestID_Sample]
 .Sample URL to a Merchant's Endpoint
 
-``\https://{test-instance-hostname}/engine/rest/merchants/ba261be8-af94-11df-ab78-00163e5eafd7/payments/search?payment.request-id=048b27e0-9c31-4cab-9eab-3b72b1b4d498``
+``\https://{rest-api-test-retrieve-transaction}ba261be8-af94-11df-ab78-00163e5eafd7/payments/search?payment.request-id=048b27e0-9c31-4cab-9eab-3b72b1b4d498``
 
 [#GeneralPlatformFeatures_RetrieveTransaction_RequestID_Response]
 .Response when retrieving a transaction
