@@ -1,8 +1,11 @@
 [#FPX]
 == {payment-page-v1}
-_FPX_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
+====
 NOTE: This payment method is available for integration with <<PP, {payment-page-v1}>> only. 
+====
+
+_FPX_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#FPX_GeneralInformation_Countries]
 === Countries and Currencies

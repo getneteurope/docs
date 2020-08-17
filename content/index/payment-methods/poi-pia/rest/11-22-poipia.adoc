@@ -1,9 +1,15 @@
 [#API_POIPIA]
-== REST API & {payment-page-v1}
+== REST API
+
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
+
 _POI/PIA_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#API_POIPIA_General_PaymentMode]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | Please contact <<ContactUs, Merchant Support>> for Countries.
@@ -12,8 +18,10 @@ _POI/PIA_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline
 
 [#API_POIPIA_General_Communication]
 === Communication Formats
+
 This table illustrates how _POI/PIA_ notifications are encoded and which
 formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| Requests/Responses |Format  |XML, JSON, NVP

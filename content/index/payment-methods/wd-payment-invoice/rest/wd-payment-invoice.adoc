@@ -1,9 +1,11 @@
 [#API_PaymentInvoice]
-== REST API & {payment-page-v1}
+== REST API
+
 _{payment-provider-name} Payment on Invoice_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#API_PaymentInvoice_CountriesandCurrencies]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | DE, AT, CH +
@@ -13,6 +15,7 @@ _{payment-provider-name} Payment on Invoice_ is a type of <<PaymentMethods_Payme
 
 [#API_PaymentInvoice_Communication]
 ==== Communication Formats
+
 This table illustrates how _{payment-provider-name} Payment on Invoice_ notifications are encoded and which formats and methods can be
 used for requests and responses.
 [width=75%,stripes=none]

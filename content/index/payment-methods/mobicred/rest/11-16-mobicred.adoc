@@ -1,9 +1,15 @@
 [#mobicred]
-== REST API & {payment-page-v1}
+== REST API
+
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
+
 _mobicred_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#mobicred_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | South Africa
@@ -12,8 +18,10 @@ _mobicred_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#mobicred_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _mobicred_ notifications are encoded, and
 which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| Requests/Responses | Format   | XML, NVP

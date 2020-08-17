@@ -1,5 +1,5 @@
 [#API_AlipayCrossBorder]
-== REST API & {payment-page-v1}
+== REST API
 _Alipay Cross-border_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_AlipayCrossBorder_Introduction_General_PaymentMode]
