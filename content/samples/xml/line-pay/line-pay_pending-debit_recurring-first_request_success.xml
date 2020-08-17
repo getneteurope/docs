@@ -1,0 +1,21 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>pending-debit</transaction-type>
+  <requested-amount currency="THB">2.00</requested-amount>
+  <account-holder>
+    <first-name>Paul</first-name>
+    <last-name>Peterson</last-name>
+  </account-holder>
+  <order-number>1551342687432</order-number>
+  <descriptor>Payment description</descriptor>
+  <payment-methods>
+    <payment-method name="linepay"/>
+  </payment-methods>
+  <periodic>
+    <periodic-type>recurring</periodic-type>
+    <sequence-type>first</sequence-type>
+  </periodic>
+  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
+  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
+</payment>

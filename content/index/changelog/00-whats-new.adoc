@@ -5,12 +5,25 @@
 [discrete]
 === 2020-07
 
+.2020-07-31
+- <<API_LinePay, LINE Pay>> - New payment method available for REST API.
+
+.2020-07-24
+- <<GooglePay, Google Pay™>> - Updated Merchant End to End Testing for REST API.
+- <<CreditCard_PaymentFeatures_LoyaltyPrograms, Loyalty Programs>> - _Visa Offers Platform_ and _Mastercard® Card Linked Services_ available for REST API.
+
 .2020-07-14
 - <<CreditCard_3DS2_PSD2_Grandfathering, 3D Secure 2 Recurring Merchant-Initiated Transactions (MIT)>> - Added information on exemption for certain recurring MIT transactions.
 
-
 [#WhatsNew_2020_06]
 [discrete]
+=== 2020-07
+
+.2020-07-21
+- <<PPD_customize, Payment Page Designer>> - New *Secure Badge* feature available for {payment-page-v2}.
+
+//-
+
 === 2020-06
 
 .2020-06-30
@@ -20,7 +33,7 @@
 
 .2020-06-10
 - <<PPv2_SEPADirectDebit, SEPA Direct Debit>> - Updated documentation for {payment-page-v2}.
-- <<CC_Fields_xmlelements_request_cardPIN, ``card-pin``>>, <<CC_Fields_xmlelements_request_cardRAW, ``card-raw``>> and <<CC_Fields_xmlelements_request_card_EncContext, ``encryption-context``>>- New fields for card present transactions.
+- <<CC_Fields_xmlelements_request_cardPIN, ``card-pin``>>, <<CC_Fields_xmlelements_request_cardRAW, ``card-raw``>> and <<CC_Fields_xmlelements_request_card_EncContext, ``encryption-context``>> - New fields for card present transactions.
 
 //-
 

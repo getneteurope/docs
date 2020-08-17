@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   trackVisit();
   scrollToNavigationItem('auto');
   closeNavMobile();
+  addMobileNavFunctions();
+  addZoomToLargeImages();
 });
 
 /**

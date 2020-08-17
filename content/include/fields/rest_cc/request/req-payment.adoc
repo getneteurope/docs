@@ -2,6 +2,7 @@
 // The shortcut guarantees that the target of the link remains in the current environment.
 
 // tag::pm-base[]
+// tag::cc-base[]
 
 |merchant-account-id 
 | M/O 
@@ -75,6 +76,14 @@ a|Determines a transaction's behavior during transaction processing and merchant
 |The order number which you can provide. +
 Allowed characters: ASCII character code 32-38 and 40-126.
 
+| consumer-id  
+| M/O
+| String 
+| 50 
+| The ID of the consumer. +
+In <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>> ``consumer-id`` is used with VOP only. It is mandatory to <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Enroll Tokenized Card_>>. +
+When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
+
 |parent-transaction-id 
 |M/O 
 |String 
@@ -123,25 +132,25 @@ Accepted values: +
 |O 
 |String 
 |256 
-|The URL to which the consumer is redirected during payment processing. This is normally a page on your website.
+|The URL to which the consumer is redirected during payment processing. This is normally a page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |success-redirect-url 
-|M 
+|O 
 |String 
 |256 
-|The URL to which the consumer is redirected after a successful payment. This is normally a success confirmation page on your website.
+|The URL to which the consumer is redirected after a successful payment. This is normally a success confirmation page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |cancel-redirect-url 
-|M 
+|O 
 |String 
 |256 
-|The URL to which the consumer is redirected after the payment has been canceled. This is normally a page on your website.
+|The URL to which the consumer is redirected after the payment has been canceled. This is normally a page on your website. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |fail-redirect-url 
 |O	
 |String
 |256	
-|The URL to which the consumer is redirected after an unsuccessful payment. This is normally a page on your website notifying the consumer of a failed payment, often suggesting the option to try another payment method.
+|The URL to which the consumer is redirected after an unsuccessful payment. This is normally a page on your website notifying the consumer of a failed payment, often suggesting the option to try another payment method. Enter a value in the request if you want to send your consumer to a different page than defined in your integration. 
 
 |locale 
 |O 
@@ -233,6 +242,8 @@ Accepted values: +
 
 5+|<<{listname}_request_device, ``device``>>
 
+5+|<<{listname}_request_loyaltycard, ``loyalty-card``>>
+
 5+|<<{listname}_request_notification, notifications.notification>>
 
 5+|<<{listname}_request_orderitem, order-items.order-item>>
@@ -262,5 +273,19 @@ Accepted values: +
 // end::pm-base[]
 
 // end::three-ds[]
+
+// end::cc-base[]
+
+// tag::loyalty-prog[]
+
+| consumer-id  
+| M/O
+| String 
+| 50 
+| The ID of the consumer. +
+``consumer-id`` is used with VOP only. It is mandatory to <<CreditCard_PaymentFeatures_LoyaltyPrograms_Samples_VOP_TokenizedenrollmentRequest, _Enroll Tokenized Card_>>. +
+When using a credit card for the VOP, at least one of following must be present: ``consumer-id``, ``account-holder.email`` or ``account-holder.phone``. 
+
+// end::loyalty-prog[]
 
 //-
