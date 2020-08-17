@@ -3221,7 +3221,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3232,7 +3232,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -6338,7 +6338,7 @@ consumer. <em>Klarna</em> pays the order amount to you according to the agreed b
 <p><em>Klarna</em> performs a risk check before accepting an order.</p>
 </div>
 <div class="paragraph">
-<p>Furthermore, <em>Klarna</em> flags <strong>some orders</strong> for additional review and transmits <code>fraud_status pending</code> to <em>Wirecard Payment Gateway</em>. For this status, <em>Wirecard Payment Gateway</em> uses the transaction type <code>pending-authorization</code> and creates the final authorization transaction once <em>Klarna</em> has completed this additional risk check.</p>
+<p>Furthermore, <em>Klarna</em> flags <strong>some orders</strong> for additional review and transmits <code>fraud_status pending</code> to <em>{payment-provider-name} Payment Gateway</em>. For this status, <em>{payment-provider-name} Payment Gateway</em> uses the transaction type <code>pending-authorization</code> and creates the final authorization transaction once <em>Klarna</em> has completed this additional risk check.</p>
 </div>
 <div class="paragraph">
 <p>If <em>Klarna</em> accepts the order, it guarantees the payment once the authorized amount is captured.</p>
@@ -6395,16 +6395,16 @@ Otherwise, the authorization cannot be captured automatically.
 <p>Consumer checks out products.</p>
 </li>
 <li>
-<p>→ Send an <em>authorization</em> request to <em>Wirecard Payment Gateway</em>. This request must contain order data (e.g. amount, order number, order items) and consumer data (e.g. name, billing/shipping address).</p>
+<p>→ Send an <em>authorization</em> request to <em>{payment-provider-name} Payment Gateway</em>. This request must contain order data (e.g. amount, order number, order items) and consumer data (e.g. name, billing/shipping address).</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
 </li>
 <li>
-<p><em>Klarna</em> creates a session token and sends it to <em>Wirecard Payment Gateway</em>.</p>
+<p><em>Klarna</em> creates a session token and sends it to <em>{payment-provider-name} Payment Gateway</em>.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> creates a <em>pending-authorization</em> transaction.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> creates a <em>pending-authorization</em> transaction.</p>
 </li>
 <li>
 <p><em>Klarna</em> performs a basic risk check:</p>
@@ -6424,21 +6424,21 @@ rejected with a corresponding error code.</p>
 </div>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em>  forwards the risk check result (with the corresponding status code) to you:</p>
+<p><em>{payment-provider-name} Payment Gateway</em>  forwards the risk check result (with the corresponding status code) to you:</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Basic risk check ok:<br>
-<em>Wirecard Payment Gateway</em> sends you an <em>authorization</em> success response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a>.</p>
+<em>{payment-provider-name} Payment Gateway</em> sends you an <em>authorization</em> success response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a>.</p>
 </li>
 <li>
 <p>Basic risk check failed:<br>
-<em>Wirecard Payment Gateway</em> sends you an <em>authorization</em> failure response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">IPN</a>.</p>
+<em>{payment-provider-name} Payment Gateway</em> sends you an <em>authorization</em> failure response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">IPN</a>.</p>
 </li>
 <li>
 <p>Advanced risk check necessary:<br>
  The <em>authorization</em> is pending during the advanced risk check. The payment cannot be immediately authorized.
-<em>Wirecard Payment Gateway</em> sends you a <em>pending-authorization</em> response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">IPN</a>.</p>
+<em>{payment-provider-name} Payment Gateway</em> sends you a <em>pending-authorization</em> response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">IPN</a>.</p>
 </li>
 </ul>
 </div>
@@ -6449,8 +6449,8 @@ rejected with a corresponding error code.</p>
 <li>
 <p><a id="Klarnav2_TransactionTypes_authorization_advancedRiskCheck"></a>If <em>Klarna</em> performs an advanced risk check:<br></p>
 <div class="paragraph">
-<p>9.1 <em>Klarna</em> sends the advanced risk check result to <em>Wirecard Payment Gateway</em>.<br>
-9.2  <em>Wirecard Payment Gateway</em> processes the advanced risk check result and sends you an <em>authorization</em> response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">IPN</a>.</p>
+<p>9.1 <em>Klarna</em> sends the advanced risk check result to <em>{payment-provider-name} Payment Gateway</em>.<br>
+9.2  <em>{payment-provider-name} Payment Gateway</em> processes the advanced risk check result and sends you an <em>authorization</em> response and an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">IPN</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6460,7 +6460,7 @@ rejected with a corresponding error code.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><em>Wirecard Payment Gateway</em> retrieves the risk check result every 2 hours.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> retrieves the risk check result every 2 hours.</p>
 </div>
 <div class="paragraph">
 <p>If you do not receive an IPN after 26 hours (e.g. due to
@@ -6470,10 +6470,10 @@ of a <em>pending-authorization</em> by using the feature <a href="GeneralPlatfor
 <div class="ulist">
 <ul>
 <li>
-<p>If the advanced risk check has been completed, <em>Wirecard Payment Gateway</em> returns the new <em>authorization</em> transaction with the response.</p>
+<p>If the advanced risk check has been completed, <em>{payment-provider-name} Payment Gateway</em> returns the new <em>authorization</em> transaction with the response.</p>
 </li>
 <li>
-<p>Otherwise, <em>Wirecard Payment Gateway</em> returns the HTTP code 404. Please <a href="ContactUs.html">contact Wirecard Merchant Support</a></p>
+<p>Otherwise, <em>{payment-provider-name} Payment Gateway</em> returns the HTTP code 404. Please <a href="ContactUs.html">contact Wirecard Merchant Support</a></p>
 </li>
 </ul>
 </div>
@@ -6727,7 +6727,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -7427,7 +7427,7 @@ To proceed with a successful authorization transaction, take the URL from <code>
 <p>Klarna Payments support <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_Transactions_Recurring">recurring</a> transactions.<br></p>
 </div>
 <div class="paragraph">
-<p>To initiate recurring payments, you need to provide appropriate values for <a href="KlarnaV2_Main.html#KlarnaV2_TransactionTypes_authorizationRecurring_Fields_periodicType"><code>periodic-type</code></a> and <a href="KlarnaV2_Main.html#KlarnaV2_TransactionTypes_authorizationRecurring_Fields_sequenceType"><code>sequence-type</code></a> in your <code>authorization</code> request. From these values, Wirecard Payment Gateway generates a consumer token that can be used for recurring payments.</p>
+<p>To initiate recurring payments, you need to provide appropriate values for <a href="KlarnaV2_Main.html#KlarnaV2_TransactionTypes_authorizationRecurring_Fields_periodicType"><code>periodic-type</code></a> and <a href="KlarnaV2_Main.html#KlarnaV2_TransactionTypes_authorizationRecurring_Fields_sequenceType"><code>sequence-type</code></a> in your <code>authorization</code> request. From these values, {payment-provider-name} Payment Gateway generates a consumer token that can be used for recurring payments.</p>
 </div>
 <div class="paragraph">
 <p>You can capture recurring authorizations automatically with <a href="KlarnaV2_Main.html#KlarnaV2_TransactionTypes_authorization_autoCapture"><strong>auto-capture</strong>.</a></p>
@@ -7807,7 +7807,7 @@ Returned for the initial authorization only.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -9370,7 +9370,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -9973,13 +9973,13 @@ still valid and can be updated, captured or canceled.</p>
 <p>→ Send an <em>adjust-authorization</em> request. This request must contain the <code>parent-transaction-id</code>. Enter the <code>transaction-id</code> of the preceding <em>authorization</em> or <em>adjust-authorization</em> response.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> updates the initial (or already adjusted) authorization and forwards the request to <em>Klarna</em>.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> updates the initial (or already adjusted) authorization and forwards the request to <em>Klarna</em>.</p>
 </li>
 <li>
 <p><em>Klarna</em> updates order amount and/or address and returns the result of the adjustment.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> sends you the <em>adjust-authorization</em> response which contains the status code.<br></p>
+<p><em>{payment-provider-name} Payment Gateway</em> sends you the <em>adjust-authorization</em> response which contains the status code.<br></p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -10246,7 +10246,7 @@ This does not apply to the other payment methods.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -10914,14 +10914,14 @@ Once canceled, you can no longer process the order. The initial authorization/re
 <p>→ Send a <em>void-authorization</em> request. This request must contain the <code>parent-transaction-id</code>. Enter the <code>transaction-id</code> of the preceding <em>authorization</em>, <em>adjust-authorization</em> or <em>pending-authorization</em> that is to be canceled.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> checks if parts of this order have already been captured:</p>
+<p><em>{payment-provider-name} Payment Gateway</em> checks if parts of this order have already been captured:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If yes: <em>Wirecard Payment Gateway</em> sends a <em>void-authorization</em> request for the uncaptured order items to <em>Klarna</em>.</p>
+<p>If yes: <em>{payment-provider-name} Payment Gateway</em> sends a <em>void-authorization</em> request for the uncaptured order items to <em>Klarna</em>.</p>
 </li>
 <li>
-<p>If no: <em>Wirecard Payment Gateway</em> sends a <em>void-authorization</em> request for the total order amount to <em>Klarna</em>.</p>
+<p>If no: <em>{payment-provider-name} Payment Gateway</em> sends a <em>void-authorization</em> request for the total order amount to <em>Klarna</em>.</p>
 </li>
 </ul>
 </div>
@@ -10930,7 +10930,7 @@ Once canceled, you can no longer process the order. The initial authorization/re
 <p><em>Klarna</em> approves or rejects the void request and returns the result.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> sends you the <em>void-authorization</em> response which contains the status code.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> sends you the <em>void-authorization</em> response which contains the status code.</p>
 </li>
 <li>
 <p>→ Process the <em>void-authorization</em> response.</p>
@@ -11162,7 +11162,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -11716,7 +11716,7 @@ default payment due date is 14 days after capturing.</p>
 <ul>
 <li>
 <p>If the <em>capture-authorization</em>
-request does not contain order items, <em>Wirecard Payment Gateway</em> captures the total order amount, i.e. all order items of the preceding <em>authorization</em> transaction are captured and must be delivered.</p>
+request does not contain order items, <em>{payment-provider-name} Payment Gateway</em> captures the total order amount, i.e. all order items of the preceding <em>authorization</em> transaction are captured and must be delivered.</p>
 </li>
 <li>
 <p>Multiple partial captures are possible by sending
@@ -11726,13 +11726,13 @@ request does not contain order items, <em>Wirecard Payment Gateway</em> captures
 </div>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
 </li>
 <li>
 <p><em>Klarna</em> returns the capture result.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> sends you the <em>capture-authorization</em> response which contains the status code.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> sends you the <em>capture-authorization</em> response which contains the status code.</p>
 </li>
 <li>
 <p>→ Process the <em>capture-authorization</em> response.</p>
@@ -11985,7 +11985,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -12582,13 +12582,13 @@ If no brand is available for this <code>order-item</code>, do not send this fiel
 <p>→ Send an <em>adjust-capture</em> request. This request must contain the <code>parent-transaction-id</code>. Enter the <code>transaction-id</code> of the preceding <em>capture-authorization</em> response.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
 </li>
 <li>
 <p><em>Klarna</em> returns the update result.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> sends you the <em>adjust-capture</em> response which contains the status code.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> sends you the <em>adjust-capture</em> response which contains the status code.</p>
 </li>
 <li>
 <p>→ Process the <em>adjust-capture</em> response.</p>
@@ -12940,7 +12940,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
-<p>The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p>
+<p>The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -14089,19 +14089,19 @@ Possible values:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If the <em>refund-capture</em> request does not contain order items, <em>Wirecard Payment Gateway</em> refunds the total order amount, i.e. all order items of the preceding <em>capture-authorization</em> transaction are refunded.</p>
+<p>If the <em>refund-capture</em> request does not contain order items, <em>{payment-provider-name} Payment Gateway</em> refunds the total order amount, i.e. all order items of the preceding <em>capture-authorization</em> transaction are refunded.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> forwards the request to <em>Klarna</em>.</p>
 </li>
 <li>
 <p><em>Klarna</em> returns the refund result.</p>
 </li>
 <li>
-<p><em>Wirecard Payment Gateway</em> sends you the <em>refund-capture</em> response which contains the status code.</p>
+<p><em>{payment-provider-name} Payment Gateway</em> sends you the <em>refund-capture</em> response which contains the status code.</p>
 </li>
 <li>
 <p>→ Process the <em>refund-capture</em> response.</p>
@@ -14349,7 +14349,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends an <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_NotificationExamples">Instant Payment Notification (IPN)</a> for pending reservations or the transaction outcome. It overwrites the notification URL that is set up in your merchant configuration.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-bottom" colspan="4"><p class="tableblock"><code>account-holder.</code></p></th>
@@ -16089,7 +16089,7 @@ Possible values:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>Wirecard Payment Gateway</em> sends the transaction outcome.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL to which <em>{payment-provider-name} Payment Gateway</em> sends the transaction outcome.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><code>success-redirect-url</code></p></td>
@@ -16863,7 +16863,7 @@ Check the REST API <a href="KlarnaV2_Main.html#KlarnaV2"><em>Klarna Payments</em
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-13 10:01:22 UTC
+Last updated 2020-08-17 09:23:12 UTC
 </div>
 </div>
 

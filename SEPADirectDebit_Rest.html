@@ -3221,7 +3221,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3232,7 +3232,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5929,7 +5929,7 @@ at <a href="AppendixB.html">Transaction Types</a>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pending-debit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction is processed in the Wirecard Payment Gateway.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction is processed in the {payment-provider-name} Payment Gateway.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -5955,7 +5955,7 @@ Only available when the <a href="SEPA.html#SEPA_TransactionType_Void_Restriction
 <a class="anchor" href="#SEPADirectDebit_TransactionTypes_Recurring"></a><a class="link" href="#SEPADirectDebit_TransactionTypes_Recurring">Recurring Transaction</a>
 </h6>
 <div class="paragraph">
-<p>The Wirecard Payment Gateway allows a merchant to submit
+<p>The {payment-provider-name} Payment Gateway allows a merchant to submit
 <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_Transactions_Recurring">recurring transactions</a>
 for <em>SEPA Direct Debit</em> transactions.</p>
 </div>
@@ -6090,7 +6090,7 @@ which defines how to calculate a due date for each sequence type.</p>
 <a class="anchor" href="#SEPADirectDebit_TransactionTypes_Authorization"></a><a class="link" href="#SEPADirectDebit_TransactionTypes_Authorization"><em>authorization</em></a>
 </h6>
 <div class="paragraph">
-<p>The Wirecard Payment Gateway allows a merchant to submit
+<p>The {payment-provider-name} Payment Gateway allows a merchant to submit
 <em>authorization</em> transactions for <em>SEPA Direct Debit</em> payments.</p>
 </div>
 <div class="paragraph">
@@ -6101,7 +6101,7 @@ name <em>SEPA Direct Debit</em>.</p>
 <div class="paragraph">
 <p>The <em>authorization</em> transaction type is not mandatory to use for <em>SEPA Direct Debit</em> transactions. A transaction with type <em>authorization</em> is
 not sent on for further processing to the provider. It remains in the
-Wirecard Payment Gateway for future reference.</p>
+{payment-provider-name} Payment Gateway for future reference.</p>
 </div>
 <div class="paragraph">
 <p>If the merchant sends a transaction request with transaction type
@@ -6272,7 +6272,7 @@ can be used with both SEPA payment methods: <em>SEPA Credit Transfer</em> and <e
 <li>
 <p>If the request is successful, a response will be returned with status
 <em>Success</em>. This response means that the transaction has entered the
-Wirecard Payment Gateway successfully. The transaction itself is in a <em>pending</em>
+{payment-provider-name} Payment Gateway successfully. The transaction itself is in a <em>pending</em>
 status, waiting to be sent to the merchant’s bank.</p>
 </li>
 <li>
@@ -6516,7 +6516,7 @@ where <a href="SEPA.html#SEPA_Reporting_IbanOnly">IBAN Only</a> is enabled, BIC 
 <p>The ID of the signed mandate between the merchant and the consumer.<br></p>
 </div>
 <div class="paragraph">
-<p>The mandate ID may NOT be generated by the Wirecard Payment Gateway.
+<p>The mandate ID may NOT be generated by the {payment-provider-name} Payment Gateway.
 It is solely the responsibility of the merchant.<br></p>
 </div>
 <div class="paragraph">
@@ -6759,7 +6759,7 @@ mandates with merchants more easily.</p>
 Identifier Overview v4.0'.</p>
 </div>
 <div class="paragraph">
-<p>The countries currently validated by the Wirecard Payment Gateway are
+<p>The countries currently validated by the {payment-provider-name} Payment Gateway are
 the following: DE, AT, NL, CH, LI, GB.</p>
 </div>
 <div class="paragraph">
@@ -6793,7 +6793,7 @@ Council'.</p>
 merchant permission to debit the consumer’s account for the sum upon
 which the two parties agreed. Every mandate has an ID provided by the
 merchant that, when combined with the Creditor ID, creates a unique
-mandate ID. This mandate reference must be sent to the Wirecard Payment Gateway within the request.</p>
+mandate ID. This mandate reference must be sent to the {payment-provider-name} Payment Gateway within the request.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6802,7 +6802,7 @@ mandate ID. This mandate reference must be sent to the Wirecard Payment Gateway 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The mandate ID may <strong>not</strong> be generated by the Wirecard Payment Gateway.
+The mandate ID may <strong>not</strong> be generated by the {payment-provider-name} Payment Gateway.
 It is solely the responsibility of the merchant.
 </td>
 </tr>
@@ -6880,7 +6880,7 @@ possible. Wirecard will always validate a due date if one is sent in
 with the transaction request.</p>
 </div>
 <div class="paragraph">
-<p>The transaction request must be received by the Wirecard Payment Gateway no
+<p>The transaction request must be received by the {payment-provider-name} Payment Gateway no
 earlier than 14 calendar days before the due date.</p>
 </div>
 <div class="paragraph">
@@ -9958,7 +9958,7 @@ Check the REST API <a href="SEPACreditTransfer_Rest.html#SEPACreditTransfer"><em
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-13 10:01:22 UTC
+Last updated 2020-08-17 09:23:12 UTC
 </div>
 </div>
 

@@ -3221,7 +3221,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3232,7 +3232,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5990,7 +5990,7 @@ can be created in minutes!</p>
 </table>
 <h5 id="PPv2_WhatDoes" class="discrete">What Does It Do?</h5>
 <div class="paragraph">
-<p>WPP v2 provides an appealing user interface for Wirecard Payment Gateway
+<p>WPP v2 provides an appealing user interface for {payment-provider-name} Payment Gateway
 (WPG), enhancing the user experience of paying customers. Payments are
 created through backend payment sessions which supply a live URL to the
 payment page.</p>
@@ -6445,7 +6445,7 @@ payment methods require additional processing: even if the initial
 request is successful, the process is not complete yet.</p>
 </div>
 <div class="paragraph">
-<p>In this specific situation, Wirecard Payment Gateway returns a
+<p>In this specific situation, {payment-provider-name} Payment Gateway returns a
 <em>pending-debit</em> transaction type in the response: the payment is
 processed, but its current state is not final. Since this is not the
 final response, the consumer is redirected to the <code>pending-redirect-url</code>
@@ -7518,7 +7518,7 @@ attempts.</p>
 purpose of offering merchants and easier way to integrate the standard
 and most widely used "SALE" transactions. Auto-sale does not exist as an
 individual transaction type: it is only a place-holder which is used by
-Wirecard Payment Gateway to decide which transaction type should be used
+{payment-provider-name} Payment Gateway to decide which transaction type should be used
 for a specific transaction. When using auto-sale, you are not required
 to send a specific transaction-type for each credit card or alternative
 payment method request.</p>
@@ -8974,7 +8974,7 @@ using, see the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The signature is only used with requests sent to the Wirecard Payment Gateway endpoint, e.g.
+The signature is only used with requests sent to the {payment-provider-name} Payment Gateway endpoint, e.g.
 <code>https://wpp-test.wirecard.com/api/payment/</code>, using the legacy NVP format
 ( for returning merchants).<br>
 This <strong>does not</strong> apply to the JSON flow.
@@ -9370,7 +9370,7 @@ re-direct to a provider.
 digitally signed payment request.</p>
 </li>
 <li>
-<p>Wirecard Payment Gateway validates the signature and
+<p>{payment-provider-name} Payment Gateway validates the signature and
 returns the list of payment methods for which the merchant has been
 configured with the associated redirect URL.</p>
 </li>
@@ -9394,14 +9394,14 @@ merchant’s account configuration.
 </div>
 </li>
 <li>
-<p>The Hosted Payment Page posts the payment transaction to the <em>Wirecard Payment Gateway.</em></p>
+<p>The Hosted Payment Page posts the payment transaction to the <em>{payment-provider-name} Payment Gateway.</em></p>
 </li>
 <li>
-<p>Wirecard Payment Gateway processes the payment with the
+<p>{payment-provider-name} Payment Gateway processes the payment with the
 respective financial institution.</p>
 </li>
 <li>
-<p>Wirecard Payment Gateway returns the final response to
+<p>{payment-provider-name} Payment Gateway returns the final response to
 the payment page, which is a digitally signed response message.</p>
 </li>
 <li>
@@ -9462,7 +9462,7 @@ JavaScript library.</p>
 <p>Consumer checks out with the purchased goods/services.</p>
 </li>
 <li>
-<p>Wirecard Payment Gateway validates the signature and
+<p>{payment-provider-name} Payment Gateway validates the signature and
 returns the list of payment methods for which the merchant has been
 configured with the associated redirect URL.</p>
 </li>
@@ -9486,14 +9486,14 @@ merchant’s account configuration.
 </div>
 </li>
 <li>
-<p>The payment page posts the payment transaction to the <em>Wirecard Payment Gateway.</em></p>
+<p>The payment page posts the payment transaction to the <em>{payment-provider-name} Payment Gateway.</em></p>
 </li>
 <li>
-<p>The Wirecard Payment Gateway processes the payment with the respective
+<p>The {payment-provider-name} Payment Gateway processes the payment with the respective
 financial institution.</p>
 </li>
 <li>
-<p>The Wirecard Payment Gateway returns the final response to the payment page,
+<p>The {payment-provider-name} Payment Gateway returns the final response to the payment page,
 which is a digitally signed response message.</p>
 </li>
 <li>
@@ -9591,7 +9591,7 @@ for the merchant to be PCI-DSS compliant.</p>
 <p>To ensure a seamless and PCI compliant integration, Wirecard serves the
 complete payment form as an HTML <em>iFrame</em>, which ensures that attacker or
 malicious scripts will not have access to data entered on the merchant’s
-page. The form is then submitted directly to Wirecard Payment Gateway over a
+page. The form is then submitted directly to {payment-provider-name} Payment Gateway over a
 secure TLS channel, so the data is securely transported. The high-level
 diagram below shows the checkout flow with the optional order summary
 page between the payment data collection page and the actual payment:</p>
@@ -9703,7 +9703,7 @@ See differences between <a href="SEPADirectDebit_Rest.html#SEPADirectDebit_Field
 </div>
 <div class="paragraph">
 <p>As payment information is exchanged between the merchant’s system, the
-consumer’s browser, and Wirecard Payment Gateway, it is
+consumer’s browser, and {payment-provider-name} Payment Gateway, it is
 important that the data exchange safeguards against man-in-the-middle
 attacks.</p>
 </div>
@@ -10396,7 +10396,7 @@ for reference.</p>
 <div class="sect6">
 <h7 id="PP_Security_SignatureV2_VerifyingResponseSignature"><a class="anchor" href="#PP_Security_SignatureV2_VerifyingResponseSignature"></a><a class="link" href="#PP_Security_SignatureV2_VerifyingResponseSignature">Verifying the Response Signature</a></h7>
 <div class="paragraph">
-<p>To check the signature you send in your payment request, Wirecard Payment Gateway
+<p>To check the signature you send in your payment request, {payment-provider-name} Payment Gateway
 calculates it in the same fashion and compares it to the
 value in the request. Then it calculates a new signature for the payment
 response — using fields from that response in the payload this time —
@@ -10412,7 +10412,7 @@ the <code>response_signature_v2</code> field).</p>
 </div>
 <div class="paragraph">
 <p>To recap, in order to verify the response signature you calculate it
-based on the payment response you receive from Wirecard Payment Gateway
+based on the payment response you receive from {payment-provider-name} Payment Gateway
 (following the same steps as when calculating it for a payment request ,
 but with a different payload). Then you compare the two values.</p>
 </div>
@@ -10631,7 +10631,7 @@ namespace SignatureGenerator
 <div class="paragraph">
 <p><em>Wirecard Payment Page v1</em> <span class="image no-zoom"><img src="images/icons/legacy.png" alt="LEGACY" width="80" height="20" title="Development of this product is discontinued."></span> displays the payment method selection screen if the
 field <code>payment_method</code> is left out or left empty and more than one
-payment method is configured for the merchant in the <em>Wirecard Payment Gateway.</em>
+payment method is configured for the merchant in the <em>{payment-provider-name} Payment Gateway.</em>
 It may be used to display all available payment
 methods or the list of displayed payment methods may be narrowed down by
 specifying the value of field <code>transaction_type</code> to <code>authorization</code> or
@@ -13023,7 +13023,7 @@ devices/units of the merchant’s choice).</p>
 </div>
 <div id="PPv2_WirecardDemoShop_Introduction" class="paragraph">
 <p>The <em>Wirecard Demo Shop</em> simulates a merchant e-shop with integrated
-Wirecard Payment Gateway capabilities, serving as a showcase of our
+{payment-provider-name} Payment Gateway capabilities, serving as a showcase of our
 Hosted Payment Page, Embedded Payment Page and Seamless Payment Page
 solutions.</p>
 </div>
@@ -13185,7 +13185,7 @@ actual HTTP in format "https://google.com" in the <strong>Additional Fields &gt;
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-13 10:01:22 UTC
+Last updated 2020-08-17 09:23:12 UTC
 </div>
 </div>
 
