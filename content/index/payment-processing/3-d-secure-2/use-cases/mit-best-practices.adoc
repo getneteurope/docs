@@ -1,0 +1,51 @@
+[#API_CC_3DS2_UseCases_MIT_BestPractices]
+== Merchant-Initiated Transactions (MIT) Best Practices
+
+[#API_CC_3DS2_UseCases_MIT_BestPractices_Incremental]
+=== Incremental 
+
+Download a Postman collection for this use case 
+pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
+
+
+
+[#API_CC_3DS2_UseCases_MIT_BestPractices_Resubmission]
+=== Re-submission 
+
+Download a Postman collection for this use case 
+pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
+
+
+
+[#API_CC_3DS2_UseCases_MIT_BestPractices_DelayedCharges]
+=== Delayed Charges 
+
+Download a Postman collection for this use case 
+pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
+
+
+
+[#API_CC_3DS2_UseCases_MIT_BestPractices_Reauthorization]
+=== Re-authorization 
+
+Download a Postman collection for this use case 
+pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
+
+
+
+[#API_CC_3DS2_UseCases_MIT_BestPractices_Noshow]
+=== No-show 
+
+Download a Postman collection for this use case 
+pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
+
+
+
+[#API_CC_3DS2_UseCases_MIT_BestPractices_DeferredAuthorization]
+=== Deferred Authorization
+
+Download a Postman collection for this use case 
+pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
+
+
+
