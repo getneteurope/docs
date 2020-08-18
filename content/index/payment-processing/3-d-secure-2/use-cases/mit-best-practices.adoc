@@ -1,12 +1,24 @@
 [#API_CC_3DS2_UseCases_MIT_BestPractices]
 == Merchant-Initiated Transactions (MIT) Best Practices
 
+[NOTE]
+====
+The following merchant-initiated transactions (MIT) best practices are available for VISA only.
+====
+
 [#API_CC_3DS2_UseCases_MIT_BestPractices_Incremental]
 === Incremental 
 
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
+Incremental authorizations can be used to increase the total amount authorized if the authorized amount is insufficient.
+
+An incremental authorization request may also be based on a revised estimate of what the cardholder may spend. Incremental authorizations do not replace the original authorization. They are additional to previously authorized amounts.
+
+The sum of all linked estimated and incremental authorizations represent the total amount authorized for a given transaction. An incremental authorization must be preceded by an estimated/initial authorization.
+
+One or more incremental authorizations can be requested while the transaction has not yet been finalized (submitted for clearing). Incremental authorizations must not be used once the original transaction has been submitted for clearing. In such a scenario, a new authorization must be requested, with the appropriate reason code (e.g., delayed charges, reauthorization). 
 
 
 [#API_CC_3DS2_UseCases_MIT_BestPractices_Resubmission]
@@ -15,6 +27,7 @@ pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-opt
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
+A merchant performs a Resubmission in cases where it requested an authorization, but received a decline due to insufficient funds; however, the goods or services were already delivered to the cardholder. The authorization can be resubmitted only in case there was a rejection code for the initial transaction was 51 (Insufficient funds).
 
 
 [#API_CC_3DS2_UseCases_MIT_BestPractices_DelayedCharges]
@@ -23,6 +36,7 @@ pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-opt
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
+A Delayed Charge is typically used in hotel, cruise lines and vehicle rental environments to perform a supplemental account charge after original services are rendered.
 
 
 [#API_CC_3DS2_UseCases_MIT_BestPractices_Reauthorization]
@@ -31,6 +45,7 @@ pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-opt
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
+A ReAuthorization is a purchase made after the original purchase and can reflect a number of specific conditions. Common scenarios include delayed/split shipments and extended stays/rentals.
 
 
 [#API_CC_3DS2_UseCases_MIT_BestPractices_Noshow]
@@ -39,6 +54,9 @@ pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-opt
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
+A No-show is a transaction where the merchant is enabled to charge for services which the cardholder entered into an agreement to purchase, but did not meet the terms of the agreement.
+
+Cardholders can use their Visa cards to make a guaranteed reservation with certain merchant segments. A guaranteed reservation ensures that the reservation will be honored and allows a merchant to perform a No Show transaction to charge the cardholder a penalty according to the merchant’s cancellation policy. For merchants that accept token-based payment credentials to guarantee a reservation, it is necessary to perform a CIT (Account Verification Service) at the time of reservation to be able perform a No Show transaction later.
 
 
 [#API_CC_3DS2_UseCases_MIT_BestPractices_DeferredAuthorization]
@@ -47,5 +65,5 @@ pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-opt
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/one-time-payment-option-one.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
-
+A Deferred Authorization occurs when a merchant cannot complete an authorization at the time of the transaction with the cardholder due to connectivity, systems issues or other limitations, and then later completes the authorization when it is able to do so.
 
