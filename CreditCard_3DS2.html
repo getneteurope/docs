@@ -5326,6 +5326,20 @@
 </li>
 </ul>
 </li>
+<li id="toc_li_CreditCard_3DS2_Exemption_Adviser" data-level="3">
+<input id="toc_cb_CreditCard_3DS2_Exemption_Adviser" type="checkbox"><label for="toc_cb_CreditCard_3DS2_Exemption_Adviser"><a href="CreditCard_3DS2.html#CreditCard_3DS2_Exemption_Adviser">Exemption Adviser</a></label>
+<ul>
+<li id="toc_li_CreditCard_PSD2_SCA_Exemptions" data-level="4">
+<input id="toc_cb_CreditCard_PSD2_SCA_Exemptions" type="checkbox" disabled><label for="toc_cb_CreditCard_PSD2_SCA_Exemptions"><a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA_Exemptions">SCA Exemptions</a></label>
+</li>
+<li id="toc_li_CreditCard_PSD2_SCA_Exemptions_OutOfScope" data-level="4">
+<input id="toc_cb_CreditCard_PSD2_SCA_Exemptions_OutOfScope" type="checkbox" disabled><label for="toc_cb_CreditCard_PSD2_SCA_Exemptions_OutOfScope"><a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA_Exemptions_OutOfScope">Out of Scope for SCA</a></label>
+</li>
+<li id="toc_li_3DSecureLiabilityShift" data-level="4">
+<input id="toc_cb_3DSecureLiabilityShift" type="checkbox" disabled><label for="toc_cb_3DSecureLiabilityShift"><a href="CreditCard_3DS2.html#3DSecureLiabilityShift">Liability Shift</a></label>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li id="toc_li_GeneralPlatformFeatures" data-level="2">
@@ -5889,6 +5903,9 @@
 </li>
 <li>
 <p><a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA"><strong>What is SCA?</strong></a></p>
+</li>
+<li>
+<p><a href="CreditCard_3DS2.html#CreditCard_3DS2_Exemption_Adviser"><strong>Exemption Adviser</strong></a></p>
 </li>
 </ul>
 </div>
@@ -9755,7 +9772,7 @@ Accepted values:<br></p>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
 <p>Date and time (UTC) of the consumer login to your shop.<br>
-Accepted format: <code>YYYY-MM-DDThh:mm:ssZ</code>.<br>
+Accepted format: <code>YYYY-MM-DDThh:mm:ss</code>.<br>
 For guest checkout, the timestamp is <code>now</code>.</p>
 </div>
 <div class="ulist">
@@ -16445,6 +16462,358 @@ are out of scope of SCA (Strong Customer Authentication). To process MOTO transa
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="CreditCard_3DS2_Exemption_Adviser">
+<a class="anchor" href="#CreditCard_3DS2_Exemption_Adviser"></a><a class="link" href="#CreditCard_3DS2_Exemption_Adviser">Exemption Adviser</a>
+</h4>
+<div class="paragraph">
+<p>You can request for certain types of transactions to be exempted from Strong Customer Authentication (SCA), even though PSD 2 is mandatory. It is up to your bank/acquirer to request these exemptions for you, followed by the approval of the issuer.</p>
+</div>
+<div class="paragraph">
+<p>Flag a transaction accordingly to indicate if an exemption is desired and Wirecard can request the most applicable SCA exemption.</p>
+</div>
+<div class="paragraph">
+<p>The card issuing bank can also apply an exemption from SCA regardless of whether or not you or your bank/acquirer requested it. In both cases, if an exemption is applied, the transaction is frictionless.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the exemption is granted, liability protection is not offered, and the liability remains with you, the merchant (acquirer), in case of chargebacks.
+For details on when the liability protection is granted, go to the <a href="CreditCard_3DS2.html#3DSecureLiabilityShiftRules">liability shift rules overview</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="CreditCard_PSD2_SCA_Exemptions">
+<a class="anchor" href="#CreditCard_PSD2_SCA_Exemptions"></a><a class="link" href="#CreditCard_PSD2_SCA_Exemptions">SCA Exemptions</a>
+</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="CreditCard_PSD2_SCA_Exemptions_LowValue"></a> <strong>Low-Value Transactions</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>SCA does NOT apply to transactions below 30 EUR.<br></p>
+</li>
+<li>
+<p>SCA does NOT apply when the cumulative amount of previous transactions since the last Strong Customer Authentication does not exceed 100 EUR.<br></p>
+</li>
+<li>
+<p>SCA does NOT apply when five or less consecutive individual online transactions have been made. Remember that in this case, none of those two-to-five payments have been over 30 EUR, and their total does not exceed 100 EUR.<br>
+<em>The issuer keeps track of the number of transactions and the cumulative transaction amount, reseting the counts each time SCA is performed.</em></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The issuer can apply this exemption even if you and your acquirer did not request for it. In such cases the chargeback liability shifts to the issuer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div>
+</div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="CreditCard_PSD2_SCA_Exemptions_LowRisk"></a> <strong>Low-Risk Transactions</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>SCA does NOT apply to low-risk transactions.<br></p>
+</li>
+<li>
+<p>To determine whether an online transaction is low-risk, acquirers and issuers may perform real-time risk analysis to identify, for example, abnormal spending patterns, known fraud scenarios, and abnormal location of the consumer.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The transaction amount for which a low-risk exemption can be requested varies depending on the acquirer fraud rate.<br>
+The issuer can apply this exemption even if you and your acquirer did not request for it. In such cases the chargeback liability shifts to the issuer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div>
+</div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="CreditCard_PSD2_SCA_Exemptions_WhiteList"></a> <strong>Whitelisting</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>SCA does NOT apply to online payments from a consumer to a whitelisted merchant.<br></p>
+</li>
+<li>
+<p>Consumers can whitelist "trusted beneficiaries", i.e. merchants of their choice, to be included on a list maintained by the consumer’s bank. SCA is only required for the first online transaction.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div>
+</div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>These types of transactions can only be exempted from Strong Customer Authentication if the fraud rates for these transactions are the same as or below the EU reference fraud rate for remote electronic card-based payments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table id="CreditCard_PSD2_Fraud" class="tableblock frame-all grid-all fit-content">
+<caption class="title">EU reference fraud rate for remote electronic card-based payments</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Exemption Threshold Value (ETV)</th>
+<th class="tableblock halign-left valign-top">Fraud Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUR 500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.01 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUR 250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.06 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUR 100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.13 %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="CreditCard_PSD2_SCA_Exemptions_OutOfScope">
+<a class="anchor" href="#CreditCard_PSD2_SCA_Exemptions_OutOfScope"></a><a class="link" href="#CreditCard_PSD2_SCA_Exemptions_OutOfScope">Out of Scope for SCA</a>
+</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Merchant-Initiated Transactions (MIT)<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>SCA must apply when the consumer initiates the first in a series of recurring transactions with the same amount and the same merchant.<br></p>
+</li>
+<li>
+<p>SCA does NOT apply to all subsequent recurring transactions.<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Merchant-initiated transactions must be flagged accordingly. For more information on MITs, go to <a href="CreditCard_3DS2.html#API_CC_3DS2_PaymentFlows">3D Secure 2 Payment Flows</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Secure Corporate Transactions<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>SCA does NOT apply to secure B2B payments via dedicated payment processes and protocols which are not available to consumers.<br></p>
+</li>
+<li>
+<p>If you or your payment service provider identify a transaction as exempted from secure corporate payment, you can send the transaction directly for authorization by using the appropriate flag.<br>
+The issuer remains responsible for exemption validation and should not request SCA for transactions exempted from secure corporate payment. Issuers and their ACS must identify cards of this type based on the product/PAN and communicate to acquirers (via their ACS) that SCA is not required.<br>
+If the issuer identifies a transaction not exempted from secure corporate payment, they must perform a soft decline.<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Card payments taken via mail (e.g. email, fax, order form) or phone (MOTO transactions)</p>
+</li>
+<li>
+<p>"One-leg out transactions", i.e. transactions where either the issuer or the acquirer is not located within the European Economic Area (EEA)</p>
+</li>
+<li>
+<p>Transactions using anonymous prepaid cards<br></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These transactions are in scope of AMLD5. As Wirecard is AMLD5-compliant, different acceptance rules apply.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="3DSecureLiabilityShift">
+<a class="anchor" href="#3DSecureLiabilityShift"></a><a class="link" href="#3DSecureLiabilityShift">Liability Shift</a>
+</h5>
+<div class="paragraph">
+<p>3D Secure protects merchants from fraudulent losses by allowing for liability shift after successful cardholder authentication.</p>
+</div>
+<div class="paragraph">
+<p>Generally, the liability shift rules for 3D Secure 2 are comparable with those for 3D Secure 1: Whenever you successfully request authentication from an issuer, the chargeback liability shifts to the issuer.</p>
+</div>
+<div class="paragraph">
+<p>There are, however, some exceptions applicable within the European Economic Area (EEA):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If an exemption is granted after it was requested by you and your acquirer (e.g. you decide to avoid a challenge), liability protection is not offered, and the liability generally remains with you, the merchant (acquirer).</p>
+</li>
+<li>
+<p>If an issuer does not support 3D Secure 2 after SCA requirements have come into effect, there are cases where only attempting to apply 3D Secure 2 will lead to a shift in liability. Nonetheless, the issuer may decline the authorization in case they refuse to take the liability.</p>
+</li>
+</ul>
+</div>
+<table id="3DSecureLiabilityShiftRules" class="tableblock frame-all grid-all stretch">
+<caption class="title">Liability Shift Rules Overview</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Merchant</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Applied Exemption</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issuer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Liability</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">3D Secure implemented</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Does not support 3D Secure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA_Exemptions_LowValue">Low-value transactions</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks if number of transactions &lt; or =5 and accepts exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquirer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies <a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA_Exemptions_LowValue">low-value transactions</a> exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA_Exemptions_LowRisk">Low-risk transactions</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accepts exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquirer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies <a href="CreditCard_3DS2.html#CreditCard_PSD2_SCA_Exemptions_LowRisk">low-risk transactions</a> exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No exemption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performs transaction risk analysis / requests challenge (if preceeding number of low-value transactions =5)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merchant-initiated transaction (first)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requests challenge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="paragraph nav-footer">
 <p> <a href="GeneralPlatformFeatures.html">Features</a> →</p>
@@ -16452,7 +16821,7 @@ are out of scope of SCA (Strong Customer Authentication). To process MOTO transa
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-18 10:40:08 UTC
+Last updated 2020-08-19 12:35:14 UTC
 </div>
 </div>
 
