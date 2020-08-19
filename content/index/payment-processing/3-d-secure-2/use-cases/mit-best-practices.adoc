@@ -27,7 +27,7 @@ One or more incremental authorizations can be requested while the transaction ha
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/mit-best-practices-resubmission.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
-The re-submission scenario appplies when you requested an authorization and it was declined due to insufficient funds, but the goods or services were already delivered to the consumer/cardholder. In this case, you can perform a re-submission of the authorization. 
+The re-submission scenario appplies when you requested an authorization and it was declined due to insufficient funds, but the goods or services were already delivered to the consumer/cardholder. In this case,you can perform a re-submission of the authorization. 
 
 NOTE: The authorization can be resubmitted only if the rejection/error? code returned for the initial transaction was ``51`` (Insufficient funds).
 
@@ -47,7 +47,7 @@ The delayed charges scenario typically occurs in hotel, cruise lines and vehicle
 Download a Postman collection for this use case 
 pass:[<a href="resources/3-d-secure-2/usecase_pm-collection/mit-best-practices-reauthorization.postman_collection.json" target="_blank" rel="noreferrer noopener" download>here.</a>] 
 
-A ReAuthorization is a purchase made after the original purchase and can reflect a number of specific conditions. Common scenarios include delayed/split shipments and extended stays/rentals.
+A re-authorization is a purchase made after the original purchase and can reflect a number of specific conditions. Common scenarios include delayed/split shipments and extended stays/rentals.
 
 
 [#API_CC_3DS2_UseCases_MIT_BestPractices_Noshow]
