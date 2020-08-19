@@ -1,5 +1,5 @@
 [#eps]
-== REST API & {payment-page-v1}
+== REST API
 _eps-Überweisung_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#eps_GeneralInformation_PaymentMode]

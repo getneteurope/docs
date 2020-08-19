@@ -1,0 +1,9 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>capture-authorization</transaction-type>
+  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
+  <payment-methods>
+    <payment-method name="linepay"/>
+  </payment-methods>
+</payment>

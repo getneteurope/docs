@@ -1,8 +1,8 @@
 [#giropay]
-== REST API & {payment-page-v1}
+== REST API
 _giropay_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
-[#giropay_GeneralInformation_PaymentMode]
+[#giropay_GeneralInformation_Countries]
 === Countries and Currencies
 [width=75%,cols="1h,3",stripes=none,]
 |===

@@ -1,5 +1,5 @@
 [#Sofort]
-== REST API & {payment-page-v1}
+== REST API
 
 _Sofort_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
@@ -47,8 +47,6 @@ at <<AppendixB,  Transaction Types>>.
 | get-url |A step in a group of transactions where the provider or bank's URL is retrieved for the Account Holder to be redirected to.
 
 | debit |Moves funds from the Consumer Account to the Merchant Account.
-
-| revoke-debit | Automates the revocation process. It handles transactions successfully processed by {payment-gateway-abbr} but not processed by _Sofort_. Repairs an incorrect success debit transaction.
 |===
 
 [#Sofort_ReferenceTransaction]

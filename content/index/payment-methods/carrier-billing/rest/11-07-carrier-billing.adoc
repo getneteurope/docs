@@ -1,5 +1,10 @@
 [#CarrierBilling]
 == REST API
+
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
+
 _Carrier Billing_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#CarrierBilling_GeneralInformation_PaymentMode]

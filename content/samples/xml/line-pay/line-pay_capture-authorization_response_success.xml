@@ -1,0 +1,25 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
+  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+  <transaction-id>76a16306-904f-4491-8f5c-811fda31d668</transaction-id>
+  <request-id>c414b976-105f-4fab-bfd4-18f14b720668</request-id>
+  <transaction-type>capture-authorization</transaction-type>
+  <transaction-state>success</transaction-state>
+  <completion-time-stamp>2019-02-28T08:31:40.000Z</completion-time-stamp>
+  <statuses>
+    <status code="201.0000" description="The resource was successfully created." severity="information"/>
+  </statuses>
+  <requested-amount currency="THB">2.00</requested-amount>
+  <parent-transaction-id>c1d9ad1d-ad82-476f-a93d-90febfd08663</parent-transaction-id>
+  <account-holder>
+    <first-name>Paul</first-name>
+    <last-name>Peterson</last-name>
+  </account-holder>
+  <order-number>1551342687432</order-number>
+  <descriptor>Payment description</descriptor>
+  <payment-methods>
+    <payment-method name="linepay"/>
+  </payment-methods>
+  <api-id>---</api-id>
+  <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
+  <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
+</payment>

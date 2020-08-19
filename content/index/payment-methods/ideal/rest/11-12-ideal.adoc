@@ -1,5 +1,5 @@
 [#iDEAL]
-== REST API & {payment-page-v1}
+== REST API
 _iDEAL_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#iDEAL_GeneralInformation_PaymentMode]

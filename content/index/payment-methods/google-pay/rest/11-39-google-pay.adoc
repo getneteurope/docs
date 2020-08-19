@@ -1,6 +1,10 @@
 
 [#GooglePay]
-== REST API & {payment-page-v1}
+== REST API
+
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
 
 [#GooglePay_Introduction]
 === Introduction

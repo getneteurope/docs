@@ -5,9 +5,23 @@
 [#PPv2_giropay]
 == {payment-page-v2}
 
-_{payment-method-name}_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
+====
+{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<giropay, REST API>> integration guide.
+====
 
-.Countries and Currencies 
+_{payment-method-name}_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>. 
+
+[#PPv2_giropay_General]
+=== General Information
+
+include::{root}/include/ppv2-general-information.adoc[]
+
+Below, we provide a sample request for the transaction type _{transaction-type}_, including field lists with short descriptions.
+
+include::{root}/include/ppv2-general-information-2.adoc[]
+
+[#PPv2_giropay_Countries]
+=== Countries and Currencies
 
 [cols="20h,80"]
 |===
@@ -17,15 +31,6 @@ _{payment-method-name}_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTran
 |Currencies   
 | EUR
 |===
-
-[#PPv2_giropay_general]
-=== General Information
-
-include::{root}/include/ppv2-general-information.adoc[]
-
-Below, we provide a sample request for the transaction type _{transaction-type}_, including field lists with short descriptions.
-
-include::{root}/include/ppv2-general-information-2.adoc[]
 
 [#PPv2_giropay_Transactions]
 === Transaction Type _{transaction-type}_
