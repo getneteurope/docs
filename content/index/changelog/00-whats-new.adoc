@@ -41,7 +41,7 @@
 - <<PPD_customize, Payment Page Designer>> - New *Secure Badge* feature available for {payment-page-v2}.
 
 //-
-
+[discrete]
 === 2020-06
 
 .2020-06-30
