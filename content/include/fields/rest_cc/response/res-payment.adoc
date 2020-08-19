@@ -15,7 +15,7 @@
 | Timestamp 
 | 20
 | This is the timestamp of completion of request. +
-Format: ``{timestamp-pattern}``
+Format: ``{timestamp-pattern-utc}``
 
 | avs-code 
 | String 

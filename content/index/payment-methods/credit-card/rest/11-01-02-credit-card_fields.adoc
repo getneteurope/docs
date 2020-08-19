@@ -1,5 +1,4 @@
 :date-pattern: YYYY-MM-DD
-:timestamp-pattern: YYYY-MM-DDThh:mm:ssZ
 
 [#CC_Fields]
 == Fields
