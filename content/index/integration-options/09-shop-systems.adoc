@@ -301,12 +301,15 @@ a| WooCommerce
 
       - Chinese, simplified
       - Chinese, traditional
+      - Czech
+      - Dutch
       - English
       - French
       - German
       - Indonesian
       - Japanese
-      - Korean   |
+      - Korean   
+      - Slovak   |
 
       - https://github.com/wirecard/woocommerce-ee/wiki[English]
       - https://github.com/wirecard/woocommerce-ee/wiki/Accueil[French]
