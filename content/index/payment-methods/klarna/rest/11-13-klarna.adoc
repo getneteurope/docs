@@ -606,7 +606,7 @@ conditional *C* in a transaction process.
 
 [#Klarna_Fields_authorization]
 .authorization
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request   |Response |Data Type |Size |Description |Usage remarks
 
@@ -834,7 +834,7 @@ the payment method: _klarna-invoice_, _klarna-install_
 
 [#Klarna_Fields_adjustAuthorization]
 .adjust-authorization
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -1295,7 +1295,7 @@ an information.
 
 [#Klarna_Fields_authorizationRenewal]
 .authorization-renewal
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -1407,7 +1407,7 @@ an information.
 
 [#Klarna_Fields_voidAuthorization]
 .void-authorization
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -1506,13 +1506,13 @@ an information.
 |M
 |Alphanumeric
 |15
-2+|Name of the payment method: _klarna-invoice_, _klarna-install_
+2+|Name of the payment method: ``klarna-invoice``, ``klarna-install``
 
 |===
 
 [#Klarna_Fields_captureAuthorization]
 .capture-authorization
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -1702,21 +1702,22 @@ currency).
 |Enumeration
 |
 2+a|
-.Use one of the following options
-- store_pick_up - An online purchase is picked up in your own physical store.
-- home_delivery -  Goods are sent home directly to consumer's
+*Use one of the following options:*
+
+- ``store_pick_up`` - An online purchase is picked up in your own physical store.
+- ``home_delivery`` -  Goods are sent home directly to consumer's
 home address via an external shipping company. This can either be a
 traceable or a non-traceable shipment.
-- registered_box - Goods are sent to a delivery box where the
+- ``registered_box`` - Goods are sent to a delivery box where the
 consumer needs to be registered to pick them up. Example: DHL
 Packstation.
-- unregistered_box - Goods are sent to a delivery box where the
+- ``unregistered_box`` - Goods are sent to a delivery box where the
 consumer does not need to be registered to pick them up. Example: Itella
 smartpost, Hermes PaketShop.
-- pick_up_point - Goods are sent to a manned pick-up point by an
+- ``pick_up_point`` - Goods are sent to a manned pick-up point by an
 external shipping company. External personnel hands over goods to the
 consumer.
-- own_delivery - Goods are sent home directly to consumers home
+- ``own_delivery`` - Goods are sent home directly to consumers home
 address via your own delivery service.
 
 //-
@@ -1863,7 +1864,7 @@ transaction.
 
 [#Klarna_Fields_refundCapture]
 .refund-capture
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -1979,10 +1980,11 @@ currency).
 |Enumeration
 |
 a|
-.Order item types
-- shipment_fee, handling_fee - marks the item as a new additional
+**Order item types**
+
+- ``shipment_fee``, ``handling_fee`` - marks the item as a new additional
 fee decreasing the total refund amount
-- discount - marks the item as a voucher (good-will refund)
+- ``discount`` - marks the item as a voucher (good-will refund)
 increasing the total refund amount.
 
 //-
@@ -2090,7 +2092,7 @@ transaction.
 
 [#Klarna_Fields_getAdress]
 .get-address
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -2204,7 +2206,7 @@ or with or without the two first numbers in the year.
 
 [#Klarna_Fields_installmentCalculator]
 .installment-calculator
-[cols="e,,,,,,"]
+[cols="m,,,,,,"]
 |===
 |Field |Request |Response |Data Type |Size |Description |Usage remarks
 
@@ -2687,7 +2689,7 @@ required for your integration.
 [#Klarna_FrontendIntegrationRequirements]
 ==== Frontend Integration Requirements
 
-image::images/11-13-klarna/Klarna_Workflow_FrontendIntegrationRequirements.png[Klarna Workflow Frontend Integration Requirements,height=250]
+//image::images/11-13-klarna/Klarna_Workflow_FrontendIntegrationRequirements.png[Klarna Workflow Frontend Integration Requirements,height=250]
 
 Klarna has detailed requirements for the look & feel style of the
 integration on the shop's checkout page. These requirements must be
