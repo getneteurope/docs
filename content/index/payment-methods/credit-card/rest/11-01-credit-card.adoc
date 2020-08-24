@@ -1,5 +1,5 @@
 [#CreditCard]
-== REST API & {payment-page-v1}
+== REST API
 
 [#CreditCard_PaymentModeCountriesandCurrencies]
 === Payment Mode, Countries and Currencies

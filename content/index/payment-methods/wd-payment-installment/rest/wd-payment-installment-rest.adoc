@@ -1,2 +1,2 @@
 [#API_PaymentInstallment_REST]
-== REST API & {payment-page-v1}
+== REST API

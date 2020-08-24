@@ -1,9 +1,15 @@
 [#API_PaybyBankapp]
-== REST API & {payment-page-v1}
+== REST API
+
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
+
 _Pay by Bank app_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#API_PaybyBankapp_General_PaymentMode]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 |Countries
@@ -13,8 +19,10 @@ _Pay by Bank app_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, 
 
 [#API_PaybyBankapp_General_Communication]
 === Communication Formats
+
 This table illustrates how _Pay by Bank app_ (_PBBA_) notifications are encoded
 and which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| Requests/Responses |Format |XML, JSON

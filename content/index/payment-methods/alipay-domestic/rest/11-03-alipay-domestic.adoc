@@ -1,9 +1,15 @@
 [#API_AlipayDomestic]
 == REST API
+
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
+
 _Alipay Domestic_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_AlipayDomestic_General_PaymentMode]
 === Countries and Currencies
+
 [width=75%,stripes=none,cols="1h,3"]
 |===
 | Countries | China
@@ -12,8 +18,10 @@ _Alipay Domestic_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_AlipayDomestic_General_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _Alipay Domestic_ notifications are encoded
 and which languages and methods can be used for requests and responses.
+
 [width=75%,cols=",,",stripes=none]
 |===
 .2+h| Requests/Responses |Format  |XML, JSON, NVP

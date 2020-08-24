@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+    <transaction-id>819b4aed-41ee-4ee6-9822-2e2f4aeca704</transaction-id>
+    <request-id>2747b197-5f0e-4833-aea1-920bd216b650</request-id>
+    <transaction-type>debit</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2020-06-30T07:28:35.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="THB">2.00</requested-amount>
+    <parent-transaction-id>92db460a-905b-432e-9105-36ebd86282bf</parent-transaction-id>
+    <account-holder>
+        <first-name>Paul</first-name>
+        <last-name>Peterson</last-name>
+    </account-holder>
+    <order-number>1551342687432</order-number>
+    <descriptor>Payment description</descriptor>
+    <payment-methods>
+        <payment-method url="https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDA3MjgzNTwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4xOTc2MTkxMTAzMDk2ODcyNjI5OTwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwMDIwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT44MTliNGFlZC00MWVlLTRlZTYtOTgyMi0yZTJmNGFlY2E3MDQ8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NTEzNDI2ODc0MzI8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPjI3NDdiMTk3LTVmMGUtNDgzMy1hZWExLTkyMGJkMjE2YjY1MDwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BODAxOTdCMzVERjI5QjcyNzdGODk0NjA5RThFNDgxRDVFQTFFQUUyMDwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D" name="linepay"/>
+    </payment-methods>
+    <api-id>---</api-id>
+    <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
+    <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
+    <periodic>
+        <periodic-type>recurring</periodic-type>
+        <sequence-type>final</sequence-type>
+    </periodic>
+</payment>

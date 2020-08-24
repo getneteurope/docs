@@ -1,9 +1,14 @@
 [#WirecardVoucher]
-== REST API & {payment-page-v1}/v2
-_Wirecard Voucher_ is a type of <<PaymentMethods_PaymentMode_Voucher, voucher>> payment.
+== REST API & {payment-page-v2}
 
+====
+Please note that you can use the REST API documentation also for {payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] integration. 
+====
+
+_Wirecard Voucher_ is a type of <<PaymentMethods_PaymentMode_Voucher, voucher>> payment.
 [#WirecardVoucher_GeneralInformation_PaymentMode]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | Please contact <<ContactUs, Merchant Support>> for Countries. 
@@ -12,6 +17,7 @@ _Wirecard Voucher_ is a type of <<PaymentMethods_PaymentMode_Voucher, voucher>> 
 
 [#WirecardVoucher_GeneralInformation_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _Wirecard Voucher_ notifications are encoded
 and which formats and methods can be used for requests and responses.
 
@@ -22,7 +28,6 @@ and which formats and methods can be used for requests and responses.
 
 h|IPN Encodement       2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN, Instant Payment Notification>> to set up IPN.
 |===
-
 
 [#WirecardVoucher_TransactionTypes]
 === Transaction Types

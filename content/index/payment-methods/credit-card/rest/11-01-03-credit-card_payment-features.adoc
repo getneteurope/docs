@@ -1088,7 +1088,7 @@ include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 Most of the response fields used for the loyalty programs are the same as the <<CC_Fields_xmlelements_response, Credit Card response fields>>. +
 Loyalty program specific field information is given here.
 
-[#CC_Fields_xmlelements_response_carddata]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_response_carddata]
 .``card-data.``
 
 include::{root}/include/field-list-headers/rest_cc/response/res-card-data.adoc[tag=loyalty-prog]
@@ -1101,7 +1101,7 @@ include::{root}/include/fields/rest_cc/response/res-card-data.adoc[]
 
 |===
 
-[#CC_Fields_xmlelements_response_loyaltycard]
+[#CreditCard_PaymentFeatures_LoyaltyPrograms_Fields_response_loyaltycard]
 .``loyalty-card.``
 
 include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.adoc[tag=loyalty-prog]

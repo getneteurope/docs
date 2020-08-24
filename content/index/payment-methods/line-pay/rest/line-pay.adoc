@@ -1,0 +1,259 @@
+[#API_LinePay]
+== REST API
+
+_LINE Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>> payment.
+
+[#API_LinePay_Introduction_General]
+=== General Information
+
+[#API_LinePay_Introduction_General_PaymentMode]
+==== Countries and Currencies
+
+[width=75%,cols="1h,3",stripes=none]
+|===
+| Countries    | Thailand
+| Currencies   | USD, JPY, TWD, THB
+|===
+
+//-
+
+[#API_LinePay_Introduction_General_CommunicationFormats]
+==== Communication Formats
+
+This table illustrates how _LINE Pay_ notifications are encoded and which formats and methods can be used for
+requests and responses.
+[width=75%,stripes=none]
+|===
+.2+h| Requests/Responses | Format   | XML
+                         | Methods  | POST
+   h| IPN Encodement   2+| Follow the instructions given at
+<<GeneralPlatformFeatures_IPN_NotificationExamples, Instant Payment Notification>> to set up IPN.
+|===
+
+[#API_LinePay_TransactionTypes]
+=== Transaction Types
+
+For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB,  Transaction Types>>.
+
+[%autowidth.stretch,stripes=none]
+|===
+|Transaction Type |Link to the sample
+
+| _pending-debit_ | <<API_LinePay_Samples_PendingDebit, _pending-debit_ sample>>
+| _debit_ | <<API_LinePay_Samples_PendingDebit_RecRec, _debit_ sample>>
+| _refund-debit_ | <<API_LinePay_Samples_RefundDebit, _refund-debit_ sample>>
+| _pending-authorization_ | <<API_LinePay_Samples_PendingAuth, _pending-authorization_ sample>>
+| _void-authorization_ | <<API_LinePay_Samples_VoidAuth, _void-authorization_ sample>>
+| _capture-authorization_ | <<API_LinePay_Samples_CaptureAuth, _capture-authorization_ sample>>
+| _refund-capture_ | <<API_LinePay_Samples_RefundCapture, _refund-capture_ sample>>
+
+|===
+
+//-
+
+[#API_LinePay_TestCredentials]
+=== Test Credentials
+
+// [%autowidth.stretch,stripes=none]
+// |===
+// h|Endpoint | ``\https://{rest-api-test-apm-endpoint}``
+// h|Merchant Account ID (MAID) | 9a04f328-ea7e-487c-bccd-87fd56f0dc09
+// h|Username |16390-testing
+// h|Password |3!3013=D3fD8X7
+// |===
+
+For LINE Pay we cannot provide a general set of test credentials. For a successful test you must register to LINE Pay's platform. Additionally, depending on your use cases, LINE Pay configures an individual set of features tailored for you. +
+Ask <<ContactUs, Merchant Support>> for details.
+
+[#API_LinePay_Workflow]
+=== Workflow
+
+.	The consumer adds items to the shopping basket.
+.	You redirect the consumer to Payment Gateway (with an _auto-sale_ or _pending-debit_ or _pending-authorization_ request).
+.	Payment Gateway displays all the available payment methods.
+.	The consumer selects LINE Pay.
+.	Payment Gateway sends a reserve payment request to LINE Pay.
+.	LINE Pay includes a redirect URL in the response and sends it to Payment Gateway.
+.	LINE Pay waits for the consumer’s interaction.
+.	Payment Gateway edirects the consumer to LINE Pay’s page, which prompts the consumer to continue with the LINE Pay app.
+.	The consumer enters the credentials to continue the payment process.
+.	LINE Pay verifies the consumer’s password.
+.	LINE Pay displays the payment status in the consumer’s LINE Pay app.
+.	LINE Pay sends the payment status to Payment Gateway.
+.	LINE Pay redirects the consumer to Payment Gateway.
+.	Payment Gateway sends a confirmation request to LINE Pay.
+.	LINE Pay processes the confirmation information and sends a confirmation response to Payment Gateway.
+.	Payment Gateway sends a _debit_ or _authorization_ notification to you.
+.	Payment Gateway redirects the consumer to your checkout page.
+.	You process the _debit_ or _authorization_ notification and display the payment status to the consumer.
+
+//-
+
+[#API_LinePay_Fields]
+=== Fields
+
+Find details for the fields in the <<RestApi_Fields, REST API Field Table>>.
+
+[#API_LinePay_Samples]
+=== Samples
+
+[#API_LinePay_Samples_PendingDebit]
+==== _pending-debit_
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_response_success.xml[]
+----
+
+[#API_LinePay_Samples_PendingDebit_RecFirst]
+==== _pending-debit_ (Recurring/First) 
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_pending-debit_recurring-first_response_success.xml[]
+----
+
+[#API_LinePay_Samples_PendingDebit_RecRec]
+==== _debit_ (Recurring/Recurring) 
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-recurring_response_success.xml[]
+----
+
+[#API_LinePay_Samples_PendingDebit_RecFinal]
+==== _debit_ (Recurring/Final) 
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_debit_recurring-final_response_success.xml[]
+----
+
+[#API_LinePay_Samples_RefundDebit]
+==== _refund-debit_
+
+NOTE: Use the value of the <transaction-id> from the debit notification, which was sent for the corresponding pending-debit transaction.
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_refund-debit_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_refund-debit_response_success.xml[]
+----
+
+[#API_LinePay_Samples_PendingAuth]
+==== _pending-authorization_
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_pending-authorization_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_pending-authorization_response_success.xml[]
+----
+
+[#API_LinePay_Samples_VoidAuth]
+==== _void-authorization_
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_void-authorization_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_void-authorization_response_success.xml[]
+----
+
+// include::{root}/samples/xml/_response_success.xml[]
+
+[#API_LinePay_Samples_CaptureAuth]
+==== _capture-authorization_
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_capture-authorization_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_capture-authorization_response_success.xml[]
+----
+
+// include::{root}/samples/xml/_response_success.xml[]
+
+[#API_LinePay_Samples_RefundCapture]
+==== _refund-capture_
+
+.XML Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_refund-capture_request_success.xml[]
+----
+
+.XML Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/line-pay/line-pay_refund-capture_response_success.xml[]
+----
+
+//-

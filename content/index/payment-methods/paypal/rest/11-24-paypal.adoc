@@ -1,9 +1,11 @@
 [#API_PaymentMethods_PayPal]
-== REST API & {payment-page-v1}
+== REST API 
+
 _PayPal_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_PayPal_Express]
 === _PayPal_ Express Checkout
+
 Consumers can make purchases without entering billing, shipping,
 and credit card information as all of this information is already stored
 with _PayPal_. Also, the consumer is able to change the shipping
@@ -13,6 +15,7 @@ for further processing.
 
 [#API_PayPal_GeneralInformation_PaymentMode]
 === Countries and Currencies
+
 [width=75%, cols= "1h,3",stripes=none]
 |===
 |Countries |Worldwide
@@ -22,8 +25,10 @@ MXN, NOK, NZD, PHP, PLN, GBP, SGD, SEK, CHF, TWD, THB
 
 [#API_PayPal_GeneralInformation_Communication]
 === Communication Formats
+
 This table illustrates how _PayPal_ notifications are encoded and which
 formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h|Requests/Responses | Format | XML

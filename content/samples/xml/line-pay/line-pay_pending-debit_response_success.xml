@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+    <transaction-id>d8dede27-ff91-43cf-95f8-b60040680c6b</transaction-id>
+    <request-id>c0b424e6-310e-4aa7-b9c4-ba27a972e2a7</request-id>
+    <transaction-type>pending-debit</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2020-06-30T08:06:08.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="THB">40.00</requested-amount>
+    <account-holder>
+        <first-name>Paul</first-name>
+        <last-name>Peterson</last-name>
+    </account-holder>
+    <order-number>1549286434185</order-number>
+    <descriptor>Payment description</descriptor>
+    <payment-methods>
+        <payment-method url="https://demo2.2c2p.com:443/2C2PFrontEnd/SecurePayment/PaymentAuth.aspx?paymentRequest=PFBheW1lbnRSZXF1ZXN0Pjx2ZXJzaW9uPjkuNjwvdmVyc2lvbj48dGltZVN0YW1wPjMwMDYyMDA4MDYwODwvdGltZVN0YW1wPjxtZXJjaGFudElEPm51bGw8L21lcmNoYW50SUQ%2BPHVuaXF1ZVRyYW5zYWN0aW9uQ29kZT4yOTEyNjQ4NTE0NjM2MDY3MzY2MjwvdW5pcXVlVHJhbnNhY3Rpb25Db2RlPjxkZXNjPk4uQTwvZGVzYz48YW10PjAwMDAwMDAwNDAwMDwvYW10PjxjdXJyZW5jeUNvZGU%2BNzY0PC9jdXJyZW5jeUNvZGU%2BPHBheW1lbnRDaGFubmVsPkxJTkU8L3BheW1lbnRDaGFubmVsPjxhZ2VudENvZGU%2BPC9hZ2VudENvZGU%2BPGNoYW5uZWxDb2RlPldFQlBBWTwvY2hhbm5lbENvZGU%2BPG1vYmlsZU5vPjwvbW9iaWxlTm8%2BPGNhcmRob2xkZXJOYW1lPkpvaG48L2NhcmRob2xkZXJOYW1lPjxjYXJkaG9sZGVyRW1haWw%2BPC9jYXJkaG9sZGVyRW1haWw%2BPHVzZXJEZWZpbmVkMT5kOGRlZGUyNy1mZjkxLTQzY2YtOTVmOC1iNjAwNDA2ODBjNmI8L3VzZXJEZWZpbmVkMT48dXNlckRlZmluZWQyPjE1NDkyODY0MzQxODU8L3VzZXJEZWZpbmVkMj48dXNlckRlZmluZWQzPmMwYjQyNGU2LTMxMGUtNGFhNy1iOWM0LWJhMjdhOTcyZTJhNzwvdXNlckRlZmluZWQzPjx1c2VyRGVmaW5lZDQ%2BOWEwNGYzMjgtZWE3ZS00ODdjLWJjY2QtODdmZDU2ZjBkYzA5PC91c2VyRGVmaW5lZDQ%2BPHNlY3VyZUhhc2g%2BNTVBMzcxOTI1OUUzQzM5Q0YzQTk1ODRGRjdGMjQyMjJBODk0QjRFRTwvc2VjdXJlSGFzaD48L1BheW1lbnRSZXF1ZXN0Pg%3D%3D" name="linepay"/>
+    </payment-methods>
+    <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
+    <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
+</payment>

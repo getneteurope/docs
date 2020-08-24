@@ -1,9 +1,11 @@
 [#paysafecard]
-== REST API & {payment-page-v1}
+== REST API
+
 _paysafecard_ is a <<PaymentMethods_PaymentMode_Prepaid, prepaid>> payment solution.
 
 [#paysafecard_PaymentMode]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 []
 |===
@@ -33,8 +35,10 @@ KWD, MXN, NOK, NZD, PEN, PLN, RON, SAR, SEK, TRY, USD, UYU
 
 [#paysafecard_CommunicationFormats]
 === Communication Formats
+
 This table illustrates how _paysafecard_ notifications are encoded and
 which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h|Requests/Responses |Format |XML, JSON
