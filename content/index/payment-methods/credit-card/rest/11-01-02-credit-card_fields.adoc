@@ -1,5 +1,4 @@
 :date-pattern: YYYY-MM-DD
-:timestamp-pattern: YYYY-MM-DDThh:mm:ssZ
 
 [#CC_Fields]
 == Fields
@@ -55,39 +54,39 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 |===
 | Field | Request | Response
 
-| payment
+| ``payment``
 | <<CC_Fields_xmlelements_request_payment, X>>
 | <<CC_Fields_xmlelements_response_payment, X>>
 
-| account-holder
+| ``account-holder``
 | <<CC_Fields_xmlelements_request_accountholder, X>>
 | 
 
-| account-info
+| ``account-info``
 | <<CC_Fields_xmlelements_request_accountinfo, X>>
 | 
 
-| address
+| ``address``
 | <<CC_Fields_xmlelements_request_address, X>>
 | 
 
-| airline-industry
+| ``airline-industry``
 | <<CC_Fields_xmlelements_request_airlineindustry, X>>
 | 
 
-| audit
+| ``audit``
 | <<CC_Fields_xmlelements_request_audit, X>>
 | 
 
-| avs
+| ``avs``
 | 
 | <<CC_Fields_xmlelements_response_avs, X>>
 
-| browser
+| ``browser``
 | <<CC_Fields_xmlelements_request_browser, X>>
 | 
 
-| card
+| ``card``
 | <<CC_Fields_xmlelements_request_card, X>>
 |  
 
@@ -107,23 +106,23 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_cardRAW, X>>
 | 
 
-| card-token
+| ``card-token``
 | <<CC_Fields_xmlelements_request_cardtoken, X>>
 | 
 
-| credit-sender-data
+| ``credit-sender-data``
 | <<CC_Fields_xmlelements_request_creditsenderdata, X>>
 | 
 
-| cruise-industry
+| ``cruise-industry``
 | <<CC_Fields_xmlelements_request_cruiseindustry, X>>
 | 
 
-| custom-fields
+| ``custom-fields``
 | <<CC_Fields_xmlelements_request_customfield, X>>
 | <<CC_Fields_xmlelements_response_customfield, X>>
 
-| device
+| ``device``
 | <<CC_Fields_xmlelements_request_device, X>>
 | 
 
@@ -147,35 +146,35 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_notification, X>>
 | 
 
-| order-items
+| ``order-items``
 | <<CC_Fields_xmlelements_request_orderitem, X>>
 | 
 
-| payment-methods
+| ``payment-methods``
 | <<CC_Fields_xmlelements_request_paymentmethod, X>>
 |
 
-| risk-info
+| ``risk-info``
 | <<CC_Fields_xmlelements_request_riskinfo, X>>
 | 
 
-| segment
+| ``segment``
 | <<CC_Fields_xmlelements_request_segment, X>>
 | 
 
-| shipping
+| ``shipping``
 | <<CC_Fields_xmlelements_request_shipping, X>>
 | 
 
-| status
+| ``status``
 | 
 | <<CC_Fields_xmlelements_response_status, X>>
 
-| sub-merchant-info
+| ``sub-merchant-info``
 | <<CC_Fields_xmlelements_request_submerchantinfo, X>>
 | 
 
-| three-d
+| ``three-d``
 | <<CC_Fields_xmlelements_request_threed, X>>
 | <<CC_Fields_xmlelements_response_threed, X>> 
 |===

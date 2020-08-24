@@ -1,0 +1,9 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>9a04f328-ea7e-487c-bccd-87fd56f0dc09</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>refund-capture</transaction-type>
+  <parent-transaction-id>76a16306-904f-4491-8f5c-811fda31d668</parent-transaction-id>
+  <payment-methods>
+    <payment-method name="linepay"/>
+  </payment-methods>
+</payment>

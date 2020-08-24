@@ -13,6 +13,7 @@ a|image::images/icons/3dsecure.png[3dsecure_icon, width=20%]
 a|image::images/icons/help.png[help_icon, width=20%]
 - <<CreditCard_PSD2, *What is PSD 2?*>> +
 - <<CreditCard_PSD2_SCA, *What is SCA?*>>
+- <<CreditCard_3DS2_Exemption_Adviser, *Exemption Adviser*>>
 
 //-
 
@@ -32,10 +33,10 @@ a|image::images/icons/processing.png[processing_icon, width=20%]
 //-
 
 a|image::images/icons/speechbubble.png[speechbubble_icon, width=20%] 
-https://www.wirecard.com/3d-secure-2/#faq[*FAQs*]
+https://www.{domain}/3d-secure-2/#faq[*FAQs*]
 
 a|image::images/icons/latest-news.png[latest-news_icon, width=20%]
-https://www.wirecard.com/3d-secure-2/#s19392[*Latest News*]
+https://www.{domain}/3d-secure-2/#s19392[*Latest News*]
 |===
 
 include::{root}/index/payment-processing/3-d-secure-2/3-d-secure-1.adoc[leveloffset=+2]

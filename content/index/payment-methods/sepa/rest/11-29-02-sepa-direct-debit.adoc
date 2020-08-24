@@ -1,9 +1,11 @@
 [#SEPADirectDebit]
-== REST API & {payment-page-v1}
+== REST API
+
 _SEPA Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#SEPADirectDebit_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
+
 [width=75%,cols="1h,3",stripes=none]
 |===
 | Countries    | The 28 EU Member States as well as Iceland, Liechtenstein,

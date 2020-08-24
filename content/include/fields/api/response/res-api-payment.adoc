@@ -15,7 +15,7 @@
 | Timestamp 
 | 20
 | The date and time that a transaction state changes to either ``success`` or ``failed`` in GMT. +
-Format: ``{timestamp-pattern}``.
+Format: ``{timestamp-pattern-utc}``.
 
 | avs-code 
 | Response only

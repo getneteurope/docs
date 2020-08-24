@@ -74,7 +74,7 @@ This pattern cannot be customized.
 
 |Timestamp
 |A moment in time defined by a system. +
-Format (according to ISO 8601): ``{timestamp-pattern}`` +
+Format (according to ISO 8601): ``{timestamp-pattern-utc}`` +
 This pattern cannot be customized.
 
 |Decimal
