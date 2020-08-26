@@ -3224,7 +3224,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3235,7 +3235,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5404,6 +5404,9 @@
 <li id="toc_li_GeneralPlatformFeatures_IPN_Delay" data-level="4">
 <input id="toc_cb_GeneralPlatformFeatures_IPN_Delay" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Delay"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Delay">Notification Delay</a></label>
 </li>
+<li id="toc_li_GeneralPlatformFeatures_IPN_Firewall" data-level="4">
+<input id="toc_cb_GeneralPlatformFeatures_IPN_Firewall" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Firewall"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Firewall">Firewall Rules</a></label>
+</li>
 </ul>
 </li>
 <li id="toc_li_GeneralPlatformFeatures_IPP" data-level="3">
@@ -5829,10 +5832,7 @@
 </ul>
 </li>
       <li id="toc_li_WhatsNew" data-level="1">
-<input id="toc_cb_WhatsNew" type="checkbox"><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
-<ul><li id="toc_li__2020_06" data-level="2">
-<input id="toc_cb__2020_06" type="checkbox" disabled><label for="toc_cb__2020_06"><a href="_2020_06.html">2020-06</a></label>
-</li></ul>
+<input id="toc_cb_WhatsNew" type="checkbox" disabled><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
 </li>
       <li id="toc_li_Glossary" data-level="1">
 <input id="toc_cb_Glossary" type="checkbox" disabled><label for="toc_cb_Glossary"><a href="Glossary.html">Glossary</a></label>
@@ -6110,10 +6110,10 @@ agreement between <em>Alipay Cross-border</em> and the consumer.</p></td>
 <p><em>Alipay Cross-border</em> processes the transaction</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway receives transaction status.</p>
+<p>Wirecard Payment Gateway receives transaction status.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway sends transaction status to merchant and
+<p>Wirecard Payment Gateway sends transaction status to merchant and
 redirects the consumer to the merchant.</p>
 </li>
 <li>
@@ -6137,7 +6137,7 @@ notifications are the same as the REST API Fields. Please refer to:
 <a class="anchor" href="#API_AlipayCrossBorder_Fields_BusinessTypes"></a><a class="link" href="#API_AlipayCrossBorder_Fields_BusinessTypes">Additional Fields for Business Types</a>
 </h6>
 <div class="paragraph">
-<p>Alipay requires information on the business type of a payment transaction. Therefore, {payment-provider-name} Payment Gateway adds the business type as specified in your merchant configuration to each Alipay Cross-border request.</p>
+<p>Alipay requires information on the business type of a payment transaction. Therefore, Wirecard Payment Gateway adds the business type as specified in your merchant configuration to each Alipay Cross-border request.</p>
 </div>
 <div class="paragraph">
 <p>There are 5 business types:</p>
@@ -6364,7 +6364,7 @@ Mandatory for business type "Education Institutions".</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-{payment-provider-name} Payment Gateway does not validate this field but rather forwards it to Alipay.
+Wirecard Payment Gateway does not validate this field but rather forwards it to Alipay.
 </td>
 </tr>
 </table>
@@ -6449,7 +6449,7 @@ Mandatory for business type "Education Institutions".</p>
 </table>
 <div id="API_AlipayCrossBorder_Fields_BusinessType5" class="paragraph">
 <div class="title">Business Type 5 - Other</div>
-<p>The business type description of your business is stored in the MCC code of your merchant configutation. For other business types than the ones described above, {payment-provider-name} Payment Gateway adds this MCC code description to your request.<br>
+<p>The business type description of your business is stored in the MCC code of your merchant configutation. For other business types than the ones described above, Wirecard Payment Gateway adds this MCC code description to your request.<br>
 You do not need to add mandatory fields to your request.<br>
 For MCC code setup, <a href="ContactUs.html">contact merchant support</a>.</p>
 </div>
@@ -6519,7 +6519,7 @@ directly to the mobile endpoint.</p>
 indicated in the paramenter <em>entry mode</em> with each request.</p>
 </div>
 <div class="paragraph">
-<p>When using HPP/EPP {payment-provider-name} Payment Gateway detects the device in use
+<p>When using HPP/EPP Wirecard Payment Gateway detects the device in use
 automatically and displays the corresponding payment page.</p>
 </div>
 <div class="paragraph">
@@ -8079,7 +8079,7 @@ Check the REST API
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-19 12:35:14 UTC
+Last updated 2020-08-26 11:30:46 UTC
 </div>
 </div>
 

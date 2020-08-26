@@ -3224,7 +3224,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3235,7 +3235,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5404,6 +5404,9 @@
 <li id="toc_li_GeneralPlatformFeatures_IPN_Delay" data-level="4">
 <input id="toc_cb_GeneralPlatformFeatures_IPN_Delay" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Delay"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Delay">Notification Delay</a></label>
 </li>
+<li id="toc_li_GeneralPlatformFeatures_IPN_Firewall" data-level="4">
+<input id="toc_cb_GeneralPlatformFeatures_IPN_Firewall" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Firewall"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Firewall">Firewall Rules</a></label>
+</li>
 </ul>
 </li>
 <li id="toc_li_GeneralPlatformFeatures_IPP" data-level="3">
@@ -5829,10 +5832,7 @@
 </ul>
 </li>
       <li id="toc_li_WhatsNew" data-level="1">
-<input id="toc_cb_WhatsNew" type="checkbox"><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
-<ul><li id="toc_li__2020_06" data-level="2">
-<input id="toc_cb__2020_06" type="checkbox" disabled><label for="toc_cb__2020_06"><a href="_2020_06.html">2020-06</a></label>
-</li></ul>
+<input id="toc_cb_WhatsNew" type="checkbox" disabled><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
 </li>
       <li id="toc_li_Glossary" data-level="1">
 <input id="toc_cb_Glossary" type="checkbox" disabled><label for="toc_cb_Glossary"><a href="Glossary.html">Glossary</a></label>
@@ -5856,7 +5856,7 @@
 <a class="anchor" href="#RestApi_Fields"></a><a class="link" href="#RestApi_Fields">Fields</a>
 </h3>
 <div class="paragraph">
-<p>These fields are used with <em>{payment-provider-name} Payment Gateway</em> REST API.
+<p>These fields are used with <em>Wirecard Payment Gateway</em> REST API.
 They are mandatory (<strong>M</strong>) or optional (<strong>O</strong>) in a request. Fields that show only in the response are marked accordingly.</p>
 </div>
 <div class="paragraph">
@@ -8493,7 +8493,7 @@ Allowed values:<br></p>
 </div>
 <div class="paragraph">
 <p><code>card-raw</code> data is used, when the consumer uses a mobile device in a card present payment process.<br>
-For mobile device initiated transactions, there is typically a backend server that integrates to the {payment-provider-name} Payment Gateway for payment transactions processing. This is to ensure that the credentials connecting to the gateway are not published in mass consumer devices.</p>
+For mobile device initiated transactions, there is typically a backend server that integrates to the Wirecard Payment Gateway for payment transactions processing. This is to ensure that the credentials connecting to the gateway are not published in mass consumer devices.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -9139,7 +9139,7 @@ Accepted value: <code>pkcs</code></p>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
 <p>The ID of the signed mandate between you and the consumer.<br>
-The mandate ID is NOT generated by {payment-provider-name} Payment Gateway. This is solely your responsibility.<br>
+The mandate ID is NOT generated by Wirecard Payment Gateway. This is solely your responsibility.<br>
 Allowed characters: <code>[A-Za-z0-9][ + ? - : ( ) . , ']){1,35}</code></p>
 </div>
 <div class="ulist">
@@ -10759,7 +10759,7 @@ Accepted format: see IETF RFC 4122.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M/O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">16000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A base64-encoded request message created for cards participating in the 3D Secure program. The PaReq is returned by the issuer’s ACS via the <em>VISA</em> or <em>Mastercard</em> directory to the <em>{payment-provider-name} Payment Gateway</em> and from there passed on to you.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A base64-encoded request message created for cards participating in the 3D Secure program. The PaReq is returned by the issuer’s ACS via the <em>VISA</em> or <em>Mastercard</em> directory to the <em>Wirecard Payment Gateway</em> and from there passed on to you.<br>
 <strong>Mandatory</strong> for <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields_request_threed">3D Secure 2 payments</a>.</p></td>
 </tr>
 <tr>
@@ -12814,7 +12814,7 @@ Example: the amount of money in a specific currency (e.g. 138.53 EUR).</p></td>
 <p><em>Size</em> shows how many characters can be used for this field. We provide the maximum value so you can make sure the whole amount of characters is processed.</p>
 </div>
 <div class="paragraph">
-<p>In general, the <em>{payment-provider-name} Payment Gateway</em> allows all characters for each field, depending on the <em>Data Type</em>.</p>
+<p>In general, the <em>Wirecard Payment Gateway</em> allows all characters for each field, depending on the <em>Data Type</em>.</p>
 </div>
 <div class="paragraph">
 <p>If other rules apply to a field, they are stated in the <em>Description</em> column.</p>
@@ -12828,7 +12828,7 @@ Example: the amount of money in a specific currency (e.g. 138.53 EUR).</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-19 12:35:14 UTC
+Last updated 2020-08-26 11:30:46 UTC
 </div>
 </div>
 

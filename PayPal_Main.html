@@ -3224,7 +3224,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3235,7 +3235,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5404,6 +5404,9 @@
 <li id="toc_li_GeneralPlatformFeatures_IPN_Delay" data-level="4">
 <input id="toc_cb_GeneralPlatformFeatures_IPN_Delay" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Delay"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Delay">Notification Delay</a></label>
 </li>
+<li id="toc_li_GeneralPlatformFeatures_IPN_Firewall" data-level="4">
+<input id="toc_cb_GeneralPlatformFeatures_IPN_Firewall" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Firewall"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Firewall">Firewall Rules</a></label>
+</li>
 </ul>
 </li>
 <li id="toc_li_GeneralPlatformFeatures_IPP" data-level="3">
@@ -5829,10 +5832,7 @@
 </ul>
 </li>
       <li id="toc_li_WhatsNew" data-level="1">
-<input id="toc_cb_WhatsNew" type="checkbox"><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
-<ul><li id="toc_li__2020_06" data-level="2">
-<input id="toc_cb__2020_06" type="checkbox" disabled><label for="toc_cb__2020_06"><a href="_2020_06.html">2020-06</a></label>
-</li></ul>
+<input id="toc_cb_WhatsNew" type="checkbox" disabled><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
 </li>
       <li id="toc_li_Glossary" data-level="1">
 <input id="toc_cb_Glossary" type="checkbox" disabled><label for="toc_cb_Glossary"><a href="Glossary.html">Glossary</a></label>
@@ -6055,7 +6055,7 @@ The endpoint for referenced transactions is: <code>https://api.wirecard.com/engi
 </table>
 </div>
 <div class="paragraph">
-<p>The {payment-provider-name} Payment Gateway allows a merchant to submit
+<p>The Wirecard Payment Gateway allows a merchant to submit
 <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_Transactions_Recurring">recurring transactions</a>
 for <em>PayPal</em> transactions. To submit a recurring transaction, the merchant
 must submit a request with the transaction type <em>Debit</em>, <em>Authorization</em> or
@@ -6143,7 +6143,7 @@ captured.</p>
 <li>
 <p>the correct (parent-)transaction-id is visible as
 group-transaction-id in <em>wep.wirecard.com/</em> for example or can be found out by querying
-{payment-provider-name} Payment Gateway using the RequestID from the initial
+Wirecard Payment Gateway using the RequestID from the initial
 transaction (see
 <a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_RetrieveTransaction_RequestID">here</a>).</p>
 </li>
@@ -7478,7 +7478,7 @@ row.</p>
 <a class="anchor" href="#API_PayPal_Configuration_Addresses"></a><a class="link" href="#API_PayPal_Configuration_Addresses">Addresses</a>
 </h5>
 <div class="paragraph">
-<p>The {payment-provider-name} Payment Gateway offers three options to configure the
+<p>The Wirecard Payment Gateway offers three options to configure the
 consumer’s address:</p>
 </div>
 <div class="ulist">
@@ -7516,7 +7516,7 @@ only in the merchant’s shop.</p>
 <p>Basket item details may be sent along with debit and authorization
 requests. The detailed items of the shopping basket will be displayed in
 <em>PayPal</em> during the checkout, and later stored as a part of payment
-details in <em>PayPal</em>. They can also be obtained later from the {payment-provider-name} Payment Gateway as part of the transaction details.</p>
+details in <em>PayPal</em>. They can also be obtained later from the Wirecard Payment Gateway as part of the transaction details.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <caption class="title">Basket Items</caption>
@@ -7684,11 +7684,11 @@ specific <em>PayPal</em> Website.</p>
 </div>
 <div class="paragraph">
 <p>The feature <em>Seller Protection &amp; Recurring Payments</em> is available by
-default in the {payment-provider-name} Payment Gateway.</p>
+default in the Wirecard Payment Gateway.</p>
 </div>
 <div class="paragraph">
 <p>The merchant needs to provide a shipping address only in the initial
-payment. For subsequent recurring payments {payment-provider-name} Payment Gateway
+payment. For subsequent recurring payments Wirecard Payment Gateway
 automatically sends the shipping address from the initial payment to
 <em>PayPal</em>.</p>
 </div>
@@ -7699,7 +7699,7 @@ automatically sends the shipping address from the initial payment to
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-For recurring payments <em>{payment-provider-name} Payment Gateway</em> uses the shipping
+For recurring payments <em>Wirecard Payment Gateway</em> uses the shipping
 address which has been received from <em>PayPal</em> during the initial
 request.
 </td>
@@ -15366,7 +15366,7 @@ API <a href="PayPal_Main.html#API_PaymentMethods_PayPal"><em>PayPal</em> specifi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-19 12:35:14 UTC
+Last updated 2020-08-26 11:30:46 UTC
 </div>
 </div>
 

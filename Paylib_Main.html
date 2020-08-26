@@ -3224,7 +3224,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3235,7 +3235,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5404,6 +5404,9 @@
 <li id="toc_li_GeneralPlatformFeatures_IPN_Delay" data-level="4">
 <input id="toc_cb_GeneralPlatformFeatures_IPN_Delay" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Delay"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Delay">Notification Delay</a></label>
 </li>
+<li id="toc_li_GeneralPlatformFeatures_IPN_Firewall" data-level="4">
+<input id="toc_cb_GeneralPlatformFeatures_IPN_Firewall" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Firewall"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Firewall">Firewall Rules</a></label>
+</li>
 </ul>
 </li>
 <li id="toc_li_GeneralPlatformFeatures_IPP" data-level="3">
@@ -5829,10 +5832,7 @@
 </ul>
 </li>
       <li id="toc_li_WhatsNew" data-level="1">
-<input id="toc_cb_WhatsNew" type="checkbox"><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
-<ul><li id="toc_li__2020_06" data-level="2">
-<input id="toc_cb__2020_06" type="checkbox" disabled><label for="toc_cb__2020_06"><a href="_2020_06.html">2020-06</a></label>
-</li></ul>
+<input id="toc_cb_WhatsNew" type="checkbox" disabled><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
 </li>
       <li id="toc_li_Glossary" data-level="1">
 <input id="toc_cb_Glossary" type="checkbox" disabled><label for="toc_cb_Glossary"><a href="Glossary.html">Glossary</a></label>
@@ -6080,7 +6080,7 @@ verification:</p>
 <p>The merchant initiates a <em>debit</em> transaction.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway sends a response to the merchant
+<p>Wirecard Payment Gateway sends a response to the merchant
 containing the redirect URL and payload information for authentication
 in <em>Paylib</em>.</p>
 </li>
@@ -6093,17 +6093,17 @@ the redirect URL and redirects the consumer to <em>Paylib</em>.</p>
 preferred card and confirms the payment.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway receives the card information.</p>
+<p>Wirecard Payment Gateway receives the card information.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway processes the transaction with the
+<p>Wirecard Payment Gateway processes the transaction with the
 merchant’s acquirer.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway receives the transaction status.</p>
+<p>Wirecard Payment Gateway receives the transaction status.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway sends the transaction status to the
+<p>Wirecard Payment Gateway sends the transaction status to the
 merchant and redirects the consumer to the merchant.</p>
 </li>
 <li>
@@ -6111,11 +6111,11 @@ merchant and redirects the consumer to the merchant.</p>
 completion of the payment process to the consumer.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway sends the <em>Paylib</em> <em>debit</em> notification
+<p>Wirecard Payment Gateway sends the <em>Paylib</em> <em>debit</em> notification
 to the merchant.</p>
 </li>
 <li>
-<p>{payment-provider-name} Payment Gateway sends the <em>Credit Card</em> <em>purchase</em> notification to the merchant.</p>
+<p>Wirecard Payment Gateway sends the <em>Credit Card</em> <em>purchase</em> notification to the merchant.</p>
 </li>
 </ol>
 </div>
@@ -6186,7 +6186,7 @@ request/response for the payment method <em>Paylib</em>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">36</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction-ID is the unique identifier for a transaction. It is generated by the {payment-provider-name} Payment Gateway.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction-ID is the unique identifier for a transaction. It is generated by the Wirecard Payment Gateway.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">request-id</p></td>
@@ -7782,7 +7782,7 @@ Format: 3-character abbreviation according to ISO 4217.</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-19 12:35:14 UTC
+Last updated 2020-08-26 11:30:46 UTC
 </div>
 </div>
 

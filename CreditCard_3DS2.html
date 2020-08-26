@@ -3224,7 +3224,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid">Branded and Integrated Android Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateAndroid_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateAndroid_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateAndroid_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -3235,7 +3235,7 @@
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS" type="checkbox"><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS">Branded and Integrated iOS Merchant Button</a></label>
 <ul>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_Map" data-level="5">
-<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the {payment-provider-name} Payment Gateway</a></label>
+<input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_Map"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_Map">Map secureToken and brn elements to the Wirecard Payment Gateway</a></label>
 </li>
 <li id="toc_li_API_PBBA_Integrate_BrandIntegrateiOS_API" data-level="5">
 <input id="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API" type="checkbox" disabled><label for="toc_cb_API_PBBA_Integrate_BrandIntegrateiOS_API"><a href="PayByBankApp_Main.html#API_PBBA_Integrate_BrandIntegrateiOS_API">API to invoke the PBBA enabled CFI App</a></label>
@@ -5404,6 +5404,9 @@
 <li id="toc_li_GeneralPlatformFeatures_IPN_Delay" data-level="4">
 <input id="toc_cb_GeneralPlatformFeatures_IPN_Delay" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Delay"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Delay">Notification Delay</a></label>
 </li>
+<li id="toc_li_GeneralPlatformFeatures_IPN_Firewall" data-level="4">
+<input id="toc_cb_GeneralPlatformFeatures_IPN_Firewall" type="checkbox" disabled><label for="toc_cb_GeneralPlatformFeatures_IPN_Firewall"><a href="GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN_Firewall">Firewall Rules</a></label>
+</li>
 </ul>
 </li>
 <li id="toc_li_GeneralPlatformFeatures_IPP" data-level="3">
@@ -5829,10 +5832,7 @@
 </ul>
 </li>
       <li id="toc_li_WhatsNew" data-level="1">
-<input id="toc_cb_WhatsNew" type="checkbox"><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
-<ul><li id="toc_li__2020_06" data-level="2">
-<input id="toc_cb__2020_06" type="checkbox" disabled><label for="toc_cb__2020_06"><a href="_2020_06.html">2020-06</a></label>
-</li></ul>
+<input id="toc_cb_WhatsNew" type="checkbox" disabled><label for="toc_cb_WhatsNew"><a href="WhatsNew.html">Changelog</a></label>
 </li>
       <li id="toc_li_Glossary" data-level="1">
 <input id="toc_cb_Glossary" type="checkbox" disabled><label for="toc_cb_Glossary"><a href="Glossary.html">Glossary</a></label>
@@ -6286,7 +6286,7 @@ To make the experience more convenient for consumers, authentication can be comp
 <p>However, a <em>special exemptive status</em> applies to ongoing recurring MITs whose <em>first transaction was processed before 14 September 2019.</em> Recurring MITs of that kind are being "grandfathered".</p>
 </div>
 <div class="paragraph">
-<p>If Wirecard is your acquirer, the {payment-provider-name} Payment Gateway can "grandfather" a recurring MIT if you provide the referencing <code>transaction-id</code> from the <strong>first</strong> <code>authorization</code> or <code>purchase</code> transaction.</p>
+<p>If Wirecard is your acquirer, the Wirecard Payment Gateway can "grandfather" a recurring MIT if you provide the referencing <code>transaction-id</code> from the <strong>first</strong> <code>authorization</code> or <code>purchase</code> transaction.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <caption class="title">Conditions to grandfather a recurring MIT</caption>
@@ -6464,7 +6464,7 @@ In those cases, chargeback liability protection will not apply to the same exten
 <p>This request is used to receive, analyze and store authentication values. The check-payer-response returns the authentication values needed in the payment transaction that follows. These include the <code>dsTransId</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version (expected 2.1.0).<br></p>
 </div>
 <div class="paragraph">
-<p>Executing the check-payer-response is optional. Use it only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. If the check-payer-response is not executed, use instead the <code>PARes</code> received via <code>TermURL</code> to access the authentication values needed in the payment transaction that follows.</p>
+<p>Executing the check-payer-response is optional. Use it only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. If the check-payer-response is not executed, use instead the <code>PARes</code> received via <code>TermURL</code> to access the authentication values needed in the payment transaction that follows.</p>
 </div>
 <h5 id="3DS2_3DSecureFields" class="discrete">3D-Secure-2-Specific Fields</h5>
 <div class="paragraph">
@@ -6573,7 +6573,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -6633,7 +6633,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -7021,9 +7021,9 @@ Sending specific 3D Secure 2 fields in the initial payment request reduces the l
 <div class="paragraph">
 <p><strong>1.</strong> <em>Check-Enrollment</em>: Checks if the consumer’s card is enrolled in the 3D Secure 2 program.<br>
 <strong>1.1</strong> Consumer (cardholder) checkout on your payment page.<br>
-<strong>1.2</strong> Initiate the payment session with {payment-provider-name} Payment Gateway using the check-enrollment transaction type. Provide additional fields for 3D Secure 2 transactions. 3D Secure 2 fields can be found in the <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields">3D Secure 2 Fields</a> section. They are also included in the <a href="Appendix_Xml.html">REST API payment XSD</a>.<br>
-<strong>1.3</strong> {payment-provider-name} Payment Gateway checks the 3D Secure version supported by the issuer with the 3D Secure server.<br>
-<strong>1.4</strong> {payment-provider-name} Payment Gateway returns the check-enrollment response. It includes the ACS URL, the <code>PAReq</code> and the 3D Secure version.<br></p>
+<strong>1.2</strong> Initiate the payment session with Wirecard Payment Gateway using the check-enrollment transaction type. Provide additional fields for 3D Secure 2 transactions. 3D Secure 2 fields can be found in the <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields">3D Secure 2 Fields</a> section. They are also included in the <a href="Appendix_Xml.html">REST API payment XSD</a>.<br>
+<strong>1.3</strong> Wirecard Payment Gateway checks the 3D Secure version supported by the issuer with the 3D Secure server.<br>
+<strong>1.4</strong> Wirecard Payment Gateway returns the check-enrollment response. It includes the ACS URL, the <code>PAReq</code> and the 3D Secure version.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>2.</strong> <em>Redirect the Consumer to the ACS URL</em><br>
@@ -7038,9 +7038,9 @@ Wirecard 3D Secure Router URL.<br>
 </div>
 <div class="paragraph">
 <p><strong>3.</strong> <em>Check-Payer-Response</em> <em>(optional) and</em> <em>PARes</em> <em>Verification</em>: Use this request to receive, analyze and store authentication values.  The check-payer-response returns the authentication values needed in the payment transaction that follows. It is executed <em>after</em> you receive the check-enrollment response and the <code>PARes</code>.<br>
-<strong>3.1</strong> Send a POST request with transaction type check-payer-response to {payment-provider-name} Payment Gateway. Provide the <code>parent-transaction-id</code> using the <code>transaction-id</code> from the check-enrollment response, and the <code>PARes</code>.<br>
-<strong>3.2</strong> {payment-provider-name} Payment Gateway decodes the <code>PARes</code>, checks the signature and retrieves the final authentication values.<br>
-<strong>3.3</strong> {payment-provider-name} Payment Gateway returns the final authentication values in the response of the check-payer-response transaction. These include the <code>dsTransId</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version (expected 2.1.0).<br></p>
+<strong>3.1</strong> Send a POST request with transaction type check-payer-response to Wirecard Payment Gateway. Provide the <code>parent-transaction-id</code> using the <code>transaction-id</code> from the check-enrollment response, and the <code>PARes</code>.<br>
+<strong>3.2</strong> Wirecard Payment Gateway decodes the <code>PARes</code>, checks the signature and retrieves the final authentication values.<br>
+<strong>3.3</strong> Wirecard Payment Gateway returns the final authentication values in the response of the check-payer-response transaction. These include the <code>dsTransId</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version (expected 2.1.0).<br></p>
 </div>
 <div class="paragraph">
 <p><strong>4.</strong> <em>Complete the Payment Transaction</em>: Proceed with the respective transaction type (e.g. authorization, purchase, authorization-only). Use the final authentication values received either from the check-enrollment response (e.g. <code>PARes</code> and <code>parent-transaction-id</code>), or from step 3.3 (check-payer-response response).</p>
@@ -7058,9 +7058,9 @@ Wirecard 3D Secure Router URL.<br>
 <div class="paragraph">
 <p><strong>1.</strong> <em>Check-Enrollment</em>: Checks if the consumer’s card is enrolled in the 3D Secure 2 program.<br>
 <strong>1.1</strong> Consumer (cardholder) checkout on your payment page.<br>
-<strong>1.2</strong> Initiate the payment session with {payment-provider-name} Payment Gateway using the check-enrollment transaction type. Provide additional fields for 3D Secure 2 transactions. 3D Secure 2 fields can be found in the <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields">3D Secure 2 Fields</a> section. They are also included in the <a href="Appendix_Xml.html">REST API payment XSD</a>.<br>
-<strong>1.3</strong> {payment-provider-name} Payment Gateway checks the 3D Secure version supported by the issuer with the 3D Secure server.<br>
-<strong>1.4</strong> {payment-provider-name} Payment Gateway returns the check-enrollment response. It includes the ACS URL, the <code>PAReq</code> and the 3D Secure version.<br></p>
+<strong>1.2</strong> Initiate the payment session with Wirecard Payment Gateway using the check-enrollment transaction type. Provide additional fields for 3D Secure 2 transactions. 3D Secure 2 fields can be found in the <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields">3D Secure 2 Fields</a> section. They are also included in the <a href="Appendix_Xml.html">REST API payment XSD</a>.<br>
+<strong>1.3</strong> Wirecard Payment Gateway checks the 3D Secure version supported by the issuer with the 3D Secure server.<br>
+<strong>1.4</strong> Wirecard Payment Gateway returns the check-enrollment response. It includes the ACS URL, the <code>PAReq</code> and the 3D Secure version.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>2.</strong> <em>Redirect the Consumer to the ACS URL</em><br>
@@ -7077,9 +7077,9 @@ Wirecard 3D Secure Router URL.<br>
 </div>
 <div class="paragraph">
 <p><strong>3.</strong> <em>Check-Payer-Response (optional) and</em> <em>PARes</em> <em>Verification</em>: Use this request to receive, analyze and store authentication values. The check-payer-response returns the authentication values needed in the payment transaction that follows. It is executed <em>after</em> you receive the check-enrollment response and the <code>PARes</code>.<br>
-<strong>3.1</strong> Send a POST request with transaction type check-payer-response to {payment-provider-name} Payment Gateway. Provide the <code>parent-transaction-id</code> using the <code>transaction-id</code> from the check-enrollment response, and the <code>PARes</code>.<br>
-<strong>3.2</strong> {payment-provider-name} Payment Gateway decodes the <code>PARes</code>, checks the signature and retrieves the final authentication values.<br>
-<strong>3.3</strong> {payment-provider-name} Payment Gateway returns the final authentication values in the response of the check-payer-response transaction. These include the <code>dsTransId</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version (expected 2.1.0).<br></p>
+<strong>3.1</strong> Send a POST request with transaction type check-payer-response to Wirecard Payment Gateway. Provide the <code>parent-transaction-id</code> using the <code>transaction-id</code> from the check-enrollment response, and the <code>PARes</code>.<br>
+<strong>3.2</strong> Wirecard Payment Gateway decodes the <code>PARes</code>, checks the signature and retrieves the final authentication values.<br>
+<strong>3.3</strong> Wirecard Payment Gateway returns the final authentication values in the response of the check-payer-response transaction. These include the <code>dsTransId</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version (expected 2.1.0).<br></p>
 </div>
 <div class="paragraph">
 <p><strong>4.</strong> <em>Complete the Payment Transaction</em>: Proceed with the respective transaction type (e.g. authorization, purchase, authorization-only). Use the final authentication values received either from the check-enrollment response (e.g. <code>PARes</code> and <code>parent-transaction-id</code>), or from step 3.3 (check-payer-response response).</p>
@@ -7100,9 +7100,9 @@ Wirecard 3D Secure Router URL.<br>
 <div class="paragraph">
 <p><strong>1.</strong> <em>Check-Enrollment</em>: Checks if the consumer’s card is enrolled in the 3D Secure 2 program.<br>
 <strong>1.1</strong> Consumer (cardholder) checkout on your payment page.<br>
-<strong>1.2</strong> Initiate the payment session with {payment-provider-name} Payment Gateway using the check-enrollment transaction type. Provide additional fields for 3D Secure 2 transactions. 3D Secure 2 fields can be found in the <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields">3D Secure 2 Fields</a> section. They are also included in the <a href="Appendix_Xml.html">REST API payment XSD</a>.<br>
-<strong>1.3</strong> {payment-provider-name} Payment Gateway checks the 3D Secure version supported by the issuer with the 3D Secure server. If 3D Secure 2 is not supported, the 3D Secure server initiates the fallback to version 1 via the 3D Secure MPI.<br>
-<strong>1.4</strong> {payment-provider-name} Payment Gateway returns the check-enrollment response. It includes the ACS URL, the <code>PAReq</code> and the 3D Secure version.<br></p>
+<strong>1.2</strong> Initiate the payment session with Wirecard Payment Gateway using the check-enrollment transaction type. Provide additional fields for 3D Secure 2 transactions. 3D Secure 2 fields can be found in the <a href="CreditCard_3DS2.html#CreditCard_3DS2_Fields">3D Secure 2 Fields</a> section. They are also included in the <a href="Appendix_Xml.html">REST API payment XSD</a>.<br>
+<strong>1.3</strong> Wirecard Payment Gateway checks the 3D Secure version supported by the issuer with the 3D Secure server. If 3D Secure 2 is not supported, the 3D Secure server initiates the fallback to version 1 via the 3D Secure MPI.<br>
+<strong>1.4</strong> Wirecard Payment Gateway returns the check-enrollment response. It includes the ACS URL, the <code>PAReq</code> and the 3D Secure version.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>2.</strong> <em>Redirect the Consumer to the ACS URL</em><br>
@@ -7113,9 +7113,9 @@ Wirecard 3D Secure Router URL.<br>
 </div>
 <div class="paragraph">
 <p><strong>3.</strong> <em>Check-Payer-Response</em> <em>(optional) and</em> <em>PARes</em> <em>Verification</em>: Use this request to receive, analyze and store authentication values. The check-payer-response returns the authentication values needed in the payment transaction that follows. It is executed <em>after</em> you receive the check-enrollment response and the <code>PARes</code>.<br>
-<strong>3.1</strong> Send a POST request with transaction type check-payer-response to {payment-provider-name} Payment Gateway. Provide the <code>parent-transaction-id</code> using the <code>transaction-id</code> from the check-enrollment response, and the <code>PARes</code>.<br>
-<strong>3.2</strong> {payment-provider-name} Payment Gateway verifies the <code>PARes</code> with the 3D Secure MPI and receives the final authentication values.<br>
-<strong>3.3</strong> {payment-provider-name} Payment Gateway returns the final authentication values in the response of the check-payer-response transaction. These include the <code>XID</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version.<br></p>
+<strong>3.1</strong> Send a POST request with transaction type check-payer-response to Wirecard Payment Gateway. Provide the <code>parent-transaction-id</code> using the <code>transaction-id</code> from the check-enrollment response, and the <code>PARes</code>.<br>
+<strong>3.2</strong> Wirecard Payment Gateway verifies the <code>PARes</code> with the 3D Secure MPI and receives the final authentication values.<br>
+<strong>3.3</strong> Wirecard Payment Gateway returns the final authentication values in the response of the check-payer-response transaction. These include the <code>XID</code>, <code>CAAV/AVV</code>, <code>ECI</code>, <code>authenticationStatus</code> and the 3D Secure version.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>4.</strong> <em>Complete the Payment Transaction</em>: Proceed with the respective transaction type (e.g. authorization, purchase, authorization-only). Use the final authentication values received either from the check-enrollment response (e.g. <code>PARes</code> and <code>parent-transaction-id</code>), or from step 3.3 (check-payer-response response).</p>
@@ -11144,7 +11144,7 @@ Accepted format: see IETF RFC 4122.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">16000</p></td>
 <td class="tableblock halign-left valign-top"><div class="content">
 <div class="paragraph">
-<p>A base64-encoded request message created for cards participating in the 3D Secure program. The PaReq is returned by the issuer’s ACS via the <em>VISA</em> or <em>Mastercard</em> directory to the <em>{payment-provider-name} Payment Gateway</em> and from there passed on to you.<br></p>
+<p>A base64-encoded request message created for cards participating in the 3D Secure program. The PaReq is returned by the issuer’s ACS via the <em>VISA</em> or <em>Mastercard</em> directory to the <em>Wirecard Payment Gateway</em> and from there passed on to you.<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -11515,7 +11515,7 @@ This field is <em>mandatory</em>. If you omit the <strong>&lt;MD&gt;</strong> in
 </div>
 </li>
 <li>
-<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the {payment-provider-name} Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>purchase.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
+<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the Wirecard Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>purchase.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -12087,7 +12087,7 @@ This field is <em>mandatory</em>. If you omit the <strong>&lt;MD&gt;</strong> in
 </div>
 </li>
 <li>
-<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the {payment-provider-name} Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>authorization.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
+<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the Wirecard Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>authorization.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -12719,7 +12719,7 @@ This field is <em>mandatory</em>. If you omit the <strong>&lt;MD&gt;</strong> in
 </div>
 </li>
 <li>
-<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the {payment-provider-name} Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>purchase.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
+<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the Wirecard Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>purchase.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -13298,7 +13298,7 @@ This field is <em>mandatory</em>. If you omit the <strong>&lt;MD&gt;</strong> in
 </div>
 </li>
 <li>
-<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the {payment-provider-name} Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>purchase.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
+<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the Wirecard Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>purchase.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -13877,7 +13877,7 @@ This field is <em>mandatory</em>. If you omit the <strong>&lt;MD&gt;</strong> in
 </div>
 </li>
 <li>
-<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the {payment-provider-name} Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>authorization.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
+<p><strong>Check-payer-response</strong> (optional): Use this request to receive, analyze and store authentication values on your side or use your connection to the Wirecard Payment Gateway for the "MPI Only" option.  The <strong>check-payer-response</strong> provides the authentication values needed later on in the <strong>authorization.</strong> It is executed <em>after</em> you receive the <strong>check-enrollment</strong> response and the <strong>PARes</strong>. The <strong>check-payer-response</strong> must contain the following fields:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -14379,7 +14379,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -14439,7 +14439,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -14515,7 +14515,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -14575,7 +14575,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -14704,7 +14704,7 @@ Only the primary merchant must perform the authentication for the full amount.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -14766,7 +14766,7 @@ If you omit this field, however, an authentication error occurs and the payment 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -15195,7 +15195,7 @@ Agents must clearly inform consumers that their cards will be charged by merchan
 <ol class="arabic">
 <li>
 <p><strong>Check-Enrollment</strong> (full amount)<br>
-This is the initial request and initiates the payment session. If the request is successful, the response contains a <code>transaction-id</code>, and the <code>three-d/pareq</code>. The <em>PAReq</em> is the digitally signed, base64-encoded authentication request message created by <em>{payment-provider-name} Payment Gateway.</em> It contains the results of the 3D Secure versioning request that is used to initiate <em>AReq</em> as part of the HTTPS POST redirect to the ACS URL. The agent uses the PAReq for a HTTPS POST redirect to the ACS URL, which is part of a standard 3D Secure process. The HTTPS POST redirect returns the PARes as part of the response.</p>
+This is the initial request and initiates the payment session. If the request is successful, the response contains a <code>transaction-id</code>, and the <code>three-d/pareq</code>. The <em>PAReq</em> is the digitally signed, base64-encoded authentication request message created by <em>Wirecard Payment Gateway.</em> It contains the results of the 3D Secure versioning request that is used to initiate <em>AReq</em> as part of the HTTPS POST redirect to the ACS URL. The agent uses the PAReq for a HTTPS POST redirect to the ACS URL, which is part of a standard 3D Secure process. The HTTPS POST redirect returns the PARes as part of the response.</p>
 </li>
 <li>
 <p><strong>Check-Payer-Response</strong><br>
@@ -15656,7 +15656,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -15716,7 +15716,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -15832,7 +15832,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -15892,7 +15892,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -16045,7 +16045,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -16105,7 +16105,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -16247,7 +16247,7 @@ Send an <a href="CreditCard_3DS2.html#3DS2_IntegrationGuide_REST_AutoSubmission"
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>three-d/pareq</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Base64-encoded request message created for cards enrolled in the 3D Secure program.<br>
-The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the {payment-provider-name} Payment Gateway and from there passed on to the merchant.</p></td>
+The <code>PAReq</code> is returned by the issuer’s ACS via the VISA or Mastercard directory to the Wirecard Payment Gateway and from there passed on to the merchant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TermUrl</code></p></td>
@@ -16307,7 +16307,7 @@ Use this request to receive, analyze and store authentication values. The check-
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use the check-payer-response only in case you have initiated the check-enrollment through the {payment-provider-name} Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
+<p>Use the check-payer-response only in case you have initiated the check-enrollment through the Wirecard Payment Gateway. The check-payer-response will not work if you have used an external 3D Secure provider (third-party MPI) to check if the consumer’s card is enrolled in the 3D Secure 2 program.</p>
 </div>
 </td>
 </tr>
@@ -16821,7 +16821,7 @@ These transactions are in scope of AMLD5. As Wirecard is AMLD5-compliant, differ
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-19 12:35:14 UTC
+Last updated 2020-08-26 11:30:46 UTC
 </div>
 </div>
 
