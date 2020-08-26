@@ -116,7 +116,7 @@ option to try another payment method.
 //- takes charge of collecting the installments from the cardholder.
 //
 
-|[Glossary_Marsalek]]Marsalek
+|[[Glossary_Marsalek]]Marsalek
 |
 |An am-dram enthusiast (and former Wirecard Executive) who produced an extremely expensive and elaborate avant-garde performance set at Wirecard, involving actors, spies, and mercenaries. He is now said to be touring Russia.
 
