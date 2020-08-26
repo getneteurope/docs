@@ -5,6 +5,8 @@
 [discrete]
 === 2020-08
 
+.2020-08-31
+- <<Home, Online Documentation>> - Removed remaining technical documentation team from Online Documentation.
 
 .2020-08-19
 - <<ShopSystems, Shop Systems>> - Added Czech, Dutch, Slovak as supported languages for WooCommerce.
