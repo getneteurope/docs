@@ -2450,7 +2450,27 @@ table.grid-rows>thead:last-child>tr>.tableblock {
 /* line 1085, ../../style/sass/components/_asciidoc.scss */
 
 table.frame-all {
+  transition-delay: 4s;
+  transition-property: rotate;
   border-width: 1px;
+  animation-delay: 2s;
+  animation-name: rotate_scale;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate_scale {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0.3deg);
+  }
 }
 
 /* line 1089, ../../style/sass/components/_asciidoc.scss */
@@ -4591,7 +4611,7 @@ span.nav-text {
 /* line 106, ../../style/sass/elements/_search.scss */
 
 #search-results-wrapper {
-  width: 35em;
+  width: 25em;
   right: 0;
   position: fixed;
   z-index: 1;
@@ -4611,6 +4631,19 @@ span.nav-text {
 
 #search-results-wrapper.open {
   max-height: 100vh;
+}
+
+#search-results-wrapper > .sect1 > h2 {
+  font-size: 2em;
+}
+.search-list-entry p {
+  font-size: .8em
+}
+.search-list-entry h4 {
+  font-size: 1.32em;
+}
+.search-list-entry span.label {
+  font-size: 0.8em;
 }
 
 /* line 127, ../../style/sass/elements/_search.scss */
@@ -4651,6 +4684,8 @@ span.nav-text {
 #search-results-wrapper ul#search-results li>div a h4,
 #search-results-wrapper ul#search-results li>div a p {
   color: #002846;
+  max-height: 9ch;
+  overflow: hidden;
 }
 
 /* line 157, ../../style/sass/elements/_search.scss */
