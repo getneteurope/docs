@@ -499,7 +499,7 @@ payments are submitted on time and are processed correctly. Wirecard
 requires merchants to submit
 
 - all transactions, regardless of sequence type, at least one (1)
-banking days before the due date
+banking day before the due date
 
 //-
 
