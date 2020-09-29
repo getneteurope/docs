@@ -39,7 +39,7 @@ at <<AppendixB,  Transaction Types>>.
 
 | authorization | Verifies payment details for structural validity and/or generates a reference ID for the merchant (not mandatory).
 | See <<SEPADirectDebit_Samples_Authorization, samples>>.
-| pending-debit | Transaction is processed in the {payment-gateway}. | 
+| pending-debit | Transaction is processed in the {payment-gateway}. |
 | void-pending-debit | Voids a _pending-debit._ +
 Only available when the <<SEPA_TransactionType_Void_Restrictions, restrictions>> are met.
 | See <<SEPADirectDebit_Samples_VoidPendingDebit, samples>>.
@@ -498,7 +498,7 @@ merchant chooses to specify a due date, it is important to ensure all
 payments are submitted on time and are processed correctly. Wirecard
 requires merchants to submit
 
-- all transactions, regardless of sequence type, at least three (3)
+- all transactions, regardless of sequence type, at least one (1)
 banking days before the due date
 
 //-
