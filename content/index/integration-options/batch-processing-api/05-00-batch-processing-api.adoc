@@ -8,7 +8,7 @@ quick and easy offline transaction processing.
 
 Batch processing is possible for the following payment methods:
 
-- _SEPA Direct Debit (SEPA DD)_
+- _SEPA Direct Option (SEPA DD)_
 - _SEPA Credit Transfer (SEPA CT)_
 - _Credit Card_
 
