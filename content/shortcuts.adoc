@@ -18,9 +18,9 @@
 
 // == Integration Options
 
-:payment-page-abbr: WPP
+:payment-page-abbr: GPP
 :payment-page-anchor: WPP
-:payment-page-abbr-lower-case: wpp
+:payment-page-abbr-lower-case: gpp
 :payment-page-function-short: WPP
 :payment-page-function: WirecardPaymentPage
 :payment-page-v1: {payment-provider-name} Payment Page v1

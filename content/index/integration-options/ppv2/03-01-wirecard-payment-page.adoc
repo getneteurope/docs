@@ -80,23 +80,12 @@ See the list of all supported payment methods below:
 
 * <<PPv2_CC, Credit Card>>
 * <<PPv2_AlipayCrossborder, Alipay Cross-border>>
-* <<PPv2_Bancontact, Bancontact>>
-* <<PPv2_eps, eps>>
-* <<PPv2_giropay, giropay>>
 * <<PPv2_ideal, iDEAL>>
 * <<PPv2_Klarna, Klarna Payments>>
-* <<API_Masterpass, Masterpass>>
-* <<PPv2_paydirekt, paydirekt>>
-* <<PPv2_paylib, Paylib>>
 * <<PPv2_PayPal, PayPal>>
-* <<PPv2_paysafecard, paysafecard>>
-* <<PPv2_P24, Przelewy24>>
 * <<PPv2_SEPADirectDebit, SEPA Direct Debit>>
-* <<Skrill_Main, Skrill Digital Wallet>>
 * <<PPv2_Sofort, Sofort.>>
-* <<WeChat_Main, WeChat QR Pay>>
 * <<PPv2_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
 * <<PPv2_PaymentInstallment, {payment-provider-name} Payment in Installments>>
 * <<PPv2_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
-* <<Voucher_Main, {payment-provider-name} Voucher>>
 //-
