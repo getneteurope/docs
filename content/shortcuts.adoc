@@ -7,7 +7,7 @@
 :documentation-url: doc.{domain}
 :payment-gateway-abbr: WPG
 :payment-provider-name-lower-case: wirecard
-:payment-provider-name: Wirecard
+:payment-provider-name: Getnet
 :payment-gateway: {payment-provider-name} Payment Gateway
 :payment-redirect-url-hostname: www.wirecard.com
 :api-id: wpp
