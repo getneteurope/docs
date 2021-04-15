@@ -1,36 +1,30 @@
 @font-face {
-  font-family: "Wirecard";
-  src: url("../fonts/DINWebPro.woff") format("woff");
+  font-family: "SantanderHeadline-Regular";
+  src: url("../fonts/SantanderHeadlineW05-Rg.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Wirecard";
-  font-weight: 700;
-  src: url("../fonts/DINWebPro-Bold.woff") format("woff");
+  font-family: "SantanderHeadline-Bold";
+
+  src: url("../fonts/SantanderHeadlineW05-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Wirecard";
-  font-style: italic;
-  src: url("../fonts/DINWebPro-Ita.woff") format("woff");
+  font-family: "SantanderMicroText-Italic";
+  src: url("../fonts/SantanderMicroTextW05-It.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Ubuntu Mono";
-  src: url("../fonts/UbuntuMono-Regular.ttf") format("truetype");
+  font-family: "SantanderMicroText-Regular";
+  src: url("../fonts/SantanderMicroTextW05-Rg.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Ubuntu Mono";
-  font-weight: 700;
-  src: url("../fonts/UbuntuMono-Bold.ttf") format("truetype");
+  font-family: "SantanderMicroText-Bold";
+  src: url("../fonts/SantanderMicroTextW05-Bold.woff") format("woff");
 }
 
-@font-face {
-  font-family: "Ubuntu Mono";
-  font-style: italic;
-  src: url("../fonts/UbuntuMono-Italic.ttf") format("ttf");
-}
+
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
@@ -394,7 +388,7 @@ body {
   color: #000f23;
   padding: 0;
   margin: 0;
-  font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif;
+  font-family: "Santander Micro Text", "Noto Serif", "DejaVu Serif", serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -678,10 +672,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Wirecard", "Open Sans", "DejaVu Sans", sans-serif;
+  font-family: "SantanderHeadline-Regular", "Open Sans", "DejaVu Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: #002846;
+  color: #444;
   text-rendering: optimizeLegibility;
   margin-top: 1.25em;
   margin-bottom: 0.5em;
@@ -1484,7 +1478,7 @@ body.toc2 #header>h1:nth-last-child(2) {
 /* line 366, ../../style/sass/components/_asciidoc.scss */
 
 #toc ul {
-  font-family: "Wirecard", "Open Sans", "DejaVu Sans", sans-serif;
+  font-family: "SantanderMicroText-Regular", "Open Sans", "DejaVu Sans", sans-serif;
   list-style-type: none;
 }
 
@@ -1541,7 +1535,7 @@ body.toc2 {
   width: 20em;
   left: 0;
   top: 0;
-  border-right: 1px solid #e7e7e9;
+  /* border-right: 1px solid #e7e7e9; */
   border-top-width: 0 !important;
   border-bottom-width: 0 !important;
   z-index: 1000;
@@ -3850,7 +3844,7 @@ button.close {
 /* line 33, ../../style/sass/pages/_startpage.scss */
 
 .openblock.startpage-block table.tableblock.signpost>tbody tr:nth-child(2)>td:nth-child(1)>div {
-  margin-top: 68px;
+  /* margin-top: 68px; */
 }
 
 /* line 38, ../../style/sass/pages/_startpage.scss */
@@ -3881,7 +3875,7 @@ button.close {
   transform: rotate(-45deg);
   scale: 0.7;
   -ms-transform: rotate(-45deg) scale(0.7);
-  -webkit-transform: scale(0.7, 0.7) rotate(-45deg);
+  /* -webkit-transform: scale(0.7, 0.7) rotate(-45deg); */
   max-height: 100%;
 }
 
@@ -3944,7 +3938,7 @@ button.close {
 .openblock.startpage-block table.tableblock>tbody .content div.imageblock.icon-large {
   background: -webkit-gradient(linear, left top, left bottom, #ff7373, #2983fb);
   background: -o-linear-gradient(top, #ff7373, #2983fb);
-  background: linear-gradient(180deg, #ff7373, #2983fb);
+  /* background: linear-gradient(180deg, #ff7373, #2983fb); */
 }
 
 /* line 87, ../../style/sass/pages/_startpage.scss */
@@ -3984,7 +3978,7 @@ button.close {
   word-spacing: -.05em;
   margin-top: 1em;
   margin-bottom: 0;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .openblock.startpage-block table.tableblock.payment_methods>tbody tr:last-child td {
@@ -4229,7 +4223,7 @@ table.r-details>caption.title.hide-show-enabled {
 /* line 3, ../../style/sass/elements/_global-toc.scss */
 
 #toc.toc2 {
-  background: #112233;
+  background: #F5F9Fb;
   overflow-x: hidden;
   /* overwrite asciidoctor default margins,paddings */
   padding: 0;
@@ -4254,13 +4248,14 @@ table.r-details>caption.title.hide-show-enabled {
 /* line 15, ../../style/sass/elements/_global-toc.scss */
 
 #toc.toc2 a {
-  color: white;
+  color: #444;
 }
 
 /* line 19, ../../style/sass/elements/_global-toc.scss */
 
 #toc.toc2 #logo {
-  background: #112233;
+  background: #F5F9Fb;
+  /* max-width: 10em; */
 }
 
 /* line 26, ../../style/sass/elements/_global-toc.scss */
@@ -4278,9 +4273,9 @@ table.r-details>caption.title.hide-show-enabled {
 /* line 35, ../../style/sass/elements/_global-toc.scss */
 
 #toc.toc2 li[data-level="1"]>input[type="checkbox"]+label>a {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #F5F9FB;
   padding-left: 1em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 /* line 41, ../../style/sass/elements/_global-toc.scss */
@@ -4317,7 +4312,8 @@ table.r-details>caption.title.hide-show-enabled {
 
 #toc.toc2 input[type="checkbox"]+label>a:hover {
   background-color: rgba(0, 0, 0, 0.05);
-  color: #8ee6ff;
+  color: #000;
+  font-weight: bold;
   transition: background-color 0.5s ease-out;
 }
 
@@ -4325,13 +4321,13 @@ table.r-details>caption.title.hide-show-enabled {
 
 #toc.toc2 input[type="checkbox"]:checked+label>a {
   background-color: rgba(0, 0, 0, 0.12);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 /* line 82, ../../style/sass/elements/_global-toc.scss */
 
 #toc.toc2 li[data-level="1"]>input[type="checkbox"]:checked+label>a {
-  background-color: rgba(255, 255, 255, 0.08);
+  color: #ec0000;
 }
 
 /* line 89, ../../style/sass/elements/_global-toc.scss */
@@ -4490,15 +4486,16 @@ body.no-scroll {
 input#search {
   display: block;
   width: 85%;
-  border-radius: 5px;
-  border: 1px solid #425563;
+  border-radius: 2px;
+  border: 1px solid #DEEDF2;
   padding: 0.5em;
   font-size: 1em;
   box-sizing: unset;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   color: white;
   margin-bottom: 1em;
+  border-bottom: 2px solid #257FA4;
 }
 
 /* line 24, ../../style/sass/elements/_search.scss */
@@ -4583,7 +4580,7 @@ span.nav-text {
   position: fixed;
   display: inline-block;
   padding-top: 6.5em;
-  background-color: #112233;
+  background-color: #F5F9Fb;
   width: 19em;
   z-index: 1;
 }

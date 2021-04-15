@@ -1,307 +1,87 @@
-/* line 1, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay { background-color: rgba(235, 235, 235, 0.5); border: 2px solid #d0d3d4; color: black; }
-
-/* line 6, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay pre { margin: 0px; }
-
-/* line 10, ../../style/sass/elements/_coderay-theme.scss */
-span.CodeRay { white-space: pre; border: 0px; padding: 2px; }
-
-/* line 11, ../../style/sass/elements/_coderay-theme.scss */
-table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px; }
-
-/* line 12, ../../style/sass/elements/_coderay-theme.scss */
-table.CodeRay td { padding: 2px 4px; vertical-align: top; }
-
-/* line 13, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line-numbers { background-color: #ebebeb; color: #425563; text-align: right; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-
-/* line 21, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line-numbers a { background-color: #ebebeb !important; color: #425563 !important; text-decoration: none !important; }
-
-/* line 26, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line-numbers pre { word-break: normal; }
-
-/* line 29, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line-numbers a:target { color: blue !important; }
-
-/* line 30, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line-numbers .highlighted { color: red !important; }
-
-/* line 31, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line-numbers .highlighted a { color: red !important; }
-
-/* line 32, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay span.line-numbers { padding: 0px 4px; }
-
-/* line 33, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .line { display: block; float: left; width: 100%; }
-
-/* line 34, ../../style/sass/elements/_coderay-theme.scss */
-.CodeRay .code { width: 100%; }
-
-/* line 37, ../../style/sass/elements/_coderay-theme.scss */
-.debug { color: white !important; background: blue !important; }
-
-/* line 38, ../../style/sass/elements/_coderay-theme.scss */
-.annotation { color: #000077; }
-
-/* line 39, ../../style/sass/elements/_coderay-theme.scss */
-.assign { color: #002846; }
-
-/* line 40, ../../style/sass/elements/_coderay-theme.scss */
-.attribute-name { color: #a77bca; }
-
-/* line 41, ../../style/sass/elements/_coderay-theme.scss */
-.attribute-value { color: #a77bca; }
-
-/* line 42, ../../style/sass/elements/_coderay-theme.scss */
-.binary { color: #554499; }
-
-/* line 43, ../../style/sass/elements/_coderay-theme.scss */
-.binary .char { color: #332255; }
-
-/* line 44, ../../style/sass/elements/_coderay-theme.scss */
-.binary .delimiter { color: #332255; }
-
-/* line 45, ../../style/sass/elements/_coderay-theme.scss */
-.char { color: #dd2200; }
-
-/* line 46, ../../style/sass/elements/_coderay-theme.scss */
-.char .content { color: #dd2200; }
-
-/* line 47, ../../style/sass/elements/_coderay-theme.scss */
-.char .delimiter { color: #771100; }
-
-/* line 48, ../../style/sass/elements/_coderay-theme.scss */
-.class { color: #B06; font-weight: bold; }
-
-/* line 49, ../../style/sass/elements/_coderay-theme.scss */
-.class-variable { color: #336699; }
-
-/* line 50, ../../style/sass/elements/_coderay-theme.scss */
-.color { color: #00aa00; }
-
-/* line 51, ../../style/sass/elements/_coderay-theme.scss */
-.comment { color: #a2aaad; }
-
-/* line 52, ../../style/sass/elements/_coderay-theme.scss */
-.comment .char { color: #a2aaad; }
-
-/* line 53, ../../style/sass/elements/_coderay-theme.scss */
-.comment .delimiter { color: #a2aaad; }
-
-/* line 54, ../../style/sass/elements/_coderay-theme.scss */
-.connector { color: #a2aaad; padding: 0 3px; }
-
-/* line 55, ../../style/sass/elements/_coderay-theme.scss */
-.constant { color: #036; font-weight: bold; }
-
-/* line 56, ../../style/sass/elements/_coderay-theme.scss */
-.decorator { color: #8ee6ff; }
-
-/* line 57, ../../style/sass/elements/_coderay-theme.scss */
-.definition { color: #099; font-weight: bold; }
-
-/* line 58, ../../style/sass/elements/_coderay-theme.scss */
-.delimiter { color: black; }
-
-/* line 59, ../../style/sass/elements/_coderay-theme.scss */
-.directive { color: #088; font-weight: bold; }
-
-/* line 60, ../../style/sass/elements/_coderay-theme.scss */
-.docstring { color: #D42; }
-
-/* line 61, ../../style/sass/elements/_coderay-theme.scss */
-.doctype { color: #3344bb; }
-
-/* line 62, ../../style/sass/elements/_coderay-theme.scss */
-.done { text-decoration: line-through; color: gray; }
-
-/* line 63, ../../style/sass/elements/_coderay-theme.scss */
-.entity { color: #800; font-weight: bold; }
-
-/* line 64, ../../style/sass/elements/_coderay-theme.scss */
-.error { color: #F00; background-color: #ffaaaa; }
-
-/* line 65, ../../style/sass/elements/_coderay-theme.scss */
-.escape { color: #666666; }
-
-/* line 66, ../../style/sass/elements/_coderay-theme.scss */
-.exception { color: #C00; font-weight: bold; }
-
-/* line 67, ../../style/sass/elements/_coderay-theme.scss */
-.float { color: #6600ee; }
-
-/* line 68, ../../style/sass/elements/_coderay-theme.scss */
-.function { color: #06B; font-weight: bold; }
-
-/* line 69, ../../style/sass/elements/_coderay-theme.scss */
-.function .delimiter { color: #005599; }
-
-/* line 70, ../../style/sass/elements/_coderay-theme.scss */
-.function .content { color: #003377; }
-
-/* line 71, ../../style/sass/elements/_coderay-theme.scss */
-.global-variable { color: #dd7700; }
-
-/* line 72, ../../style/sass/elements/_coderay-theme.scss */
-.hex { color: #0022bb; }
-
-/* line 73, ../../style/sass/elements/_coderay-theme.scss */
-.id { color: #33D; font-weight: bold; }
-
-/* line 74, ../../style/sass/elements/_coderay-theme.scss */
-.include { color: #B44; font-weight: bold; }
-
-/* line 76, ../../style/sass/elements/_coderay-theme.scss */
-.inline-delimiter { font-weight: bold; color: #666666; }
-
-/* line 77, ../../style/sass/elements/_coderay-theme.scss */
-.instance-variable { color: #3333bb; }
-
-/* line 78, ../../style/sass/elements/_coderay-theme.scss */
-.integer { color: #00cca0; }
-
-/* line 79, ../../style/sass/elements/_coderay-theme.scss */
-.imaginary { color: red; }
-
-/* line 80, ../../style/sass/elements/_coderay-theme.scss */
-.important { color: #dd0000; }
-
-/* line 81, ../../style/sass/elements/_coderay-theme.scss */
-.key { color: #2983fb; font-weight: bold; }
-
-/* line 82, ../../style/sass/elements/_coderay-theme.scss */
-.key .char { color: #2983fb; }
-
-/* line 83, ../../style/sass/elements/_coderay-theme.scss */
-.key .delimiter { color: #2983fb; }
-
-/* line 84, ../../style/sass/elements/_coderay-theme.scss */
-.keyword { color: #080; font-weight: bold; }
-
-/* line 85, ../../style/sass/elements/_coderay-theme.scss */
-.label { color: #970; font-weight: bold; }
-
-/* line 86, ../../style/sass/elements/_coderay-theme.scss */
-.local-variable { color: #995500; }
-
-/* line 87, ../../style/sass/elements/_coderay-theme.scss */
-.map .content { color: #880088; }
-
-/* line 88, ../../style/sass/elements/_coderay-theme.scss */
-.map .delimiter { color: #40A; }
-
-/* line 90, ../../style/sass/elements/_coderay-theme.scss */
-.namespace { color: #707; font-weight: bold; }
-
-/* line 91, ../../style/sass/elements/_coderay-theme.scss */
-.octal { color: #4400ee; }
-
-/* line 93, ../../style/sass/elements/_coderay-theme.scss */
-.predefined { color: #369; font-weight: bold; }
-
-/* line 94, ../../style/sass/elements/_coderay-theme.scss */
-.predefined-constant { color: #006699; }
-
-/* line 95, ../../style/sass/elements/_coderay-theme.scss */
-.predefined-type { color: #0a8; font-weight: bold; }
-
-/* line 96, ../../style/sass/elements/_coderay-theme.scss */
-.preprocessor { color: #557799; }
-
-/* line 97, ../../style/sass/elements/_coderay-theme.scss */
-.pseudo-class { color: #00C; font-weight: bold; }
-
-/* line 99, ../../style/sass/elements/_coderay-theme.scss */
-.regexp .content { color: #880088; }
-
-/* line 100, ../../style/sass/elements/_coderay-theme.scss */
-.regexp .delimiter { color: #440044; }
-
-/* line 101, ../../style/sass/elements/_coderay-theme.scss */
-.regexp .modifier { color: #cc22cc; }
-
-/* line 102, ../../style/sass/elements/_coderay-theme.scss */
-.reserved { color: #080; font-weight: bold; }
-
-/* line 104, ../../style/sass/elements/_coderay-theme.scss */
-.shell .content { color: #22bb22; }
-
-/* line 105, ../../style/sass/elements/_coderay-theme.scss */
-.shell .delimiter { color: #116611; }
-
-/* line 107, ../../style/sass/elements/_coderay-theme.scss */
-.string .char { color: #ff7373; }
-
-/* line 108, ../../style/sass/elements/_coderay-theme.scss */
-.string .content { color: #ff7373; }
-
-/* line 109, ../../style/sass/elements/_coderay-theme.scss */
-.string .delimiter { color: #ff7373; }
-
-/* line 110, ../../style/sass/elements/_coderay-theme.scss */
-.string .modifier { color: #ff7373; }
-
-/* line 111, ../../style/sass/elements/_coderay-theme.scss */
-.symbol { color: #002846; }
-
-/* line 112, ../../style/sass/elements/_coderay-theme.scss */
-.symbol .content { color: #aa6600; }
-
-/* line 113, ../../style/sass/elements/_coderay-theme.scss */
-.symbol .delimiter { color: #774400; }
-
-/* line 114, ../../style/sass/elements/_coderay-theme.scss */
-.tag { color: #2983fb; font-weight: bold; }
-
-/* line 115, ../../style/sass/elements/_coderay-theme.scss */
-.type { color: #339; font-weight: bold; }
-
-/* line 116, ../../style/sass/elements/_coderay-theme.scss */
-.value { color: #ff7373; }
-
-/* line 117, ../../style/sass/elements/_coderay-theme.scss */
-.variable { color: #003377; }
-
-/* line 118, ../../style/sass/elements/_coderay-theme.scss */
-.insert { background: rgba(0, 255, 0, 0.12); }
-
-/* line 119, ../../style/sass/elements/_coderay-theme.scss */
-.delete { background: rgba(255, 0, 0, 0.12); }
-
-/* line 120, ../../style/sass/elements/_coderay-theme.scss */
-.change { color: #bbf; background: #000077; }
-
-/* line 121, ../../style/sass/elements/_coderay-theme.scss */
-.head { color: #f8f; background: #550055; }
-
-/* line 122, ../../style/sass/elements/_coderay-theme.scss */
-.head .filename { color: white; }
-
-/* line 123, ../../style/sass/elements/_coderay-theme.scss */
-.delete .eyecatcher { background-color: rgba(255, 0, 0, 0.2); border: 1px solid rgba(230, 0, 0, 0.5); margin: -1px; border-bottom: none; border-top-left-radius: 5px; border-top-right-radius: 5px; }
-
-/* line 127, ../../style/sass/elements/_coderay-theme.scss */
-.insert .eyecatcher { background-color: rgba(0, 255, 0, 0.2); border: 1px solid rgba(0, 128, 0, 0.5); margin: -1px; border-top: none; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
-
-/* line 131, ../../style/sass/elements/_coderay-theme.scss */
-.insert .insert { color: #0c0; background: transparent; font-weight: bold; }
-
-/* line 132, ../../style/sass/elements/_coderay-theme.scss */
-.delete .delete { color: #c00; background: transparent; font-weight: bold; }
-
-/* line 133, ../../style/sass/elements/_coderay-theme.scss */
-.change .change { color: #8888ff; }
-
-/* line 134, ../../style/sass/elements/_coderay-theme.scss */
-.head .head { color: #ff44ff; }
-
-/* line 4, ../../style/sass/coderay-asciidoctor.scss */
-pre.CodeRay.highlight { border: solid 2px #d0d3d4; border-radius: 5px; }
-/* line 7, ../../style/sass/coderay-asciidoctor.scss */
-pre.CodeRay.highlight > code { font-family: 'Ubuntu Mono', monospace; font-size: 0.85rem; }
-
-/* line 13, ../../style/sass/coderay-asciidoctor.scss */
-.listingblock code[data-lang]::before { display: block; font-family: 'Ubuntu Mono', monospace; background-color: #d0d3d4; color: #2983fb; font-size: 1rem; font-weight: bold; border-top-right-radius: 5px; border-bottom-left-radius: 5px; top: 1px; right: 1px; padding: 3px 5px; opacity: unset !important; }
+/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+pre.CodeRay{background:#f7f7f8}
+.CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.code{padding:0 0 0 .75em}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
