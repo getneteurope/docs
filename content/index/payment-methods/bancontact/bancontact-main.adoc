@@ -1,4 +1,0 @@
-[#Bancontact_Main]
-== Bancontact
-
-//-

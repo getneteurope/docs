@@ -1,2 +1,0 @@
-[#TrustPay_Main]
-== TrustPay

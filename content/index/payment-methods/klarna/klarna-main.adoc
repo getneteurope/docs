@@ -1,2 +1,0 @@
-[#Klarna_Main]
-== Klarna

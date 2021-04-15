@@ -1,2 +1,0 @@
-[#Voucher_Main]
-== {payment-provider-name} Voucher

@@ -1,2 +1,0 @@
-[#ApplePay_Main]
-== Apple Pay
