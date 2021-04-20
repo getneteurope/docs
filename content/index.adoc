@@ -300,11 +300,8 @@ include::index/payment-processing/3-d-secure-2/3-d-secure-2-exemption-adviser.ad
 
 include::index/payment-processing/08-general-platform-features.adoc[leveloffset=+1]
 include::index/payment-processing/08-01-cross-referencing.adoc[leveloffset=+2]
-
 include::index/payment-processing/08-02-ipn.adoc[leveloffset=+2]
-
 include::index/payment-processing/08-03-ip-validation.adoc[leveloffset=+2]
-
 include::index/payment-processing/08-04-redirect-url.adoc[leveloffset=+2]
 include::index/payment-processing/08-06-merchant-account-resolving.adoc[leveloffset=+2]
 include::index/payment-processing/08-07-transactions.adoc[leveloffset=+2]
