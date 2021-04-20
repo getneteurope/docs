@@ -302,11 +302,12 @@ include::index/payment-processing/08-general-platform-features.adoc[leveloffset=
 include::index/payment-processing/08-01-cross-referencing.adoc[leveloffset=+2]
 include::index/payment-processing/08-02-ipn.adoc[leveloffset=+2]
 include::index/payment-processing/08-03-ip-validation.adoc[leveloffset=+2]
-include::index/payment-processing/08-04-redirect-url.adoc[leveloffset=+2]
 include::index/payment-processing/08-06-merchant-account-resolving.adoc[leveloffset=+2]
-include::index/payment-processing/08-07-transactions.adoc[leveloffset=+2]
+include::index/payment-processing/08-04-redirect-url.adoc[leveloffset=+2]
 include::index/payment-processing/08-08-server-availability.adoc[leveloffset=+2]
 include::index/payment-processing/08-10-surcharging.adoc[leveloffset=+2]
+include::index/payment-processing/08-07-transactions.adoc[leveloffset=+2]
+
 
 
 include::index/reporting/10-reporting.adoc[]
