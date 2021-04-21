@@ -9,6 +9,10 @@
 - Customization with <<PaymentPageSolutions_PPv2_PaymentPageDesigner, Payment Page Designer>>
 - PCI DSS SAQ A
 
+//-
+====
+
+image::images/03-01-03-seamless-mode/seamless-mode.png[Seamless Mode]
 
 Use Seamless Mode to display the Payment Page payment form as a fully integrated
 part of your checkout page. Without redirects to external pages (except
