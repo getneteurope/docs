@@ -17,23 +17,12 @@
 | Safari  | 11.0 - latest version         | macOS   | -                ^| ✅
 |===
 
-[discrete]
-[#PPv2_SupportedBrowsers_Browsers_Mobile]
-==== Mobile
-
-[%autowidth]
-|===
-| OS      | Version               ^| Supported
-
-| Android | 4 - latest version    ^| ✅
-| iOS     | 5.1. - latest version ^| ✅
-|===
 
 [discrete]
 [#PPv2_SupportedBrowsers_Languages]
 === Languages
 
-At the moment, {payment-page-v2-abbr} supports the following languages:
+At the moment, Payment Page supports the following languages:
 
 [%autowidth,cols="^1,10"]
 |===

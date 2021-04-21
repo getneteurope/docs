@@ -132,9 +132,9 @@ include::{root}/samples/json/WPP_ConfiguringRedirectsIPNsRedirectPagesRecap_Ttli
 ----
 
 [#PPv2_ConfiguringRedirectsIPNs_IPNs]
-== Configuring IPNs through {payment-page-v2-abbr} requests
+== Configuring IPNs through Payment Page requests
 
-NOTE: This is only an example of how to configure extra IPNs through a {payment-page-v2-abbr}
+NOTE: This is only an example of how to configure extra IPNs through a Payment Page
 payment request. For information regarding automatic IPNs and other
 configuration options head over <<GeneralPlatformFeatures_IPN, here>>.
 
