@@ -24,17 +24,17 @@ Then use a backend-to-backend JSON <<PPSolutions_PPv2_Workflow, workflow>>
 for the payment process.
 
 . *Create a payment session:* You send an initial POST request with
-details of the transaction to the {payment-page-v2} ({payment-page-v2-abbr}). This POST
+details of the transaction to the {payment-page-v2}. This POST
 request is secured by basic access authentication.
 
-. *Render the seamless payment form:* {payment-page-v2-abbr} returns an initial response URL.
+. *Render the seamless payment form:* Payment Page returns an initial response URL.
 +
 ====
 - *If the initial POST request is correct,* use this response URL and the
 ``{payment-page-function-short}.seamlessRender`` library call to render the payment form in a
 seamless iframe. *Continue with step 3.*
 
-- *If the initial POST request is faulty,* {payment-page-v2-abbr} returns an error code with
+- *If the initial POST request is faulty,* Payment Page returns an error code with
 a description of the problem in the response. *Return to step 1.*
 ====
 +
@@ -43,7 +43,7 @@ the ``{payment-page-function-short}.seamlessSubmit`` function to submit the paym
 the function is bound to an interactive UI element, such as a button, in
 your HTML code.
 - *3D Secure credit card payment* automatically redirects the consumer
-to the authentication page, and then to a {payment-page-v2-abbr} success- or
+to the authentication page, and then to a Payment Page success- or
 fail-redirect-url. Include the success- and fail-redirect-urls in your
 initial request! This page includes a JSON sample for 3D Secure credit
 card payment.
@@ -52,7 +52,7 @@ redirects to subsequent pages, such as a ``success-/fail-/cancel-redirect-url`` 
 payment outcome, by yourself.
 +
 . *Parse and Process the Payment Response:* The payment is processed.
-{payment-page-v2-abbr} returns base64 encoded payment data. It is _highly recommended_ that
+Payment Page returns base64 encoded payment data. It is _highly recommended_ that
 you parse and process this base64 encoded response to verify the
 payment.
 
@@ -289,7 +289,7 @@ Need more information on 3D Secure 2? Head to our <<CreditCard_3DS2, general int
 
 [CAUTION]
 ====
-You must include ``"options": {"mode":"seamless"}`` in your request, otherwise {payment-page-v2-abbr} returns a regular payment URL that cannot be used in
+You must include ``"options": {"mode":"seamless"}`` in your request, otherwise Payment Page returns a regular payment URL that cannot be used in
 Seamless Mode. +
 
 Seamless Mode renders the payment form into an iframe. Therefore, you
@@ -459,7 +459,7 @@ WARNING: *The function only submits the payment.*
 [#PPv2_Seamless_Integration_Example_3DSRedirect]
 *3D Secure Transaction Redirect*
 
-For 3D Secure transactions, {payment-page-v2-abbr} in Seamless Mode automatically
+For 3D Secure transactions, Payment Page in Seamless Mode automatically
 redirects the consumer to the card provider 3D Secure authentication
 pages. There are no actions required from you for this process.
 
@@ -480,7 +480,7 @@ during the initial merchant configuration and saved in the database. If
 you would like to change these default values, please contact <<ContactUs, Merchant Support>>.
 
 More information on ``success-/fail-/cancel-redirect-url`` configuration
-can be found in <<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>>.
+can be found in <<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for Payment Page>>.
 ====
 
 [#PPv2_Seamless_Integration_Example_Redirect]
@@ -509,22 +509,22 @@ include::{root}/samples/json/WPP_SeamlessIntegrationExampleParse_4ParseAndProces
 {payment-provider-name}, are required for calculating the security response signature.
 The security response signature is essential for verifying the payment
 status. +
-*Please consult <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> for details and examples of response signature verification.*
+*Please consult <<PPSolutions_PPv2_PPv2Security, Payment Page Security>> for details and examples of response signature verification.*
 
 //-
 
-In Seamless Mode, the {payment-page-v2-abbr} sends the final response containing the payment data to either of the following destinations, depending on the
+In Seamless Mode, the Payment Page sends the final response containing the payment data to either of the following destinations, depending on the
 payment mode.
 
 [#PPv2_Seamless_Integration_Example_Parse_3DS]
 *3D Secure Credit Card Payment*
 
-The {payment-page-v2-abbr} sends the final response containing the payment data to the
+The Payment Page sends the final response containing the payment data to the
 ``success-redirect-url``/``fail-redirect-url`` *specified in the initial request.* This is the URL where the consumer is redirected to at the end
 of a payment session.
 
 To parse and process the payment response of 3D Secure credit card
-payment, please consult *<<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> for details.*
+payment, please consult *<<PPSolutions_PPv2_PPv2Security, Payment Page Security>> for details.*
 
 This is the decoded payment data contained in the example payment response provided above.
 
@@ -684,8 +684,8 @@ m|token-id
 [#PPv2_Seamless_Integration_Example_Parse_NON3DS]
 *Non 3D Secure Credit Card Payment*
 
-The {payment-page-v2-abbr} sends the final response containing the payment data *as part of the ``onSuccess/onError`` function.* Use the response to redirect the
+The Payment Page sends the final response containing the payment data *as part of the ``onSuccess/onError`` function.* Use the response to redirect the
 consumer to a success-/fail-/cancel-redirect-url of your own choice and design to inform the consumer about the transaction status.
 
 To parse and process the payment response of Non 3D Secure credit card
-payment, please consult *<<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> for details.*
+payment, please consult *<<PPSolutions_PPv2_PPv2Security, Payment Page Security>> for details.*
