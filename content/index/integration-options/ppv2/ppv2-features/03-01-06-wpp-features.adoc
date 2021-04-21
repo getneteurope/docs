@@ -1,6 +1,6 @@
 [#PPv2_Features]
-== {payment-page-v2-abbr} Features
-{payment-page-v2-abbr} features support convenient customization of the payment and
+== Payment Page Features
+Payment Page features support convenient customization of the payment and
 checkout process.
 
 Add fields in the initial POST request or use

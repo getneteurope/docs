@@ -2,7 +2,7 @@
 [#PPv2_Features_PaybyLinkAPI]
 
 == Pay by Link via API
-{payment-page-v2-abbr} offers the option to configure the expiration time & date of a
+Payment Page offers the option to configure the expiration time & date of a
 payment URL (``payment-redirect-url``). By adding
 the ``hyperlink-expiration-time-stamp`` field to a normal payment request,
 you can set the time & date when the payment URL expires: This allows

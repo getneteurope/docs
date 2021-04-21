@@ -1,19 +1,19 @@
 [#PPD_{payment-page-v2-anchor}-Manager]
 == Manage your Themes and Translations
 
-Use the {payment-page-v2-abbr} design manager menu to edit and organize your <<PPD_customize_save,themes>> and translations.
+Use the Payment Page design manager menu to edit and organize your <<PPD_customize_save,themes>> and translations.
 
 . Open the https://designer-test.{domain}[Payment Page Designer]. 
 . Click *Login*.
-. Use your credentials provided by <<ContactUs, Merchant Support>> to access the {payment-page-v2-abbr} design manager menu.
+. Use your credentials provided by <<ContactUs, Merchant Support>> to access the Payment Page design manager menu.
 
 //-
 
 WARNING: Make sure that only one user is editing a theme. If two users edit a theme at the same time, some changes might get lost.
 
-NOTE: A session timeout requires a relogin to the {payment-page-v2-abbr} design manager menu after 60 minutes of inactivity.
+NOTE: A session timeout requires a relogin to the Payment Page design manager menu after 60 minutes of inactivity.
 
-The {payment-page-v2-abbr} design manager menu is divided into two sections:
+The Payment Page design manager menu is divided into two sections:
 
 * *Translations*
 * *Themes*
@@ -74,8 +74,8 @@ NOTE: Active themes can be identified by the tick symbol.
 +
 * Change the theme settings. Click *Style it* to open the theme in the <<PPD_customize_menu, Payment Page Designer>> menu.
 +
-NOTE: You can toggle between the Payment Page Designer and the {payment-page-v2-abbr} design manager menu. Use *BACK TO DESIGNER* to switch to the Payment Page Designer menu. Use *MANAGE* in the Payment Page Designer menu to return to the {payment-page-v2-abbr} design manager menu.
-If *Style it* is unavailable in the {payment-page-v2-abbr} design manager menu, the theme is already open in the Payment Page Designer menu. 
+NOTE: You can toggle between the Payment Page Designer and the Payment Page design manager menu. Use *BACK TO DESIGNER* to switch to the Payment Page Designer menu. Use *MANAGE* in the Payment Page Designer menu to return to the Payment Page design manager menu.
+If *Style it* is unavailable in the Payment Page design manager menu, the theme is already open in the Payment Page Designer menu. 
 +
 * Save your changes. *Save* is available only if changes have been made.
 * Export the theme to a .json file.
