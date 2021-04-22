@@ -138,10 +138,6 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_ISO, X>>
 | 
 
-| loyalty-card
-| <<CC_Fields_xmlelements_request_loyaltycard, X>>
-| <<CC_Fields_xmlelements_response_loyaltycard, X>>
-
 | notifications
 | <<CC_Fields_xmlelements_request_notification, X>>
 | 

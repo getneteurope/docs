@@ -10,7 +10,7 @@ h| Payment Mode
 a|<<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>, <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>
 
 h| Countries 
-| Depends on the licensed area of the financial institution/acquirer. {payment-provider-name} Bank, for example, is licensed to process payments globally.
+| Depends on the licensed area of the financial institution/acquirer.
 
 h| Currencies a|
 VISA and MC support basically all currencies. For more information, go to their respective manuals. JCB and UPI require an explicit setup of transaction currencies as part of the acquirer license agreement.
@@ -116,11 +116,10 @@ include::{root}/include/3-d-secure/3-d-secure_testcredentials_nongamblingOCT.ado
 
 [#CreditCard_PaymentSolutions]
 === Payment Solutions
-As payment solutions the {payment-gateway} provides _Pay by Link via API_ and _Invoice via Email._ They both are currently only used with a Payment Page integration.
+As payment solutions the {payment-gateway} provides _Pay by Link via API_. It is currently  used with a Payment Page integration.
 
 You can find
 
-* _Pay by Link via API_ at <<PPv1_PaymentSolutions_PaybyLinkAPI, {payment-page-v1}>> and <<PPv2_Features_PaybyLinkAPI, {payment-page-v2}>>
-* _Invoice via Email_ at <<PPv1_PaymentSolutions_InvoiceviaEmail, {payment-page-v1}>>
+* _Pay by Link via API_ at <<PPv2_Features_PaybyLinkAPI, {payment-page-v2}>>
 
 //-
