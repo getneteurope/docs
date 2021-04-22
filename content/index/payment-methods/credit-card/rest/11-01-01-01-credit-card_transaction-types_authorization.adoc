@@ -23,7 +23,7 @@ representative for details.
 [#CreditCard_TransactionTypes_Authorization_Introduction_RealLife]
 .Real-Life Example
 
-Consumers order a dishwasher for 500 EUR online. _authorization_ checks
+Consumers (EGOR) order a dishwasher for 500 EUR online. _authorization_ checks
 the consumers' account immediately and reserves 500 EUR. When the
 merchants start the shipping process,
 a <<CreditCard_TransactionTypes_CaptureAuthorization, _capture-authorization_>>
