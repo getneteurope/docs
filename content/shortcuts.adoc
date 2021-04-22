@@ -3,7 +3,7 @@
 
 // == Domain
 
-:domain: getneteurope.com
+:domain: wirecard.com
 :documentation-url: doc.{domain}
 :payment-gateway-abbr: GPG
 :payment-provider-name-lower-case: getnet
