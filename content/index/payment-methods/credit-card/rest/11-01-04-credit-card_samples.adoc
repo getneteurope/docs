@@ -232,10 +232,7 @@ include::{root}/samples/xml/creditcard_detokenize_notification_failure.xml[]
 
 
 .NVP Detokenize Response (Failure)
-[source,nvp,subs=attributes+]
-----
-api_id=elastic-api&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-49528&status_description_1=The+Token+or+Account+Number+is+invalid.++Please+check+your+input+and+try+again&transaction_type=detokenize&status_severity_1=error&status_code_1=400.1028&completion_time_stamp=20190618164724&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2Fb22f9292-15d9-11e5-87be-00163e5411b5&transaction_state=failed&payment_method=creditcard&transaction_id=b22f9292-15d9-11e5-87be-00163e5411b5&
-----
+
 
 [#CreditCard_Samples_PaymentProcessUsingToken]
 === Payment Process Using a Token
@@ -291,31 +288,18 @@ include::{root}/samples/xml/creditcard_authorization-only_notification_failure.x
 ----
 
 [#CreditCard_Samples_AuthorizationOnly_NVP]
-==== NVP
 
 .NVP Authorization Only Request (Successful)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=cbae28e3-f8da-442a-b8d4-50393da6bcba&request_id=unique for each request&transaction_type=authorization-only&requested_amount_currency=USD&requested_amount=0.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=5555555555&address_street1=123 anystreet&address_street2=Suite 312&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=14785&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Authorization Only Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=14785&api_id=elastic-api&phone=5555555555&descriptor=demo+descriptor&transaction_type=authorization-only&completion_time_stamp=20150617211513&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Fcbae28e3-f8da-442a-b8d4-50393da6bcba%2Fpayments%2Ff0ecfc98-1535-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=f0ecfc98-1535-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=cbae28e3-f8da-442a-b8d4-50393da6bcba&order_detail=Test+Product&request_id=response&requested_amount=0.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C971478143457571321250&last_name=Doe&authorization_code=123040&payment_method=creditcard&
-----
+
 
 .NVP Authorization Only Request (Failure)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=unique for each request&transaction_type=authorization-only&requested_amount_currency=USD&requested_amount=0.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=01&expiration_year=2015&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=7405&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Authorization Only Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=7405&api_id=elastic-api&transaction_type=authorization-only&completion_time_stamp=20190618153640&status_code_1=400.1003&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2Fd04ae67c-15cf-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=d04ae67c-15cf-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=response&requested_amount=0.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Expiration+Month+is+invalid.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_AuthorizationSupplementary]
 === Authorization Supplementary
