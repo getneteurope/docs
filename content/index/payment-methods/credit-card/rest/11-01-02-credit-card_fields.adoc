@@ -838,7 +838,7 @@ include::{root}/include/fields/rest_cc/response/res-card-emv.adoc[]
 //-
 
 [#CC_Fields_xmlelements_response_loyaltycard]
-.``loyalty-card.``
+
 
 :listname: CC_Fields_xmlelements
 
@@ -848,7 +848,7 @@ include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.ado
 
 [cols="30m,9,7,48a"]
 |===
-|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
 
 include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
 
