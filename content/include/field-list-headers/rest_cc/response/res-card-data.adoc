@@ -3,7 +3,7 @@
 
 ``card-data`` is a child of <<{listname}_response_payment, payment>>.
 
-It is used with the issuers' <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>>.
+// It is used with the issuers' <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty programs>>.
 
 // tag::loyalty-prog[]
 
