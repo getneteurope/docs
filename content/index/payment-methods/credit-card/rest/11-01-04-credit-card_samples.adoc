@@ -85,29 +85,16 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 
 [#CreditCard_Samples_Preauthorization_NVP]
 ==== NVP
-[source,nvp,subs=attributes+]
-.NVP Preauthorization Request (Successful)
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-7397&transaction_type=preauthorization&requested_amount_currency=USD&requested_amount=1.01&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=32888&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Preauthorization Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=32888&api_id=elastic-api&descriptor=demo+descriptor&transaction_type=preauthorization&completion_time_stamp=20190618171326&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F54bd1f8f-15dd-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=54bd1f8f-15dd-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=demo-7397&requested_amount=1.01&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C865149143464760663368&last_name=Doe&authorization_code=609873&payment_method=creditcard&
-----
+
 
 .NVP Preauthorization Request (Failure)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-48733&transaction_type=preauthorization&requested_amount_currency=USD&requested_amount=1.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=13&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=20189&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Preauthorization Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=20189&api_id=elastic-api&transaction_type=preauthorization&completion_time_stamp=20190618171502&status_code_1=400.1003&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F8e648989-15dd-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=8e648989-15dd-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=demo-48733&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Expiration+Month+is+invalid.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_Authorization]
 === Authorization
