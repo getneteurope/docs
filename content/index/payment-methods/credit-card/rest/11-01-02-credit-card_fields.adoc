@@ -538,7 +538,7 @@ include::{root}/include/fields/rest_cc/request/req-iso.adoc[]
 
 :listname: CC_Fields_xmlelements
 
-include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc[]
+// include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc[]
 
 :!listname:
 
