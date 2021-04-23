@@ -842,7 +842,7 @@ include::{root}/include/fields/rest_cc/response/res-card-emv.adoc[]
 
 :listname: CC_Fields_xmlelements
 
-include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.adoc[]
+// include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.adoc[]
 
 :!listname:
 
@@ -850,7 +850,7 @@ include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.ado
 |===
 
 
-include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
+// include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
 
 |===
 
