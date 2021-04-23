@@ -383,16 +383,7 @@ include::{root}/samples/xml/CreditCardSamplesReferencedAuthorization_XML_Referen
 
 [#CreditCard_Samples_ReferencedPurchase_NVP]
 
-.NVP Referenced-Purchase Request (Successful)
 
-
-.NVP Referenced-Purchase Response (Successful)
-
-
-.NVP Referenced-Purchase Request (Failure)
-
-
-.NVP Referenced-Purchase Response (Failure)
 
 
 [#CreditCard_Samples_Purchase]
@@ -405,16 +396,7 @@ include::{root}/samples/xml/CreditCardSamplesReferencedAuthorization_XML_Referen
 
 [#CreditCard_Samples_Purchase_NVP]
 
-.NVP Purchase Request (Successful)
 
-
-.NVP Purchase Response (Successful)
-
-
-.NVP Purchase Request (Failure)
-
-
-.NVP Purchase Notification (Failure)
 
 
 [#CreditCard_Samples_Credit]
@@ -461,16 +443,7 @@ include::{root}/samples/xml/creditcard_credit_notification_failure.xml[]
 
 [#CreditCard_Samples_Credit_NVP]
 
-.NVP Credit Request (Successful)
 
-
-.NVP Credit Response (Successful)
-
-
-.NVP Credit Request (Failure)
-
-
-.NVP Credit Response (Failure)
 
 
 [#CreditCard_Samples_OriginalCredit]
@@ -517,16 +490,7 @@ include::{root}/samples/xml/creditcard_original-credit_notification_failure.xml[
 
 [#CreditCard_Samples_OriginalCredit_NVP]
 
-.NVP Original Credit Request (Successful)
 
-
-.NVP Original Credit Response (Successful)
-
-
-.NVP Original Credit Request (Failure)
-
-
-.NVP Original Credit Response (Failure)
 
 
 [#CreditCard_Samples_RefundCapture]
@@ -539,16 +503,7 @@ include::{root}/samples/xml/creditcard_original-credit_notification_failure.xml[
 
 [#CreditCard_Samples_RefundCapture_NVP]
 
-.NVP Refund Capture Request (Successful)
 
-
-.NVP Refund Capture Response (Successful)
-
-
-.NVP Refund Capture Request (Failure)
-
-
-.NVP Refund Capture Response (Failure)
 
 
 [#CreditCard_Samples_RefundPurchase]
@@ -562,16 +517,7 @@ include::{root}/samples/xml/creditcard_original-credit_notification_failure.xml[
 [#CreditCard_Samples_RefundPurchase_NVP]
 
 
-.NVP Refund Purchase Request (Successful)
 
-
-.NVP Refund Purchase Response (Successful)
-
-
-.NVP Refund Purchase Request (Failure)
-
-
-.NVP Refund Purchase Response (Failure)
 
 
 [#CreditCard_Samples_VoidAuthorization]
@@ -585,16 +531,6 @@ include::{root}/samples/xml/creditcard_original-credit_notification_failure.xml[
 [#CreditCard_Samples_VoidAuthorization_NVP]
 
 
-.NVP Void Authorization Request (Successful)
-
-
-.NVP Void Authorization Response (Successful)
-
-
-.NVP Void Authorization Request (Failure)
-
-
-.NVP Void Authorization Response (Failure)
 
 
 [#CreditCard_Samples_VoidAuthorizationSupplementary]
@@ -642,16 +578,7 @@ include::{root}/samples/xml/creditcard_void-auth-supplementary_notification_fail
 
 [#CreditCard_Samples_VoidAuthorizationSupplementary_NVP]
 
-.NVP Void Authorization Supplementary Request (Successful)
 
-
-.NVP Void Authorization Supplementary Response (Successful)
-
-
-.NVP Void Authorization Supplementary Request (Failure)
-
-
-.NVP Void Authorization Supplementary Response (Failure)
 
 
 [#CreditCard_Samples_VoidCapture]
@@ -664,15 +591,7 @@ include::{root}/samples/xml/creditcard_void-auth-supplementary_notification_fail
 
 [#CreditCard_Samples_VoidCapture_NVP]
 
-.NVP Void Capture Request (Successful)
 
-
-.NVP Void Capture Response (Successful)
-
-
-.NVP Void Capture Request (Failure)
-
-.NVP Void Capture Response (Failure)
 
 
 [#CreditCard_Samples_VoidCredit]
@@ -719,16 +638,7 @@ include::{root}/samples/xml/creditcard_void-credit_notification_failure.xml[]
 
 [#CreditCard_Samples_VoidCredit_NVP]
 
-.NVP Void Credit Request (Successful)
 
-
-.NVP Void Credit Response (Successful)
-
-
-.NVP Void Credit Request (Failure)
-
-
-.NVP Void Credit Response (Failure)
 
 
 [#CreditCard_Samples_VoidOriginalCredit]
@@ -776,16 +686,7 @@ include::{root}/samples/xml/creditcard_void-original-credit_notification_failure
 
 [#CreditCard_Samples_VoidOriginalCredit_NVP]
 
-.NVP Void Original Credit Request (Successful)
 
-
-.NVP Void Original Credit Response (Successful)
-
-
-.NVP Void Original Credit Request (Failure)
-
-
-.NVP Void Original Credit Response (Failure)
 
 
 [#CreditCard_Samples_VoidPreauthorization]
@@ -834,16 +735,7 @@ include::{root}/samples/xml/creditcard_void-preauthorization_notification_failur
 
 [#CreditCard_Samples_VoidPreauthorization_NVP]
 
-.NVP Void Preauthorization Request (Successful)
 
-
-.NVP Void Preauthorization Response (Successful)
-
-
-.NVP Void Preauthorization Request (Failure)
-
-
-.NVP Void Preauthorization Response (Failure)
 
 
 [#CreditCard_Samples_VoidPurchase]
@@ -856,15 +748,7 @@ include::{root}/samples/xml/creditcard_void-preauthorization_notification_failur
 
 [#CreditCard_Samples_VoidPurchase_NVP]
 
-.NVP Void Purchase Request (Successful)
 
-.NVP Void Purchase Response (Successful)
-
-
-.NVP Void Purchase Request (Failure)
-
-
-.NVP Void Purchase Response (Failure)
 
 
 [#CreditCard_Samples_VoidRefund]
@@ -917,16 +801,7 @@ include::{root}/samples/xml/creditcard_void-refund-capture_notification_failure.
 
 [#CreditCard_Samples_VoidRefundCapture_NVP]
 
-.NVP Void Refund Capture Request (Successful)
 
-
-.NVP Void Refund Capture Response (Successful)
-
-
-.NVP Void Refund Capture Request (Failure)
-
-
-.NVP Void Refund Capture Response (Failure)
 
 
 [#CreditCard_Samples_VoidRefundPurchase]
@@ -939,16 +814,7 @@ include::{root}/samples/xml/creditcard_void-refund-capture_notification_failure.
 
 [#CreditCard_Samples_VoidRefundPurchase_NVP]
 
-.NVP Void Refund Purchase Request (Successful)
 
-
-.NVP Void Refund Purchase Response (Successful)
-
-
-.NVP Void Refund Purchase Request (Failure)
-
-
-.NVP Void Refund Purchase Response (Failure)
 
 
 [#CreditCard_Samples_CheckRisk]
@@ -997,17 +863,7 @@ include::{root}/samples/xml/creditcard_check-risk_notification_failure.xml[]
 
 [#CreditCard_Samples_CheckRisk_NVP]
 
-.NVP Check Risk Request (Successful)
 
-
-.NVP Check Risk Response (Successful)
-
-
-
-.NVP Check Risk Request (Failure)
-
-
-.NVP Check Risk Response (Failure)
 
 
 [#CreditCard_Samples_CheckEnrollment]
@@ -1085,10 +941,7 @@ include::{root}/samples/xml/CreditCardSamplesPaymentFacilitatorTransactions_XML_
 
 [#CreditCard_Samples_PaymentFacilitatorTransactions_NVP]
 
-.NVP Authorization Request (Successful)
 
-
-.NVP Authorization Response (Successful)
 
 
 [#CreditCard_Samples_CheckPayerResponse]
