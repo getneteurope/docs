@@ -381,7 +381,7 @@ statement. {payment-provider-name} can thus not guarantee that the dynamic descr
 data submitted to the issuers via the scheme networks is fully printed
 on the cardholder's statement.
 
-{payment-provider-name} Bank (WDB) receives the transaction data from the {payment-gateway}, looks up the merchant address, consolidates static
+{payment-provider-name} receives the transaction data from the {payment-gateway}, looks up the merchant address, consolidates static
 address details and dynamic sales data (including _Merchant Name_ and
 _Merchant Location_) and routes the information along with the
 settlement request to the issuer. To what level the routed details will
