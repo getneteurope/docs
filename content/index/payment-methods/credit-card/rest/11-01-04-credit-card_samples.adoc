@@ -346,31 +346,19 @@ include::{root}/samples/xml/creditcard_authorization-supplementary_notification_
 ----
 
 [#CreditCard_Samples_AuthorizationSupplementary_NVP]
-==== NVP
+
 
 .NVP Authorization Supplementary Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&request_id=unique for each request&transaction_type=authorization-supplementary&parent_transaction_id=508d9dcd-15f2-11e5-87be-00163e5411b5&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Authorization Supplementary Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=30387&api_id=elastic-api&transaction_type=authorization-supplementary&completion_time_stamp=20190618194341&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2F9cf2d63d-9a78-47d3-8949-97e83661c9d0%2Fpayments%2F51cf9999-15f2-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=51cf9999-15f2-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&order_detail=Test+Product&request_id=$response&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&last_name=Doe&authorization_code=170700&payment_method=creditcard&
-----
+
 
 .NVP Authorization Supplementary Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&request_id=unique for each request&transaction_type=authorization-supplementary&parent_transaction_id=&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Authorization Supplementary Response (Failure)
-[source,nvp,subs=attributes+]
-----
-api_id=elastic-api&transaction_type=authorization-supplementary&completion_time_stamp=20190618194432&status_code_1=400.1021&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2F9cf2d63d-9a78-47d3-8949-97e83661c9d0%2Fpayments%2F70af7a09-15f2-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=70af7a09-15f2-11e5-87be-00163e5411b5&merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&request_id=demo-6625&requested_amount=7.07&requested_amount_currency=USD&status_description_1=The+Parent+Transaction+Id+is+required%2C+and+not+provided.++Please+check+your+input+and+try+again.&api_id=elastic-api&transaction_type=authorization-supplementary&completion_time_stamp=20190618194432&status_code_1=400.1021&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2F9cf2d63d-9a78-47d3-8949-97e83661c9d0%2Fpayments%2F70af7a09-15f2-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=70af7a09-15f2-11e5-87be-00163e5411b5&merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&request_id=response&requested_amount=7.07&requested_amount_currency=USD&status_description_1=The+Parent+Transaction+Id+is+required%2C+and+not+provided.++Please+check+your+input+and+try+again.&
-----
+
 
 [#CreditCard_Samples_CaptureAuthorization]
 === Capture Authorization
@@ -383,31 +371,19 @@ api_id=elastic-api&transaction_type=authorization-supplementary&completion_time_
 // TODO: show adoc samples for Capture Authorization here
 
 [#CreditCard_Samples_CaptureAuthorization_NVP]
-==== NVP
+
 
 .NVP Capture Authorization Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-7638&transaction_type=capture-authorization&parent_transaction_id=578ae35d-15cd-11e5-87be-00163e5411b5&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Capture Authorization Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=16014&api_id=elastic-api&transaction_type=capture-authorization&completion_time_stamp=20190618151902&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F58c5bf3f-15cd-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=58c5bf3f-15cd-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=demo-7638&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C805833143464074127151&last_name=Doe&authorization_code=418157&payment_method=creditcard&
-----
+
 
 .NVP Capture Authorization Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-40862&transaction_type=capture-authorization&parent_transaction_id=578ae35d-15cd-11e5-87be-00163e5411b&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Capture Authorization Response (Failure)
-[source,nvp,subs=attributes+]
-----
-api_id=elastic-api&transaction_type=capture-authorization&completion_time_stamp=20190618152238&status_code_1=400.1020&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2Fda9c1044-15cd-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=da9c1044-15cd-11e5-87be-00163e5411b5&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-40862&requested_amount=7.07&requested_amount_currency=USD&status_description_1=The+Parent+Transaction+Id+does+not+exist.++Please+check+your+input+and+try+again.&
-----
+
 
 [#CreditCard_Samples_RecurringPurchaseTransaction]
 === Recurring purchase Transaction
