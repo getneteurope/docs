@@ -402,7 +402,7 @@ as ``purchase``, ``capture`` or ``credit``. ``authorization`` is not supported.
 [#CreditCard_PaymentFeatures_DynamicDescriptor_HowItWorks_Workflow]
 *Workflow*
 
-image::images/diagrams/cc_dynamic-descriptor.svg[CreditCard DynamicDescriptor Workflow]
+image::images/diagrams/cc_dynamic-descriptor.bmp[CreditCard DynamicDescriptor Workflow]
 
 
 . The consumer shops at the merchant's site and enters his card
