@@ -91,7 +91,6 @@ Accepted values: +
 |String 
 |18 
 |Phone number provided by the consumer. +
-When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP, at least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
 
 |work-phone
 |O 
