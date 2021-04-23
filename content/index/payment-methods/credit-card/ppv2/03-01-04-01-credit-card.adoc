@@ -106,8 +106,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 
@@ -296,8 +294,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 [source,json,subs=attributes+]
@@ -486,8 +482,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 [source,json,subs=attributes+]
@@ -730,8 +724,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 
