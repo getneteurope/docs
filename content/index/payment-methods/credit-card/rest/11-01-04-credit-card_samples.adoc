@@ -87,7 +87,6 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 
 
 
-.NVP Preauthorization Response (Successful)
 
 
 [#CreditCard_Samples_Authorization]
@@ -100,18 +99,6 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 
 [#CreditCard_Samples_Authorization_NVP]
 
-.NVP Authorization Request (Successful)
-
-
-.NVP Authorization Response (Successful)
-
-
-
-.NVP Authorization Request (Failure)
-
-
-
-.NVP Authorization Response (Failure)
 
 
 [#CreditCard_Samples_Tokenization]
@@ -161,17 +148,6 @@ include::{root}/samples/xml/creditcard_tokenize_notification_failure.xml[]
 [#CreditCard_Samples_Tokenization_NVP]
 
 
-.NVP Tokenize Request (Successful)
-
-
-.NVP Tokenize Response (Successful)
-
-
-.NVP Tokenize Request (Failure)
-
-
-.NVP Tokenize Response (Failure)
-
 
 [#CreditCard_Samples_Detokenization]
 === Detokenization
@@ -217,13 +193,6 @@ include::{root}/samples/xml/creditcard_detokenize_notification_failure.xml[]
 
 [#CreditCard_Samples_Detokenization_NVP]
 
-.NVP Detokenize Request (Successful)
-
-
-.NVP Detokenize Response (Successful)
-
-
-.NVP Detokenize Request (Failure)
 
 
 [#CreditCard_Samples_PaymentProcessUsingToken]
@@ -281,16 +250,7 @@ include::{root}/samples/xml/creditcard_authorization-only_notification_failure.x
 
 [#CreditCard_Samples_AuthorizationOnly_NVP]
 
-.NVP Authorization Only Request (Successful)
 
-
-.NVP Authorization Only Response (Successful)
-
-
-.NVP Authorization Only Request (Failure)
-
-
-.NVP Authorization Only Response (Failure)
 
 
 [#CreditCard_Samples_AuthorizationSupplementary]
@@ -340,16 +300,7 @@ include::{root}/samples/xml/creditcard_authorization-supplementary_notification_
 [#CreditCard_Samples_AuthorizationSupplementary_NVP]
 
 
-.NVP Authorization Supplementary Request (Successful)
 
-
-.NVP Authorization Supplementary Response (Successful)
-
-
-.NVP Authorization Supplementary Request (Failure)
-
-
-.NVP Authorization Supplementary Response (Failure)
 
 
 [#CreditCard_Samples_CaptureAuthorization]
@@ -365,16 +316,7 @@ include::{root}/samples/xml/creditcard_authorization-supplementary_notification_
 [#CreditCard_Samples_CaptureAuthorization_NVP]
 
 
-.NVP Capture Authorization Request (Successful)
 
-
-.NVP Capture Authorization Response (Successful)
-
-
-.NVP Capture Authorization Request (Failure)
-
-
-.NVP Capture Authorization Response (Failure)
 
 
 [#CreditCard_Samples_RecurringPurchaseTransaction]
@@ -428,16 +370,7 @@ include::{root}/samples/xml/CreditCardSamplesReferencedAuthorization_XML_Referen
 
 [#CreditCard_Samples_ReferencedAuthorization_NVP]
 
-.NVP Referenced-Authorization Request (Successful)
 
-
-.NVP Referenced-Authorization Response (Successful)
-
-
-.NVP Referenced-Authorization Request (Failure)
-
-
-.NVP Referenced-Authorization Response (Failure)
 
 
 [#CreditCard_Samples_ReferencedPurchase]
