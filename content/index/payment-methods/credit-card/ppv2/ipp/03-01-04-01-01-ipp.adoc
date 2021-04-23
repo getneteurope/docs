@@ -1,4 +1,2 @@
-[#PPv2_CC_IPP]
-[discrete]
 
 //-
