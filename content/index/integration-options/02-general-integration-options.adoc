@@ -56,7 +56,6 @@ Integration is possible by:
 
 - XML requests sent from merchant's backend (server-to-server)
 - JSON respectively
-- NVP (for credit card only)
 //-
 
 NOTE: For the integration of {payment-gateway} via REST API, advanced programming skills are required.
