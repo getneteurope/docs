@@ -2,7 +2,7 @@
 == {payment-page-v2}
 
 ====
-We recommend using {payment-page-v2} integration. If you have questions about your existing integration, consult our <<CreditCard, REST API>> integration guide.
+We recommend to use {payment-page-v2} integration. If you have questions about your existing integration, consult our <<CreditCard, REST API>> integration guide.
 ====
 
 [#PPv2_CC_General]
