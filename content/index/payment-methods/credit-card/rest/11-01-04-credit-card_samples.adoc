@@ -1,7 +1,7 @@
 [#CreditCard_Samples]
 == Samples
 
-On this page you can find all the XML and NVP samples available for
+On this page you can find all the XML samples available for
 _Credit Card_ payment.
 
 [#CreditCard_TransactionTypes_RunningTestSamples]
