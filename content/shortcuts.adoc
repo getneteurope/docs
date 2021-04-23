@@ -10,7 +10,7 @@
 :payment-provider-name: Getnet
 :payment-gateway: Payment Gateway
 :payment-redirect-url-hostname: www.wirecard.com
-:api-id: elastic-api
+:api-id: up3-wpp
 :checkout-page-html-hostname: www.wirecard.com
 :pay-button-name: wirecard
 :three-d-s-pw: wirecard
