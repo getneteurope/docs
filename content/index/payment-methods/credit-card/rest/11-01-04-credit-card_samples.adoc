@@ -90,11 +90,6 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 .NVP Preauthorization Response (Successful)
 
 
-.NVP Preauthorization Request (Failure)
-
-
-
-
 [#CreditCard_Samples_Authorization]
 === Authorization
 
@@ -435,31 +430,18 @@ include::{root}/samples/xml/CreditCardSamplesReferencedAuthorization_XML_Referen
 ----
 
 [#CreditCard_Samples_ReferencedAuthorization_NVP]
-==== NVP
 
 .NVP Referenced-Authorization Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-45714&transaction_type=referenced-authorization&parent_transaction_id=ea095df6-15df-11e5-87be-00163e5411b5&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Referenced-Authorization Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=11219&api_id=elastic-api&transaction_type=referenced-authorization&completion_time_stamp=20190618173246&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F07cb1e4d-15e0-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=07cb1e4d-15e0-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&order_detail=Test+Product&request_id=demo-45714&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C818580143464876584015&last_name=Doe&authorization_code=703675&periodic_type=recurring&payment_method=creditcard&
-----
+
 
 .NVP Referenced-Authorization Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-9832&transaction_type=referenced-authorization&parent_transaction_id=39433085-15e0-11e5-87be-00163e5411b51&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Referenced-Authorization Response (Failure)
-[source,nvp,subs=attributes+]
-----
-api_id=elastic-api&transaction_type=referenced-authorization&completion_time_stamp=20190618173410&status_code_1=400.1020&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F3a9505ea-15e0-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=3a9505ea-15e0-11e5-87be-00163e5411b5&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-9832&requested_amount=7.07&requested_amount_currency=USD&status_description_1=The+Parent+Transaction+Id+does+not+exist.++Please+check+your+input+and+try+again.&
-----
+
 
 [#CreditCard_Samples_ReferencedPurchase]
 === Referenced Purchase
@@ -470,31 +452,18 @@ api_id=elastic-api&transaction_type=referenced-authorization&completion_time_sta
 <<CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions, Referenced _purchase_ samples>>
 
 [#CreditCard_Samples_ReferencedPurchase_NVP]
-==== NVP
 
 .NVP Referenced-Purchase Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-7672&transaction_type=referenced-purchase&parent_transaction_id=39eae959-15e2-11e5-87be-00163e5411b5&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Referenced-Purchase Response (Successful)
-[source,nvp,subs=attributes+]
-----
- order_number=22942&api_id=elastic-api&transaction_type=referenced-purchase&completion_time_stamp=20190618174831&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F3b5ad305-15e2-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=3b5ad305-15e2-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=demo-7672&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C858659143464971113150&last_name=Doe&authorization_code=472252&periodic_type=recurring&payment_method=creditcard&
-----
+
 
 .NVP Referenced-Purchase Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-9132&transaction_type=referenced-purchase&parent_transaction_id=&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Referenced-Purchase Response (Failure)
-[source,nvp,subs=attributes+]
-----
-api_id=elastic-api&transaction_type=referenced-purchase&completion_time_stamp=20190618175001&status_code_1=400.1021&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F71615edb-15e2-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=71615edb-15e2-11e5-87be-00163e5411b5&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-9132&requested_amount=7.07&requested_amount_currency=USD&status_description_1=The+Parent+Transaction+Id+is+required%2C+and+not+provided.++Please+check+your+input+and+try+again.&
-----
+
 
 [#CreditCard_Samples_Purchase]
 === Purchase
@@ -505,31 +474,18 @@ api_id=elastic-api&transaction_type=referenced-purchase&completion_time_stamp=20
 <<CreditCard_TransactionTypes_Purchase_SendingData, _purchase_ samples>>
 
 [#CreditCard_Samples_Purchase_NVP]
-==== NVP
 
 .NVP Purchase Request (Successful)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-44142&transaction_type=purchase&requested_amount_currency=USD&requested_amount=1.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=34004&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Purchase Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=34004&api_id=elastic-api&descriptor=demo+descriptor&transaction_type=purchase&completion_time_stamp=20190618171924&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F28fb2e71-15de-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=28fb2e71-15de-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=demo-44142&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C835675143464796269077&last_name=Doe&authorization_code=189432&payment_method=creditcard&
-----
+
 
 .NVP Purchase Request (Failure)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=demo-3602&transaction_type=purchase&requested_amount_currency=&requested_amount=1.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=34721&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Purchase Notification (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=34721&api_id=elastic-api&transaction_type=purchase&completion_time_stamp=20190618172010&status_code_1=400.1012&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F45ce4abb-15de-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=45ce4abb-15de-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=demo-3602&requested_amount=1.00&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Requested+Amount+Currency+has+not+been+provided.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_Credit]
 === Credit
