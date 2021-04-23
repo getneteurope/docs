@@ -534,7 +534,7 @@ include::{root}/include/fields/rest_cc/request/req-iso.adoc[]
 //-
 
 [#CC_Fields_xmlelements_request_loyaltycard]
-.``loyalty-card.``
+
 
 :listname: CC_Fields_xmlelements
 
@@ -544,7 +544,7 @@ include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc
 
 [cols="30m,6,9,7,48a"]
 |===
-|Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
 
 include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 
