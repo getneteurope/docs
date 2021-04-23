@@ -226,9 +226,6 @@ include::{root}/samples/xml/creditcard_detokenize_notification_failure.xml[]
 .NVP Detokenize Request (Failure)
 
 
-.NVP Detokenize Response (Failure)
-
-
 [#CreditCard_Samples_PaymentProcessUsingToken]
 === Payment Process Using a Token
 
@@ -530,31 +527,18 @@ include::{root}/samples/xml/creditcard_credit_notification_failure.xml[]
 ----
 
 [#CreditCard_Samples_Credit_NVP]
-==== NVP
 
 .NVP Credit Request (Successful)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=33f6d473-3036-4ca5-acb5-8c64dac862d1&request_id=demo-4018&transaction_type=credit&requested_amount_currency=USD&requested_amount=1.01&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=41777&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Credit Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=41777&api_id=elastic-api&descriptor=demo+descriptor&transaction_type=credit&completion_time_stamp=20190618163156&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F888904ef-15d7-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=888904ef-15d7-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=33f6d473-3036-4ca5-acb5-8c64dac862d1&order_detail=Test+Product&request_id=demo-4018&requested_amount=1.01&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C889405143464511640830&last_name=Doe&authorization_code=149579&payment_method=creditcard&
-----
+
 
 .NVP Credit Request (Failure)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=33f6d473-3036-4ca5-acb5-8c64dac862d1&request_id=demo-3495&transaction_type=credit&requested_amount_currency=USD&requested_amount=1.01&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=02&expiration_year=2015&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=45012&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Credit Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=45012&api_id=elastic-api&transaction_type=credit&completion_time_stamp=20190618163523&status_code_1=400.1003&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F0432020a-15d8-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=0432020a-15d8-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=33f6d473-3036-4ca5-acb5-8c64dac862d1&order_detail=Test+Product&request_id=demo-3495&requested_amount=1.01&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Expiration+Month+is+invalid.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_OriginalCredit]
 === Original Credit
@@ -599,31 +583,18 @@ include::{root}/samples/xml/creditcard_original-credit_notification_failure.xml[
 ----
 
 [#CreditCard_Samples_OriginalCredit_NVP]
-==== NVP
 
 .NVP Original Credit Request (Successful)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&request_id=demo-47613&transaction_type=original-credit&requested_amount_currency=USD&requested_amount=1.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=15650&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Original Credit Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=15650&api_id=elastic-api&transaction_type=original-credit&completion_time_stamp=20190618205824&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2F9cf2d63d-9a78-47d3-8949-97e83661c9d0%2Fpayments%2Fc2bbb12c-15fc-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=c2bbb12c-15fc-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&order_detail=Test+Product&request_id=demo-47613&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&last_name=Doe&authorization_code=153620&payment_method=creditcard&
-----
+
 
 .NVP Original Credit Request (Failure)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&request_id=demo-34148&transaction_type=original-credit&requested_amount_currency=USD&requested_amount=1.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2012&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=26600&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Original Credit Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=26600&api_id=elastic-api&transaction_type=original-credit&completion_time_stamp=20190618210004&status_code_1=400.1004&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2F9cf2d63d-9a78-47d3-8949-97e83661c9d0%2Fpayments%2Ffe3eaaa5-15fc-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=fe3eaaa5-15fc-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9cf2d63d-9a78-47d3-8949-97e83661c9d0&order_detail=Test+Product&request_id=demo-34148&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Expiration+Year+is+invalid.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_RefundCapture]
 === Refund Capture
@@ -634,31 +605,18 @@ order_number=26600&api_id=elastic-api&transaction_type=original-credit&completio
 <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_RefundCapture, _refund-capture_ samples>>
 
 [#CreditCard_Samples_RefundCapture_NVP]
-==== NVP
 
 .NVP Refund Capture Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-1757&transaction_type=refund-capture&parent_transaction_id=64a827c6-15e3-11e5-87be-00163e5411b5&ip_address=127.0.0.1
-----
+
 
 .NVP Refund Capture Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=12031&api_id=elastic-api&transaction_type=refund-capture&completion_time_stamp=20190618175657&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F6760dea2-15e3-11e5-87be-00163e5411b5&token_id=4981966848653502&transaction_state=success&transaction_id=6760dea2-15e3-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&order_detail=Test+Product&request_id=demo-1757&requested_amount=1.01&requested_amount_currency=USD&masked_account_number=402400******3502&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C829684143465021443125&last_name=Doe&authorization_code=947315&payment_method=creditcard&
-----
+
 
 .NVP Refund Capture Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-42818&transaction_type=refund-capture&parent_transaction_id=92e8d1dc-15e3-11e5-87be-00163e5411b52&ip_address=127.0.0.1
-----
+
 
 .NVP Refund Capture Response (Failure)
-[source,nvp,subs=attributes+]
-----
-api_id=elastic-api&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-42818&status_description_1=The+Parent+Transaction+Id+does+not+exist.++Please+check+your+input+and+try+again.&transaction_type=refund-capture&status_severity_1=error&status_code_1=400.1020&completion_time_stamp=20190618175809&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F945c7c04-15e3-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=945c7c04-15e3-11e5-87be-00163e5411b5&
-----
+
 
 [#CreditCard_Samples_RefundPurchase]
 === Refund Purchase
@@ -669,31 +627,19 @@ api_id=elastic-api&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&requ
 <<CreditCard_TransactionTypes_Purchase_SendingData_RefundPurchase, _refund-purchase_ samples>>
 
 [#CreditCard_Samples_RefundPurchase_NVP]
-==== NVP
+
 
 .NVP Refund Purchase Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-43221&transaction_type=refund-purchase&parent_transaction_id=1d669cb4-15e6-11e5-87be-00163e5411b5&payment_ip_address=127.0.0.1
-----
+
 
 .NVP Refund Purchase Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=1766&api_id=elastic-api&transaction_type=refund-purchase&completion_time_stamp=20190618181622&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F1f51c7ba-15e6-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=1f51c7ba-15e6-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&order_detail=Test+Product&request_id=demo-43221&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C884821143465138227789&last_name=Doe&authorization_code=509813&payment_method=creditcard&
-----
+
 
 .NVP Refund Purchase Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-28439&transaction_type=refund-purchase&parent_transaction_id=d5566a93-15e5-11e5-87be-00163e5411b5&requested_amount_currency=USD&requested_amount=7.07&payment_ip_address=127.0.0.1
-----
+
 
 .NVP Refund Purchase Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=49641&api_id=elastic-api&transaction_type=refund-purchase&completion_time_stamp=20190618181419&status_code_1=400.1027&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2Fd689d373-15e5-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=d689d373-15e5-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&order_detail=Test+Product&request_id=demo-28439&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Requested+Amount+exceeds+the+Parent+Transaction+Amount.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_VoidAuthorization]
 === Void Authorization
@@ -704,31 +650,19 @@ order_number=49641&api_id=elastic-api&transaction_type=refund-purchase&completio
 <<CreditCard_TransactionTypes_Authorization_SendingData_VoidAuthorization, _void-authorization_ samples>>
 
 [#CreditCard_Samples_VoidAuthorization_NVP]
-==== NVP
+
 
 .NVP Void Authorization Request (Successful)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-8707&transaction_type=void-authorization&parent_transaction_id=a33c4b21-15e8-11e5-87be-00163e5411b5&ip_address=127.0.0.1
-----
+
 
 .NVP Void Authorization Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=13823&api_id=elastic-api&transaction_type=void-authorization&completion_time_stamp=20190618183425&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2Fa4645826-15e8-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=a4645826-15e8-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&order_detail=Test+Product&request_id=demo-8707&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C837603143465246465595&last_name=Doe&authorization_code=872895&payment_method=creditcard&
-----
+
 
 .NVP Void Authorization Request (Failure)
-[source,subs=attributes+]
-----
-merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&request_id=demo-39943&transaction_type=void-authorization&parent_transaction_id=79ee10fb-15e8-11e5-87be-00163e5411b5&requested_amount_currency=USD&requested_amount=7.07&ip_address=127.0.0.1
-----
+
 
 .NVP Void Authorization Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=46750&api_id=elastic-api&transaction_type=void-authorization&completion_time_stamp=20190618183314&status_code_1=400.1027&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F7b0fd3c2-15e8-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=7b0fd3c2-15e8-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=9105bb4f-ae68-4768-9c3b-3eda968f57ea&order_detail=Test+Product&request_id=demo-39943&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Requested+Amount+exceeds+the+Parent+Transaction+Amount.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_VoidAuthorizationSupplementary]
 === Void Authorization Supplementary
