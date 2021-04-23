@@ -413,7 +413,7 @@ one of the <Transaction-ID>, <Order Number>, <Request ID> or
 <Descriptor> tag) to the {payment-gateway}.
 . {payment-gateway} processes the request and forwards
 the transaction details to the acquirer
-(e.g. {payment-provider-name} Bank).
+(e.g. {payment-provider-name} ).
 . The acquirer acquires the card and sales details, reads the
 related identifier values, looks up the merchant's name and business
 details in the MID database and complements the merchant data with the
