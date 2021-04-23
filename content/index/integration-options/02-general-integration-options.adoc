@@ -67,3 +67,4 @@ referenced or recurring transactions. For initial transactions they must use a f
 
 Details to integrate _{payment-gateway}_ via REST API are
 described <<RestApi, here>>.
+//-
