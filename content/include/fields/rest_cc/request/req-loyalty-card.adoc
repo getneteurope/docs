@@ -1,27 +1,2 @@
 
-| user-id
-| M/O
-| String
-| 36
-| VOP: Unique ID which is returned in the response of _Enroll Card_. The ``user-id`` can be used subsequently to _Add Card_. +
-MCLS: Unique ID for a consumer's account.
 
-//-
-
-*Mandatory for MCLS _Enroll Card_ or VOP _Add Card_. You cannot send it in a VOP _Enroll Card_.*
-
-| promotion-code 
-| O
-| String
-| 36
-| Promotional code associated with the enrollment of the consumer. Issuer sets the loyalty program promotion code to upper case upon receipt.
-
-| product-code
-| M/O
-| String
-| 36
-| The issuer bank provides this code. +
-*Mandatory for MCLS _Enroll Card_ or _Enroll Tokenized Card_*.
-*Not used with VOP.*
-
-//-
