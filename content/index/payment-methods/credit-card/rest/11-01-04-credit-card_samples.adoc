@@ -84,7 +84,7 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 ----
 
 [#CreditCard_Samples_Preauthorization_NVP]
-==== NVP
+
 
 
 .NVP Preauthorization Response (Successful)
@@ -93,7 +93,6 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 .NVP Preauthorization Request (Failure)
 
 
-.NVP Preauthorization Response (Failure)
 
 
 [#CreditCard_Samples_Authorization]
@@ -105,31 +104,20 @@ include::{root}/samples/xml/creditcard_preauthorization_notification_failure.xml
 <<CreditCard_TransactionTypes_Authorization, _authorization_>> samples
 
 [#CreditCard_Samples_Authorization_NVP]
-==== NVP
 
 .NVP Authorization Request (Successful)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=cbae28e3-f8da-442a-b8d4-50393da6bcba&request_id=unique for each request&transaction_type=authorization&requested_amount_currency=USD&requested_amount=1.00&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=5555555555&address_street1=123 anystreet&address_street2=Suite 312&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=12&expiration_year=2025&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=35185&order_detail=Test Product&payment_method=creditcard
-----
+
 
 .NVP Authorization Response (Successful)
-[source,nvp,subs=attributes+]
-----
-order_number=35185&api_id=elastic-api&phone=5555555555&descriptor=demo+descriptor&transaction_type=authorization&completion_time_stamp=20150617211048&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Fcbae28e3-f8da-442a-b8d4-50393da6bcba%2Fpayments%2F526b1a57-1535-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=526b1a57-1535-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=cbae28e3-f8da-442a-b8d4-50393da6bcba&order_detail=Test+Product&request_id=${response}&requested_amount=1.00&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=3d-acquirer%3AThe+resource+was+successfully+created.&provider_transaction_id_1=C920863143457544752444&last_name=Doe&authorization_code=662294&payment_method=creditcard&
-----
+
+
 
 .NVP Authorization Request (Failure)
-[source,nvp,subs=attributes+]
-----
-merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&request_id=unique for each request&transaction_type=authorization&requested_amount_currency=USD&requested_amount=7.07&first_name=John&last_name=Doe&email=john.doe@{domain}&phone=&address_street1=123 anystreet&address_street2=Suite 999&address_city=Toronto&address_state=ON&address_country=CA&address_postal_code=M4P1E8&account_number=4271149787014678&expiration_month=01&expiration_year=2015&card_type=visa&card_security_code=123&ip_address=127.0.0.1&order_number=16992&order_detail=Test Product&payment_method=creditcard
-----
+
+
 
 .NVP Authorization Response (Failure)
-[source,nvp,subs=attributes+]
-----
-order_number=16992&api_id=elastic-api&transaction_type=authorization&completion_time_stamp=20190618152747&status_code_1=400.1003&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F92db9afe-15ce-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=failed&transaction_id=92db9afe-15ce-11e5-87be-00163e5411b5&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&order_detail=Test+Product&request_id=response&requested_amount=7.07&requested_amount_currency=USD&masked_account_number=427114******4678&email=john.doe%40{domain}&status_description_1=The+Expiration+Month+is+invalid.++Please+check+your+input+and+try+again.&last_name=Doe&payment_method=creditcard&
-----
+
 
 [#CreditCard_Samples_Tokenization]
 === Tokenization
@@ -176,31 +164,19 @@ include::{root}/samples/xml/creditcard_tokenize_notification_failure.xml[]
 ----
 
 [#CreditCard_Samples_Tokenization_NVP]
-==== NVP
+
 
 .NVP Tokenize Request (Successful)
-[source,subs=attributes+]
-----
-first_name=John&card_type=visa&transaction_type=tokenize&expiration_month=12&account_number=4271149787014678&expiration_year=2025&ip_address=127.0.0.1&last_name=Doe&email=test@test.com&phone=555 555 5555&street1=123 anystreet&street2=apt 2&city=Brantford&state=ON&country=CA&request_id=demo-18329&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&postal_code=M4P1E8&&merchant_crm_id=salesforce-76156
-----
+
 
 .NVP Tokenize Response (Successful)
-[source,nvp,subs=attributes+]
-----
-street2=apt+2&merchant_crm_id=salesforce-76156&street1=123+anystreet&api_id=elastic-api&phone=555+555+5555&transaction_type=tokenize&state=ON&completion_time_stamp=20190618164724&status_code_1=201.0000&status_severity_1=information&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2Fb1ee41a5-15d9-11e5-87be-00163e5411b5&token_id=4990489254104678&transaction_state=success&transaction_id=b1ee41a5-15d9-11e5-87be-00163e5411b5&country=CA&city=Brantford&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&first_name=John&request_id=demo-18329&masked_account_number=427114******4678&email=test%40test.com&status_description_1=The+resource+was+successfully+created.&postal_code=M4P1E8&last_name=Doe&
-----
+
 
 .NVP Tokenize Request (Failure)
-[source,subs=attributes+]
-----
-first_name=John&card_type=visa&transaction_type=tokenize&expiration_month=12&account_number=4271149787014678&expiration_year=2012&ip_address=127.0.0.1&last_name=Doe&email=test@test.com&phone=555 555 5555&street1=123 anystreet&street2=apt 2&city=Brantford&state=ON&country=CA&request_id=demo-21560&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&postal_code=M4P1E8&&merchant_crm_id=salesforce-76156
-----
+
 
 .NVP Tokenize Response (Failure)
-[source,nvp,subs=attributes+]
-----
-street2=apt+2&merchant_crm_id=salesforce-76156&street1=123+anystreet&api_id=elastic-api&phone=555+555+5555&transaction_type=tokenize&state=ON&completion_time_stamp=20190618182632&status_code_1=400.1004&status_severity_1=error&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F8b878ef7-15e7-11e5-87be-00163e5411b5&transaction_state=failed&transaction_id=8b878ef7-15e7-11e5-87be-00163e5411b5&country=CA&city=Brantford&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&first_name=John&request_id=demo-21560&email=test%40test.com&status_description_1=The+Expiration+Year+is+invalid.++Please+check+your+input+and+try+again.&postal_code=M4P1E8&last_name=Doe&
-----
+
 
 [#CreditCard_Samples_Detokenization]
 === Detokenization
@@ -245,25 +221,15 @@ include::{root}/samples/xml/creditcard_detokenize_notification_failure.xml[]
 ----
 
 [#CreditCard_Samples_Detokenization_NVP]
-==== NVP
 
 .NVP Detokenize Request (Successful)
-[source,subs=attributes+]
-----
-transaction_type=detokenize&ip_address=127.0.0.1&request_id=demo-14087&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&token_id=4990489254104678&payment_method=creditcard
-----
+
 
 .NVP Detokenize Response (Successful)
-[source,nvp,subs=attributes+]
-----
-phone=555+555+5555&transaction_type=detokenize&status_severity_1=information&status_code_1=201.0000&completion_time_stamp=20190618164544&state=ON&self=https%3A%2F%2F{test-instance-hostname}:443%2Fengine%2Frest%2Fmerchants%2Ffaa8bda7-808f-4008-b218-6c9cd6f0b385%2Fpayments%2F763b2a72-15d9-11e5-87be-00163e5411b5&transaction_state=success&token_id=4990489254104678&city=Brantford&first_name=John&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&expiration_month=12&status_description_1=The+resource+was+successfully+created.&expiration_year=2025&merchant_crm_id=salesforce-76156&street2=apt+2&api_id=elastic-api&street1=123+anystreet&account_number=4271149787014678&transaction_id=763b2a72-15d9-11e5-87be-00163e5411b5&country=CA&request_id=demo-14087&card_type=visa&email=test%40test.com&postal_code=M4P1E8&last_name=Doe&payment_method=creditcard&
-----
+
 
 .NVP Detokenize Request (Failure)
-[source,subs=attributes+]
-----
-transaction_type=detokenize&ip_address=127.0.0.1&request_id=demo-49528&merchant_account_id=faa8bda7-808f-4008-b218-6c9cd6f0b385&token_id=499048925410467&payment_method=creditcard
-----
+
 
 .NVP Detokenize Response (Failure)
 [source,nvp,subs=attributes+]
