@@ -4,7 +4,7 @@
 // == Domain
 
 :domain: getneteurope.com
-:documentation-url: doc.{domain}
+:documentation-url: docs.{domain}
 :payment-gateway-abbr: GPG
 :payment-provider-name-lower-case: getnet
 :payment-provider-name: Getnet
