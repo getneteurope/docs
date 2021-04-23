@@ -10,11 +10,11 @@
 :payment-provider-name: Getnet
 :payment-gateway: Payment Gateway
 :payment-redirect-url-hostname: www.wirecard.com
-:api-id: wpp
+:api-id: elastic-api
 :checkout-page-html-hostname: www.wirecard.com
 :pay-button-name: wirecard
 :three-d-s-pw: wirecard
-:enterprise-portal-url: wep.{domain}/
+:enterprise-portal-url: portal.{domain}/
 
 // == Integration Options
 
@@ -22,7 +22,7 @@
 :payment-page-anchor: WPP
 :payment-page-abbr-lower-case: gpp
 :payment-page-function-short: WPP
-:payment-page-function: WirecardPaymentPage
+:payment-page-function: Payment Page
 :payment-page-v1: {payment-provider-name} Payment Page v1
 :payment-page-v1-abbr: {payment-page-abbr} v1
 :payment-page-v1-anchor: PP
@@ -67,6 +67,6 @@
 :pp-redirect-url-cancel: {pp-demoshop-instance-hostname}/demoshop/#/cancel
 :pp-redirect-url-error: {pp-demoshop-instance-hostname}/demoshop/#/error
 :enterprise-portal-name: {payment-provider-name} Enterprise Portal
-:enterprise-portal-abbr: WEP
+:enterprise-portal-abbr: Merchant Portal
 
 // :mermaid-config: config/mermaid-default-theme.json > wird nicht benutzt
