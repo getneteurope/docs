@@ -32,9 +32,9 @@ respective database defaults.
 You can overwrite the default values by specifying the redirect links in
 the payment request:
 
-[%autowidth,cols="v,v,,,,v,"]
+[%autowidth,cols="v,,,,v,"]
 |===
-| Field (JSON)         | Required | Data Type | Size  | JSON Parent   | Description
+ | Field (JSON)         | Required | Data Type | Size  | JSON Parent   | Description
 
 e| success-redirect-url | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after a successful payment.
 e| fail-redirect-url    | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after an unsuccessful payment.
