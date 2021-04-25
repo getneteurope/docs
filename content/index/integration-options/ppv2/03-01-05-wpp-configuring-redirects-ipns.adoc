@@ -58,11 +58,11 @@ WARNING: Do not confuse this field with `payment-redirect-url`, which contains t
 whether the payment succeeds, fails or the consumer cancels, they are
 redirected to the URL specified in `redirect-url`:
 
-[%autowidth,cols="v,v,,,,v,"]
+[%autowidth,cols="v,,,,v,"]
 |===
- | Field (NVP)   | Field (JSON) | Required | Data Type | Size | JSON Parent   | Description
+ | Field (JSON) | Required | Data Type | Size | JSON Parent   | Description
 
-e| redirect_url e| redirect-url | N        | String    | 256 e| payment ({ }) | The URL to which the consumer is redirected after a successful, failed or canceled payment if there are no alternatives available.
+e| redirect-url | N        | String    | 256 e| payment ({ }) | The URL to which the consumer is redirected after a successful, failed or canceled payment if there are no alternatives available.
 |===
 
 `redirect-url` is only used as a fallback if there is
@@ -83,11 +83,11 @@ processed, but its current state is not final. Since this is not the
 final response, the consumer is redirected to the `pending-redirect-url`
 instead of the usual `success-redirect-url`.
 
-[%autowidth,cols="v,v,,,,v,"]
+[%autowidth,cols="v,,,,v,"]
 |===
- | Field (NVP)          | Field (JSON)         | Required | Data Type | Size | JSON Parent   | Description
+ | Field (JSON)         | Required | Data Type | Size | JSON Parent   | Description
 
-e| pending_redirect_url | pending-redirect-url | N        | String    | 256  | payment ({ }) | The URL to which the consumer is redirected when the response returns a _pending_ transaction type.
+e| pending-redirect-url | N        | String    | 256  | payment ({ }) | The URL to which the consumer is redirected when the response returns a _pending_ transaction type.
 |===
 
 
@@ -147,31 +147,4 @@ configuration:
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/WPP_ConfiguringRedirectsIPNsIPNs_ExampleOf_IPN_ConfigurationInAPaymentRequest_JSON.json[]
-----
-
-.Example of IPN configuration in a payment request (NVP)
-
-[source,subs=attributes+]
-----
-merchant_account_id=00f0b5ef-1241-4ab9-9eb1-8317b3dd9410
-request_id=e344681d-f002-45e0-83e4-345f9939221f
-transaction_type=authorization
-requested_amount=37.80
-requested_amount_currency=EUR
-ip_address=127.0.0.1
-locale=en
-notifications_format=application/json
-notification_transaction_state=success
-notification_url=https://www.yourdomain.com/success-notification-target
-notification_transaction_state_1=success
-notification_url_1=https://www.yourdomain.com/success-notification-target
-notification_transaction_state_2=failed
-notification_url_2=https://www.yourdomain.com/failed-notification-target
-notification_url_3=https://www.yourdomain.com/notification-target
-
-request_time_stamp=20180604074549
-request_signature_v2=WAUTH+SFMyNTYKY3VzdG9tX2Nzc191cmw9CnJlcXVlc3RfdGltZV9zdGFtcD0yMDE4LTA2LTA0VDA5OjQ1OjQ4KzAyOjAwCm1
-lcmNoYW50X2FjY291bnRfaWQ9MDBmMGI1ZWYtMTI0MS00YWI5LTllYjEtODMxN2IzZGQ5NDEwCnJlcXVlc3RlZF9hbW91bnRfY3VycmVuY3k9RVVSCmlwX
-2FkZHJlc3M9MTI3LjAuMC4xCnRyYW5zYWN0aW9uX3R5cGU9YXV0aG9yaXphdGlvbgpyZXF1ZXN0X2lkPWUzNDQ2ODFkLWYwMDItNDVlMC04M2U0LTM0NWY
-5OTM5MjIxZgpyZXF1ZXN0ZWRfYW1vdW50PTM3LjgwCnJlZGlyZWN0X3VybD0K.qzVwTDrCL%2F6zWXmV4f5KD9jXdV4K1v6c7WDQYtMx9Gc%3D
 ----
