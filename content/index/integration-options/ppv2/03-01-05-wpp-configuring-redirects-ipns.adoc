@@ -34,11 +34,11 @@ the payment request:
 
 [%autowidth,cols="v,v,,,,v,"]
 |===
- | Field (NVP)           | Field (JSON)         | Required | Data Type | Size  | JSON Parent   | Description
+| Field (JSON)         | Required | Data Type | Size  | JSON Parent   | Description
 
-e| success_redirect_url e| success-redirect-url | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after a successful payment.
-e| fail_redirect_url    e| fail-redirect-url    | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after an unsuccessful payment.
-e| cancel_redirect_url  e| cancel-redirect-url  | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after they cancel a payment.
+e| success-redirect-url | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after a successful payment.
+e| fail-redirect-url    | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after an unsuccessful payment.
+e| cancel-redirect-url  | N        | String    | 2000 e| payment ({ }) | The URL to which the consumer is redirected after they cancel a payment.
 |===
 
 If you have no database defaults, you *must* include them in the
