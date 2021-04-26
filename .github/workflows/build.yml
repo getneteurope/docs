@@ -65,5 +65,5 @@ jobs:
     - name: Deploy to S3
       run: bash .scripts/deploy.sh
       env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PREVIEW }}
-        AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER }}
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PREVIEW_GN }}
+        AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER_GN }}
