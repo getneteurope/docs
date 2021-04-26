@@ -58,8 +58,8 @@ jobs:
     - name: Deploy to S3
       run: bash .scripts/deploy.sh
       env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PUBLIC }}
-        AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER }}
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PUBLIC_GN }}
+        AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER_GN }}
 
     - name: Deploy to Github Pages
       uses: crazy-max/ghaction-github-pages@v2.1.0
