@@ -1,10 +1,10 @@
-:payment-method-name: {payment-provider-name} Payment in Installments
+:payment-method-name: Payment in Installments
 
 [#PPv2_PaymentInstallment]
 == {payment-page-v2}
 
 ====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentInstallment, REST API>> integration guide.
+We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentInstallment, REST API>> integration guide.
 ====
 
 _{payment-method-name}_ allows the consumer to pay directly from their bank account while providing the option for payment in a customized number of installments. The invoicing, direct debit, collection process (dunning), as well as the calculation of possible installments, is handled by {payment-provider-name}. _{payment-method-name}_ ensures that merchants receive the payment amount from {payment-provider-name} prior to settlement with consumers.

@@ -4,13 +4,21 @@
 // == Domain
 
 :domain: getneteurope.com
+<<<<<<< HEAD
 :documentation-url: doc.{domain}
+=======
+:documentation-url: docs.{domain}
+>>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :payment-gateway-abbr: GPG
 :payment-provider-name-lower-case: getnet
 :payment-provider-name: Getnet
 :payment-gateway: Payment Gateway
 :payment-redirect-url-hostname: www.wirecard.com
+<<<<<<< HEAD
 :api-id: paymentpages
+=======
+:api-id: up3-wpp
+>>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :checkout-page-html-hostname: www.wirecard.com
 :pay-button-name: Getnet
 :three-d-s-pw: wirecard
@@ -19,16 +27,28 @@
 // == Integration Options
 
 :payment-page-abbr: Payment Page
+<<<<<<< HEAD
 :payment-page-anchor: Payment Page
 :payment-page-abbr-lower-case: payment page
 :payment-page-function-short: WPP
 :payment-page-function: WirecardPaymentPage
 :payment-page-v1: {payment-provider-name} Payment Page 
+=======
+:payment-page-anchor: WPP
+:payment-page-abbr-lower-case: gpp
+:payment-page-function-short: WPP
+:payment-page-function: Payment Page
+:payment-page-v1: {payment-provider-name} Payment Page v1
+>>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :payment-page-v1-abbr: {payment-page-abbr} 
 :payment-page-v1-anchor: PP
 :payment-page-v2: Payment Page
 :payment-page-v2-abbr: {payment-page-abbr} 
+<<<<<<< HEAD
 :payment-page-v2-anchor: Payment Page
+=======
+:payment-page-v2-anchor: PPv2
+>>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :payment-processing-api: {payment-provider-name} Payment Processing API
 
 // == Fields
@@ -45,7 +65,11 @@
 :cnd-test-endpoint: sandbox-engine.thesolution.com
 :instance-hostname: api.{domain}
 :test-instance-hostname: api-test.{domain}
+<<<<<<< HEAD
 :pp-test-instance-hostname: paymentpages-test.{domain}
+=======
+:pp-test-instance-hostname: paymentpage-test.{domain}
+>>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :pp-demoshop-instance-hostname: demoshop-test.{domain}
 :3dsecure-test-instance-hostname: 3dsecure-test.{domain}
 :rest-api-test-endpoint: {test-instance-hostname}/engine/rest/payments/
@@ -66,7 +90,11 @@
 :pp-redirect-url-success: {pp-demoshop-instance-hostname}/demoshop/#/success
 :pp-redirect-url-cancel: {pp-demoshop-instance-hostname}/demoshop/#/cancel
 :pp-redirect-url-error: {pp-demoshop-instance-hostname}/demoshop/#/error
+<<<<<<< HEAD
 :enterprise-portal-name: Merchant Portal
+=======
+:enterprise-portal-name: {payment-provider-name} Merchant Portal
+>>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :enterprise-portal-abbr: Merchant Portal
 
 // :mermaid-config: config/mermaid-default-theme.json > wird nicht benutzt

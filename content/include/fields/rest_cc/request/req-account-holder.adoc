@@ -17,7 +17,6 @@ Accepted format: ``{date-pattern}``.
 |156 
 |Consumer’s email address as given in your shop. +
 *Mandatory* for <<CreditCard_3DS2_Fields_request_accountholder, 3D Secure 2 payments>>. +
-When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP, at least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
 
 |first-name 
 |M/O
@@ -92,7 +91,6 @@ Accepted values: +
 |String 
 |18 
 |Phone number provided by the consumer. +
-When using a credit card for the <<CreditCard_PaymentFeatures_LoyaltyPrograms, loyalty program>> VOP, at least one of the following must be present: ``payment.consumer-id``, ``email`` or ``phone``.
 
 |work-phone
 |O 
