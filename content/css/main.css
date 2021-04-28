@@ -388,7 +388,7 @@ body {
   color: #000f23;
   padding: 0;
   margin: 0;
-  font-family: "Santander Micro Text", "Noto Serif", "DejaVu Serif", serif;
+  font-family: "SantanderMicroText-Regular", "Noto Serif", "DejaVu Serif", serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -677,7 +677,7 @@ h6 {
   font-style: normal;
   color: #444;
   text-rendering: optimizeLegibility;
-  margin-top: 1.25em;
+  /* margin-top: 1.25em; */
   margin-bottom: 0.5em;
   line-height: 1.0125em;
 }
@@ -1309,9 +1309,7 @@ p a>code:hover {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 62.5em;
-  *zoom: 1;
-  position: relative;
-  padding-left: 0.9375em;
+  padding-left: 3em;
   padding-right: 0.9375em;
 }
 
@@ -1842,7 +1840,7 @@ table.tableblock>.title,
 .hdlist>.title {
   text-rendering: optimizeLegibility;
   text-align: left;
-  font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif;
+  font-family: "SantanderMicroText-Regular", "Noto Serif", "DejaVu Serif", serif;
   font-size: 1.5rem;
   font-style: italic;
 }
@@ -1895,7 +1893,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p {
 
 .admonitionblock>table td.icon .title {
   font-weight: bold;
-  font-family: "Wirecard", "Open Sans", "DejaVu Sans", sans-serif;
+  font-family: "SantanderMicroText-Regular", "Open Sans", "DejaVu Sans", sans-serif;
   text-transform: uppercase;
 }
 
@@ -3570,8 +3568,9 @@ div#content {
 #logo {
   display: block;
   position: fixed;
-  width: 19em;
+  width: 12em;
   z-index: 2;
+  margin-top: 1em;
 }
 
 /* hide global headline which appears on all pages */
@@ -3604,6 +3603,15 @@ h3,
 .sidebarblock>.content>.title {
   font-size: 2.6125em;
   font-weight: bold;
+}
+
+h3::after {
+
+content: "";
+border-bottom: 4px solid #ec0000;
+display: block;
+padding-bottom: 13px;
+width:40px
 }
 
 /* line 88, ../../style/sass/main.scss */
@@ -3806,6 +3814,7 @@ button.close {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-collapse: separate;
+  /* border-radius: 8px; */
 }
 
 /* line 17, ../../style/sass/pages/_startpage.scss */
@@ -3823,8 +3832,9 @@ button.close {
 /* line 23, ../../style/sass/pages/_startpage.scss */
 
 .openblock.startpage-block table.tableblock {
-  border: 0;
+  border: none;
   vertical-align: middle;
+  /* border-radius: 8px; */
 }
 
 /* line 25, ../../style/sass/pages/_startpage.scss */
@@ -4493,7 +4503,7 @@ input#search {
   box-sizing: unset;
   margin: auto;
   background-color: #fff;
-  color: white;
+  color: #444;
   margin-bottom: 1em;
   border-bottom: 2px solid #257FA4;
 }
@@ -4579,7 +4589,7 @@ span.nav-text {
 #search-overlay-wrapper {
   position: fixed;
   display: inline-block;
-  padding-top: 6.5em;
+  padding-top: 5em;
   background-color: #F5F9Fb;
   width: 19em;
   z-index: 1;
@@ -4855,7 +4865,7 @@ span.nav-text {
   #burger #mobile-pageheader {
     white-space: nowrap;
     padding-left: 0.4em;
-    font-family: "Wirecard", "Noto Serif", "DejaVu Serif", serif;
+    font-family: "SantanderMicroText-Regular", "Noto Serif", "DejaVu Serif", serif;
   }
 
   /* line 63, ../../style/sass/components/_mobile.scss */
