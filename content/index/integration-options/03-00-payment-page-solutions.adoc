@@ -10,7 +10,7 @@ payment solution. All you need to get started is PCI SAQ A compliance.
 [frame=none]
 [grid=none]
 |===
-^.^|  **{payment-page-v2}** ^.^| **{payment-page-v1}** image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."]
+^.^|  **{payment-page-v2}** ^.^|
 
 |_{payment-page-v2}_ delivers a highly customizable, secure and
 polished checkout experience with multiple integration options. If
@@ -19,10 +19,8 @@ the tools you need to create a great-looking payment page.
 
 <<{payment-page-v2-anchor}, image:images/03-payment-page-solutions/WPP.jpg[{payment-page-v2}, title="Click here to read more"]>>
 
-| _{payment-page-v1}_ offers safe and smooth payment processing available with 3
-different integration options.
+|
 
-<<{payment-page-v1-anchor}, image:images/03-payment-page-solutions/Old_PP.jpg[{payment-page-v1}, title="Click here to read more"]>>
 
 |===
 
@@ -33,17 +31,17 @@ different integration options.
 Features
 [%autowidth, width=100%, cols="h,,"]
 |===
-| ^.^| **{payment-page-v2}** ^.^| **{payment-page-v1}** image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."]
+| ^.^| **{payment-page-v2}** ^.^| 
 
-| Credit Card support                          ^| ✅                       ^| ✅
-| Integration types                          2+^| Hosted/Embedded/Seamless
-| Multi-language support                       ^| ✅                       ^| ✅
-| Custom CSS                                   ^| ✅                       ^| ✅
-| Ready-to-use integration code in Java/PHP    ^| ✅                       ^| ❌
-| API formats                                  ^| JSON/NVP                 ^| NVP only
-| Customization through GUI designer           ^| ✅                       ^| ❌
-| Multiple themes                              ^| ✅                       ^| ❌
-| Responsive design (mobile & desktop)         ^| ✅                       ^| ✅
+| Credit Card support                          ^| ✅                       ^|
+| Integration types                            ^| Hosted/Embedded/Seamless ^|
+| Multi-language support                       ^| ✅                       ^|
+| Custom CSS                                   ^| ✅                       ^|
+| Ready-to-use integration code in Java/PHP    ^| ✅                       ^|
+| API formats                                  ^| JSON                 ^|
+| Customization through GUI designer           ^| ✅                       ^|
+| Multiple themes                              ^| ✅                       ^|
+| Responsive design (mobile & desktop)         ^| ✅                       ^|
 |===
 
 //-
