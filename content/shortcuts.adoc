@@ -34,7 +34,7 @@
 :payment-page-function: WirecardPaymentPage
 :payment-page-v1: {payment-provider-name} Payment Page 
 =======
-:payment-page-anchor: WPP
+:payment-page-anchor: Payment Page
 :payment-page-abbr-lower-case: gpp
 :payment-page-function-short: WPP
 :payment-page-function: Payment Page
@@ -47,7 +47,7 @@
 <<<<<<< HEAD
 :payment-page-v2-anchor: Payment Page
 =======
-:payment-page-v2-anchor: PPv2
+:payment-page-v2-anchor: Payment Page
 >>>>>>> 576a701a0453ad9d31f986f61dacc1e133bca524
 :payment-processing-api: {payment-provider-name} Payment Processing API
 
