@@ -1,11 +1,11 @@
 [#Imprint]
 == Imprint and Privacy Policy
 
-[PagoNxt Merchant Solutions, S.L. – German Branch 
-Einsteinring 35 | 85609 | Aschheim
+[PagoNxt Merchant Solutions, S.L. – German Branch +
+Einsteinring 35 | 85609 | Aschheim +
 Register Number: AG München | HRB 261793
 
-Branch office of PagoNxt Merchant Solutions, S.L.
+Branch office of PagoNxt Merchant Solutions, S.L. +
 (Limited liability Company under Spanish law)
 
 Registered office of the company: Boadilla del Monte/Madrid, Spain
