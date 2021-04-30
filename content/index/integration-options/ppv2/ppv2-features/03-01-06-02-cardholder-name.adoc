@@ -19,14 +19,12 @@ Add the ``cardholder`` field to the payment request and set it to the
 desired value.
 ====
 
-[cols="v,v,,v,,"]
+[cols="v,,v,,"]
 [%autowidth]
 |===
-| Field (NVP) | Field (JSON) | Data Type | Values | JSON Parent | Description
+| Field (JSON) | Data Type | Values | JSON Parent | Description
 
-| wpp_options_cardholder
-| cardholder
-| Boolean
+| cardholder | Boolean
 | ``names``
  ``cardholder``
  ``none``

@@ -26,12 +26,12 @@ Add the ``max-retries`` field to the payment request and set it to the
 desired value.
 ====
 
-[cols="v,v,,,"]
+[cols="v,,,"]
 [%autowidth]
 |===
-| Field (NVP) | Field (JSON) | Data Type | JSON Parent |Description
+| Field (JSON) | Data Type | JSON Parent |Description
 
-|wpp_options_max_retries |max-retries |Numeric |options (\{ })
+|max-retries |Numeric |options (\{ })
 |Indicates whether a consumer can retry the payment if it fails (as well
 as how many times).
 |===

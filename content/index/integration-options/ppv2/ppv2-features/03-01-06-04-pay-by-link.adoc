@@ -27,12 +27,12 @@ Add the ``hyperlink-expiration-time-stamp`` field to the payment request
 and set its value to the desired time & date.
 ====
 
-[cols="v,v,v,,"]
+[cols="v,v,,"]
 [%autowidth]
 |===
-| Field (NVP) | Field (JSON) | Data Type | JSON Parent| Description
+| Field (JSON) | Data Type | JSON Parent| Description
 
-m|hyperlink_expiration_time_stamp m|hyperlink-expiration-time-stamp
+|hyperlink-expiration-time-stamp
 m|yyyy-MM-ddTHH:mm:ss±HH:mm m|payment ({}) |Indicates the expiration time & date of the respective payment hyperlink.
 |===
 
