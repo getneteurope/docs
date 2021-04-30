@@ -95,11 +95,11 @@ functionality, see <<GeneralPlatformFeatures_CrossPayment, Cross-Payment-Methods
 [#iDEAL_Workflow_debit]
 ==== debit
 
-NOTE: The merchant sends a debit request to Wirecard and receives a response
+NOTE: The merchant sends a debit request to Getnet and receives a response
 which contains the URL of the consumers online banking system to which
 the consumer must be redirected to. The consumer is redirected back to
 merchants shop after the transaction is approved and the merchant
-receives a payment notification from Wirecard.
+receives a payment notification from Getnet.
 
 image::images/diagrams/iDEAL_debit.svg[image,height=250]
 
@@ -198,6 +198,7 @@ website.
 | SNSBNL2A | SNS Bank
 | TRIONL2U | Triodos Bank
 | FVLBNL22 | Van Lanschot Bankiers
+| REVOLT21 | Revolut Bank
 |===
 
 Frieslandbank merged into Rabobank. They are now available as Rabobank.
