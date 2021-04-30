@@ -1,6 +1,6 @@
 [#SEPA]
 == SEPA
-Wirecard offers two SEPA payment methods.
+Getnet offers two SEPA payment methods.
 
 - <<SEPACreditTransfer, SEPA Credit Transfer>>
 - <<SEPADirectDebit, SEPA Direct Debit>>
@@ -167,7 +167,7 @@ either by
 //-
 
 All _debit-returns_ and _credit-returns_ are included in
-reconciliation files provided by Wirecard Bank and sent to the _{payment-gateway}._ The transaction types _debit-return_ and
+reconciliation files provided by Santander Bank and sent to the _{payment-gateway}._ The transaction types _debit-return_ and
 _credit-return_ are then initiated by the {payment-gateway}. It is not possible for a
 merchant to request these transaction types.
 
@@ -182,8 +182,8 @@ Possible return codes are documented within <<SEPA_ReturnCodes, Return Codes>>.
 image::images/diagrams/sepa_workflow.svg[SEPA Workflow]
 
 . _Consumer's bank sends a debit-return_ or _credit-return_ to
-Wirecard Bank.
-. Wirecard Bank forwards the transaction to the _{payment-gateway-abbr}_.
+Santander Bank.
+. Santander Bank forwards the transaction to the _{payment-gateway-abbr}_.
 . {payment-gateway-abbr} receives the transaction.
 . {payment-gateway-abbr} uses the PTRID to find an initial parent _debit_ or parent
 _credit_ transaction.
@@ -216,7 +216,7 @@ Just like _Credit Card_ it is also possible to use a
 A reconciliation file is available to download by merchants. This allows
 merchant to have the most up-to-date status for their transactions. For
 more information about the reconciliation file see chapter
-<<Reporting_DataReconciliation, Data Reconciliation>> or please contact Wirecard Merchant Support.
+<<Reporting_DataReconciliation, Data Reconciliation>> or please contact Getnet Merchant Support.
 
 [#SEPA_Reporting_BankDataValidation]
 === Bank Data Validation
