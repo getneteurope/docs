@@ -1,11 +1,11 @@
 [#Imprint]
 == Imprint and Privacy Policy
 
-[PagoNxt Merchant Solutions, S.L. – German Branch 
-Einsteinring 35 | 85609 | Aschheim
+[PagoNxt Merchant Solutions, S.L. – German Branch +
+Einsteinring 35 | 85609 | Aschheim +
 Register Number: AG München | HRB 261793
 
-Branch office of PagoNxt Merchant Solutions, S.L.
+Branch office of PagoNxt Merchant Solutions, S.L. +
 (Limited liability Company under Spanish law)
 
 Registered office of the company: Boadilla del Monte/Madrid, Spain
@@ -16,5 +16,5 @@ Maria del Mar Ruiz; Marzluf, Dirk Ludwig; Garcia, Javier San Felix
 Register Number: Registro Mercantil de Madrid 087694410
 VAT ID: DE 339 882 217
 
-Phone: +49 4424 1212
+Phone: +49 4424 1212 +
 E-Mail: connect@getneteurope.com
