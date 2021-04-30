@@ -2,10 +2,6 @@
 [#PPv2_ideal]
 == {payment-page-v2}
 
-====
-We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<iDEAL, REST API>> integration guide.
-====
-
 [#PPv2_ideal_General]
 === General Information
 
