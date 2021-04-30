@@ -5,30 +5,30 @@
 
 :domain: getneteurope.com
 :documentation-url: docs.{domain}
-:payment-gateway-abbr: GPG
+:payment-gateway-abbr: Payment Gateway
 :payment-provider-name-lower-case: getnet
 :payment-provider-name: Getnet
 :payment-gateway: Payment Gateway
-:payment-redirect-url-hostname: www.wirecard.com
+:payment-redirect-url-hostname: www.getneteurope.com
 :api-id: wpp
-:checkout-page-html-hostname: www.wirecard.com
+:checkout-page-html-hostname: www.getneteurope.com
 :pay-button-name: getnet
 :three-d-s-pw: wirecard
 :enterprise-portal-url: portal.{domain}/
 
 // == Integration Options
 
-:payment-page-abbr: GPP
-:payment-page-anchor: GPP
-:payment-page-abbr-lower-case: gpp
+:payment-page-abbr: Payment Page
+:payment-page-anchor: Payment Page
+:payment-page-abbr-lower-case: payment page
 :payment-page-function-short: WPP
 :payment-page-function: WirecardPaymentPage
 :payment-page-v1: Payment Page v1
 :payment-page-v1-abbr: {payment-page-abbr} v1
 :payment-page-v1-anchor: PP
-:payment-page-v2: Payment Page v2
-:payment-page-v2-abbr: {payment-page-abbr} v2
-:payment-page-v2-anchor: PPv2
+:payment-page-v2: Payment Page
+:payment-page-v2-abbr: {payment-page-abbr}
+:payment-page-v2-anchor: Payment Page
 :payment-processing-api: Payment Processing API
 
 // == Fields
