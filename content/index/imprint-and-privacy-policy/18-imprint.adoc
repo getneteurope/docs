@@ -1,46 +1,20 @@
 [#Imprint]
 == Imprint and Privacy Policy
 
-This document has been created by Wirecard AG. Its contents may be changed without prior notice. External web links are provided for information only. Wirecard does not claim liability for access to and correctness of the referenced content.
+[PagoNxt Merchant Solutions, S.L. – German Branch 
+Einsteinring 35 | 85609 | Aschheim
+Register Number: AG München | HRB 261793
 
-[#Imprint_Trademarks]
-[discrete]
-=== Trademarks
+Branch office of PagoNxt Merchant Solutions, S.L.
+(Limited liability Company under Spanish law)
 
-The Wirecard logo is a registered trademark of Wirecard AG. Other trademarks and service marks in this document are the sole property of the Wirecard AG or their respective owners.
+Registered office of the company: Boadilla del Monte/Madrid, Spain
+Managing board: Grisi Checa, Hector Blas (Chairman); 
+Vicente, Carlos Rey de; Ichazo, Ignacio Narvarte; Andújar, 
+Maria del Mar Ruiz; Marzluf, Dirk Ludwig; Garcia, Javier San Felix 
 
-[#Imprint_Heading]
-[discrete]
-=== Wirecard AG
+Register Number: Registro Mercantil de Madrid 087694410
+VAT ID: DE 339 882 217
 
-Einsteinring 35 +
-85609 Aschheim +
-Germany
-
-*Phone:* link:tel:+498944241400[+49 89 4424-1400]  +
-*Fax:* link:tel:+498944241500[+49 89 4424-1500] +
-*Email:* contact@wirecard.com +
-*Website:* https://www.wirecard.com +
-
-*Contact the documentation team:* docs@wirecard.com
-
-
-*Notification of voting rights to:* +
-*Fax:* link:tel:+498944241700[+49 89 4424-1700]
-
-*Managing Board:* James H. Freis, Jr., Alexander von Knoop, Susanne Steidl +
-*Chairman of the Supervisory Board:* Thomas Eichelmann
-
-*Register Number:* HRB 169227 +
-*Register Court:* Munich +
-*VAT ID:* DE 201591202
-
-include::{root}/include/privacy-policy.adoc[]
-
-Copyright © {localyear} Wirecard AG All rights reserved.
-
-[#builddate]
-.Last update
-{systemtimestamp}
-
-//-
+Phone: +49 4424 1212
+E-Mail: connect@getneteurope.com
