@@ -194,7 +194,7 @@ m|value
 |String    
 |Required          
 |36   
-|A unique identifier assigned to every merchant account (by {payment-provider-name}).
+|A unique identifier assigned by us to every merchant account.
 
 2+|request-id                 
 | String   
@@ -565,7 +565,7 @@ m|attempt-three-d
 |merchant-account-id 
 m|value                   
 |String  
-|A unique identifier assigned to every merchant account (by {payment-provider-name}).
+|A unique identifier by us to every merchant account.
 
 .2+|_custom-field_ 
 m|field-name                  
@@ -578,7 +578,7 @@ m|field-name
 
 2+|transaction-id                             
 |String  
-|A unique identifier assigned to every transaction(by {payment-provider-name}). Used when searching for or referencing to it later.
+|A unique identifier assigned by us to every transaction. Used when searching for or referencing to it later.
 
 2+|completion-time-stamp         
 |YYYY-MM-DD-Thh:mm:ss 
