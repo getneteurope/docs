@@ -1,4 +1,4 @@
-:payment-method-name: {payment-provider-name} Payment Guaranteed Direct Debit
+:payment-method-name: Guaranteed Direct Debit
 
 [#PPv2_PaymentDirectDebit]
 == {payment-page-v2}
