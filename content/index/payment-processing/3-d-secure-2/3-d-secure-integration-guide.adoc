@@ -67,7 +67,6 @@ Check out how to implement 3D Secure 2 for different integration options:
 
 - <<3DS2_IntegrationGuide_REST, REST API>>
 - <<PPv2_CC_3DSecure, {payment-page-v2-abbr}>>
-- <<PP_3DSecure, {payment-page-v1-abbr}>>
 
 //-
 ====
