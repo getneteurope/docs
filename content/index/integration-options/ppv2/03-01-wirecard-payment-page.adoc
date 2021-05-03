@@ -81,11 +81,10 @@ See the list of all supported payment methods below:
 * <<PPv2_CC, Credit Card>>
 * <<PPv2_AlipayCrossborder, Alipay Cross-border>>
 * <<PPv2_ideal, iDEAL>>
-* <<PPv2_Klarna, Klarna Payments>>
 * <<PPv2_PayPal, PayPal>>
 * <<PPv2_SEPADirectDebit, SEPA Direct Debit>>
 * <<PPv2_Sofort, Sofort.>>
-* <<PPv2_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
-* <<PPv2_PaymentInstallment, {payment-provider-name} Payment in Installments>>
-* <<PPv2_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
+* <<PPv2_PaymentDirectDebit, Guaranteed Direct Debit>>
+* <<PPv2_PaymentInstallment, Payment in Installments>>
+* <<PPv2_PaymentInvoice, Guaranteed Payment on Invoice>>
 //-
