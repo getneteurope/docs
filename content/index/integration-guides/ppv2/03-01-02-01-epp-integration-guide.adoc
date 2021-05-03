@@ -137,7 +137,7 @@ include::{root}/samples/json/PaymentPageSolutions_WPP_EPP_IntegrationExampleCrea
 |===
 2+| Field (JSON) | Data Type | Required/Optional | Size | Description
 
-|merchant-account-id m|value |String |Required |36 |A unique identifier assigned to every merchant account (by {payment-provider-name}).
+|merchant-account-id m|value |String |Required |36 |A unique identifier assigned by us to every merchant account.
 2+| request-id                | String | Required | 150 | A unique identifier assigned to every request (by merchant). Used when
 searching for or referencing it later. ``{{$guid}}`` serves as a
 placeholder for a random ``request-id``.
@@ -302,12 +302,13 @@ include::{root}/samples/json/PaymentPageSolutions_WPP_EPP_IntegrationExamplePars
 2+| Field (JSON) | Data Type | Description
 
 2+| transaction-type | String |The requested transaction type.
-2+| transaction-id | String |A unique identifier to every transaction (by {payment-provider-name}). Used when searching for or referencing to it later.
+2+| transaction-id | String |A unique identifier to every transaction (by 
+). Used when searching for or referencing to it later.
 2+|completion-time-stamp |YYYY-MM-DD-Thh:mm:ss |The UTC/ISO time-stamp documents the time & date when the transaction was executed.
 Format: YYYY-MM-DDThh:mm:ss (ISO).
 .2+| card token m| token-id |String |A unique identifier assigned to every card token.
                | masked-account-number | String | This is the masked card account number of the consumer.
-|merchant-account-id m| value | String | A unique identifier assigned to every merchant account (by {payment-provider-name}).
+|merchant-account-id m| value | String | A unique identifier assigned by us to every merchant account.
 2+| transaction-state |String a|The current transaction state. Possible values:
 
 - ``in-progress``
