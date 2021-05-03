@@ -223,7 +223,6 @@ include::index/payment-processing/08-03-ip-validation.adoc[leveloffset=+2]
 include::index/payment-processing/08-06-merchant-account-resolving.adoc[leveloffset=+2]
 include::index/payment-processing/08-04-redirect-url.adoc[leveloffset=+2]
 include::index/payment-processing/08-08-server-availability.adoc[leveloffset=+2]
-include::index/payment-processing/08-10-surcharging.adoc[leveloffset=+2]
 include::index/payment-processing/08-07-transactions.adoc[leveloffset=+2]
 
 
