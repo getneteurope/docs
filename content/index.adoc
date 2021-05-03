@@ -221,7 +221,6 @@ include::index/payment-processing/08-07-transactions.adoc[leveloffset=+2]
 
 
 
-include::index/reporting/10-reporting.adoc[]
 
 include::index/fraud-prevention/fraud-prevention_head.adoc[]
 include::index/fraud-prevention/avs_head.adoc[leveloffset=+1]
