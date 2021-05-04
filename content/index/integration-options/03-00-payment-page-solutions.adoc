@@ -21,7 +21,7 @@ the tools you need to create a great-looking payment page.
 
 |===
 
-image::content/images/03-payment-page-solutions/Checkout_GPP2.jpg[Checkout_Page]
+image::https://github.com/wirecard/docs/blob/88316133950436db64d0c960aaa42e12d493c84e/content/images/03-payment-page-solutions/Checkout_GPP2.jpg[Checkout_Page]
 
 Features
 [%autowidth, width=100%, cols="h,,"]
