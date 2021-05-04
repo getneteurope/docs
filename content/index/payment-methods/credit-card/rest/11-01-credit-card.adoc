@@ -82,7 +82,6 @@ credentials:
 |Brands     |Visa, MC, AMEX
 |===
 
-include::{root}/include/3-d-secure/3-d-secure_testcredentials_nongamblingOCT.adoc[]
 
 [#CreditCard_PaymentSolutions]
 === Payment Solutions
