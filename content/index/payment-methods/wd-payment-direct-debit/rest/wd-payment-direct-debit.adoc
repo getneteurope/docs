@@ -667,7 +667,7 @@ include::{root}/samples/xml/ratepay-elv_void-authorization_response_success_de_f
 ----
 
 [#API_PaymentDirectDebit_Samples_DirectDebit_DeviceIdentToken]
-===== _authorization_ Request to Wirecard
+===== _authorization_ Request to Getnet
 
 .deviceIdentToken Transfer
 [source,xml,subs=attributes+]
