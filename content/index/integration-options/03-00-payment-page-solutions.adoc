@@ -17,7 +17,7 @@ polished checkout experience with multiple integration options. If
 visual design is your main priority, _{payment-page-v2}_ gives you all
 the tools you need to create a great-looking payment page.
 
-image::https://github.com/wirecard/docs/blob/d09455d96daa3a30e3811c3d5fef0533139e2a51/content/images/03-payment-page-solutions/Checkout_GPP2.jpg[Checkout Page]
+image::https://github.com/wirecard/docs/blob/d09455d96daa3a30e3811c3d5fef0533139e2a51/content/images/03-payment-page-solutions/Checkout_GPP2.jpg [Checkout Page]
 
 |
 
