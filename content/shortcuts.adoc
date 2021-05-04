@@ -45,7 +45,7 @@
 :cnd-test-endpoint: sandbox-engine.thesolution.com
 :instance-hostname: api.{domain}
 :test-instance-hostname: api-test.{domain}
-:pp-test-instance-hostname: paymentpages-test.{domain}
+:pp-test-instance-hostname: paymentpage-test.{domain}
 :pp-demoshop-instance-hostname: demoshop-test.{domain}
 :3dsecure-test-instance-hostname: 3dsecure-test.{domain}
 :rest-api-test-endpoint: {test-instance-hostname}/engine/rest/payments/
