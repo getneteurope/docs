@@ -37,7 +37,7 @@ Payment Page is available in three formats:
 - Embedded Payment Page (EPP): The payment screen is displayed in
 overlay directly on the merchant's checkout page.
 - Seamless integration:  The merchant's checkout page is incorporated
-into {payment-provider-name}'s payment form. This solution provides a seamless shopping
+into our payment form. This solution provides a seamless shopping
 experience for web-shoppers.
 //-
 

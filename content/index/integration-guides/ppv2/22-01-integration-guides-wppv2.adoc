@@ -1,3 +1,0 @@
-[#IntegrationGuides_WPP_v2]
-== Payment Page
-

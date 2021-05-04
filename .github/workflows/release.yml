@@ -61,12 +61,3 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PUBLIC_GN }}
         AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER_GN }}
 
-    - name: Deploy to Github Pages
-      uses: crazy-max/ghaction-github-pages@v2.1.0
-      with:
-        target_branch: gh-pages
-        keep_history: true
-        build_dir: public
-        fqdn: ${{ secrets.FQDN }}
-      env:
-        GH_PAT: ${{ secrets.DOCBOT_GH_PAT }}

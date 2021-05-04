@@ -262,9 +262,9 @@ To receive IPNs, ensure that your firewall settings allow a connection between t
 Add the following {payment-gateway} IP addresses to your firewall rules:
 
 ----
-195.93.244.97
-195.93.244.106
-195.93.245.129
+
+185.60.56.0/22
+195.93.244.0/23
 ----
 
 The IP-address from which you receive your IPN depends on your specific configuration. 
