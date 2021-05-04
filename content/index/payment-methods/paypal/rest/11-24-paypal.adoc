@@ -283,7 +283,7 @@ h|Password 3+|3!3013=D3fD8X7
 .Additional Test Credentials
 [%autowidth, cols="h,"]
 |===
-|Email |``\paypal.buyer2@getneteurope.com``
+|Email |``\paypal.buyer3@getneteurope.com``
 |Password |Getnetbuyer
 |===
 
