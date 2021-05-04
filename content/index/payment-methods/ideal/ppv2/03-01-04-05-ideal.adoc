@@ -348,7 +348,7 @@ include::{root}/samples/json/WPP_IdealJSONNVPFieldRequest_JSON_StructureForiDEAL
 include::{root}/samples/json/WPP_IdealJSONNVPFieldResponse_ResponseOnlyFields.json[]
 ----
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
 |Field (NVP) |Field (JSON) |JSON Parent
 

@@ -80,7 +80,7 @@ Test credentials for transaction types
 
 [cols="15h,85"]
 |===
-| Email    | \buyer@wirecard.com
+| Email    | \buyer@getneteurope.com
 | Password | Einstein35
 |===
 

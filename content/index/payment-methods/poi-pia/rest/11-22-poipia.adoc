@@ -20,7 +20,7 @@ formats and methods can be used for requests and responses.
 
 [width=75%,stripes=none]
 |===
-.2+h| Requests/Responses |Format  |XML, JSON, NVP
+.2+h| Requests/Responses |Format  |XML, JSON
                          |Methods |POST, GET
 h| IPN Encodements     2+|Base64
 |===

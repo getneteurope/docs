@@ -285,14 +285,9 @@ _Alipay Cross-border_ specific post-processing operations.
 
 
 [#PPv2_AlipayCrossborder_JSON_NVPField]
-=== JSON/NVP Field Reference
+=== JSON Field Reference
 
-NVP equivalents for JSON fields (for migrating merchants).
-
-Here you can:
-
-- find the NVP equivalents for JSON fields (for migrating merchants),
-- see the structure of a full request (optional fields included).
+Here you can see the structure of a full request (optional fields included).
 
 //-
 
@@ -305,26 +300,26 @@ include::{root}/samples/json/WPP_AlipayCrossborder_JSON_NVPField_JSON_StructureF
 
 .Request-Only Fields
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
-|Field (NVP) |Field (JSON) |JSON Parent
+|Field (JSON) |JSON Parent
 
-|merchant_account_id e|value |merchant-account-id ({ })
-|request_id |request-id |payment ({ })
-|transaction_type |transaction-type |payment ({ })
-|requested_amount e|value |requested-amount ({ })
-|requested_amount_currency e|currency |requested-amount ({ })
-|payment_method |payment-method ([ ])/name |payment-methods ({ })
-|order_number |order-number |payment ({ })
-|order_detail |order-detail |payment ({ })
-|ip_address |ip-address |payment ({ })
-|locale |locale |payment ({ })
-|first_name e|first-name |account-holder ({ })
-|last_name |last-name |account-holder ({ })
-|email |email |account-holder ({ })
-|success_redirect_url |success-redirect-url |payment ({ })
-|fail_redirect_url |fail-redirect-url |payment ({ })
-|cancel_redirect_url |cancel-redirect-url |payment ({ })
+|value |merchant-account-id ({ })
+|request-id |payment ({ })
+|transaction-type |payment ({ })
+|value |requested-amount ({ })
+|currency |requested-amount ({ })
+|payment-method ([ ])/name |payment-methods ({ })
+|order-number |payment ({ })
+|order-detail |payment ({ })
+|ip-address |payment ({ })
+|locale |payment ({ })
+|first-name |account-holder ({ })
+|last-name |account-holder ({ })
+|email |account-holder ({ })
+|success-redirect-url |payment ({ })
+|fail-redirect-url |payment ({ })
+|cancel-redirect-url |payment ({ })
 |===
 
 .JSON Structure for _Alipay Cross-border_ _debit_ Responses
@@ -336,16 +331,16 @@ include::{root}/samples/json/WPP_AlipayCrossborder_JSON_NVPField_JSfACbdR.json[]
 
 .Response-Only Fields
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
-|Field (NVP) |Field (JSON) |JSON Parent
+|Field (JSON) |JSON Parent
 
-|transaction_id |transaction-id |payment ({ })
-|completion_time_stamp |completion-time-stamp |payment ({ })
-|parent_transaction_id |parent-transaction-id |payment ({ })
-|transaction_state |transaction-state |payment ({ })
-|status_description_n |status ([ {} ])/ description |statuses ({ })
-|status_severity_n |status ([ {} ])/ severity |statuses ({ })
-|status_code_n |status ([ {} ])/ code |statuses ({ })
-|api_id |api-id |payment ({ })
+|transaction-id |payment ({ })
+|completion-time-stamp |payment ({ })
+|parent-transaction-id |payment ({ })
+|transaction-state |payment ({ })
+|status ([ {} ])/ description |statuses ({ })
+|status ([ {} ])/ severity |statuses ({ })
+|status ([ {} ])/ code |statuses ({ })
+|api-id |payment ({ })
 |===
