@@ -116,7 +116,7 @@ are shipped in separate shipments.
 [#API_PaymentDirectDebit_GuaranteedDirectDebit]
 ===== Guaranteed Direct Debit
 
-image::images/diagrams/guaranteed-direct-debit.svg[{payment-provider-name} Payment Guaranteed Direct Debit Workflow, width=950, align="center"]
+image::images/diagrams/guaranteed-direct-debit.bmp[{payment-provider-name} Payment Guaranteed Direct Debit Workflow, width=950, align="center"]
 
 . Consumer adds items to shopping basket.
 . Consumer selects the payment method _Guaranteed Direct Debit_.
