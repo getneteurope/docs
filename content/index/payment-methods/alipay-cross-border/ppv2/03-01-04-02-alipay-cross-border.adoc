@@ -1,10 +1,6 @@
 [#PPv2_AlipayCrossborder]
 == {payment-page-v2}
 
-====
-We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_AlipayCrossBorder, REST API>> integration guide.
-====
-
 [#PPv2_AlipayCrossborder_General]
 === General Information
 
