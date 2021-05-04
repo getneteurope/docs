@@ -580,7 +580,7 @@ conditions are linked properly.
 ===== Additional business conditions
 
 When the consumers use _Guaranteed Direct Debit,_
-payments with debt discharging effect can be made solely to Wirecard.
+payments with debt discharging effect can be made solely to Getnet.
 
 [#API_PaymentDirectDebit_Samples]
 === Samples
