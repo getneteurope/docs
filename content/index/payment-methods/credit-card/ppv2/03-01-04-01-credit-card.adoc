@@ -49,12 +49,45 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 === Test Credentials
 
 [%autowidth, cols="h,"]
+
+.Generic Test Accounts
+[cols="h,"]
 |===
-| URL(s) Endpoints           | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | 7a6dd74f-06ab-4f3f-a864-adc52687270a
-| Username                   | 70000-APIDEMO-CARD
-| Password                   | ohysS0-dvfMx
-| Secret Key (used for response verification) | a8c3fce6-8df7-4fd6-a1fd-62fa229c5e55
+|Merchant Number |84320
+|Merchant Name |Getnet Europe TEST
+|EE-User|84320-getneteurope
+|EE-Password |2NQBnucU19mY	
+|URL | https://api-test.getneteurope.com/engine/rest/payments/
+|===
+
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |e46155db-3268-4a18-ab29-28f8b449a547
+|Merchant Account Name |Getnet no3d
+|BC_SIG|0000003179247C39
+|Secret Key |a4b0463e-9cf5-4479-ba18-f75c319ca474
+|Currencies | ARS, AUD, BRL, CAD, CHF, CZK, CNY, DKK, EUR, GBP, HKD, HUF, ILS, INR, JPY, MXN, NOK, NZD, PHP, PLN, RUB, SEK, SGD, THB, TWD,USD, ZAR
+|Brands     |Visa, MC, AMEX
+|===
+
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |c266f667-1c0e-4bad-8d03-7e84d2d8336b
+|Merchant Account Name |Getnet 3d
+|BC_SIG|0000003179247CDE
+|Secret Key |49c90b00-e5f7-40d0-bc7f-4971b8e7681e
+|Currencies | ARS, AUD, BRL, CAD, CHF, CZK, CNY, DKK, EUR, GBP, HKD, HUF, ILS, INR, JPY, MXN, NOK, NZD, PHP, PLN, RUB, SEK, SGD, THB, TWD,USD, ZAR
+|Brands     |Visa, MC, AMEX
+|===
+
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |4f52b0b9-6b57-4c2e-b3b6-ce5c34043667
+|Merchant Account Name |Getnet MOTO
+|BC_SIG|0000003179247D7F
+|Secret Key |04962468-f749-4ba6-ba14-eb2f86c249bf
+|Currencies | ARS, AUD, BRL, CAD, CHF, CZK, CNY, DKK, EUR, GBP, HKD, HUF, ILS, INR, JPY, MXN, NOK, NZD, PHP, PLN, RUB, SEK, SGD, THB, TWD,USD, ZAR
+|Brands     |Visa, MC, AMEX
 |===
 
 [#PPv2_CC_TestCredentials_Additional]
