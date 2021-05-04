@@ -86,7 +86,7 @@ We provide JSON examples for this process. You can find them below.
 |===
 | Authorization
 | "Authorization"="Basic" + base64 ("username:password"). Use username and password as given in your
-Wirecard contract to base64-encode the authorization.
+contract to base64-encode the authorization.
 | Content-Type
 | application/json
 |===
