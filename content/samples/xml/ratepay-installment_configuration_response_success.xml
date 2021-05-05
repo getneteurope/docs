@@ -25,7 +25,7 @@
         <rate-min-longrun>10</rate-min-longrun>
         <service-charge>1.95</service-charge>
         <min-difference-dueday>28</min-difference-dueday>
-        <name>WIRECARD_TE_DEU_ECOM_RATEPAY</name>
+        <name>GETNET_TE_DEU_ECOM_RATEPAY</name>
         <type>DEFAULT</type>
     </configuration>
 </installment-configuration-response>
