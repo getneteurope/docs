@@ -11,6 +11,6 @@
     <success-redirect-url>https://{pp-redirect-url-success}</success-redirect-url>
     <fail-redirect-url>https://{pp-redirect-url-error}</fail-redirect-url>
     <account-holder>
-        <email>paypal.buyer2@wirecard.com</email>
+        <email>paypal.buyer2@getneteurope.com</email>
     </account-holder>
 </payment>

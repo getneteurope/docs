@@ -11,7 +11,7 @@
   </statuses>
   <requested-amount currency="EUR">11.00</requested-amount>
   <account-holder>
-    <email>paypal.buyer2@wirecard.com</email>
+    <email>paypal.buyer2@getneteurope.com</email>
   </account-holder>
   <payment-methods>
     <payment-method name="paypal"/>

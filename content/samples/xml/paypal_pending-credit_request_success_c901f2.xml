@@ -12,6 +12,6 @@
    <fail-redirect-url>http://www.merchant.com/order/error</fail-redirect-url>
    <success-redirect-url>http://www.merchant.com/order/success</success-redirect-url>
    <account-holder>
-      <email>paypal.buyer2@wirecard.com</email>
+      <email>paypal.buyer2@getneteurope.com</email>
    </account-holder>
 </payment>
