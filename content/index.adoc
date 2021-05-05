@@ -119,9 +119,6 @@ include::index/payment-methods/sofort/sofort-main.adoc[leveloffset=+1]
 include::index/payment-methods/sofort/rest/11-31-sofort.adoc[leveloffset=+2]
 include::index/payment-methods/sofort/ppv2/03-01-04-11-sofort.adoc[leveloffset=+2]
 
-include::index/payment-methods/visa-checkout/visa-checkout-main.adoc[leveloffset=+1]
-include::index/payment-methods/visa-checkout/rest/11-35-visa-checkout.adoc[leveloffset=+2]
-
 include::index/payment-methods/wd-payment-direct-debit/wd-payment-direct-debit-main.adoc[leveloffset=+1]
 include::index/payment-methods/wd-payment-direct-debit/rest/wd-payment-direct-debit.adoc[leveloffset=+2]
 include::index/payment-methods/wd-payment-direct-debit/ppv2/wd-payment-direct-debit.adoc[leveloffset=+2]
