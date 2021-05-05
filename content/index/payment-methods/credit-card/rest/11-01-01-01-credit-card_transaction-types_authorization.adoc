@@ -115,7 +115,7 @@ We provide detailed descriptions of all
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
@@ -163,7 +163,7 @@ We provide detailed descriptions of all
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
@@ -208,7 +208,7 @@ We provide detailed descriptions of all
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
