@@ -4,9 +4,6 @@
 If you have any technical questions or need further assistance, please do
 not hesitate to contact our support teams.
 
-If you are interested in our solutions or have questions about
-Getnet, do not hesitate to contact our sales teams.
-
 [%autowidth]
 [cols="a,a"]
 |===
