@@ -502,7 +502,7 @@ Format must be ``language`` (e.g. ``en``).
 - ``US`` (USA)
 //-
 
-Please use the list of state codes supported by Paypal: https://developer.paypal.com/docs/nvp-soap-api/state-codes/
+Please use the list of state codes supported by https://developer.paypal.com/docs/nvp-soap-api/state-codes/[Paypal]
 
 [[API_PayPal_Fields_Payment_Shipping_Address_footnote]] ^(1)^ = For these countries the fields ``shipping.address.postal-code`` and ``shipping.address.state`` are  mandatory.
 |postal-code |C |C |C |String |16 |Postal code of the shipment recipient's city. It is a mandatory field if the shipment recipient's country is marked with <<API_PayPal_Fields_Payment_Shipping_Address_footnote, ^(1)^>> in the field description for ``shipping.address.state``.
