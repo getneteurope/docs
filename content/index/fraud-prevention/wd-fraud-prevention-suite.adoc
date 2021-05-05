@@ -109,9 +109,9 @@ without a new FPS check.
 .. FPS adds the status code ``100.0101 "FPS case created"``.
 .. The system returns the response.
 .. The merchant puts the order process on hold.
-.. The merchant (or a dedicated Wirecard team) performs a manual check
+.. The merchant (or a dedicated Getnet team) performs a manual check
 of the created case using the FPS merchant cockpit portal.
-.. The merchant (or a dedicated Wirecard team) resolves the case.
+.. The merchant (or a dedicated Getnet team) resolves the case.
 .. FPS notifies the merchant via a technical XML notification
 (FPS sends it to the special endpoint in the merchant system).
 .. The order process can continue.
