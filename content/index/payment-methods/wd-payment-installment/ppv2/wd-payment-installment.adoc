@@ -46,16 +46,16 @@ An _authorization_ reserves the specified amount from the account holder’s ban
 |``\https://{pp-test-endpoint}``
 
 |Merchant Account ID (MAID)
-a|9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e
+a|To be determined
 
 |Username
-a|16390-testing
+a|To be determined
 
 |Password
-a|3!3013=D3fD8X7
+a|To be determined
 
 |Secret Key (used for response verification)
-a|09df96e0-6364-472c-a26a-4be32bfe1902
+a|To be determined2
 |===
 
 [#PPv2_PaymentInstallment_TestCredentials_Additional]

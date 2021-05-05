@@ -101,10 +101,10 @@ are shipped in separate shipments.
                                   | For transaction types ``capture-authorization``, ``refund-capture``,
                                     ``void-authorization`` and ``credit``  |``\https://{rest-api-test-endpoint}``
    h| Merchant Account ID (MAID)
-                                2+| 3cfb0fb7-59e2-4d92-847f-37121d633844
-   h| Username                  2+| 16390-testing
-   h| Password                  2+| 3!3013=D3fD8X7
-   h| Secret Key                2+| cf0b29fc-a6ab-474d-b6be-92e9596e9107
+                                2+| To be determined
+   h| Username                  2+| To be determined
+   h| Password                  2+| To be determined
+   h| Secret Key                2+| To be determined
 |===
 
 [#API_PaymentDirectDebit_Workflow]
