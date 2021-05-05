@@ -79,13 +79,13 @@ Test Credentials for Transaction Type
 | URLI (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| adb45327-170a-460b-9810-9008e9772f5f
+| To be determined
 | Username
-| 70000-APITEST-AP
+| To be determined
 | Password
-| qD2wzQ_hrc!8
+| To be determined
 | Secret Key (used for response verification)
-| 1b9e63b4-c132-42c3-bcbd-2d2e47ae7154
+| To be determined
 |===
 
 [#PPv2_ideal_TestCredentials_Additional]
