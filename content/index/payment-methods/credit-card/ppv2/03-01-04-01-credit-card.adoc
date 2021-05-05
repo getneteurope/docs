@@ -133,7 +133,7 @@ payment form.
 .Request Headers
 [cols="20h,80"]
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -321,7 +321,7 @@ payment form.
 .Request Headers
 [cols="20h,80"]
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -509,7 +509,7 @@ payment form.
 .Request Headers
 [cols="20h,80"]
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -751,7 +751,7 @@ payment form.
 [cols="20h,80"]
 
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
