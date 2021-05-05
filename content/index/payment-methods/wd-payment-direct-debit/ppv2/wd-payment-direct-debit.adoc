@@ -47,13 +47,13 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 [cols="20h,80"]
 |===
 |IBAN 
-|DE42512308000000060004
+|To be determined
 
 |BIC 
-|WIREDEMMXXX
+|To be determined
 
 |Bank 
-|Test Bank
+|To be determined
 |===
 
 [#PPv2_PaymentDirectDebit_Countries]
