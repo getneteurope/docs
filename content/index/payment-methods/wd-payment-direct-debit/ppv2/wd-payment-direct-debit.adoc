@@ -437,7 +437,7 @@ However, when it comes to referencing a transaction for any kind of post-process
 IMPORTANT: Check the REST API <<API_PaymentDirectDebit, _{payment-method-name}_ specification>> for details on _{payment-method-name}_ -specific post-processing operations.
 
 [#PPv2_PaymentDirectDebit_JSONFields]
-=== JSON/NVP Field Reference
+=== JSON Field Reference
 include::{root}/include/ppv2-apm-optional-fields.adoc[]
 
 [#PPv2_PaymentDirectDebit_JSONNVPReference]
