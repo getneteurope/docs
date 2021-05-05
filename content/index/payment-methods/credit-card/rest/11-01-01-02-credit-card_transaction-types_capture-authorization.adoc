@@ -82,7 +82,7 @@ _Sample_
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
@@ -135,7 +135,7 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
@@ -190,7 +190,7 @@ _Sample_
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
@@ -238,7 +238,7 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 Content-Type: application/xml
 ----
 
