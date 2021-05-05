@@ -78,27 +78,6 @@ provide the consumer data to guarantee a successful refund. +
 | Secret Key | To be determined
 |===
 
-[#Sofort_AdditionalCredentials]
-.Additional Test Credentials on _Sofort_ Environment
-
-[cols="15,10,10,20,40"]
-|===
-.2+| *Sort Code* .2+| *Country* | Germany
-                                        a| - 88888888
-                                           - 00000
-                                           - "Demo Bank"
-                            | Please use SFRT{ISO country code}20XXX, for example SFRT**DE**20XXX for Germany
-
-                            | all other a| - 00000
-                                           - "Demo Bank"
-                                           |
-| *User ID* 4+| any text, minimum 4 characters
-| *Password* 4+| any text, minimum 4 characters
-| *Account Number* 4+| select one from list provided by _Sofort_
-| *TAN* 4+| any text, minimum 4 characters
-|===
-
-
 [#Sofort_Workflow]
 === Workflow
 
