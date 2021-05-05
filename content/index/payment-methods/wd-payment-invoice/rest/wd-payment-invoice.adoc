@@ -714,7 +714,7 @@ find which format (and content) you need for the list and how to upload
 it.
 
 [#API_PaymentInvoice_ConsentToTermsAndConditions]
-==== Consent to terms and conditions
+==== Consent to Terms and Conditions
 
 During checkout, the consumer has to agree to Ratepay’s terms of payment and data privacy statement. It has to be integrated in merchant's checkout with wordings and links provided https://ratepay.gitbook.io/legal/integration/basic#links[here].
 
