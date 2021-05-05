@@ -58,10 +58,10 @@ Merchant Credentials for Transaction Type
 [cols="35h,65"]
 |===
 | URI Endpoint               |``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | 47cd4edf-b13c-4298-9344-53119ab8b9df
-| Username                   | 16390-testing
-| Password                   | 3!3013=D3fD8X7
-| Secret Key (used for response verification) | 94fe4f40-16c5-4019-9c6c-bc33ec858b1d
+| Merchant Account ID (MAID) | To be determined
+| Username                   | To be determined
+| Password                   | To be determined
+| Secret Key (used for response verification) | To be determined
 |===
 
 [#PPv2_AlipayCrossborder_TestCredentials_Additional]
@@ -69,11 +69,11 @@ Merchant Credentials for Transaction Type
 
 [cols="35,20,45"]
 |===
-.2+h| Merchant Test Account | User ID          | 2088101122136241
-                            | Key              | 760bdzec6y9goq7ctyx96ezkz78287de
-.3+h| Consumer Test Account | Account Name     | \alipaytest20091@gmail.com
-                            | Password         | 111111
-                            | Payment Password | 111111
+.2+h| Merchant Test Account | User ID          | To be determined
+                            | Key              | To be determined
+.3+h| Consumer Test Account | Account Name     | To be determined
+                            | Password         | To be determined
+                            | Payment Password | To be determined
 |===
 
 image::images/03-01-04-02-alipay-cross-border/alipay_crossborder_enterdata.png[Alipay Cross-border login form, 750]
