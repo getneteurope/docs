@@ -65,9 +65,6 @@ configuration is used to authorize the request.
 | ``\https://{rest-api-test-apm-endpoint}`` 
 | ``\https://{instance-hostname}/engine/rest/paymentmethods/``
 
-| Mobile Payments 
-| ``\https://{test-instance-hostname}/engine/rest/mobile/payments`` 
-| ``\https://{instance-hostname}/engine/rest/mobile/payments``
 |===
 
 NOTE: Please contact our <<ContactUs, Merchant Support>> for production environment credentials.
