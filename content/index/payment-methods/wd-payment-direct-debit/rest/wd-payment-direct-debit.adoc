@@ -542,7 +542,7 @@ it.
 [#API_PaymentDirectDebit_ConsenttoGeneralTermsandConditions]
 ==== Consent to General Terms and Conditions
 
-During checkout, the consumer has to agree to Getnet's general terms
+During checkout, the consumer has to agree to Ratepay's general terms
 and conditions. They have to give their consent by ticking an
 appropriate checkbox.
 
