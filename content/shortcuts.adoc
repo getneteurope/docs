@@ -13,7 +13,7 @@
 :api-id: wpp
 :checkout-page-html-hostname: www.getneteurope.com
 :pay-button-name: getnet
-:three-d-s-pw: wirecard
+:three-d-s-pw: 123456
 :enterprise-portal-url: portal.{domain}/
 
 // == Integration Options
