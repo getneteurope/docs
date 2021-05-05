@@ -21,20 +21,14 @@ the tools you need to create a great-looking payment page.
 
 |===
 
-Features
-[%autowidth, width=100%, cols="h,,"]
-|===
-| ^.^| **{payment-page-v2}** ^.^| 
+*Features:*
 
-| Credit Card support                          ^| ✅                       ^|
-| Integration types                            ^| Hosted/Embedded/Seamless ^|
-| Multi-language support                       ^| ✅                       ^|
-| Custom CSS                                   ^| ✅                       ^|
-| Ready-to-use integration code in Java/PHP    ^| ✅                       ^|
-| API formats                                  ^| JSON                 ^|
-| Customization through GUI designer           ^| ✅                       ^|
-| Multiple themes                              ^| ✅                       ^|
-| Responsive design (mobile & desktop)         ^| ✅                       ^|
-|===
+* Credit Card support & APM Support
+* Integration types are hosted, embedded and seamless                        
+* Multi-language support                     
+* Custom CSS                                                                   
+* Customization through GUI designer        
+* Multiple themes                           
+* Responsive design (mobile & desktop)        
 
 //-
