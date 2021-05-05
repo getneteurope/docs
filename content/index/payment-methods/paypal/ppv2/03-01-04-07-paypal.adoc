@@ -66,13 +66,13 @@ Test credentials for transaction types
 | URL(s) Endpoints
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| 9abf05c1-c266-46ae-8eac-7f87ca97af28 (TBU)
+| To be determined
 | Username
-| TBU
+| To be determined
 | Password
-| TBU
+| To be determined
 | Secret Key (used for response verification)
-| 5fca2a83-89ca-4f9e-8cf7-4ca74a02773f (TBU)
+| To be determined
 |===
 
 [#PPv2_PayPal_TestCredentials_Additional]
