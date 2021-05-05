@@ -6,10 +6,6 @@ readily available integration options, you decide where and how you want
 your customers to pay, while still enjoying the benefits of a dependable
 payment solution. All you need to get started is PCI SAQ A compliance.
 
-[cols="100,100"]
-[frame=none]
-[grid=none]
-|===
 ^.^|  **{payment-page-v2}** ^.^|
 
 |_{payment-page-v2}_ delivers a highly customizable, secure and
@@ -19,7 +15,6 @@ the tools you need to create a great-looking payment page.
 <<{payment-page-v2-anchor}, image:images/03-payment-page-solutions/WPP.jpg[{payment-page-v2}, title="Click here to read more"]>>
 |
 
-|===
 
 *Features:*
 
