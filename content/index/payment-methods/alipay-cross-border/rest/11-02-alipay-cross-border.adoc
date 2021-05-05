@@ -59,11 +59,11 @@ agreement between _Alipay Cross-border_ and the consumer. |
 .2+h|URL(s) Endpoints |For the transaction types _authorization-only_ and _debit._ |``\https://{rest-api-test-apm-endpoint}``
 |For the transaction types _refund-debit_ and _refund-request_. |``\https://{rest-api-test-endpoint}``
 h|Merchant Account ID (MAID)
-2+|47cd4edf-b13c-4298-9344-53119ab8b9df
+2+| To be determined
 h|Username
-2+|16390-testing
+2+| To be determined
 h|Password
-2+|3!3013=D3fD8X7
+2+| To be determined
 |===
 
 [#API_AlipayCrossBorder_TestCredentials_Additional]
@@ -72,33 +72,33 @@ h|Password
 ._debit_ and _refund-debit_: For Merchants and Consumers
 [%autowidth.stretch,stripes=none,column= "h,"]
 |===
-.2+h|Merchant Account |Partner |2088101122136241
+.2+h|Merchant Account |Partner |To be determined
 |Key
-|760bdzec6y9goq7ctyx96ezkz78287de
+|To be determined
 .4+h|Consumer Account
 |Account Name
-|``\alipaytest20091@gmail.com``
+|To be determined
 |Password
-|111111
+|To be determined
 |Payment Password
-|111111
+|To be determined
 |Captcha Code
-|8888
+|To be determined
 |===
 
 ._auto-debit_: For Merchants and Consumers
 [%autowidth.stretch,stripes=none]
 |===
-.2+h|Merchant Account |Partner |2088621880535422
+.2+h|Merchant Account |Partner |To be determined
 |Key
-|2l2o3ew9ke8d3ojobck40tvur6pmj00h
+|To be determined
 .3+h|Consumer Account
 |Account Name
-|15145493455
+|To be determined
 |Password
-|a111111
+|To be determined
 |Payment Password
-|b111111
+|To be determined
 |===
 
 
