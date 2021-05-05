@@ -10,7 +10,7 @@
 :payment-provider-name: Getnet
 :payment-gateway: Payment Gateway
 :payment-redirect-url-hostname: www.getneteurope.com
-:api-id: wpp
+:api-id: up3-wpp
 :checkout-page-html-hostname: www.getneteurope.com
 :pay-button-name: getnet
 :three-d-s-pw: 123456
