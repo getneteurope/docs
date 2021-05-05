@@ -154,7 +154,7 @@ set up your testing tool:
 |003
 
 |3D Verification Password 
-|wirecard
+|123456
 |===
 
 [#PPv2_Seamless_Integration_Example_InitialRequest]
