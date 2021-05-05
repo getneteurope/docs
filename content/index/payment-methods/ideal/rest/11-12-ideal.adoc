@@ -57,36 +57,13 @@ functionality, see <<GeneralPlatformFeatures_CrossPayment, Cross-Payment-Methods
 |
 ``\https://{rest-api-test-apm-endpoint}``
 | *Merchant Account ID (MAID)*
-2+| 4aeccf39-0d47-47f6-a399-c05c1f2fc819
+2+| To be determined
 | *Username*
-2+| 16390-testing
+2+| To be determined
 | *Password*
-2+| 3!3013=D3fD8X7
+2+| To be determined
 | *Secret Key*
-2+| 7a353766-23b5-4992-ae96-cb4232998954
-|===
-
-.Additional Test Credentials on iDEAL Environment
-
-[cols=",,"]
-//[cols="70,15,15"]
-[%autowidth]
-|===
-   h| BIC
-  2+| INGBNL2A
-.6+h| The transaction result depends on the requested amount
-   h| Requested Amount
-   h| Result
-    | EUR 1.00
-    | Success
-    | EUR 2.00
-    | Canceled
-    | EUR 3.00
-    | Expired
-    | EUR 4.00
-    | Forever pending transaction
-    | EUR 5.00
-    | Failure
+2+| To be determined
 |===
 
 [#iDEAL_Workflow]
