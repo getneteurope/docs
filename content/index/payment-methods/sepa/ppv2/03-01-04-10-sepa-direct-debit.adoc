@@ -51,10 +51,10 @@ Test credentials for the transaction type <<PPv2_SEPADirectDebit_TransactionType
 [cols="35h,65"]
 |===
 | URI (Endpoint)             | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | 4c901196-eff7-411e-82a3-5ef6b6860d64
-| Username                   | 70000-APITEST-AP
-| Password                   | qD2wzQ_hrc!8
-| Secret Key (used for response verification) | ecdf5990-0372-47cd-a55d-037dccfe9d25
+| Merchant Account ID (MAID) | To be determined
+| Username                   | To be determined
+| Password                   | To be determined
+| Secret Key (used for response verification) | To be determined
 |===
 
 [#PPv2_SEPADirectDebit_TestCredentials_RequestValues]
