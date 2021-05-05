@@ -713,41 +713,6 @@ https://wcdwl.ratepay.com/index.php/en/overview.html[Here] you can
 find which format (and content) you need for the list and how to upload
 it.
 
-[#API_PaymentInvoice_ConsenttoGeneralTermsandConditions]
-==== Consent to General Terms and Conditions
-
-During checkout, the consumer has to agree to Getnet's general terms
-and conditions. They have to give their consent by ticking an
-appropriate checkbox.
-
-|===
-|Language |Check-box text |Correct links
-
-|English
-|I herewith confirm that I have read the https://www.wirecardbank.com/privacy-documents/datenschutzhinweise-fuer-die-wirecard-zahlarten/[privacy
-notice] and https://www.wirecardbank.com/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/[additional terms and conditions] for Getnet payment types and that I accept their validity.
-a|
-- https://www.wirecardbank.com/privacy-documents/datenschutzhinweise-fuer-die-wirecard-zahlarten/[privacy notice]:
-link to
-https://www.wirecardbank.com/privacy-documents/datenschutzhinweise-fuer-die-wirecard-zahlarten/
-- https://www.wirecardbank.com/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/[additional terms and conditions]:
-link to
-https://www.wirecardbank.com/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/
-|Deutsch
-|Hiermit bestätige ich, dass ich die https://www.wirecardbank.de/privacy-documents/datenschutzhinweis-fur-die-wirecard-zahlarten/[Datenschutzhinweise]
-und https://www.wirecardbank.de/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/[zusätzlichen Geschäftsbedingungen] für {payment-provider-name}-Zahlarten zur Kenntnis genommen habe und mit deren Geltung einverstanden bin.
-a|
-- https://www.wirecardbank.de/privacy-documents/datenschutzhinweis-fur-die-wirecard-zahlarten/[Datenschutzhinweise]:
-link to
-https://www.wirecardbank.de/privacy-documents/datenschutzhinweis-fur-die-wirecard-zahlarten/[https://www.wirecardbank.com/privacy-documents/datenschutzhinweise-fuer-die-wirecard-zahlarten/]
-- https://www.wirecardbank.de/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/[zusätzliche Geschäftsbedingungen]:
-link to
-https://www.wirecardbank.de/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/[https://www.wirecardbank.com/privacy-documents/zusatzliche-geschaftsbedingungen-fur-wirecard-zahlarten/]
-|===
-
-Make sure that the privacy notice and the additional terms and
-conditions are linked properly.
-
 [#API_PaymentInvoice_AdditionalBusinessContitions]
 ===== Additional Business Conditions
 
