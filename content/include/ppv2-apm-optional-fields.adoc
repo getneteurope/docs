@@ -1,7 +1,5 @@
-Here you can:
+Here you can see the structure of an extended JSON request (XML-JSON mapping reference)
 
-- see the structure of an extended JSON request (XML-JSON mapping reference)
-- find the NVP equivalents for JSON fields (for migrating merchants)
 
 //-
 
