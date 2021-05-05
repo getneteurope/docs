@@ -117,10 +117,10 @@ _void-authorization_|`\https://{rest-api-test-endpoint}`
 [cols="20h,80"]
 |===
 | IBAN
-| DE42512308000000060004
+| To be determined
 
 | BIC
-|WIREDEMMXXX
+|To be determined
 |===
 
 //-
