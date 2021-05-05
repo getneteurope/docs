@@ -101,62 +101,12 @@ include::index/payment-methods/ideal/ideal-main.adoc[leveloffset=+1]
 include::index/payment-methods/ideal/rest/11-12-ideal.adoc[leveloffset=+2]
 include::index/payment-methods/ideal/ppv2/03-01-04-05-ideal.adoc[leveloffset=+2]
 
-include::index/payment-methods/interac/interac-main.adoc[leveloffset=+1]
-include::index/payment-methods/interac/rest/11-45-interac.adoc[leveloffset=+2]
-
-include::index/payment-methods/line-pay/line-pay-main.adoc[leveloffset=+1]
-include::index/payment-methods/line-pay/rest/line-pay.adoc[leveloffset=+2]
-
-include::index/payment-methods/masterpass/masterpass-main.adoc[leveloffset=+1]
-include::index/payment-methods/masterpass/rest/11-14-masterpass.adoc[leveloffset=+2]
-
-include::index/payment-methods/maybank2u/maybank2u-main.adoc[leveloffset=+1]
-include::index/payment-methods/maybank2u/rest/11-15-maybank2u.adoc[leveloffset=+2]
-
-include::index/payment-methods/mobicred/mobicred-main.adoc[leveloffset=+1]
-include::index/payment-methods/mobicred/rest/11-16-mobicred.adoc[leveloffset=+2]
-
-include::index/payment-methods/moip-pagamentos/moip-pagamentos-main.adoc[leveloffset=+1]
-include::index/payment-methods/moip-pagamentos/rest/11-40-moip-pagamentos.adoc[leveloffset=+2]
-
-include::index/payment-methods/molpay/molpay-main.adoc[leveloffset=+1]
-include::index/payment-methods/molpay/rest/11-44-molpay.adoc[leveloffset=+2]
-
-include::index/payment-methods/moneta/moneta-main.adoc[leveloffset=+1]
-include::index/payment-methods/moneta/rest/11-17-moneta-ru.adoc[leveloffset=+2]
-
-include::index/payment-methods/pay-by-bank-app/pay-by-bank-app-main.adoc[leveloffset=+1]
-include::index/payment-methods/pay-by-bank-app/rest/11-20-paybybankapp.adoc[leveloffset=+2]
-include::index/integration-options/11-20-00-integration-options.adoc[leveloffset=+2]
-
-include::index/payment-methods/paydirekt/paydirekt-main.adoc[leveloffset=+1]
-include::index/payment-methods/paydirekt/rest/11-21-paydirekt.adoc[leveloffset=+2]
-include::index/payment-methods/paydirekt/ppv2/03-01-04-12-paydirekt.adoc[leveloffset=+2]
-
-include::index/payment-methods/paylib/paylib-main.adoc[leveloffset=+1]
-include::index/payment-methods/paylib/rest/11-38-paylib.adoc[leveloffset=+2]
-include::index/payment-methods/paylib/ppv2/03-01-04-06-paylib.adoc[leveloffset=+2]
-
-include::index/payment-methods/payolution/payolution-main.adoc[leveloffset=+1]
-include::index/payment-methods/payolution/rest/11-23-payolution.adoc[leveloffset=+2]
-
 include::index/payment-methods/paypal/paypal-main.adoc[leveloffset=+1]
 include::index/payment-methods/paypal/rest/11-24-paypal.adoc[leveloffset=+2]
 include::index/payment-methods/paypal/ppv2/03-01-04-07-paypal.adoc[leveloffset=+2]
 
-include::index/payment-methods/paysafecard/paysafecard-main.adoc[leveloffset=+1]
-include::index/payment-methods/paysafecard/rest/11-25-paysafecard.adoc[leveloffset=+2]
-include::index/payment-methods/paysafecard/ppv2/03-01-04-08-paysafecard.adoc[leveloffset=+2]
-
 include::index/payment-methods/poi-pia/poi-pia-main.adoc[leveloffset=+1]
 include::index/payment-methods/poi-pia/rest/11-22-poipia.adoc[leveloffset=+2]
-
-include::index/payment-methods/poli/poli-main.adoc[leveloffset=+1]
-include::index/payment-methods/poli/rest/11-26-poli.adoc[leveloffset=+2]
-
-include::index/payment-methods/przelewy24/przelewy24-main.adoc[leveloffset=+1]
-include::index/payment-methods/przelewy24/rest/11-27-przelewy24.adoc[leveloffset=+2]
-include::index/payment-methods/przelewy24/ppv2/03-01-04-09-przelewy24.adoc[leveloffset=+2]
 
 include::index/payment-methods/sepa/11-29-00-sepa.adoc[leveloffset=+1]
 include::index/payment-methods/sepa/rest/sepa-credit-transfer-rest.adoc[leveloffset=+1]
@@ -165,24 +115,12 @@ include::index/payment-methods/sepa/rest/sepa-direct-debit-rest.adoc[leveloffset
 include::index/payment-methods/sepa/rest/11-29-02-sepa-direct-debit.adoc[leveloffset=+2]
 include::index/payment-methods/sepa/ppv2/03-01-04-10-sepa-direct-debit.adoc[leveloffset=+2]
 
-include::index/payment-methods/skrill/skrill-main.adoc[leveloffset=+1]
-include::index/payment-methods/skrill/rest/11-30-skrill.adoc[leveloffset=+2]
-
 include::index/payment-methods/sofort/sofort-main.adoc[leveloffset=+1]
 include::index/payment-methods/sofort/rest/11-31-sofort.adoc[leveloffset=+2]
 include::index/payment-methods/sofort/ppv2/03-01-04-11-sofort.adoc[leveloffset=+2]
 
-include::index/payment-methods/trustly/trustly-main.adoc[leveloffset=+1]
-include::index/payment-methods/trustly/rest/11-32-trustly.adoc[leveloffset=+2]
-
-include::index/payment-methods/trustpay/trustpay-main.adoc[leveloffset=+1]
-include::index/payment-methods/trustpay/rest/11-33-trustpay.adoc[leveloffset=+2]
-
 include::index/payment-methods/visa-checkout/visa-checkout-main.adoc[leveloffset=+1]
 include::index/payment-methods/visa-checkout/rest/11-35-visa-checkout.adoc[leveloffset=+2]
-
-include::index/payment-methods/wechat-qr-pay/wechat-qr-pay-main.adoc[leveloffset=+1]
-include::index/payment-methods/wechat-qr-pay/rest/11-36-wechat-qrpay.adoc[leveloffset=+2]
 
 include::index/payment-methods/wd-payment-direct-debit/wd-payment-direct-debit-main.adoc[leveloffset=+1]
 include::index/payment-methods/wd-payment-direct-debit/rest/wd-payment-direct-debit.adoc[leveloffset=+2]
@@ -195,9 +133,6 @@ include::index/payment-methods/wd-payment-installment/ppv2/wd-payment-installmen
 include::index/payment-methods/wd-payment-invoice/wd-payment-invoice-main.adoc[leveloffset=+1]
 include::index/payment-methods/wd-payment-invoice/rest/wd-payment-invoice.adoc[leveloffset=+2]
 include::index/payment-methods/wd-payment-invoice/ppv2/wd-payment-invoice.adoc[leveloffset=+2]
-
-include::index/payment-methods/voucher/voucher-main.adoc[leveloffset=+1]
-include::index/payment-methods/voucher/rest/11-37-wirecard-voucher.adoc[leveloffset=+2]
 
 include::index/payment-processing/19-payment-processing.adoc[]
 include::index/payment-processing/3-d-secure-2/11-01-05-3-d-secure-2.adoc[leveloffset=+1]
@@ -218,9 +153,6 @@ include::index/payment-processing/08-06-merchant-account-resolving.adoc[leveloff
 include::index/payment-processing/08-04-redirect-url.adoc[leveloffset=+2]
 include::index/payment-processing/08-08-server-availability.adoc[leveloffset=+2]
 include::index/payment-processing/08-07-transactions.adoc[leveloffset=+2]
-
-
-
 
 include::index/fraud-prevention/fraud-prevention_head.adoc[]
 include::index/fraud-prevention/avs_head.adoc[leveloffset=+1]
