@@ -19,16 +19,16 @@
 // == Integration Options
 
 :payment-page-abbr: Payment Page
-:payment-page-anchor: Payment Page
+:payment-page-anchor: Payment_Page
 :payment-page-abbr-lower-case: payment page
 :payment-page-function-short: WPP
 :payment-page-function: WirecardPaymentPage
 :payment-page-v1: Payment Page v1
 :payment-page-v1-abbr: {payment-page-abbr} v1
-:payment-page-v1-anchor: PP
+:payment-page-v1-anchor: PPv1
 :payment-page-v2: Payment Page
 :payment-page-v2-abbr: {payment-page-abbr}
-:payment-page-v2-anchor: Payment Page
+:payment-page-v2-anchor: {payment-page-anchor}
 :payment-processing-api: Payment Processing API
 
 // == Fields
