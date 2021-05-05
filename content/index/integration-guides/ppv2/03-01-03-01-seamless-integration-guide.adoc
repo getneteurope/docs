@@ -2,10 +2,6 @@
 [#PPv2_Seamless_Integration]
 == Seamless Integration Guide
 
-.Download the full integration demo from our Github
-image:images/03-01-03-01-seamless-integration-guide/github_java.png[JAVA, link="https://github.com/wirecard/wpp-integration-demo-java"]
-image:images/03-01-03-01-seamless-integration-guide/github_php.png[PHP, link="https://github.com/wirecard/wpp-integration-demo-php"]
-
 [#PPv2_Seamless_Integration_Overview]
 === Overview
 
@@ -136,16 +132,16 @@ set up your testing tool:
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 
 |Username         
-|70000-APILUHN-CARD
+|To be determined
 
 |Password         
-|8mhwavKVb91T
+|To be determined
 
 |MAID             
-|cad16b4a-abf2-450d-bcb8-1725a4cef443
+|To be determined
 
 |Secret Key       
-|b3b131ad-ea7e-48bc-9e71-78d0c6ea579d
+|To be determined
 
 2+|Test Card
 |Card Number      
@@ -297,10 +293,6 @@ need to include ``"options": {`"frame-ancestor": "url"}`` in the request with yo
 If you do not send ``"frame-ancestor"`` in the request, browsers will refuse to display the payment page in the iframe due to HTTP security
 policy.
 ====
-
-.Download the full integration demo from our Github
-image:images/03-01-03-01-seamless-integration-guide/github_java.png[JAVA, link="https://github.com/wirecard/wpp-integration-demo-java"]
-image:images/03-01-03-01-seamless-integration-guide/github_php.png[PHP, link="https://github.com/wirecard/wpp-integration-demo-php"]
 
 
 [#PPv2_Seamless_Integration_Example_Render]
