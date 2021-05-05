@@ -2,10 +2,6 @@
 [#PaymentPageSolutions_PPv2_HPP_Integration]
 == HPP Integration Guide
 
-.Download the full integration demo from our GitHub
-image:images/03-01-01-01-hpp-integration/Available_on_Github_JAVA.png[Github Java, link="https://github.com/wirecard/wpp-integration-demo-java", 220,180]
-image:images/03-01-01-01-hpp-integration/Available_on_Github_PHP.png[Github PHP, link="https://github.com/wirecard/wpp-integration-demo-php", 220,180]
-
 [#PaymentPageSolutions_PPv2_HPP_Integration_Overview]
 === Overview
 
@@ -85,16 +81,16 @@ set up your testing tool:
 | ``\{rest-api-test-endpoint}``
 
 | Merchant Account ID (MAID) 
-| 7a6dd74f-06ab-4f3f-a864-adc52687270a
+| To be determined
 
 | Username                   
-| 70000-APIDEMO-CARD
+| To be determined
 
 | Password                   
-| ohysS0-dvfMx
+| To be determined
 
 | Secret Key (used for response verification) 
-| a8c3fce6-8df7-4fd6-a1fd-62fa229c5e55
+| To be determined
 
 2+h|Test Card
 |Card number 
@@ -186,10 +182,6 @@ Alternatively, check out <<PPv2_SupportedPaymentMethods, Payment Methods with Pa
 for an overview of all supported payment methods.
 ====
 
-.Download the full integration demo from our GitHub
-image:images/03-01-01-01-hpp-integration/Available_on_Github_JAVA.png[Github Java, link="https://github.com/wirecard/wpp-integration-demo-java", 220,180]
-image:images/03-01-01-01-hpp-integration/Available_on_Github_PHP.png[Github PHP, link="https://github.com/wirecard/wpp-integration-demo-php", 220,180]
-
 [#PaymentPageSolutions_PPv2_HPP_Integration_Example_Redirect]
 .2. Redirect the Consumer to the Payment Page
 
@@ -216,7 +208,7 @@ code
 +
 [source,html,subs=attributes+]
 ----
-<script src="https://{pp-test-instance-hostname}/loader/paymentPage.js" type="text/javascript"></script>
+<script src="https://{pp--instance-hostname}/loader/paymentPage.js" type="text/javascript"></script>
 ----
 +
 . Submit the *initial payment request* on the backend.
