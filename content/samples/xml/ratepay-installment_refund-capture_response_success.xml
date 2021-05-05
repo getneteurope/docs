@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.wirecard.com:443/engine/rest/merchants/9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e/payments/5886f701-2256-4512-b3bd-dbeae91db5cd">
-    <merchant-account-id ref="https://api-test.wirecard.com:443/engine/rest/config/merchants/9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e">9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e</merchant-account-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e/payments/5886f701-2256-4512-b3bd-dbeae91db5cd">
+    <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e">9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e</merchant-account-id>
     <transaction-id>5886f701-2256-4512-b3bd-dbeae91db5cd</transaction-id>
     <request-id>31a0ff7a-21f5-42cd-b8cd-fd59221612ef</request-id>
     <transaction-type>refund-capture</transaction-type>
