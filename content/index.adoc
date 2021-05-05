@@ -61,16 +61,11 @@ include::index/integration-options/rest-api/04-01-rest-api-payment.adoc[leveloff
 include::index/integration-options/rest-api/04-03-rest-api-simulations.adoc[leveloffset=+2]
 include::index/integration-options/rest-api/04-04-rest-api-samples.adoc[leveloffset=+2]
 
-include::index/integration-options/multi-payment-api/06-multi-payment-api.adoc[leveloffset=+1]
-
 include::index/integration-guides/22-integration-guides.adoc[]
 include::index/integration-guides/ppv2/03-01-01-01-hpp-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/ppv2/03-01-02-01-epp-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/ppv2/03-01-03-01-seamless-integration-guide.adoc[leveloffset=+2]
 //include::index/integration-guides/ppv2/03-01-03-02-seamless-with-nvp.adoc[]
-
-
-include::index/integration-guides/multi-payment-api/multi-payment-api-integration.adoc[leveloffset=+1]
 
 include::index/payment-methods/11-00-payment-methods.adoc[]
 include::index/payment-methods/credit-card/credit-card-main.adoc[leveloffset=+1]
