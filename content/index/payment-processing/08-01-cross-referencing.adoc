@@ -184,8 +184,6 @@ the supported online banking payment methods:
 
 - Sofort.
 - iDEAL
-- giropay
-- eps-Überweisung
 
 //-
 

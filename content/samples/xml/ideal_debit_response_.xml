@@ -27,7 +27,7 @@
     </address>
   </account-holder>
   <ip-address>128.0.000.0</ip-address>
-  <order-number>Wirecard Test</order-number>
+  <order-number>order ideal Test</order-number>
   <descriptor>descriptor test</descriptor>
   <notifications>
     <notification url="https://merchant.com/ipn.php"/>
