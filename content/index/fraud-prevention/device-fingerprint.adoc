@@ -22,9 +22,9 @@ before submitting a transaction.
 .Profiling Tags
 [source,html]
 ----
-<script type="text/javascript" src="https://h.wirecard.com/fp/tags.js?org_id=6xxznhva&session_id=session_id"></script>
+<script type="text/javascript" src="https://h.getneteurope.com/fp/tags.js?org_id=6xxznhva&session_id=session_id"></script>
 <noscript>
-   <iframe style="width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;" src="https://h.wirecard.com/tags?org_id=6xxznhva&session_id=session_id"></iframe>
+   <iframe style="width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;" src="https://h.getneteurope.com/tags?org_id=6xxznhva&session_id=session_id"></iframe>
 </noscript>
 ----
 
