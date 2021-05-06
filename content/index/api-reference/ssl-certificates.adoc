@@ -12,9 +12,9 @@ The production environment will be updated on 10 March 2020 between 12:00 pm and
 [cols=",", stripes=none]
 |===
 | *URL (Endpoint)*
-| ``\https://api-test.wirecard.com/``
+| ``\https://api-test.getneteurope.com/``
 | *Get your new certificate:*
-| pass:[<a href="resources/ssl-certificate/api-test-wirecard-com.cer" target="_blank" rel="noreferrer noopener" download>Download</a>]
+| coming soon
 |===
 
 [#ssl_prodenvironment]
@@ -23,7 +23,7 @@ The production environment will be updated on 10 March 2020 between 12:00 pm and
 [cols=",", stripes=none]
 |===
 | *URL (Endpoint)*
-| ``\https://api.wirecard.com/``
+| ``\https://api.getneteurope.com/``
 |  *Get your new certificate:*
-| pass:[<a href="resources/ssl-certificate/api-wirecard-com.cer" target="_blank" rel="noreferrer noopener" download>Download</a>]
+| coming soon
 |===
