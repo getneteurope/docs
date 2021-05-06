@@ -730,10 +730,10 @@ payment form.
 [%autowidth, cols="h,"]
 |===
 | URL(s) Endpoints           |``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | cad16b4a-abf2-450d-bcb8-1725a4cef443
-| Username                   | 70000-APILUHN-CARD
-| Password                   | 8mhwavKVb91T
-| Secret Key (used for response verification) | b3b131ad-ea7e-48bc-9e71-78d0c6ea579d
+| Merchant Account ID (MAID) | c266f667-1c0e-4bad-8d03-7e84d2d8336b
+| Username                   | 84320-getneteurope
+| Password                   | 2NQBnucU19mY
+| Secret Key (used for response verification) | 49c90b00-e5f7-40d0-bc7f-4971b8e7681e
 |===
 
 [#PPv2_CC_3DSecure_TestCredentials_Additional]
@@ -744,7 +744,9 @@ payment form.
 | Card number               | 4012000300001003
 | CVV                       | 003
 | Expiration date           | 01/23
-| 3D verification password  | {three-d-s-pw}
+| 3D verification v1 password  |  wirecard
+| 3D verification v2 password  |  123456
+
 |===
 
 .Request Headers
