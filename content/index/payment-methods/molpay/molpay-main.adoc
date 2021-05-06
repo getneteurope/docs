@@ -1,2 +1,0 @@
-[#MOLPay_Main]
-== MOLPay

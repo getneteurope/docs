@@ -3,33 +3,33 @@
 
 // == Domain
 
-:domain: wirecard.com
-:documentation-url: doc.{domain}
-:payment-gateway-abbr: WPG
-:payment-provider-name-lower-case: wirecard
-:payment-provider-name: Wirecard
-:payment-gateway: {payment-provider-name} Payment Gateway
-:payment-redirect-url-hostname: www.wirecard.com
-:api-id: wpp
-:checkout-page-html-hostname: www.wirecard.com
-:pay-button-name: wirecard
-:three-d-s-pw: wirecard
-:enterprise-portal-url: wep.{domain}/
+:domain: getneteurope.com
+:documentation-url: docs.{domain}
+:payment-gateway-abbr: Payment Gateway
+:payment-provider-name-lower-case: getnet
+:payment-provider-name: Getnet
+:payment-gateway: Payment Gateway
+:payment-redirect-url-hostname: www.getneteurope.com
+:api-id: up3-wpp
+:checkout-page-html-hostname: www.getneteurope.com
+:pay-button-name: getnet
+:three-d-s-pw: 123456
+:enterprise-portal-url: portal.{domain}/
 
 // == Integration Options
 
-:payment-page-abbr: WPP
-:payment-page-anchor: WPP
-:payment-page-abbr-lower-case: wpp
+:payment-page-abbr: Payment Page
+:payment-page-anchor: Payment_Page
+:payment-page-abbr-lower-case: payment page
 :payment-page-function-short: WPP
 :payment-page-function: WirecardPaymentPage
-:payment-page-v1: {payment-provider-name} Payment Page v1
+:payment-page-v1: Payment Page v1
 :payment-page-v1-abbr: {payment-page-abbr} v1
-:payment-page-v1-anchor: PP
-:payment-page-v2: {payment-provider-name} Payment Page v2
-:payment-page-v2-abbr: {payment-page-abbr} v2
-:payment-page-v2-anchor: PPv2
-:payment-processing-api: {payment-provider-name} Payment Processing API
+:payment-page-v1-anchor: PPv1
+:payment-page-v2: Payment Page
+:payment-page-v2-abbr: {payment-page-abbr}
+:payment-page-v2-anchor: {payment-page-anchor}
+:payment-processing-api: Payment Processing API
 
 // == Fields
 
@@ -45,7 +45,7 @@
 :cnd-test-endpoint: sandbox-engine.thesolution.com
 :instance-hostname: api.{domain}
 :test-instance-hostname: api-test.{domain}
-:pp-test-instance-hostname: wpp-test.{domain}
+:pp-test-instance-hostname: paymentpage-test.{domain}
 :pp-demoshop-instance-hostname: demoshop-test.{domain}
 :3dsecure-test-instance-hostname: 3dsecure-test.{domain}
 :rest-api-test-endpoint: {test-instance-hostname}/engine/rest/payments/
@@ -66,7 +66,7 @@
 :pp-redirect-url-success: {pp-demoshop-instance-hostname}/demoshop/#/success
 :pp-redirect-url-cancel: {pp-demoshop-instance-hostname}/demoshop/#/cancel
 :pp-redirect-url-error: {pp-demoshop-instance-hostname}/demoshop/#/error
-:enterprise-portal-name: {payment-provider-name} Enterprise Portal
+:enterprise-portal-name: Merchant Portal
 :enterprise-portal-abbr: WEP
 
 // :mermaid-config: config/mermaid-default-theme.json > wird nicht benutzt

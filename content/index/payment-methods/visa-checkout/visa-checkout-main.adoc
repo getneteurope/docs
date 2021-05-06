@@ -1,2 +1,0 @@
-[#VISACheckout_Main]
-== VISA Checkout

@@ -24,7 +24,7 @@
       <postal-code>85609</postal-code>
     </address>
   </account-holder>
-  <order-number>Wirecard Test</order-number>
+  <order-number>order Test</order-number>
   <descriptor>descriptor test</descriptor>
   <notifications>
     <notification url="https://merchant.com/ipn.php" />

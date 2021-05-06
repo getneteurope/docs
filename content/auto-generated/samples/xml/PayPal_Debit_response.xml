@@ -11,7 +11,7 @@
   </statuses>
   <requested-amount currency="EUR">1.01</requested-amount>
   <account-holder>
-    <email>paypal.buyer2@wirecard.com</email>
+    <email>paypal.buyer2@getneteurope.com</email>
   </account-holder>
   <payment-methods>
     <payment-method url="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&amp;useraction=commit&amp;token=EC-4S11645975178834D" name="paypal"/>

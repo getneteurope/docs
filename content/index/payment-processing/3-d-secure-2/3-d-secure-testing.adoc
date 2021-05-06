@@ -20,7 +20,6 @@ Refer to one of the following tables to complete your test credentials:
 
 include::{root}/include/3-d-secure/3-d-secure_testcredentials_manual.adoc[]
 include::{root}/include/3-d-secure/3-d-secure_testcredentials_automatic.adoc[]
-include::{root}/include/3-d-secure/3-d-secure_testcredentials_nongamblingOCT.adoc[]
 
 [#3DS2_Testing_TestCards]
 === Test Cards
@@ -58,20 +57,11 @@ With these card numbers you can provoke an error response containing a variety o
 [#3DS2_Testing_TestCards_3DSecure1_error_AMEX]
 include::{root}/include/3-d-secure/3-d-secure_testcards_error_amex.adoc[]
 
-[#3DS2_Testing_TestCards_3DSecure1_error_Diners]
-include::{root}/include/3-d-secure/3-d-secure_testcards_error_diners.adoc[]
-
-[#3DS2_Testing_TestCards_3DSecure1_error_JCB]
-include::{root}/include/3-d-secure/3-d-secure_testcards_error_jcb.adoc[]
-
 [#3DS2_Testing_TestCards_3DSecure1_error_Maestro]
 include::{root}/include/3-d-secure/3-d-secure_testcards_error_maestro.adoc[]
 
 [#3DS2_Testing_TestCards_3DSecure1_error_Mastercard]
 include::{root}/include/3-d-secure/3-d-secure_testcards_error_mastercard.adoc[]
-
-[#3DS2_Testing_TestCards_3DSecure1_error_UPI]
-include::{root}/include/3-d-secure/3-d-secure_testcards_error_upi.adoc[]
 
 [#3DS2_Testing_TestCards_3DSecure1_error_Visa]
 include::{root}/include/3-d-secure/3-d-secure_testcards_error_visa.adoc[]

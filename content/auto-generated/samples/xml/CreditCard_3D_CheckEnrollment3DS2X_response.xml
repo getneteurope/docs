@@ -72,7 +72,7 @@
   </authorization-code>
   <three-d>
     <pareq>eJxtjktPwzAQhP9LziTx+9ErFVIlQIgWuOSysTdtpKYuttsIIf47Bg6VKk6r3Z35Zj6rLWR8g49NhENaLatFdauEkUpQqZkVTFFdphLVTTWl7SvGNIZDUdGGlFPE9xOmvBknXB3GPMK+vBihllIiieGEmqLKu4i4XK8xnjFegnpiibJe1/2AfS2UVrWR0tRMWC605l77vrifYsjBhf0lmzV/6eDSy/N9OexyPqZF13Yt96nOpVEzjxEdRN+4MHVtUV56PGDeBX/tnOe5SehOEdV2bmLo2h/OL5F1bRqnMytb7OGxOe6O17QlZCg4MRA3GHTESZS9BzkMmnoFwnDRg9NMEWOMJf/Z70KcCoIj00YRIFKZwXCp0TpiAQUHRwYnq69v7hKGKw==</pareq>
-    <acs-url>https://3ds-test.wirecard.com/acs?reqid=A3D860C152FE0FB4E1ADD51866A2881A4741D9FF</acs-url>
+    <acs-url>https://3ds-test.getneteurope.com/acs?reqid=A3D860C152FE0FB4E1ADD51866A2881A4741D9FF</acs-url>
     <cardholder-authentication-status>Y</cardholder-authentication-status>
     <version_requested>2.1</version_requested>
     <version>2.1.0</version>

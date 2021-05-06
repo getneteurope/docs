@@ -1,13 +1,9 @@
-:payment-method-name: {payment-provider-name} Payment Guaranteed Direct Debit
+:payment-method-name: Guaranteed Direct Debit
 
 [#PPv2_PaymentDirectDebit]
 == {payment-page-v2}
 
-====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentDirectDebit, REST API>> integration guide.
-====
-
-_{payment-method-name}_ allows the consumer to pay directly from their bank account. The invoicing, direct debit and collection process (dunning) is handled by {payment-provider-name}. _{payment-method-name}_ ensures that merchants receive the payment amount from {payment-provider-name} prior to settlement with consumers.
+_{payment-method-name}_ allows the consumer to pay directly from their bank account. The invoicing, direct debit and collection process (dunning) is handled by us. _{payment-method-name}_ ensures that merchants receive the payment amount from us prior to settlement with consumers.
 
 _{payment-method-name}_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
@@ -29,16 +25,16 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 
 |Merchant Account ID (MAID) 
-|3cfb0fb7-59e2-4d92-847f-37121d633844
+|To be determined
 
 |Username 
-|16390-testing
+|To be determined
 
 |Password 
-|3!3013=D3fD8X7
+|To be determined
 
 |Secret Key (used for response verification) 
-|cf0b29fc-a6ab-474d-b6be-92e9596e9107
+|To be determined
 |===
 
 [#PPv2_PaymentDirectDebit_TestCredentials_Additional]
@@ -47,13 +43,13 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 [cols="20h,80"]
 |===
 |IBAN 
-|DE42512308000000060004
+|To be determined
 
 |BIC 
-|WIREDEMMXXX
+|To be determined
 
 |Bank 
-|Test Bank
+|To be determined
 |===
 
 [#PPv2_PaymentDirectDebit_Countries]
@@ -94,7 +90,7 @@ We provide JSON examples for each step of this process. You can find them below.
 [cols="20h,80"]
 |===
 |Authorization
-|"Authorization"="Basic" + base64 (“username:password”). Use username and password as given in your {payment-provider-name} contract to base64-encode the authorization.
+|"Authorization"="Basic" + base64 (“username:password”). Use username and password as given in your contract to base64-encode the authorization.
 |Content-Type
 |application/json
 |===
@@ -115,7 +111,7 @@ m|value
 |String
 |Mandatory
 |36
-|A unique identifier assigned to every merchant account (by {payment-provider-name}).
+|A unique identifier assigned by us to every merchant account.
 
 4+|request-id
 |String
@@ -437,7 +433,7 @@ However, when it comes to referencing a transaction for any kind of post-process
 IMPORTANT: Check the REST API <<API_PaymentDirectDebit, _{payment-method-name}_ specification>> for details on _{payment-method-name}_ -specific post-processing operations.
 
 [#PPv2_PaymentDirectDebit_JSONFields]
-=== JSON/NVP Field Reference
+=== JSON Field Reference
 include::{root}/include/ppv2-apm-optional-fields.adoc[]
 
 [#PPv2_PaymentDirectDebit_JSONNVPReference]

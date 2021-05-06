@@ -1,7 +1,7 @@
 [#API_PaymentInstallment]
 == REST API 
 
-_{payment-provider-name} Payment in Installments_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>. 
+_Payment in Installments_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>. 
 
 [#API_PaymentInstallment_GeneralInformation]
 === General Information
@@ -20,7 +20,7 @@ _{payment-provider-name} Payment in Installments_ is a type of <<PaymentMethods_
 [#API_PaymentInstallment_Communication]
 ==== Communication Formats
 
-This table illustrates how _{payment-provider-name} Payment in Installments_ notifications are encoded and which formats and methods can be
+This table illustrates how _Payment in Installments_ notifications are encoded and which formats and methods can be
 used for requests and responses.
 
 [width=75%,stripes=none]
@@ -104,9 +104,9 @@ You can use these credentials for payment tests as well as testing the <<API_Pay
 _credit_ +
 _refund-capture_ +
 _void-authorization_|`\https://{rest-api-test-endpoint}`
-2+h| Merchant Account ID (MAID) | 9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e
-2+h| Username                   | 16390-testing
-2+h| Password                   | 3!3013=D3fD8X7
+2+h| Merchant Account ID (MAID) | To be determined
+2+h| Username                   | To be determined
+2+h| Password                   | To be determined
 |===
 
 //-
@@ -117,10 +117,10 @@ _void-authorization_|`\https://{rest-api-test-endpoint}`
 [cols="20h,80"]
 |===
 | IBAN
-| DE42512308000000060004
+| To be determined
 
 | BIC
-|WIREDEMMXXX
+|To be determined
 |===
 
 //-
@@ -129,7 +129,7 @@ _void-authorization_|`\https://{rest-api-test-endpoint}`
 === Workflow
 
 . Consumer adds items to shopping basket.
-. Consumer selects the payment method _{payment-provider-name} Payment in Installments_, the duration and rate of payment.
+. Consumer selects the payment method _Payment in Installments_, the duration and rate of payment.
 . Consumer proceeds to checkout.
 . You send an authorization request including basket items to {payment-gateway-abbr}.
 . {payment-gateway-abbr} generates a descriptor (an alphanumerical code, starting with DG).
@@ -137,8 +137,8 @@ _void-authorization_|`\https://{rest-api-test-endpoint}`
 . You send a capture request to {payment-gateway-abbr} when the basket items are ready for delivery.
 . After a successful capture request, {payment-gateway-abbr} generates the invoice, including the descriptor. +
 .. Alternatively, you can generate the invoice. 
-. Invoice generator informs {payment-provider-name} Bank.
-. {payment-provider-name} Bank collects the transaction amount from consumer's bank account.
+. Invoice generator informs Getnet.
+. Getnet collects the transaction amount from consumer's bank account.
 . If any payment changes are necessary, the following transaction types are available: credit, refund-capture or void-authorization.
 
 //-
@@ -146,7 +146,7 @@ _void-authorization_|`\https://{rest-api-test-endpoint}`
 [#API_PaymentInstallment_Fields]
 === Fields
 
-The following elements are mandatory *M* or optional *O* in sending a request for _{payment-provider-name} Payment in Installments_ (complete field list available in <<RestApi_Fields, REST API field list>>):
+The following elements are mandatory *M* or optional *O* in sending a request for _Payment in Installments_ (complete field list available in <<RestApi_Fields, REST API field list>>):
 
 [%autowidth,stripes=none, cols="v,,,,"]
 |===
@@ -171,7 +171,7 @@ The following elements are mandatory *M* or optional *O* in sending a request fo
 |M
 |String
 |30
-|This is the type for a transaction: authorization, capture, void-authorization, refund-capture and credit are supported for _{payment-provider-name} Payment in Installments_.
+|This is the type for a transaction: authorization, capture, void-authorization, refund-capture and credit are supported for _Payment in Installments_.
 
 |requested-amount
 |M
@@ -557,7 +557,7 @@ h| URL (Endpoint)             | `\https://{test-instance-hostname}/engine/rest/u
 
 3+a|
 
-NOTE: We show this table without the _Size_ values as you receive the response directly from _{payment-provider-name} Payment in Installments_ and we cannot provide this information.
+NOTE: We show this table without the _Size_ values as you receive the response directly from _Payment in Installments_ and we cannot provide this information.
 
 a|*installment-configuration-response.statuses.status*
 2+|These fields describe the structure of the response statuses.
@@ -568,7 +568,7 @@ a|*installment-configuration-response.statuses.status*
 ``warning``.
 
 a|*installment-configuration-response.configuration.*
-2+|These fields send the configuration available with _{payment-provider-name} Payment in Installments_. They contain the installment options available to your consumers.
+2+|These fields send the configuration available with _Payment in Installments_. They contain the installment options available to your consumers.
 |interest-rate-default|Decimal|The default interest rate is used if the interest rate in the calculation request deviates from the range of your supported rates. (Example: ``13.7``).
 |interest-rate-min|Decimal|Minimum interest rate (Example: ``5.00``).
 |interest-rate-max|Decimal|Maximum interest rate (Example: ``10.50``).
@@ -598,7 +598,7 @@ a|*installment-configuration-response.configuration.*
 
 The installment calculator service provides the list of available installment plans.
 
-_{payment-provider-name} Payment in Installments_ supports two types of installment plan:
+_Payment in Installments_ supports two types of installment plan:
 
 * calculation by rate
 * calculation by time.
@@ -645,9 +645,9 @@ h| URL (Endpoint)             | `\https://{test-instance-hostname}/engine/rest/u
 |payment-method|M|String|15|The name of the payment method is ``ratepay-install``.
 |merchant-account-id|M|String|36|Merchant account ID. It must have the following format: ``815c32ab-486d-4e4c-baf8-f412e2e4e9b8``.
 |amount|M|Decimal| 18.3 |Full amount of the purchase. It must have the format of _Money_ (Example: ``100.00``)
-|amount/@currency|M|String|3|The currency of the purchase. _{payment-provider-name} Payment in Installments_ requires EUR.
+|amount/@currency|M|String|3|The currency of the purchase. _Payment in Installments_ requires EUR.
 |rate|M/O|Decimal| 3.2 |Monthly rate which the consumer wants to pay. It must have the format of _Money_ (Example: ``25.00``). It is *mandatory* for calculation by rate. It must not be used when calculating the installment plan by time.
-|rate/@currency|M|String|3|The currency of the rate. _{payment-provider-name} Payment in Installments_ requires EUR.
+|rate/@currency|M|String|3|The currency of the rate. _Payment in Installments_ requires EUR.
 |months|M/O|Number| 3 |Number of months to cover the duration of the installment plan. It is *mandatory* for calculation by time. It must not be used when calculating the installment plan by rate.
 |===
 
@@ -660,14 +660,14 @@ h| URL (Endpoint)             | `\https://{test-instance-hostname}/engine/rest/u
 
 3+a|
 
-NOTE: We show this table without _Size_ values as you receive the response directly from _{payment-provider-name} Payment in Installments_ and we cannot provide this information.
+NOTE: We show this table without _Size_ values as you receive the response directly from _Payment in Installments_ and we cannot provide this information.
 
 3+a|
 *installment-calculator-response.*
 |amount|Decimal |Full amount of the purchase. It must have the format of _Money_ (Example: ``100.00``)
-|amount/@currency|String|The currency of the purchase. _{payment-provider-name} Payment in Installments_ requires EUR.
+|amount/@currency|String|The currency of the purchase. _Payment in Installments_ requires EUR.
 |rate|Decimal|Monthly rate which the consumer wants to pay. It must be in the format of _Money_ (Example: ``25.00``).
-|rate/@currency|String|The currency of  the rate. _{payment-provider-name} Payment in Installments_ requires EUR.
+|rate/@currency|String|The currency of  the rate. _Payment in Installments_ requires EUR.
 |state|String| The state of the response. Values can be: +
 ``success`` +
 ``failed``.
@@ -827,7 +827,7 @@ include::{root}/samples/json/ratepay-installment_install-calculator-time_respons
 ----
 
 [#API_PaymentInstallment_Samples_Payment]
-==== _{payment-provider-name} Payment in Installments_ payment
+==== _Payment in Installments_ payment
 
 Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
 

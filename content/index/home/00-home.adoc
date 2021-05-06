@@ -21,7 +21,7 @@ You've come to the right place!
 |===
 3.+a|
 
-Get started with our three most popular integration options
+Get started with our two most popular integration options
 
 .3+a|
 
@@ -33,15 +33,9 @@ image::images/icons/signpost.png[streetsign_icon]
 
 You want easy and modular payment integration? 
 
-- <<PPv2, Go with {payment-page-v2}>>
-- https://demoshop-test.wirecard.com/demoshop/#/cart?merchant_account_id=ab62ea6e-ba97-48ef-b3bc-bf0319e09d78[Give it a try in our Demoshop]
+- <<PPv2, Go with our {payment-page-v2}>>
 
-//-
-2.+a|
 
-Using a shop system?
-
-- <<ShopSystems, Get our {payment-provider-name} Shop Extensions>>
 
 //-
 2.+a|
@@ -70,7 +64,7 @@ image::images/icons/integration.png[integration_icon]
 
 Follow our <<IntegrationGuides_WPP_v2, {payment-page-v2} Integration Guides>> for
 
-{payment-page-v2-abbr} <<PaymentPageSolutions_PPv2_HPP_Integration, Hosted Payment Page>>, <<PaymentPageSolutions_PPv2_EPP_Integration, Embedded Payment Page>>, and <<PPv2_Seamless_Integration, Seamless Integration>>
+<<PaymentPageSolutions_PPv2_HPP_Integration, Hosted Payment Page>>, <<PaymentPageSolutions_PPv2_EPP_Integration, Embedded Payment Page>>, and <<PPv2_Seamless_Integration, Seamless Integration>>
 |===
 
 
@@ -121,12 +115,8 @@ a|
 [.icon]
 image::images/icons/info.png[note_icon]
 
-2.+a| *Update of SSL Certificates*
-
-We are updating our SSL certificates on 5 March (test environment) and 10 March 2020 (production environment) between 12:00 and 12:30 pm CET. To ensure end-to-end security, <<ssl_certificates, download the SSL certificates>>.
-
-<<GeneralPlatformFeatures_ReferencingTransaction, *Referenced Transactions*>> +
-Referenced transactions (e.g. refund, <<GeneralPlatformFeatures_Transactions_Recurring, recurring>>) have a limited transaction lifecycle. Starting on 1 February 2020 only transactions processed within the last two years can be referenced.
+2.+a| 
+Changes will be announced here
 |===
 
 [cols=",,"]

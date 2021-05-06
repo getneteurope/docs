@@ -10,9 +10,9 @@
    <order-description>test order</order-description>
    <descriptor>customerStatement 18009998822</descriptor>
    <account-holder>
-        <first-name>Wirecardbuyer</first-name>
+        <first-name>Getnetbuyer</first-name>
         <last-name>Spintzyk</last-name>
-        <email>paypal.buyer2@wirecard.com</email>
+        <email>paypal.buyer2@getneteurope.com</email>
    </account-holder>
    <order-number>180403130946541</order-number>
    <shipping>

@@ -22,7 +22,7 @@
     <notification url="https://merchant.com/ipn.php"/>
   </notifications>
   <ip-address>128.0.000.0</ip-address>
-  <order-number>Wirecard Test</order-number>
+  <order-number>order Test</order-number>
   <descriptor>descriptor test</descriptor>
   <payment-methods>
     <payment-method name="ideal" />

@@ -138,10 +138,6 @@ Please refer to our <<Appendix_Xml, XSD>> for the structural relationship betwee
 | <<CC_Fields_xmlelements_request_ISO, X>>
 | 
 
-| loyalty-card
-| <<CC_Fields_xmlelements_request_loyaltycard, X>>
-| <<CC_Fields_xmlelements_response_loyaltycard, X>>
-
 | notifications
 | <<CC_Fields_xmlelements_request_notification, X>>
 | 
@@ -538,17 +534,17 @@ include::{root}/include/fields/rest_cc/request/req-iso.adoc[]
 //-
 
 [#CC_Fields_xmlelements_request_loyaltycard]
-.``loyalty-card.``
+
 
 :listname: CC_Fields_xmlelements
 
-include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc[]
+// include::{root}/include/field-list-headers/rest_cc/request/req-loyalty-card.adoc[]
 
 :!listname:
 
 [cols="30m,6,9,7,48a"]
 |===
-|Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
+
 
 include::{root}/include/fields/rest_cc/request/req-loyalty-card.adoc[]
 
@@ -842,19 +838,19 @@ include::{root}/include/fields/rest_cc/response/res-card-emv.adoc[]
 //-
 
 [#CC_Fields_xmlelements_response_loyaltycard]
-.``loyalty-card.``
+
 
 :listname: CC_Fields_xmlelements
 
-include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.adoc[]
+// include::{root}/include/field-list-headers/rest_cc/response/res-loyalty-card.adoc[]
 
 :!listname:
 
 [cols="30m,9,7,48a"]
 |===
-|Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
 
-include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
+
+// include::{root}/include/fields/rest_cc/response/res-loyalty-card.adoc[]
 
 |===
 

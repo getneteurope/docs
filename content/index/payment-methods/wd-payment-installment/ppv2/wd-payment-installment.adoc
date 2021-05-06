@@ -1,10 +1,10 @@
-:payment-method-name: {payment-provider-name} Payment in Installments
+:payment-method-name: Payment in Installments
 
 [#PPv2_PaymentInstallment]
 == {payment-page-v2}
 
 ====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentInstallment, REST API>> integration guide.
+We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentInstallment, REST API>> integration guide.
 ====
 
 _{payment-method-name}_ allows the consumer to pay directly from their bank account while providing the option for payment in a customized number of installments. The invoicing, direct debit, collection process (dunning), as well as the calculation of possible installments, is handled by {payment-provider-name}. _{payment-method-name}_ ensures that merchants receive the payment amount from {payment-provider-name} prior to settlement with consumers.
@@ -46,16 +46,16 @@ An _authorization_ reserves the specified amount from the account holder’s ban
 |``\https://{pp-test-endpoint}``
 
 |Merchant Account ID (MAID)
-a|9df7b8a6-546a-4e01-9fe5-ccc3ae54b23e
+a|To be determined
 
 |Username
-a|16390-testing
+a|To be determined
 
 |Password
-a|3!3013=D3fD8X7
+a|To be determined
 
 |Secret Key (used for response verification)
-a|09df96e0-6364-472c-a26a-4be32bfe1902
+a|To be determined2
 |===
 
 [#PPv2_PaymentInstallment_TestCredentials_Additional]
@@ -64,10 +64,10 @@ a|09df96e0-6364-472c-a26a-4be32bfe1902
 [cols="20h,80"]
 |===
 |IBAN
-|DE42512308000000060004
+|To be determined
 
 |BIC 
-|WIREDEMMXXX
+|To be determined
 |===
 
 [#PPv2_PaymentInstallment_Samples]

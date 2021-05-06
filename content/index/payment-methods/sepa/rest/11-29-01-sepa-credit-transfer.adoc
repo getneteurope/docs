@@ -47,7 +47,7 @@ or generates a reference ID for the merchant (not mandatory). |
 | _void-pending-credit_ | Voids a _pending-credit_. +
 Only available when the <<SEPA_TransactionType_Void_Restrictions, restrictions>> are met.
 | See <<SEPACreditTransfer_Samples_VoidPendingCredit, samples>>.
-| _credit_ | Transaction is processed by Wirecard Bank. |
+| _credit_ | Transaction is processed by Santander Bank. |
 | _credit-return_ | The payment is returned by the consumer bank. See <<SEPA_ReturnCodes, Return Codes>>. |
 |===
 
@@ -77,7 +77,7 @@ SEPA _void_ can be used with both SEPA payment methods: _SEPA Credit Transfer_ a
 
 NOTE: This is the date on which the transfer will be executed. According to
 SEPA regulations, it is required to be one (1) business day after it has
-entered the banking system. This date is set by Wirecard during
+entered the banking system. This date is set by the system during
 processing and is not part of the request or the response.
 
 [#SEPACreditTransfer_TestCredentials]
@@ -86,16 +86,16 @@ processing and is not part of the request or the response.
 [cols="30h, 70"]
 |===
 | URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
-| Merchant Account ID (MAID) | 59a01668-693b-49f0-8a1f-f3c1ba025d45
-| Username | 16390-testing
-| Password | 3!3013=D3fD8X7
+| Merchant Account ID (MAID) | To be determined
+| Username | To be determined
+| Password | To be determined
 | Secret Key | Please contact <<ContactUs, merchant support>> for complete test credentials.
 |===
 
 [#SEPACreditTransfer_Workflow]
 === Workflow
 
-image::images/diagrams/sepa_credit-transfer.svg[SEPA Credit Transfer Workflow]
+image::images/diagrams/sepa_credit-transfer.bmp[SEPA Credit Transfer Workflow]
 
 . The transaction type within the request must be _credit_ or _pending-credit._
 . If the request is successful, a response will be returned with status
@@ -163,7 +163,7 @@ If no parent-transaction-id is provided, it remains mandatory.
 SEPA Credit Transfer transaction. It is used as a reference within the
 banking system to ensure all transactions referencing each other (eg: a
 _credit_ and a _debit-return_) are matched and that the complete
-lifecycle of a payment is identifiable. Wirecard generates this ID for
+lifecycle of a payment is identifiable. Getnet generates this ID for
 the merchant.
 | account-holder.last-name | M | M | M | String | 32 | This is the last name of the end-consumer.
 |===

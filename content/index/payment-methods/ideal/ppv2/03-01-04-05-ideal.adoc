@@ -2,10 +2,6 @@
 [#PPv2_ideal]
 == {payment-page-v2}
 
-====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<iDEAL, REST API>> integration guide.
-====
-
 [#PPv2_ideal_General]
 === General Information
 
@@ -69,6 +65,7 @@ payment transactions.
 |SNSBNL2A |SNS Bank
 |TRIONL2U |Triodos Bank
 |FVLBNL22 |Van Lanschot Bankiers
+|REVOLT21 |Revolut Bank
 |===
 
 [#PPv2_ideal_TestCredentials]
@@ -82,13 +79,13 @@ Test Credentials for Transaction Type
 | URLI (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| adb45327-170a-460b-9810-9008e9772f5f
+| To be determined
 | Username
-| 70000-APITEST-AP
+| To be determined
 | Password
-| qD2wzQ_hrc!8
+| To be determined
 | Secret Key (used for response verification)
-| 1b9e63b4-c132-42c3-bcbd-2d2e47ae7154
+| To be determined
 |===
 
 [#PPv2_ideal_TestCredentials_Additional]
@@ -351,7 +348,7 @@ include::{root}/samples/json/WPP_IdealJSONNVPFieldRequest_JSON_StructureForiDEAL
 include::{root}/samples/json/WPP_IdealJSONNVPFieldResponse_ResponseOnlyFields.json[]
 ----
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
 |Field (NVP) |Field (JSON) |JSON Parent
 

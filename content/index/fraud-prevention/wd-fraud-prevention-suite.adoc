@@ -1,11 +1,11 @@
 
 [#FraudPrevention_FPS]
-== Wirecard Fraud Prevention Suite
+== Fraud Prevention Suite
 
 Fraud is one of the major threats to turnover and revenue for every
 online merchant. By using fraud prevention methods every merchant is
 able to participate and benefit from the still growing online market.
-The Wirecard Fraud Prevention Suite (FPS) helps to identify fraud early
+The Fraud Prevention Suite (FPS) helps to identify fraud early
 in the sales process and to prevent it before it happens. FPS checks
 every incoming transaction using a complex set of rules. By using this
 rule set, the merchant will benefit from the experience of other
@@ -17,7 +17,7 @@ merchants in the market segment incorporated into the rules.
 The {payment-gateway} has a built-in functionality to perform
 risk check before processing the credit card payment if configured for
 the certain merchant account. This usually includes fraud check using
-Wirecard Fraud Prevention Suite (FPS) solution. The result of the risk
+Fraud Prevention Suite (FPS) solution. The result of the risk
 check can be a rejection/approval of the payment transaction or an FPS
 case which needs to be resolved manually using the FPS merchant cockpit.
 
@@ -109,9 +109,9 @@ without a new FPS check.
 .. FPS adds the status code ``100.0101 "FPS case created"``.
 .. The system returns the response.
 .. The merchant puts the order process on hold.
-.. The merchant (or a dedicated Wirecard team) performs a manual check
+.. The merchant (or a dedicated Getnet team) performs a manual check
 of the created case using the FPS merchant cockpit portal.
-.. The merchant (or a dedicated Wirecard team) resolves the case.
+.. The merchant (or a dedicated Getnet team) resolves the case.
 .. FPS notifies the merchant via a technical XML notification
 (FPS sends it to the special endpoint in the merchant system).
 .. The order process can continue.

@@ -60,10 +60,10 @@ Test credentials for the transaction type
 [cols="35h,65"]
 |===
 | URI (Endpoint)             | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | f19d17a2-01ae-11e2-9085-005056a96a54
-| Username                   | 70000-APITEST-AP
-| Password                   | qD2wzQ_hrc!8
-| Secret Key (used for response verification) | ad39d9d9-2712-4abd-9016-cdeb60dc3c8f
+| Merchant Account ID (MAID) | To be determined
+| Username                   | To be determined
+| Password                   | To be determined
+| Secret Key (used for response verification) | To be determined
 |===
 
 [#PPv2_Sofort_TestCredentials_Sandbox]

@@ -3,7 +3,7 @@
 
 Use the _Limit Credit Card Brands_ option to display your preferred credit card brands. Display, for example, a different set of credit card brands to consumers in different regions in the world. 
 
-This option is available for all of our _{payment-page-v2}_ ({payment-page-v2-abbr}) integration options:
+This option is available for all of our _{payment-page-v2}_ integration options:
 
 * the <<PaymentPageSolutions_PPv2_HPP, _Hosted Payment Page_>> (HPP), 
 * the <<PaymentPageSolutions_PPv2_EPP, _Embedded Payment Page_>> (EPP) or 
@@ -15,7 +15,7 @@ This option is available for all of our _{payment-page-v2}_ ({payment-page-v2-ab
 
 . Include the ``credit-card-brand-filter`` array in the payment request.
 . Add the credit card brand names to the JSON array in your preferred order. Separate the credit card brand names with a comma. 
-. As a result, {payment-page-v2-abbr} displays only the credit card brands you added to the array.
+. As a result, Payment Page displays only the credit card brands you added to the array.
 
 //-
 

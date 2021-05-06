@@ -12,9 +12,9 @@
  <requested-amount currency="EUR">1.22</requested-amount>
  <parent-transaction-id>52321771-28e9-4737-b4f4-99a022f3b553</parent-transaction-id>
  <account-holder>
-  <first-name>Wirecardbuyer</first-name>
+  <first-name>Getnetbuyer</first-name>
   <last-name>Spintzyk</last-name>
-  <email>paypal.buyer2@wirecard.com</email>
+  <email>paypal.buyer2@getneteurope.com</email>
  </account-holder>
  <shipping>
   <first-name>New</first-name>

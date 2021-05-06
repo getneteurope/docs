@@ -1,2 +1,2 @@
 [#PaymentInstallment_Main]
-== {payment-provider-name} Payment in Installments
+== Payment in Installments

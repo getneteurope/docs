@@ -2,7 +2,7 @@
 == {payment-page-v2}
 
 ====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<CreditCard, REST API>> integration guide.
+We recommend to use {payment-page-v2} integration. If you have questions about your existing integration, consult our <<CreditCard, REST API>> integration guide.
 ====
 
 [#PPv2_CC_General]
@@ -12,7 +12,7 @@ This is a reference page for _Credit Card_. Here you find all the
 information necessary for integrating this payment method in
 your Hosted and Embedded Payment Page. 
 
-.Are you unfamiliar with {payment-page-v2} ({payment-page-v2-abbr})?
+.Are you unfamiliar with {payment-page-v2}?
 
 NOTE: Visit one of the integration guides
 (<<PaymentPageSolutions_PPv2_HPP_Integration, Hosted>>,
@@ -48,13 +48,49 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 [#PPv2_CC_TestCredentials]
 === Test Credentials
 
-[%autowidth, cols="h,"]
+.Generic Test Accounts
+[cols="h,"]
 |===
-| URL(s) Endpoints           | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | 7a6dd74f-06ab-4f3f-a864-adc52687270a
-| Username                   | 70000-APIDEMO-CARD
-| Password                   | ohysS0-dvfMx
-| Secret Key (used for response verification) | a8c3fce6-8df7-4fd6-a1fd-62fa229c5e55
+|Merchant Number |84320
+|Merchant Name |Getnet Europe TEST
+|EE-User|84320-getneteurope
+|EE-Password |2NQBnucU19mY	
+|URL | https://api-test.getneteurope.com/engine/rest/payments/
+|===
+.Non 3D Manual Card Brand Recognition
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |e46155db-3268-4a18-ab29-28f8b449a547
+|Merchant Account Name |Getnet no3d
+|Secret Key |a4b0463e-9cf5-4479-ba18-f75c319ca474
+|Brands     |Visa, MC, AMEX
+|===
+
+.3D Manual Card Brand Recognition
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |c266f667-1c0e-4bad-8d03-7e84d2d8336b
+|Merchant Account Name |Getnet 3d
+|Secret Key |49c90b00-e5f7-40d0-bc7f-4971b8e7681e
+|Brands     |Visa, MC, AMEX
+|===
+
+.3D Manual Card Brand Recognition
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |4f52b0b9-6b57-4c2e-b3b6-ce5c34043667
+|Merchant Account Name |Getnet MOTO
+|Secret Key |04962468-f749-4ba6-ba14-eb2f86c249bf
+|Brands     |Visa, MC, AMEX
+|===
+
+.3D Automatic Card Brand Recognition
+[cols="h,"]
+|===
+|Merchant Account ID (MAID) |a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b
+|Merchant Account Name |Getnet 2nd 3d
+|Secret Key |8d424fe3-f74c-44cd-92d2-8fd9fc659491
+|Brands     |Visa, MC, AMEX
 |===
 
 [#PPv2_CC_TestCredentials_Additional]
@@ -97,7 +133,7 @@ payment form.
 .Request Headers
 [cols="20h,80"]
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -106,8 +142,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 
@@ -287,7 +321,7 @@ payment form.
 .Request Headers
 [cols="20h,80"]
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -296,8 +330,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 [source,json,subs=attributes+]
@@ -477,7 +509,7 @@ payment form.
 .Request Headers
 [cols="20h,80"]
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -486,8 +518,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 [source,json,subs=attributes+]
@@ -660,84 +690,7 @@ There are multiple post processing operations available for _Credit Card_:
 For examples and more information, see the REST
 API <<CreditCard, _Credit Card_ specification>>.
 
-[#PPv2_CC_JSONNVPField]
-=== JSON/NVP Field Reference
 
-Here you can
-
-- find the NVP equivalents for JSON fields (for migrating merchants),
-- see the structure of a full request (optional fields included).
-
-//-
-
-.JSON Structure for _Credit Card_ Requests
-
-[source,json,subs=attributes+]
-----
-include::{root}/samples/json/WPP_CC_JSONNVPField_JSON_StructureForCreditCardRequests.json[]
-----
-
-[%autowidth,cols="m,m,m"]
-|===
-|Field (NVP) |Field (JSON) |JSON Parent
-
-|merchant_account_id |value |merchant-account-id ({ })
-|request_id |request-id |payment ({ })
-|transaction_type |transaction-type |payment ({ })
-|requested_amount_currency |currency |requested-amount ({ })
-|requested_amount |value |requested-amount ({ })
-|payment_method |payment-method ([ ])/name |payment-methods ({ })
-|first_name |first-name |account-holder ({ })
-|last_name |last-name |account-holder ({ })
-|email |email |account-holder ({ })
-|phone |phone |account-holder ({ })
-|street1 |address ({ })/ street1 |account-holder ({ })
-|street2 |address ({ })/ street2 |account-holder ({ })
-|city |address ({ })/ city |account-holder ({ })
-|state |address ({ })/ state |account-holder ({ })
-|country |address ({ })/ country |account-holder ({ })
-|postal_code |address ({ })/ postal-code |account-holder ({ })
-|shipping_first_name |first-name |shipping ({ })
-|shipping_last_name |last-name |shipping ({ })
-|shipping_phone |phone |shipping ({ })
-|shipping_street1 |address ({ })/ street1 |shipping ({ })
-|shipping_street2 |address ({ })/ street2 |shipping ({ })
-|shipping_city |address ({ })/ city |shipping ({ })
-|shipping_state |address ({ })/ state |shipping ({ })
-|shipping_country |address ({ })/ country |shipping ({ })
-|shipping_postal_code |address ({ })/ postal-code |shipping ({ })
-|order_number |order-number |payment ({ })
-|order_detail |order-detail |payment ({ })
-|ip_address |ip-address |payment ({ })
-|attempt_three_d |attempt-three-d |payment ({ })
-|success_redirect_url |success-redirect-url |payment ({ })
-|fail_redirect_url |fail-redirect-url |payment ({ })
-|cancel_redirect_url |cancel-redirect-url |payment ({ })
-|descriptor |descriptor |payment ({ })
-|===
-
-[#PPv2_CC_JSONNVPField_Responseonly]
-=== Response-only Fields
-
-[source,json,subs=attributes+]
-----
-include::{root}/samples/json/WPP_CC_JSONNVPFieldResponseonly.json[]
-----
-
-[%autowidth,cols="m,m,m"]
-|===
-|Field (NVP) |Field (JSON) |JSON Parent
-
-|api_id |api-id |payment ({ })
-|transaction_state |transaction-state |payment ({ })
-|masked_account_number |masked-account-number |card-token ({ })
-|transaction_id |transaction-id |payment ({ })
-|completion_time_stamp |completion-time-stamp |payment ({ })
-|status_description_n |status ([ {} ])/ description |statuses ({ })
-|status_severity_n |status ([ {} ])/ severity |statuses ({ })
-|status_code_n |status ([ {} ])/ code |statuses ({ })
-|authorization_code |authorization-code |payment ({ })
-|===
 
 //-
 
@@ -777,10 +730,10 @@ payment form.
 [%autowidth, cols="h,"]
 |===
 | URL(s) Endpoints           |``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | cad16b4a-abf2-450d-bcb8-1725a4cef443
-| Username                   | 70000-APILUHN-CARD
-| Password                   | 8mhwavKVb91T
-| Secret Key (used for response verification) | b3b131ad-ea7e-48bc-9e71-78d0c6ea579d
+| Merchant Account ID (MAID) | c266f667-1c0e-4bad-8d03-7e84d2d8336b
+| Username                   | 84320-getneteurope
+| Password                   | 2NQBnucU19mY
+| Secret Key (used for response verification) | 49c90b00-e5f7-40d0-bc7f-4971b8e7681e
 |===
 
 [#PPv2_CC_3DSecure_TestCredentials_Additional]
@@ -791,14 +744,16 @@ payment form.
 | Card number               | 4012000300001003
 | CVV                       | 003
 | Expiration date           | 01/23
-| 3D verification password  | {three-d-s-pw}
+| 3D verification v1 password  |  wirecard
+| 3D verification v2 password  |  123456
+
 |===
 
 .Request Headers
 [cols="20h,80"]
 
 |===
-| Authorization | Basic NzAwMDAtQVBJREVNTy1DQVJEOm9oeXNTMC1kdmZNeA==
+| Authorization | Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ==
 | Content-Type  | application/json
 |===
 
@@ -807,8 +762,6 @@ payment form.
 For a full list of optional fields you can use, see the REST API
 <<RestApi_Fields, _Credit Card_ specification>>.
 
-For a full structure of a request (optional fields included), see the
-<<PPv2_CC_JSONNVPField, JSON/NVP Field Reference>> section.
 
 .1. Create a Payment Session (Initial Request)
 

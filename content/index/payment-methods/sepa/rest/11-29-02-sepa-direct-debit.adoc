@@ -43,7 +43,7 @@ at <<AppendixB,  Transaction Types>>.
 | void-pending-debit | Voids a _pending-debit._ +
 Only available when the <<SEPA_TransactionType_Void_Restrictions, restrictions>> are met.
 | See <<SEPADirectDebit_Samples_VoidPendingDebit, samples>>.
-| debit | Transaction is processed by Wirecard Bank. |
+| debit | Transaction is processed by Santander Bank. |
 | debit-return | The payment is returned by the consumer bank. See <<SEPA_ReturnCodes, Return Codes>>. |
 |===
 
@@ -235,16 +235,16 @@ can be used with both SEPA payment methods: _SEPA Credit Transfer_ and _SEPA Dir
 [cols="30h, 70"]
 |===
 | URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
-| Merchant Account ID (MAID) | 933ad170-88f0-4c3d-a862-cff315ecfbc0
-| Username | 16390-testing
-| Password | 3!3013=D3fD8X7
-| Secret Key | 5caf2ed9-5f79-4e65-98cb-0b70d6f569aa
+| Merchant Account ID (MAID) | To be determined
+| Username | To be determined
+| Password | To be determined
+| Secret Key | To be determined
 |===
 
 [#SEPADirectDebit_Workflow]
 === Workflow
 
-image::images/diagrams/sepa_direct-debit.svg[SEPA Direct Debit Workflow]
+image::images/11-29-02-sepa-direct-debit/sepa_direct-debit.bmp[SEPA Direct Debit Workflow]
 
 . The transaction type within the request must be _debit_ or _pending-debit._
 . If the request is successful, a response will be returned with status
@@ -351,7 +351,7 @@ Allowed characters:
 _SEPA Direct Debit_ transaction. It is used as a reference within the
 banking system to ensure all transactions referencing each other (eg: a
 direct _debit_ and a _debit-return_) are matched and that the complete
-lifecycle of a payment is identifiable. Wirecard generates this ID for
+lifecycle of a payment is identifiable. System generates this ID for
 the merchant.
 |===
 
@@ -470,22 +470,22 @@ This ID provides a reference for the complete end-to-end lifecycle of a
 _SEPA Direct Debit_ transaction. It is used as a reference within the
 banking system to ensure all transactions referencing each other (e.g. a
 direct debit and a _debit_ return) are matched and that the complete
-lifecycle of a payment is identifiable. Wirecard generates this ID for the merchant.
+lifecycle of a payment is identifiable. System generates this ID for the merchant.
 
 [#SEPADirectDebit_Fields_SpecificFields_DueDate]
 .Due Date
 
 The due date is the day when the funds will be cleared on the debtors
-bank account. Wirecard can calculate the best (earliest) due date for
+bank account. System can calculate the best (earliest) due date for
 the Merchant. When the Due Date field in the request is left empty,
-Wirecard will calculate the due date for the merchant automatically.
+system will calculate the due date for the merchant automatically.
 
 The merchant may, however, send in a due date inside the request if a
 specific date is requested. This date may only be used if it passes
-validation. If validation is not passed, Wirecard will return a failed
+validation. If validation is not passed, system will return a failed
 transaction and the transaction must be re-submitted.
 
-WARNING: Wirecard cannot replace an incorrect due date sent in by the merchant
+WARNING: System cannot replace an incorrect due date sent in by the merchant
 with a correct due date calculated by the system as this would change
 the content of the transaction sent in by the merchant.
 
@@ -495,7 +495,7 @@ the content of the transaction sent in by the merchant.
 In order to keep processing times transparent for all transactions
 within SEPA, a transaction's due date has been clearly defined. If the
 merchant chooses to specify a due date, it is important to ensure all
-payments are submitted on time and are processed correctly. Wirecard
+payments are submitted on time and are processed correctly. System
 requires merchants to submit
 
 - all transactions, regardless of sequence type, at least one (1)
@@ -507,7 +507,7 @@ banking day before the due date
 ====
 This is not a requirement. It is an option. If a merchant chooses to
 send in a transaction later than the earliest possible due date, this is
-possible. Wirecard will always validate a due date if one is sent in
+possible. System will always validate a due date if one is sent in
 with the transaction request.
 
 The transaction request must be received by the {payment-gateway} no
@@ -534,14 +534,14 @@ read chapter <<SEPADirectDebit_TransactionTypes_Recurring, SEPA Direct Debit Rec
 [#SEPADirectDebit_Fields_SpecificFields_DelayedProcessing]
 .Delayed processing of SEPA _Direct Debit_ transactions
 
-Wirecard offers the possibility to delay the processing of a _SEPA Direct Debit_ transaction by providing the element:
+System offers the possibility to delay the processing of a _SEPA Direct Debit_ transaction by providing the element:
 
 *payment/capture-date*
 
 inside the _SEPA Direct Debit_ request.
 
 According to the date which is provided in the request the corresponding
-SEPA transaction will be sent to the Wirecard bank for the processing.
+SEPA transaction will be sent to the Santander bank for the processing.
 This feature enables the merchant to cancel the transaction before the
 cut-off time of the capture date. The capture date range is from 1-14
 calendar days. Dates outside of this range lead to a transaction
@@ -558,7 +558,7 @@ Tuesday 25.11.2015, the next possible due date for the one-off
 transaction is 25.11.2015  + 1 bank working day = Friday 26.11.2015.
 
 The due date may only be used if it passes validation. If validation is
-not passed, Wirecard will return a failed transaction (400.1175) and the
+not passed, system will return a failed transaction (400.1175) and the
 transaction must be re-submitted.
 
 NOTE: The provided capture date does not guarantee the money flow on this

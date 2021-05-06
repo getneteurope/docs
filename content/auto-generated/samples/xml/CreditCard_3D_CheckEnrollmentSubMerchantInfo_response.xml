@@ -35,7 +35,7 @@
   </authorization-code>
   <three-d>
     <pareq>eJxtU11vozAQfO+vQLxfvLYhMZFx1WsUtZUStUmr3CsyqwaJrxq4JPfrzxByvQSQkLzrgZ2dnZX3xyx1fqOpkiIPXToB18FcF3GSf4bux/vyh3Cdqo7yOEqLHEP3hJV7r+7k+94gLraoG4PqzrGPXGFVRZ/oJHHocjFlArxgBj7zp56gwJl7xnXY14cNfn3HXa5noSyJCZPkEl6DVmj0Psrr63R3Femvn89rRRn3/KkkfTjEZWieF8oHAGpfkOScGALzKEO1SwzqyMTOArPC2e6LUpLuYojXRZPX5qQEs+UvwRDWmFTt67qcE3I4HCaHvsBEF5kk7eV1x2S8ZfnatOlqjMgxidVq+XLcPGn+lm4+tr/KP7h7oet0+bje6VCSFjH8Lo5qVAxoQCn4DgRzDnMaSNLlRwTP2h7beVm1z+chqOxpPvTgVvCb3IiSjTHWhicVzISV8hINgXgsrS3tP6xh/p1v9BsXSj4+jXpI19YLQD065VTwWQAMOBcz3/MFCN9apnVWBxplk9iRMw60o5Pczl+S/6taat9r0M652x+7XOR6u/4CctvnNw==</pareq>
-    <acs-url>https://c3-test.wirecard.com/acssim/app/bank</acs-url>
+    <acs-url>https://c3-test.getneteurope.com/acssim/app/bank</acs-url>
     <cardholder-authentication-status>Y</cardholder-authentication-status>
     <version>1.0.2</version>
   </three-d>

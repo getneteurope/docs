@@ -11,7 +11,7 @@ as GET, PUT, POST and DELETE.
 
 The API currently supports the following data formats:
 
-- for *requests* XML, JSON and NVP (for credit card only).
+- for *requests* XML, JSON.
 - for *responses* XML, HTML or JSON. Some methods accept a subset of these
 formats, only.
 //-
@@ -65,9 +65,6 @@ configuration is used to authorize the request.
 | ``\https://{rest-api-test-apm-endpoint}`` 
 | ``\https://{instance-hostname}/engine/rest/paymentmethods/``
 
-| Mobile Payments 
-| ``\https://{test-instance-hostname}/engine/rest/mobile/payments`` 
-| ``\https://{instance-hostname}/engine/rest/mobile/payments``
 |===
 
 NOTE: Please contact our <<ContactUs, Merchant Support>> for production environment credentials.

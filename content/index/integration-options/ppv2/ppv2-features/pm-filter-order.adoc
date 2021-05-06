@@ -3,7 +3,7 @@
 
 This _Order and Filter_ option allows you to display the available payment methods in your preferred order. If you use this option, only the payment methods defined are displayed. All the other payment methods are ignored.
 
-This option is available for all of our _{payment-page-v2}_ ({payment-page-v2-abbr}) integration options:
+This option is available for all of our _{payment-page-v2}_ integration options:
 
 * the <<PaymentPageSolutions_PPv2_HPP, _Hosted Payment Page_>> (HPP), 
 * the <<PaymentPageSolutions_PPv2_EPP, _Embedded Payment Page_>> (EPP)  or
@@ -21,13 +21,13 @@ This option is available for all of our _{payment-page-v2}_ ({payment-page-v2-ab
 
 If you don't want to sort all of your payment methods manually, you have the option to use the asterisk ( * ) as a placeholder. 
 Enter your preferred payment methods and then the asterisk, e.g. `["creditcard", "paypal", "*"]` +
-As a result, _{payment-page-v2-abbr}_ lists your preferred payment methods first, followed by all of your other payment methods.
+As a result, _Payment Page_ lists your preferred payment methods first, followed by all of your other payment methods.
 
 //-
 
 [NOTE]
 ====
-Misspellings or unavailable payment methods are ignored. _{payment-page-v2-abbr}_ displays the full list of available payment methods instead.
+Misspellings or unavailable payment methods are ignored. _Payment Page_ displays the full list of available payment methods instead.
 ====
 
 The _Order and Filter_ option is available in JSON only. You can send this option with each request. 
@@ -40,10 +40,10 @@ Use the following credentials to test the _Order and Filter_ option:
 [%autowidth.strech,stripes=none,cols="h, "]
 |===
 | URLs (Endpoints) | ``\https://{pp-test-endpoint}``
-| Merchant Account ID (MAID) | ab62ea6e-ba97-48ef-b3bc-bf0319e09d78
-| Username   | 70000-APITEST-AP
-| Password   | qD2wzQ_hrc!8
-| Secret Key | c50a8e09-0648-4d2c-b638-2c14fc7606bc
+| Merchant Account ID (MAID) | c266f667-1c0e-4bad-8d03-7e84d2d8336b
+| Username   | 84320-getneteurope
+| Password   | 2NQBnucU19mY
+| Secret Key | 49c90b00-e5f7-40d0-bc7f-4971b8e7681e
 |===
 
 //-

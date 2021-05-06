@@ -1,24 +1,24 @@
-[#PPD_{payment-page-v2-anchor}-Manager]
+[#PPD_{payment-page-v2-anchor}_Manager]
 == Manage your Themes and Translations
 
-Use the {payment-page-v2-abbr} design manager menu to edit and organize your <<PPD_customize_save,themes>> and translations.
+Use the Payment Page design manager menu to edit and organize your <<PPD_customize_save,themes>> and translations.
 
 . Open the https://designer-test.{domain}[Payment Page Designer]. 
 . Click *Login*.
-. Use your credentials provided by <<ContactUs, Merchant Support>> to access the {payment-page-v2-abbr} design manager menu.
+. Use your credentials provided by <<ContactUs, Merchant Support>> to access the Payment Page design manager menu.
 
 //-
 
 WARNING: Make sure that only one user is editing a theme. If two users edit a theme at the same time, some changes might get lost.
 
-NOTE: A session timeout requires a relogin to the {payment-page-v2-abbr} design manager menu after 60 minutes of inactivity.
+NOTE: A session timeout requires a relogin to the Payment Page design manager menu after 60 minutes of inactivity.
 
-The {payment-page-v2-abbr} design manager menu is divided into two sections:
+The Payment Page design manager menu is divided into two sections:
 
 * *Translations*
 * *Themes*
 
-[#PPD_{payment-page-v2-anchor}-Manager_Translations]
+[#PPD_{payment-page-v2-anchor}_Manager_Translations]
 .Translations
 
 Expand the *Translations* section to: 
@@ -44,7 +44,7 @@ You can modify the translations to e.g.:
 
 NOTE: You can only edit the languages available in the default translation file. You cannot add further languages.
 
-[#PPD_{payment-page-v2-anchor}-Manager_Themes]
+[#PPD_{payment-page-v2-anchor}_Manager_Themes]
 .Themes
 
 Expand the *Themes* section to:
@@ -63,8 +63,8 @@ NOTE: Click the *Theme preview* button on the right of the theme name to see a p
 Click the theme name to expand the theme's properties to:
 
 * Edit the theme name. Double-click the theme name or click the *Edit* button. 
-* Select a <<PPD_{payment-page-v2-anchor}-Manager_Translations, translation file>>. 
-* Set the theme as default. The default theme is used for payment processes if not indicated otherwise <<PPD_{payment-page-v2-anchor}-Manager_Sample, in the request>>. +
+* Select a <<PPD_{payment-page-v2-anchor}_Manager_Translations, translation file>>.
+* Set the theme as default. The default theme is used for payment processes if not indicated otherwise <<PPD_{payment-page-v2-anchor}_Manager_Sample, in the request>>. +
 +
 NOTE: The default theme can be identified by the asterisk symbol.
 +
@@ -74,8 +74,8 @@ NOTE: Active themes can be identified by the tick symbol.
 +
 * Change the theme settings. Click *Style it* to open the theme in the <<PPD_customize_menu, Payment Page Designer>> menu.
 +
-NOTE: You can toggle between the Payment Page Designer and the {payment-page-v2-abbr} design manager menu. Use *BACK TO DESIGNER* to switch to the Payment Page Designer menu. Use *MANAGE* in the Payment Page Designer menu to return to the {payment-page-v2-abbr} design manager menu.
-If *Style it* is unavailable in the {payment-page-v2-abbr} design manager menu, the theme is already open in the Payment Page Designer menu. 
+NOTE: You can toggle between the Payment Page Designer and the Payment Page design manager menu. Use *BACK TO DESIGNER* to switch to the Payment Page Designer menu. Use *MANAGE* in the Payment Page Designer menu to return to the Payment Page design manager menu.
+If *Style it* is unavailable in the Payment Page design manager menu, the theme is already open in the Payment Page Designer menu. 
 +
 * Save your changes. *Save* is available only if changes have been made.
 * Export the theme to a .json file.
@@ -83,7 +83,7 @@ If *Style it* is unavailable in the {payment-page-v2-abbr} design manager menu, 
 
 //-
 
-[#PPD_{payment-page-v2-anchor}-Manager_Field]
+[#PPD_{payment-page-v2-anchor}_Manager_Field]
 .Include a Theme in the Request
 
 [%autowidth]
@@ -94,7 +94,7 @@ If *Style it* is unavailable in the {payment-page-v2-abbr} design manager menu, 
 |===
 
 
-[#PPD_{payment-page-v2-anchor}-Manager_Sample]
+[#PPD_{payment-page-v2-anchor}_Manager_Sample]
 .Sample Request
 
 [source,json,subs=attributes+]

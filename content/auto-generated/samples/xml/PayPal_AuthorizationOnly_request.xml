@@ -9,9 +9,9 @@
     <requested-amount currency="EUR">0</requested-amount>
     <descriptor>customerStatement 18009998822</descriptor>
     <account-holder>
-        <first-name>Wirecardbuyer</first-name>
+        <first-name>Getnetbuyer</first-name>
         <last-name>Spintzyk</last-name>
-        <email>paypal.buyer2@wirecard.com</email>
+        <email>paypal.buyer2@getneteurope.com</email>
     </account-holder>
     <order-number>46acc8e8-fe9d-4b98-9910-4caa88efd48d</order-number>
     <shipping>

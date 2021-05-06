@@ -31,7 +31,7 @@ The *Payment Page Designer* menu is available in three languages:
 
 //-
 
-Click *Login* to access the <<PPD_{payment-page-v2-anchor}-Manager, {payment-page-v2} design manager menu>>.
+Click *Login* to access the <<PPD_{payment-page-v2-anchor}_Manager, {payment-page-v2} design manager menu>>.
 
 The *Payment Page Designer* menu is divided into eight sections:
 

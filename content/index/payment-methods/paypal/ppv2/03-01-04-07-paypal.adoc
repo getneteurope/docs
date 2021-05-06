@@ -3,7 +3,7 @@
 == {payment-page-v2} 
 
 ====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentMethods_PayPal, REST API>> integration guide.
+We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<API_PaymentMethods_PayPal, REST API>> integration guide.
 ====
 
 [#PPv2_PayPal_General]
@@ -66,13 +66,13 @@ Test credentials for transaction types
 | URL(s) Endpoints
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| 9abf05c1-c266-46ae-8eac-7f87ca97af28
+| To be determined
 | Username
-| 70000-APITEST-AP
+| To be determined
 | Password
-| qD2wzQ_hrc!8
+| To be determined
 | Secret Key (used for response verification)
-| 5fca2a83-89ca-4f9e-8cf7-4ca74a02773f
+| To be determined
 |===
 
 [#PPv2_PayPal_TestCredentials_Additional]
@@ -80,7 +80,7 @@ Test credentials for transaction types
 
 [cols="15h,85"]
 |===
-| Email    | \buyer@wirecard.com
+| Email    | \buyer1@getneteurope.com
 | Password | Einstein35
 |===
 

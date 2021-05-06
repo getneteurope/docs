@@ -1,7 +1,7 @@
 [#PPSolutions_PPv2_Workflow]
-== {payment-page-v2-abbr} Worfklow
+== Payment Page Worfklow
 
-.{payment-page-v2-abbr} Workflow (Basic Payment)
+.Payment Page Workflow (Basic Payment)
 image::images/diagrams/wpp-v2_basic.svg[{payment-page-v2-abbr} Workflow]
 
 //-
