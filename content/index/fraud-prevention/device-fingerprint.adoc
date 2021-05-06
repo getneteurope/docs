@@ -49,7 +49,7 @@ NOTE: The ``session_id`` must be unique for at least 30 minutes, otherwise exist
 will be overwritten. 
 
 As a final optional consideration you may want to remove the reference
-to ``\http://h.wirecard.com`` and set up web server
+to ``\http://h.getneteurope.com`` and set up web server
 redirection instead to avoid placing a third-party domain name inside
 your HTML.
 
