@@ -3,7 +3,7 @@
 
 You can request for certain types of transactions to be exempted from Strong Customer Authentication (SCA), even though PSD 2 is mandatory. It is up to your bank/acquirer to request these exemptions for you, followed by the approval of the issuer.
 
-Flag a transaction accordingly to indicate if an exemption is desired and Wirecard can request the most applicable SCA exemption.
+Flag a transaction accordingly to indicate if an exemption is desired and Getnet can request the most applicable SCA exemption.
 
 The card issuing bank can also apply an exemption from SCA regardless of whether or not you or your bank/acquirer requested it. In both cases, if an exemption is applied, the transaction is frictionless.
 
