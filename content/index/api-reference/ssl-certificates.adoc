@@ -1,10 +1,6 @@
 [#ssl_certificates]
 == SSL Certificates
-We are going to update our system at the beginning of March. Download the new certificates to keep the connection between you and {payment-gateway} secure (e.g. "certificate pinning").
-
-[NOTE]
-The test environment will be updated on 5 March 2020 between 12:00 pm and 12:30 pm CET. +
-The production environment will be updated on 10 March 2020 between 12:00 pm and 12:30 pm CET.
+You find in this section the certificates which allow the connection between you and {payment-gateway} secure (e.g. "certificate pinning").
 
 [#ssl_testenvironment]
 === Test Environment
