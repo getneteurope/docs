@@ -37,11 +37,11 @@ Use the following test credentials to test _Customized Display Text_:
 | URL (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| 7a6dd74f-06ab-4f3f-a864-adc52687270a
+| c266f667-1c0e-4bad-8d03-7e84d2d8336b
 | Username
-| 70000-APIDEMO-CARD
+| 784320-getneteurope
 | Password
-| ohysS0-dvfMx
+| 2NQBnucU19mY
 |===
 
 [#PPv2_CustomizedDisplayText_ExampleRequest]
