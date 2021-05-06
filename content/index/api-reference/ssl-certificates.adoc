@@ -1,6 +1,6 @@
 [#ssl_certificates]
 == SSL Certificates
-You find in this section the certificates which allow the connection between you and {payment-gateway} secure (e.g. "certificate pinning").
+You find in this section the certificates which secure the connection between the Merchant and {payment-gateway} secure (e.g. "certificate pinning").
 
 [#ssl_testenvironment]
 === Test Environment
