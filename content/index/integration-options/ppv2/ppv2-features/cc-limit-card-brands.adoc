@@ -40,6 +40,8 @@ The _Limit Credit Card Brands_ option is available in JSON only. You can send th
 
 Use the test credentials we provide for <<PPv2_CC_TestCredentials, _Credit Card_>> and send the sample below. +
 
+P:S: this sample is just for demo
+
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/WPP_FeaturesLimitCardbrandConfiguringLimitCardbrand_ExampleRequestLimitCardbrand.json[]
