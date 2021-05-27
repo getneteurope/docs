@@ -56,7 +56,7 @@
 // == Features
 
 :data-warehouse: {payment-provider-name} Data Warehouse
-:e-mail-support: support@{domain}
+:e-mail-support: techsupport@{domain}
 :merchant-account-name-cc-cardbrandreco: {payment-provider-name} CC/EFT Simu3D no CVC
 :password-acs-cc: {three-d-s-pw}
 :batch-processing-api: {payment-provider-name} Batch Processing API
