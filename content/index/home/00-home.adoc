@@ -33,7 +33,7 @@ image::images/icons/signpost.png[streetsign_icon]
 
 You want easy and modular payment integration? 
 
-- Go with our Payment Page
+-- Go with our Payment Page
 
 
 
