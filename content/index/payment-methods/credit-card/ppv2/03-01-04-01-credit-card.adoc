@@ -55,7 +55,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 |Merchant Name |Getnet Europe TEST
 |EE-User|84320-getneteurope
 |EE-Password |2NQBnucU19mY	
-|URL | https://api-test.getneteurope.com/engine/rest/payments/
+|URL | https://paymentpage-test.getneteurope.com/api/payment/register
 |===
 .Non 3D Manual Card Brand Recognition
 [cols="h,"]
@@ -75,7 +75,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 |Brands     |Visa, MC, AMEX
 |===
 
-.3D Manual Card Brand Recognition
+.MOTO
 [cols="h,"]
 |===
 |Merchant Account ID (MAID) |4f52b0b9-6b57-4c2e-b3b6-ce5c34043667
