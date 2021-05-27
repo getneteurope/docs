@@ -57,14 +57,6 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 |EE-Password |2NQBnucU19mY	
 |URL | https://paymentpage-test.getneteurope.com/api/payment/register
 |===
-.Non 3D Manual Card Brand Recognition
-[cols="h,"]
-|===
-|Merchant Account ID (MAID) |e46155db-3268-4a18-ab29-28f8b449a547
-|Merchant Account Name |Getnet no3d
-|Secret Key |a4b0463e-9cf5-4479-ba18-f75c319ca474
-|Brands     |Visa, MC, AMEX
-|===
 
 .3D Manual Card Brand Recognition
 [cols="h,"]
