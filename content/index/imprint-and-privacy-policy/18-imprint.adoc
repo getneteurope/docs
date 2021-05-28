@@ -5,37 +5,37 @@ PagoNxt Merchant Solutions, S.L. – German Branch +
 Einsteinring 35 | 85609 Aschheim | Germany +
 Register Number: AG München | HRB 261793 +
 VAT ID: DE 339 882 217 +
-
+ 
 Permanent Representatives: +
-Anna Maria Werner and Gomez, Beatriz Retamar
+Anna Maria Werner and Beatriz Retamar Gomez 
 
 Phone: +49 4424 1212 +
-E-Mail: connect@getneteurope.com 
+E-Mail: connect@getneteurope.com
 
 Branch office of PagoNxt Merchant Solutions, S.L. +
-(Limited liability Company under Spanish law)
-
+(Limited liability Company under Spanish law) +
  
-
 Registered office of the company: Avenida Cantabria, s/n -Pampa PO, +
 Boadilla del Monte/Madrid, Spain +
-Managing Board: Grisi Checa, Hector Blas (Chairman); +
-Vicente, Carlos Rey de; Ichazo, Ignacio Narvarte; Andújar, +
-Maria del Mar Ruiz; Marzluf, Dirk Ludwig; Garcia, Javier San Felix 
 
-Register Number: Registro Mercantil de Madrid 087694410 
+Managing Board: +
+-	Hector Blas Grisi Checa, (Chairman) +
+-	Javier San Felix Garcia +
+-	Dirk  Ludwig Marzluf +
+-	Carlos Rey de Vicente +
+-	Ignacio Narvarte Ichazo +
+-	Maria del Mar Ruiz Andújar +
+ 
+Register Number: Registro Mercantil de Madrid 087694410 +
+
 
 Santander Espana Merchant Services, Entidad de Pago, S.L.U. +
 Calle Juan Ignacio Luca de Tena 11 | 28027 Madrid | Spain +
-Registered in the Register of Institutions af the Bank of Spain:  6858 +
+Registered in the Register of Institutions of the Bank of Spain:  6858 +
 Tax Identification Number: B86621620
-
-Managing Director: Ruben Justel Miranda
+ 
+Managing Director: Ruben Justel Miranda 
 
 Phone: +34 911 944 839
 
 E-Mail: connect@getneteurope.com
-
-Please note the current version of the documentation is pre-release. Final version will be available before 30th May 2021. +
-Current pre-release version is released to partners in order to assess the technical changes and feasibility regarding the GetNet API. +
-In this regard, however, we would like to expressly point out that this is a draft version and may still be subject to changes

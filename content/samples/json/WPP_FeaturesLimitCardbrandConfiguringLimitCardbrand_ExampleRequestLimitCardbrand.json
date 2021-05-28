@@ -10,9 +10,9 @@
            "currency": "EUR"
        },
       "ip-address": "127.0.0.1",
-       "success-redirect-url": "https://demoshop-test.wirecard.com/demoshop/#/success",
-      "fail-redirect-url": "https://demoshop-test.wirecard.com/demoshop/#/error",
-      "cancel-redirect-url": "https://demoshop-test.wirecard.com/demoshop/#/cancel"
+       "success-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/success",
+      "fail-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/error",
+      "cancel-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/cancel"
    },
    "options": {
       "credit-card-brand-filter":  ["visa", "mastercard"]

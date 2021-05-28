@@ -1,6 +1,7 @@
 [#ContactUs]
 == Contact Us
 
+
 If you have any technical questions or need further assistance, please do
 not hesitate to contact our support teams.
 
@@ -14,7 +15,7 @@ Einsteinring 35 +
 85609 Aschheim, Germany
 |*Support Team* +
 Phone: link:tel:+498944241640[+49 89 4424-1640] +
-support@getneteurope.com +
+techsupport@getneteurope.com +
 |
 2+|We are glad to be of assistance from Monday to Friday from 8:00 to 17:00 (CET).
 |===
