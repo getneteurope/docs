@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://{test-instance-hostname}:443/engine/rest/merchants/9cf2d63d-9a78-47d3-8949-97e83661c9d0/payments/8e392924-15fc-11e5-87be-00163e5411b5">
-  <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/merchants/9cf2d63d-9a78-47d3-8949-97e83661c9d0">9cf2d63d-9a78-47d3-8949-97e83661c9d0</merchant-account-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://{test-instance-hostname}:443/engine/rest/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b/payments/8e392924-15fc-11e5-87be-00163e5411b5">
+  <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b">c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
   <transaction-id>8e392924-15fc-11e5-87be-00163e5411b5</transaction-id>
   <request-id>${response}</request-id>
   <transaction-type>original-credit</transaction-type>
