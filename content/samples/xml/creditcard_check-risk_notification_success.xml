@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>18fcebd4-d559-42a5-b311-846532ed273a</merchant-account-id>
+  <merchant-account-id>c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
   <transaction-id>f34782fc-18fb-11e5-87be-00163e5411b5</transaction-id>
   <request-id>${response}</request-id>
   <transaction-type>check-risk</transaction-type>
