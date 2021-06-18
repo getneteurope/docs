@@ -1,5 +1,5 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>c6b58c82-9035-4ddc-9447-6738797610e5</merchant-account-id>
+  <merchant-account-id>c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
   <request-id>a1901424-9791-4f8d-9826-be75d34fbbc1</request-id>
   <transaction-type>purchase</transaction-type>
   <requested-amount currency="BRL">23.00</requested-amount>
