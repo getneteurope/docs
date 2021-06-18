@@ -145,13 +145,13 @@ set up your testing tool:
 
 2+|Test Card
 |Card Number      
-|4012000300001003
+|4012000300201199
 
 |Expiration Date  
 |01/23
 
 |CVV              
-|003
+|199
 
 |3D Verification Password 
 |123456
