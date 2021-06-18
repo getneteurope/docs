@@ -1,5 +1,5 @@
-[#Imprint]
-== Imprint
+[#Legal Notice]
+== Legal Notice
 
 *1.PagoNxt Merchant Solutions, S.L. – German Branch* +
 Einsteinring 35 | 85609 Aschheim | Germany +
