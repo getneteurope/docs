@@ -473,12 +473,6 @@ can be found in <<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and
 ====
 
 [#PPv2_Seamless_Integration_Example_Redirect]
-*Non 3D Secure Transaction Redirect*
-
-For Non-3D Secure transactions, any further steps, such as displaying
-success messages to your consumer, or redirecting your consumer to
-success-/fail-/cancel-pages, need to be implemented separately in your
-online shop.
 
 [#PPv2_Seamless_Integration_Example_Parse]
 .4. Parse and Process the Payment Response (Highly Recommended)
