@@ -664,11 +664,4 @@ m|token-id
 |A unique identifier assigned to every request (by merchant). Used when searching for or referencing to it later.
 |===
 
-[#PPv2_Seamless_Integration_Example_Parse_NON3DS]
-*Non 3D Secure Credit Card Payment*
 
-The Payment Page sends the final response containing the payment data *as part of the ``onSuccess/onError`` function.* Use the response to redirect the
-consumer to a success-/fail-/cancel-redirect-url of your own choice and design to inform the consumer about the transaction status.
-
-To parse and process the payment response of Non 3D Secure credit card
-payment, please consult *<<PPSolutions_PPv2_PPv2Security, Payment Page Security>> for details.*
