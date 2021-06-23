@@ -43,9 +43,6 @@ to the authentication page, and then to a Payment Page success- or
 fail-redirect-url. Include the success- and fail-redirect-urls in your
 initial request! This page includes a JSON sample for 3D Secure credit
 card payment.
-- *Non-3D Secure credit card payment* requires you to implement
-redirects to subsequent pages, such as a ``success-/fail-/cancel-redirect-url`` to let the consumer know about the
-payment outcome, by yourself.
 +
 . *Parse and Process the Payment Response:* The payment is processed.
 Payment Page returns base64 encoded payment data. It is _highly recommended_ that
