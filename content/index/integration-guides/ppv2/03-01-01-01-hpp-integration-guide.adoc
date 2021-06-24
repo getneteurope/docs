@@ -78,7 +78,7 @@ set up your testing tool:
 [%autowidth, cols="h,", stripes="none"]
 |===
 | URL (Endpoint)           
-| ``\{rest-api-test-endpoint}``
+| ``\https://paymentpage-test.getneteurope.com/api/payment/register``
 
 | Merchant Account ID (MAID) 
 | To be determined
@@ -94,13 +94,13 @@ set up your testing tool:
 
 2+h|Test Card
 |Card number 
-|4200000000000018
+|4012000300201199
 
 |Expiration date 
 |01/23
 
 |CVV 
-|018
+|199
 |===
 
 [#PaymentPageSolutions_PPv2_HPP_Integration_Example_Create]

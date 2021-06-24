@@ -149,7 +149,7 @@ If {payment-provider-name} is your acquirer, the {payment-gateway} can "grandfat
 === Supported Card Brands
 
 3D Secure 2 has been developed, and is supported, by Mastercard, VISA,
-American Express, UPI, Diners Club, Discover, and JCB.
+American Express and UPI.
 
 - <<CreditCard, Credit Card>>
 - <<PPv2_CC, Credit Card with {payment-page-v2-abbr}>>

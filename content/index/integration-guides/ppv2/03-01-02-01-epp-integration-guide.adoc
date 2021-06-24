@@ -92,13 +92,13 @@ set up your testing tool:
 
 2+h|Test Card
 |Card number 
-|4200000000000018
+|4012000300201199
 
 |Expiration date 
 |01/23
 
 |CVV 
-|018
+|199
 |===
 
 [#PaymentPageSolutions_PPv2_EPP_Integration_Example_Create]

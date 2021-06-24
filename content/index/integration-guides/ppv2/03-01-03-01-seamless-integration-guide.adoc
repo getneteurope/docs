@@ -43,9 +43,6 @@ to the authentication page, and then to a Payment Page success- or
 fail-redirect-url. Include the success- and fail-redirect-urls in your
 initial request! This page includes a JSON sample for 3D Secure credit
 card payment.
-- *Non-3D Secure credit card payment* requires you to implement
-redirects to subsequent pages, such as a ``success-/fail-/cancel-redirect-url`` to let the consumer know about the
-payment outcome, by yourself.
 +
 . *Parse and Process the Payment Response:* The payment is processed.
 Payment Page returns base64 encoded payment data. It is _highly recommended_ that
@@ -145,13 +142,13 @@ set up your testing tool:
 
 2+|Test Card
 |Card Number      
-|4012000300001003
+|4012000300201199
 
 |Expiration Date  
 |01/23
 
 |CVV              
-|003
+|199
 
 |3D Verification Password 
 |123456
@@ -476,12 +473,6 @@ can be found in <<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and
 ====
 
 [#PPv2_Seamless_Integration_Example_Redirect]
-*Non 3D Secure Transaction Redirect*
-
-For Non-3D Secure transactions, any further steps, such as displaying
-success messages to your consumer, or redirecting your consumer to
-success-/fail-/cancel-pages, need to be implemented separately in your
-online shop.
 
 [#PPv2_Seamless_Integration_Example_Parse]
 .4. Parse and Process the Payment Response (Highly Recommended)
@@ -673,11 +664,4 @@ m|token-id
 |A unique identifier assigned to every request (by merchant). Used when searching for or referencing to it later.
 |===
 
-[#PPv2_Seamless_Integration_Example_Parse_NON3DS]
-*Non 3D Secure Credit Card Payment*
 
-The Payment Page sends the final response containing the payment data *as part of the ``onSuccess/onError`` function.* Use the response to redirect the
-consumer to a success-/fail-/cancel-redirect-url of your own choice and design to inform the consumer about the transaction status.
-
-To parse and process the payment response of Non 3D Secure credit card
-payment, please consult *<<PPSolutions_PPv2_PPv2Security, Payment Page Security>> for details.*

@@ -90,8 +90,8 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 
 [cols="35h,65"]
 |===
-| Card number      | 4200000000000018
-| CVV              | 018
+| Card number      | 4012000300201199
+| CVV              | 199
 | Expiration date  | 01/23
 |===
 
@@ -733,8 +733,8 @@ payment form.
 
 [cols="35h,65"]
 |===
-| Card number               | 4012000300001003
-| CVV                       | 003
+| Card number               | 4012000300201199
+| CVV                       | 199
 | Expiration date           | 01/23
 | 3D verification v1 password  |  wirecard
 | 3D verification v2 password  |  123456
