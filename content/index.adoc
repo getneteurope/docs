@@ -157,6 +157,8 @@ include::index/api-reference/16-01-appendix-b.adoc[leveloffset=+1]
 include::index/api-reference/ssl-certificates.adoc[leveloffset=+1]
 include::index/api-reference/16-08-xml-schema-specification.adoc[leveloffset=+1]
 
+include::index/reporting/20-reporting.adoc[]
+
 include::index/glossary/14-glossary.adoc[]
 
 include::index/contact-us/17-contact-us.adoc[]
