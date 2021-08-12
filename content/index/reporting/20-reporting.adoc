@@ -144,14 +144,13 @@ data is recorded in the following columns/fields:
 
 [NOTE]
 ====
-If a merchant uses the _{enterprise-portal-name}_ ({enterprise-portal-abbr}) in
-combination with the data reconciliation files, there may be a timezone discrepancy.
+If a merchant uses the Merchant Portal in combination with the data reconciliation files, there may be a timezone discrepancy.
 
 The timezone for the data reconciliation file is UTC.
 
-The timezone in _{enterprise-portal-abbr}_ is configurable. The timezone is automatically taken
+The timezone in the Merchant Portal is configurable. The timezone is automatically taken
 from the user’s device (laptop, desktop, etc.). If there is a
-difference, please adjust the timezone in _{enterprise-portal-abbr}_ to UTC.
+difference, please adjust the timezone in the Merchant Portal to UTC.
 ====
 
 [#Reporting_DataReconciliation_ExampleFile]
