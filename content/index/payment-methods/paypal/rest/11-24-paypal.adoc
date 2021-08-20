@@ -557,7 +557,7 @@ image::images/11-24-paypal/Granting_3rdParty_APIAccess.jpg[Paypal 3rdparty APIac
 . In the textfield _Third Party Permission Username_  enter
 ``\paypal_api1.getneteurope.com`` and click _Lookup_.
 +
-image::images/11-24-paypal/Granting_3rdParty_AddNewTPP.jpg[Paypal 3rdparty Newaccess]
+image::images/11-24-paypal/Granting_3rdParty_AddNewTPP_getnet.jpg[Paypal 3rdparty Newaccess]
 +
 . Select from the list of _Available Permissions_ the following
 items:
