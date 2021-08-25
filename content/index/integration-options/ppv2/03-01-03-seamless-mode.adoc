@@ -12,8 +12,7 @@
 //-
 ====
 
-image::content/images/seamless-mode.png
-
+image::content/images/03-01-03-01-seamless-integration-guide/seamless-mode.png[Seamless Mode]
 
 Use Seamless Mode to display the Payment Page payment form as a fully integrated
 part of your checkout page. Without redirects to external pages (except
