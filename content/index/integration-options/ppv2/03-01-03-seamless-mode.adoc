@@ -12,7 +12,7 @@
 //-
 ====
 
-image::content/images/03-01-03-seamless-mode/seamless-mode.png[Seamless Mode]
+image::content/images/03-01-03-seamless-mode/seamless-mode.png[float=right, Seamless Mode]
 
 
 Use Seamless Mode to display the Payment Page payment form as a fully integrated
