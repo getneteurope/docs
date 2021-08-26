@@ -284,7 +284,7 @@ This _ICF-Overview Report_ contains signed invoices as well as
 cancelations, with their transactions, aggregated per each transaction
 type and total amount of fees. Data is collected every month for a
 previous month period in a .csv file per each merchant and delivered to
-all merchants via the _{enterprise-portal-abbr}_ document
+all merchants via the Merchant Portal document
 center or an SFTP server. 
 
 NOTE: An _ICF-Overview Report_ will only be generated, if there had been
@@ -357,7 +357,7 @@ generated for those merchants who requested it and had any billed credit
 card transactions during the preceding month. Each generated report is
 delivered to each merchant as .csv file via
 
-- the _{enterprise-portal-abbr}_
+- the Merchant Portal
 - an SFTP Server
 
 //-
