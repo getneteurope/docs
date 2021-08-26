@@ -45,9 +45,6 @@ response to verify the payment.
 This is an example of a credit card transaction to show how to process a
 payment with the Hosted Payment Page.
 
-For more supported payment methods and payment-method-specific
-integration guides, go to
-<<PPv2_SupportedPaymentMethods, Payment Methods with Payment Page>>.
 
 The payment-processing example is *designed for the testing environment*
 and *does not use real information.*
