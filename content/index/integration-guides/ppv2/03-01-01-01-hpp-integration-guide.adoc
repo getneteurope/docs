@@ -175,8 +175,6 @@ Leave out the ``payment-methods`` object from the request. Payment Page will sho
 grid of all available payment methods (based on your merchant
 configuration).
 
-Alternatively, check out <<PPv2_SupportedPaymentMethods, Payment Methods with Payment Page>>
-for an overview of all supported payment methods.
 ====
 
 [#PaymentPageSolutions_PPv2_HPP_Integration_Example_Redirect]
