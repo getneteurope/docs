@@ -336,5 +336,4 @@ e.g. ``\https://{pp-redirect-url-error}``
 ====
 For more information on redirect URLs, see <<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for Payment Page>>. +
 For response verification examples, see <<PPSolutions_PPv2_PPv2Security, Payment Page Security>>. +
-For payment-method-specific requests, head over to the <<PPv2_SupportedPaymentMethods, Payment Methods with Payment Page>>.
 ====
