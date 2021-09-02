@@ -72,10 +72,10 @@ provide the consumer data to guarantee a successful refund. +
 [cols="35h,65"]
 |===
 | URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
-| Merchant Account ID (MAID) | To be determined
-| Username | To be determined
-| Password | To be determined
-| Secret Key | To be determined
+| Merchant Account ID (MAID) | ffde408a-9c7b-46f7-8725-b16cc7973211
+| Username | 84320-getneteurope
+| Password | 2NQBnucU19mY
+| Secret Key | b74a204b-af35-4663-808b-aea266ffbbcb
 |===
 
 [#Sofort_Workflow]
