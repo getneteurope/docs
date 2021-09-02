@@ -179,7 +179,7 @@ Possible return codes are documented within <<SEPA_ReturnCodes, Return Codes>>.
 [#SEPA_Workflow]
 ===== Workflow
 
-image::images/diagrams/sepa_workflow.png[SEPA Workflow]
+image::images/diagrams/sepa_workflow.svg[SEPA Workflow]
 
 . _Consumer's bank sends a debit-return_ or _credit-return_ to
 Santander Bank.
