@@ -260,21 +260,12 @@ _preauthorization_, _pending-credit_, _credit_ or _order_ use 2+| ``\https://{re
 _void-authorization_ and _refund-debit_ use
 2+| ``\https://{rest-api-test-endpoint}``
 .3+h|Merchant Account ID (MAID)
-|Show No Address 
-|To be determined
+|386926a7-394e-4ba2-88cc-e121ee9ade97
 
-.3+|<<API_PayPal_Configuration_Addresses, See details>>
-|Show Address 
-|To be determined
-|Edit Address |To be determined
-
-h|Username 3+|To be determined
-h|Password 3+|To be determined
+h|Username 3+|84320-getneteurope
+h|Password 3+|2NQBnucU19mY
 .3+h|Secret Key
-|Show No Address | To be determined
-.3+|<<API_PayPal_Configuration_Addresses, See details>>
-|Show Address | To be determined
-|Edit Address | To be determined
+| aec1048d-963e-4178-b4a2-997665ecb9b8
 |===
 
 [#API_PayPal_TestCredentials_Additional]
