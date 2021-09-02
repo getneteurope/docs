@@ -6,7 +6,7 @@ readily available integration options, you decide where and how you want
 your customers to pay, while still enjoying the benefits of a dependable
 payment solution. All you need to get started is PCI SAQ A compliance.
 
-=== URLs
+=== Payment Page URLs
 
 [width=75%, cols= "1h,3",stripes=none]
 |===
