@@ -485,28 +485,28 @@ include::{root}/samples/json/WPP_SEPADirectDebit_JSON_NVPFields_JSON_StructureFo
 
 [#PPv2_SEPADirectDebit_JSON_NVPFields_Request]
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
-| Field (NVP) | Field (JSON) | JSON Parent
+| Field (JSON) | JSON Parent
 
-|merchant_account_id |value |merchant-account-id ({ })
-|request_id |request-id |payment ({ })
-|transaction_type |transaction-type |payment ({ })
-|requested_amount |value |requested-amount (\{ })
-|requested_amount_currency |currency |requested-amount ({ })
-|first_name |first-name |account-holder ({ })
-|last_name |last-name |account-holder ({ })
-|payment_method |payment-method ([ ])/name |payment-methods ({ })
-|bank_account_iban |iban |bank-account ({ })
-|mandate_mandate_id |mandate-id |mandate ({ })
-|mandate_signed_date |signed-date |mandate ({ })
-|creditor_id |creditor-id |payment ({ })
-|periodic_type |periodic-type |periodic ({ })
-|sequence_type |sequence-type |periodic ({ })
-|success_redirect_url |success-redirect-url |payment ({ })
-|fail_redirect_url |fail-redirect-url |payment ({ })
-|cancel_redirect_url |cancel-redirect-url |payment ({ })
-|b2b |b2-b |payment ({ })
+|value |merchant-account-id ({ })
+|request-id |payment ({ })
+|transaction-type |payment ({ })
+|value |requested-amount (\{ })
+|currency |requested-amount ({ })
+|first-name |account-holder ({ })
+|last-name |account-holder ({ })
+|payment-method ([ ])/name |payment-methods ({ })
+|iban |bank-account ({ })
+|mandate-id |mandate ({ })
+|signed-date |mandate ({ })
+|creditor-id |payment ({ })
+|periodic-type |periodic ({ })
+|sequence-type |periodic ({ })
+|success-redirect-url |payment ({ })
+|fail-redirect-url |payment ({ })
+|cancel-redirect-url |payment ({ })
+|b2-b |payment ({ })
 |===
 
 
