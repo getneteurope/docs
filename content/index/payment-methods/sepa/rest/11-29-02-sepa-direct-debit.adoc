@@ -235,10 +235,10 @@ can be used with both SEPA payment methods: _SEPA Credit Transfer_ and _SEPA Dir
 [cols="30h, 70"]
 |===
 | URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
-| Merchant Account ID (MAID) | To be determined
-| Username | To be determined
-| Password | To be determined
-| Secret Key | To be determined
+| Merchant Account ID (MAID) | cf259724-ef7f-4ba4-bb3d-95b7a43cd2aa
+| Username | 	84320-getneteurope
+| Password | 2NQBnucU19mY
+| Secret Key | f4cbabd5-addf-4648-92a0-09f15eed7c2e
 |===
 
 [#SEPADirectDebit_Workflow]

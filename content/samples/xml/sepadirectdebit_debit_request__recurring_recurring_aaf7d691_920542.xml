@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>ce7b6129-4ff1-42b9-8dcb-723149f5bbbe</merchant-account-id>
+  <merchant-account-id>cf259724-ef7f-4ba4-bb3d-95b7a43cd2aa</merchant-account-id>
   <request-id>{set unique request ID}</request-id>
   <transaction-type>debit</transaction-type>
   <requested-amount currency="EUR">33.00</requested-amount>

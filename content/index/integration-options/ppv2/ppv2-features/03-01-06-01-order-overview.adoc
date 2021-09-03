@@ -46,7 +46,7 @@ a| .Example Request w/ order-overview (``order-overview`` is at the end under ``
 ----
 include::{root}/samples/json/WPP_FeaturesOrderOverview_ToEnableOrderOverviewForAPayment.json[]
 ----
-|
+
 image:images/03-01-06-01-order-overview/Moebelland_OrderOverview.png[float=right, Sample Request]
 
 //We should probably redesign this table, if we want to exclude this screenshot.
@@ -68,7 +68,7 @@ notebooks and 5 sets of colored pencils. All fields related to order
 items are optional, so it is up to you which ones you include (or leave
 out).
 
-[cols="a,a", %autowidth, frame="none", grid="none"]
+[cols="a", %autowidth, frame="none", grid="none"]
 |===
 
 .JSON Example For Detailing Order Items
@@ -76,7 +76,7 @@ out).
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/WPP_FeaturesOrderOverviewDetailingOrderItems_JSON_ExampleForDetailingOrderItems.json[]
-----
-|
-image:images/03-01-06-01-order-overview/demoshop_OrderOverview.png[float=right, Detailing Order Items]
+
 |===
+
+image:images/03-01-06-01-order-overview/demoshop_OrderOverview.png[float=right, Detailing Order Items]

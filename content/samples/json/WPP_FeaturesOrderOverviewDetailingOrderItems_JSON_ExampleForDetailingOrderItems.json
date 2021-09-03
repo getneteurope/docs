@@ -8,7 +8,7 @@
           "article-number": "123",
           "description": "A simple notebook",
           "name": "Notebook",
-          "quantity": 10,
+          "quantity": 2,
           "tax-amount": {
             "currency": "EUR"
           },
@@ -22,7 +22,7 @@
           "article-number": "456",
           "description": "A set of colored pencils",
           "name": "Colored Pencils",
-          "quantity": 5,
+          "quantity": 3,
           "tax-amount": {
             "currency": "EUR"
           },

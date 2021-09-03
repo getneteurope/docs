@@ -251,30 +251,14 @@ Parent-Transaction-ID field.
 [#PayPal_TestCredentials]
 === Test Credentials
 
-.Test Credentials
-[%autowidth]
+[cols="30h, 70"]
 |===
-.2+h|URL(s) Endpoints | The transaction types _debit_, _authorization_, _authorization-only_,
-_preauthorization_, _pending-credit_, _credit_ or _order_ use 2+| ``\https://{rest-api-test-apm-endpoint}``
-| The transaction types _capture-authorization_, _refund-capture_,
-_void-authorization_ and _refund-debit_ use
-2+| ``\https://{rest-api-test-endpoint}``
-.3+h|Merchant Account ID (MAID)
-|Show No Address 
-|To be determined
-
-.3+|<<API_PayPal_Configuration_Addresses, See details>>
-|Show Address 
-|To be determined
-|Edit Address |To be determined
-
-h|Username 3+|To be determined
-h|Password 3+|To be determined
-.3+h|Secret Key
-|Show No Address | To be determined
-.3+|<<API_PayPal_Configuration_Addresses, See details>>
-|Show Address | To be determined
-|Edit Address | To be determined
+| URLs (Endpoints) (The transaction types debit, authorization, authorization-only, preauthorization, pending-credit, credit or order use) |``https://api-test.getneteurope.com/engine/rest/paymentmethods/``
+| URLs (Endpoints) (The transaction types capture-authorization, refund-capture, void-authorization and refund-debit use)|``https://api-test.getneteurope.com/engine/rest/payments/``
+| Merchant Account ID (MAID) | 386926a7-394e-4ba2-88cc-e121ee9ade97
+| Username | 84320-getneteurope
+| Password | 2NQBnucU19mY
+| Secret Key | aec1048d-963e-4178-b4a2-997665ecb9b8
 |===
 
 [#API_PayPal_TestCredentials_Additional]
@@ -555,9 +539,9 @@ and select the link _Grant API permission_.
 image::images/11-24-paypal/Granting_3rdParty_APIAccess.jpg[Paypal 3rdparty APIaccess]
 +
 . In the textfield _Third Party Permission Username_  enter
-``\paypal_api1.getneteurope.com`` and click _Lookup_.
+``paypal_api1.getneteurope.com`` and click _Lookup_.
 +
-image::images/11-24-paypal/Granting_3rdParty_AddNewTPP.jpg[Paypal 3rdparty Newaccess]
+image::images/11-24-paypal/Granting_3rdParty_AddNewTPP_getnet.jpg[Paypal 3rdparty Newaccess]
 +
 . Select from the list of _Available Permissions_ the following
 items:

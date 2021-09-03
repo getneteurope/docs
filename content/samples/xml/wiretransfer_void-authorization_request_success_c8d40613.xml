@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>dcd72c94-25df-4794-8197-daf029c82d65</merchant-account-id>
+    <merchant-account-id>7efcbcb5-c824-41fe-802e-617d7279ccd3</merchant-account-id>
     <request-id>{{$guid}}</request-id>
     <transaction-type>void-authorization</transaction-type>
     <parent-transaction-id>c8d40613-0f8d-4729-8149-e42a5352b2b2</parent-transaction-id>
