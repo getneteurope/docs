@@ -519,23 +519,23 @@ include::{root}/samples/json/WPP_SEPADirectDebit_JSON_NVPFieldsRequest_ResponseO
 
 
 [#PPv2_SEPADirectDebit_JSON_NVPFields_Response]
-[cols="e,e,e"]
+[cols="e,e"]
 |===
-| Field (NVP) | Field (JSON) | JSON Parent
+| Field (JSON) | JSON Parent
 
-| provider_transaction_reference_id | provider-transaction-reference-id |payment ({ })
+| provider-transaction-reference-id |payment ({ })
 
-| transaction_state | transaction-state | payment ({ })
+| transaction-state | payment ({ })
 
-| transaction_id | transaction-id | payment ({ })
+| transaction-id | payment ({ })
 
-| completion_time_stamp | completion-time-stamp | payment ({ })
+| completion-time-stamp | payment ({ })
 
-| status_code_n | status ([ {} ])/ code | statuses ({ })
+| status ([ {} ])/ code | statuses ({ })
 
-| status_description_n | status ([ {} ])/ description |statuses ({ })
+| status ([ {} ])/ description |statuses ({ })
 
-| status_severity_n | status ([ {} ])/ severity |statuses ({ })
+| status ([ {} ])/ severity |statuses ({ })
 
-| api_id | api-id |payment ({ })
+| api-id |payment ({ })
 |===
