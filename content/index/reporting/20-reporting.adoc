@@ -165,7 +165,7 @@ image::images/10-reporting/reconciliation-file-table.png[Data Reconciliation Fil
 [discrete]
 ====== Download Sample
 
-link:resources/10-reporting/APTransactions_195.175.175.175_2017-08-23_merchantID.xlsx[Here you can download] a full compilation of samples of possible values
+link:resources/APTransactions_195.175.175.175_2017-08-23_merchantID.xlsx[Here you can download] a full compilation of samples of possible values
 within the reconciliation file also displayed with a spreadsheet application.
 
 [#Reporting_DataReconciliation_UnmatchedTransactions]
