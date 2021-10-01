@@ -18,8 +18,8 @@
       <order-number>12345</order-number>
       <descriptor>customerStatement 12003332222</descriptor>
       <notifications>
-            <notification transaction-state="failed" url="https://www.merchant.com/IPN"></notification>
-            <notification url="mailto:admin@merchant.com"></notification>
+            <notification transaction-state="failed" url="https://www.merchant.com/errorURL"></notification>
+            <notification url="https://www.merchant.com/special-IPN"></notification>
       </notifications>
       <payment-methods>
             <payment-method name="${payment method}"/>
