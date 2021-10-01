@@ -33,7 +33,7 @@
             <descriptor>demo descriptor</descriptor>
             <notifications>
                <notification transaction-state="failed" url="https://www.merchant.com/IPN"></notification>
-               <notification url="mailto:admin@merchant.com"></notification>
+               <notification url="https://www.merchant.com/special-IPN"></notification>
             </notifications>
             <authorization-code>123456</authorization-code>
             <api-id>elastic-api</api-id>
