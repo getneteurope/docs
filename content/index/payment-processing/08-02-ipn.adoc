@@ -9,8 +9,7 @@ final status of a transaction.
 
 There are two types of notifications:
 
-- *HTTP(S)* (Web Server POST)
-- *SMTP* (Email prefixed with 'mailto')
+- *HTTPS* (Web Server POST)
 
 //-
 
