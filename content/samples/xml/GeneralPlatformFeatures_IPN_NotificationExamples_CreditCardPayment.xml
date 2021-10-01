@@ -32,7 +32,7 @@
             <ip-address>127.0.0.1</ip-address>
             <descriptor>demo descriptor</descriptor>
             <notifications>
-               <notification transaction-state="failed" url="https://www.merchant.com/IPN"></notification>
+               <notification transaction-state="failed" url="https://www.merchant.com/errorURL"></notification>
                <notification url="https://www.merchant.com/special-IPN"></notification>
             </notifications>
             <authorization-code>123456</authorization-code>
