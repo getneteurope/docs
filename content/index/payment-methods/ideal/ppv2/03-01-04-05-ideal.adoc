@@ -313,7 +313,7 @@ Here you can see the structure of a full request (optional fields included).
 include::{root}/samples/json/WPP_IdealJSONNVPFieldRequest_JSON_StructureForiDEALRequests.json[]
 ----
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
 |Field (JSON) |JSON Parent
 
