@@ -57,13 +57,13 @@ functionality, see <<GeneralPlatformFeatures_CrossPayment, Cross-Payment-Methods
 |
 ``\https://{rest-api-test-apm-endpoint}``
 | *Merchant Account ID (MAID)*
-2+| To be determined
+2+| ba65f745-d2f6-4adf-89d1-b6b39442bb8b
 | *Username*
-2+| To be determined
+2+| 84320-getneteurope
 | *Password*
-2+| To be determined
+2+| 2NQBnucU19mY
 | *Secret Key*
-2+| To be determined
+2+| 1e2d0614-2fb3-471c-93f5-c4ed89f7567c
 |===
 
 [#iDEAL_Workflow]
