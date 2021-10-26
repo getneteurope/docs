@@ -143,7 +143,7 @@ For a full list of optional fields you can use, see the REST API
 <<iDEAL, _iDEAL_ specification>>.
 
 For a full structure of a request (optional fields included), see the
-<<PPv2_ideal_JSONNVPField, JSON/NVP Field Reference>> section at the bottom.
+<<PPv2_ideal_JSONNVPField, JSON Field Reference>> section at the bottom.
 
 
 .1. Create a Payment Session (Initial Request)
