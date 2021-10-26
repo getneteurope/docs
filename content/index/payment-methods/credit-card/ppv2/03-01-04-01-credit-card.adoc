@@ -1153,7 +1153,7 @@ Otherwise, the field is optional.
 3+|city
 |String
 |M
-|50
+|32
 |City of the consumer's billing address.
 
 3+|country
@@ -1214,7 +1214,7 @@ a|The shipping method chosen by the consumer.
 3+|city
 |String
 |O
-|50
+|32
 |City of the consumer's shipping address. Please provide this field even if billing city is identical.
 
 3+|country
