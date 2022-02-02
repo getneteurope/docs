@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <request-id>e90684e4-3588-4450-b1f6-42d614f4430f</request-id>
+  <merchant-account-id>94906caa-3417-4db4-9493-e17e7f1fbbb1</merchant-account-id>
+  <request-id>5ca6afcb-c1c0-4599-807e-875cff56b874</request-id>
   <transaction-type>refund-request</transaction-type>
-  <requested-amount currency="PLN">10</requested-amount>
-  <parent-transaction-id>77e8f783-8960-45b5-8e61-5e50f9a29ba1</parent-transaction-id>
-  <payment-methods>
-    <payment-method name="p24" />
-  </payment-methods>
+  <requested-amount currency="PLN">700</requested-amount>
+  <parent-transaction-id>1ab07136-5411-46e9-bf1e-0dd7d26ea453</parent-transaction-id>
 </payment>
