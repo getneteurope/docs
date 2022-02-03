@@ -32,7 +32,7 @@ formats and methods can be used for requests and responses.
 This table lists all transaction types available for _P24_.
 
 NOTE: Some transaction types cannot be sent in your request. Refer to columns
-_Request_, _Response/IPN_ and _{enterprise-portal-abbr}_ for details where to expect involved
+_Request_, _Response/IPN_ and Merchant Portal for details where to expect involved
 transaction types.
 
 NOTE: Recurring mode is not available.
@@ -42,7 +42,7 @@ at <<AppendixB,  Transaction Types>>.
 
 [cols="e,,,,,"]
 |===
-|Transaction Type | Request | Response/IPN | {enterprise-portal-abbr} | Description | Link to Samples
+|Transaction Type | Request | Response/IPN | Merchant Portal | Description | Link to Samples
 
 |debit | Yes | Yes | Yes | Moves funds from Consumer to Merchant.
 ``debit`` requests to take funds from consumer's bank account. a|
@@ -68,7 +68,7 @@ flow.
 |===
 | Request      | *Yes* means the transaction type can be sent in the request.
 | Response/IPN | *Yes* means the transaction type can appear in either response _or_ notification.
-| _{enterprise-portal-abbr}_          | *Yes* means the transaction type is visible in _{enterprise-portal-name}_.
+| Merchant Portal          | *Yes* means the transaction type is visible in _{enterprise-portal-name}_.
 |===
 ====
 
@@ -176,7 +176,7 @@ definition in the field ``notifications/notification/@url`` in the request
 [#Przelewy24_refundTransaction]
 ==== _refund_ Transaction
 
-A ``refund`` transaction is a backend process. Wirecard can only provide a
+A ``refund`` transaction is a backend process. Getnet can only provide a
 process for ReST API. When using Payment Page the merchant must set up a
 refund process.
 
@@ -238,7 +238,7 @@ provided in the field ``descriptor`` of the <<Przelewy24_Samples_debit, debit re
 
 The structure of the _P24-Transaction-ID_ is
 ``P24-YXX-XXX-XXX``. _The _P24-Transaction-ID__ is also displayed in
-the _{enterprise-portal-name}_ ({enterprise-portal-abbr}) as _Provider Transaction-ID_.
+the _{enterprise-portal-name}_ as _Provider Transaction-ID_.
 
 [#Przelewy24_Fields]
 === Fields
