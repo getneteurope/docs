@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b/payments/0036ec58-3011-4b9f-acf3-2f6f8b3f9753">
-    <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b">c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108/payments/0036ec58-3011-4b9f-acf3-2f6f8b3f9753">
+    <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108">5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
     <transaction-id>0036ec58-3011-4b9f-acf3-2f6f8b3f9753</transaction-id>
     <request-id>3aedafa7-21c7-4620-b1b1-620e81107b6d</request-id>
     <transaction-type>authorization</transaction-type>

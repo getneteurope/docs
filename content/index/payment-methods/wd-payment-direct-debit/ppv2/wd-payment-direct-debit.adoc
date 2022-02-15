@@ -25,7 +25,7 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 
 |Merchant Account ID (MAID) 
-|cf259724-ef7f-4ba4-bb3d-95b7a43cd2aa
+|5c4ef296-46c5-482c-9143-509d13fcca34
 
 |Username 
 |84320-getneteurope

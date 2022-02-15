@@ -722,7 +722,7 @@ payment form.
 [%autowidth, cols="h,"]
 |===
 | URL(s) Endpoints           |``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | c266f667-1c0e-4bad-8d03-7e84d2d8336b
+| Merchant Account ID (MAID) | 5c4a8a42-04a8-4970-a595-262f0ba0a108
 | Username                   | 84320-getneteurope
 | Password                   | 2NQBnucU19mY
 | Secret Key (used for response verification) | 49c90b00-e5f7-40d0-bc7f-4971b8e7681e

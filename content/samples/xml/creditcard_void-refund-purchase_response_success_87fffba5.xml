@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/9105bb4f-ae68-4768-9c3b-3eda968f57ea/payments/9ff6eb1f-d729-4b93-bad2-75300abd3168">
-    <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b">c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
+    <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108">5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
     <transaction-id>9ff6eb1f-d729-4b93-bad2-75300abd3168</transaction-id>
     <request-id>5cffdb9b-91ce-4ddb-945e-961a025e6582</request-id>
     <transaction-type>void-refund-purchase</transaction-type>

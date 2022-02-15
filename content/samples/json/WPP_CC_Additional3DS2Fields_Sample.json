@@ -1,7 +1,7 @@
 {
     "payment": {
         "merchant-account-id": {
-            "value": "c266f667-1c0e-4bad-8d03-7e84d2d8336b"
+            "value": "5c4a8a42-04a8-4970-a595-262f0ba0a108"
         },
         "request-id": "$guid",
         "transaction-type": "authorization",
