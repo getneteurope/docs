@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
- <merchant-account-id>386926a7-394e-4ba2-88cc-e121ee9ade97</merchant-account-id>
+ <merchant-account-id>bb342082-9761-4481-802e-20b10d92545d</merchant-account-id>
      <request-id>${unique for each request}</request-id>
  <transaction-type>void-authorization</transaction-type>
  <requested-amount currency="EUR">2.31</requested-amount>

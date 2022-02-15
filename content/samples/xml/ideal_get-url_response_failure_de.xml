@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
- <merchant-account-id>ba65f745-d2f6-4adf-89d1-b6b39442bb8b</merchant-account-id>
+ <merchant-account-id>76977f95-d929-4870-acee-4ef89fd200cd</merchant-account-id>
  <transaction-id>40f59357-21e6-4ef8-81e8-9e6cea6b37d6</transaction-id>
  <request-id>e530a6ca-fb93-4049-9c88-a8d6b9645f4b</request-id>
  <transaction-type>get-url</transaction-type>

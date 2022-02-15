@@ -79,13 +79,13 @@ Test Credentials for Transaction Type
 | URLI (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| ba65f745-d2f6-4adf-89d1-b6b39442bb8b
+| 76977f95-d929-4870-acee-4ef89fd200cd
 | Username
-| 84320-getneteurope
+| 515225-GetnetEuropeTEST
 | Password
-| 2NQBnucU19mY
+| 4cHLRE-Q7YcAP
 | Secret Key (used for response verification)
-| 1e2d0614-2fb3-471c-93f5-c4ed89f7567c
+| 01ab26af-d5c7-46f8-b5dd-8a1516c3e85c
 |===
 
 [#PPv2_ideal_TestCredentials_Additional]

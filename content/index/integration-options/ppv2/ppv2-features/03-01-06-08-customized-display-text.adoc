@@ -37,7 +37,7 @@ Use the following test credentials to test _Customized Display Text_:
 | URL (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| c266f667-1c0e-4bad-8d03-7e84d2d8336b
+| 5c4a8a42-04a8-4970-a595-262f0ba0a108
 | Username
 | 784320-getneteurope
 | Password

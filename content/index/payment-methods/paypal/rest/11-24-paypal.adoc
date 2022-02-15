@@ -255,10 +255,10 @@ Parent-Transaction-ID field.
 |===
 | URLs (Endpoints) (The transaction types debit, authorization, authorization-only, preauthorization, pending-credit, credit or order use) |``https://api-test.getneteurope.com/engine/rest/paymentmethods/``
 | URLs (Endpoints) (The transaction types capture-authorization, refund-capture, void-authorization and refund-debit use)|``https://api-test.getneteurope.com/engine/rest/payments/``
-| Merchant Account ID (MAID) | 386926a7-394e-4ba2-88cc-e121ee9ade97
-| Username | 84320-getneteurope
-| Password | 2NQBnucU19mY
-| Secret Key | aec1048d-963e-4178-b4a2-997665ecb9b8
+| Merchant Account ID (MAID) | bb342082-9761-4481-802e-20b10d92545d
+| Username | 515225-GetnetEuropeTEST
+| Password | 4cHLRE-Q7YcAP
+| Secret Key | fd1d35aa-952e-4549-9f3d-ea33c89c86c4
 |===
 
 [#API_PayPal_TestCredentials_Additional]

@@ -86,10 +86,10 @@ processing and is not part of the request or the response.
 [cols="30h, 70"]
 |===
 | URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
-| Merchant Account ID (MAID) | e281d947-0630-488f-82d5-e69e37436b4e
-| Username | 84320-getneteurope
-| Password | 2NQBnucU19mY
-| Secret Key | cf37c044-627a-4239-94bf-0a87bf619737
+| Merchant Account ID (MAID) | e2998fd1-d99e-410b-a2cb-eacb5e761293
+| Username | 515225-GetnetEuropeTEST
+| Password | 4cHLRE-Q7YcAP
+| Secret Key | b12b63f0-963f-4429-ace7-7da404e09118
 |===
 
 [#SEPACreditTransfer_Workflow]

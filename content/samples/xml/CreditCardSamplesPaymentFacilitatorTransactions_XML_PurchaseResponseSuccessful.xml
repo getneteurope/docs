@@ -1,5 +1,5 @@
-<payment self="https://{test-instance-hostname}:443/engine/rest/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b/payments/d5e01917-26ba-4527-b7e9-dd6a234b9689" xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-   <merchant-account-id ref="{test-instance-hostname}:443/engine/rest/config/merchants/c266f667-1c0e-4bad-8d03-7e84d2d8336b">c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
+<payment self="https://{test-instance-hostname}:443/engine/rest/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108/payments/d5e01917-26ba-4527-b7e9-dd6a234b9689" xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
+   <merchant-account-id ref="{test-instance-hostname}:443/engine/rest/config/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108">5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
    <transaction-id>d5e01917-26ba-4527-b7e9-dd6a234b9689</transaction-id>
    <request-id>{{$guid}}</request-id>
    <transaction-type>purchase</transaction-type>

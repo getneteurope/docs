@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment self="https://{test-instance-hostname}:443/engine/rest/merchants/386926a7-394e-4ba2-88cc-e121ee9ade97/payments/52bfef6e-a10d-4fce-ad38-74d9cfc6cf65" xmlns="http://www.elastic-payments.com/schema/payment">
- <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/386926a7-394e-4ba2-88cc-e121ee9ade97">386926a7-394e-4ba2-88cc-e121ee9ade97</merchant-account-id>
+<payment self="https://{test-instance-hostname}:443/engine/rest/merchants/bb342082-9761-4481-802e-20b10d92545d/payments/52bfef6e-a10d-4fce-ad38-74d9cfc6cf65" xmlns="http://www.elastic-payments.com/schema/payment">
+ <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/bb342082-9761-4481-802e-20b10d92545d">bb342082-9761-4481-802e-20b10d92545d</merchant-account-id>
  <transaction-id>52bfef6e-a10d-4fce-ad38-74d9cfc6cf65</transaction-id>
  <request-id>09b39958-32e2-4793-a669-32b89e5ddb4c</request-id>
  <transaction-type>refund-capture</transaction-type>

@@ -3,7 +3,7 @@
     <periodic-type>ci</periodic-type>
     <sequence-type>recurring</sequence-type>
    </periodic>
-   <merchant-account-id>c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
+   <merchant-account-id>5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
    <request-id>{{$guid}}</request-id>
    <transaction-type>authorization</transaction-type>
    <requested-amount currency="USD">1.02</requested-amount>

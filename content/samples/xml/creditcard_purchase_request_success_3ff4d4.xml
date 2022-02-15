@@ -3,7 +3,7 @@
    <payment-methods>
       <payment-method name="creditcard" />
    </payment-methods>
-   <merchant-account-id>c266f667-1c0e-4bad-8d03-7e84d2d8336b</merchant-account-id>
+   <merchant-account-id>5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
    <request-id>6d324e6b-0d97-43bb-8688-52aee348655d</request-id>
    <transaction-type>purchase</transaction-type>
    <requested-amount currency="USD">1.01</requested-amount>

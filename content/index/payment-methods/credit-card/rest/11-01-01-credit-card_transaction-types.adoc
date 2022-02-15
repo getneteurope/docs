@@ -154,15 +154,6 @@ Here is an example how to refund a _capture_.
 image::images/diagrams/cc_refund-capture.svg[refund_workflow]
 
 
-[#CreditCard_TransactionTypes_OctEligibility]
-=== OCT Eligibility Check
-
-
-{payment-gateway} uses the transaction type
-_authorization-only_, to find out whether the card in use is eligible
-for original credit transactions (OCT). If you want to use this
-eligibility check contact mailto:{e-mail-support}[merchant support]
-for details.
 
 
 //-
