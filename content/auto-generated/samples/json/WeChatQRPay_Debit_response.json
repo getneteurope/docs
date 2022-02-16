@@ -36,7 +36,7 @@
     "payment-methods": {
       "payment-method": [
         {
-          "url": "https://api-test.wirecard.com:443/engine/hpp/wechat-qrpay/408abfb2-542c-4879-b0ee-26e1cd14b654?request_time_stamp=20191105082752&request_id=762f16b0-e3f4-41e2-bf50-2587f27a757a&merchant_account_id=236d1c79-5146-496b-af00-3399c9097edc&transaction_id=408abfb2-542c-4879-b0ee-26e1cd14b654&transaction_type=debit&requested_amount=1.01&requested_amount_currency=USD&redirect_url=&ip_address=127.0.0.1&request_signature=16efd1ba298f92afcdefc41ee0960123a91cc60b1c1f029d66ac3b1b414fa3aa&psp_name=elastic-payments&country=CA",
+          "url": "https://api-test.getneteurope.com:443/engine/hpp/wechat-qrpay/408abfb2-542c-4879-b0ee-26e1cd14b654?request_time_stamp=20191105082752&request_id=762f16b0-e3f4-41e2-bf50-2587f27a757a&merchant_account_id=236d1c79-5146-496b-af00-3399c9097edc&transaction_id=408abfb2-542c-4879-b0ee-26e1cd14b654&transaction_type=debit&requested_amount=1.01&requested_amount_currency=USD&redirect_url=&ip_address=127.0.0.1&request_signature=16efd1ba298f92afcdefc41ee0960123a91cc60b1c1f029d66ac3b1b414fa3aa&psp_name=elastic-payments&country=CA",
           "name": "wechat-qrpay"
         }
       ]

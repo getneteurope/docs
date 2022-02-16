@@ -64,6 +64,6 @@
     },
     "api-id": "elastic-api",
     "provider-account-id": "70003",
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/0e62dfbc-2ca8-494a-8d81-968ddb707f33"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/0e62dfbc-2ca8-494a-8d81-968ddb707f33"
   }
 }

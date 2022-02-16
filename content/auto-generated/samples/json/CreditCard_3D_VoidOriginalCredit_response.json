@@ -53,6 +53,6 @@
     "authorization-code": "235555",
     "api-id": "elastic-api",
     "provider-account-id": "00000031734B7BC5",
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/86687a11-3f9b-4f30-be54-8f22998b6177/payments/f8ea460a-a8e1-43f2-af9b-bb75ff45dd33"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/86687a11-3f9b-4f30-be54-8f22998b6177/payments/f8ea460a-a8e1-43f2-af9b-bb75ff45dd33"
   }
 }

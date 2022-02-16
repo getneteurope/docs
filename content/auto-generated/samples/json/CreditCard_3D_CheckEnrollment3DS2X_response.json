@@ -125,6 +125,6 @@
       "preorder-date": 1563235200000,
       "reorder-items": "01"
     },
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/949b1ecc-30ff-41e8-bd5f-c7dcc7a2b5d2"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/949b1ecc-30ff-41e8-bd5f-c7dcc7a2b5d2"
   }
 }

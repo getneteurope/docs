@@ -60,6 +60,6 @@
     "authorization-code": "734734",
     "api-id": "elastic-api",
     "provider-account-id": "70001",
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/9105bb4f-ae68-4768-9c3b-3eda968f57ea/payments/a717a45c-ca3c-40b2-a8d8-2b73b172f435"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/9105bb4f-ae68-4768-9c3b-3eda968f57ea/payments/a717a45c-ca3c-40b2-a8d8-2b73b172f435"
   }
 }

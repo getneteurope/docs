@@ -56,6 +56,6 @@
       ]
     },
     "api-id": "elastic-api",
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/4e2ec353-a46f-4b41-aa32-82b2ea8dc21a"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/4e2ec353-a46f-4b41-aa32-82b2ea8dc21a"
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.wirecard.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/09b7a8f0-2565-43f9-8385-1a0e5f8f6cc2">
-    <merchant-account-id ref="https://api-test.wirecard.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/09b7a8f0-2565-43f9-8385-1a0e5f8f6cc2">
+    <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
     <transaction-id>09b7a8f0-2565-43f9-8385-1a0e5f8f6cc2</transaction-id>
     <request-id>f70fb019-e239-4793-b312-e7352c9eff96</request-id>
     <transaction-type>enrollment</transaction-type>
