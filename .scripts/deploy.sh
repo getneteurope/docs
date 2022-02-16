@@ -8,4 +8,4 @@ if [[ -z ${AWS_S3_BUCKET} || -z ${AWS_S3_FOLDER} ]]; then
   exit 1
 fi
 
-aws s3 sync "public/" "s3://${AWS_S3_BUCKET}/${AWS_S3_FOLDER}/" --delete
+aws s3 sync "public/" "s3://${AWS_S3_BUCKET}/${AWS_S3_FOLDER}/"
