@@ -61,3 +61,7 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PUBLIC_GN }}
         AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER_GN }}
 
+    - name: Invalidate Cloudfront
+      run: bash .scripts/invalidate_cache.sh
+      env:
+        AWS_CF_DIST_ID: ${{ secrets.AWS_CF_DIST_ID_PUBLIC_GN }}
