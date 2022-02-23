@@ -129,23 +129,23 @@ set up your testing tool:
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 
 |Username         
-|To be determined
+|515225-GetnetEuropeTEST
 
 |Password         
-|To be determined
+|4cHLRE-Q7YcAP
 
 |MAID             
-|To be determined
+|5c4a8a42-04a8-4970-a595-262f0ba0a108
 
 |Secret Key       
-|To be determined
+|5ac555d4-e7f7-409f-8147-d82c8c10ed53
 
 2+|Test Card
 |Card Number      
 |4012000300201199
 
 |Expiration Date  
-|01/23
+|01/25
 
 |CVV              
 |199
