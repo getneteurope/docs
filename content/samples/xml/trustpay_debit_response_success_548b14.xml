@@ -14,7 +14,7 @@
         <custom-field field-name="trustpay-gw-key" field-value="TestPaySK"/>
     </custom-fields>
     <payment-methods>
-        <payment-method url="https://ib.test.trustpay.eu/mapi/RedirectToBank.aspx?PID=4399601190&amp;URL=https%3A%2F%2Fapi-test.wirecard.com%2Fengine%2Fnotification%2Ftrustpay%2Fredirect%2F&amp;NURL=https%3A%2F%2Fapi-test.wirecard.com%2Fengine%2Fnotification%2Ftrustpay" name="trustpay"/>
+        <payment-method url="https://ib.test.trustpay.eu/mapi/RedirectToBank.aspx?PID=4399601190&amp;URL=https%3A%2F%2Fapi-test.getneteurope.com%2Fengine%2Fnotification%2Ftrustpay%2Fredirect%2F&amp;NURL=https%3A%2F%2Fapi-test.getneteurope.com%2Fengine%2Fnotification%2Ftrustpay" name="trustpay"/>
     </payment-methods>
     <api-id>elastic-payment-page</api-id>
     <fail-redirect-url>http://127.0.0.1</fail-redirect-url>

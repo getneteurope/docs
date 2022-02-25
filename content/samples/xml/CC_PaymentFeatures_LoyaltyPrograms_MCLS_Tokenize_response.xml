@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.wirecard.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/ea65d5c6-3650-41ef-a366-c9f251c319f8">
-    <merchant-account-id ref="https://api-test.wirecard.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4/payments/ea65d5c6-3650-41ef-a366-c9f251c319f8">
+    <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/3a645860-9f9d-4846-83a3-aa3451f842c4">3a645860-9f9d-4846-83a3-aa3451f842c4</merchant-account-id>
     <transaction-id>ea65d5c6-3650-41ef-a366-c9f251c319f8</transaction-id>
     <request-id>58c91353-16ac-4fb4-ae42-1c990a897446</request-id>
     <transaction-type>tokenize</transaction-type>

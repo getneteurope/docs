@@ -10,10 +10,16 @@
             Copyright 2011 elastic-payments.com. All rights reserved.
         </xs:documentation>
     </xs:annotation>
+    <xs:simpleType name="integer3">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="999"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:simpleType name="integer4">
         <xs:restriction base="xs:int">
             <xs:minInclusive value="1"/>
-            <xs:maxInclusive value="4"/>
+            <xs:maxInclusive value="9999"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="integer96">
@@ -47,6 +53,7 @@
             <xs:enumeration value="mastercard"/>
             <xs:enumeration value="mydebit"/>
             <xs:enumeration value="netsfp"/>
+            <xs:enumeration value="netsdebit"/>
             <xs:enumeration value="postepay"/>
             <xs:enumeration value="sorocred"/>
             <xs:enumeration value="uatp"/>
@@ -158,6 +165,7 @@
             <xs:enumeration value="revoke-original-credit"/>
             <xs:enumeration value="revoke-purchase"/>
             <xs:enumeration value="revoke-refund"/>
+            <xs:enumeration value="revoke-debit"/>
             <xs:enumeration value="second-cb"/>
             <xs:enumeration value="second-cb-rep"/>
             <xs:enumeration value="second-cb-succ-rep"/>
@@ -230,6 +238,7 @@
             <xs:enumeration value="banktransfer"/>
             <xs:enumeration value="barpay"/>
             <xs:enumeration value="bitcoin"/>
+            <xs:enumeration value="blik"/>
             <xs:enumeration value="boleto"/>
             <xs:enumeration value="boleto_bancario"/>
             <xs:enumeration value="carrier-billing"/>
@@ -241,6 +250,7 @@
             <xs:enumeration value="creditcard"/>
             <xs:enumeration value="debito_bradesco"/>
             <xs:enumeration value="directtransfer"/>
+            <xs:enumeration value="netsdebit"/>
             <xs:enumeration value="eft"/>
             <xs:enumeration value="epay_bg"/>
             <xs:enumeration value="eplatby"/>
@@ -268,6 +278,7 @@
             <xs:enumeration value="moneta_ru"/>
             <xs:enumeration value="mpass"/>
             <xs:enumeration value="neteller_ru"/>
+            <xs:enumeration value="onlinetransfer"/>
             <xs:enumeration value="p24"/>
             <xs:enumeration value="paybox"/>
             <xs:enumeration value="zapp"/>
@@ -278,7 +289,6 @@
             <xs:enumeration value="payolution-b2b"/>
             <xs:enumeration value="payolution-elv"/>
             <xs:enumeration value="paypal"/>
-            <xs:enumeration value="payright"/>
             <xs:enumeration value="paysafecard"/>
             <xs:enumeration value="poli"/>
             <xs:enumeration value="ratepay-elv"/>
@@ -314,6 +324,8 @@
             <xs:enumeration value="mpesa"/>
             <xs:enumeration value="wechat-qrpay"/>
             <xs:enumeration value="wechat-quickpay"/>
+            <xs:enumeration value="wechat-inapp"/>
+            <xs:enumeration value="wechat-webbased"/>
             <xs:enumeration value="guaranteed-inv"/>
             <xs:enumeration value="guaranteed-dd"/>
             <xs:enumeration value="fpx_amonline"/>
@@ -373,6 +385,12 @@
             <xs:maxLength value="150"/>
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="card-scheme-transaction-id">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:simpleType name="ip-address">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
@@ -396,7 +414,7 @@
     </xs:simpleType>
     <xs:simpleType name="email">
         <xs:restriction base="xs:string">
-            <xs:pattern value="([0-9a-zA-Z]([-_.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})"/>
+            <xs:pattern value="[A-Za-z0-9_-]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="account-number">
@@ -426,6 +444,8 @@
         <xs:restriction base="xs:token">
             <xs:enumeration value="m"/>
             <xs:enumeration value="f"/>
+            <xs:enumeration value="u"/>
+            <xs:enumeration value="x"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="merchant-account-id">
@@ -443,8 +463,8 @@
     </xs:simpleType>
     <xs:simpleType name="year">
         <xs:restriction base="xs:short">
-            <xs:minInclusive value="2000"/>
-            <xs:maxInclusive value="3000"/>
+            <xs:minInclusive value="1970"/>
+            <xs:maxInclusive value="4100"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="uuid">
@@ -601,7 +621,7 @@
 
     <xs:complexType name="hotel-industry">
         <xs:all>
-            <xs:element name="hotel-code" type="xs:string"/>
+            <xs:element name="hotel-code" type="xs:string" minOccurs="0"/>
             <xs:element name="hotel-name" type="xs:string" minOccurs="0"/>
             <xs:element name="hotel-folio-number" type="xs:string" minOccurs="0"/>
             <xs:element name="reservation-confirmation-number" type="confirmation-number"/>
@@ -631,13 +651,13 @@
             <xs:element name="advanced-deposit" type="money" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
-    
+
     <xs:complexType name="auto-rental-industry">
         <xs:all>
         	<xs:element name="agreement-number" type="xs:string"/>
         	<xs:element name="renter-name" type="xs:string"/>
-        	<xs:element name="vehicle-id" type="xs:string" minOccurs="0"/> 
-        	<xs:element name="vehicle-class" type="xs:string" minOccurs="0"/>        	
+        	<xs:element name="vehicle-id" type="xs:string" minOccurs="0"/>
+        	<xs:element name="vehicle-class" type="xs:string" minOccurs="0"/>
         	<xs:element name="driver-id" type="xs:string" minOccurs="0"/>
         	<xs:element name="pickup-locn-name" type="xs:string" minOccurs="0"/>
         	<xs:element name="pickup-city-name" type="xs:string"/>
@@ -648,10 +668,10 @@
         	<xs:element name="return-city-name" type="xs:string"/>
         	<xs:element name="return-region-code" type="xs:string"/>
         	<xs:element name="return-country-code" type="xs:string"/>
-        	<xs:element name="return-date-time" type="xs:date"/>        	
+        	<xs:element name="return-date-time" type="xs:date"/>
         </xs:all>
     </xs:complexType>
-    
+
     <xs:complexType name="communication-industry">
         <xs:all>
         	<xs:element name="call-from-date-time" type="xs:dateTime"/>
@@ -672,7 +692,7 @@
         	<xs:element name="rate-class-code" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
-    
+
     <xs:complexType name="entertainment-industry">
         <xs:all>
             <xs:element name="event-name" type="xs:string" minOccurs="0"/>
@@ -681,10 +701,10 @@
         	<xs:element name="event-region-code" type="xs:string" minOccurs="0"/>
         	<xs:element name="event-country-code" type="xs:string" minOccurs="0"/>
         	<xs:element name="event-ticket-price" type="money" minOccurs="0"/>
-        	<xs:element name="event-ticket-cnt" type="xs:int" minOccurs="0"/>        	
+        	<xs:element name="event-ticket-cnt" type="xs:int" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
-    
+
     <xs:complexType name="insurance-industry">
         <xs:all>
             <xs:element name="policy-number" type="xs:string"/>
@@ -693,10 +713,10 @@
         	<xs:element name="policy-premium-frequency" type="xs:string" minOccurs="0"/>
         	<xs:element name="additional-policy-number" type="xs:string" minOccurs="0"/>
         	<xs:element name="policy-type" type="xs:string"/>
-        	<xs:element name="insured-name" type="xs:string" minOccurs="0"/>        	
+        	<xs:element name="insured-name" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
-    
+
     <xs:complexType name="cps-industry">
         <xs:all>
             <xs:element name="requester-name" type="xs:string" minOccurs="0"/>
@@ -705,7 +725,7 @@
         	<xs:element name="ship-to-postal-code" type="xs:string" />
         	<xs:element name="ship-to-country-code" type="xs:string" />
         	<xs:element name="total-tax-amout" type="money" minOccurs="0"/>
-        	<xs:element name="tax-type-code" type="xs:string" minOccurs="0"/>        	
+        	<xs:element name="tax-type-code" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 
@@ -737,7 +757,7 @@
             <xs:element name="merchant-tokenization-flag" type="xs:boolean" minOccurs="0"/>
             <xs:element name="customer-reference-id" type="string32" minOccurs="0"/>
         </xs:all>
-        <xs:attribute name="selection" type="card-type-selection" use="optional"/>
+        <xs:attribute name="selection" type="card-type-selection"/>
     </xs:complexType>
     <xs:simpleType name="card-type-selection">
         <xs:annotation>
@@ -791,7 +811,6 @@
             <xs:element name="encoding" type="xs:string" minOccurs="0"/>
             <xs:element name="format" type="xs:string" minOccurs="0"/>
             <xs:element name="encryption-context" type="encryption-context" minOccurs="0"/>
-            <xs:element name="encryption-version" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="card-raw">
@@ -800,7 +819,6 @@
             <xs:element name="encoding" type="xs:string" minOccurs="0"/>
             <xs:element name="format" type="xs:string" minOccurs="0"/>
             <xs:element name="encryption-context" type="encryption-context" minOccurs="0"/>
-            <xs:element name="encryption-version" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="encryption-context">
@@ -860,14 +878,19 @@
     <xs:complexType name="custom-field">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="field-name" type="string64" use="required"/>
-                <xs:attribute name="field-value" type="string256" use="required"/>
+                <xs:attribute name="field-name" type="string64" />
+                <xs:attribute name="field-value" type="string256" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
     <xs:simpleType name="string1">
         <xs:restriction base="xs:string">
             <xs:maxLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="string20">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="string36">
@@ -888,6 +911,11 @@
     <xs:simpleType name="string256">
         <xs:restriction base="xs:string">
             <xs:maxLength value="256"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="string300">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="300"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="string2048">
@@ -1050,15 +1078,19 @@
             <xs:element name="version_requested" type="xs:string" minOccurs="0"/>
             <xs:element name="version" type="xs:string" minOccurs="0"/>
             <xs:element name="ds-transaction-id" type="xs:string" minOccurs="0"/>
+            <xs:element name="acs-transaction-id" type="xs:string" minOccurs="0"/>
             <xs:element name="no-challenge-requested" type="no-challenge-requested" minOccurs="0"/>
             <xs:element name="frictionless" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Possible values are Y, N.</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="exemption-request" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="exemption-response" type="exemption-response" minOccurs="0"/>
+            <xs:element name="status-reason" type="xs:string" minOccurs="0" />
         </xs:all>
     </xs:complexType>
-    <xs:simpleType name="no-challenge-requested">
+    <xs:simpleType name="exemption-type">
         <xs:restriction base="xs:string">
             <xs:enumeration value="low-fraud"/>
             <xs:enumeration value="low-value"/>
@@ -1066,6 +1098,12 @@
             <xs:enumeration value="trusted-merchant"/>
             <xs:enumeration value="corporate-payment"/>
         </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="no-challenge-requested">
+        <xs:restriction base="exemption-type"/>
+    </xs:simpleType>
+    <xs:simpleType name="exemption-response">
+        <xs:restriction base="exemption-type"/>
     </xs:simpleType>
 	<xs:simpleType name="riid-type">
 		<xs:annotation>
@@ -1318,12 +1356,13 @@
             <xs:enumeration value="mcommerce"/>
             <xs:enumeration value="pos"/>
             <xs:enumeration value="applepay"/>
+            <xs:enumeration value="googlepay"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="periodic-type">
         <xs:restriction base="xs:token">
             <xs:enumeration value="installment"/>
-            <xs:enumeration value="recurring"/>            
+            <xs:enumeration value="recurring"/>
             <xs:enumeration value="ucof"/>
             <xs:enumeration value="ci"/>
         </xs:restriction>
@@ -1373,14 +1412,14 @@
             <!-- YYYY-MM-DD format-->
             <xs:element name="recurring-expire-date" type="xs:date" minOccurs="0"/>
             <xs:element name="installment-plan" type="installment-plan" minOccurs="0"/>
-            <xs:element name="recurring-frequency" type="xs:int" minOccurs="0"/>
+            <xs:element name="recurring-frequency" type="integer4" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:simpleType name="non-gambling-oct-type">
         <xs:restriction base="xs:token">
             <xs:enumeration value="p2p"/>
             <xs:enumeration value="md"/>
-            <xs:enumeration value="acc2acc"/>
+            <xs:enumeration value="acct2acct"/>
             <xs:enumeration value="ccBill"/>
             <xs:enumeration value="fd"/>
         </xs:restriction>
@@ -1520,6 +1559,9 @@
 
             <xs:element name="transmission-date-time" type="xs:string" minOccurs="0"/>
             <xs:element name="network-management-info-code" type="xs:string" minOccurs="0"/>
+
+            <xs:element name="single-tap-indicator" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="duplicated-atc-indicator" type="xs:boolean" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="iso-recon">
@@ -1612,6 +1654,7 @@
             <xs:element name="voucher-state" type="xs:string" minOccurs="0" />
             <xs:element name="voucher-amount" type="money" minOccurs="0"/>
             <xs:element name="voucher-expiration-date" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="voucher-scheme" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="alternative-amount">
@@ -1688,6 +1731,7 @@
             <xs:enumeration value="bi"/>
             <xs:enumeration value="tu"/>
             <xs:enumeration value="wt"/>
+            <xs:enumeration value="ft"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="risk-info">
@@ -1793,6 +1837,7 @@
             <xs:element name="card-data" type="card-data" minOccurs="0"/>
             <xs:element name="card-token" type="card-token" minOccurs="0"/>
             <xs:element name="cryptogram" type="cryptogram" minOccurs="0"/>
+            <xs:element name="card-scheme-transaction-id" type="card-scheme-transaction-id" minOccurs="0"/>
             <xs:element name="ip-address" type="ip-address" minOccurs="0"/>
             <xs:element name="order-number" type="xs:string" minOccurs="0"/>
             <xs:element name="channel" type="xs:string" minOccurs="0"/>
@@ -1918,6 +1963,7 @@
             <xs:element name="entertainment-industry" type="entertainment-industry" minOccurs="0"/>
             <xs:element name="insurance-industry" type="insurance-industry" minOccurs="0"/>
             <xs:element name="cps-industry" type="cps-industry" minOccurs="0"/>
+            <xs:element name="recurring-plan" type="recurring-plan" minOccurs="0"/>
         </xs:all>
         <xs:attribute name="self" type="url"/>
     </xs:complexType>
@@ -2001,6 +2047,22 @@
             <xs:element name="interest-rate" type="xs:decimal" minOccurs="0"/>
             <xs:element name="annual-interest-rate" type="xs:decimal" minOccurs="0"/>
             <xs:element name="management-fee" type="money" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="recurring-plan">
+        <xs:all>
+            <xs:element name="recurring-plan-id" type="string36" minOccurs="0"/>
+            <xs:element name="program-id" type="string36" minOccurs="0"/>
+            <xs:element name="plan-code" type="string36" minOccurs="0"/>
+            <xs:element name="plan-type" type="string36" minOccurs="0"/>
+            <xs:element name="plan-sub-type" type="string36" minOccurs="0"/>
+            <xs:element name="recurring-payment-amount" type="money" minOccurs="0"/>
+            <xs:element name="total-payment-amount" type="money" minOccurs="0"/>
+            <xs:element name="total-number-of-payments" type="integer3" minOccurs="0"/>
+            <xs:element name="recurring-expire-date" type="xs:date" minOccurs="0"/>
+            <xs:element name="recurring-expire-date-mode" type="string20" minOccurs="0"/>
+            <xs:element name="recurring-frequency-code" type="string20" minOccurs="0"/>
+            <xs:element name="recurring-descriptor" type="string300" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 </xs:schema>

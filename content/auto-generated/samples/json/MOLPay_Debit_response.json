@@ -39,7 +39,7 @@
     "payment-methods": {
       "payment-method": [
         {
-          "url": "https://sandbox.molpay.com/MOLPay/pay/SB_wirecard/FPX_ABB.php?amount=10&orderid=caf71a948ec74370bbdcf5f569ba3ec3&cur=MYR&vcode=cdc1f5a95860e462657ec13057b74039&bill_desc=description&bill_mobile=%2B123456789&bill_email=john%40doe.com&bill_name=John+Doe&cancelurl=https%3A%2F%2Fapi-test.wirecard.com%3A443%2Fengine%2Fnotification%2Fmolpay%2Fredirect",
+          "url": "https://sandbox.molpay.com/MOLPay/pay/SB_wirecard/FPX_ABB.php?amount=10&orderid=caf71a948ec74370bbdcf5f569ba3ec3&cur=MYR&vcode=cdc1f5a95860e462657ec13057b74039&bill_desc=description&bill_mobile=%2B123456789&bill_email=john%40doe.com&bill_name=John+Doe&cancelurl=https%3A%2F%2Fapi-test.getneteurope.com%3A443%2Fengine%2Fnotification%2Fmolpay%2Fredirect",
           "name": "fpx_abb"
         }
       ]

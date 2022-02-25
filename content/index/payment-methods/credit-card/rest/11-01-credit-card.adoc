@@ -45,8 +45,8 @@ credentials:
 .Generic Test Accounts
 [cols="h,"]
 |===
-|Merchant Number |515225
-|Merchant Name |Getnet Europe TEST #515225
+|Merchant Account ID (MAID) |ae42088f-f433-456d-9d79-6566cc880828
+|Merchant Name |Getnet no3d
 |EE-User|515225-GetnetEuropeTEST
 |EE-Password |4cHLRE-Q7YcAP	
 |URL | https://api-test.getneteurope.com/engine/rest/payments/

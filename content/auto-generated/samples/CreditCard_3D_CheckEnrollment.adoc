@@ -11,7 +11,7 @@
 2+| API Endpoint
 
 e| Method | POST
-e| URI    | ``\https://api-test.wirecard.com/engine/rest/payments/``
+e| URI    | ``\https://api-test.getneteurope.com/engine/rest/payments/``
 
 2+h| Headers
 e| Content-Type | `application/json`
@@ -58,7 +58,7 @@ include::{root}/auto-generated/json/CreditCard_3D_CheckEnrollment_response.json[
 2+| API Endpoint
 
 e| Method | POST
-e| URI    | ``\https://api-test.wirecard.com/engine/rest/payments/``
+e| URI    | ``\https://api-test.getneteurope.com/engine/rest/payments/``
 
 2+h| Headers
 e| Content-Type | `application/xml`

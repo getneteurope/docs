@@ -37,7 +37,7 @@
               },
               {
                 "field-name": "returnURL",
-                "field-value": "https://api-test.wirecard.com:443/engine/notification/paylib?payment.transaction-id=3cc6fbf9-3ae2-4aa5-aa06-006f16020370&payment.transaction-type=debit"
+                "field-value": "https://api-test.getneteurope.com:443/engine/notification/paylib?payment.transaction-id=3cc6fbf9-3ae2-4aa5-aa06-006f16020370&payment.transaction-type=debit"
               },
               {
                 "field-name": "internalContext",

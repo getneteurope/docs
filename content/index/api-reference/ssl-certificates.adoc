@@ -10,7 +10,7 @@ You find in this section the certificates which secure the connection between th
 | *URL (Endpoint)*
 | ``\https://api-test.getneteurope.com/``
 | *Get your new certificate:*
-| coming soon
+| pass:[<a href="resources/ssl-certificate/api-test-getneteurope-com.cer" target="_blank" rel="noreferrer noopener" download>Download</a>]
 |===
 
 [#ssl_prodenvironment]
@@ -21,5 +21,5 @@ You find in this section the certificates which secure the connection between th
 | *URL (Endpoint)*
 | ``\https://api.getneteurope.com/``
 |  *Get your new certificate:*
-| coming soon
+| pass:[<a href="resources/ssl-certificate/api-getneteurope-com.cer" target="_blank" rel="noreferrer noopener" download>Download</a>]
 |===

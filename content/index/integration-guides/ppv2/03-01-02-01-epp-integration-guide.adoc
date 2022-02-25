@@ -79,23 +79,23 @@ set up your testing tool:
 | ``\https://{pp-test-instance-hostname}/api/payment/register``
 
 | Merchant Account ID (MAID) 
-| To be determined
+| 5c4a8a42-04a8-4970-a595-262f0ba0a108
 
 | Username                   
-| To be determined
+| 515225-GetnetEuropeTEST
 
 | Password                   
-| To be determined
+| 4cHLRE-Q7YcAP
 
 | Secret Key (used for response verification) 
-| To be determined
+| 5ac555d4-e7f7-409f-8147-d82c8c10ed53
 
 2+h|Test Card
 |Card number 
 |4012000300201199
 
 |Expiration date 
-|01/23
+|01/25
 
 |CVV 
 |199
@@ -218,7 +218,7 @@ in your HTML code to render the new pop-up window.
 +
 [source,html,subs=attributes+]
 ----
-<script type="text/javascript">{payment-page-function-short}.embeddedPayUrl("https://{pp-test-instance-hostname}/?wPaymentToken=f0c0e5b3-23ad-4cb4-abca-ed80a0e770e7")</script>
+<script type="text/javascript">{payment-page-function-short}.embeddedPayUrl("https://{pp-test-instance-hostname}/?wPaymentToken=<DYNAMIC_TOKEN>")</script>
 ----
 
 //-

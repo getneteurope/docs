@@ -11,7 +11,7 @@
 2+| API Endpoint
 
 e| Method | POST
-e| URI    | ``\https://api-test.wirecard.com/engine/rest/paymentmethods/``
+e| URI    | ``\https://api-test.getneteurope.com/engine/rest/paymentmethods/``
 
 2+h| Headers
 e| Content-Type | `application/json`
@@ -54,7 +54,7 @@ include::{root}/auto-generated/json/Klarna_DE_Install_Void_response.json[]
 2+| API Endpoint
 
 e| Method | POST
-e| URI    | ``\https://api-test.wirecard.com/engine/rest/paymentmethods/``
+e| URI    | ``\https://api-test.getneteurope.com/engine/rest/paymentmethods/``
 
 2+h| Headers
 e| Content-Type | `application/xml`

@@ -30,7 +30,7 @@
     "payment-methods": {
       "payment-method": [
         {
-          "url": "https://openapi.alipaydev.com/gateway.do?_input_charset=utf-8&access_info=%7B%22channel%22%3A%22PC%22%7D&external_sign_no=1dbea601-6b16-4696-9458-2ff2f28b28f9&notify_url=https%3A%2F%2Fapi-test.wirecard.com%3A443%2Fengine%2Fnotification%2Falipay-xborder%2F&partner=2088101122136241&product_code=GENERAL_WITHHOLDING_P&return_url=https%3A%2F%2Fapi-test.wirecard.com%3A443%2Fengine%2Fnotification%2Falipay-xborder%2Fredirect%2F1dbea601-6b16-4696-9458-2ff2f28b28f9%2F&sales_product_code=FOREX_GENERAL_WITHHOLDING&scene=INDUSTRY%7CMEDICAL&service=alipay.dut.customer.agreement.page.sign&sign=7bbc473067ea49fc761d04ed91181c48&sign_type=MD5&third_party_type=PARTNER",
+          "url": "https://openapi.alipaydev.com/gateway.do?_input_charset=utf-8&access_info=%7B%22channel%22%3A%22PC%22%7D&external_sign_no=1dbea601-6b16-4696-9458-2ff2f28b28f9&notify_url=https%3A%2F%2Fapi-test.getneteurope.com%3A443%2Fengine%2Fnotification%2Falipay-xborder%2F&partner=2088101122136241&product_code=GENERAL_WITHHOLDING_P&return_url=https%3A%2F%2Fapi-test.getneteurope.com%3A443%2Fengine%2Fnotification%2Falipay-xborder%2Fredirect%2F1dbea601-6b16-4696-9458-2ff2f28b28f9%2F&sales_product_code=FOREX_GENERAL_WITHHOLDING&scene=INDUSTRY%7CMEDICAL&service=alipay.dut.customer.agreement.page.sign&sign=7bbc473067ea49fc761d04ed91181c48&sign_type=MD5&third_party_type=PARTNER",
           "name": "alipay-xborder"
         }
       ]

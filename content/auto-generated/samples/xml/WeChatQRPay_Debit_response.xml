@@ -25,7 +25,7 @@
   <ip-address>127.0.0.1</ip-address>
   <order-detail>wechat test payment</order-detail>
   <payment-methods>
-    <payment-method url="https://api-test.wirecard.com:443/engine/hpp/wechat-qrpay/38968b12-4374-4fad-80a9-8a483ce46ed9?request_time_stamp=20191105083332&amp;request_id=aed87da6-b11c-4210-a70c-f78dea5ed293&amp;merchant_account_id=236d1c79-5146-496b-af00-3399c9097edc&amp;transaction_id=38968b12-4374-4fad-80a9-8a483ce46ed9&amp;transaction_type=debit&amp;requested_amount=1.01&amp;requested_amount_currency=USD&amp;redirect_url=&amp;ip_address=127.0.0.1&amp;request_signature=e374b1b8171c47e6fb456230d1cd054ec132c6603fc9ee9b42c63d98c95bf847&amp;psp_name=elastic-payments&amp;country=CA" name="wechat-qrpay"/>
+    <payment-method url="https://api-test.getneteurope.com:443/engine/hpp/wechat-qrpay/38968b12-4374-4fad-80a9-8a483ce46ed9?request_time_stamp=20191105083332&amp;request_id=aed87da6-b11c-4210-a70c-f78dea5ed293&amp;merchant_account_id=236d1c79-5146-496b-af00-3399c9097edc&amp;transaction_id=38968b12-4374-4fad-80a9-8a483ce46ed9&amp;transaction_type=debit&amp;requested_amount=1.01&amp;requested_amount_currency=USD&amp;redirect_url=&amp;ip_address=127.0.0.1&amp;request_signature=e374b1b8171c47e6fb456230d1cd054ec132c6603fc9ee9b42c63d98c95bf847&amp;psp_name=elastic-payments&amp;country=CA" name="wechat-qrpay"/>
   </payment-methods>
   <authorization-code>weixin://wxpay/bizpayurl?pr=xb7AygX</authorization-code>
   <sub-merchant-info>

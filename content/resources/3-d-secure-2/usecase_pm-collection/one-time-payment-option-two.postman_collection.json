@@ -162,7 +162,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -336,7 +336,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -529,7 +529,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -723,7 +723,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -915,7 +915,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",

@@ -32,8 +32,7 @@ Checks if the consumer's card is enrolled in the 3D Secure 2 program. Check-enro
 
 //-
 
-Therefore, a  check-enrollment request needs to contain a ``requested-amount``. As a general rule, the amount provided in consecutive payment requests, e.g. during an authorization, should not exceed the amount provided in the referenced check-enrollment by more than what a consumer could reasonably expect. The margin of what is considered reasonable varies from card scheme to card scheme and ranges from 15-20%.
-As a merchant, you are always on the safe side when the originally ``requested-amount`` is not exceeded by 15%.
+Therefore, a  check-enrollment request needs to contain a ``requested-amount``. As a general rule, the amount provided in consecutive payment requests, e.g. during an authorization, should not exceed the amount provided in the referenced check-enrollment by more than what a consumer could reasonably expect.
 
 [NOTE]
 ====

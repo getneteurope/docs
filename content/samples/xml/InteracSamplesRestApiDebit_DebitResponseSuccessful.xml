@@ -20,7 +20,7 @@
         <custom-field field-name="elastic-api.ee.test.result" field-value="A"></custom-field>
     </custom-fields>
     <payment-methods>
-        <payment-method url="https://stagingcheckout.psigate.com/HTMLPost/HTMLMessenger?ResponseFormat=HTML&amp;Email=jane.foster%40example.com&amp;NoThanksURL=https%3A%2F%2Fapi-test.wirecard.com%2Fengine%2Fnotification%2Fpsigate%2Fredirect%2F8420d439-68f0-4836-a561-46cba3e00207%2F&amp;TestResult=A&amp;OrderID=44307293835967428622&amp;StoreKey=merchantcardcapture200024&amp;SubTotal=1.01&amp;CustomerLanguage=EN_CA&amp;CustomerRefNo=e3fe1882-3d92-47b2-8eb2-b87967383430&amp;CardAction=0&amp;CustomerIP=127.0.0.1&amp;PaymentType=DB&amp;ThanksURL=https%3A%2F%2Fapi-test.wirecard.com%2Fengine%2Fnotification%2Fpsigate%2Fredirect%2F8420d439-68f0-4836-a561-46cba3e00207%2F" name="interac"/>
+        <payment-method url="https://stagingcheckout.psigate.com/HTMLPost/HTMLMessenger?ResponseFormat=HTML&amp;Email=jane.foster%40example.com&amp;NoThanksURL=https%3A%2F%2Fapi-test.getneteurope.com%2Fengine%2Fnotification%2Fpsigate%2Fredirect%2F8420d439-68f0-4836-a561-46cba3e00207%2F&amp;TestResult=A&amp;OrderID=44307293835967428622&amp;StoreKey=merchantcardcapture200024&amp;SubTotal=1.01&amp;CustomerLanguage=EN_CA&amp;CustomerRefNo=e3fe1882-3d92-47b2-8eb2-b87967383430&amp;CardAction=0&amp;CustomerIP=127.0.0.1&amp;PaymentType=DB&amp;ThanksURL=https%3A%2F%2Fapi-test.getneteurope.com%2Fengine%2Fnotification%2Fpsigate%2Fredirect%2F8420d439-68f0-4836-a561-46cba3e00207%2F" name="interac"/>
     </payment-methods>
     <locale>en</locale>
 </payment>
