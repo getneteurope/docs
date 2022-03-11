@@ -69,6 +69,8 @@ Test credentials for transaction types
 | bb342082-9761-4481-802e-20b10d92545d
 | Username
 | 515225-GetnetEuropeTEST
+| Password
+| 4cHLRE-Q7YcAP
 | Secret Key (used for response verification)
 | fd1d35aa-952e-4549-9f3d-ea33c89c86c4
 |===
