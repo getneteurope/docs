@@ -93,6 +93,10 @@ include::index/payment-methods/przelewy24/przelewy24-main.adoc[leveloffset=+1]
 include::index/payment-methods/przelewy24/rest/11-27-przelewy24.adoc[leveloffset=+2]
 include::index/payment-methods/przelewy24/ppv2/03-01-04-09-przelewy24.adoc[leveloffset=+2]
 
+include::index/payment-methods/Blik/Blik-main.adoc[leveloffset=+1]
+include::index/payment-methods/Blik/rest/11-32-Blik.adoc[leveloffset=+2]
+include::index/payment-methods/Blik/ppv2/03-01-04-10-Blik.adoc[leveloffset=+2]
+
 include::index/payment-methods/poi-pia/poi-pia-main.adoc[leveloffset=+1]
 include::index/payment-methods/poi-pia/rest/11-22-poipia.adoc[leveloffset=+2]
 
