@@ -1,5 +1,5 @@
 
-[#PPv2_blik]
+[#blik]
 == {payment-page-v2}
 
 ====
