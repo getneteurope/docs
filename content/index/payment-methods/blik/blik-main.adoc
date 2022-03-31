@@ -1,2 +1,5 @@
 [#Blik_Main]
 == Blik
+Blik is an alternative payment method in Poland that allows users to make instant payments and withdraw cash using only the user's standard mobile banking app.
+Transactions are uniquely identified by a 6-digit one-time code, valid for 2 minutes, which the user generates and authenticates in their mobile banking app
+==
