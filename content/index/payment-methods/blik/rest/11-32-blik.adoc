@@ -2,8 +2,6 @@
 [#blik]
 == REST API
 
-_blik_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
-
 [#blik_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
 
@@ -16,7 +14,7 @@ _blik_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank
 [#blik_CommunicationFormats]
 === Communication Formats
 
-This table illustrates how _P24_ notifications are encoded and which
+This table illustrates how _blik_ notifications are encoded and which
 formats and methods can be used for requests and responses.
 
 [width=75%,stripes=none]
@@ -29,7 +27,7 @@ formats and methods can be used for requests and responses.
 [#blik_TransactionTypes]
 === Transaction Types
 
-This table lists all transaction types available for _P24_.
+This table lists all transaction types available for _blik_.
 
 NOTE: Some transaction types cannot be sent in your request. Refer to columns
 _Request_, _Response/IPN_ and Merchant Portal for details where to expect involved
@@ -44,22 +42,30 @@ at <<AppendixB,  Transaction Types>>.
 |===
 |Transaction Type | Request | Response/IPN | Merchant Portal | Description | Link to Samples
 
-|debit | Yes | Yes | Yes | Moves funds from Consumer to Merchant.
-``debit`` requests to take funds from consumer's bank account. a|
-<<blik_Samples_debit, debit samples>>
+|get-url debit | Yes | Yes | Yes | Submit
+REDIRECT approach:
+get-url is created in success state once a valid debit request is sent by a Merchant. Redirection to Blik platfrom will be done internally
 
-|get-url |No |No |Yes | A step in a group of transactions where the
-URL of P24 landing page is retrieved for the Consumer to be redirected
-to. |
+debit is created once direct response is received|
+TBD
 
-|refund-request |Yes |Yes |Yes | A request to give funds to the
-Consumer's account, referring to an eligible debit transaction.
-|<<blik_Samples_refund, refund samples>>
+|refund-request & refund-debit |Yes |Yes |Yes | correctTransaction - Sends processTransaction to Blik and upon response, the refund-request is updated with a corresponding state
 
-|refund-debit |No |Yes |Yes |Moves funds from the Merchant to the
-Consumer. It follows ``refund-request`` as a final step of the refund
-flow.
-|
+When the notification is sent from Blik to EE, then refund-debit transaction is created.
+|TBD
+
+
+|void-debit  |Yes |Yes |Yes|cancelTransaction - voids are synchronous. Called by merchant to cancel a transaction.|TBD
+
+|reversal-debit  |Yes |Yes |Yes|cancelTransaction - voids are synchronous
+
+Called internally by EE or cron jobs to cancel timeouts or pending transactions.|TBD
+
+|query / GET  |Yes |Yes |Yes|getTransactionStatus  -Returns transaction status.
+If transaction does not exist, create a the debit.
+it will also allow to query the status of refunds, void and reversal debit transactions, then create a refund if doesn't exist,
+update void/reversal debit with a final state if the transaction is in 'in progress' state in Getnet Gateway DB|TBD
+
 |===
 
 [NOTE]
@@ -75,8 +81,8 @@ flow.
 [#blik_TestCredentials]
 === Test Credentials
 
-NOTE: Our test environment is connected to _P24_ sandbox which does not
-require to enter any additional data. _P24_ landing page will skip
+NOTE: Our test environment is connected to _blik_ sandbox which does not
+require to enter any additional data. _blik_ landing page will skip
 entering consumer card data or credentials and returns to your shop
 immediately.
 
@@ -102,13 +108,13 @@ h| Secret Key          3+| tbd
 For a successful workflow, please keep the following prerequisites in
 mind:
 
-* A P24 payment process is *accomplished successfully only, if {payment-gateway-abbr} has
+* A blik payment process is *accomplished successfully only, if {payment-gateway-abbr} has
 sent out a successful notification*. The status ``success`` in the response
 only confirms that the payment was technically accepted.
 * In case the consumer closes the browser before confirming the payment,
 there is *a redirection to shop page* possible. This means, the workflow
 can be accomplished successfully, even when shutting down the browser.
-* As soon as the P24 landing page has been opened in a browser,
+* As soon as the blik landing page has been opened in a browser,
 the *consumer has 15 minutes to authorize the payment*. However, the
 validity of the received URL is not limited. Try to ensure that the URL
 is opened by the consumer as soon as possible. In edge cases the payment
@@ -125,7 +131,7 @@ image::images/diagrams/blik_debit_rest.svg[Payment Process Using ReST API]
 . The merchant sends a request with the consumer's data to the
 endpoint of _{payment-gateway-abbr}_.
 . {payment-gateway-abbr} sends a response to the merchant.
-. The merchant redirects the consumer to the P24 landing page (The URL
+. The merchant redirects the consumer to the blik landing page (The URL
 for redirection is in the response message, field
 ``payment-methods/payment-method/@url``).
 . The consumer authorizes the transaction.
@@ -152,12 +158,12 @@ image::images/diagrams/blik_debit_pp.svg[Payment Process Using Payment Page]
 . The merchant sends a request with the consumer's data to the
 endpoint of _{payment-gateway-abbr}_.
 . {payment-gateway-abbr} analyses the consumer's data.
-.. If the request does not include the payment method P24, the _{payment-gateway-abbr}_
+.. If the request does not include the payment method blik, the _{payment-gateway-abbr}_
 redirects the consumer to Payment Page
-... The consumer selects P24.
-... {payment-gateway-abbr} redirects the consumer to the P24 landing page.
-.. If the request already includes the payment method P24, _{payment-gateway-abbr}_
-redirects the consumer to the P24 landing page.
+... The consumer selects blik.
+... {payment-gateway-abbr} redirects the consumer to the blik landing page.
+.. If the request already includes the payment method blik, _{payment-gateway-abbr}_
+redirects the consumer to the blik landing page.
 . The consumer selects the desired bank.
 . The consumer authorizes the transaction.
 . {payment-gateway-abbr} performs two actions simultaneously:
@@ -210,10 +216,10 @@ must contain:
 .. the _Request ID_ from a previously sent successful ``debit``
 transaction. The _Request ID_ is expected in the
 field ``parent-transaction-id``
-.. a ``payment-methods/payment-method/@name`` set to ``p24``
+.. a ``payment-methods/payment-method/@name`` set to ``blik``
 .. a ``transaction-type`` set to ``refund-request``
 . {payment-gateway-abbr} sends a response to the merchant.
-. P24 processes the refund.
+. blik processes the refund.
 +
 NOTE: Processing a refund lasts at least one day!
 
@@ -233,11 +239,11 @@ See <<GeneralPlatformFeatures_IPN, Instant Payment Notification>> for details.
 
 After a successful payment process, a banking statement appears in the
 consumer's transaction history. The statement consists of
-a _Transaction-ID_ generated by P24 (_P24-Transaction-ID_) and a value
+a _Transaction-ID_ generated by blik (_blik-Transaction-ID_) and a value
 provided in the field ``descriptor`` of the <<blik_Samples_debit, debit request>>.
 
-The structure of the _P24-Transaction-ID_ is
-``P24-YXX-XXX-XXX``. _The _P24-Transaction-ID__ is also displayed in
+The structure of the _blik-Transaction-ID_ is
+``blik-YXX-XXX-XXX``. _The _blik-Transaction-ID__ is also displayed in
 the _{enterprise-portal-name}_ as _Provider Transaction-ID_.
 
 [#blik_Fields]
@@ -245,7 +251,7 @@ the _{enterprise-portal-name}_ as _Provider Transaction-ID_.
 
 For full reference of allowed fields for Payment Page or REST API can be
 found on <<PaymentPageSolutions_Fields, Fields for Payment Page>> or <<RestApi_Fields, Fields for ReST API>> respectively. +
-The following tables describe only P24 specifics. The following elements
+The following tables describe only blik specifics. The following elements
 are either mandatory *M*, optional *O* or conditional *C*.
 
 [#blik_debit]
@@ -264,11 +270,11 @@ the account holder. It must be ``PL``; if it is not provided, will be
 automatically set to ``PL``.
 
 |order-number |O |Alphanumeric |64 |This is the order number of the
-merchant. If provided, it is displayed on P24 landing page as "Order
+merchant. If provided, it is displayed on blik landing page as "Order
 Information"
 
 |payment-methods/payment-method-name |M |Alphanumeric |15 |This is the
-name of the payment method. Always use value ``p24``
+name of the payment method. Always use value ``blik``
 
 |transaction-type |M |Alphanumeric |30 |This is the type for a
 transaction. Always use value ``debit``
@@ -278,17 +284,17 @@ which a transaction is received and processed. Always use value ``PLN``
 
 |descriptor |O |Alphanumeric |64 a|
 Describes the transaction. It is shown on the account holder's statement
-along with the _P24-Transaction-ID_. See section <<blik_BankingStatement, Banking Statement>> for details.
+along with the _blik-Transaction-ID_. See section <<blik_BankingStatement, Banking Statement>> for details.
 Do not use no more than 20 characters and do not use special chars as it
 can be misinterpreted by a bank system.
 
 |locale |O |Alphanumeric |6 a|
-With this field you can specify language in which P24 landing page is
+With this field you can specify language in which blik landing page is
 displayed.
 Possible values: ``pl``, ``en``, ``de``, ``es``, ``it``
 |===
 
-NOTE: The P24 landing page contains the section "Description". This section
+NOTE: The blik landing page contains the section "Description". This section
 displays additional information about the payment. The text displayed
 comprises _Order Number_, _Merchant Name_ and _Request Id_ in the
 following format:
@@ -305,7 +311,7 @@ profile.
 |Field |Cardinality |Datatype |Size |Description
 
 |payment-methods.payment-method-name |M |Alphanumeric |15 |This is the
-name of the payment method. Always use value ``p24``
+name of the payment method. Always use value ``blik``
 
 |transaction-type |M |Alphanumeric |30 |This is the type for a
 transaction. Always use value ``refund-request``
@@ -325,13 +331,13 @@ Go to <<GeneralPlatformFeatures_IPN_NotificationExamples, Notification Examples>
 .debit Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/p24_debit_request_success.xml[]
+include::{root}/samples/xml/blik_debit_request_success.xml[]
 ----
 
 .debit Response (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/p24_debit_response_success.xml[]
+include::{root}/samples/xml/blik_debit_response_success.xml[]
 ----
 
 [#blik_Samples_refund]
@@ -340,13 +346,13 @@ include::{root}/samples/xml/p24_debit_response_success.xml[]
 .refund-request Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/p24_refund-request_request_success_77e8f783.xml[]
+include::{root}/samples/xml/blik_refund-request_request_success_77e8f783.xml[]
 ----
 
 .refund-request Response (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/p24_refund-request_response_success_77e8f783.xml[]
+include::{root}/samples/xml/blik_refund-request_response_success_77e8f783.xml[]
 ----
 
 //-
