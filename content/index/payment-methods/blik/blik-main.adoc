@@ -1,2 +1,2 @@
-[#Przelewy24_Main]
-== Przelewy24
+[#Blik_Main]
+== Blik
