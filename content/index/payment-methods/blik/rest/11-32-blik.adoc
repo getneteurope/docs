@@ -152,7 +152,7 @@ definition in the field ``notifications/notification/@url`` in the request
 ===== Payment Process Using the Payment Page
 
 .Payment Process Using Payment Page
-image::images/diagrams/blik_debit_pp.png[Payment Process Using Payment Page]
+image::images/diagrams/blik_debit_rest.png[Payment Process Using Payment Page]
 
 . The consumer initiates a transaction (currency is set to PLN).
 . The merchant sends a request with the consumer's data to the
