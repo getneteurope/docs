@@ -1,5 +1,5 @@
 
-[#blik]
+[#API_PaymentMethods_blik]
 == REST API
 
 [#blik_PaymentModeCountriesandCurrencies]
