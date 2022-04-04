@@ -1,0 +1,6 @@
+ <payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>de96db14-a53b-431f-b92f-de8aeeac6efd</merchant-account-id>
+  <request-id>f56d94cd-5ad5-4920-9198-7b3f9551f419</request-id>
+  <transaction-type>void-debit</transaction-type>
+  <parent-transaction-id>0fdc097a-0f26-453a-85da-0d4e14eeb802</parent-transaction-id>
+</payment>
