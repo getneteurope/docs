@@ -152,7 +152,7 @@ definition in the field ``notifications/notification/@url`` in the request
 ===== Payment Process Using the Payment Page
 
 .Payment Process Using Payment Page
-image::images/diagrams/blik_debit_pp.svg[Payment Process Using Payment Page]
+image::images/diagrams/blik_debit_pp.png[Payment Process Using Payment Page]
 
 . The consumer initiates a transaction (currency is set to PLN).
 . The merchant sends a request with the consumer's data to the
@@ -245,6 +245,26 @@ Where a transaction that carried recurring payment/subscription registration req
 
 Merchants should be careful about providing the values for non-srting parameters (i.e. date/integer/float, etc)  since they can be converted incorrectly. Currently if the value cannot be converted to an expected format (e.g. Merchant provider Mar 30th and it should be converted to MM-DD-YYYY), it will be replaced with NULL. Until a solution is found to fix it, Merchants should ensure they send correct values
 
+.void Process Using the ReST API
+image::images/diagrams/blik_void_rest.png[refund Process Using the ReST API]
+
+[#blik_Reversal-Debit]
+==== Reversal-Debit
+
+Scenario #1: regular run of pending transaction job
+
+image::images/diagrams/blik_reversal_rest.png[refund Process Using the ReST API]
+
+Scenario #2: initiated by pending transaction job during debit timeout
+
+image::images/diagrams/blik_reversal_rest-2.png[refund Process Using the ReST API]
+
+[#blik_Query]
+==== Query
+
+image::images/diagrams/blik_query_rest.png[refund Process Using the ReST API]
+
+
 [#blik_Fields]
 === Fields
 
@@ -333,13 +353,35 @@ update (it is used for subscription update or renewal)
 |===
 |Parameter name |Recurring payment registration/update request |Recurring transaction authorization request 
 
-|recurring-plan-id |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: O
+|recurring-plan-id |Plug-in M/O: O , Plug-in: plan-sub-type: A,M|Plug-in M/O: O
 
-|transaction-type |M |Alphanumeric |30 |This is the type for a
-transaction. Always use value ``refund-request``
+|program-id |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
 
-|requested-amount/@currency |M |Alphanumeric |3 |This is the currency in
-which a transaction is received and processed. Always use value ``PLN``
+|plan-code |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+
+|plan-type |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+
+|plan-sub-type |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: O
+
+|recurring-payment-amount |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
+
+|total-payment-amount |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
+
+|total-number-of-payments |Plug-in M/O: N/A, Plug-in: plan-sub-type: A|Plug-in M/O: O
+
+|recurring-expire-date |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
+
+|recurring-expire-date-mode |Plug-in M/O: O , Plug-in: plan-sub-type: A|Plug-in M/O: O
+
+|recurring-frequency-code |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
+
+|recurring-no-delay |Plug-in M/O: N/A , Plug-in: plan-sub-type: N/A|Plug-in M/O: O
+
+|recurring-descriptor |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+
+|sequence-type |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+
+
 |===
 
 [#blik_Samples]
