@@ -419,4 +419,8 @@ include::{root}/samples/xml/blik_refund-request_request_success_77e8f783.xml[]
 include::{root}/samples/xml/blik_refund-request_response_success_77e8f783.xml[]
 ----
 
+.void-debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/void-debit Request.xml[]
 //-
