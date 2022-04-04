@@ -125,7 +125,7 @@ could have cancelled the order already).
 [#blik_debitProcessUsingtheReSTAPI]
 ===== Payment Process Using the ReST API
 
-image::images/diagrams/blik_debit_rest.svg[Payment Process Using ReST API]
+image::images/diagrams/blik_debit_rest.png[Payment Process Using ReST API]
 
 . The consumer initiates a transaction (currency is set to ``PLN``).
 . The merchant sends a request with the consumer's data to the
