@@ -208,7 +208,7 @@ subsequent notification.
 ===== _refund_ Process Using the ReST API
 
 .refund Process Using the ReST API
-image::images/diagrams/blik_refund_rest.svg[refund Process Using the ReST API]
+image::images/diagrams/blik_refund_rest.png[refund Process Using the ReST API]
 
 . The merchant initiates a ``refund`` transaction.
 . The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request
