@@ -152,7 +152,7 @@ definition in the field ``notifications/notification/@url`` in the request
 ===== Payment Process Using the Payment Page
 
 .Payment Process Using Payment Page
-image::images/diagrams/blik_debit_rest.png[Payment Process Using Payment Page]
+image::images/diagrams/blik_debit_PP.png[Payment Process Using Payment Page]
 
 . The consumer initiates a transaction (currency is set to PLN).
 . The merchant redirect the request with the consumer's data to the
@@ -197,7 +197,7 @@ subsequent notification.
 ===== _refund_ Process Using the ReST API
 
 .refund Process Using the ReST API
-image::images/diagrams/blik_refund_rest.png[refund Process Using the ReST API]
+image::images/diagrams/Blik_refund_flow.png[refund Process Using the ReST API]
 
 . The merchant initiates a ``refund`` transaction.
 . The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request
@@ -234,23 +234,23 @@ Where a transaction that carried recurring payment/subscription registration req
 Merchants should be careful about providing the values for non-srting parameters (i.e. date/integer/float, etc)  since they can be converted incorrectly. Currently if the value cannot be converted to an expected format (e.g. Merchant provider Mar 30th and it should be converted to MM-DD-YYYY), it will be replaced with NULL. Until a solution is found to fix it, Merchants should ensure they send correct values
 
 .void Process Using the ReST API
-image::images/diagrams/blik_void_rest.png[refund Process Using the ReST API]
+image::images/diagrams/Blik_void_debit_flow.png[refund Process Using the ReST API]
 
 [#blik_Reversal-Debit]
 ==== Reversal-Debit
 
 Scenario #1: regular run of pending transaction job
 
-image::images/diagrams/blik_reversal_rest.png[refund Process Using the ReST API]
+image::images/diagrams/Blik_reversal_flow_triggered_by_job.png[refund Process Using the ReST API]
 
 Scenario #2: initiated by pending transaction job during debit timeout
 
-image::images/diagrams/blik_reversal_rest-2.png[refund Process Using the ReST API]
+image::images/diagrams/Blik_reversal_flow_triggered_by_job_timeout.png[refund Process Using the ReST API]
 
 [#blik_Query]
 ==== Query
 
-image::images/diagrams/blik_query_rest.png[refund Process Using the ReST API]
+image::images/diagrams/Blik_query_flow.png[refund Process Using the ReST API]
 
 
 [#blik_Fields]
