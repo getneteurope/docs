@@ -166,7 +166,7 @@ Payment Page
 . Blik plateform redirect the consumer back to in progress page
 . The Payment Gateway send the transaction status to the merchant
 . The payment Page redirect the consumer back
-. completion of payment process id displayed to the merchant.
+. completion of payment process is displayed to the merchant.
 
 [#blik_refundTransaction]
 ==== _refund_ Transaction
