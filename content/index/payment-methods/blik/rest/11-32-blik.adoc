@@ -376,7 +376,7 @@ include::{root}/samples/xml/blik_refund-request_response_Fail_77e8f783.xml[]
 .void-debit Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/void-debit Request.xml[]
+include::{root}/samples/xml/blik_void-debit Request.xml[]
 ----
 .Query requests for refund tx
 [source,xml,subs=attributes+]
