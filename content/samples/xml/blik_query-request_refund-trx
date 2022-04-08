@@ -1,1 +1,1 @@
-http://127.0.0.1:8080/engine/rest/merchants/a9a1b29a-e2dd-4ad0-a6cd-a835439e1671/payments/search?payment.request-id=cd43153c-c44f-4322-b468-6179d62c4cb6-refund-request
+https://api-test.getneteurope.com/engine/rest/merchants/54c06d30-73a7-45b0-b1f6-6f5ae91cd40c/payments/search?payment.request-id={{request-id}}-refund-request
