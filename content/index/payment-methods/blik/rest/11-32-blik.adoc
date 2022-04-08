@@ -48,12 +48,12 @@ at <<AppendixB,  Transaction Types>>.
 
 |refund-request|Yes |Yes |Yes | Sends processTransaction to Blik and upon response, the refund-request is updated with a corresponding state|see refund samples below
 
-|refund-debit|Yes |Yes |Yes | When the notification is sent from Blik to EE, then refund-debit transaction is created|see refund samples below
+|refund-debit|Yes |Yes |Yes | When the notification is sent from Blik to the Payment Gateway, then refund-debit transaction is created|see refund samples below
 
 
-|void-debit  |Yes |Yes |Yes|voids are synchronous. Called by merchant to cancel a transaction.|TBD
+|void-debit  |Yes |Yes |Yes|voids are synchronous. Called by merchant to cancel a transaction.|see void debit samples below
 
-|reversal-debit  |Yes |Yes |Yes|Reversal is internally called by Payment Gateway (cron job) to revoke pending payments that could not be processed due to timeouts or tech issues. The service runs in asynchronous mode|see Void-debit samples below
+|reversal-debit  |Yes |Yes |Yes|Reversal is internally called by Payment Gateway (cron job) to revoke pending payments that could not be processed due to timeouts or tech issues. The service runs in asynchronous mode|see reversal samples below
 
 |query / GET  |Yes |Yes |Yes||see query samples below
 
