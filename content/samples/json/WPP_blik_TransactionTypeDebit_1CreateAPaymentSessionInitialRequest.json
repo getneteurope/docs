@@ -1,0 +1,39 @@
+{
+    "payment": {
+        "merchant-account-id": {
+            "value": "54c06d30-73a7-45b0-b1f6-6f5ae91cd40c"
+        },
+        "request-id": "{{$guid}}",
+        "order-number": "123456789",
+        "transaction-type": "debit",
+        "requested-amount": {
+            "value": "10.00",
+            "currency": "PLN"
+        },
+        "account-holder": {
+            "first-name": "Paul",
+            "last-name": "Atreides",
+            "email": "paul.atreides@example.com"
+        },
+        "payment-methods": {
+            "payment-method": [
+                {
+                "name": "blik"
+                }
+            ]
+        },
+        "country": "PL",
+        "locale": "en",
+        "notifications": {
+            "notification": [
+                {
+                "url": "https://example.com/"
+                }
+            ]
+        },
+        "descriptor": "test",
+        "success-redirect-url": "https://{pp-redirect-url-success}",
+        "cancel-redirect-url": "https://{pp-redirect-url-cancel}",
+        "fail-redirect-url": "https://{pp-redirect-url-error}"
+    }
+}
