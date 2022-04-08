@@ -46,8 +46,8 @@ at <<AppendixB,  Transaction Types>>.
 REDIRECT approach:
 get-url is created in success state once a valid debit request is sent by a Merchant. Redirection to Blik platfrom will be done internally
 
-debit is created once direct response is received|
-TBD
+debit is created once direct response is received|see debit sample below
+
 
 |refund-request & refund-debit |Yes |Yes |Yes | correctTransaction - Sends processTransaction to Blik and upon response, the refund-request is updated with a corresponding state
 
@@ -124,9 +124,11 @@ could have cancelled the order already).
 image::images/diagrams/blik_debit_rest.png[Payment Process Using ReST API]
 
 . The consumer initiates a transaction (currency is set to ``PLN``).
+. The merchant displays the list of payment methods to the consumer 
+. The consumer select blik as a payment method
 . The merchant sends a request with the consumer's data to the
 endpoint of _{payment-gateway-abbr}_.
-. {payment-gateway-abbr} sends a response to the merchant.
+. {payment-gateway-abbr} send transaction details to blik
 . The merchant redirects the consumer to the blik landing page (The URL
 for redirection is in the response message, field
 ``payment-methods/payment-method/@url``).
@@ -195,7 +197,7 @@ subsequent notification.
 .refund Process Using the ReST API
 image::images/diagrams/Blik_refund_flow.png[refund Process Using the ReST API]
 
-. The merchant initiates a ``refund`` transaction.
+. The consumer initiates a ``refund`` transaction.
 . The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request
 must contain:
 .. the _TransactionID_ from a previously sent successful ``debit``
@@ -327,7 +329,7 @@ which a transaction is received and processed. Always use value ``PLN``
 name of the payment method. Always use value ``blik``
 
 |transaction-type |M |Alphanumeric |30 |This is the type for a
-transaction. Always use value ``refund-request``
+transaction. Always use value ``void-request``
 
 |===
 
@@ -366,9 +368,36 @@ include::{root}/samples/xml/blik_refund-request_request_success_77e8f783.xml[]
 include::{root}/samples/xml/blik_refund-request_response_success_77e8f783.xml[]
 ----
 
+.refund-request Response (Fail)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_refund-request_response_Fail_77e8f783.xml[]
+----
 .void-debit Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/void-debit Request.xml[]
+----
+.Query requests for refund tx
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-request_refund-trx.xml[]
+----
+.Query Response for refund tx (Success)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-response_refund-trx-success.xml[]
+----
+
+.Query Request for reversal debit tx
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-request_reversal-trx.xml[]
+----
+
+.Query Response for reversal debit tx (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-response_reversal-trx-failure.xml[]
 ----
 //-
