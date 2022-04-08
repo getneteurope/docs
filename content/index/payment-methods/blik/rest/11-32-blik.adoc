@@ -292,7 +292,7 @@ Do not use no more than 20 characters and do not use special chars as it
 can be misinterpreted by a bank system.
 
 |locale |O |Alphanumeric |6 a|
-With this field you can specify language in which P24 landing page is
+With this field you can specify language in which blik landing page is
 displayed.
 Possible values: ``pl``, ``en``, ``de``, ``es``, ``it``
 |===
