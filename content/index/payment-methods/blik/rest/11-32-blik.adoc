@@ -33,7 +33,7 @@ NOTE: Some transaction types cannot be sent in your request. Refer to columns
 _Request_, _Response/IPN_ and Merchant Portal for details where to expect involved
 transaction types.
 
-NOTE: Recurring mode is not available.
+NOTE: Recurring mode is not available at the moment.
 
 For <<Glossary_TransactionType, transaction type>> details which are not given here look
 at <<AppendixB,  Transaction Types>>.
@@ -51,20 +51,16 @@ TBD
 
 |refund-request & refund-debit |Yes |Yes |Yes | correctTransaction - Sends processTransaction to Blik and upon response, the refund-request is updated with a corresponding state
 
-When the notification is sent from Blik to EE, then refund-debit transaction is created.
+When the notification is sent from Blik to Payment Gateway, then refund-debit transaction is created.
+"Partial and multiple refunds are allowed, until the original amount is not exceeded."
 |TBD
 
 
-|void-debit  |Yes |Yes |Yes|cancelTransaction - voids are synchronous. Called by merchant to cancel a transaction.|TBD
+|void-debit  |Yes |Yes |Yes||TBD
 
-|reversal-debit  |Yes |Yes |Yes|cancelTransaction - voids are synchronous
+|reversal-debit  |Yes |Yes |Yes|Reversal is internally called by Payment Gateway (cron job) to revoke pending payments that could not be processed due to timeouts or tech issues. The service runs in asynchronous mode|TBD
 
-Called internally by EE or cron jobs to cancel timeouts or pending transactions.|TBD
-
-|query / GET  |Yes |Yes |Yes|getTransactionStatus  -Returns transaction status.
-If transaction does not exist, create a the debit.
-it will also allow to query the status of refunds, void and reversal debit transactions, then create a refund if doesn't exist,
-update void/reversal debit with a final state if the transaction is in 'in progress' state in Getnet Gateway DB|TBD
+|query / GET  |Yes |Yes |Yes||TBD
 
 |===
 
@@ -90,10 +86,10 @@ immediately.
 .3+h|URLs (Endpoints) .2+| REST API | For transaction type ``debit``.                              | ``\https://{rest-api-test-apm-endpoint}``
                                     | For transaction types ``refund-request`` and ``refund-debit``. | ``\https://{rest-api-test-endpoint}``
                        2+| Payment Page                                                          | ``\https://{test-instance-hostname}/engine/hpp/``
-h| Merchant Account ID 3+| tbd
-h| Username            3+| tbd
-h| Password            3+| tbd
-h| Secret Key          3+| tbd
+h| Merchant Account ID 3+| 54c06d30-73a7-45b0-b1f6-6f5ae91cd40c
+h| Username            3+| 515225-GetnetEuropeTEST
+h| Password            3+| 4cHLRE-Q7YcAP
+h| Secret Key          3+| 285fe5af-09f0-4e99-b8a8-439f14d75e20
 |===
 
 [#blik_Workflow]
@@ -162,11 +158,11 @@ Payment Page
 . Payment Page initiatesa debit transaction to the payment gateway (called ''EE'')
 . the Payment Gateway send the transactions details to Blik and redirect the consumer to the Blik plateform
 . The consumer confirm the transaction with one time pin (OTP)
-. Blik send the payment confirmation to the Payment Gateway (EE)
+. Blik send the payment confirmation to the Payment Gateway 
 . Blik plateform redirect the consumer back to in progress page
 . The Payment Gateway send the transaction status to the merchant
-. The payment Page redirect the consumer back
-. completion of payment process is displayed to the merchant.
+. The payment Gateway redirect the consumer back
+. The response  and notification are sent to merchant and Merchant provides the results to the consumer
 
 [#blik_refundTransaction]
 ==== _refund_ Transaction
@@ -202,7 +198,7 @@ image::images/diagrams/Blik_refund_flow.png[refund Process Using the ReST API]
 . The merchant initiates a ``refund`` transaction.
 . The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request
 must contain:
-.. the _Request ID_ from a previously sent successful ``debit``
+.. the _TransactionID_ from a previously sent successful ``debit``
 transaction. The _Request ID_ is expected in the
 field ``parent-transaction-id``
 .. a ``payment-methods/payment-method/@name`` set to ``blik``
@@ -225,13 +221,10 @@ See <<GeneralPlatformFeatures_IPN, Instant Payment Notification>> for details.
 [#blik_void-debit]
 ==== void-debit
 
-Void debit flow:  When timeout occurs during void-debit processing and Blik confirms that the void-debit processing is still in progress, the core logic will create an XML response with the void debit in ‘failed’ state  but in fact the void-debit tx will remain in progress in EE DB.
-To identify if the void-debit is actually failed, Merchant will need to check if there is an error block.
+Void debit flow:  When timeout occurs during void-debit processing and Blik confirms that the void-debit processing is still in progress, the core logic will create an XML response with the void debit in ‘failed’ state  but in fact the void-debit tx will remain in progress in Payment Gateway DB.
+To identify if the void-debit is actually failed, Merchant will need to check if there is an statuses block .
 - If it exists, then the void-debit failed and the corresponding error will be sent
 - if it doesn't exist, then void-debit is still being processed and its state is 'in progress'
-Where a transaction that carried recurring payment/subscription registration request has been voided, a subsequent recurring transactions will not be accepted.
-
-Merchants should be careful about providing the values for non-srting parameters (i.e. date/integer/float, etc)  since they can be converted incorrectly. Currently if the value cannot be converted to an expected format (e.g. Merchant provider Mar 30th and it should be converted to MM-DD-YYYY), it will be replaced with NULL. Until a solution is found to fix it, Merchants should ensure they send correct values
 
 .void Process Using the ReST API
 image::images/diagrams/Blik_void_debit_flow.png[refund Process Using the ReST API]
@@ -264,111 +257,77 @@ The field one-time-password should be added to payment section of Getnet documen
 only requests with 'PLN' currency will be sent to the provider
 email should contain the value  based on the pattern: [A-Za-z0-9._'%+-]@[A-Za-z0-9.-]\.[A-Za-z] {2,} (only for Debit)
 Transaction types applicable to Blik: get-url, debit, refund-request, refund-debit, void-debit, reversal-debit
-The <recurring-plan> block has been added to Payment Gateway API with the following fields:
 
+[#blik_debit]
+==== debit
 
 [cols="e,,,,"]
 |===
 |Field |Cardinality |Datatype |Size |Description
 
-|recurring-plan-id |O |String |36 |It is planed for future reuse and not used at the moment
+|account-holder/email |M |Alphanumeric |64 |The email address of the
+account holder.
 
-|program-id |O |String |36 |Provide value for provider-id
+|account-holder/address/country |O |Alphanumeric |3 |The Country ID of
+the account holder. It must be ``PL``; if it is not provided, will be
+automatically set to ``PL``.
 
-|plan-code |O |String |64 |Subscription code that recurring (periodic) transactions will be referring to.
+|order-number |O |Alphanumeric |64 |This is the order number of the
+merchant. If provided, it is displayed on blik landing page as "Order
+Information"
 
-For Blik auto-payments, the value should be 64 chartacters max and unambiguous across entire Merchant's system.
+|payment-methods/payment-method-name |M |Alphanumeric |15 |This is the
+name of the payment method. Always use value ``blik``
 
-|plan-type |O |String|36 |Plan type that can be used to provide a type of subscription or subscription code
+|transaction-type |M |Alphanumeric |30 |This is the type for a
+transaction. Always use value ``debit``
 
-For Blik auto-payments, it should be PAYID
+|requested-amount/@currency |M |Alphanumeric |3 |This is the currency in
+which a transaction is received and processed. Always use value ``PLN``
 
-|plan-sub-type |O |String |36 |For Blik, model of recurring payment/subscription:
+|descriptor |O |Alphanumeric |64 a|
+Describes the transaction. It is shown on the account holder's statement
+along with the _blik-Transaction-ID_.
+Do not use no more than 20 characters and do not use special chars as it
+can be misinterpreted by a bank system.
 
-A when the Merchant requires recurring transactions with fixed amount to be authorized by the Issuer automatically (without confirmation by a Consumer in the banking application)
-
-M when the Merchant requires recurring transactions with variable amount to be uthorized by the Issuer after it has been confirmed by a Consumer in the banking application.
-
-|recurring-payment-amount |O |Decimal |18,6 |Indicates fixed amount of a single recurring transaction
-
-|recurring-payment-amount/@currency|O |String |3|
-The currency of the requested recurring transaction amount
-Format: 3-character abbreviation according to ISO 4217.
-
-|total-payment-amount |O |Decimal |18,6|Indicates total value that is the upper limit value until the recuring payment expiration date. It is calculated by the Issuer when a Consumer changes recurring payment/subscription expiration date
-
-|total-payment-amount/@currency |O |String |3|The currency of the total amount of planned recurring transactions.
-Format: 3-character abbreviation according to ISO 4217.
-
-|total-number-of-payments |O |Integer |3|The total maximum number of all recurring transactions that will be executed under a given recurring payment/subscription (suggested by Merchant). For Blik, it is currently not used
-
-|recurring-expire-date |O |date |3|The date before which the Merchant wants to have the ability to send recurring transactions authorization requests within a given recurring payment/subscription.
-For Blik, it is displayed to a Consumer.
-For plan-sub-type A, the expiry date must be specified and may not exceed 10 years
-For plan-sub-type M , the expiry date can be set as "until revoked" or for a maximum period of 10 years
-
-|recurring-expire-date-mode |O |String |20|For Bllit, it indicates recurring payment validity expiry date mode.
-
-When the following value is provided, then a Consumer cannot shorten the validity expiry date
-MIN
-
-i.e. the Consumer can’t change the expiration date of the recurring payment to a smaller one than specified in this field; when there is no MIN , the Consumer may either increase or decrease the proposed expiration date; change of the validity date by the Consumer results in the necessity of converting total-payment-amount by the Issuer
-
-|recurring-frequency-code |O |String |20|Indicates regular frequency of the recurring transactions.
-For Blik, it is displayed to a Consumer at the stage of creating the recurring payment/subscription, not editable
-
-|recurring-descriptor |O |String |35|Recurring payment/subscription label/descriptor. e.g. the payment in accordance with the Agreement no ….” and Internet website address / Merchant’s brand (maximum 35 characters) If it contains personal data (e.g. e-mail address), that should be sending partly anonymised data, for instance, jan.kowalski@wp.pl -> ja…ki@wp…pl. jan.kowalski@poczta.onet.pl -> ja..ki@po...pl The rule: all the characters must be shortened by means of replacing them with three dots except for the first and last two ones. If the sequence of characters contains @, both parts of the chain divided by @, it must be shortened by means of the same method
-
-|recurring-no-delay |O |boolean ||In the case of a negative authorization with a refusal code indicating that the reason was a lack of funds, the Merchant may repeat the authorization request with the noDelay flag raised, which indicates to the Issuer that it should make the authorization as soon as possible.
-
-|sequence-type |O |Enumeration|20|Indicates the phase of subscription or a recurring transaction
-Possible values:
-
-register (It is used for subscription registration)
-
-recurring (It is used for recurring/periodic transactions)
-
-update (it is used for subscription update or renewal)
-
-
+|locale |O |Alphanumeric |6 a|
+With this field you can specify language in which P24 landing page is
+displayed.
+Possible values: ``pl``, ``en``, ``de``, ``es``, ``it``
 |===
 
-[#blik_Mandatory/optional fields depending on the request type]
-==== Mandatory/optional fields depending on the request type
+[#blik_refund]
+==== refund request
 
 .Fields for refund request
-[cols="e,,"]
+[cols="e,,,,"]
 |===
-|Parameter name |Recurring payment registration/update request |Recurring transaction authorization request 
+|Field |Cardinality |Datatype |Size |Description
 
-|recurring-plan-id |Plug-in M/O: O , Plug-in: plan-sub-type: A,M|Plug-in M/O: O
+|payment-methods.payment-method-name |M |Alphanumeric |15 |This is the
+name of the payment method. Always use value ``blik``
 
-|program-id |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+|transaction-type |M |Alphanumeric |30 |This is the type for a
+transaction. Always use value ``refund-request``
 
-|plan-code |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+|requested-amount/@currency |M |Alphanumeric |3 |This is the currency in
+which a transaction is received and processed. Always use value ``PLN``
+|===
 
-|plan-type |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
+[#blik_void]
+==== void request
 
-|plan-sub-type |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: O
+.Fields for void request
+[cols="e,,,,"]
+|===
+|Field |Cardinality |Datatype |Size |Description
 
-|recurring-payment-amount |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
+|payment-methods.payment-method-name |M |Alphanumeric |15 |This is the
+name of the payment method. Always use value ``blik``
 
-|total-payment-amount |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
-
-|total-number-of-payments |Plug-in M/O: N/A, Plug-in: plan-sub-type: A|Plug-in M/O: O
-
-|recurring-expire-date |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
-
-|recurring-expire-date-mode |Plug-in M/O: O , Plug-in: plan-sub-type: A|Plug-in M/O: O
-
-|recurring-frequency-code |Plug-in M/O: M , Plug-in: plan-sub-type: A|Plug-in M/O: O
-
-|recurring-no-delay |Plug-in M/O: N/A , Plug-in: plan-sub-type: N/A|Plug-in M/O: O
-
-|recurring-descriptor |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
-
-|sequence-type |Plug-in M/O: M , Plug-in: plan-sub-type: A,M|Plug-in M/O: M
-
+|transaction-type |M |Alphanumeric |30 |This is the type for a
+transaction. Always use value ``refund-request``
 
 |===
 
