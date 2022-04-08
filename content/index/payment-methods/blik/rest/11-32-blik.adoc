@@ -356,19 +356,19 @@ include::{root}/samples/xml/blik_debit_response_success.xml[]
 [#blik_Samples_refund]
 ==== refund
 
-.refund-request Request (Successful)
+.Refund Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/blik_refund-request_request_success_77e8f783.xml[]
 ----
 
-.refund-request Response (Successful)
+.Refund Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/blik_refund-request_response_success_77e8f783.xml[]
 ----
 
-.refund-request Response (Fail)
+.Refund Response (Fail)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/blik_refund-request_response_Fail_77e8f783.xml[]
