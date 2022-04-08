@@ -341,13 +341,13 @@ Go to <<GeneralPlatformFeatures_IPN_NotificationExamples, Notification Examples>
 [#blik_Samples_debit]
 ==== debit
 
-.debit Request (Successful)
+.Debit Request (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/blik_debit_request_success.xml[]
 ----
 
-.debit Response (Successful)
+.Debit Response (Successful)
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/blik_debit_response_success.xml[]
