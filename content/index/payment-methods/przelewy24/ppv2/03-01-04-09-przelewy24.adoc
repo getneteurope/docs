@@ -68,10 +68,10 @@ Test credentials for the transaction type
 [cols="35h,65"]
 |===
 | URI (Endpoint)             | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | 86451785-3ed0-4aa1-99b2-cc32cf54ce9a
-| Username                   | 16390-testing
-| Password                   | 3!3013=D3fD8X7
-| Secret Key (used for response verification) | fdd54ea1-cef1-449a-945c-55abc631cfdc
+| Merchant Account ID (MAID) | 39525cf9-fe90-4f99-9ce2-42815754d7c1
+| Username                   | 515225-GetnetEuropeTEST
+| Password                   | 4cHLRE-Q7YcAP
+| Secret Key (used for response verification) | 6951db91-063a-4f28-b88e-02bde3ae555e
 |===
 
 [NOTE]
@@ -84,8 +84,6 @@ you to select a bank. You will be redirected to a page that asks for
 payment confirmation. Upon confirmation of your test payment, _P24_
 immediately returns you to your shop.
 ====
-
-image::images/03-01-04-09-przelewy24/P24_Demoshop.PNG[P24 Demoshop]
 
  
 [#PPv2_P24_TransactionType_debit]
