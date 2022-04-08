@@ -58,10 +58,10 @@ Test credentials for the transaction type
 [cols="35h,65"]
 |===
 | URI (Endpoint)             | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | 86451785-3ed0-4aa1-99b2-cc32cf54ce9a
-| Username                   | 16390-testing
-| Password                   | 3!3013=D3fD8X7
-| Secret Key (used for response verification) | fdd54ea1-cef1-449a-945c-55abc631cfdc
+| Merchant Account ID (MAID) | 54c06d30-73a7-45b0-b1f6-6f5ae91cd40c
+| Username                   | 515225-GetnetEuropeTEST
+| Password                   | 4cHLRE-Q7YcAP
+| Secret Key (used for response verification) | 285fe5af-09f0-4e99-b8a8-439f14d75e20
 |===
 
 [NOTE]
