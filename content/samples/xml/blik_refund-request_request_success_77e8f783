@@ -1,4 +1,4 @@
-   <payment xmlns="http://www.elastic-payments.com/schema/payment">
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
   <merchant-account-id>54c06d30-73a7-45b0-b1f6-6f5ae91cd40c</merchant-account-id>
   <request-id>cd43153c-c44f-4322-b468-6179d62c4cb6</request-id>
   <transaction-type>refund-request</transaction-type>
