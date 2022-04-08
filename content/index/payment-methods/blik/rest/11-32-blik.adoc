@@ -42,25 +42,23 @@ at <<AppendixB,  Transaction Types>>.
 |===
 |Transaction Type | Request | Response/IPN | Merchant Portal | Description | Link to Samples
 
-|get-url debit | Yes | Yes | Yes | Submit
-REDIRECT approach:
-get-url is created in success state once a valid debit request is sent by a Merchant. Redirection to Blik platfrom will be done internally
+|debit | Yes | Yes | Yes | debit is created once direct response is received|see debit sample below
 
-debit is created once direct response is received|see debit sample below
+|get URL | No | No | Yes | A step in a group of transactions where the URL of blik landing page is retrieved for the Consumer to be redirected to.
 
 
 |refund-request & refund-debit |Yes |Yes |Yes | correctTransaction - Sends processTransaction to Blik and upon response, the refund-request is updated with a corresponding state
 
 When the notification is sent from Blik to Payment Gateway, then refund-debit transaction is created.
 "Partial and multiple refunds are allowed, until the original amount is not exceeded."
-|TBD
+|see refund samples below
 
 
 |void-debit  |Yes |Yes |Yes||TBD
 
-|reversal-debit  |Yes |Yes |Yes|Reversal is internally called by Payment Gateway (cron job) to revoke pending payments that could not be processed due to timeouts or tech issues. The service runs in asynchronous mode|TBD
+|reversal-debit  |Yes |Yes |Yes|Reversal is internally called by Payment Gateway (cron job) to revoke pending payments that could not be processed due to timeouts or tech issues. The service runs in asynchronous mode|see Void-debit samples below
 
-|query / GET  |Yes |Yes |Yes||TBD
+|query / GET  |Yes |Yes |Yes||see query samples below
 
 |===
 
@@ -85,7 +83,7 @@ immediately.
 |===
 .3+h|URLs (Endpoints) .2+| REST API | For transaction type ``debit``.                              | ``\https://{rest-api-test-apm-endpoint}``
                                     | For transaction types ``refund-request`` and ``refund-debit``. | ``\https://{rest-api-test-endpoint}``
-                       2+| Payment Page                                                          | ``\https://{test-instance-hostname}/engine/hpp/``
+                       2+| Payment Page                                                          | https://paymentpage-test.getneteurope.com/api/payment/register
 h| Merchant Account ID 3+| 54c06d30-73a7-45b0-b1f6-6f5ae91cd40c
 h| Username            3+| 515225-GetnetEuropeTEST
 h| Password            3+| 4cHLRE-Q7YcAP
