@@ -1,0 +1,93 @@
+[#MobilePaymentSDK_iOS_WireTransfer]
+=== POA/PIA WireTransfer
+
+==== Supported http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[Transaction Types]
+
+This payment method supports the following
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup]
+==== Basic Setup
+
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup_cocoapods]
+===== Cocoapods
+
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/WireTransfer',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_WireTransfer_basic_payment]
+==== WireTransfer Payment
+
+This is a code example for a basic WireTransfer payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.wirecard.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECWireTransferPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.authorization
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.lastName = "Doe"
+   payment.accountHolder = accountHolder
+   
+   let notif = SDKPayECNotification.init()
+   notif.transactionState = SDKPayECTransactionState.success
+   payment.notifications = [notif]
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is
+created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECWireTransferPayment.html[`SDKPayECWireTransferPayment`]
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_WireTransfer_Visualisaton]
+==== Visualisation
+
+image::../images/screens/ios/wire-transfer.png[WireTransfer Screen,height=250]
+
+// [#MobilePaymentSDK_iOS_WireTransfer_Visualisaton_Card_CustomizingVisuals]
+// ===== Customizing Visuals
+
+// To change colors within the SDK, set properties of the components, that
+// conforms to UIAppearance protocol. Changing any of these will affect
+// every module used in the SDK.
+
+// [arabic]
+// . `SDKPayECView`
+// . `SDKPayECNavigationBar`
+
+//-

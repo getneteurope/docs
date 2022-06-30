@@ -1,0 +1,206 @@
+[#MobilePaymentSDK_iOS_PayPal]
+=== PayPal
+
+==== Supported http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[Transaction Types]
+
+This payment method supports the following
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - todo
+* *`SDKPayECTransactionTypeDebit`* - todo.
+
+[#MobilePaymentSDK_iOS_PayPal_basic_setup]
+==== Basic Setup
+
+[#MobilePaymentSDK_iOS_PayPal_basic_setup_cocoapods]
+===== Cocoapods
+
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/PayPal',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_PayPal_basic_payment]
+==== PayPal Payment
+
+This is a code example for a basic PayPal payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.wirecard.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let orderItem = SDKPayECOrderItem()
+   orderItem.name = "The Watch"
+   orderItem.amount = AMOUNT;
+   orderItem.amountCurrency = .EUR;
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = [orderItem]
+
+   let payment = SDKPayECPayPalPayment()
+   payment.appScheme = "example";
+   payment.amount = AMOUNT
+   payment.currency = "EUR"
+   payment.transactionType = .authorization
+   payment.order = order;
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.lastName = "Doe"
+   payment.accountHolder = accountHolder
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is
+created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayPalPayment.html[`SDKPayECPayPalPayment`]
+for more details. PayPal payment supports
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`]
+recurring type.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_PayPal_recurring_payment]
+==== Recurring PayPal Payment
+
+On a basic level, recurring payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* periodic type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`],
+* sequence type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECSequenceType.html[`SDKPayECSequenceTypeFirst`].
+. The follow-up requests, which must include:
+* periodic type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`],
+* sequence type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECSequenceType.html[`SDKPayECSequenceTypeRecurring`],
+* http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayment.html#//api/name/parentTransactionID[`parentTransactionId`]value
+from the initial request.
+
+So in order to create a recurring payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate periodic and sequence
+flags,
+. Save the values of
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayment.html#//api/name/parentTransactionID[`parentTransactionId`]
+field generated in this first payment,
+. Reference these values in the follow-up request, then send it with
+appropriate periodic and sequence flags.
+
+This is a code example for a first recurring PayPal payment:
+[source,swift]
+----
+// First payment 
+
+   let firstPeriodicType = SDKPayECPeriodic() 
+   firstPeriodicType.periodicType = .recurring
+   firstPeriodicType.sequenceType = .first
+
+   let payment = SDKPayECPayPalPayment()
+   payment.merchantAccountID = merchantAccountID  
+   payment.requestID = requestID
+   payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+   payment.currency = "EUR"
+   payment.transactionType = .debit
+   let periodic = SDKPayECPeriodic()
+   periodic.periodicType = periodicType
+   periodic.sequenceType = sequenceType
+   payment.periodic = firstPeriodicType
+   payment.signature = signature
+   
+   var parentTransactionID: String?
+   self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+      // for each failure error object is provided;
+      if let error = error {
+         return
+      }
+      self.handleResponse(response)
+   })
+
+   // Handle first result
+   func handleReponse(_ response: SDKPayECPaymentResponse?) {
+      guard let response = response else { return }
+      self.parentTransactionID = response.parentTransactionID
+   }
+
+   // Second payment using parentTransactionId
+
+   let firstPeriodicType = SDKPayECPeriodic()
+   firstPeriodicType.periodicType = .recurring
+   firstPeriodicType.sequenceType = .final
+   
+   let payment = SDKPayECPayPalPayment()
+   payment.merchantAccountID = merchantAccountID  
+   payment.requestID = requestID
+   payment.parentTransactionID = self.parentTransactionID
+   payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+   payment.currency = "EUR"
+   payment.transactionType = .autorization
+
+   let periodic = SDKPayECPeriodic()
+   periodic.periodicType = periodicType
+   periodic.sequenceType = sequenceType
+   payment.periodic = firstPeriodicType
+   payment.signature = signature
+
+   self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+      // for each failure error object is provided;
+      if let error = error {
+         return
+      }
+      self.handleResponse(response)
+   })
+```
+----
+
+[#MobilePaymentSDK_iOS_PayPal_Visualisaton]
+==== Visualisation
+
+image::../images/screens/ios/paypal.png[PayPal Screen,height=250]
+
+[#MobilePaymentSDK_iOS_PayPal_Visualisaton_Card_CustomizingVisuals]
+===== Customizing Visuals
+
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECView`
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECSubmitButton`
+. `SDKPayECNavigationBar`
+. `SDKPayECAmountLabel`
+
+//-

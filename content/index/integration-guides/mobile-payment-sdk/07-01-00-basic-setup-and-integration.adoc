@@ -197,7 +197,7 @@ scanner feature, you can leave out this part:
 [#MobilePaymentSDK_BasicSetup_iOS]
 === iOS
 
-The device cannot be jail-broken and must run at least iOS 7 for
+The device cannot be jail-broken and must run at least iOS 12.0 for
 _paymentSDK_ to work. It is recommended to use the latest stable version
 of Xcode.
 
@@ -273,14 +273,7 @@ requested_amount=1.01
 requested_amount_currency=EUR
 ----
 
-[#MobilePaymentSDK_BasicSetup_Security_Signaturev1]
-==== Signature v1 (DEPRECATED)
-
-Although we link the Signature v1 documentation here, it is now
-considered the legacy version. For all intents and purposes, if you
-haven't used _MPSDK_ before, *use Signature v2*.
-
-Signature v1 docs link link:https://paymentsdk.github.io/p_2_2_signature.html[here] .
+Signature v2 docs link link:https://paymentsdk.github.io/p_2_2_signature.html[here] .
 
 [#MobilePaymentSDK_BasicSetup_Security_3DS]
 ==== 3D Secure

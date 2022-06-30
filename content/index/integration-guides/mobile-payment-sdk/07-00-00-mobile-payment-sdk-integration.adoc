@@ -35,13 +35,7 @@ At the moment, the supported locations are as follows:
 
 | Germany - production   | ``\https://{instance-hostname}/``               
 | Germany - test   | ``\https://{test-instance-hostname}/`` 
-| Singapore - production | ``\https://{instance-hostname}.sg/``
-| Singapore - test | ``\https://test.{domain}.sg/``
-| UK & Ireland - production | ``\https://{cnd-endpoint}/``
-| UK & Ireland - test | ``\https://{cnd-test-endpoint}/``
-| Central and Eastern Europe - production | ``\https://{cee-endpoint}/``
-| Central and Eastern Europe - test | ``\https://{cee-test-endpoint}/``
-
+|
 |===
 
 WARNING: Don't forget to keep _MPSDK_ up-to-date (i.e. updating before the SSL
