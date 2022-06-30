@@ -67,6 +67,9 @@ include::index/integration-guides/ppv2/03-01-01-01-hpp-integration-guide.adoc[le
 include::index/integration-guides/ppv2/03-01-02-01-epp-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/ppv2/03-01-03-01-seamless-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/mobile-payment-sdk/07-00-00-mobile-payment-sdk-integration.adoc[leveloffset=+2]
+include::index/integration-guides/mobile-payment-sdk/07-01-00-basic-setup-and-integration.adoc[leveloffset=+3]
+include::index/integration-guides/mobile-payment-sdk/07-01-01-integrating-mpsdk-on-android.adoc[leveloffset=+3]
+include::index/integration-guides/mobile-payment-sdk/07-01-02-integrating-mpsdk-on-ios.adoc[leveloffset=+3]
 //include::index/integration-guides/ppv2/03-01-03-02-seamless-with-nvp.adoc[]
 
 include::index/payment-methods/11-00-payment-methods.adoc[]
