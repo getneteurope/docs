@@ -59,6 +59,9 @@ include::index/integration-options/rest-api/04-01-rest-api-payment.adoc[leveloff
 include::index/integration-options/rest-api/04-03-rest-api-simulations.adoc[leveloffset=+2]
 include::index/integration-options/rest-api/04-04-rest-api-samples.adoc[leveloffset=+2]
 
+include::index/integration-options/mobile-payment-sdk/07-00-mobile-payment-sdk.adoc[leveloffset=+1]
+
+
 include::index/integration-guides/22-integration-guides.adoc[]
 include::index/integration-guides/ppv2/03-01-01-01-hpp-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/ppv2/03-01-02-01-epp-integration-guide.adoc[leveloffset=+2]
