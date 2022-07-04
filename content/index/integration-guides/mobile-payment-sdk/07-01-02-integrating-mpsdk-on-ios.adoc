@@ -191,7 +191,7 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
 ===== Card
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, scaledwidth=25%]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=180, height=340]
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
