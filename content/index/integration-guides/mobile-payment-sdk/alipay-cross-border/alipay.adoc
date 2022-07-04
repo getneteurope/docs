@@ -2,10 +2,10 @@
 [#MobilePaymentSDK_iOS_Alipay]
 === Alipay Cross Border
 
-==== Supported http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[Transaction Types]
+==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 
 This payment method supports the following
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[transaction
+https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
  *`SDKPayECTransactionTypeDebit`* - todo.
@@ -85,7 +85,7 @@ for more details.
 [#MobilePaymentSDK_iOS_Alipay_Visualisaton]
 ==== Visualisation
 
-image::../images/screens/ios/alipay.png[Alipay Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/ios/alipay.png[Alipay Screen,height=250]
 
 [#MobilePaymentSDK_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals

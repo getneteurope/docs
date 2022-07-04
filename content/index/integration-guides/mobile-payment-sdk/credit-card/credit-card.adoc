@@ -1,10 +1,10 @@
 [#MobilePaymentSDK_iOS_CreditCard]
 === Credit Card
 
-==== Supported http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[Transaction Types]
+==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 
 This payment method supports the following
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECTransactionType.html[transaction
+https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
 * *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
@@ -186,7 +186,7 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
 ===== Card
 
-image::../images/screens/ios/credit-card-screen.png[Card Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/ios/credit-card-screen.png[Card Screen,height=250]
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals

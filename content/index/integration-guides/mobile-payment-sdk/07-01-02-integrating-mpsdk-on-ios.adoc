@@ -1060,7 +1060,7 @@ This is a code example for a first recurring P24 payment:
 [#MobilePaymentSDK_iOS_P24_Visualisaton]
 ==== Visualisation
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/P24.png[P24 Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/P24.png[P24 Screen,height=250]
 
 [#MobilePaymentSDK_iOS_P24_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
