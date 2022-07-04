@@ -331,7 +331,7 @@ Steps of customization:
 
 . Add User-Defined Settings *SDKPay_NO_DEBUG_CHECK* in your project's Build Settings for your application target.
 
-image:images/07-01-basic-setup-and-integraton/user-defined-settings.png[User-Defined Settings] 
+image:images/07-01-basic-setup-and-integraton/ios/user-defined-settings.png[User-Defined Settings] 
 
 . Set the default value for your AdHoc to *NO* 
 . Set other's build configurations by your preferences: 
@@ -341,7 +341,7 @@ image:images/07-01-basic-setup-and-integraton/user-defined-settings.png[User-Def
     - *Key:* No debugging check
     - *Value* - $(SDKPay_NO_DEBUG_CHECK)
 
-image:images/07-01-basic-setup-and-integraton/target-properties.png[Custom iOS Target Properties] 
+image:images/07-01-basic-setup-and-integraton/ios/target-properties.png[Custom iOS Target Properties] 
 
 
 [#MobilePaymentSDK_BasicSetup_Security_3DS]
