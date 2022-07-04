@@ -22,21 +22,30 @@ in <<MobilePaymentSDK_PaymentMethods, Available Payment Methods>> below.
 [#MobilePaymentSDK_PaymentMethods]
 === Available Payment Methods
 
-We recommend using <<GeneralPlatformFeatures_IPN, Instant Payment Notification>>, instead
-of the default _MPSDK_ responses, as they are much more reliable.
+It may be more convenient to use link:https://getnetdoc-preview-d1df158fe7c959e31dbb6e001dfc598c.s3.eu-central-1.amazonaws.com/docs.getneteurope.com/branches/mobilesdk/GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN[Instant Payment Notification], instead of the default MPSDK responses. 
 
 |===
    | Payment Method    | Transaction Type
 
-.2+| Apple Pay         | authorization
-                       | purchase
 .4+| Card              | authorization
                        | authorization-only
                        | purchase
                        | tokenize
+                       | referenced-purchase
+                       | referenced-authorization
+
 .3+| PayPal            | authorization
                        | authorization-only
                        | debit
-.2+| SEPA Direct Debit | authorization
+
+.3+| SEPA Direct Debit | authorization
                        | pending-debit
+                       | debit
+
+.1+| POI/PIA (Wire Transfer)	| authorization
+
+.1+| AliPay Cross-border	   | debit
+
+.1+| Przelewy24               | debit
+
 |===
