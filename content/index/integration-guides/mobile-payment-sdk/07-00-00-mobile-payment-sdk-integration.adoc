@@ -23,20 +23,14 @@ SDK payments.
 
 Get your own credentials by contacting <<ContactUs, Merchant Support>>.
 
-Next, depending on where you are from, you will need to choose your
-closest production environment: this is where your instance of MPSDK
-will be hosted. Both testing and production environments are available
-in every location.
+Below the supported locations the Mobile Payment SDK can connect to are listed. Both testing and production environments are available.
 
-At the moment, the supported locations are as follows:
+At the moment, the supported locations are as:
 
 |===
 | Gateway  | Hostname
 
-| Germany - production   | ``\https://{instance-hostname}/``               
-| Germany - test   | ``\https://{test-instance-hostname}/`` 
+| Production   | ``\https://api.getneteurope.com/``               
+| Test         | ``\https://api-test.getneteurope.com/`` 
 |
 |===
-
-WARNING: Don't forget to keep _MPSDK_ up-to-date (i.e. updating before the SSL
-certification expires).
