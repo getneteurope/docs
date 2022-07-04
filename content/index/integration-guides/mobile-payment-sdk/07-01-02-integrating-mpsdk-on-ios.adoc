@@ -191,7 +191,7 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
 ===== Card
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=180, height=340]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
@@ -204,13 +204,16 @@ every module used in the SDK.
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`
+. `SDKPayECSubmitButton`
+. `SDKPayECAmountLabel`
+. `SDKPayECTextField`
 
 
 //-
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated]
 ===== Card Animated
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/credit-card-animated-screen.png[Animated Card Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen.png[Animated Card Screen,, align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
 ====== Customizing Visuals
@@ -226,7 +229,6 @@ every module used in the SDK.
 
 //-
 
-
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField]
 ===== CardField
 
@@ -234,7 +236,7 @@ every module used in the SDK.
 properties similar to ``UITextField``. It is designed to fit in a single
 line and can be used where an ``UITextField`` would be appropriate:
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/credit-cardfield.png[Card Field,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[Card Field, align=center, width=240, height=420]
 
 
 Create a ``SDKPayCardField`` (programmatically, or in XIB/Storyboard) and
@@ -268,7 +270,7 @@ every module used in the SDK.
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated]
 ===== CardField Animated Alternative
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/credit-cardfield-animated.png[Animated Card Field,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[Animated Card Field,align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
 ====== Customizing Visuals
@@ -473,7 +475,7 @@ This is a code example for a first recurring PayPal payment:
 [#MobilePaymentSDK_iOS_PayPal_Visualisaton]
 ==== Visualisation
 
-image::images/screens/ios/paypal.png[PayPal Screen,height=250]
+image::images/screens/iOS/paypal.png[PayPal Screen, align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_PayPal_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
@@ -661,7 +663,7 @@ This is a code example for a first recurring SEPA payment:
 [#MobilePaymentSDK_iOS_SEPA_Visualisaton]
 ==== Visualisation
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/sepa.png[SEPA Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[SEPA Screen, align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
@@ -769,7 +771,7 @@ for more details.
 [#MobilePaymentSDK_iOS_Alipay_Visualisaton]
 ==== Visualisation
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/alipay.png[Alipay Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen,align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
@@ -865,7 +867,7 @@ created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/a
 [#MobilePaymentSDK_iOS_WireTransfer_Visualisaton]
 ==== Visualisation
 
-image::images/07-01-02-integrating-mpsdk-on-ios/ios/wire-transfer.png[WireTransfer Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen,align=center, width=240, height=420]
 
 // [#MobilePaymentSDK_iOS_WireTransfer_Visualisaton_Card_CustomizingVisuals]
 // ===== Customizing Visuals
@@ -1060,7 +1062,7 @@ This is a code example for a first recurring P24 payment:
 [#MobilePaymentSDK_iOS_P24_Visualisaton]
 ==== Visualisation
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24.png[P24 Screen,height=250]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24.png[P24 Screen,align=center, width=240, height=420]
 
 [#MobilePaymentSDK_iOS_P24_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
