@@ -202,25 +202,38 @@ _paymentSDK_ to work. It is recommended to use the latest stable version
 of Xcode.
 
 Download the pod at
-our link:https://github.com/wirecard/paymentSDK-iOS[GitHub repository] and
-add it to your ``Podfile``:
+our link:https://github.com/getneteurope/paymentSDK-iOS[GitHub repository] and
+add it to your podfile. 
 
-.Podfile
+The iOS supports two ways of MPSDK usage:  
+
+- The first is by selecting all frameworks with payment methods and utilities supported by MPSDK. 
+
+.For example:
 [source,subs=attributes+]
 ----
-pod 'paymentSDK'
+pod 'paymentSDK/All'
 ----
+
+- The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
+
+.For example:
+[source,subs=attributes+]
+----
+pod 'paymentSDK/Card' 
+pod 'paymentSDK/SEPA'
+----
+
 
 [#MobilePaymentSDK_BasicSetup_Security]
 ==== Security
 
 [#MobilePaymentSDK_BasicSetup_Security_AuthenticationbySignature]
-==== Authentication by Signature
+===== Authentication by Signature
 
 When a payment goes through, there's a lot of data to be exchanged
 between various endpoints. Payment information changes hands between
-your system (the merchant), the consumer's device, and Wirecard
-Processing Gateway. To ensure that this information is not tampered
+your system (the merchant), the consumer's device, and GetNet Europe Payment Gateway. To ensure that this information is not tampered
 with, we need to put safeguards in place.
 
 We do this by employing a _digital signature_, which is used for all
@@ -229,7 +242,7 @@ cipher, which - if validated - proves that the message was created by a
 known sender and was not altered while being transmitted.
 
 [#MobilePaymentSDK_BasicSetup_Security_SecretKey]
-==== Secret Key
+===== Secret Key
 
 You will use your Secret Key when generating the digital signature mentioned above.
 
@@ -243,25 +256,59 @@ The Secret Key is only used in server-side code for either:
 If you did not receive your Secret Key at the time you were setting up
 your merchant account with us, please contact <<ContactUs, Merchant Support>> and ask for Secret Key generation.
 
+[WARNING]
+====
 We ask you to *never* share your Secret Key with anyone, or store it
 inside your application or phone. This is crucial to ensure the security
 of your transactions.
+====
 
-[#MobilePaymentSDK_BasicSetup_Security_Signature]
+
 [#MobilePaymentSDK_BasicSetup_Security_Signaturev2]
-==== Signature v2
+===== Signature v2
 
 You will be generating the signature on your own server's backend, as it
 is the only place where you will store your Secret Key.
 
-See <<PP_Security_SignatureV2, Signature v2>> for more information.
-
-Note that when generating the signature for MPSDK, you can leave out
+Note that when generating the signature for payment SDK, you can leave out
 payload fields related to Payment Page
 (``redirect_url``, ``custom_css_url``, ``ip_address``). This means that
-you only use the mandatory fields:
+you only use the mandatory fields.
 
-.Signature v2 Payload Example (for MPSDK)
+
+Supported algorithms:
+|===
+|Algorithm |Description
+
+|HS256
+|HMAC with SHA-256
+|===
+
+Supported fields: 
+|===
+|Name | Detail
+
+|request_time_stamp
+|in ISO 8601 format with timezone, e.g. 2016-07-27T14:33:49+02:00
+
+|merchant_account_id
+|9873ac65-6f28-4b75-ae55-9d549cf570e3
+
+|request_id
+|0c06f2b9-f47e-41d1-9eec-9c9352f0247f
+
+|transaction_type
+|debit
+
+|requested_amount
+|should follow ISO 4217, e.g. 1.01
+
+|requested_amount_currency
+|should follow ISO 4217, e.g. EUR
+|=== 
+
+
+.Signature v2 Payload Example (for payment SDK)
 [source,subs=attributes+]
 ----
 HS256
@@ -273,12 +320,31 @@ requested_amount=1.01
 requested_amount_currency=EUR
 ----
 
-Signature v2 docs link link:https://paymentsdk.github.io/p_2_2_signature.html[here] .
+[#MobilePaymentSDK_BasicSetup_Security_Debugging_prevention]
+===== Debugging prevention
+
+MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
+
+But MPSDK prevents debugging in a production application. For customization and simulation of this option, MPSDK supports *Custom settings* in the project setting on the application side.
+
+Steps of customization:
+
+. Add User-Defined Settings *SDKPay_NO_DEBUG_CHECK* in your project's Build Settings for your application target.
+
+image:images/07-01-basic-setup-and-integraton/user-defined-settings.png[User-Defined Settings] 
+
+. Set the default value for your AdHoc to *NO* 
+. Set other's build configurations by your preferences: 
+     - *YES* - without debugging prevention
+     - *NO* - with debugging prevention
+. Add Custom iOS Target Properties Key to the Info page:
+    - *Key:* No debugging check
+    - *Value* - $(SDKPay_NO_DEBUG_CHECK)
+
+image:images/07-01-basic-setup-and-integraton/target-properties.png[Custom iOS Target Properties] 
+
 
 [#MobilePaymentSDK_BasicSetup_Security_3DS]
 ==== 3D Secure
 
-3D Secure flow & implementation is handled implicitly by _MPSDK_. There
-is only the on-demand option to omit the 3D Secure protocol (it is
-activated by default for merchants). For a detailed flow,
-see <<3DS2_Workflow, this link>>.
+3D Secure flow & implementation is handled implicitly by _payment SDK_. For a detailed flow, see <<3DS2_Workflow, this link>>.
