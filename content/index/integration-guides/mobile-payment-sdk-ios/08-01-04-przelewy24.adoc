@@ -1,5 +1,5 @@
-[#MobilePaymentSDK_iOS_P24]
-=== P24
+[#MobilePaymentSDK_2_iOS_P24]
+== P24
 
 ==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 
@@ -9,10 +9,10 @@ types]:
 
 * *`SDKPayECTransactionTypeDebit`* - todo.
 
-[#MobilePaymentSDK_iOS_P24_basic_setup]
+[#MobilePaymentSDK_2_iOS_P24_basic_setup]
 ==== Basic Setup
 
-[#MobilePaymentSDK_iOS_P24_basic_setup_cocoapods]
+[#MobilePaymentSDK_2_iOS_P24_basic_setup_cocoapods]
 ===== Cocoapods
 
 Add to your app’s `Podfile` subspecs:
@@ -22,7 +22,7 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/P24',          '~> {{version}}'
 ----
 
-[#MobilePaymentSDK_iOS_P24_basic_payment]
+[#MobilePaymentSDK_2_iOS_P24_basic_payment]
 ==== P24 Payment
 
 This is a code example for a basic P24 payment:
@@ -72,7 +72,7 @@ recurring type.
 
 //-
 
-[#MobilePaymentSDK_iOS_P24_recurring_payment]
+[#MobilePaymentSDK_2_iOS_P24_recurring_payment]
 ==== Recurring P24 Payment
 
 On a basic level, recurring payments have two phases:
@@ -175,12 +175,12 @@ This is a code example for a first recurring P24 payment:
 ```
 ----
 
-[#MobilePaymentSDK_iOS_P24_Visualisaton]
+[#MobilePaymentSDK_2_iOS_P24_Visualisaton]
 ==== Visualisation
 
 image::images/07-01-02-integrating-mpsdk-on-ios/iOS/P24.png[P24 Screen, align=center, width=240, height=420]
 
-[#MobilePaymentSDK_iOS_P24_Visualisaton_Card_CustomizingVisuals]
+[#MobilePaymentSDK_2_iOS_P24_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
 
 To change colors within the SDK, set properties of the components, that

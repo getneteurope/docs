@@ -1,5 +1,5 @@
-[#MobilePaymentSDK_iOS_SEPA]
-=== SEPA Direct Debit
+[#MobilePaymentSDK_2_iOS_SEPA]
+== SEPA Direct Debit
 
 ==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 
@@ -14,10 +14,10 @@ transaction.
 * *`SDKPayECTransactionTypeDebit`* - todo.
 * *`SDKPayECTransactionPendingDebit`* - todo.
 
-[#MobilePaymentSDK_iOS_SEPA_basic_setup]
+[#MobilePaymentSDK_2_iOS_SEPA_basic_setup]
 ==== Basic Setup
 
-[#MobilePaymentSDK_iOS_SEPA_basic_setup_cocoapods]
+[#MobilePaymentSDK_2_iOS_SEPA_basic_setup_cocoapods]
 ===== Cocoapods
 
 Add to your app’s `Podfile` subspecs:
@@ -27,7 +27,7 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/SEPA',          '~> {{version}}'
 ----
 
-[#MobilePaymentSDK_iOS_SEPA_basic_payment]
+[#MobilePaymentSDK_2_iOS_SEPA_basic_payment]
 ==== SEPA Payment
 
 This is a code example for a basic SEPA payment:
@@ -72,7 +72,7 @@ recurring type.
 
 //-
 
-[#MobilePaymentSDK_iOS_SEPA_recurring_payment]
+[#MobilePaymentSDK_2_iOS_SEPA_recurring_payment]
 ==== Recurring SEPA Payment
 
 On a basic level, recurring payments have two phases:
@@ -168,12 +168,12 @@ This is a code example for a first recurring SEPA payment:
 ```
 ----
 
-[#MobilePaymentSDK_iOS_SEPA_Visualisaton]
+[#MobilePaymentSDK_2_iOS_SEPA_Visualisaton]
 ==== Visualisation
 
 image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[SEPA Screen, align=center, width=240, height=420]
 
-[#MobilePaymentSDK_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
+[#MobilePaymentSDK_2_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
 
 To change colors within the SDK, set properties of the components, that
