@@ -88,9 +88,10 @@ for more details.
 === Visualisation
 ---
 
-[cols="3,1a,1a,3", frame=none, grid=none]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
-|
+| Algorithm | Description
+
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
 |
