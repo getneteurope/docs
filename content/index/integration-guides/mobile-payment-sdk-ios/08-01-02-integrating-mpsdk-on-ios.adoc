@@ -1,3 +1,0 @@
-[#MobilePaymentSDK_iOS_iOS]
-== Integrating MPSDK on iOS
-
