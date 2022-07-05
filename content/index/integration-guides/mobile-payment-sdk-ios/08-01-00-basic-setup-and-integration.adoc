@@ -1,4 +1,4 @@
-[#MobilePaymentSDK_BasicSetup]
+[#MobilePaymentSDK_iOS_BasicSetup]
 
 == Basic Setup
 
@@ -29,7 +29,7 @@ pod 'paymentSDK/Card'
 pod 'paymentSDK/SEPA'
 ----
 
-[#MobilePaymentSDK_BasicSetup_list_of_payment_method_subspec]
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
 === List of supported payment method subspec
 
 |===
@@ -66,7 +66,7 @@ pod 'paymentSDK/SEPA'
 
 //-
 
-[#MobilePaymentSDK_BasicSetup_list_of_payment_method_utility_subspec]
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_utility_subspec]
 === List of optional utilities subspec for Card and SEPA payment method 
 
 |===
@@ -92,10 +92,10 @@ pod 'paymentSDK/SEPA'
         
 //-
 
-[#MobilePaymentSDK_BasicSetup_Security]
+[#MobilePaymentSDK_iOS_BasicSetup_Security]
 == Security
 
-[#MobilePaymentSDK_BasicSetup_Security_AuthenticationbySignature]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_AuthenticationbySignature]
 === Authentication by Signature
 
 When a payment goes through, there's a lot of data to be exchanged
@@ -108,7 +108,7 @@ messages targeting the {payment-gateway}. This signature is a mathematical
 cipher, which - if validated - proves that the message was created by a
 known sender and was not altered while being transmitted.
 
-[#MobilePaymentSDK_BasicSetup_Security_SecretKey]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_SecretKey]
 === Secret Key
 
 You will use your Secret Key when generating the digital signature mentioned above.
@@ -132,7 +132,7 @@ of your transactions.
 ====
 
 
-[#MobilePaymentSDK_BasicSetup_Security_Signaturev2]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Signaturev2]
 === Signature v2
 
 You will be generating the signature on your own server's backend, as it
@@ -188,7 +188,7 @@ requested_amount=1.01
 requested_amount_currency=EUR
 ----
 
-[#MobilePaymentSDK_BasicSetup_Security_Debugging_prevention]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Debugging_prevention]
 === Debugging prevention
 
 MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
@@ -212,7 +212,7 @@ image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User
 image:images/07-01-basic-setup-and-integraton/iOS/target-properties.png[Custom iOS Target Properties] 
 
 
-[#MobilePaymentSDK_BasicSetup_Security_3DS]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_3DS]
 ==== 3D Secure
 
 3D Secure flow & implementation is handled implicitly by _payment SDK_. For a detailed flow, see <<3DS2_Workflow, this link>>.

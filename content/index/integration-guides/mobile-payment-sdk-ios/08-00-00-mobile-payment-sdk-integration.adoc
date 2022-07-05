@@ -1,7 +1,7 @@
-[#MobilePaymentSDK_IntegrationGuides]
-== Mobile Payment SDK
+[#MobilePaymentSDK_iOS_IntegrationGuides]
+== Mobile Payment SDK iOS
 
-[#MobilePaymentSDK_FirstSteps]
+[#MobilePaymentSDK_iOS_FirstSteps]
 === First Steps
 
 Before you start coding, you are going to need some credentials:
