@@ -87,7 +87,14 @@ for more details.
 [#MobilePaymentSDK_2_iOS_Alipay_Visualisaton]
 === Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
+
+[cols="3,1a,1a,3", frame=none, grid=none]
+|===
+|
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_2_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
 === Customizing Visuals
