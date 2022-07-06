@@ -1,10 +1,14 @@
 
+[#MobilePaymentSDK_2_iOS_Payment_methods]
+---
+== Payment methods
+
 [#MobilePaymentSDK_2_iOS_Alipay]
 ---
-== *Alipay Cross Border*
+=== *Alipay Cross Border*
 ---
 
-=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
@@ -13,11 +17,11 @@ types]:
 - *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
 [#MobilePaymentSDK_2_iOS_Alipay_basic_setup]
-=== Basic Setup
+==== Basic Setup
 ---
 
 [#MobilePaymentSDK_2_iOS_Alipay_basic_setup_cocoapods]
-==== Cocoapods
+===== Cocoapods
 
 Add to your app’s `Podfile` subspecs:
  
@@ -27,7 +31,7 @@ pod 'paymentSDK/Alipay',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_2_iOS_Alipay_basic_payment]
-=== Alipay Payment
+==== Alipay Payment
 ---
 This is a code example for a basic Alipay payment:
 
@@ -86,7 +90,7 @@ for more details.
 
 //-
 [#MobilePaymentSDK_2_iOS_Alipay_Visualisaton]
-=== Visualisation
+==== Visualisation
 ---
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
@@ -99,7 +103,7 @@ for more details.
 |===
 
 [#MobilePaymentSDK_2_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
-=== Customizing Visuals
+==== Customizing Visuals
 ---
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
