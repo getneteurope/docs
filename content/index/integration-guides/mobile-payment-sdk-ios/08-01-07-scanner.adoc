@@ -1,0 +1,120 @@
+[#MobilePaymentSDK_2_iOS_Scanner]
+== Scanner utilities
+---
+
+[#MobilePaymentSDK_2_iOS_Card_Scanner]
+=== Card Scanner
+---
+
+[#MobilePaymentSDK_2_iOS_Card_Scanner_basic_setup]
+==== Basic Setup
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/CardScanner',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_2_iOS_Card_Scanner_Integration]
+==== Integration
+---
+
+This is a code example for a card scanner integration:
+
+
+[source,swift]
+----
+
+```
+----
+
+
+[#MobilePaymentSDK_2_iOS_Card_Scanner_Visualisaton]
+==== Visualisation
+---
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[WireTransfer Screen, align=center, width=240, height=420]
+
+
+//-
+
+[#MobilePaymentSDK_2_iOS_IBAN_Scanner]
+=== IBAN Scanner
+---
+
+[#MobilePaymentSDK_2_iOS_IBAN_basic_setup]
+==== Basic Setup
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/CardScanner',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_2_iOS_IBAN_Scanner_Integration]
+==== Integration
+---
+
+This is a code example for a card scanner integration:
+
+
+[source,swift]
+----
+
+```
+----
+
+[#MobilePaymentSDK_2_iOS_IBAN_Scanner_Visualisaton]
+==== Visualisation
+---
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner.png[WireTransfer Screen, align=center, width=240, height=420]
+
+
+//-
+
+//-
+
+[#MobilePaymentSDK_2_iOS_Photo_Gallery]
+=== Photo Gallery
+---
+
+[#MobilePaymentSDK_2_iOS_Photo_Gallery_basic_setup]
+==== Basic Setup
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/CardScannerGallery',          '~> {{version}}'
+pod 'paymentSDK/SEPAScannerGallery',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Integration]
+==== Integration
+---
+
+This is a code example for a card scanner integration:
+
+
+[source,swift]
+----
+
+```
+----
+
+[#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Visualisaton]
+==== Visualisation
+---
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[WireTransfer Screen, align=center, width=240, height=420]
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-gallery.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner-gallery.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
+//-

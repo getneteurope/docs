@@ -79,6 +79,7 @@ include::index/integration-guides/mobile-payment-sdk-ios/08-01-03-paypal.adoc[le
 include::index/integration-guides/mobile-payment-sdk-ios/08-01-04-przelewy24.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk-ios/08-01-05-sepa.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk-ios/08-01-06-wire-transfer.adoc[leveloffset=+3]
+include::index/integration-guides/mobile-payment-sdk-ios/08-01-07-scanner.adoc[leveloffset=+3]
 //include::index/integration-guides/ppv2/03-01-03-02-seamless-with-nvp.adoc[]
 
 include::index/payment-methods/11-00-payment-methods.adoc[]
