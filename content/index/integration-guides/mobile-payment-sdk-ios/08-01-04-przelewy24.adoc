@@ -1,5 +1,6 @@
 [#MobilePaymentSDK_2_iOS_P24]
-== P24
+---
+== *P24 (Przelewy24)*
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---

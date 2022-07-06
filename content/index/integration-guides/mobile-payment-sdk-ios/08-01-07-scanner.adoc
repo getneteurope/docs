@@ -33,7 +33,7 @@ This is a code example for a card scanner integration:
 [#MobilePaymentSDK_2_iOS_Card_Scanner_Visualisaton]
 ==== Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[WireTransfer Screen, align=center, width=240, height=420]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[Card Scanner Screen, align=center, width=240, height=420]
 
 
 //-
@@ -68,7 +68,7 @@ This is a code example for a card scanner integration:
 [#MobilePaymentSDK_2_iOS_IBAN_Scanner_Visualisaton]
 ==== Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner.png[WireTransfer Screen, align=center, width=240, height=420]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner.png[IBAN Scanner Screen, align=center, width=240, height=420]
 
 
 //-
@@ -106,14 +106,13 @@ This is a code example for a card scanner integration:
 [#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Visualisaton]
 ==== Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[WireTransfer Screen, align=center, width=240, height=420]
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-gallery.png[Card Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner-gallery.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-gallery.png[Card Scanner GalleryScreen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner-gallery.png[IBAN Scanner Gallery Screen, align=center, width=240, height=420]
 |
 |===
 

@@ -1,6 +1,7 @@
 
 [#MobilePaymentSDK_2_iOS_Alipay]
-== Alipay Cross Border
+---
+== *Alipay Cross Border*
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]

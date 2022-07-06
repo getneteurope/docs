@@ -1,5 +1,6 @@
 [#MobilePaymentSDK_2_iOS_PayPal]
-== PayPal
+---
+== *PayPal*
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]

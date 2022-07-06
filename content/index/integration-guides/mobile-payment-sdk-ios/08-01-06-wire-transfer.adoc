@@ -1,5 +1,6 @@
 [#MobilePaymentSDK_2_iOS_WireTransfer]
-== POA/PIA WireTransfer
+---
+== *POA/PIA WireTransfer*
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---
