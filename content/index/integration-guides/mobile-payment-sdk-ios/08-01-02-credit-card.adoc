@@ -1,7 +1,9 @@
 [#MobilePaymentSDK_2_iOS_CreditCard]
 == Credit Card
+---
 
-==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
 
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
@@ -19,9 +21,11 @@ of account holder’s card, but does not leave an authorized amount.
 
 [#MobilePaymentSDK_2_iOS_CreditCard_basic_setup]
 === Basic Setup
+---
 
 [#MobilePaymentSDK_2_iOS_CreditCard_basic_setup_cocoapods]
 ==== Cocoapods
+---
 
 Add to your app’s `Podfile` subspecs:
  
@@ -32,7 +36,7 @@ pod 'paymentSDK/Card',          '~> {{version}}'
 
 [#MobilePaymentSDK_2_iOS_CreditCard_basic_payment]
 === Basic Credit Card Payment
-
+---
 This is a code example for a basic Credit Card payment:
 
 
@@ -86,7 +90,7 @@ recurring type.
 
 [#MobilePaymentSDK_2_iOS_CreditCard_recurring_payment]
 === Recurring Credit Card Payment
-
+---
 On a basic level, recurring payments have two phases:
 
 [arabic]
@@ -182,14 +186,24 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton]
 === Visualisation
-
+---
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_Card]
-==== Card
+==== Card 
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
 
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
-==== Customizing Visuals
+===== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -203,12 +217,22 @@ every module used in the SDK.
 
 //-
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardAnimated]
-===== Card Animated
+==== Card Animated
+---
 
-image::../images/screens/iOS/credit-card-animated-screen.png[Animated Card Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
 
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
-====== Customizing Visuals
+===== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -224,12 +248,20 @@ every module used in the SDK.
 
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardField]
 ==== CardField
+---
 
 ``SDKPayCardField`` is a specialized field for collecting card data, with
 properties similar to ``UITextField``. It is designed to fit in a single
 line and can be used where an ``UITextField`` would be appropriate:
 
-image::../images/screens/iOS/credit-cardfield.png[Card Field, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 
 Create a ``SDKPayCardField`` (programmatically, or in XIB/Storyboard) and
@@ -248,6 +280,7 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 //-
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals]
 ==== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -262,11 +295,20 @@ every module used in the SDK.
 
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardFieldAnimated]
 ==== CardField Animated Alternative
+---
 
-image::../images/screens/iOS/credit-cardfield-animated.png[Animated Card Field, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
 ===== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect

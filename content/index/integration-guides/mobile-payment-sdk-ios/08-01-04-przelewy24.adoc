@@ -1,8 +1,8 @@
 [#MobilePaymentSDK_2_iOS_P24]
 == P24
-
-==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
-
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
@@ -10,11 +10,11 @@ types]:
 * *`SDKPayECTransactionTypeDebit`* - todo.
 
 [#MobilePaymentSDK_2_iOS_P24_basic_setup]
-==== Basic Setup
-
+=== Basic Setup
+---
 [#MobilePaymentSDK_2_iOS_P24_basic_setup_cocoapods]
-===== Cocoapods
-
+==== Cocoapods
+---
 Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
@@ -23,8 +23,8 @@ pod 'paymentSDK/P24',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_2_iOS_P24_basic_payment]
-==== P24 Payment
-
+=== P24 Payment
+---
 This is a code example for a basic P24 payment:
 
 
@@ -73,8 +73,8 @@ recurring type.
 //-
 
 [#MobilePaymentSDK_2_iOS_P24_recurring_payment]
-==== Recurring P24 Payment
-
+=== Recurring P24 Payment
+---
 On a basic level, recurring payments have two phases:
 
 [arabic]
@@ -176,19 +176,26 @@ This is a code example for a first recurring P24 payment:
 ----
 
 [#MobilePaymentSDK_2_iOS_P24_Visualisaton]
-==== Visualisation
+=== Visualisation
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/P24.png[P24 Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_2_iOS_P24_Visualisaton_Card_CustomizingVisuals]
-===== Customizing Visuals
-
+==== Customizing Visuals
+---
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECView`
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`

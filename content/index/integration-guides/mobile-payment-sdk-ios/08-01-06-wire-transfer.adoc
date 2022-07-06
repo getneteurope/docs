@@ -1,8 +1,8 @@
 [#MobilePaymentSDK_2_iOS_WireTransfer]
 == POA/PIA WireTransfer
-
+---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
-
+---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
@@ -13,10 +13,10 @@ transaction.
 
 [#MobilePaymentSDK_2_iOS_WireTransfer_basic_setup]
 === Basic Setup
-
+---
 [#MobilePaymentSDK_2_iOS_WireTransfer_basic_setup_cocoapods]
 ==== Cocoapods
-
+---
 Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
@@ -76,7 +76,7 @@ created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/a
 
 [#MobilePaymentSDK_2_iOS_WireTransfer_Visualisaton]
 === Visualisation
-
+---
 image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen, align=center, width=240, height=420]
 
 //-

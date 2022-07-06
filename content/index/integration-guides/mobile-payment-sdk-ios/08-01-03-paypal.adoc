@@ -1,7 +1,9 @@
 [#MobilePaymentSDK_2_iOS_PayPal]
 == PayPal
+---
 
-==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
 
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
@@ -14,10 +16,12 @@ transaction.
 * *`SDKPayECTransactionTypeDebit`* - todo.
 
 [#MobilePaymentSDK_2_iOS_PayPal_basic_setup]
-==== Basic Setup
+=== Basic Setup
+---
 
 [#MobilePaymentSDK_2_iOS_PayPal_basic_setup_cocoapods]
-===== Cocoapods
+==== Cocoapods
+---
 
 Add to your app’s `Podfile` subspecs:
  
@@ -88,7 +92,8 @@ recurring type.
 //-
 
 [#MobilePaymentSDK_2_iOS_PayPal_recurring_payment]
-==== Recurring PayPal Payment
+=== Recurring PayPal Payment
+---
 
 On a basic level, recurring payments have two phases:
 
@@ -184,22 +189,29 @@ This is a code example for a first recurring PayPal payment:
 ----
 
 [#MobilePaymentSDK_2_iOS_PayPal_Visualisaton]
-==== Visualisation
+=== Visualisation
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/paypal.png[PayPal Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/paypal.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/paypal-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_2_iOS_PayPal_Visualisaton_Card_CustomizingVisuals]
-===== Customizing Visuals
+==== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECView`
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
-. `SDKPayECSubmitButton`
 . `SDKPayECNavigationBar`
 . `SDKPayECAmountLabel`
 

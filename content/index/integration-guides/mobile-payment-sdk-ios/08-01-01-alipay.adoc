@@ -90,10 +90,10 @@ for more details.
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
-| Algorithm | Description
+| Default | Customized
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-customized.png[Alipay Screen, align=center, width=240, height=420]
 |
 |===
 
@@ -105,7 +105,6 @@ conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECView`
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`

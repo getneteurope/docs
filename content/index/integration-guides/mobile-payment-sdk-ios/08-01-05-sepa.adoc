@@ -1,8 +1,8 @@
 [#MobilePaymentSDK_2_iOS_SEPA]
 == SEPA Direct Debit
-
-==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
-
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
@@ -15,11 +15,11 @@ transaction.
 * *`SDKPayECTransactionPendingDebit`* - todo.
 
 [#MobilePaymentSDK_2_iOS_SEPA_basic_setup]
-==== Basic Setup
-
+=== Basic Setup
+---
 [#MobilePaymentSDK_2_iOS_SEPA_basic_setup_cocoapods]
-===== Cocoapods
-
+==== Cocoapods
+---
 Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
@@ -28,8 +28,8 @@ pod 'paymentSDK/SEPA',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_2_iOS_SEPA_basic_payment]
-==== SEPA Payment
-
+=== SEPA Payment
+---
 This is a code example for a basic SEPA payment:
 
 
@@ -73,8 +73,8 @@ recurring type.
 //-
 
 [#MobilePaymentSDK_2_iOS_SEPA_recurring_payment]
-==== Recurring SEPA Payment
-
+=== Recurring SEPA Payment
+---
 On a basic level, recurring payments have two phases:
 
 [arabic]
@@ -169,13 +169,21 @@ This is a code example for a first recurring SEPA payment:
 ----
 
 [#MobilePaymentSDK_2_iOS_SEPA_Visualisaton]
-==== Visualisation
+=== Visualisation
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[SEPA Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_2_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
-===== Customizing Visuals
-
+==== Customizing Visuals
+---
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
