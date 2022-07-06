@@ -1,5 +1,7 @@
 [#MobilePaymentSDK_2_iOS_Scanner]
-== Scanner utilities
+
+---
+== *Scanner Utilities*
 ---
 
 [#MobilePaymentSDK_2_iOS_Card_Scanner]
