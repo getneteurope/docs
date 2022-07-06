@@ -8,7 +8,7 @@ This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
-* *`SDKPayECTransactionTypeDebit`* - todo.
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
 [#MobilePaymentSDK_2_iOS_P24_basic_setup]
 === Basic Setup

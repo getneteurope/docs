@@ -13,8 +13,9 @@ types]:
 * *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
 funds on hold, pending future capture, re-authorization or void
 transaction.
-* *`SDKPayECTransactionTypeAuthorizationOnly`* - todo
-* *`SDKPayECTransactionTypeDebit`* - todo.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
+of account holder’s card, but does not leave an authorized amount.
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
 [#MobilePaymentSDK_2_iOS_PayPal_basic_setup]
 === Basic Setup

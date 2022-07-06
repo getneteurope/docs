@@ -15,9 +15,9 @@ funds on hold, pending future capture, re-authorization or void
 transaction.
 * *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
 of account holder’s card, but does not leave an authorized amount.
-* *`SDKPayECTransactionTypePurchase`* - todo.
-* *`SDKPayECTransactionTypeReferencedPurchase`* - todo.
-* *`SDKPayECTransactionTypeTokenize`* - todo.
+* *`SDKPayECTransactionTypePurchase`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
+* *`SDKPayECTransactionTypeReferencedPurchase`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+* *`SDKPayECTransactionTypeTokenize`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
 
 
 [#MobilePaymentSDK_2_iOS_CreditCard_basic_setup]

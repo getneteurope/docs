@@ -11,9 +11,10 @@ types]:
 * *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
 funds on hold, pending future capture, re-authorization or void
 transaction.
-* *`SDKPayECTransactionTypeAuthorizationOnly`* - todo
-* *`SDKPayECTransactionTypeDebit`* - todo.
-* *`SDKPayECTransactionPendingDebit`* - todo.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
+of account holder’s card, but does not leave an authorized amount.
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+* *`SDKPayECTransactionPendingDebit`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
 [#MobilePaymentSDK_2_iOS_SEPA_basic_setup]
 === Basic Setup

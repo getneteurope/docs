@@ -10,7 +10,7 @@ This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
- *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+- *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
 [#MobilePaymentSDK_2_iOS_Alipay_basic_setup]
 === Basic Setup
