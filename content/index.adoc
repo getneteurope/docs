@@ -17,7 +17,7 @@
 // ifdef::backend-pdf[:autofit-option:]
 ifdef::backend-pdf[]
 :source-highlighter: rouge
-:multipage-level: 4
+:multipage-level: 2
 endif::[]
 
 :sectanchors:
