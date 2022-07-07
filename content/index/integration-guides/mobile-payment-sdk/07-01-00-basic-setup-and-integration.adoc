@@ -194,9 +194,11 @@ scanner feature, you can leave out this part:
       *;
 ----
 
-[#MobilePaymentSDK_BasicSetup_iOS]
-=== iOS
 
+[#MobilePaymentSDK_BasicSetup_iOS]
+---
+=== iOS
+---
 The device cannot be jail-broken and must run at least iOS 12.0 for
 _paymentSDK_ to work. It is recommended to use the latest stable version
 of Xcode.
@@ -224,12 +226,82 @@ pod 'paymentSDK/Card'
 pod 'paymentSDK/SEPA'
 ----
 
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
+==== List of supported payment method subspec
+---
+|===
+|Name|Description|Pods
 
-[#MobilePaymentSDK_BasicSetup_Security]
-==== Security
+|All
+|all payment method frameworks in one
+|pod 'paymentSDK'
 
-[#MobilePaymentSDK_BasicSetup_Security_AuthenticationbySignature]
-===== Authentication by Signature
+|Alipay (Cross Border)
+|alipay payment frameworks
+|pod 'paymentSDK/Alipay' 
+
+|Card
+|Credit Card payment frameworks
+|pod 'paymentSDK/Card' 
+
+|PayPal
+|PayPal payment frameworks
+|pod 'paymentSDK/PayPal' 
+
+|P24 (Przelewy24)
+|P24 payment frameworks
+|pod 'paymentSDK/P24' 
+
+|SEPA (Direct Debit)
+|SEPA payment frameworks
+|pod 'paymentSDK/SEPA' 
+
+|WireTransfer
+|Wire-Transfer payment frameworks
+|pod 'paymentSDK/WireTransfer' 
+|===
+
+//-
+
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_utility_subspec]
+==== List of optional utilities subspec for Card and SEPA payment method 
+---
+|===
+|Name|Description|Pods
+
+|Scanner
+|Card scanner framework
+|pod 'paymentSDK/Scanner' 
+
+|PhotoGallery
+|Photo Gallery frameworks
+|pod 'paymentSDK/PhotoGallery' 
+
+|CardScanner
+|Credit Card payment frameworks with card scanner
+|pod 'paymentSDK/CardScanner' 
+
+|CardScannerGallery
+|Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
+|pod 'paymentSDK/CardScannerGallery' 
+
+|SEPAScanner
+|SEPA payment frameworks with card scanner
+|pod 'paymentSDK/SEPAScanner' 
+
+|SEPAScannerGallery
+|SEPA payment frameworks with card scanner and photo gallery for card photo scanning
+|pod 'paymentSDK/SEPAScanner'  
+
+|===        
+        
+//-
+
+[#MobilePaymentSDK_iOS_BasicSetup_Security]
+== Security
+
+[#MobilePaymentSDK_iOS_BasicSetup_Security_AuthenticationbySignature]
+=== Authentication by Signature
 
 When a payment goes through, there's a lot of data to be exchanged
 between various endpoints. Payment information changes hands between
@@ -241,8 +313,8 @@ messages targeting the {payment-gateway}. This signature is a mathematical
 cipher, which - if validated - proves that the message was created by a
 known sender and was not altered while being transmitted.
 
-[#MobilePaymentSDK_BasicSetup_Security_SecretKey]
-===== Secret Key
+[#MobilePaymentSDK_iOS_BasicSetup_Security_SecretKey]
+=== Secret Key
 
 You will use your Secret Key when generating the digital signature mentioned above.
 
@@ -256,6 +328,7 @@ The Secret Key is only used in server-side code for either:
 If you did not receive your Secret Key at the time you were setting up
 your merchant account with us, please contact <<ContactUs, Merchant Support>> and ask for Secret Key generation.
 
+
 [WARNING]
 ====
 We ask you to *never* share your Secret Key with anyone, or store it
@@ -264,8 +337,8 @@ of your transactions.
 ====
 
 
-[#MobilePaymentSDK_BasicSetup_Security_Signaturev2]
-===== Signature v2
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Signaturev2]
+==== Signature v2
 
 You will be generating the signature on your own server's backend, as it
 is the only place where you will store your Secret Key.
@@ -320,9 +393,9 @@ requested_amount=1.01
 requested_amount_currency=EUR
 ----
 
-[#MobilePaymentSDK_BasicSetup_Security_Debugging_prevention]
-===== Debugging prevention
-
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Debugging_prevention]
+==== Debugging prevention
+---
 MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
 
 But MPSDK prevents debugging in a production application. For customization and simulation of this option, MPSDK supports *Custom settings* in the project setting on the application side.
@@ -331,20 +404,19 @@ Steps of customization:
 
 . Add User-Defined Settings *SDKPay_NO_DEBUG_CHECK* in your project's Build Settings for your application target.
 
-image:images/07-01-basic-setup-and-integraton/ios/user-defined-settings.png[User-Defined Settings] 
+image:images/07-01-basic-setup-and-integraton/iOS/target-properties.png[Custom iOS Target Properties] 
 
 . Set the default value for your AdHoc to *NO* 
 . Set other's build configurations by your preferences: 
      - *YES* - without debugging prevention
      - *NO* - with debugging prevention
 . Add Custom iOS Target Properties Key to the Info page:
-    - *Key:* No debugging check
+    - *Key:* 'No debugging check'
     - *Value* - $(SDKPay_NO_DEBUG_CHECK)
 
-image:images/07-01-basic-setup-and-integraton/ios/target-properties.png[Custom iOS Target Properties] 
+image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User-Defined Settings] 
 
-
-[#MobilePaymentSDK_BasicSetup_Security_3DS]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_3DS]
 ==== 3D Secure
-
+---
 3D Secure flow & implementation is handled implicitly by _payment SDK_. For a detailed flow, see <<3DS2_Workflow, this link>>.

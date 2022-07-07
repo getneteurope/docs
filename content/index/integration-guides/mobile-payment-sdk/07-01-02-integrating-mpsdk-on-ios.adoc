@@ -4,9 +4,11 @@
 //-
 
 [#MobilePaymentSDK_iOS_CreditCard]
-=== Credit Card
+=== *Credit Card*
+---
 
 ==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
 
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
@@ -17,16 +19,18 @@ funds on hold, pending future capture, re-authorization or void
 transaction.
 * *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
 of account holder’s card, but does not leave an authorized amount.
-* *`SDKPayECTransactionTypePurchase`* - todo.
-* *`SDKPayECTransactionTypeReferencedPurchase`* - todo.
-* *`SDKPayECTransactionTypeTokenize`* - todo.
+* *`SDKPayECTransactionTypePurchase`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
+* *`SDKPayECTransactionTypeReferencedPurchase`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+* *`SDKPayECTransactionTypeTokenize`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
 
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_setup]
 ==== Basic Setup
+---
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_setup_cocoapods]
 ===== Cocoapods
+---
 
 Add to your app’s `Podfile` subspecs:
  
@@ -37,7 +41,7 @@ pod 'paymentSDK/Card',          '~> {{version}}'
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_payment]
 ==== Basic Credit Card Payment
-
+---
 This is a code example for a basic Credit Card payment:
 
 
@@ -91,7 +95,7 @@ recurring type.
 
 [#MobilePaymentSDK_iOS_CreditCard_recurring_payment]
 ==== Recurring Credit Card Payment
-
+---
 On a basic level, recurring payments have two phases:
 
 [arabic]
@@ -187,14 +191,24 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton]
 ==== Visualisation
-
+---
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
-===== Card
+===== Card 
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
-===== Customizing Visuals
+====== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -204,19 +218,26 @@ every module used in the SDK.
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`
-. `SDKPayECSubmitButton`
-. `SDKPayECAmountLabel`
-. `SDKPayECTextField`
 
 
 //-
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated]
 ===== Card Animated
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen.png[Animated Card Screen,, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
 ====== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -229,14 +250,23 @@ every module used in the SDK.
 
 //-
 
+
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField]
 ===== CardField
+---
 
 ``SDKPayCardField`` is a specialized field for collecting card data, with
 properties similar to ``UITextField``. It is designed to fit in a single
 line and can be used where an ``UITextField`` would be appropriate:
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[Card Field, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 
 Create a ``SDKPayCardField`` (programmatically, or in XIB/Storyboard) and
@@ -254,7 +284,8 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 
 //-
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals]
-====== Customizing Visuals
+===== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -269,11 +300,20 @@ every module used in the SDK.
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated]
 ===== CardField Animated Alternative
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[Animated Card Field,align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
 ====== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -286,11 +326,13 @@ every module used in the SDK.
 
 //-
 
-
 [#MobilePaymentSDK_iOS_PayPal]
-=== PayPal
+---
+=== *PayPal*
+---
 
 ==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
 
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
@@ -299,14 +341,17 @@ types]:
 * *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
 funds on hold, pending future capture, re-authorization or void
 transaction.
-* *`SDKPayECTransactionTypeAuthorizationOnly`* - todo
-* *`SDKPayECTransactionTypeDebit`* - todo.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
+of account holder’s card, but does not leave an authorized amount.
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
 [#MobilePaymentSDK_iOS_PayPal_basic_setup]
 ==== Basic Setup
+---
 
 [#MobilePaymentSDK_iOS_PayPal_basic_setup_cocoapods]
 ===== Cocoapods
+---
 
 Add to your app’s `Podfile` subspecs:
  
@@ -316,7 +361,7 @@ pod 'paymentSDK/PayPal',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_PayPal_basic_payment]
-==== PayPal Payment
+===== PayPal Payment
 
 This is a code example for a basic PayPal payment:
 
@@ -378,6 +423,7 @@ recurring type.
 
 [#MobilePaymentSDK_iOS_PayPal_recurring_payment]
 ==== Recurring PayPal Payment
+---
 
 On a basic level, recurring payments have two phases:
 
@@ -474,11 +520,20 @@ This is a code example for a first recurring PayPal payment:
 
 [#MobilePaymentSDK_iOS_PayPal_Visualisaton]
 ==== Visualisation
+---
 
-image::images/screens/iOS/paypal.png[PayPal Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/paypal.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/paypal-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_iOS_PayPal_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
+---
 
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
@@ -488,13 +543,17 @@ every module used in the SDK.
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`
+. `SDKPayECAmountLabel`
+
+//-
 
 
 [#MobilePaymentSDK_iOS_SEPA]
-=== SEPA Direct Debit
-
+---
+=== *SEPA Direct Debit*
+---
 ==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
-
+---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
@@ -502,16 +561,17 @@ types]:
 * *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
 funds on hold, pending future capture, re-authorization or void
 transaction.
-* *`SDKPayECTransactionTypeAuthorizationOnly`* - todo
-* *`SDKPayECTransactionTypeDebit`* - todo.
-* *`SDKPayECTransactionPendingDebit`* - todo.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
+of account holder’s card, but does not leave an authorized amount.
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+* *`SDKPayECTransactionPendingDebit`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
 [#MobilePaymentSDK_iOS_SEPA_basic_setup]
 ==== Basic Setup
-
+---
 [#MobilePaymentSDK_iOS_SEPA_basic_setup_cocoapods]
 ===== Cocoapods
-
+---
 Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
@@ -521,7 +581,7 @@ pod 'paymentSDK/SEPA',          '~> {{version}}'
 
 [#MobilePaymentSDK_iOS_SEPA_basic_payment]
 ==== SEPA Payment
-
+---
 This is a code example for a basic SEPA payment:
 
 
@@ -566,7 +626,7 @@ recurring type.
 
 [#MobilePaymentSDK_iOS_SEPA_recurring_payment]
 ==== Recurring SEPA Payment
-
+---
 On a basic level, recurring payments have two phases:
 
 [arabic]
@@ -662,12 +722,20 @@ This is a code example for a first recurring SEPA payment:
 
 [#MobilePaymentSDK_iOS_SEPA_Visualisaton]
 ==== Visualisation
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[SEPA Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
-
+---
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
@@ -683,24 +751,27 @@ every module used in the SDK.
 . `SDKPayECSwitch` 
 
 
-
+//-
 
 [#MobilePaymentSDK_iOS_Alipay]
-=== Alipay Cross Border
+---
+=== *Alipay Cross Border*
+---
 
 ==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
-
+---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
- *`SDKPayECTransactionTypeDebit`* - todo.
+- *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
 [#MobilePaymentSDK_iOS_Alipay_basic_setup]
-==== Basic Setup
+===== Basic Setup
+---
 
 [#MobilePaymentSDK_iOS_Alipay_basic_setup_cocoapods]
-===== Cocoapods
+====== Cocoapods
 
 Add to your app’s `Podfile` subspecs:
  
@@ -711,7 +782,7 @@ pod 'paymentSDK/Alipay',          '~> {{version}}'
 
 [#MobilePaymentSDK_iOS_Alipay_basic_payment]
 ==== Alipay Payment
-
+---
 This is a code example for a basic Alipay payment:
 
 
@@ -770,18 +841,25 @@ for more details.
 //-
 [#MobilePaymentSDK_iOS_Alipay_Visualisaton]
 ==== Visualisation
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen,align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-customized.png[Alipay Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
-===== Customizing Visuals
-
+==== Customizing Visuals
+---
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECView`
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`
@@ -814,8 +892,35 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/WireTransfer',          '~> {{version}}'
 ----
 
+[#MobilePaymentSDK_iOS_WireTransfer]
+---
+=== *POA/PIA WireTransfer*
+---
+==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup]
+==== Basic Setup
+---
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup_cocoapods]
+===== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/WireTransfer',          '~> {{version}}'
+----
+
 [#MobilePaymentSDK_iOS_WireTransfer_basic_payment]
-==== WireTransfer Payment
+===== WireTransfer Payment
 
 This is a code example for a basic WireTransfer payment:
 
@@ -866,19 +971,8 @@ created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/a
 
 [#MobilePaymentSDK_iOS_WireTransfer_Visualisaton]
 ==== Visualisation
-
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen,align=center, width=240, height=420]
-
-// [#MobilePaymentSDK_iOS_WireTransfer_Visualisaton_Card_CustomizingVisuals]
-// ===== Customizing Visuals
-
-// To change colors within the SDK, set properties of the components, that
-// conforms to UIAppearance protocol. Changing any of these will affect
-// every module used in the SDK.
-
-// [arabic]
-// . `SDKPayECView`
-// . `SDKPayECNavigationBar`
+---
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen, align=center, width=240, height=420]
 
 //-
 
@@ -893,12 +987,24 @@ types]:
 
 * *`SDKPayECTransactionTypeDebit`* - todo.
 
+[#MobilePaymentSDK_iOS_P24]
+---
+=== *P24 (Przelewy24)*
+---
+==== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+
 [#MobilePaymentSDK_iOS_P24_basic_setup]
 ==== Basic Setup
-
+---
 [#MobilePaymentSDK_iOS_P24_basic_setup_cocoapods]
 ===== Cocoapods
-
+---
 Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
@@ -908,7 +1014,7 @@ pod 'paymentSDK/P24',          '~> {{version}}'
 
 [#MobilePaymentSDK_iOS_P24_basic_payment]
 ==== P24 Payment
-
+---
 This is a code example for a basic P24 payment:
 
 
@@ -958,7 +1064,7 @@ recurring type.
 
 [#MobilePaymentSDK_iOS_P24_recurring_payment]
 ==== Recurring P24 Payment
-
+---
 On a basic level, recurring payments have two phases:
 
 [arabic]
@@ -1061,21 +1167,29 @@ This is a code example for a first recurring P24 payment:
 
 [#MobilePaymentSDK_iOS_P24_Visualisaton]
 ==== Visualisation
+---
 
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24.png[P24 Screen,align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
 
 [#MobilePaymentSDK_iOS_P24_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
-
+---
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECView`
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
 . `SDKPayECNavigationBar`
+
 //-
 
 

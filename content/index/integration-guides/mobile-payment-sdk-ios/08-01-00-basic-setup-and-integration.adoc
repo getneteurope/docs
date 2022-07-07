@@ -72,6 +72,14 @@ pod 'paymentSDK/SEPA'
 |===
 |Name|Description|Pods
 
+|Scanner
+|Card scanner framework
+|pod 'paymentSDK/Scanner' 
+
+|PhotoGallery
+|Photo Gallery frameworks
+|pod 'paymentSDK/PhotoGallery' 
+
 |CardScanner
 |Credit Card payment frameworks with card scanner
 |pod 'paymentSDK/CardScanner' 
