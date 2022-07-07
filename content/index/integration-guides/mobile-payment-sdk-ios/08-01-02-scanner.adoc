@@ -203,6 +203,8 @@ every module used in the SDK. The cardfield component is fully customizable by c
 // === Photo Gallery
 // ---
 
+// For the input process of the card data or IBAN to be as quick and professional as possible, user can use for detection image of stored card resp. IBAN number to the Photos.  
+
 // [#MobilePaymentSDK_2_iOS_Photo_Gallery_basic_setup]
 // ==== Basic Setup
 // ---
@@ -211,27 +213,14 @@ every module used in the SDK. The cardfield component is fully customizable by c
 // [source,ruby]
 // ----
 // pod 'paymentSDK/CardScannerGallery',          '~> {{version}}'
-// pod 'paymentSDK/SEPAScannerGallery',          '~> {{version}}'
+// pod 'paymentSDK/IBANScannerGallery',          '~> {{version}}'
 // ----
 
 // [#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Integration]
 // ==== Integration
 // ---
 
-// This is a code example for a card scanner integration:
-
-
-// [source,swift]
-// ----
-// import SDKPayeComCardScannerGallery
-
-// class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
-    
-//     @IBOutlet weak var cardField: SDKPayECCardFieldScannerGallery!
-//     @IBOutlet weak var cardFieldStateLabel: UILabel!
-
-// ```
-// ----
+// When you use standart SEPA or Card screen MPSDK automatically inserts the photo gallery button to the Scanner screen.
 
 // [#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Visualisaton]
 // ==== Visualisation
