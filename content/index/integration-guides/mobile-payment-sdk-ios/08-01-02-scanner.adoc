@@ -170,7 +170,7 @@ This is a code example for a card scanner integration:
 |===
 | SEPA 
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-button.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-button.png[IBAN Scanner Button, align=center, width=240, height=420]
 
 |===
 
@@ -180,8 +180,8 @@ This is a code example for a card scanner integration:
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner.png[Card Scanner Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-customized.png[Card Scanner Customized Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner.png[IBAN Scanner Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-customized.png[IBAN Scanner Customized Screen, align=center, width=240, height=420]
 |
 |===
 
@@ -211,6 +211,12 @@ This is a code example for a card scanner integration:
 
 [source,swift]
 ----
+import SDKPayeComCardScannerGallery
+
+class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
+    
+    @IBOutlet weak var cardField: SDKPayECCardFieldScannerGallery!
+    @IBOutlet weak var cardFieldStateLabel: UILabel!
 
 ```
 ----
