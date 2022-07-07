@@ -100,10 +100,10 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 |===
 | Card | Card Animated | Cardfield | Cardfield Animated
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-button.png[Card Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-button-animated.png[Card Animated Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/cardfield-button.png[Cardfield, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/cardfield-animated-button.png[Cardfiel Animated, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-button.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-button-animated.png[Card Animated Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/cardfield-scanner-button.png[Cardfield, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/cardfield-scanner-animated-button.png[Cardfiel Animated, align=center, width=240, height=420]
 |
 |===
 
