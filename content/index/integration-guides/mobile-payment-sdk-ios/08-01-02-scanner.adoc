@@ -128,10 +128,16 @@ conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK. The cardfield component is fully customizable by component propreties and methods.
 
 [arabic]
-. `SDKPayECCancelButtonImage`
-. `SDKPayECCancelButton`
-. `SDKPayECNavigationBar`
-. `SDKPayECCardLayout`
+. `SDKPayECScannerNavigationBar`
+. `SDKPayECScannerCancelButton`
+. `SDKPayECScannerFlashlightButton`
+. `SDKPayECScannerGalleryButton`
+. `SDKPayECCardScannerTitleLabel`
+. `SDKPayECCardScannerHelpLabel`
+. `SDKPayECScannerBrackets`
+. `SDKPayECCardScannerTitleLabel`
+
+ 
 
 //-
 
@@ -153,14 +159,7 @@ pod 'paymentSDK/IBANScanner',          '~> {{version}}'
 ==== Integration
 ---
 
-This is a code example for a IBAN scanner integration:
-
-
-[source,swift]
-----
-
-```
-----
+When you use standart SEPA view MPSDK automatically inserts the scan button to the keyboard toolbar.
 
 [#MobilePaymentSDK_2_iOS_IBAN_Scanner_Visualisaton]
 ==== Visualisation
@@ -182,6 +181,21 @@ image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-button.png[IBAN
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-customized.png[IBAN Scanner Customized Screen, align=center, width=240, height=420]
 |
 |===
+
+
+[#MobilePaymentSDK_2_iOS_Card_Scanner_Visualisaton_IBAN_Scanner_CustomizingVisuals]
+==== Customizing Visuals
+---
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK. The cardfield component is fully customizable by component propreties and methods.
+
+[arabic]
+. `SDKPayECScannerNavigationBar`
+. `SDKPayECIBANScannerTitleLabel`
+. `SDKPayECIBANScannerHelpLabel`
+. `SDKPayECIBANScannerHelpLabel`
+. `SDKPayECScannerBrackets`
 
 //-
 

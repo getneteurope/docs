@@ -285,12 +285,12 @@ pod 'paymentSDK/SEPA'
 |Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
 |pod 'paymentSDK/CardScannerGallery' 
 
-|SEPAScanner
-|SEPA payment frameworks with card scanner
+|IBANScanner
+|SEPA payment frameworks with IBAN scanner
 |pod 'paymentSDK/SEPAScanner' 
 
-|SEPAScannerGallery
-|SEPA payment frameworks with card scanner and photo gallery for card photo scanning
+|IBANScannerGallery
+|SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
 |pod 'paymentSDK/SEPAScanner'  
 
 |===        

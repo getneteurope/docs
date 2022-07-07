@@ -88,13 +88,13 @@ pod 'paymentSDK/SEPA'
 |Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
 |pod 'paymentSDK/CardScannerGallery' 
 
-|SEPAScanner
-|SEPA payment frameworks with card scanner
-|pod 'paymentSDK/SEPAScanner' 
+|IBANScanner
+|SEPA payment frameworks with IBAN scanner
+|pod 'paymentSDK/IBANScanner' 
 
-|SEPAScannerGallery
-|SEPA payment frameworks with card scanner and photo gallery for card photo scanning
-|pod 'paymentSDK/SEPAScanner'  
+|IBANScannerGallery
+|SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
+|pod 'paymentSDK/IBANScannerGallery'  
 
 |===        
         
