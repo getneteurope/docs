@@ -4,39 +4,136 @@
 == *Scanner Utilities*
 ---
 
+For the input process of the card data or IBAN to be as quick and professional as possible, use your phone’s camera to scan credit cards and IBAN instead by manual input with scanner frameworks.
+
 [#MobilePaymentSDK_2_iOS_Card_Scanner]
 === Card Scanner
 ---
 
+The card scanner provides primary the card number detection. When it is possible it detects the expiration date too.
+
 [#MobilePaymentSDK_2_iOS_Card_Scanner_basic_setup]
 ==== Basic Setup
 ---
-Add to your app’s `Podfile` subspecs:
- 
+
+Add to your app’s `Podfile` subspecs: 
 [source,ruby]
 ----
 pod 'paymentSDK/CardScanner',          '~> {{version}}'
 ----
 
+The MPSDK automatically adds the scanner button to the card number's textfield, the cardfield component alebo the keyboard toolbar.
+
 [#MobilePaymentSDK_2_iOS_Card_Scanner_Integration]
 ==== Integration
 ---
 
-This is a code example for a card scanner integration:
-
+When you use standart card view controller MPSDK automatically use the 
+This is a code example for a card scanner integration for the SDKPayECCardFieldScanner component:
 
 [source,swift]
 ----
+import SDKPayeComCardScanner
 
-```
+class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
+    
+    @IBOutlet weak var cardField: SDKPayECCardFieldScanner!
+    @IBOutlet weak var cardFieldStateLabel: UILabel!
+    @IBOutlet weak var payBtn: UIButton!
+    @IBOutlet weak var clearBtn: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.cardField.becomeFirstResponder()
+
+        let cardLayout = SDKPayECCardLayout.appearance()
+        self.cardField.isManualCardBrandSelectionRequired = cardLayout.manualCardBrandSelectionRequired
+        self.cardField.scanImage = UIImage(named: "scan_cf2")
+        self.cardField.scanImageTintColor = UIColor.blue
+        self.cardField.enableScanImageButton = true
+
+        self.cardField.scanToolbarButtonTitle = "Scan Card"
+        self.cardField.enableScanToolbarButton = true
+        
+        payBtn.setTitle(NSLocalizedString("form_submit", comment: ""), for: .normal)
+    }
+}
 ----
 
+Or this is a code example for a card scanner integration for the SDKPayECAnimatedCardFieldScanner component:
+
+[source,swift]
+----
+import SDKPayeComCardScanner
+
+class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
+    
+    @IBOutlet weak var cardField: SDKPayECAnimatedCardFieldScanner!
+    @IBOutlet weak var cardFieldStateLabel: UILabel!
+    @IBOutlet weak var payBtn: UIButton!
+    @IBOutlet weak var clearBtn: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.cardField.becomeFirstResponder()
+
+        let cardLayout = SDKPayECCardLayout.appearance()
+        self.cardField.isManualCardBrandSelectionRequired = cardLayout.manualCardBrandSelectionRequired
+        self.cardField.scanImage = UIImage(named: "scan_cf2")
+        self.cardField.scanImageTintColor = UIColor.blue
+        self.cardField.enableScanImageButton = true
+
+        self.cardField.scanToolbarButtonTitle = "Scan Card"
+        self.cardField.enableScanToolbarButton = true
+        
+        payBtn.setTitle(NSLocalizedString("form_submit", comment: ""), for: .normal)
+    }
+}
+----
 
 [#MobilePaymentSDK_2_iOS_Card_Scanner_Visualisaton]
 ==== Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[Card Scanner Screen, align=center, width=240, height=420]
 
+===== Scanner Button
+[%autowidth, cols="a,a,a,a", frame=none, grid=none, role="center"]
+|===
+| Card | Card Animated | Cardfield | Cardfield Animated
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-button.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-button-animated.png[Card Animated Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/cardfield-button.png[Cardfield, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/cardfield-animated-button.png[Cardfiel Animated, align=center, width=240, height=420]
+|
+|===
+
+===== Scanner View Conmtroller
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[Card Scanner Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-customized.png[Card Scanner Customized Screen, align=center, width=240, height=420]
+|
+|===
+
+[#MobilePaymentSDK_2_iOS_Card_Scanner_Visualisaton_Card_CustomizingVisuals]
+==== Customizing Visuals
+---
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECView`
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECSubmitButton`
+. `SDKPayECNavigationBar`
+. `SDKPayECAmountLabel`
+. `SDKPayECTextField`
+. `SDKPayECSwitch` 
 
 //-
 
