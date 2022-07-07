@@ -22,13 +22,15 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/CardScanner',          '~> {{version}}'
 ----
 
-The MPSDK automatically adds the scanner button to the card number's textfield, the cardfield component alebo the keyboard toolbar.
+The MPSDK adds the scanner button to the card number's textfield, the cardfield component alebo the keyboard toolbar.
 
 [#MobilePaymentSDK_2_iOS_Card_Scanner_Integration]
 ==== Integration
 ---
 
-When you use standart card view controller MPSDK automatically use the 
+When you use standart card view MPSDK automatically inserts the scan button to the keyboard toolbar.
+The cardfield component inserts the scan button to the keyboard toolbar too. But there is possibility to shows scanner button directly on right side of component.
+
 This is a code example for a card scanner integration for the SDKPayECCardFieldScanner component:
 
 [source,swift]
@@ -144,14 +146,14 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/CardScanner',          '~> {{version}}'
+pod 'paymentSDK/IBANScanner',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_2_iOS_IBAN_Scanner_Integration]
 ==== Integration
 ---
 
-This is a code example for a card scanner integration:
+This is a code example for a IBAN scanner integration:
 
 
 [source,swift]
@@ -164,17 +166,13 @@ This is a code example for a card scanner integration:
 ==== Visualisation
 ---
 
-
+[#MobilePaymentSDK_2_iOS_IBAN_Scanner_Visualisaton_Scanner_Button]
 ===== Scanner Button
-[%autowidth, cols="a,a,a,a", frame=none, grid=none, role="center"]
-|===
-| SEPA 
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-button.png[IBAN Scanner Button, align=center, width=240, height=420]
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner-button.png[IBAN Scanner Button, align=center, width=240, height=420]
 
-|===
-
-===== Scanner View Conmtroller
+[#MobilePaymentSDK_2_iOS_IBAN_Scanner_Visualisaton_Scanner_View_Controller]
+===== Scanner View Controller
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
@@ -187,51 +185,51 @@ This is a code example for a card scanner integration:
 
 //-
 
-[#MobilePaymentSDK_2_iOS_Photo_Gallery]
-=== Photo Gallery
----
+// [#MobilePaymentSDK_2_iOS_Photo_Gallery]
+// === Photo Gallery
+// ---
 
-[#MobilePaymentSDK_2_iOS_Photo_Gallery_basic_setup]
-==== Basic Setup
----
-Add to your app’s `Podfile` subspecs:
+// [#MobilePaymentSDK_2_iOS_Photo_Gallery_basic_setup]
+// ==== Basic Setup
+// ---
+// Add to your app’s `Podfile` subspecs:
  
-[source,ruby]
-----
-pod 'paymentSDK/CardScannerGallery',          '~> {{version}}'
-pod 'paymentSDK/SEPAScannerGallery',          '~> {{version}}'
-----
+// [source,ruby]
+// ----
+// pod 'paymentSDK/CardScannerGallery',          '~> {{version}}'
+// pod 'paymentSDK/SEPAScannerGallery',          '~> {{version}}'
+// ----
 
-[#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Integration]
-==== Integration
----
+// [#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Integration]
+// ==== Integration
+// ---
 
-This is a code example for a card scanner integration:
+// This is a code example for a card scanner integration:
 
 
-[source,swift]
-----
-import SDKPayeComCardScannerGallery
+// [source,swift]
+// ----
+// import SDKPayeComCardScannerGallery
 
-class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
+// class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
     
-    @IBOutlet weak var cardField: SDKPayECCardFieldScannerGallery!
-    @IBOutlet weak var cardFieldStateLabel: UILabel!
+//     @IBOutlet weak var cardField: SDKPayECCardFieldScannerGallery!
+//     @IBOutlet weak var cardFieldStateLabel: UILabel!
 
-```
-----
+// ```
+// ----
 
-[#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Visualisaton]
-==== Visualisation
----
+// [#MobilePaymentSDK_2_iOS_Photo_Gallery_Scanner_Visualisaton]
+// ==== Visualisation
+// ---
 
-[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
-|===
-| Default | Customized
+// [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+// |===
+// | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-gallery.png[Card Scanner GalleryScreen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner-gallery.png[IBAN Scanner Gallery Screen, align=center, width=240, height=420]
-|
-|===
+// | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-gallery.png[Card Scanner GalleryScreen, align=center, width=240, height=420]
+// | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner-gallery.png[IBAN Scanner Gallery Screen, align=center, width=240, height=420]
+// |
+// |===
 
-//-
+// //-
