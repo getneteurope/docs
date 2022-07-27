@@ -1,7 +1,7 @@
 [#MobilePaymentSDK_iOS_Scanner]
 
 ---
-== *Scanner Utilities*
+== *Scanning Utilities*
 ---
 
 For the input process of the card data or IBAN to be as quick and professional as possible, use your phone’s camera to scan credit cards and IBAN instead by manual input with scanner frameworks.

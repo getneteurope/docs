@@ -1,0 +1,28 @@
+[#MobilePaymentSDK_iOS_licence]
+
+---
+== *License*
+---
+
+=== paymentSDK
+---
+
+[paymentSDK](https://github.com/wirecard/paymentSDK-iOS/blob/master/LICENSE) - MIT License
+
+Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.  All rights reserved.
+
+## 3ʳᵈ party licenses
+
+* [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack/blob/master/LICENSE) - BSD 3-Clause License
+* [libextobjc/EXTScope](https://github.com/jspahrsummers/libextobjc/blob/master/LICENSE.md) - MIT Licence
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking/blob/master/LICENSE) - MIT Licence
+* [Lockbox](https://github.com/granoff/Lockbox/blob/master/LICENSE) - MIT Licence
+* [MBProgressHUD](https://github.com/jdg/MBProgressHUD/blob/master/LICENSE) - MIT Licence
+* [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
+* [PKeyboardAvoiding](https://github.com/michaeltyson/TPKeyboardAvoiding/blob/master/LICENSE.txt) - zlib License
+* [GoogleMLKit/TextRecognition](https://cocoapods.org/pods/GoogleMobileVision) - Apache License 2.0
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking/blob/master/LICENSE) - MIT Licence
+* [IBAN](https://github.com/stefan-sedlak/IBAN/blob/master/LICENSE) - BSD 2-Clause "Simplified" License
+* [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
+* [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
+* [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
