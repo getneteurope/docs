@@ -105,10 +105,10 @@ pod 'paymentSDK/SEPA'
 //-
 
 [#MobilePaymentSDK_iOS_BasicSetup_Security]
-=== Security
-
+==== Security
+---
 [#MobilePaymentSDK_iOS_BasicSetup_Security_Debugging_prevention]
-==== Debugging prevention
+===== Debugging prevention
 ---
 MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
 

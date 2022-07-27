@@ -1,11 +1,8 @@
 [#MobilePaymentSDK_iOS_3rd_party_libraries]
 
 ---
-== *Third Party Libraries Utilities*
+== *Third Party Libraries*
 ---
-
-[#MobilePaymentSDK_iOS_3rd_party_libraries_list_of_third_party_libraries]
-=== List of linked 3rd party libraries
 
 [cols="2,6a"]
 |===
