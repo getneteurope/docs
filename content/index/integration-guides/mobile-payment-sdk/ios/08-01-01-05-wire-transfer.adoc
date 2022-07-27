@@ -1,4 +1,4 @@
-[#MobilePaymentSDK_2_iOS_WireTransfer]
+[#MobilePaymentSDK_iOS_WireTransfer]
 ---
 == *POA/PIA WireTransfer*
 ---
@@ -12,10 +12,10 @@ types]:
 funds on hold, pending future capture, re-authorization or void
 transaction.
 
-[#MobilePaymentSDK_2_iOS_WireTransfer_basic_setup]
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup]
 === Basic Setup
 ---
-[#MobilePaymentSDK_2_iOS_WireTransfer_basic_setup_cocoapods]
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup_cocoapods]
 ==== Cocoapods
 ---
 Add to your app’s `Podfile` subspecs:
@@ -25,7 +25,7 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/WireTransfer',          '~> {{version}}'
 ----
 
-[#MobilePaymentSDK_2_iOS_WireTransfer_basic_payment]
+[#MobilePaymentSDK_iOS_WireTransfer_basic_payment]
 ==== WireTransfer Payment
 
 This is a code example for a basic WireTransfer payment:
@@ -75,7 +75,7 @@ created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/a
 
 //-
 
-[#MobilePaymentSDK_2_iOS_WireTransfer_Visualisaton]
+[#MobilePaymentSDK_iOS_WireTransfer_Visualisaton]
 === Visualisation
 ---
 image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen, align=center, width=240, height=420]

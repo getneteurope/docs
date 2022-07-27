@@ -1,4 +1,4 @@
-[#MobilePaymentSDK_2_iOS_CreditCard]
+[#MobilePaymentSDK_iOS_CreditCard]
 ---
 == *Credit Card*
 ---
@@ -20,11 +20,11 @@ of account holder’s card, but does not leave an authorized amount.
 * *`SDKPayECTransactionTypeTokenize`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
 
 
-[#MobilePaymentSDK_2_iOS_CreditCard_basic_setup]
+[#MobilePaymentSDK_iOS_CreditCard_basic_setup]
 === Basic Setup
 ---
 
-[#MobilePaymentSDK_2_iOS_CreditCard_basic_setup_cocoapods]
+[#MobilePaymentSDK_iOS_CreditCard_basic_setup_cocoapods]
 ==== Cocoapods
 ---
 
@@ -35,7 +35,7 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/Card',          '~> {{version}}'
 ----
 
-[#MobilePaymentSDK_2_iOS_CreditCard_basic_payment]
+[#MobilePaymentSDK_iOS_CreditCard_basic_payment]
 === Basic Credit Card Payment
 ---
 This is a code example for a basic Credit Card payment:
@@ -89,7 +89,7 @@ recurring type.
 
 //-
 
-[#MobilePaymentSDK_2_iOS_CreditCard_recurring_payment]
+[#MobilePaymentSDK_iOS_CreditCard_recurring_payment]
 === Recurring Credit Card Payment
 ---
 On a basic level, recurring payments have two phases:
@@ -185,10 +185,10 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 ```
 ----
 
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton]
 === Visualisation
 ---
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_Card]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
 ==== Card 
 ---
 
@@ -202,7 +202,7 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 |===
 
 
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
 ===== Customizing Visuals
 ---
 
@@ -217,7 +217,7 @@ every module used in the SDK.
 
 
 //-
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardAnimated]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated]
 ==== Card Animated
 ---
 
@@ -231,7 +231,7 @@ every module used in the SDK.
 |===
 
 
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
 ===== Customizing Visuals
 ---
 
@@ -247,7 +247,7 @@ every module used in the SDK.
 //-
 
 
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardField]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField]
 ==== CardField
 ---
 
@@ -279,7 +279,7 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 ----
 
 //-
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals]
 ==== Customizing Visuals
 ---
 
@@ -294,7 +294,7 @@ every module used in the SDK.
 
 //-
 
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardFieldAnimated]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated]
 ==== CardField Animated Alternative
 ---
 
@@ -307,7 +307,7 @@ every module used in the SDK.
 |
 |===
 
-[#MobilePaymentSDK_2_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
 ===== Customizing Visuals
 ---
 

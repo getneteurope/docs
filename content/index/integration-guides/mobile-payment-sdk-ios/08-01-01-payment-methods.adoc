@@ -1,3 +1,0 @@
-[#MobilePaymentSDK_2_iOS_Payment_methods]
----
-== Payment methods

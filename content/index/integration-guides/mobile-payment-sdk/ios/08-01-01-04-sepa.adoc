@@ -1,6 +1,6 @@
-[#MobilePaymentSDK_2_iOS_P24]
+[#MobilePaymentSDK_iOS_SEPA]
 ---
-== *P24 (Przelewy24)*
+== *SEPA Direct Debit*
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---
@@ -8,25 +8,31 @@ This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
+of account holder’s card, but does not leave an authorized amount.
 * *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+* *`SDKPayECTransactionPendingDebit`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
-[#MobilePaymentSDK_2_iOS_P24_basic_setup]
+[#MobilePaymentSDK_iOS_SEPA_basic_setup]
 === Basic Setup
 ---
-[#MobilePaymentSDK_2_iOS_P24_basic_setup_cocoapods]
+[#MobilePaymentSDK_iOS_SEPA_basic_setup_cocoapods]
 ==== Cocoapods
 ---
 Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/P24',          '~> {{version}}'
+pod 'paymentSDK/SEPA',          '~> {{version}}'
 ----
 
-[#MobilePaymentSDK_2_iOS_P24_basic_payment]
-=== P24 Payment
+[#MobilePaymentSDK_iOS_SEPA_basic_payment]
+=== SEPA Payment
 ---
-This is a code example for a basic P24 payment:
+This is a code example for a basic SEPA payment:
 
 
 [source,swift]
@@ -46,17 +52,12 @@ This is a code example for a basic P24 payment:
 // Signature doc: https://document-center.wirecard.com/display/PTD/Signature+v2
 // Secret Key shall never be stored in application.
 
-   let payment = SDKPayECP24Payment()
+   let payment = SDKPayECSEPAPayment()
+   payment.appScheme = "example";
    payment.amount = AMOUNT
-   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.PLN)
+   payment.currency = "EUR"
+   payment.transactionType = .debit
 
-   payment.transactionType = SDKPayECTransactionType.debit
-
-   let accountHolder = SDKPayECCustomerData.init()
-   accountHolder.firstName = "John"
-   accountHolder.lastName = "Doe"
-   accountHolder.email = "joe.doe@mail.com"
-   payment.accountHolder = accountHolder
 ```
 ----
 
@@ -65,16 +66,16 @@ This is a code example for a basic P24 payment:
 [TIP]
 ====
 You can set optional parameters after the payment object is
-created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECP24Payment.html[`SDKPayECP24Payment`]
-for more details. P24 payment supports
+created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECSEPAPayment.html[`SDKPayECSEPAPayment`]
+for more details. SEPA payment supports
 http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`]
 recurring type.
 ====
 
 //-
 
-[#MobilePaymentSDK_2_iOS_P24_recurring_payment]
-=== Recurring P24 Payment
+[#MobilePaymentSDK_iOS_SEPA_recurring_payment]
+=== Recurring SEPA Payment
 ---
 On a basic level, recurring payments have two phases:
 
@@ -103,7 +104,7 @@ field generated in this first payment,
 . Reference these values in the follow-up request, then send it with
 appropriate periodic and sequence flags.
 
-This is a code example for a first recurring P24 payment:
+This is a code example for a first recurring SEPA payment:
 [source,swift]
 ----
 // First payment 
@@ -112,7 +113,7 @@ This is a code example for a first recurring P24 payment:
    firstPeriodicType.periodicType = .recurring
    firstPeriodicType.sequenceType = .first
 
-   let payment = SDKPayECP24Payment()
+   let payment = SDKPayECSEPAPayment()
    payment.merchantAccountID = merchantAccountID  
    payment.requestID = requestID
    payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
@@ -123,13 +124,6 @@ This is a code example for a first recurring P24 payment:
    periodic.sequenceType = sequenceType
    payment.periodic = firstPeriodicType
    payment.signature = signature
-
-   let accountHolder = SDKPayECCustomerData.init()
-   accountHolder.firstName = "John"
-   accountHolder.lastName = "Doe"
-   accountHolder.email = "joe.doe@mail.com"
-   payment.accountHolder = accountHolder
-
    
    var parentTransactionID: String?
    self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
@@ -152,13 +146,13 @@ This is a code example for a first recurring P24 payment:
    firstPeriodicType.periodicType = .recurring
    firstPeriodicType.sequenceType = .final
    
-   let payment = SDKPayECP24Payment()
+   let payment = SDKPayECSEPAPayment()
    payment.merchantAccountID = merchantAccountID  
    payment.requestID = requestID
    payment.parentTransactionID = self.parentTransactionID
    payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
    payment.currency = "EUR"
-   payment.transactionType = .debit
+   payment.transactionType = .autorization
 
    let periodic = SDKPayECPeriodic()
    periodic.periodicType = periodicType
@@ -176,7 +170,7 @@ This is a code example for a first recurring P24 payment:
 ```
 ----
 
-[#MobilePaymentSDK_2_iOS_P24_Visualisaton]
+[#MobilePaymentSDK_iOS_SEPA_Visualisaton]
 === Visualisation
 ---
 
@@ -184,12 +178,12 @@ This is a code example for a first recurring P24 payment:
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24.png[Card Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/p24-customized.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-customized.png[Card Screen, align=center, width=240, height=420]
 |
 |===
 
-[#MobilePaymentSDK_2_iOS_P24_Visualisaton_Card_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
 ==== Customizing Visuals
 ---
 To change colors within the SDK, set properties of the components, that
@@ -197,8 +191,16 @@ conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
+. `SDKPayECView`
 . `SDKPayECCancelButtonImage`
 . `SDKPayECCancelButton`
+. `SDKPayECSubmitButton`
 . `SDKPayECNavigationBar`
+. `SDKPayECAmountLabel`
+. `SDKPayECTextField`
+. `SDKPayECSwitch` 
+
+
+
 
 //-

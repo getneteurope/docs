@@ -1,0 +1,15 @@
+[#MobilePaymentSDK_Android_Licence]
+
+---
+== *Licence*
+---
+
+## [paymentSDK](https://github.com/wirecard/paymentSDK-Android/blob/master/LICENSE) - MIT License
+
+Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.  All rights reserved.
+
+## 3ʳᵈ party licenses
+
+* [Retrofit2, OkHttp](https://square.github.io/okhttp/#license) - Apache License 2.0
+* [iban4j](https://github.com/arturmkrtchyan/iban4j/blob/master/LICENSE.txt) - Apache License 2.0
+* [RxJava](https://github.com/ReactiveX/RxJava#license) - Apache License 2.0
