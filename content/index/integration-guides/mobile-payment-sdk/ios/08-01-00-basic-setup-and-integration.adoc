@@ -1,6 +1,10 @@
+[#MobilePaymentSDK_iOS_SDK]
+---
+== iOS SDK
+
 [#MobilePaymentSDK_iOS_BasicSetup]
 ---
-== Basic Setup
+=== Basic Setup
 ---
 The device cannot be jail-broken and must run at least iOS 12.0 for
 _paymentSDK_ to work. It is recommended to use the latest stable version
@@ -30,7 +34,7 @@ pod 'paymentSDK/SEPA'
 ----
 
 [#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
-=== List of supported payment method subspec
+==== List of supported payment method subspec
 ---
 |===
 |Name|Description|Pods
@@ -67,7 +71,7 @@ pod 'paymentSDK/SEPA'
 //-
 
 [#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_utility_subspec]
-=== List of optional utilities subspec for Card and SEPA payment method 
+==== List of optional utilities subspec for Card and SEPA payment method 
 ---
 |===
 |Name|Description|Pods
