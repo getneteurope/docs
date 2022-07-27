@@ -1,4 +1,4 @@
-[#MobilePaymentSDK_2_iOS_PayPal]
+[#MobilePaymentSDK_iOS_PayPal]
 ---
 == *PayPal*
 ---
@@ -17,11 +17,11 @@ transaction.
 of account holder’s card, but does not leave an authorized amount.
 * *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
 
-[#MobilePaymentSDK_2_iOS_PayPal_basic_setup]
+[#MobilePaymentSDK_iOS_PayPal_basic_setup]
 === Basic Setup
 ---
 
-[#MobilePaymentSDK_2_iOS_PayPal_basic_setup_cocoapods]
+[#MobilePaymentSDK_iOS_PayPal_basic_setup_cocoapods]
 ==== Cocoapods
 ---
 
@@ -32,7 +32,7 @@ Add to your app’s `Podfile` subspecs:
 pod 'paymentSDK/PayPal',          '~> {{version}}'
 ----
 
-[#MobilePaymentSDK_2_iOS_PayPal_basic_payment]
+[#MobilePaymentSDK_iOS_PayPal_basic_payment]
 ==== PayPal Payment
 
 This is a code example for a basic PayPal payment:
@@ -93,7 +93,7 @@ recurring type.
 
 //-
 
-[#MobilePaymentSDK_2_iOS_PayPal_recurring_payment]
+[#MobilePaymentSDK_iOS_PayPal_recurring_payment]
 === Recurring PayPal Payment
 ---
 
@@ -190,7 +190,7 @@ This is a code example for a first recurring PayPal payment:
 ```
 ----
 
-[#MobilePaymentSDK_2_iOS_PayPal_Visualisaton]
+[#MobilePaymentSDK_iOS_PayPal_Visualisaton]
 === Visualisation
 ---
 
@@ -203,7 +203,7 @@ This is a code example for a first recurring PayPal payment:
 |
 |===
 
-[#MobilePaymentSDK_2_iOS_PayPal_Visualisaton_Card_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_PayPal_Visualisaton_Card_CustomizingVisuals]
 ==== Customizing Visuals
 ---
 

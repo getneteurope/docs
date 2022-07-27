@@ -1,4 +1,4 @@
-[#MobilePaymentSDK_2_iOS_BasicSetup]
+[#MobilePaymentSDK_iOS_BasicSetup]
 ---
 == Basic Setup
 ---
@@ -29,7 +29,7 @@ pod 'paymentSDK/Card'
 pod 'paymentSDK/SEPA'
 ----
 
-[#MobilePaymentSDK_2_iOS_BasicSetup_list_of_payment_method_subspec]
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
 === List of supported payment method subspec
 ---
 |===
@@ -66,7 +66,7 @@ pod 'paymentSDK/SEPA'
 
 //-
 
-[#MobilePaymentSDK_2_iOS_BasicSetup_list_of_payment_method_utility_subspec]
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_utility_subspec]
 === List of optional utilities subspec for Card and SEPA payment method 
 ---
 |===
@@ -205,103 +205,10 @@ Perhaps the most important feature of all, however, is the amazing community of 
         
 //-
 
-[#MobilePaymentSDK_2_iOS_BasicSetup_Security]
+[#MobilePaymentSDK_iOS_BasicSetup_Security]
 == Security
 
-[#MobilePaymentSDK_2_iOS_BasicSetup_Security_AuthenticationbySignature]
-=== Authentication by Signature
-
-When a payment goes through, there's a lot of data to be exchanged
-between various endpoints. Payment information changes hands between
-your system (the merchant), the consumer's device, and GetNet Europe Payment Gateway. To ensure that this information is not tampered
-with, we need to put safeguards in place.
-
-We do this by employing a _digital signature_, which is used for all
-messages targeting the {payment-gateway}. This signature is a mathematical
-cipher, which - if validated - proves that the message was created by a
-known sender and was not altered while being transmitted.
-
-[#MobilePaymentSDK_2_iOS_BasicSetup_Security_SecretKey]
-=== Secret Key
-
-You will use your Secret Key when generating the digital signature mentioned above.
-
-The Secret Key is only used in server-side code for either:
-
-- _generating_ the server _request_ signature
-- _validating_ the server _response_ signature
-
-//-
-
-If you did not receive your Secret Key at the time you were setting up
-your merchant account with us, please contact <<ContactUs, Merchant Support>> and ask for Secret Key generation.
-
-
-[WARNING]
-====
-We ask you to *never* share your Secret Key with anyone, or store it
-inside your application or phone. This is crucial to ensure the security
-of your transactions.
-====
-
-
-[#MobilePaymentSDK_2_iOS_BasicSetup_Security_Signaturev2]
-=== Signature v2
-
-You will be generating the signature on your own server's backend, as it
-is the only place where you will store your Secret Key.
-
-Note that when generating the signature for payment SDK, you can leave out
-payload fields related to Payment Page
-(``redirect_url``, ``custom_css_url``, ``ip_address``). This means that
-you only use the mandatory fields.
-
-
-Supported algorithms:
-|===
-|Algorithm |Description
-
-|HS256
-|HMAC with SHA-256
-|===
-
-Supported fields: 
-|===
-|Name | Detail
-
-|request_time_stamp
-|in ISO 8601 format with timezone, e.g. 2016-07-27T14:33:49+02:00
-
-|merchant_account_id
-|9873ac65-6f28-4b75-ae55-9d549cf570e3
-
-|request_id
-|0c06f2b9-f47e-41d1-9eec-9c9352f0247f
-
-|transaction_type
-|debit
-
-|requested_amount
-|should follow ISO 4217, e.g. 1.01
-
-|requested_amount_currency
-|should follow ISO 4217, e.g. EUR
-|=== 
-
-
-.Signature v2 Payload Example (for payment SDK)
-[source,subs=attributes+]
-----
-HS256
-request_time_stamp=2017-03-23T09:14:51Z
-merchant_account_id=33f6d473-3036-4ca5-acb5-8c64dac862d1
-request_id=A7B51ED4-9EB0-48D1-82AA-2145A7792C6B
-transaction_type=authorization
-requested_amount=1.01
-requested_amount_currency=EUR
-----
-
-[#MobilePaymentSDK_2_iOS_BasicSetup_Security_Debugging_prevention]
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Debugging_prevention]
 === Debugging prevention
 ---
 MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
@@ -322,9 +229,4 @@ image:images/07-01-basic-setup-and-integraton/iOS/target-properties.png[Custom i
     - *Key:* 'No debugging check'
     - *Value* - $(SDKPay_NO_DEBUG_CHECK)
 
-image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User-Defined Settings] 
-
-[#MobilePaymentSDK_2_iOS_BasicSetup_Security_3DS]
-=== 3D Secure
----
-3D Secure flow & implementation is handled implicitly by _payment SDK_. For a detailed flow, see <<3DS2_Workflow, this link>>.
+image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User-Defined Settings]
