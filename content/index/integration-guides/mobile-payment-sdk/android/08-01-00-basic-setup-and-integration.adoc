@@ -6,7 +6,7 @@ The device cannot be rooted and must run at least Android 6 for
 _paymentSDK_ to work. It is recommended to use the latest stable version
 of Android Studio.
 
-Download the libs directory from
+Download the libs directory from app/libs
 our link:https://github.com/getneteurope/paymentSDK-Android[GitHub repository] and
 add it to your module.
 
