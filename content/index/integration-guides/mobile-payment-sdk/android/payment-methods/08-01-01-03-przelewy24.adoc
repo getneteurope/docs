@@ -14,7 +14,7 @@ types]:
 
 *`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
-## Module Dependency Edit your
+=== Module Dependency Edit your
 `build.gradle` file accordingly:
 
 [source,java]
