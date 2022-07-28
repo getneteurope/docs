@@ -682,7 +682,8 @@ To change text size in any other modules use the dimension attribute
 
 ===== Customizing Simple Card Payments
 
-[.image]##
+
+image::images/android/customizingCard.png[Screen]
 
 *Color resources*
 
@@ -716,7 +717,8 @@ To change text size in any other modules use the dimension attribute
 
 The same applies for Animated Card Field payments.
 
-[.image]##
+
+image::images/android/customizingAnimated.png[Screen]
 
 _Color resources_
 
@@ -744,7 +746,8 @@ _Icons_
 
 ===== Customizing `+cardField+` Fragments
 
-[.image]##
+
+image::images/android/customizingCardfield.png[Screen]
 
 _Color resources_
 
@@ -756,7 +759,8 @@ _Color resources_
 
 ===== Card Brand Picker
 
-[.image]##
+
+image::images/android/cardBrandPicker.png[Screen]
 
 To show card brand picker UI component over card number input field for
 Card Field, set `+setRequireManualCardBrandSelection+` through it’s

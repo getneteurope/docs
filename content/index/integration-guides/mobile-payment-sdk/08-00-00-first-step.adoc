@@ -16,10 +16,9 @@ signatures for your transactions
 
 [NOTE]
 ====
-You can find testing credentials at this <<CreditCard_TestCredentials, link>>.
+You can find testing credentials under each payment method in REST API -> Test Credentials at https://docs.getneteurope.com/PaymentMethods.html[link]
 
-Your account needs to be configured through Merchant Support to process mobile
-SDK payments.
+Your account needs to be configured through Merchant Support to process mobile SDK payments.
 ====
 
 Get your own credentials by contacting <<ContactUs, Merchant Support>>.

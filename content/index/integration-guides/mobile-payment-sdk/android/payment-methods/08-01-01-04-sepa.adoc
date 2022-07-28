@@ -22,18 +22,13 @@ types]:
 dependencies {
     ...
     implementation files('libs/core.aar')
+    implementation files('libs/camera.aar')
     implementation files('libs/sepa.aar')
     ...
 }
 ----
 
-To disable the IBAN scanner feature, uncomment the `exclude module`
-line.
-
-When adding/removing this feature, perform a full clean build. If you
-intend to use Card Payments module together with the SEPA Direct Debit
-module (with IBAN scanner), you must enable/disable it in *both*
-modules.
+When adding/removing this feature, perform a full clean build.
 
 === Signature
 
@@ -127,7 +122,8 @@ This affects all the modules, except `cardField`.
 
 ==== Customizing SEPA Payments
 
-[.image]##
+
+image::images/android/sepa2.png[Screen]
 
 *Color Resources*
 
