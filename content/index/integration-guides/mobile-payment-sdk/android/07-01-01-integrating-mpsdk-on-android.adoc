@@ -1,5 +1,5 @@
 [#MobilePaymentSDK_Android]
-== Integrating MPSDK on Android
+== Android SDK
 
 For downloading MPSDK and basic setup, refer to <<MobilePaymentSDK_BasicSetup, Basic Setup>>.
 
