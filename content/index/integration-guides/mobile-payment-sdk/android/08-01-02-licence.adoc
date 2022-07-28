@@ -2,7 +2,7 @@
 
 === License
 
-==== https://https://github.com/getneteurope/paymentSDK-Android/blob/master/LICENSE[paymentSDK] - MIT License | Open Source SUNNA COMMENT change link
+==== Payment SDK – MIT License |Open Source
 
 Recitals: PagoNxt will offer the payment SDK free of charge, to any person obtaining a copy of this software and associated documentation files under the conditions below. User has to verify the effects of Payment SDK on the implemented environment and will do that at its own risk. Digital downloads are software products. Their contents are protected under copyright and intellectual property law.
 
