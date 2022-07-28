@@ -16,7 +16,7 @@ signatures for your transactions
 
 [NOTE]
 ====
-You can find testing credentials at this <<API_CC_TestCards, link>>.
+You can find testing credentials at this <<CreditCard_TestCredentials, link>>.
 
 Your account needs to be configured through Merchant Support to process mobile
 SDK payments.
