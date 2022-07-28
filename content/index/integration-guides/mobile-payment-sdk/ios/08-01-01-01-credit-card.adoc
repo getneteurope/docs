@@ -17,6 +17,7 @@ transaction.
 of account holder’s card, but does not leave an authorized amount.
 * *`SDKPayECTransactionTypePurchase`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
 * *`SDKPayECTransactionTypeReferencedPurchase`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+* *`SDKPayECTransactionTypeReferencedAuthorization`* - reserve funds from the [Card Holder]'s account. Identical to a [Authorization] except for the fact that it refers to a previous [Authorization] transaction.
 * *`SDKPayECTransactionTypeTokenize`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
 
 
@@ -81,10 +82,7 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?, 
 [TIP]
 ====
 You can set optional parameters after the payment object is
-created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECCardPayment.html[`SDKPayECCardPayment`]
-for more details. Credit Card payment supports
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`]
-recurring type.
+created. Check the API documentation for more details. Credit Card payment supports recurring type too.
 ====
 
 //-

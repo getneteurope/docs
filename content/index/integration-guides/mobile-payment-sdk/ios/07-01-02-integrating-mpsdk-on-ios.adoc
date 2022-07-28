@@ -85,10 +85,7 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?, 
 [TIP]
 ====
 You can set optional parameters after the payment object is
-created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECCardPayment.html[`SDKPayECCardPayment`]
-for more details. Credit Card payment supports
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`]
-recurring type.
+created. Check the API documentation for more details. Credit Card payment supports recurring type too.
 ====
 
 //-
@@ -1303,7 +1300,7 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 |
 |===
 
-====== Scanner View Conmtroller
+====== Scanner View Controller
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===

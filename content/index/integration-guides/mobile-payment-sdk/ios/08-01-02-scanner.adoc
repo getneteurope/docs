@@ -109,7 +109,7 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 |
 |===
 
-===== Scanner View Conmtroller
+===== Scanner View Controller
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===

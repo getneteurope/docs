@@ -85,10 +85,7 @@ This is a code example for a basic PayPal payment:
 [TIP]
 ====
 You can set optional parameters after the payment object is
-created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayPalPayment.html[`SDKPayECPayPalPayment`]
-for more details. PayPal payment supports
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`]
-recurring type.
+created. Check the API documentation for more details. PayPal payment supports recurring type too.
 ====
 
 //-

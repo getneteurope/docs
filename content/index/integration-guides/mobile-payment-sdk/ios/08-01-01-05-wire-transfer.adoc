@@ -70,7 +70,7 @@ This is a code example for a basic WireTransfer payment:
 [TIP]
 ====
 You can set optional parameters after the payment object is
-created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECWireTransferPayment.html[`SDKPayECWireTransferPayment`]
+created. Check the API documentation for more details.
 ====
 
 //-
@@ -79,5 +79,10 @@ created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/a
 === Visualisation
 ---
 image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen, align=center, width=240, height=420]
+
+[NOTE]
+====
+Visualization of WireTransfer result is up to the merchant applicaton. SDK returns IBAN, BIC, Provider Reference ID and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
 
 //-

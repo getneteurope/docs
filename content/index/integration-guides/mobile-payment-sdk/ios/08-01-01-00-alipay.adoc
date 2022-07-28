@@ -4,7 +4,7 @@
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
----
+--- 
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
@@ -79,8 +79,7 @@ This is a code example for a basic Alipay payment:
 [TIP]
 ====
 You can set optional parameters after the payment object is
-created. Check the API documentation: http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECAlipayPayment.html[`SDKPayECAlipayPayment`]
-for more details.
+created. Check the API documentation for more details.
 ====
 
 //-
