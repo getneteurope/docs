@@ -8,7 +8,7 @@ For downloading MPSDK and basic setup, refer to <<MobilePaymentSDK_BasicSetup, B
 [#Introduction]
 Mobile paymentSDK is divided into a core module and several secondary modules, one for each payment method.
 
-With this modular approach,  you can pick and choose what you need: a few payment methods (or even just one) or the full selection.  You can also exclude features of an individual module (e.g. IBAN scanner).
+With this modular approach, you can pick and choose what you need: a few payment methods (or even just one) or the full selection.
 
 Below, we will briefly go through the basic requirements/dependencies, but also code examples for client initialization and processing the payment response on your end.
 
@@ -110,7 +110,7 @@ This is the `PaymentResponse` object model:
 
 **`responseCode`**: `Int` - Returns a response code (documented below)
 
-**`payment`**: Payment - Actual payment response (returned only on success)
+**`payment`**: `Payment` - Actual payment response (returned only on success)
 
 **`errorMessage`**: `String` - Error message
 

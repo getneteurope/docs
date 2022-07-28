@@ -32,7 +32,7 @@ To disable the IBAN scanner feature, uncomment the `exclude module`
 line.
 
 When adding/removing this feature, perform a full clean build. If you
-intend to use Card Payments module together with the WIRETRANSFER Direct Debit
+intend to use Card Payments module together with the Wiretransfer Direct Debit
 module (with IBAN scanner), you must enable/disable it in *both*
 modules.
 
@@ -93,63 +93,64 @@ the `.xml` file.
 
 Changing any of these will affect every module used in the SDK:
 
-*`wd_ecom_color_main`* - color tint for icons, header and submit button
+*`sdkpay_ecom_color_main`* - color tint for icons, header and submit button
 gradient start color
 
-*`wd_ecom_color_main_light`* - header and submit button gradient end
+*`sdkpay_ecom_color_main_light`* - header and submit button gradient end
 color
 
-*`wd_ecom_color_main_alpha80`* - text input layout title color
+*`sdkpay_ecom_color_main_alpha80`* - text input layout title color
 
-*`wd_ecom_color_toolbar_text`* - toolbar text and back arrow tint
+*`sdkpay_ecom_color_toolbar_text`* - toolbar text and back arrow tint
 
-*`wd_ecom_color_pay_button_text`* - pay button text color
+*`sdkpay_ecom_color_pay_button_text`* - pay button text color
 
-*`wd_ecom_color_main_background`* - background color for main view
+*`sdkpay_ecom_color_main_background`* - background color for main view
 
-*`wd_ecom_color_error`* - used for all text input layouts to modify
+*`sdkpay_ecom_color_error`* - used for all text input layouts to modify
 error text color including the edit text line
 
 ==== Changing Fonts
 
 To change fonts, override the font path to in string resources with name
-`sdkpay_fontPath': e.g. strings.xml
+`sdkpay_fontPath': e.g. strings.xml
 
-....
-    <string name="sdkpay_fontPath">fonts/myFont.otf</string>
-....
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
 
 ==== Changing Text Size
 
-To change the text size use dimensional attribute `wd_ecom_text_size`.
+To change the text size use dimensional attribute `sdkpay_ecom_text_size`.
 This affects all the modules, except `cardField`.
 
-==== Customizing WIRETRANSFER Payments
+==== Customizing Wiretransfer Payments
 
 [.image]##
 
 *Color Resources*
 
-1 - `wd_ecom_color_main`
+1 - `sdkpay_ecom_color_main`
 
-2 - `wd_ecom_color_light`
+2 - `sdkpay_ecom_color_light`
 
-3 - `wd_ecom_color_main_alpha80`
+3 - `sdkpay_ecom_color_main_alpha80`
 
-4 - `wd_ecom_color_pay_button_text`
+4 - `sdkpay_ecom_color_pay_button_text`
 
-5 - `wd_ecom_color_toolbar_text`
+5 - `sdkpay_ecom_color_toolbar_text`
 
-6 - `wd_ecom_color_error`
+6 - `sdkpay_ecom_color_error`
 
-7 - `wd_ecom_color_main_background`
+7 - `sdkpay_ecom_color_main_background`
 
 *Icons*
 
-8 - `wd_ecom_arrow_back`
+8 - `sdkpay_ecom_arrow_back`
 
-9 - `wd_ecom_cardholder_name`
+9 - `sdkpay_ecom_cardholder_name`
 
-10 - `wd_ecom_iban_3`
+10 - `sdkpay_ecom_iban_3`
 
-11 - `wd_ecom_camera_blue`
+11 - `sdkpay_ecom_camera_blue`

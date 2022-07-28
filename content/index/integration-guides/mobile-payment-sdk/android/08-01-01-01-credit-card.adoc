@@ -17,8 +17,6 @@ types]:
 * *`TransactionType.REFERENCED_AUTHORIZATION`* - places the account holder’s funds on hold. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
 * *`TransactionType.TOKENIZE`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
 
-== Card Payments
-
 === Supported Card Brands
 
 As of version 4.2.0 the Card Brand CUP has been deprecated and got
@@ -235,66 +233,66 @@ Here’s example code for a card payment using this feature:
 
 [source,kotlin]
 ----
- class KotlinCardFieldActivity : AppCompatActivity(), Observer<PaymentResponse> {
-    private val mContext = this
-    private val mPaymentObjectProvider = PaymentObjectProvider()
-    private lateinit var cardFieldFragment: CardFieldFragment
- 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_card_form)
- 
-        cardFieldFragment = CardFieldFragment.Builder().build()
-        supportFragmentManager
-                .beginTransaction()
-                .add(R.id.card_field_container, cardFieldFragment)
-                .commit()
- 
-        cardFieldFragment
-                .getEventObserver()
-                .subscribe { state -> Log.i("event", state.toString()) }
-    }
- 
-    fun onSubmitButtonClicked(view: View) {
-        if (cardFieldFragment.getCardBundle() != null) {
-            Client(this, URL_EE_TEST, null, REQUEST_TIMEOUT).startPayment(getCardFormPayment(cardFieldFragment.getCardBundle()))
-            findViewById<View>(R.id.progress).visibility = View.VISIBLE
-        } else {
-            Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show()
-        }
-    }
- 
-    fun getCardFormPayment(cardBundle: CardBundle): CardFormPayment {
-        val merchantID = "merchant_id"
-        val secretKey = "secret_key"
-        val requestID = UUID.randomUUID().toString()
-        val transactionType = TransactionType.PURCHASE
-        val amount = BigDecimal(5)
-        val currency = "EUR"
-        val signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.value, amount, currency, secretKey)
- 
-        val cardFormPayment = CardFormPayment.Builder()
-                .setSignature(signature)
-                .setMerchantAccountId(merchantID)
-                .setRequestId(requestID)
-                .setAmount(amount)
-                .setTransactionType(transactionType)
-                .setCurrency(currency)
-                .setCardBundle(cardBundle)
-                .build()
- 
-        val accountHolder = AccountHolder("John", "Doe")
-        cardFormPayment.accountHolder = accountHolder
- 
-        return cardFormPayment
-    }  
- 
-    override fun onObserve(paymentResponse: PaymentResponse) {
-        runOnUiThread {
-            Toast.makeText(mContext, ResponseHelper.getFormattedResponse(paymentResponse), Toast.LENGTH_SHORT).show()
-            findViewById<View>(R.id.progress).visibility = View.GONE
-        }
-    }
+class KotlinCardFieldActivity : AppCompatActivity(), Observer<PaymentResponse> {
+    private val mContext = this
+    private val mPaymentObjectProvider = PaymentObjectProvider()
+    private lateinit var cardFieldFragment: CardFieldFragment
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_card_form)
+
+        cardFieldFragment = CardFieldFragment.Builder().build()
+        supportFragmentManager
+                .beginTransaction()
+                .add(R.id.card_field_container, cardFieldFragment)
+                .commit()
+
+        cardFieldFragment
+                .getEventObserver()
+                .subscribe { state -> Log.i("event", state.toString()) }
+    }
+
+    fun onSubmitButtonClicked(view: View) {
+        if (cardFieldFragment.getCardBundle() != null) {
+            Client(this, URL_EE_TEST, null, REQUEST_TIMEOUT).startPayment(getCardFormPayment(cardFieldFragment.getCardBundle()))
+            findViewById<View>(R.id.progress).visibility = View.VISIBLE
+        } else {
+            Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun getCardFormPayment(cardBundle: CardBundle): CardFormPayment {
+        val merchantID = "merchant_id"
+        val secretKey = "secret_key"
+        val requestID = UUID.randomUUID().toString()
+        val transactionType = TransactionType.PURCHASE
+        val amount = BigDecimal(5)
+        val currency = "EUR"
+        val signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.value, amount, currency, secretKey)
+
+        val cardFormPayment = CardFormPayment.Builder()
+                .setSignature(signature)
+                .setMerchantAccountId(merchantID)
+                .setRequestId(requestID)
+                .setAmount(amount)
+                .setTransactionType(transactionType)
+                .setCurrency(currency)
+                .setCardBundle(cardBundle)
+                .build()
+
+        val accountHolder = AccountHolder("John", "Doe")
+        cardFormPayment.accountHolder = accountHolder
+
+        return cardFormPayment
+    }
+
+    override fun onObserve(paymentResponse: PaymentResponse) {
+        runOnUiThread {
+            Toast.makeText(mContext, ResponseHelper.getFormattedResponse(paymentResponse), Toast.LENGTH_SHORT).show()
+            findViewById<View>(R.id.progress).visibility = View.GONE
+        }
+    }
 }
 ----
 
@@ -638,31 +636,32 @@ To change colors within the SDK, override the default color values in
 the `+.xml+` file. ### Color Resources Changing any of these will affect
 every module used in the SDK:
 
-*`+wd_ecom_color_main+`* - color tint for icons, header and submit
+*`+sdkpay_ecom_color_main+`* - color tint for icons, header and submit
 button gradient start color
 
-*`+wd_ecom_color_main_light+`* - header and submit button gradient end
+*`+sdkpay_ecom_color_main_light+`* - header and submit button gradient end
 color
 
-*`+wd_ecom_color_main_alpha80+`* - text input layout title color
+*`+sdkpay_ecom_color_main_alpha80+`* - text input layout title color
 
-*`+wd_ecom_color_toolbar_text+`* - toolbar text and back arrow tint
+*`+sdkpay_ecom_color_toolbar_text+`* - toolbar text and back arrow tint
 
-*`+wd_ecom_color_pay_button_text+`* - pay button text color
+*`+sdkpay_ecom_color_pay_button_text+`* - pay button text color
 
-*`+wd_ecom_color_main_background+`* - background color for main view
+*`+sdkpay_ecom_color_main_background+`* - background color for main view
 
-*`+wd_ecom_color_error+`* - used for all text input layouts to modify
+*`+sdkpay_ecom_color_error+`* - used for all text input layouts to modify
 error text color including the edit text line
 
 ==== Changing Fonts
 
 To change fonts, override the font path to in string resources with name
-'`sdkpay_fontPath`': e.g. strings.xml
+'`sdkpay_fontPath`': e.g. strings.xml
 
-....
-    <string name="sdkpay_fontPath">fonts/myFont.otf</string>
-....
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
 
 [source,java]
 ----
@@ -671,10 +670,10 @@ To change fonts, override the font path to in string resources with name
 ==== Changing Text Size
 
 To change the text size for link:[`+cardField+`] fragments use the
-dimension attribute `+wd_ecom_cardfield_text_size+`.
+dimension attribute `+sdkpay_ecom_cardfield_text_size+`.
 
 To change text size in any other modules use the dimension attribute
-`+wd_ecom_text_size+`.
+`+sdkpay_ecom_text_size+`.
 
 ===== Customizing Simple Card Payments
 
@@ -682,31 +681,31 @@ To change text size in any other modules use the dimension attribute
 
 *Color resources*
 
-1 - `+wd_ecom_color_main+`
+1 - `+sdkpay_ecom_color_main+`
 
-2 - `+wd_ecom_color_light+`
+2 - `+sdkpay_ecom_color_light+`
 
-3 - `+wd_ecom_color_main_alpha80+`
+3 - `+sdkpay_ecom_color_main_alpha80+`
 
-4 - `+wd_ecom_color_pay_button_text+`
+4 - `+sdkpay_ecom_color_pay_button_text+`
 
-5 - `+wd_ecom_color_toolbar_text+`
+5 - `+sdkpay_ecom_color_toolbar_text+`
 
-6 - `+wd_ecom_color_error+`
+6 - `+sdkpay_ecom_color_error+`
 
-7 - `+wd_ecom_color_main_background+`
+7 - `+sdkpay_ecom_color_main_background+`
 
 *Icons*
 
-8 - `+wd_ecom_arrow_back+`
+8 - `+sdkpay_ecom_arrow_back+`
 
-9 - `+wd_ecom_cardholder_name+`
+9 - `+sdkpay_ecom_cardholder_name+`
 
-10 - `+wd_ecom_camera_blue+`
+10 - `+sdkpay_ecom_camera_blue+`
 
-11 - `+wd_ecom_date+`
+11 - `+sdkpay_ecom_date+`
 
-12 - `+wd_ecom_lock+`
+12 - `+sdkpay_ecom_lock+`
 
 ===== Customizing Animated Card Payments
 
@@ -716,27 +715,27 @@ The same applies for Animated Card Field payments.
 
 _Color resources_
 
-1 - `+wd_ecom_color_main+`
+1 - `+sdkpay_ecom_color_main+`
 
-2 - `+wd_ecom_color_light+`
+2 - `+sdkpay_ecom_color_light+`
 
-3 - `+wd_ecom_color_toolbar_text+`
+3 - `+sdkpay_ecom_color_toolbar_text+`
 
-4 - `+wd_ecom_color_pay_button_text+`
+4 - `+sdkpay_ecom_color_pay_button_text+`
 
-5 - `+wd_ecom_color_main_alpha80+`
+5 - `+sdkpay_ecom_color_main_alpha80+`
 
-6 - `+wd_ecom_color_main_alpha40+`
+6 - `+sdkpay_ecom_color_main_alpha40+`
 
-7 - `+wd_ecom_color_error+`
+7 - `+sdkpay_ecom_color_error+`
 
-8 - `+wd_ecom_color_main_background+`
+8 - `+sdkpay_ecom_color_main_background+`
 
 _Icons_
 
-9 - `+wd_ecom_arrow_back+`
+9 - `+sdkpay_ecom_arrow_back+`
 
-10 - `+wd_ecom_chip+`
+10 - `+sdkpay_ecom_chip+`
 
 ===== Customizing `+cardField+` Fragments
 
@@ -744,11 +743,11 @@ _Icons_
 
 _Color resources_
 
-1 - `+wd_ecom_color_main+`
+1 - `+sdkpay_ecom_color_main+`
 
-2 - `+wd_ecom_color_light+`
+2 - `+sdkpay_ecom_color_light+`
 
-3 - `+wd_ecom_color_error+`
+3 - `+sdkpay_ecom_color_error+`
 
 ===== Card Brand Picker
 
