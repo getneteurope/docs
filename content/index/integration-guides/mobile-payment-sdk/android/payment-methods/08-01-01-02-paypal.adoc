@@ -1,6 +1,6 @@
 [#MobilePaymentSDK_Android_PayPal]
 ---
-== *PayPal*
+== PayPal
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
@@ -9,9 +9,12 @@
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
-* *`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
-* *`TransactionType.AUTHORIZATION_ONLY`* - verifies the validity of account holder’s card, but does not leave an authorized amount.
-* *`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
+
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+*`TransactionType.AUTHORIZATION_ONLY`* - verifies the validity of account holder’s card, but does not leave an authorized amount.
+
+*`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
 
 === Module Dependency
 

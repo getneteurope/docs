@@ -1,25 +1,28 @@
-[#MobilePaymentSDK_Android_SEPA]
+[#MobilePaymentSDK_Android_Wiretransfer]
 ---
-== *SEPA Direct Debit*
+== Wiretransfer
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
-* *`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
-* *`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
-* *`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
+
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+*`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
+
+*`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
 ## Module Dependency Edit your
 `build.gradle` file accordingly:
 
 [source,java]
-----
+---- 
 dependencies {
     ...
     implementation files('libs/core.aar')
-    implementation files('libs/sepa.aar')
+    implementation files('libs/wiretransfer.aar')
     ...
 }
 ----
@@ -28,7 +31,7 @@ To disable the IBAN scanner feature, uncomment the `exclude module`
 line.
 
 When adding/removing this feature, perform a full clean build. If you
-intend to use Card Payments module together with the SEPA Direct Debit
+intend to use Card Payments module together with the Wiretransfer Direct Debit
 module (with IBAN scanner), you must enable/disable it in *both*
 modules.
 
@@ -37,35 +40,34 @@ modules.
 Application shall get signature from server where signature shall be
 computed.
 
-=== Simple SEPA Payment
+=== Simple Wiretransfer Payment
 
-This is a code example for a basic SEPA payment:
+This is a code example for a basic Wiretransfer payment:
 
 [source,kotlin]
 ----
-val sepaPayment = SepaPayment(
-        signature = signature,
-        requestTimeStamp = timestamp,
-        requestID = requestID,
-        merchantAccountId = merchantID,
-        transactionType = transactionType,
-        amount = amount,
-        currency = currency,
-        creditorId = null,
-        mandateId = null,
-        mandateSignedDate = null,
-        merchantName = "JOHN DOE",
-        dueDate = null,
-        periodic = null,
-        B2B = null
+val wiretransferPayment = WiretransferPayment(
+        signature = signature
+        requestID = requestID
+        merchantAccountId = merchantAccountId
+        transactionType = transactionType
+        amount = amount
+        currency = currency
+        accountHolder = accountHolder
+        ipAddress = null
+        orderNumber = null
+        orderDetail = null
+        descriptor = null
+        notifications = null
+        customFields = null
 )
-
-Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(sepaPayment)
+ 
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(wiretransferPayment)
 ----
 
 [source,java]
 ----
-sepaPayment = new SepaPayment.Builder()
+wiretransferPayment = new WiretransferPayment.Builder()
         .setSignature(signature)
         .setRequestId(requestID)
         .setMerchantAccountId(merchantID)
@@ -74,8 +76,8 @@ sepaPayment = new SepaPayment.Builder()
         .setCurrency(currency)
         .setMerchantName("JOHN DOE")
         .build();
-
-new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(sepaPayment);
+ 
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(wiretransferPayment);
 ----
 
 You can use Builder to create the payment object and set additional
@@ -122,7 +124,7 @@ To change fonts, override the font path to in string resources with name
 To change the text size use dimensional attribute `sdkpay_ecom_text_size`.
 This affects all the modules, except `cardField`.
 
-==== Customizing SEPA Payments
+==== Customizing Wiretransfer Payments
 
 [.image]##
 

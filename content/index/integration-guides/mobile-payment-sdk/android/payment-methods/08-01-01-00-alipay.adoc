@@ -1,15 +1,18 @@
-[#MobilePaymentSDK_Android_P24]
+[#MobilePaymentSDK_Android_Alipay]
 ---
-== *P24*
+== Alipay
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---
 This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
-* *`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
-* *`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
-* *`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
+
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+*`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
+
+*`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
 ## Module Dependency Edit your
 `build.gradle` file accordingly:
@@ -19,31 +22,23 @@ types]:
 dependencies {
     ...
     implementation files('libs/core.aar')
-    implementation files('libs/p24.aar')
+    implementation files('libs/alipay.aar')
     ...
 }
 ----
-
-To disable the IBAN scanner feature, uncomment the `exclude module`
-line.
-
-When adding/removing this feature, perform a full clean build. If you
-intend to use Card Payments module together with the WIRETRANSFER Direct Debit
-module (with IBAN scanner), you must enable/disable it in *both*
-modules.
 
 === Signature
 
 Application shall get signature from server where signature shall be
 computed.
 
-=== Simple P24 Payment
+=== Simple Alipay Payment
 
-This is a code example for a basic P24 payment:
+This is a code example for a basic Alipay payment:
 
 [source,kotlin]
 ----
-val p24Payment = P24Payment(
+val alipayPayment = AlipayPayment(
         signature = signature
         requestID = requestID
         merchantAccountId = merchantAccountId
@@ -59,12 +54,12 @@ val p24Payment = P24Payment(
         customFields = null
 )
  
-Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(p24Payment)
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(alipayPayment)
 ----
 
 [source,java]
 ----
-p24Payment = new P24Payment.Builder()
+alipayPayment = new AlipayPayment.Builder()
         .setSignature(signature)
         .setRequestId(requestID)
         .setMerchantAccountId(merchantID)
@@ -74,7 +69,7 @@ p24Payment = new P24Payment.Builder()
         .setMerchantName("JOHN DOE")
         .build();
  
-new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(p24Payment);
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(alipayPayment);
 ----
 
 You can use Builder to create the payment object and set additional
@@ -121,7 +116,7 @@ To change fonts, override the font path to in string resources with name
 To change the text size use dimensional attribute `sdkpay_ecom_text_size`.
 This affects all the modules, except `cardField`.
 
-==== Customizing WIRETRANSFER Payments
+==== Customizing ALIPAY Payments
 
 [.image]##
 

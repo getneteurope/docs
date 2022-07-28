@@ -1,6 +1,6 @@
 [#MobilePaymentSDK_Android_CreditCard]
 ---
-== *Credit Card*
+== Credit Card
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
@@ -10,12 +10,17 @@ This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
-* *`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
-* *`TransactionType.AUTHORIZATION_ONLY`* - verifies the validity of account holder’s card, but does not leave an authorized amount.
-* *`TransactionType.PURCHASE`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
-* *`TransactionType.REFERENCED_PURCHASE`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
-* *`TransactionType.REFERENCED_AUTHORIZATION`* - places the account holder’s funds on hold. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
-* *`TransactionType.TOKENIZE`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+*`TransactionType.AUTHORIZATION_ONLY`* - verifies the validity of account holder’s card, but does not leave an authorized amount.
+
+*`TransactionType.PURCHASE`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
+
+*`TransactionType.REFERENCED_PURCHASE`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+
+*`TransactionType.REFERENCED_AUTHORIZATION`* - places the account holder’s funds on hold. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+
+*`TransactionType.TOKENIZE`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
 
 === Supported Card Brands
 
@@ -380,16 +385,16 @@ class. For more information and example refer to
 You can set additional options for Card Field
 through`+CardFieldFragment.Builder+` :
 
-* *`+SetSupportedCardBrands+`* - sets allowed card brands (providers)
-* *`+setExpirationDate+`* - used in token payments
-* *`+setRequestFocus+`* - sets screen focus (after the card form loads)
-* *`+setHideCardIcon+`* - hides provider icons (VISA, Maestro, etc.)
-* *`+setToken+`* - used in link:[token payments]
-* *`+setMaskedCardNumber+`* - used in link:[token payments]
-* *`+setCardBrand+`* - sets the card brand/provider
-* *`+setTextSize+`* - changes text size
-* *`+setLocale+`* - changes the payment locale
-* *`+setNativeLocale+`* - changes the payment locale (UI only)
+*`+SetSupportedCardBrands+`* - sets allowed card brands (providers)
+*`+setExpirationDate+`* - used in token payments
+*`+setRequestFocus+`* - sets screen focus (after the card form loads)
+*`+setHideCardIcon+`* - hides provider icons (VISA, Maestro, etc.)
+*`+setToken+`* - used in link:[token payments]
+*`+setMaskedCardNumber+`* - used in link:[token payments]
+*`+setCardBrand+`* - sets the card brand/provider
+*`+setTextSize+`* - changes text size
+*`+setLocale+`* - changes the payment locale
+*`+setNativeLocale+`* - changes the payment locale (UI only)
 
 === Token Payment with Card Field
 
@@ -579,18 +584,18 @@ public class AnimatedCardFieldActivity extends AppCompatActivity implements Obse
 You can set additional options for Animated Card Field through
 `+AnimatedCardFieldFragment.Builder+` :
 
-* *`+SetSupportedCardBrands+`* - sets allowed card brands (providers)
-* *`+setExpirationDate+`* - used in token payments
-* *`+setRequestFocus+`* - sets screen focus (after the card form loads)
-* *`+setHideCardHolder+`* - Sets whether card holder field is required
+*`+SetSupportedCardBrands+`* - sets allowed card brands (providers)
+*`+setExpirationDate+`* - used in token payments
+*`+setRequestFocus+`* - sets screen focus (after the card form loads)
+*`+setHideCardHolder+`* - Sets whether card holder field is required
 and should be displayed
-* *`+setToken+`* - used in link:[token payments]
-* *`+setMaskedCardNumber+`* - used in link:[token payments]
-* *`+setCardBrand+`* - sets the card brand/provider
-* *`+setTextSize+`* - changes text size
-* *`+setLocale+`* - changes the payment locale
-* *`+setNativeLocale+`* - changes the payment locale (UI only)
-* *`+setRequireManualCardBrandSelection+`* - Sets whether show card
+*`+setToken+`* - used in link:[token payments]
+*`+setMaskedCardNumber+`* - used in link:[token payments]
+*`+setCardBrand+`* - sets the card brand/provider
+*`+setTextSize+`* - changes text size
+*`+setLocale+`* - changes the payment locale
+*`+setNativeLocale+`* - changes the payment locale (UI only)
+*`+setRequireManualCardBrandSelection+`* - Sets whether show card
 brand picker
 
 === Token Payment with Animated Card Field

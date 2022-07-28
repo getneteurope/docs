@@ -23,9 +23,10 @@ sdkpay_ecom_color_error - used for all text input layouts to modify error text c
 To change fonts, override the font path to in string resources with name
 `sdkpay_fontPath': e.g. strings.xml
 
-.....
-    <string name="sdkpay_fontPath">fonts/myFont.otf</string>
-.....
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
 
 _missing JAVA code example here?_
 
@@ -51,9 +52,10 @@ to backend *and* the UI is set according to `localeUIOnly`.
 To change localeUIOnly, override the string resources with name
 `sdkpay_localeUIOnly': e.g. strings.xml
 
-.....
-    <string name="sdkpay_localeUIOnly">RU</string>
-.....
+[source,xml]
+----
+<string name="sdkpay_localeUIOnly">RU</string>
+----
 
 [source,kotlin]
 ----
