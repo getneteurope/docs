@@ -1,6 +1,6 @@
 [#MobilePaymentSDK_Android_SEPA]
 ---
-== SEPA Direct Debit
+== *SEPA Direct Debit*
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---

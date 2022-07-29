@@ -1,6 +1,6 @@
 [#MobilePaymentSDK_Android_PayPal]
 ---
-== PayPal
+== *PayPal*
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]

@@ -1,6 +1,6 @@
 [#MobilePaymentSDK_Android_CreditCard]
 ---
-== Credit Card
+== *Credit Card*
 ---
 
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
