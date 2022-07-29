@@ -65,12 +65,11 @@ Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout
 ----
 sepaPayment = new SepaPayment.Builder()
         .setSignature(signature)
-        .setRequestId(requestID)
         .setMerchantAccountId(merchantID)
-        .setTransactionType(transactionType)
+        .setRequestId(requestID)
         .setAmount(amount)
+        .setTransactionType(transactionType)
         .setCurrency(currency)
-        .setMerchantName("JOHN DOE")
         .build();
 
 new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(sepaPayment);

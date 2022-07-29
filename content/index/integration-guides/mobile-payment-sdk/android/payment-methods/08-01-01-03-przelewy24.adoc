@@ -47,19 +47,14 @@ This is a code example for a basic P24 payment:
 [source,kotlin]
 ----
 val p24Payment = P24Payment(
-        signature = signature
-        requestID = requestID
-        merchantAccountId = merchantAccountId
-        transactionType = transactionType
-        amount = amount
-        currency = currency
-        accountHolder = accountHolder
-        ipAddress = null
-        orderNumber = null
-        orderDetail = null
-        descriptor = null
-        notifications = null
-        customFields = null
+        signature = signature,
+        requestID = requestID,
+        merchantAccountId = merchantAccountId,
+        transactionType = transactionType,
+        amount = amount,
+        currency = currency,
+        accountHolder = accountHolder,
+        descriptor = null,
 )
  
 Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(p24Payment)
@@ -69,12 +64,16 @@ Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout
 ----
 p24Payment = new P24Payment.Builder()
         .setSignature(signature)
-        .setRequestId(requestID)
-        .setMerchantAccountId(merchantID)
+        .setMerchantAccountId(merchantId)
+        .setRequestId(requestId)
         .setTransactionType(transactionType)
         .setAmount(amount)
         .setCurrency(currency)
-        .setMerchantName("JOHN DOE")
+        .setAccountHolder(new AccountHolder(
+                "Firstname",
+                "Lastname",
+                "email@mail.com"
+        ))
         .build();
  
 new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(p24Payment);

@@ -69,12 +69,12 @@ Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout
 ----
 wiretransferPayment = new WiretransferPayment.Builder()
         .setSignature(signature)
-        .setRequestId(requestID)
-        .setMerchantAccountId(merchantID)
+        .setMerchantAccountId(merchantId)
+        .setRequestId(requestId)
         .setTransactionType(transactionType)
         .setAmount(amount)
         .setCurrency(currency)
-        .setMerchantName("JOHN DOE")
+        .setAccountHolder(new AccountHolder(null, "Lastname"))
         .build();
  
 new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(wiretransferPayment);

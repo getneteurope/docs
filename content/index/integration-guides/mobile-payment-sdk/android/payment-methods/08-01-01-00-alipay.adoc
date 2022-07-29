@@ -39,19 +39,18 @@ This is a code example for a basic Alipay payment:
 [source,kotlin]
 ----
 val alipayPayment = AlipayPayment(
-        signature = signature
-        requestID = requestID
-        merchantAccountId = merchantAccountId
-        transactionType = transactionType
-        amount = amount
-        currency = currency
-        accountHolder = accountHolder
-        ipAddress = null
-        orderNumber = null
-        orderDetail = null
-        descriptor = null
-        notifications = null
-        customFields = null
+        signature = signature,
+        requestID = requestID,
+        merchantAccountId = merchantAccountId,
+        transactionType = transactionType,
+        amount = amount,
+        currency = currency,
+        orderNumber = null,
+        orderDetail = null,
+        locale = null,
+        ipAddress = null,
+        accountHolder = null,
+        businessType = null,
 )
  
 Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(alipayPayment)
@@ -66,7 +65,6 @@ alipayPayment = new AlipayPayment.Builder()
         .setTransactionType(transactionType)
         .setAmount(amount)
         .setCurrency(currency)
-        .setMerchantName("JOHN DOE")
         .build();
  
 new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(alipayPayment);
