@@ -14,7 +14,7 @@ in.
 === Payment XSD
 
 [#XmlSchemaSpecification_PaymentXSD_Download]
-Download the XSD file: link:resources/payment.xsd[payment.xsd]
+Download the XSD file: link:resources/16-08-xml-schema-specification/payment.xsd[payment.xsd]
 
 .XSD (XML Schema Definition)
 [source,xml,subs=attributes+]
