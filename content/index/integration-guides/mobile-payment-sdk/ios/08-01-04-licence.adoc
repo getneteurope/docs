@@ -7,7 +7,7 @@
 === paymentSDK
 ---
 
-[paymentSDK](https://github.com/wirecard/paymentSDK-iOS/blob/master/LICENSE) - MIT License
+[paymentSDK](https://github.com/getneteurope/paymentSDK-iOS/blob/master/LICENSE) - MIT License
 
 Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.  All rights reserved.
 
