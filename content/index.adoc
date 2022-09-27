@@ -53,22 +53,23 @@ include::index/integration-options/ppv2/pp-designer/03-01-07-02-pp-designer-usin
 include::index/integration-options/ppv2/03-01-08-wpp-security.adoc[leveloffset=+3]
 include::index/integration-options/ppv2/03-01-09-wpp-supported-browsers-languages.adoc[leveloffset=+3]
 include::index/integration-options/ppv2/03-01-10-wpp-workflow.adoc[leveloffset=+3]
-include::index/integration-options/shop-plugins/05-00-shop-systems.adoc[leveloffset=+1]
 
 include::index/integration-options/rest-api/04-00-rest-api.adoc[leveloffset=+1]
 include::index/integration-options/rest-api/04-01-rest-api-payment.adoc[leveloffset=+2]
 include::index/integration-options/rest-api/04-03-rest-api-simulations.adoc[leveloffset=+2]
 include::index/integration-options/rest-api/04-04-rest-api-samples.adoc[leveloffset=+2]
 
+include::index/integration-options/shop-plugins/05-00-shop-systems.adoc[leveloffset=+1]
+
 include::index/integration-guides/22-integration-guides.adoc[]
 include::index/integration-guides/ppv2/03-01-01-01-hpp-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/ppv2/03-01-02-01-epp-integration-guide.adoc[leveloffset=+2]
 include::index/integration-guides/ppv2/03-01-03-01-seamless-integration-guide.adoc[leveloffset=+2]
 //include::index/integration-guides/ppv2/03-01-03-02-seamless-with-nvp.adoc[]
-include::index/integration-guides/shop-plugins/05-00-common-intro.adoc[leveloffset=+2]
-include::index/integration-guides/shop-plugins/05-00-03-magento.adoc[leveloffset=+3]
-include::index/integration-guides/shop-plugins/05-00-01-prestashop.adoc[leveloffset=+3]
-include::index/integration-guides/shop-plugins/05-00-02-woocommerce.adoc[leveloffset=+3]
+include::index/integration-guides/shop-plugins/05-00-00-01-common-intro.adoc[leveloffset=+2]
+include::index/integration-guides/shop-plugins/05-00-03-01-magento.adoc[leveloffset=+3]
+include::index/integration-guides/shop-plugins/05-00-01-01-prestashop.adoc[leveloffset=+3]
+include::index/integration-guides/shop-plugins/05-00-02-01-woocommerce.adoc[leveloffset=+3]
 
 include::index/payment-methods/11-00-payment-methods.adoc[]
 include::index/payment-methods/credit-card/credit-card-main.adoc[leveloffset=+1]
