@@ -1,0 +1,24 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>54c06d30-73a7-45b0-b1f6-6f5ae91cd40c</merchant-account-id>
+  <request-id>4fb16b32-6861-43d0-9524-3246fe95461b</request-id>
+  <transaction-type>debit</transaction-type>
+  <requested-amount currency="PLN">55.55</requested-amount>
+  <account-holder>
+    <first-name>John</first-name>
+    <last-name>Doe</last-name>
+    <email>test@test.com</email>
+    <address>
+      <street1>Sturova 27/4</street1>
+      <city>Kosice</city>
+      <state>Slovakia</state>
+      <country>CA</country>
+      <postal-code>04011</postal-code>
+    </address>
+  </account-holder>
+  <order-number>125461645</order-number>
+  <order-detail>021234</order-detail>
+  <descriptor>description</descriptor>
+  <payment-methods>
+    <payment-method name="blik"/>
+  </payment-methods>
+</payment> 

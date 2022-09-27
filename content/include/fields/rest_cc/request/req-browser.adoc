@@ -16,11 +16,11 @@ Preconfigured sizes are _width x height_ in pixels of the window displayed in th
 This is used only to prepare the _CReq_ request and is not part of the _AReq_ flow. If not present, it will be omitted. +
 Accepted values: +
 
-* ``01`` = 250 x 400 +
-* ``02`` = 390 x 400 +
-* ``03`` = 500 x 600 +
-* ``04`` = 600 x 400 +
-* ``05`` = Full screen 
+* ``01`` = 250x400 +
+* ``02`` = 390x400 +
+* ``03`` = 500x600 +
+* ``04`` = 600x400 +
+* ``05`` = Fullscreen 
 
 //-
 

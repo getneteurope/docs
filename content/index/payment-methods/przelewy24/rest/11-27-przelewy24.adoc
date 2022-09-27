@@ -84,10 +84,10 @@ immediately.
 .3+h|URLs (Endpoints) .2+| REST API | For transaction type ``debit``.                              | ``\https://{rest-api-test-apm-endpoint}``
                                     | For transaction types ``refund-request`` and ``refund-debit``. | ``\https://{rest-api-test-endpoint}``
                        2+| Payment Page                                                          | ``\https://{test-instance-hostname}/engine/hpp/``
-h| Merchant Account ID 3+| tbd
-h| Username            3+| tbd
-h| Password            3+| tbd
-h| Secret Key          3+| tbd
+h| Merchant Account ID 3+| 39525cf9-fe90-4f99-9ce2-42815754d7c1
+h| Username            3+| 515225-GetnetEuropeTEST
+h| Password            3+| 4cHLRE-Q7YcAP
+h| Secret Key          3+| 6951db91-063a-4f28-b88e-02bde3ae555e
 |===
 
 [#Przelewy24_Workflow]

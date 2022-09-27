@@ -10,6 +10,7 @@
             Copyright 2011 elastic-payments.com. All rights reserved.
         </xs:documentation>
     </xs:annotation>
+
     <xs:simpleType name="integer3">
         <xs:restriction base="xs:int">
             <xs:minInclusive value="1"/>
@@ -142,6 +143,7 @@
             <xs:enumeration value="retrieval-request"/>
             <xs:enumeration value="retrieval-request-rep"/>
             <xs:enumeration value="reversal-authorization"/>
+            <xs:enumeration value="reversal-authorization-only"/>
             <xs:enumeration value="reversal-purchase"/>
             <xs:enumeration value="reversal-capture-authorization"/>
             <xs:enumeration value="reversal-credit"/>
@@ -238,6 +240,7 @@
             <xs:enumeration value="banktransfer"/>
             <xs:enumeration value="barpay"/>
             <xs:enumeration value="bitcoin"/>
+            <xs:enumeration value="bizum"/>
             <xs:enumeration value="blik"/>
             <xs:enumeration value="boleto"/>
             <xs:enumeration value="boleto_bancario"/>
@@ -896,6 +899,11 @@
     <xs:simpleType name="string36">
         <xs:restriction base="xs:string">
             <xs:maxLength value="36"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="string35">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="string50">
@@ -1915,6 +1923,7 @@
             <xs:element name="pos" type="pos" minOccurs="0"/>
             <xs:element name="iso" type="iso" minOccurs="0"/>
             <xs:element name="iso-recon" type="iso-recon" minOccurs="0"/>
+            <xs:element name="iso-recon-host" type="iso-recon" minOccurs="0"/>
 
             <!-- voucher -->
             <xs:element name="voucher-id" type="voucher-card-id" minOccurs="0"/>
@@ -2014,14 +2023,14 @@
     </xs:complexType>
     <xs:complexType name="shop">
         <xs:all>
-            <xs:element name="system-name" type="xs:string" minOccurs="0"/>
-            <xs:element name="system-version" type="xs:string" minOccurs="0"/>
-            <xs:element name="plugin-name" type="xs:string" minOccurs="0"/>
-            <xs:element name="plugin-version" type="xs:string" minOccurs="0"/>
-            <xs:element name="integration-type" type="xs:string" minOccurs="0"/>
-            <xs:element name="mobile-client-platform" type="xs:string" minOccurs="0"/>
-            <xs:element name="mobile-client-version" type="xs:string" minOccurs="0"/>
-            <xs:element name="mobile-client-id" type="xs:string" minOccurs="0"/>
+            <xs:element name="system-name" type="string256" minOccurs="0"/>
+            <xs:element name="system-version" type="string256" minOccurs="0"/>
+            <xs:element name="plugin-name" type="string256" minOccurs="0"/>
+            <xs:element name="plugin-version" type="string256" minOccurs="0"/>
+            <xs:element name="integration-type" type="string256" minOccurs="0"/>
+            <xs:element name="mobile-client-platform" type="string256" minOccurs="0"/>
+            <xs:element name="mobile-client-version" type="string256" minOccurs="0"/>
+            <xs:element name="mobile-client-id" type="string256" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="installment-plan-options">
@@ -2049,11 +2058,18 @@
             <xs:element name="management-fee" type="money" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
+    <xs:simpleType name="recurring-plan-sequence-type">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="register"/>
+            <xs:enumeration value="recurring"/>
+            <xs:enumeration value="update"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:complexType name="recurring-plan">
         <xs:all>
             <xs:element name="recurring-plan-id" type="string36" minOccurs="0"/>
             <xs:element name="program-id" type="string36" minOccurs="0"/>
-            <xs:element name="plan-code" type="string36" minOccurs="0"/>
+            <xs:element name="plan-code" type="string64" minOccurs="0"/>
             <xs:element name="plan-type" type="string36" minOccurs="0"/>
             <xs:element name="plan-sub-type" type="string36" minOccurs="0"/>
             <xs:element name="recurring-payment-amount" type="money" minOccurs="0"/>
@@ -2062,7 +2078,9 @@
             <xs:element name="recurring-expire-date" type="xs:date" minOccurs="0"/>
             <xs:element name="recurring-expire-date-mode" type="string20" minOccurs="0"/>
             <xs:element name="recurring-frequency-code" type="string20" minOccurs="0"/>
-            <xs:element name="recurring-descriptor" type="string300" minOccurs="0"/>
+            <xs:element name="recurring-descriptor" type="string35" minOccurs="0"/>
+            <xs:element name="sequence-type" type="recurring-plan-sequence-type" minOccurs="0"/>
+            <xs:element name="recurring-no-delay" type="xs:boolean" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 </xs:schema>
