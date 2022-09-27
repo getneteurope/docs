@@ -59,7 +59,8 @@ For this step you must enter the terminal of the server where your store is host
 [%hardbreaks]
 Example: 
 [%hardbreaks]
-image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/locate_and_unzip.png[]
+       
 
 [%hardbreaks]
 Note: If when you run the compile command it doesn't finish 100%, you should increase your memory limit in php. +
