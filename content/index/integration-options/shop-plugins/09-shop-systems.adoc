@@ -38,17 +38,18 @@ a| Magento 2
       - SEPA Direct Debit
       - Sofort
       - przelewy24
-      - BLIK
+      - BLIK |
 
       - English
       - Spanish
 	  - Portuguese
 	  - Polish
-      - German
+      - German |
 
       - https://docs.getneteurope.com/Home.html
 
 a| PrestaShop
+
 
 - https://github.com/getneteurope/prestashop-ee/releases[GitHub] |
       - Credit Card
@@ -58,19 +59,20 @@ a| PrestaShop
       - SEPA Direct Debit
       - Sofort
       - przelewy24
-      - BLIK
+      - BLIK|
 
       - English
       - Spanish
 	  - Portuguese
 	  - Polish
-      - German
+      - German|
 
       - https://docs.getneteurope.com/Home.html
 
 a| WooCommerce
 
-- https://github.com/getneteurope/woocommerce-ee/releases[GitHub]
+
+- https://github.com/getneteurope/woocommerce-ee/releases[GitHub]|
       - Credit Card
       - Alipay Cross-border
       - iDEAL
@@ -78,15 +80,17 @@ a| WooCommerce
       - SEPA Direct Debit
       - Sofort
       - przelewy24
-      - BLIK
+      - BLIK|
 
       - English
       - Spanish
 	  - Portuguese
 	  - Polish
-      - German
+      - German|
 
-      - https://docs.getneteurope.com/Home.html
+      - https://docs.getneteurope.com/Home.html |
+
+|===
 
 If you require another shop system not listed here or if you need
 additional payment methods or languages,

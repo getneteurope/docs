@@ -59,7 +59,7 @@ include::index/integration-options/rest-api/04-01-rest-api-payment.adoc[leveloff
 include::index/integration-options/rest-api/04-03-rest-api-simulations.adoc[leveloffset=+2]
 include::index/integration-options/rest-api/04-04-rest-api-samples.adoc[leveloffset=+2]
 
-include::index/integration-options/shop-plugins/05-00-shop-systems.adoc[leveloffset=+1]
+include::index/integration-options/shop-plugins/09-shop-systems.adoc[leveloffset=+1]
 
 include::index/integration-guides/22-integration-guides.adoc[]
 include::index/integration-guides/ppv2/03-01-01-01-hpp-integration-guide.adoc[leveloffset=+2]
