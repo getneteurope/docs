@@ -1,2 +1,99 @@
 [#PaymentPageSolutions_SP_WooCommerce_Integration]
-== WooCommerce
+= WooCommerce Shop Plugin
+
+== Requirements
+
+- WooCommerce v6.9.3
+
+== Installation
+
+Install the WooCommerce Shop Plugin zip file as other WooCommerce plugins. The common methods are:
+
+- https://wordpress.org/support/article/managing-plugins/#upload-via-wordpress-admin[Upload via WooCommerce Admin^]
+- https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation-1[Manual Plugin Installation^]
+
+
+== Configuration
+
+Once the plugin has been installed and enabled. The next step is to configure it.
+
+== Enable the plugin
+
+Navigate to the
+https://woocommerce.com/document/configuring-woocommerce-settings/[WooCommerce Settings page^]
+Select the Payments tab, it will show "GetNet" as a payment method.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-payments-tab.jpg[caption="WooCommerce Settings page - Payments tab", title="WooCommerce Settings page - Payments tab"]
+
+{empty} +
+
+Click on "GetNet" method and configure the settings.
+
+=== Configurations
+
+| *Attribute*     | *Description*           
+| Enable gateway| Enables the gateway. Set as true
+| Enable testing mode| Enables the gateway testing mode. Set as false
+|User|Value provided by GetNet
+|Password|Value provided by GetNet
+|Merchant account resolver category|Value provided by GetNet
+|Merchant Secret Key|Value provided by GetNet
+|Merchant Secret Key for SEPA Credit|Value provided by GetNet
+|Creditor ID|Value provided by GetNet
+
+== Refund an order
+
+To refund an order navigate to the GetNet Txs Page.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
+
+{empty} +
+
+It will list the last process orders. Select the order that you wish to refund by clicking on the _edit_ link.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-txs-index.png[caption="Shop Plugin Index", title="Shop Plugin Index"]
+
+{empty} +
+
+Select the operation to execute.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-capture-cancel.png[caption="Shop Plugin Capture or Cancel", title="Shop Plugin Capture or Cancel"]
+
+{empty} +
+
+== Cancel an order
+
+To refund an order navigate to the GetNet Txs Page.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
+
+{empty} +
+
+It will list the last process orders. Select the order that you wish to cancel by clicking on the _edit_ link.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Index", title="Shop Plugin Index"]
+
+{empty} +
+
+Select the operation to execute.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-capture-cancel.png[caption="Shop Plugin Capture or Cancel", title="Shop Plugin Capture or Cancel"]
+
+{empty} +
+
+
+== Transactions log
+
+To refund an order navigate to the GetNet Log Page.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
+
+{empty} +
+
+It will list all the transactions executed
