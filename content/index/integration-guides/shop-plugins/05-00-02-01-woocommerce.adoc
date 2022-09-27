@@ -31,6 +31,7 @@ Click on "GetNet" method and configure the settings.
 
 === Configurations
 
+|===
 | *Attribute*     | *Description*           
 | Enable gateway| Enables the gateway. Set as true
 | Enable testing mode| Enables the gateway testing mode. Set as false
@@ -40,6 +41,7 @@ Click on "GetNet" method and configure the settings.
 |Merchant Secret Key|Value provided by GetNet
 |Merchant Secret Key for SEPA Credit|Value provided by GetNet
 |Creditor ID|Value provided by GetNet
+|===
 
 == Refund an order
 
