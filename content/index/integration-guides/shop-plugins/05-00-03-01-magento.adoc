@@ -1,2 +1,101 @@
 [#PaymentPageSolutions_SP_Magento_Integration]
-== Magento
+== Magento [h1]
+
+[#Inroduction]
+== Introduction [h2]
+This document serves as a guide for the integration of the plugin developed by Getnet
+about stores with the Magento platform.
+
+[#Requirements]
+== Requirements [h2]
+To integrate the extension in Magento, you must have the following:
+
+- Minimal version: Magento 2.3.4
+- Access to the server console
+- Server ftp access
+- Getnet Credentials
+- Zip installation module (Magento_getnet_plugin.zip)
+
+[#Installation]
+== Installation
+To install the extension, you must perform the following steps:
+
+[%hardbreaks]
+*#1 Copy module*
+
+[%hardbreaks]
+As a first step, we must copy the payment module, for this we must enter the root folder of your Magento installation.
+
+[%hardbreaks]
+Go to:  app /code    _(if you do not have the code folder, you must create)_.
+
+[%hardbreaks]
+[float]
+Copy the Magento_getnet_plugin.zip file into the code folder and unzip
+
+[%hardbreaks]
+[float]
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+When unzipping, you should have the following path inside your Magento root directory: +
+app /code /Getnet  +
+_* The zip will need to be removed after unzipping_ 
+
+[%hardbreaks]
+*#2 How Install:*
+
+[%hardbreaks]
+For this step you must enter the terminal of the server where your store is hosted. +
+- 1.  Enter the initial path of the Magento 2 installation (root folder)
+- 2.  Already in the installation path you must execute the following lines
+
+[%hardbreaks]
+	php bin/magento cache:disable +
+	php bin/magento setup:upgrade +
+	php bin/magento setup:di:compile +
+	php bin/magento cache:enable 
+
+[%hardbreaks]
+Example: +
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+Note: If when you run the compile command it doesn't finish 100%, you should increase your memory limit in php. +
+``memory_limit 1024M``
+
+[%hardbreaks]
+*#3 Configure Payment Module*
+
+[%hardbreaks]
+In the store administrator, you must click on the menu on the left and select the option +
+Stores -> Configuration +
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+Go to Sales -> Payment Methods +
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+The new payment module will appear with the name of Getnet +
+You must enter the credentials that were granted by Getnet +
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+Once the Activate option has been set to Yes and the changes have been saved, it will appear at Checkout as another Payment option. +
+It will show as *_Pay by card or other payment methods_* + 
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+A payment link will be generated to which you will be redirected +
+Example:
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+[%hardbreaks]
+Example of approved Order.
+image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
+
+
+
+
+
