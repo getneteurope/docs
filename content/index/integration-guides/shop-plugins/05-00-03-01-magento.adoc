@@ -61,6 +61,8 @@ Example:
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/term.PNG[]
 
+{empty} +
+
 [%hardbreaks]
 Note: If when you run the compile command it doesn't finish 100%, you should increase your memory limit in php. +
 ``memory_limit 1024M``
@@ -74,10 +76,14 @@ Stores -> Configuration
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/configure_payment_module.PNG[]
 
+{empty} +
+
 [%hardbreaks]
 Go to Sales -> Payment Methods 
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/sales_payment_methods.PNG[]
+
+{empty} +
 
 [%hardbreaks]
 The new payment module will appear with the name of Getnet +
@@ -85,17 +91,23 @@ You must enter the credentials that were granted by Getnet
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/credentials_form.PNG[]
 
+{empty} +
+
 [%hardbreaks]
 Once the Activate option has been set to Yes and the changes have been saved, it will appear at Checkout as another Payment option. +
 It will show as *_Pay by card or other payment methods_* 
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/timeline.PNG[]
 
+{empty} +
+
 [%hardbreaks]
 A payment link will be generated to which you will be redirected +
 Example:
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/payment_choose_method.PNG[]
+
+{empty} +
 
 [%hardbreaks]
 Example of approved Order.
