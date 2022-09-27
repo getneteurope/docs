@@ -47,7 +47,7 @@ This is a code example for a basic SEPA payment:
 // 2. Initialize payment object and set mandatory properties
 // Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
 // and used to generate signature. Signature MUST be generated on server side.
-// Signature doc: https://document-center.wirecard.com/display/PTD/Signature+v2
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
 // Secret Key shall never be stored in application.
 
    let payment = SDKPayECSEPAPayment()
