@@ -1,13 +1,13 @@
 [#PaymentPageSolutions_SP_Magento_Integration]
-== Magento [h1]
+= Magento 
 
 [#Inroduction]
-== Introduction [h2]
+== Introduction 
 This document serves as a guide for the integration of the plugin developed by Getnet
 about stores with the Magento platform.
 
 [#Requirements]
-== Requirements [h2]
+== Requirements 
 To integrate the extension in Magento, you must have the following:
 
 - Minimal version: Magento 2.3.4
@@ -51,13 +51,14 @@ For this step you must enter the terminal of the server where your store is host
 - 2.  Already in the installation path you must execute the following lines
 
 [%hardbreaks]
-	php bin/magento cache:disable +
-	php bin/magento setup:upgrade +
-	php bin/magento setup:di:compile +
+	php bin/magento cache:disable 
+	php bin/magento setup:upgrade 
+	php bin/magento setup:di:compile 
 	php bin/magento cache:enable 
 
 [%hardbreaks]
-Example: +
+Example: 
+[%hardbreaks]
 image::https://store-cdn.arduino.cc/uni/catalog/product/cache/1/image/1040x660/604a3538c15e081937dbfbd20aa60aad/A/0/A000066_featured_2.jpg[]
 
 [%hardbreaks]
