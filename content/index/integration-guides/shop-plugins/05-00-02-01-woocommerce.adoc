@@ -1,0 +1,2 @@
+[#PaymentPageSolutions_SP_WooCommerce_Integration]
+== WooCommerce

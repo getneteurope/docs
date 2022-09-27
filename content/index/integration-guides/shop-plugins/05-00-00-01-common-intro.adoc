@@ -1,0 +1,5 @@
+[#PaymentPageSolutions_SP_Integration]
+== Shop Plugins Integration Guide
+
+[#PaymentPageSolutions_SP_Integration_Overview]
+=== Overview

@@ -1,0 +1,2 @@
+[#PaymentPageSolutions_SP_Magento_Integration]
+== Magento
