@@ -30,6 +30,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
+|===
 | *Attribute*    | *Description*           
 | Environment| Toggles between the testing mode and production mode
 |Username|Value provided by GetNet
@@ -37,6 +38,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 |Creditor ID|Value provided by GetNet
 |Merchant Secret Key|Value provided by GetNet
 |MAID (SEPA)|Value provided by GetNet
+|===
 
 == Refund an order
 
@@ -92,4 +94,3 @@ Navigate to the transactions log page:
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu-log.jpg[caption="Menu", title="Menu"]
 
 {empty} +
-
