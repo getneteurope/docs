@@ -1,2 +1,95 @@
 [#PaymentPageSolutions_SP_PrestaShop_Integration]
-== PrestaShop
+= PrestaShop Shop Plugin
+
+== Requirements
+
+PrestaShop v1.7.6.7
+
+== Installation
+
+Install the PrestaShop Shop Plugin zip file as other PrestaShop plugins. The common methods are:
+
+- https://addons.prestashop.com/en/content/21-how-to[Upload via PrestaShop administration panel^]
+- https://addons.prestashop.com/en/content/13-installing-modules[Manual Plugin Installation^]
+
+== Configuration
+
+To access the configuration options of the plugin go to the modules manager interface and navigate to the category "Payment". Select "Configure" option.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/configure-button.jpg[caption="Configure button", title="Configure button"]
+
+{empty} +
+
+=== Configurations
+
+On the configurations page:
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-settings-page.jpg[caption="Configurations page", title="Configurations page"]
+
+{empty} +
+
+| *Attribute*    | *Description*           
+| Environment| Toggles between the testing mode and production mode
+|Username|Value provided by GetNet
+|Password|Value provided by GetNet
+|Creditor ID|Value provided by GetNet
+|Merchant Secret Key|Value provided by GetNet
+|MAID (SEPA)|Value provided by GetNet
+
+== Refund an order
+
+To refund an order. Navigate to the transactions index page:
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu.jpg[caption="Menu", title="Menu"]
+
+{empty} +
+
+On the transactions page:
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transactions-index.jpg[caption="Transactions page", title="Transactions page"]
+
+{empty} +
+
+Select the transaction that you wish to refund, then click on the refund button.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transaction-refund.jpg[caption="Refund order", title="Refund order"]
+
+{empty} +
+
+== Cancel an order
+
+To cancel an order. Navigate to the transactions index page:
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu.jpg[caption="Menu", title="Menu"]
+
+{empty} +
+
+On the transactions page:
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transactions-index.jpg[caption="Transactions page", title="Transactions page"]
+
+{empty} +
+
+Select the transaction that you wish to cancel, then click on the cancel button.
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transaction-cancel.jpg[caption="Refund order", title="Refund order"]
+
+{empty} +
+
+== Transactions log
+
+Navigate to the transactions log page:
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu-log.jpg[caption="Menu", title="Menu"]
+
+{empty} +
+
