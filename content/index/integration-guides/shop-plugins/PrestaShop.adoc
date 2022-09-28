@@ -9,13 +9,13 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 The products can be purchased in two ways: +
 
 * **1)** By placing the indicator on the product select Quick view, and the option to select the quantity of products will be opened, then Add to the cart: +
-[%hardbreaks]
+
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop/quick_view.PNG[]
 
 {empty} +
 
 * **2)** Click on the product and the option to select quantity of products will be opened, then Add to the cart.
-[%hardbreaks]
+
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop/add_to_cart.PNG[]
 
 {empty} +
