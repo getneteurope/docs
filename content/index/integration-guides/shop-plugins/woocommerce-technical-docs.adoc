@@ -25,12 +25,14 @@ The class that takes care of generating the Payment URL is link:./app/GetNetRedi
 
 The PostProcessing is done on the classes:
 
-| *Files*                                                   | *Description*                                                                                  
+|===
+| *Files*                                                  | *Description*                                                                                  
 | app/GetNetRedirect/TransactionNextOperationCallback.php | Manages if the postprocess operation is valid and redirects the request to the correct class 
 | app/GetNetRedirect/CancelledCallback.php                | Manages the cancelled postprocess operation                                                  
 | app/GetNetRedirect/RefundedCallback.php                 | Manages the refund postprocess operation                                                     
 | app/GetNetRedirect/PurchaseCallback.php                 | Manages the purchase operation                                                               
 | app/GetNetRedirect/CaptureAuthorizationCallback.php     | Manages the capture postprocess operation                                                    
+|===
 
 == Tests
 
