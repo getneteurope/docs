@@ -6,10 +6,11 @@ The starting file for the Shop Plugin is link:../getnet.php[getnet.php^], with t
 
 === Relevant methods
 
+|===
 | *Method*               | *Description*                                                                           
 | retrieveGetnetAction | Makes the request to GetNet to retrieve the payment URL                               
 | hookPaymentReturn    | Manages the response of GetNet when the user is redirected back to the checkout  page 
-
+|===
 
 == PostProcessing file
 

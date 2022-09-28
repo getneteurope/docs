@@ -10,10 +10,11 @@ Within this file the plugins loads a link:../app/Kernel.php[Kernel class^] that 
 
 On the /app/Kernel.php the relevant methods are:
 
-| Method            | Description                                             |
+|===
+| *Method*           | *Description*                                             |
 | iniatilizeGateway | Initializes the gateway                                 |
 | setup             | Manages the starting point when the plugin is installed |
-
+|===
 
 == Payment generation
 
