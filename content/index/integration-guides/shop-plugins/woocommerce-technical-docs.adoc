@@ -2,9 +2,9 @@
 
 == Kernel file
 
-The starting file for the Shop Plugin is ../wc-getnet-redirect.php[wc-getnet-redirect.php^], with this file Wordpress system recognices that the folder is a plugin.
+The starting file for the Shop Plugin is link:../wc-getnet-redirect.php[wc-getnet-redirect.php^], with this file Wordpress system recognices that the folder is a plugin.
 
-Within this file the plugins loads a ../app/Kernel.php[Kernel class^] that contains the setups and hooks for the plugin.
+Within this file the plugins loads a link:../app/Kernel.php[Kernel class^] that contains the setups and hooks for the plugin.
 
 === Relevant methods
 
@@ -17,7 +17,7 @@ On the /app/Kernel.php the relevant methods are:
 
 == Payment generation
 
-The class that takes care of generating the Payment URL is ../app/GetNetRedirectGateway.php[app/GetNetRedirectGateway.php^], on the method `process_payment`.
+The class that takes care of generating the Payment URL is link:./app/GetNetRedirectGateway.php[app/GetNetRedirectGateway.php^], on the method `process_payment`.
 
 == PostProcessing classes
 
@@ -32,7 +32,7 @@ The PostProcessing is done on the classes:
 
 == Tests
 
-The tests for the Shop Plugin are located on the ../tests/README.md[tests folder^].
+The tests for the Shop Plugin are located on the link:./tests/README.md[tests folder^].
 
 == Translations
 
