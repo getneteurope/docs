@@ -8,7 +8,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 *Cancel, Refund and Capture:* On Payment section, you will have to drop down the menú and click on Getnet Transactions, then you will see the portal where you will be able to review your orders and by clicking on View you can select Cancel, Refund or Capture as needed: +
 [float]
-#Important: Never Cancel, Refund or capture payments on the Orders screen#
+**Important: Never Cancel, Refund or capture payments on the Orders screen**
 
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/getnet_transactions.PNG[]
@@ -40,4 +40,4 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 {empty} +
 
 
-##Note: Cancellations / Voids are made on the same day, Refunds are made the following day.##
+**Note: Cancellations / Voids are made on the same day, Refunds are made the following day.**
