@@ -8,11 +8,11 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 The products can be purchased in two ways: +
 
- *1)* By placing the indicator on the product select the desired product specifications (if needed) and Add to Cart.
+**1)** By placing the indicator on the product select the desired product specifications (if needed) and Add to Cart.
 
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/magento/desired_product_especications.PNG[]
 
- *2)* Click on the product and the option to select quantity of products will be opened, then Add to the cart.
+**2)** Click on the product and the option to select quantity of products will be opened, then Add to the cart.
 
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/magento/product_option_quantity.PNG[]
 
