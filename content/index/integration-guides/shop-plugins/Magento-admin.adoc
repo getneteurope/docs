@@ -12,9 +12,9 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
-* Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/magento-admin/cancel_refund_capture.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/magento-admin/note_cancellation.PNG[]
 
 {empty} +
 
