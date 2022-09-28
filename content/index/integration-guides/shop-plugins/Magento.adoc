@@ -6,7 +6,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
-The products can be purchased in two ways:
+The products can be purchased in two ways: +
 . By placing the indicator on the product select the desired product specifications (if needed) and Add to Cart.
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/magento/desired_product_especications.PNG[]
