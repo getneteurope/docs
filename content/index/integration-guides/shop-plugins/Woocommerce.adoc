@@ -1,14 +1,15 @@
 = Woocommerce
 
 *Step 1:* When you enter the store, Home and the available products will be displayed. The products can be purchased in two ways:
--- 1) By selecting Add to the basket:
-[%hardbreaks]
+
+* **1)** By selecting Add to the basket:
+
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce/add_to_basket.PNG[]
 
 {empty} +
 
--- 2) Click on the product and the option to select the currency and quantity of products will be opened, then Add to the basket.
-[%hardbreaks]
+* **2)** Click on the product and the option to select the currency and quantity of products will be opened, then Add to the basket.
+
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce/currency.PNG[]
 
 {empty} +
