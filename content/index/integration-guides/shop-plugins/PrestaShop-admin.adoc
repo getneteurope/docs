@@ -40,4 +40,4 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 {empty} +
 
 
-#Note: Cancellations / Voids are made on the same day, Refunds are made the following day.#
+##Note: Cancellations / Voids are made on the same day, Refunds are made the following day.##
