@@ -15,6 +15,7 @@ On the /app/Kernel.php the relevant methods are:
 | iniatilizeGateway | Initializes the gateway                                 |
 | setup             | Manages the starting point when the plugin is installed |
 |===
+[%hardbreaks]
 
 == Payment generation
 
