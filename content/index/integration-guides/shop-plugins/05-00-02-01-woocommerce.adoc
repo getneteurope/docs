@@ -43,59 +43,41 @@ Click on "GetNet" method and configure the settings.
 |Creditor ID|Value provided by GetNet
 |===
 
-== Refund an order
 
-To refund an order navigate to the GetNet Txs Page.
+
+= WooCommerce – Admin
+
+*Visualize Orders:* On WooCommerce section, you will have to drop down the menu and click on Orders, then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce-admin/visualize_orders.PNG[]
 
 {empty} +
 
-It will list the last process orders. Select the order that you wish to refund by clicking on the _edit_ link.
-
+*Cancel, Refund and Capture:* On WooCommerce section, you will have to drop down the menú and click on Getnet Txs, then you will see the Transactions Portal where you will review your orders and by clicking on Edit you will be able to select Cancel, Refund or Capture as needed:
+# *Important: Never Cancel, Refund or capture payments on the Orders screen* #
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-txs-index.png[caption="Shop Plugin Index", title="Shop Plugin Index"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce-admin/cancel_refund_capture.PNG[]
 
 {empty} +
 
-Select the operation to execute.
-
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.* +
+When you click on the desired option, it will be processed and you will be redirected to the transactions portal.
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-capture-cancel.png[caption="Shop Plugin Capture or Cancel", title="Shop Plugin Capture or Cancel"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce-admin/transaction_detail.PNG[]
 
 {empty} +
 
-== Cancel an order
-
-To refund an order navigate to the GetNet Txs Page.
-
+Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history when you click on the order, you will find the Order Notes section on the right side of the screen: 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce-admin/order_notes.PNG[]
 
 {empty} +
 
-It will list the last process orders. Select the order that you wish to cancel by clicking on the _edit_ link.
-
+*lugin Usage Rules:*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Index", title="Shop Plugin Index"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/woocommerce-admin/table.PNG[]
 
 {empty} +
 
-Select the operation to execute.
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 
-[%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-capture-cancel.png[caption="Shop Plugin Capture or Cancel", title="Shop Plugin Capture or Cancel"]
-
-{empty} +
-
-
-== Transactions Trx
-
-To refund an order navigate to the GetNet Trx Page.
-
-[%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
-
-{empty} +
-
-It will list all the transactions executed
