@@ -89,9 +89,9 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 {empty} +
 
 
-== Transactions log
+== Transactions Trx
 
-To refund an order navigate to the GetNet Log Page.
+To refund an order navigate to the GetNet Trx Page.
 
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-getnet-txs-log-menu.png[caption="Shop Plugin Menu", title="Shop Plugin Menu"]
