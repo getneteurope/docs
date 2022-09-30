@@ -39,7 +39,7 @@ Click on "GetNet" method and configure the settings.
 |Password|Value provided by GetNet
 |Merchant account resolver category|Value provided by GetNet
 |Merchant Secret Key|Value provided by GetNet
-|Merchant Secret Key for SEPA Credit|Value provided by GetNet
+|SEPA Credit MAID|Value provided by GetNet
 |Creditor ID|Value provided by GetNet
 |===
 
