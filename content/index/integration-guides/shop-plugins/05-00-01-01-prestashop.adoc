@@ -37,7 +37,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 |Password|Value provided by GetNet
 |Creditor ID|Value provided by GetNet
 |Merchant Secret Key|Value provided by GetNet
-|MAID (SEPA)|Value provided by GetNet
+|SEPA Credit MAID|Value provided by GetNet
 |===
 
 
