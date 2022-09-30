@@ -86,11 +86,3 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
-== Transactions log
-
-Navigate to the transactions log page:
-
-[%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu-log.jpg[caption="Menu", title="Menu"]
-
-{empty} +
