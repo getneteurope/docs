@@ -154,6 +154,8 @@ For "Offline Bank Transfer" type payments, there is the "Update status" button, 
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/table.PNG[]
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/updateStatus.[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/updateStatus.png[]
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/notes_for_this_order.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/question_update.png[]
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/comments_update.png[]
