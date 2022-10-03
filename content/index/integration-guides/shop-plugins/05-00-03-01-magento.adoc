@@ -120,25 +120,25 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 *Cancel, Refund and Capture:* On Orders you must click on "View" to see the portal where you will be able to select Cancel, Refund or Capture as needed:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/cancel_refund_capture.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/cancel_refund_capture.PNG[]
 
 {empty} +
 
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/note_cancellation.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/note_cancellation.PNG[]
 
 {empty} +
 
 Depending on the selected option the following messages will be displayed, to continue you must click on "Ok":
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/option_messages_displayed.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/option_messages_displayed.PNG[]
 
 {empty} +
 
 Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history on View Portal below Order Total:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/notes_for_this_order.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/notes_for_this_order.PNG[]
 
 {empty} +
 
@@ -151,9 +151,9 @@ For "Offline Bank Transfer" type payments, there is the "Update status" button, 
 
 *Plugin Usage Rules:*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/table.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/table.PNG[]
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/updateStatus.[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/updateStatus.[]
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-01-magento-admin/notes_for_this_order.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/notes_for_this_order.PNG[]
