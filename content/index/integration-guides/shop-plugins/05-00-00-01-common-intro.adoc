@@ -6,4 +6,4 @@
 
 In this site you can find the steps to perform a successful integration of the Getnet Shop Plugins on each e-commerce platform (Magento, PrestaShop and WooCommerce).
 
-As well as their main features within each administration portal.
+As well as their main features (Capture, Cancel & Refund) within each administration portal
