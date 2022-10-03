@@ -17,7 +17,7 @@ Install the PrestaShop Shop Plugin zip file as other PrestaShop plugins. The com
 To access the configuration options of the plugin go to the modules manager interface and navigate to the category "Payment". Select "Configure" option.
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/configure-button.jpg[caption="Configure button", title="Configure button"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/configure-button.jpg[]
 
 {empty} +
 
@@ -26,7 +26,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 On the configurations page:
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-settings-page.jpg[caption="Configurations page", title="Configurations page"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-settings-page.jpg[title="Configurations page"]
 
 {empty} +
 
@@ -44,26 +44,21 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 = Prestashop – Admin
 
-*Visualize Orders:* On Sell section, you will have to drop down the orders menu and click on Orders, then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
+*Visualize Orders:* On Sell section, you will have to drop down the orders menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/visualize-orders.PNG[]
 
-{empty} +
 
-*Cancel, Refund and Capture:* On Payment section, you will have to drop down the menú and click on Getnet Transactions, then you will see the portal where you will be able to review your orders and by clicking on View you can select Cancel, Refund or Capture as needed: +
+*Cancel, Refund and Capture:* On Payment section, you will have to drop down the "menú" and click on "Getnet Transactions", then you will see the portal where you will be able to review your orders and by clicking on "View" you can select Cancel, Refund or Capture as needed: +
 [float]
-**Important: Never Cancel, Refund or capture payments on the Orders screen**
+**Important: Never Cancel, Refund or Capture Payments on the "Orders" Screen**
 
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/getnet_transactions.PNG[]
 
-{empty} +
-
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/transaction_information.PNG[]
-
-{empty} +
 
 When you click on the desired option, it will be processed and you will see the following message:
 [%hardbreaks]
@@ -80,56 +75,53 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 *Plugin Usage Rules:*
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/table.PNG[]
-
-{empty} +
-
-
 **Note: Cancellations / Voids are made on the same day, Refunds are made the following day.**
+
 
 
 == Refund an order
 
-To refund an order. Navigate to the transactions index page:
+To refund an order, navigate to the transactions index page
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu.png[caption="Menu", title="Menu"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu.png[]
 
 {empty} +
 
 On the transactions page:
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transactions-index.jpg[caption="Transactions page", title="Transactions page"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transactions-index.jpg[]
 
 {empty} +
 
 Select the transaction that you wish to refund, then click on the refund button.
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transaction-refund.jpg[caption="Refund order", title="Refund order"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transaction-refund.jpg[]
 
 {empty} +
 
 == Cancel an order
 
-To cancel an order. Navigate to the transactions index page:
+To Cancel an Order, navigate to the transactions index page
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu.png[caption="Menu", title="Menu"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-menu.png[]
 
 {empty} +
 
-On the transactions page:
+On "View" / "Getnet Transactions page"
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transactions-index.jpg[caption="Transactions page", title="Transactions page"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transactions-index.jpg[]
 
 {empty} +
 
 Select the transaction that you wish to cancel, then click on the cancel button.
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transaction-cancel.jpg[caption="Refund order", title="Refund order"]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/prestashop-transaction-cancel.jpg[]
 
 {empty} +
 
