@@ -46,7 +46,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 *Visualize Orders:* On Sell section, you will have to drop down the orders menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/visualize-orders.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/visualize-orders.PNG[]
 
 
 *Cancel, Refund and Capture:* On Payment section, you will have to drop down the "menú" and click on "Getnet Transactions", then you will see the portal where you will be able to review your orders and by clicking on "View" you can select Cancel, Refund or Capture as needed: +
@@ -54,27 +54,27 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 **Important: Never Cancel, Refund or Capture Payments on the "Orders" Screen**
 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/getnet_transactions.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/getnet_transactions.PNG[]
 
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/transaction_information.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/transaction_information.PNG[]
 
 When you click on the desired option, it will be processed and you will see the following message:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/action_success.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/action_success.PNG[]
 
 {empty} +
 
 Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history when you click on the order, you will find the Order Notes section below products:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/order_note.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/order_note.PNG[]
 
 {empty} +
 
 *Plugin Usage Rules:*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/prestashop-admin/table.PNG[]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/table.PNG[]
 **Note: Cancellations / Voids are made on the same day, Refunds are made the following day.**
 
 
