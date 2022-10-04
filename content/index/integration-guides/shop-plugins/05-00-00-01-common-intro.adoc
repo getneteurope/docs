@@ -4,9 +4,11 @@
 [#PaymentPageSolutions_SP_Integration_Overview]
 === Overview
 
-In this site you can find the steps to perform a successful integration of the Getnet Shop Plugins on each e-commerce platform. 
+In this site you can find the steps to perform a successful integration of the Getnet Shop Plugins on each e-commerce platform.
+
 - <<PaymentPageSolutions_SP_Magento_Integration, Magento>>
 - <<PaymentPageSolutions_SP_PrestaShop_Integration, Prestashop>>
 - <<PaymentPageSolutions_SP_WooCommerce_Integration, WooCommerce>>
+
 
 As well as their main features (Capture, Cancel & Refund) within each administration portal
