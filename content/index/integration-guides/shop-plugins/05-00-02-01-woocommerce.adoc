@@ -55,7 +55,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 *Cancel, Refund and Capture:* On WooCommerce section, you will have to drop down the menú and click on "Getnet Txs", then you will see the Transactions Portal where you will review your orders and by clicking on "Edit" you will be able to select Cancel, Refund or Capture as needed:
 
-# *Important: Never Cancel, Refund or capture payments on the Orders screen* #
+*Important: Never Cancel, Refund or capture payments on the Orders screen*
 [%hardbreaks]
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/cancel_refund_capture.PNG[]
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.* +
