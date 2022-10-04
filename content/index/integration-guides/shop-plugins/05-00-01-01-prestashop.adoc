@@ -125,3 +125,10 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
+
+*Update Status*
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-prestashop/update_status_presta.jpg[]
+
+In the case of offline payment methods, the administrator must click on Update Status for the transaction status to be updated and once the transaction is completed, the cancel and refund buttons will be available if needed.
+
