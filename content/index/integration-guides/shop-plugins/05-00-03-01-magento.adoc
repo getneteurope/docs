@@ -109,8 +109,7 @@ Example of approved Order.
 image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/thank_you_for_your_purchase.PNG[]
 
 
-
-= Magento - Admin
+[#Magento - Admin]
 
 *Visualize Orders:* On "Sales Section" / "Orders" you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]
