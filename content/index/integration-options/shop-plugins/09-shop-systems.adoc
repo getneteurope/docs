@@ -11,12 +11,12 @@ Some shop systems refer to these shop plugins as "app", as "add-on", as “exten
 All our shop plugins require *only PCI SAQ A* certification for credit
 card payments which you may achieve very easily.
 
-You are able to *test the shop extension* features and functionality via
+You are able to *test the shop plugin* features and functionality via
 pre-configured test accounts for each payment method. For going live you
 need your personal credentials which you receive from Getnet after
 concluding a corresponding contract. Please contact our <<ContactUs, Merchant Support>>.
 
-All our shop plugins are offered on  and offered on  link:https://github.com/getneteurope[GitHub]. This means you are able
+All our shop plugins are offered on  link:https://github.com/getneteurope[GitHub]. This means you are able
 to use them free-of-charge and and are given access to the source code.
 
 Please have a look on
