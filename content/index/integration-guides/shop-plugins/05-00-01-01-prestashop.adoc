@@ -103,7 +103,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
- *Cancel an order*
+*Cancel an order*
 
 To Cancel an Order, navigate to the transactions index page
 
