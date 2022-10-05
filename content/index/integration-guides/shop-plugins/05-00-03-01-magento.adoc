@@ -1,6 +1,6 @@
 [#PaymentPageSolutions_SP_Magento_Integration]
-= Magento 
-
+= Magento Shop Plugin
+ 
 [#Inroduction]
 == Introduction 
 This document serves as a guide for the integration of the plugin developed by Getnet
