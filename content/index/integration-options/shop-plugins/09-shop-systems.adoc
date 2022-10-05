@@ -30,7 +30,7 @@ shop.
 
 a| Magento 2
 
-- https://github.com/getneteurope/magento2-ee/releases[GitHub] |
+- https://github.com/getneteurope/magento2-getnet/releases[GitHub] |
       - Credit Card
       - Alipay Cross-border
       - iDEAL
@@ -51,7 +51,7 @@ a| Magento 2
 a| PrestaShop
 
 
-- https://github.com/getneteurope/prestashop-ee/releases[GitHub] |
+- https://github.com/getneteurope/prestashop-getnet/releases[GitHub] |
       - Credit Card
       - Alipay Cross-border
       - iDEAL
@@ -72,7 +72,7 @@ a| PrestaShop
 a| WooCommerce
 
 
-- https://github.com/getneteurope/woocommerce-ee/releases[GitHub]|
+- https://github.com/getneteurope/woocommerce-getnet/releases[GitHub]|
       - Credit Card
       - Alipay Cross-border
       - iDEAL

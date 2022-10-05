@@ -6,9 +6,9 @@
 
 In this site you can find the steps to perform a successful integration of the Getnet Shop Plugins on each e-commerce platform.
 
-- <<PaymentPageSolutions_SP_Magento_Integration, Magento>>
 - <<PaymentPageSolutions_SP_PrestaShop_Integration, Prestashop>>
 - <<PaymentPageSolutions_SP_WooCommerce_Integration, WooCommerce>>
+- <<PaymentPageSolutions_SP_Magento_Integration, Magento>>
 
 
 As well as their main features (Capture, Cancel & Refund) within each administration portal
