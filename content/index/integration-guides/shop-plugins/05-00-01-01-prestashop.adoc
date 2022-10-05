@@ -1,18 +1,18 @@
 [#PaymentPageSolutions_SP_PrestaShop_Integration]
-== PrestaShop Shop Plugin
+= PrestaShop Shop Plugin
 
-=== Requirements
+== Requirements
 
 PrestaShop v1.7.6.7
 
-=== Installation
+== Installation
 
 Install the PrestaShop Shop Plugin zip file as other PrestaShop plugins. The common methods are:
 
 - https://addons.prestashop.com/en/content/21-how-to[Upload via PrestaShop administration panel^]
 - https://addons.prestashop.com/en/content/13-installing-modules[Manual Plugin Installation^]
 
-=== Configuration
+== Configuration
 
 To access the configuration options of the plugin go to the modules manager interface and navigate to the category "Payment". Select "Configure" option.
 
@@ -21,7 +21,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 {empty} +
 
-==== Configurations
+=== Configurations
 
 On the configurations page:
 
@@ -43,7 +43,7 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 
 [#Orders Administration]
-=== Orders Administration
+== Orders Administration
 
 *Visualize Orders:* On Sell section, you will have to drop down the orders menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]

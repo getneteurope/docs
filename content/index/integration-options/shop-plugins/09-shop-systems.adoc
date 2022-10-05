@@ -46,7 +46,7 @@ a| Magento 2
 	  - Polish
       - German |
 
-      - https://docs.getneteurope.com/Home.html
+      - <<PaymentPageSolutions_SP_Magento_Integration, Magento Shop Plugin>>
 
 a| PrestaShop
 
@@ -67,7 +67,7 @@ a| PrestaShop
 	  - Polish
       - German|
 
-      - https://docs.getneteurope.com/Home.html
+      - <<PaymentPageSolutions_SP_PrestaShop_Integration, PrestaShop Shop Plugin>>
 
 a| WooCommerce
 
@@ -88,7 +88,7 @@ a| WooCommerce
 	  - Polish
       - German|
 
-      - https://docs.getneteurope.com/Home.html |
+      - <<PaymentPageSolutions_SP_WooCommerce_Integration, WooCommerce Shop Plugin>> |
 
 |===
 
