@@ -1,0 +1,97 @@
+[#MobilePaymentSDK_iOS_3rd_party_libraries]
+
+---
+== *Third Party Libraries*
+---
+
+[cols="2,6a"]
+|===
+|Name|Description
+
+|CocoaLumberjack
+|CocoaLumberjack is a fast & simple, yet powerful & flexible logging framework for macOS, iOS, tvOS and watchOS.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/CocoaLumberjack/CocoaLumberjack
+!===
+
+|libextobjc/EXTScope
+|The Extended Objective-C library extends the dynamism of the Objective-C programming language to support additional patterns present in other programming languages (including those that are not necessarily object-oriented).
+
+This library EXTScope is usage in many files, to help prevent memory leak and do better and easier and cleaner memory mamagement of code. For more results search #import <libextobjc/EXTScope.h>, or @weakify, @strongify.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/jspahrsummers/libextobjc
+!===
+
+|AFNetworking
+|AFNetworking is a delightful networking library for iOS, macOS, watchOS, and tvOS. It's built on top of the Foundation URL Loading System, extending the powerful high-level networking abstractions built into Cocoa. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use.
+
+Perhaps the most important feature of all, however, is the amazing community of developers who use and contribute to AFNetworking every day. AFNetworking powers some of the most popular and critically-acclaimed apps on the iPhone, iPad, and Mac.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/AFNetworking/AFNetworking
+!===
+
+|Lockbox
+|TLockbox is an Objective-C utility class for storing data securely in the keychain. Use it to store small, sensitive bits of data securely.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/granoff/Lockbox
+!===
+
+|MBProgressHUD
+|MBProgressHUD is an iOS drop-in class that displays a translucent HUD with an indicator and/or labels while work is being done in a background thread. The HUD is meant as a replacement for the undocumented, private UIKit UIProgressHUD with some additional features.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/jdg/MBProgressHUD
+!===
+
+
+|Mantle
+|Mantle makes it easy to write a simple model layer for your Cocoa or Cocoa Touch application.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/Mantle/Mantle
+!===
+
+|PKeyboardAvoiding
+|A drop-in universal solution for moving text fields out of the way of the keyboard in iOS.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/michaeltyson/TPKeyboardAvoiding
+!===
+
+|GoogleMLKit/TextRecognition
+|You can use ML Kit to recognize text in images or video, such as the text of a street sign.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://developers.google.com/ml-kit/vision/text-recognition/ios
+!===
+
+|IBAN
+|Helper methods for iban validation.
+
+[cols="1"]
+!===
+! *Web Site* 
+! https://github.com/stefan-sedlak/IBAN
+!===
+
+|=== 

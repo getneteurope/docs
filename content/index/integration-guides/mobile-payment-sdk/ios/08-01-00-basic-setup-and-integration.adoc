@@ -1,0 +1,131 @@
+[#MobilePaymentSDK_iOS_SDK]
+---
+== iOS SDK
+
+[#MobilePaymentSDK_iOS_BasicSetup]
+---
+=== Basic Setup
+---
+The device cannot be jail-broken and must run at least iOS 12.0 for
+_paymentSDK_ to work. It is recommended to use the latest stable version
+of Xcode.
+
+Download the pod at
+our link:https://github.com/getneteurope/paymentSDK-iOS[GitHub repository] and
+add it to your podfile. 
+
+The iOS supports two ways of MPSDK usage:  
+
+- The first is by selecting all frameworks with payment methods and utilities supported by MPSDK. 
+
+.For example:
+[source,subs=attributes+]
+----
+pod 'paymentSDK/All'
+----
+
+- The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
+
+.For example:
+[source,subs=attributes+]
+----
+pod 'paymentSDK/Card' 
+pod 'paymentSDK/SEPA'
+----
+
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
+==== List of supported payment method subspec
+---
+|===
+|Name|Description|Pods
+
+|All
+|all payment method frameworks in one
+|pod 'paymentSDK'
+
+|Alipay (Cross Border)
+|alipay payment frameworks
+|pod 'paymentSDK/Alipay' 
+
+|Card
+|Credit Card payment frameworks
+|pod 'paymentSDK/Card' 
+
+|PayPal
+|PayPal payment frameworks
+|pod 'paymentSDK/PayPal' 
+
+|P24 (Przelewy24)
+|P24 payment frameworks
+|pod 'paymentSDK/P24' 
+
+|SEPA (Direct Debit)
+|SEPA payment frameworks
+|pod 'paymentSDK/SEPA' 
+
+|WireTransfer
+|Wire-Transfer payment frameworks
+|pod 'paymentSDK/WireTransfer' 
+|===
+
+//-
+
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_utility_subspec]
+==== List of optional utilities subspec for Card and SEPA payment method 
+---
+|===
+|Name|Description|Pods
+
+|Scanner
+|Card scanner framework
+|pod 'paymentSDK/Scanner' 
+
+|PhotoGallery
+|Photo Gallery frameworks
+|pod 'paymentSDK/PhotoGallery' 
+
+|CardScanner
+|Credit Card payment frameworks with card scanner
+|pod 'paymentSDK/CardScanner' 
+
+|CardScannerGallery
+|Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
+|pod 'paymentSDK/CardScannerGallery' 
+
+|IBANScanner
+|SEPA payment frameworks with IBAN scanner
+|pod 'paymentSDK/IBANScanner' 
+
+|IBANScannerGallery
+|SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
+|pod 'paymentSDK/IBANScannerGallery'  
+
+|===  
+        
+//-
+
+[#MobilePaymentSDK_iOS_BasicSetup_Security]
+==== Security
+---
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Debugging_prevention]
+===== Debugging prevention
+---
+MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
+
+But MPSDK prevents debugging in a production application. For customization and simulation of this option, MPSDK supports *Custom settings* in the project setting on the application side.
+
+Steps of customization:
+
+. Add User-Defined Settings *SDKPay_NO_DEBUG_CHECK* in your project's Build Settings for your application target.
+
+image:images/07-01-basic-setup-and-integraton/iOS/target-properties.png[Custom iOS Target Properties] 
+
+. Set the default value for your AdHoc to *NO* 
+. Set other's build configurations by your preferences: 
+     - *YES* - without debugging prevention
+     - *NO* - with debugging prevention
+. Add Custom iOS Target Properties Key to the Info page:
+    - *Key:* 'No debugging check'
+    - *Value* - $(SDKPay_NO_DEBUG_CHECK)
+
+image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User-Defined Settings]

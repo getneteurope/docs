@@ -1,0 +1,824 @@
+[#MobilePaymentSDK_Android_CreditCard]
+---
+== *Credit Card*
+---
+
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+*`TransactionType.AUTHORIZATION_ONLY`* - verifies the validity of account holder’s card, but does not leave an authorized amount.
+
+*`TransactionType.PURCHASE`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
+
+*`TransactionType.REFERENCED_PURCHASE`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+
+*`TransactionType.REFERENCED_AUTHORIZATION`* - places the account holder’s funds on hold. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+
+*`TransactionType.TOKENIZE`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
+
+=== Supported Card Brands
+
+As of version 4.2.0 the Card Brand CUP has been deprecated and got
+replaced by UPI. Make sure to switch to new card type and do not use UPI
+a CUP together (this will throw PaymentException).
+
+=== Default Card Brands
+
+Card brand CB is supported but disabled by default, please add manually
+using dedicated method (setSupportedCardBrands()) to enable CB card
+brand.
+
+=== Signature
+
+Application shall get signature from server where signature shall be
+computed.
+
+=== Module Dependency
+
+Edit your `+build.gradle+` file accordingly:
+
+[source,java]
+----
+dependencies {
+    ...
+    implementation files('libs/core.aar')
+    implementation files('libs/camera.aar')
+    implementation files('libs/card.aar')
+    ...
+}
+----
+
+To disable the card scanner feature, uncomment the
+`+exclude module+`line.
+
+When adding/removing this feature, perform a full clean build. If you
+intend to use Card Payments module together with the SEPA Direct Debit
+module (with enabled IBAN scanner), you must enable it in *both*
+modules.
+
+=== Basic Card Payment
+
+This is a code example for a basic card payment:
+
+[source,kotlin]
+----
+val cardPayment = CardPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        amount,
+        currency
+)
+// for enabling animated card layout
+cardPayment.animatedCardPayment = true
+
+// force 3D Secure attempt
+cardPayment.attempt3d = true
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment)
+----
+
+[source,java]
+----
+ cardPayment = new CardPayment.Builder()
+        .setSignature(signature)
+        .setRequestId(requestID)
+        .setMerchantAccountId(merchantID)
+        .setTransactionType(transactionType)
+        .setAmount(amount)
+        .setCurrency(currency)
+        .build();
+
+// for enabling animated card layout
+cardPayment.setAnimatedCardPayment(true);
+
+// force 3D Secure attempt
+cardPayment.setAttempt3d(true);
+
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment);
+----
+
+Note: You can set additional parameters after the payment object is
+created. Check the link:placeholder[API documentation] for more details.
+
+=== Token payment
+
+This is a code example for a card payment which uses a card token
+(obtained from a previous transaction):
+
+[source,kotlin]
+----
+val cardPayment = CardPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        amount,
+        currency
+)
+// for enabling animated card layout
+cardPayment.animatedCardPayment = true
+
+val cardToken = CardToken()
+cardToken.tokenId = "12345678901111"
+cardPayment.cardToken = cardToken
+cardToken.tokenUsageIndicator = true
+cardToken.requireSecurityCode = true
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment)
+----
+
+[source,java]
+----
+cardPayment = new CardPayment.Builder()
+        .setSignature(signature)
+        .setRequestId(requestID)
+        .setMerchantAccountId(merchantID)
+        .setTransactionType(transactionType)
+        .setAmount(amount)
+        .setCurrency(currency)
+        .build();
+
+// for enabling animated card layout
+cardPayment.setAnimatedCardPayment(true);
+
+CardToken cardToken = new CardToken();
+cardToken.setTokenId("12345678901111");
+cardPayment.setCardToken(cardToken);
+
+cardPayment.setRequireSecurityCode(true);
+cardPayment.setTokenUsageIndicator(true);
+
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment);
+----
+
+=== Card enrollment
+
+This transaction must be done without providing amount/currency within
+the request body. Mandatory field in the request is one of following: -
+*`+accountHolder.email+`* - This is the end-consumer’s email-address. -
+*`+accountHolder.phone+`* - This is the phone number of the
+end-consumer. - *`+consumerId+`* - This is the end-consumer’s
+identifier.
+
+*The consumerId is mandatory for Enroll Card With Token*
+
+This is a code example for a card enrollment:
+
+[source,kotlin]
+----
+// be sure to NOT provide amount and currency
+val cardPayment = CardPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        null,
+        null
+)
+// for providing mandatory field
+val customerData = AccountHolder()
+customerData.lastName = "Doe"
+customerData.email = "john.doe@gmail.com"
+// and/or
+customerData.phone = "+421905555555"
+cardPayment.accountHolder = customerData
+
+// or providing consumerId instead of AccountHolder's fields
+cardPayment.consumerId = "1234567"
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment)
+----
+
+[source,java]
+----
+// be sure to NOT provide amount and currency
+CardPayment cardPayment = new CardPayment.Builder()
+        .setSignature(signature)
+        .setRequestId(requestID)
+        .setMerchantAccountId(merchantID)
+        .setTransactionType(transactionType)
+        .build();
+
+// for providing mandatory field
+AccountHolder customerData = AccountHolder();
+customerData.setLastName("Doe");
+customerData.setEmail("john.doe@gmail.com");
+// and/or
+customerData.setPhone("+421905555555");
+cardPayment.setAccountHolder(customerData);
+
+// or providing consumerId instead of AccountHolder's fields
+cardPayment.setConsumerId("1234567");
+
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment);
+----
+
+Note: For token based enrollment refer to Token payment. As mentioned
+above the *consumerId* is mandatory and must be provided within the
+*CardPayment* object.
+
+Adding card can be done using LoyaltyCard.userId property in the
+CardPayment object.
+
+=== Card Field
+
+Card Field is a feature where card information (card number, expiration
+date and CVV) is entered into a single, dynamically changing field
+instead of multiple separate ones.
+
+Here’s example code for a card payment using this feature:
+
+[source,kotlin]
+----
+class KotlinCardFieldActivity : AppCompatActivity(), Observer<PaymentResponse> {
+    private val mContext = this
+    private val mPaymentObjectProvider = PaymentObjectProvider()
+    private lateinit var cardFieldFragment: CardFieldFragment
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_card_form)
+
+        cardFieldFragment = CardFieldFragment.Builder().build()
+        supportFragmentManager
+                .beginTransaction()
+                .add(R.id.card_field_container, cardFieldFragment)
+                .commit()
+
+        cardFieldFragment
+                .getEventObserver()
+                .subscribe { state -> Log.i("event", state.toString()) }
+    }
+
+    fun onSubmitButtonClicked(view: View) {
+        if (cardFieldFragment.getCardBundle() != null) {
+            Client(this, URL_EE_TEST, null, REQUEST_TIMEOUT).startPayment(getCardFormPayment(cardFieldFragment.getCardBundle()))
+            findViewById<View>(R.id.progress).visibility = View.VISIBLE
+        } else {
+            Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun getCardFormPayment(cardBundle: CardBundle): CardFormPayment {
+        val merchantID = "merchant_id"
+        val secretKey = "secret_key"
+        val requestID = UUID.randomUUID().toString()
+        val transactionType = TransactionType.PURCHASE
+        val amount = BigDecimal(5)
+        val currency = "EUR"
+        val signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.value, amount, currency, secretKey)
+
+        val cardFormPayment = CardFormPayment.Builder()
+                .setSignature(signature)
+                .setMerchantAccountId(merchantID)
+                .setRequestId(requestID)
+                .setAmount(amount)
+                .setTransactionType(transactionType)
+                .setCurrency(currency)
+                .setCardBundle(cardBundle)
+                .build()
+
+        val accountHolder = AccountHolder("John", "Doe")
+        cardFormPayment.accountHolder = accountHolder
+
+        return cardFormPayment
+    }
+
+    override fun onObserve(paymentResponse: PaymentResponse) {
+        runOnUiThread {
+            Toast.makeText(mContext, ResponseHelper.getFormattedResponse(paymentResponse), Toast.LENGTH_SHORT).show()
+            findViewById<View>(R.id.progress).visibility = View.GONE
+        }
+    }
+}
+----
+
+[source,java]
+----
+public class CardFieldActivity extends AppCompatActivity implements Observer<PaymentResponse> {
+    private Context mContext = this;
+    private PaymentObjectProvider mPaymentObjectProvider = new PaymentObjectProvider();
+    CardFieldFragment cardFieldFragment;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_card_form);
+
+        cardFieldFragment = new CardFieldFragment.Builder().build();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.card_field_container, cardFieldFragment)
+                .commit();
+
+        cardFieldFragment
+                .getEventObserver()
+                .subscribe(
+                        state -> {
+                            Log.i("event", state.toString());
+                        }
+                );
+    }
+
+    public void onSubmitButtonClicked(View view) {
+        if(cardFieldFragment.getCardBundle() != null) {
+            new Client(this, URL_EE_TEST, null, REQUEST_TIMEOUT).startPayment(getCardFormPayment(cardFieldFragment.getCardBundle()));
+            findViewById(R.id.progress).setVisibility(View.VISIBLE);
+        }else {
+            Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public CardFormPayment getCardFormPayment(CardBundle cardBundle) {
+        String merchantID = "merchant_id";
+        String secretKey = "secret_key";
+        String requestID = UUID.randomUUID().toString();
+        TransactionType transactionType = TransactionType.PURCHASE;
+        BigDecimal amount = new BigDecimal(5);
+        String currency = "EUR";
+        String signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.getValue(), amount, currency, secretKey);
+
+        CardFormPayment cardFormPayment = new CardFormPayment.Builder()
+                .setSignature(signature)
+                .setMerchantAccountId(merchantID)
+                .setRequestId(requestID)
+                .setAmount(amount)
+                .setTransactionType(transactionType)
+                .setCurrency(currency)
+                .setCardBundle(cardBundle)
+                .build();
+
+        AccountHolder accountHolder = new AccountHolder("John", "Doe");
+        cardFormPayment.setAccountHolder(accountHolder);
+
+        return cardFormPayment;
+    }
+
+    @Override
+    public void onObserve(PaymentResponse paymentResponse) {
+        runOnUiThread(() -> {
+                    Toast.makeText(mContext, ResponseHelper.getFormattedResponse(paymentResponse), Toast.LENGTH_SHORT).show();
+                    findViewById(R.id.progress).setVisibility(View.GONE);
+                }
+
+        );
+    }
+}
+----
+
+`+Client+` can be initialized with `+android.support.v4.app.Fragment+`
+instance as well. The response is being handled similar as example above
+by implementing Observer in your `+android.support.v4.app.Fragment+`
+class. For more information and example refer to
+`+CardFieldFragmentImplFragment+` implementation in example application.
+
+=== Additional Options for Card Field
+
+You can set additional options for Card Field
+through`+CardFieldFragment.Builder+` :
+
+*`+SetSupportedCardBrands+`* - sets allowed card brands (providers)
+*`+setExpirationDate+`* - used in token payments
+*`+setRequestFocus+`* - sets screen focus (after the card form loads)
+*`+setHideCardIcon+`* - hides provider icons (VISA, Maestro, etc.)
+*`+setToken+`* - used in link:[token payments]
+*`+setMaskedCardNumber+`* - used in link:[token payments]
+*`+setCardBrand+`* - sets the card brand/provider
+*`+setTextSize+`* - changes text size
+*`+setLocale+`* - changes the payment locale
+*`+setNativeLocale+`* - changes the payment locale (UI only)
+
+=== Token Payment with Card Field
+
+The payment object is identical to a normal card field payment (like the
+example above), but you need to include the card token.
+
+[source,kotlin]
+----
+...
+val cardToken = CardToken()
+cardToken.tokenId = "12345678901111"
+cardPayment.cardToken = cardToken
+...
+cardFieldBuilder.setToken(cardToken.tokenId)
+cardFieldBuilder.setCardBrand(CardBrand.VISA)
+...
+----
+
+[source,java]
+----
+...
+CardToken cardToken = new CardToken();
+cardToken.setTokenId("12345678901111");
+cardPayment.cardToken = cardToken;
+...
+cardPayment.setCardToken(cardToken);
+cardFieldBuilder.setCardBrand(CardBrand.VISA);
+...
+----
+
+=== Animated Card Field
+
+Animated Card Field is a feature where card information (card number,
+expiration date and CVV) is entered into a single, dynamically changing
+field with animated representation of the card.
+
+Here’s example code for a card payment using this feature:
+
+[source,kotlin]
+----
+class KotlinAnimatedCardFieldActivity : AppCompatActivity(), Observer<PaymentResponse> {
+    private val mContext = this
+    private lateinit var animatedCardFieldFragment: AnimatedCardFieldFragment
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_animated_card_form)
+
+        animatedCardFieldFragment = AnimatedCardFieldFragment.Builder()
+                .setRequestFocus(true)
+                .setRequireManualCardBrandSelection(true)
+                .build()
+
+        supportFragmentManager
+                .beginTransaction()
+                .add(R.id.card_field_container, animatedCardFieldFragment)
+                .commit()
+
+        animatedCardFieldFragment
+                .getEventObserver()
+                .subscribe { state -> Log.i("event", state.toString()) }
+    }
+
+    fun onSubmitButtonClicked(view: View) {
+        if (animatedCardFieldFragment.getCardBundle() != null) {
+            Client(this, URL_EE_TEST, REQUEST_TIMEOUT).startPayment(getCardFormPayment(animatedCardFieldFragment.getCardBundle()))
+            findViewById<View>(R.id.progress).visibility = View.VISIBLE
+        } else {
+            Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun getCardFormPayment(cardBundle: CardBundle?): CardFieldPayment {
+        val timestamp = SignatureHelper.generateTimestamp()
+        val merchantID = "33f6d473-3036-4ca5-acb5-8c64dac862d1"
+        val secretKey = "9e0130f6-2e1e-4185-b0d5-dc69079c75cc"
+        val requestID = UUID.randomUUID().toString()
+        val transactionType = TransactionType.PURCHASE
+        val amount = BigDecimal(5)
+        val currency = "EUR"
+        val signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.value, amount, currency, secretKey)
+
+        val cardFieldPayment = CardFieldPayment.Builder()
+                .setSignature(signature!!)
+                .setMerchantAccountId(merchantID)
+                .setRequestId(requestID)
+                .setAmount(amount)
+                .setTransactionType(transactionType)
+                .setCurrency(currency)
+                .setCardBundle(cardBundle!!)
+                .build()
+
+        val accountHolder = AccountHolder("John", "Doe")
+        cardFieldPayment.accountHolder = accountHolder
+
+        return cardFieldPayment
+    }
+
+    override fun onObserve(paymentResponse: PaymentResponse) {
+        runOnUiThread {
+            Toast.makeText(this, ResponseHelper.getFormattedResponse(paymentResponse), Toast.LENGTH_SHORT).show()
+            findViewById<View>(R.id.progress).visibility = View.GONE
+        }
+    }
+}
+----
+
+[source,java]
+----
+public class AnimatedCardFieldActivity extends AppCompatActivity implements Observer<PaymentResponse> {
+    private Context mContext = this;
+    AnimatedCardFieldFragment animatedCardFieldFragment;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_animated_card_form);
+
+        animatedCardFieldFragment = new AnimatedCardFieldFragment.Builder()
+                .setRequestFocus(true)
+                .setRequireManualCardBrandSelection(true)
+                .build();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.card_field_container, animatedCardFieldFragment)
+                .commit();
+
+        animatedCardFieldFragment
+                .getEventObserver()
+                .subscribe(
+                        state -> {
+                            Log.i("event", state.toString());
+                        }
+                );
+    }
+
+    public void onSubmitButtonClicked(View view) {
+        if(animatedCardFieldFragment.getCardBundle() != null) {
+            new Client(this, URL_EE_TEST, REQUEST_TIMEOUT).startPayment(getCardFormPayment(animatedCardFieldFragment.getCardBundle()));
+            findViewById(R.id.progress).setVisibility(View.VISIBLE);
+        }else {
+            Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public CardFieldPayment getCardFormPayment(CardBundle cardBundle) {
+        String timestamp = SignatureHelper.generateTimestamp();
+        String merchantID = "33f6d473-3036-4ca5-acb5-8c64dac862d1";
+        String secretKey = "9e0130f6-2e1e-4185-b0d5-dc69079c75cc";
+        String requestID = UUID.randomUUID().toString();
+        TransactionType transactionType = TransactionType.PURCHASE;
+        BigDecimal amount = new BigDecimal(5);
+        String currency = "EUR";
+        String signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.getValue(), amount, currency, secretKey);
+
+        CardFieldPayment cardFieldPayment = new CardFieldPayment.Builder()
+                .setSignature(signature)
+                .setMerchantAccountId(merchantID)
+                .setRequestId(requestID)
+                .setAmount(amount)
+                .setTransactionType(transactionType)
+                .setCurrency(currency)
+                .setCardBundle(cardBundle)
+                .build();
+
+        AccountHolder accountHolder = new AccountHolder("John", "Doe");
+        cardFieldPayment.setAccountHolder(accountHolder);
+
+        return cardFieldPayment;
+    }
+
+    @Override
+    public void onObserve(PaymentResponse paymentResponse) {
+        runOnUiThread(() -> {
+                    Toast.makeText(this, ResponseHelper.getFormattedResponse(paymentResponse), Toast.LENGTH_SHORT).show();
+                    findViewById(R.id.progress).setVisibility(View.GONE);
+                }
+
+        );
+    }
+}
+----
+
+=== Additional Options for Animated Card Field
+
+You can set additional options for Animated Card Field through
+`+AnimatedCardFieldFragment.Builder+` :
+
+*`+SetSupportedCardBrands+`* - sets allowed card brands (providers)
+*`+setExpirationDate+`* - used in token payments
+*`+setRequestFocus+`* - sets screen focus (after the card form loads)
+*`+setHideCardHolder+`* - Sets whether card holder field is required
+and should be displayed
+*`+setToken+`* - used in link:[token payments]
+*`+setMaskedCardNumber+`* - used in link:[token payments]
+*`+setCardBrand+`* - sets the card brand/provider
+*`+setTextSize+`* - changes text size
+*`+setLocale+`* - changes the payment locale
+*`+setNativeLocale+`* - changes the payment locale (UI only)
+*`+setRequireManualCardBrandSelection+`* - Sets whether show card
+brand picker
+
+=== Token Payment with Animated Card Field
+
+The payment object is identical to a normal card field payment (like the
+example above), but you need to include the card token.
+
+[source,kotlin]
+----
+...
+animatedCardFieldFragment = AnimatedCardFieldFragment.Builder()
+                .setRequestFocus(true)
+                .setRequireManualCardBrandSelection(true)
+                .setToken("4304509873471003")
+                .setCardBrand(CardBrand.VISA)
+                .build()
+...
+val cardToken = CardToken()
+        cardToken.tokenId = "4304509873471003"
+        cardFieldPayment.cardToken = cardToken
+...
+----
+
+[source,java]
+----
+...
+animatedCardFieldFragment = new AnimatedCardFieldFragment.Builder()
+                .setRequestFocus(true)
+                .setRequireManualCardBrandSelection(true)
+                .setToken("4304509873471003")
+                .setCardBrand(CardBrand.VISA)
+                .build();
+...
+CardToken cardToken = new CardToken();
+        cardToken.setTokenId("4304509873471003");
+        cardFieldPayment.setCardToken(cardToken);
+...
+----
+
+=== Customizing Visuals
+
+To change colors within the SDK, override the default color values in
+the `+.xml+` file. ### Color Resources Changing any of these will affect
+every module used in the SDK:
+
+*`+sdkpay_ecom_color_main+`* - color tint for icons, header and submit
+button gradient start color
+
+*`+sdkpay_ecom_color_main_light+`* - header and submit button gradient end
+color
+
+*`+sdkpay_ecom_color_main_alpha80+`* - text input layout title color
+
+*`+sdkpay_ecom_color_toolbar_text+`* - toolbar text and back arrow tint
+
+*`+sdkpay_ecom_color_pay_button_text+`* - pay button text color
+
+*`+sdkpay_ecom_color_main_background+`* - background color for main view
+
+*`+sdkpay_ecom_color_error+`* - used for all text input layouts to modify
+error text color including the edit text line
+
+==== Animated Card Colors
+
+*`+sdkpay_ecom_color_card_text`* - color for card text
+
+*`+sdkpay_ecom_color_card_gradient_start`* - front side start gradient color
+
+*`+sdkpay_ecom_color_card_gradient_end`* - front side end gradient color
+
+*`+sdkpay_ecom_color_card_stroke_start`* - front side border start gradient color
+
+*`+sdkpay_ecom_color_card_stroke_end`* - front side border end gradient color
+
+*`+sdkpay_ecom_color_card_back_gradient_start`* - back side start gradient color
+
+*`+sdkpay_ecom_color_card_back_gradient_end`* - back side end gradient color
+
+*`+sdkpay_ecom_color_card_back_stroke_start`* - back side border start gradient color
+
+*`+sdkpay_ecom_color_card_back_stroke_end`* - back side border end gradient color
+
+==== Changing Fonts
+
+To change fonts, override the font path to in string resources with name
+'`sdkpay_fontPath`': e.g. strings.xml
+
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
+
+[source,java]
+----
+----
+
+==== Changing Text Size
+
+To change the text size for link:[`+cardField+`] fragments use the
+dimension attribute `+sdkpay_ecom_cardfield_text_size+`.
+
+To change text size in any other modules use the dimension attribute
+`+sdkpay_ecom_text_size+`.
+
+===== Customizing Simple Card Payments
+
+
+image::images/android/customizingCard.png[Screen]
+
+*Color resources*
+
+1 - `+sdkpay_ecom_color_main+`
+
+2 - `+sdkpay_ecom_color_light+`
+
+3 - `+sdkpay_ecom_color_main_alpha80+`
+
+4 - `+sdkpay_ecom_color_pay_button_text+`
+
+5 - `+sdkpay_ecom_color_toolbar_text+`
+
+6 - `+sdkpay_ecom_color_error+`
+
+7 - `+sdkpay_ecom_color_main_background+`
+
+8 - `+sdkpay_ecom_color_card_text+`
+
+9 - `+sdkpay_ecom_color_card_gradient_start+`
+
+10 - `+sdkpay_ecom_color_card_gradient_end+`
+
+11 - `+sdkpay_ecom_color_card_stroke_start+`
+
+12 - `+sdkpay_ecom_color_card_stroke_end+`
+
+13 - `+sdkpay_ecom_color_card_back_gradient_start+`
+
+14 - `+sdkpay_ecom_color_card_back_gradient_end+`
+
+15 - `+sdkpay_ecom_color_card_back_stroke_start+`
+
+16 - `+sdkpay_ecom_color_card_back_stroke_end+`
+
+*Icons*
+
+8 - `+sdkpay_ecom_arrow_back+`
+
+9 - `+sdkpay_ecom_cardholder_name+`
+
+10 - `+sdkpay_ecom_camera_blue+`
+
+11 - `+sdkpay_ecom_date+`
+
+12 - `+sdkpay_ecom_lock+`
+
+===== Customizing Animated Card Payments
+
+The same applies for Animated Card Field payments.
+
+
+image::images/android/customizingAnimated.png[Screen]
+
+_Color resources_
+
+1 - `+sdkpay_ecom_color_main+`
+
+2 - `+sdkpay_ecom_color_light+`
+
+3 - `+sdkpay_ecom_color_toolbar_text+`
+
+4 - `+sdkpay_ecom_color_pay_button_text+`
+
+5 - `+sdkpay_ecom_color_main_alpha80+`
+
+6 - `+sdkpay_ecom_color_main_alpha40+`
+
+7 - `+sdkpay_ecom_color_error+`
+
+8 - `+sdkpay_ecom_color_main_background+`
+
+9 - `+sdkpay_ecom_color_card_text+`
+
+10 - `+sdkpay_ecom_color_card_gradient_start+`
+
+11 - `+sdkpay_ecom_color_card_gradient_end+`
+
+12 - `+sdkpay_ecom_color_card_stroke_start+`
+
+13 - `+sdkpay_ecom_color_card_stroke_end+`
+
+14 - `+sdkpay_ecom_color_card_back_gradient_start+`
+
+15 - `+sdkpay_ecom_color_card_back_gradient_end+`
+
+16 - `+sdkpay_ecom_color_card_back_stroke_start+`
+
+17 - `+sdkpay_ecom_color_card_back_stroke_end+`
+
+_Icons_
+
+9 - `+sdkpay_ecom_arrow_back+`
+
+10 - `+sdkpay_ecom_chip+`
+
+===== Customizing `+cardField+` Fragments
+
+
+image::images/android/customizingCardfield.png[Screen]
+
+_Color resources_
+
+1 - `+sdkpay_ecom_color_main+`
+
+2 - `+sdkpay_ecom_color_light+`
+
+3 - `+sdkpay_ecom_color_error+`
+
+===== Card Brand Picker
+
+
+image::images/android/cardBrandPicker.png[Screen]
+
+To show card brand picker UI component over card number input field for
+Card Field, set `+setRequireManualCardBrandSelection+` through it’s
+`+Builder+` class to true. For basic Card Payment, set `+CardPayment+`’s
+property `+requireManualCardBrandSelection+` to true.
