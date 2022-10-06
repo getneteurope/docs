@@ -1,0 +1,321 @@
+[#MobilePaymentSDK_iOS_CreditCard]
+---
+== *Credit Card*
+---
+
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+* *`SDKPayECTransactionTypeAuthorizationOnly`* - verifies the validity
+of account holder’s card, but does not leave an authorized amount.
+* *`SDKPayECTransactionTypePurchase`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
+* *`SDKPayECTransactionTypeReferencedPurchase`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+* *`SDKPayECTransactionTypeReferencedAuthorization`* - reserve funds from the [Card Holder]'s account. Identical to a [Authorization] except for the fact that it refers to a previous [Authorization] transaction.
+* *`SDKPayECTransactionTypeTokenize`* - Provides a unique [Card Token] from sensitive Credit Card Data. The [Card Token] can be used in subsequent transactions instead of the card information itself.
+
+
+[#MobilePaymentSDK_iOS_CreditCard_basic_setup]
+=== Basic Setup
+---
+
+[#MobilePaymentSDK_iOS_CreditCard_basic_setup_cocoapods]
+==== Cocoapods
+---
+
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/Card',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_CreditCard_basic_payment]
+=== Basic Credit Card Payment
+---
+This is a code example for a basic Credit Card payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+do {
+    try self.client = SDKPayECClient.init(hostname: hostname)
+} catch {
+    // the device is checked during initialization for jailbreak.
+    // It is risky to make payments on jailbroken devices.
+    return
+}
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+let payment = SDKPayECCardPayment()
+payment.merchantAccountID = merchantAccountID  // provided by merchant support
+payment.requestID = requestID                  // generated on server; unique for merchantAccountID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .purchase
+
+// 3. Trigger the payment and handle response in payment completion block.
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?, error: Error?) in
+// for each failure error object is provided;
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is
+created. Check the API documentation for more details. Credit Card payment supports recurring type too.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_CreditCard_recurring_payment]
+=== Recurring Credit Card Payment
+---
+On a basic level, recurring payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* periodic type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`],
+* sequence type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECSequenceType.html[`SDKPayECSequenceTypeFirst`].
+. The follow-up requests, which must include:
+* periodic type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`],
+* sequence type set to
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECSequenceType.html[`SDKPayECSequenceTypeRecurring`],
+* http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayment.html#//api/name/parentTransactionID[`parentTransactionId`]value
+from the initial request.
+
+So in order to create a recurring payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate periodic and sequence
+flags,
+. Save the values of
+http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayment.html#//api/name/parentTransactionID[`parentTransactionId`]
+field generated in this first payment,
+. Reference these values in the follow-up request, then send it with
+appropriate periodic and sequence flags.
+
+This is a code example for a first recurring Credit Card payment:
+[source,swift]
+----
+// First payment 
+
+let firstPeriodicType = SDKPayECPeriodic() 
+firstPeriodicType.periodicType = .recurring
+firstPeriodicType.sequenceType = .first
+
+let payment = SDKPayECCardPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .debit
+let periodic = SDKPayECPeriodic()
+periodic.periodicType = periodicType
+periodic.sequenceType = sequenceType
+payment.periodic = firstPeriodicType
+payment.signature = signature
+  
+var parentTransactionID: String?
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided;
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+
+// Handle first result
+func handleReponse(_ response: SDKPayECPaymentResponse?) {
+    guard let response = response else { return }
+    self.parentTransactionID = response.parentTransactionID
+}
+
+// Second payment using parentTransactionId
+
+let firstPeriodicType = SDKPayECPeriodic()
+firstPeriodicType.periodicType = .recurring
+firstPeriodicType.sequenceType = .final
+  
+let payment = SDKPayECCardPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.parentTransactionID = self.parentTransactionID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .autorization
+
+let periodic = SDKPayECPeriodic()
+periodic.periodicType = periodicType
+periodic.sequenceType = sequenceType
+payment.periodic = firstPeriodicType
+payment.signature = signature
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided;
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
+
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton]
+=== Visualisation
+---
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
+==== Card 
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
+
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
+===== Customizing Visuals
+---
+
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECNavigationBar`
+
+
+//-
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated]
+==== Card Animated
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
+
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
+===== Customizing Visuals
+---
+
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECNavigationBar`
+
+//-
+
+
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField]
+==== CardField
+---
+
+``SDKPayCardField`` is a specialized field for collecting card data, with
+properties similar to ``UITextField``. It is designed to fit in a single
+line and can be used where an ``UITextField`` would be appropriate:
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
+
+Create a ``SDKPayCardField`` (programmatically, or in XIB/Storyboard) and
+keep the instance reference in your ``UIViewController``:
+
+[source,swift]
+----
+class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
+    
+    @IBOutlet weak var cardField: SDKPayECCardField!
+    @IBOutlet weak var payBtn: UIButton!
+```
+}
+----
+
+//-
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals]
+==== Customizing Visuals
+---
+
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECNavigationBar`
+
+//-
+
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated]
+==== CardField Animated Alternative
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
+===== Customizing Visuals
+---
+
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECNavigationBar`
+
+//-

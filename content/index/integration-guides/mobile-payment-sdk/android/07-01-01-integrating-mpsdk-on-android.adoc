@@ -1,0 +1,141 @@
+[#MobilePaymentSDK_Android]
+== Android SDK
+
+For downloading MPSDK and basic setup, refer to <<MobilePaymentSDK_BasicSetup, Basic Setup>>.
+
+[#Mobile paymentSDK Integration Guide for Android]
+
+[#Introduction]
+Mobile paymentSDK is divided into a core module and several secondary modules, one for each payment method.
+
+With this modular approach, you can pick and choose what you need: a few payment methods (or even just one) or the full selection.
+
+Below, we will briefly go through the basic requirements/dependencies, but also code examples for client initialization and processing the payment response on your end.
+
+[#System Requirements]
+The minimal requirement is Android API level 23 (Android 6.0).
+
+[#Device Requirements]
+The IBAN and card number scanning features require a camera with autofocus. If you don't need these features, there are no further requirements.
+
+[#Basic Setup]
+Edit your `build.gradle` file accordingly:
+[source,java]
+----
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 31
+        ...
+    }
+    ...
+
+dependencies {
+    implementation files('libs/core.aar')
+    implementation files('libs/camera.aar')
+    implementation files('libs/card.aar')
+    implementation files('libs/sepa.aar')
+    implementation files('libs/paypal.aar')
+    implementation files('libs/p24.aar')
+    implementation files('libs/alipay.aar')
+}
+----
+[#Proguard Rules]
+
+Each module has a defined set of Proguard rules. They load automatically once you've enabled code obfuscation in your app. This means you can see logs and debug the application until you enable the obfuscation.
+
+You do not need to define any further rules.
+
+[#Client Initialization]
+When creating a payment object, don't forget to initialize the client first:
+
+[source,kotlin]
+----
+// initialization with context
+val client = Client(context, "https://api-test.getneteurope.com", requestTimeout)
+
+// initialization with android.support.v4.app.Fragment
+val client = Client(fragment, "https://api-test.getneteurope.com", requestTimeout)
+
+//or
+
+val client = Client(context, "https://api-test.getneteurope.com") // default timeout is set to 30 seconds
+----
+
+[source,java]
+----
+Client client = new Client(context, "https://api-test.getneteurope.com", requestTimeout);
+
+
+// initialization with android.support.v4.app.Fragment
+Client client = Client(fragment, "https://api-test.getneteurope.com", requestTimeout);
+//or
+
+Client client = new Client(context, "https://api-test.getneteurope.com"); // default timeout is set to 30 seconds
+----
+For a successful initialization, `Client` requires `Context` or `android.support.v4.app.Fragment` instance, payment gateway URL address and `Timeout` (in seconds).
+
+Check the SDK javadoc  for details about the constructor and other parameters.
+
+[#Processing the response]
+This is example code for processing the response (to see the result of the transaction), after the payment goes through:
+[source,kotlin]
+----
+  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    val paymentSdkResponse = data?.getSerializableExtra(Client.EXTRA_PAYMENT_SDK_RESPONSE)
+    if (paymentSdkResponse is PaymentResponse) {
+        Toast.makeText(this, "Response code: ${paymentSdkResponse.responseCode} ${paymentSdkResponse.errorMessage} ${paymentSdkResponse.payment?.statuses?.print()}", Toast.LENGTH_SHORT).show()
+        Log.i("response", "${paymentSdkResponse.payment.toString()} ${paymentSdkResponse.throwable?.cause}")
+    }
+}
+----
+[source,java]
+----
+@Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    Serializable paymentSdkResponse = data.getSerializableExtra(Client.EXTRA_PAYMENT_SDK_RESPONSE);
+    if (paymentSdkResponse instanceof PaymentResponse) {
+        String formattedResponse = ResponseHelper.getFormattedResponse(paymentSdkResponse);
+        Toast.makeText(this, formattedResponse, Toast.LENGTH_SHORT).show();
+    }
+}
+----
+
+[#`PaymentResponse` Object Reference]
+This is the `PaymentResponse` object model:
+
+**`responseCode`**: `Int` - Returns a response code (documented below)
+
+**`payment`**: `Payment` - Actual payment response (returned only on success)
+
+**`errorMessage`**: `String` - Error message
+
+**`throwable`**: `Throwable` - Returned for exceptions
+
+[#Response codes]
+This is a list of available response codes and their meaning:
+
+**`RESULT_OK`** - Returned after a successful payment
+
+**`ERROR_CODE_GENERAL`** - An exception or another unspecified error (`Throwable` is part of the `ResponseWrapper`)
+
+**`ERROR_CODE_INVALID_PAYMENT_DATA`** - Provided payment data are invalid
+
+**`ERROR_CODE_USER_CANCELED`** - User has canceled the payment
+
+**`ERROR_CODE_ROOTED_DEVICE`** - Client check for rooted device
+
+**`ERROR_CODE_NETWORK_ISSUE`** - No internet connection, certificate issue or other network related issue
+
+**`ERROR_CODE_TRANSACTION_TIMEOUT`** - Payment session has timed out
+
+**`ERROR_CODE_TRANSACTION_RETRY`** - User has retried a payment (ZAPP payment method only)
+
+[#Error Handling]
+The SDK uses default exceptions only. If you decide to use Kotlin, the SDK provides a null check within the IDE (if a field is null, `IllegalArgumentException` is thrown).
+
+We recommend using a try-catch block for SDK initialization and starting a payment using the `startPayment()` method: both actions throw a `RuntimeException`.

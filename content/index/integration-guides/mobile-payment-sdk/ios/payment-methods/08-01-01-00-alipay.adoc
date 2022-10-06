@@ -1,0 +1,111 @@
+[#MobilePaymentSDK_iOS_Alipay]
+---
+== *Alipay Cross Border*
+---
+
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+--- 
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+- *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+
+[#MobilePaymentSDK_iOS_Alipay_basic_setup]
+=== Basic Setup
+---
+
+[#MobilePaymentSDK_iOS_Alipay_basic_setup_cocoapods]
+==== Cocoapods
+
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'paymentSDK/Alipay',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_Alipay_basic_payment]
+=== Alipay Payment
+---
+This is a code example for a basic Alipay payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECAlipayPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.USD)
+
+   let localize = SDKPayECLocalize.appearance()
+   let locale_de = localize.locale == ._de;
+
+   payment.transactionType = SDKPayECTransactionType.debit
+   payment.ipAddress = "127.0.0.1"
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "john.doe@getneteurope.com"
+   payment.accountHolder = accountHolder
+
+   let order = SDKPayECOrder.init();
+   order.number = "180528105918955"
+   order.detail = "DemoShop product 002"
+   payment.order = order;
+   payment.locale = locale_de ? SDKPayECLocale._de : SDKPayECLocale._en
+
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is
+created. Check the API documentation for more details.
+====
+
+//-
+[#MobilePaymentSDK_iOS_Alipay_Visualisaton]
+=== Visualisation
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay.png[Alipay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-customized.png[Alipay Screen, align=center, width=240, height=420]
+|
+|===
+
+[#MobilePaymentSDK_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
+=== Customizing Visuals
+---
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECNavigationBar`
+
+//-
