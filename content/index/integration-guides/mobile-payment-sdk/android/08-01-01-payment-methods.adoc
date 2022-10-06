@@ -1,0 +1,3 @@
+[#MobilePaymentSDK_Android_Payment_methods]
+---
+== Payment methods
