@@ -1,0 +1,85 @@
+[#PaymentPageSolutions_SP_WooCommerce_Integration]
+= WooCommerce Shop Plugin
+
+== Requirements
+
+- WooCommerce v6.9.3
+
+== Installation
+
+Install the WooCommerce Shop Plugin zip file as other WooCommerce plugins. The common methods are:
+
+- https://wordpress.org/support/article/managing-plugins/#upload-via-wordpress-admin[Upload via WooCommerce Admin^]
+- https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation-1[Manual Plugin Installation^]
+
+
+== Configuration
+
+Once the plugin has been installed and enabled. The next step is to configure it.
+
+== Enable the plugin
+
+Navigate to the
+https://woocommerce.com/document/configuring-woocommerce-settings/[WooCommerce Settings page^]
+Select the Payments tab, it will show "GetNet" as a payment method.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/woocommerce-payments-tab.jpg[]
+
+{empty} +
+
+On "Getnet" click on Manage to configure the settings as follows:
+
+=== Configurations
+
+|===
+| *Attribute*     | *Description*           
+| Enable gateway| Enables the gateway. Set as true
+| Enable testing mode| Enables the gateway testing mode. Set as false
+|User|Value provided by GetNet
+|Password|Value provided by GetNet
+|Merchant account resolver category|Value provided by GetNet
+|Merchant Secret Key|Value provided by GetNet
+|SEPA Credit MAID|Value provided by GetNet
+|Creditor ID|Value provided by GetNet
+|===
+
+
+
+[#Orders Administration]
+== Orders Administration
+
+*Visualize Orders:* On WooCommerce section, you will have to drop down the menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/visualize_orders.PNG[]
+
+{empty} +
+
+*Cancel, Refund and Capture:* On WooCommerce section, you will have to drop down the menú and click on "Getnet Txs", then you will see the Transactions Portal where you will review your orders and by clicking on "Edit" you will be able to select Cancel, Refund or Capture as needed:
+
+*Important: Never Cancel, Refund or capture payments on the Orders screen*
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/cancel_refund_capture.PNG[]
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.* +
+
+When you click on the desired option, it will be processed and you will be redirected to the transactions portal.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/transaction_detail.PNG[]
+Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history when you click on the order, you will find the Order Notes section on the right side of the screen: 
+
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/order_notes.PNG[]
+
+{empty} +
+
+*Plugin Usage Rules:*
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/table.PNG[]
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
+
+
+*Update Status*
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/update_status_woo.png[]
+
+In the case of offline payment methods, the administrator must click on Update Status for the transaction status to be updated and once the transaction is completed, the cancel and refund buttons will be available if needed.
+

@@ -1,0 +1,46 @@
+= Woocommerce
+
+*Step 1:* When you enter the store, Home and the available products will be displayed. The products can be purchased in two ways:
+
+* **1)** By selecting Add to the basket:
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/add_to_basket.PNG[]
+
+{empty} +
+
+* **2)** Click on the product and the option to select the currency and quantity of products will be opened, then Add to the basket.
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/currency.PNG[]
+
+{empty} +
+
+*Step 2:* Then click on view basket as appropriate:
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/view_basket.PNG[]
+
+{empty} +
+
+*Step 3:* When you enter the cart, you can add more pieces of the product, delete items and apply coupons, then you must update the basket if applicable, before proceeding to checkout.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/proceed_to_checkout.PNG[]
+
+{empty} +
+
+*Step 4:* Fill in the requested data and place order
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/checkout.PNG[]
+
+{empty} +
+
+*Step 5:* Select the desired payment method and complete the requested info, for example credit card:
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/payment.PNG[]
+
+{empty} +
+
+*Step 6:* At the end you will receive a summary of your order.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-02-woocommerce/order_received.PNG[]
+
+{empty} +
+

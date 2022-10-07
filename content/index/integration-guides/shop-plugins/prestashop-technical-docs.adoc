@@ -1,0 +1,34 @@
+= Technical documentation
+
+== Kernel file
+
+The starting file for the Shop Plugin is link:../getnet.php[getnet.php^], with this file PrestaShop recognices that the folder is a module.
+
+=== Relevant methods
+
+|===
+| *Method*               | *Description*                                                                           
+| retrieveGetnetAction | Makes the request to GetNet to retrieve the payment URL                               
+| hookPaymentReturn    | Manages the response of GetNet when the user is redirected back to the checkout  page 
+|===
+
+== PostProcessing file
+
+The postprocessing operations are executed in link:../controllers/front/transactions.php[/controllers/front/transactions.php]. In this file you will find the method `postProcess`.
+
+In this the method the operations are:
+
+* Generate the postprocess request
+* Receive the answer
+* Store the answer
+* Change the order status
+
+== Tests
+
+The tests for the Shop Plugin are located on the link:../tests/README.md[tests folder^].
+
+== Translations
+
+To add a new translation to the module follow the  https://devdocs.prestashop-project.org/1.7/modules/creation/module-translation/classic-system/#editing-a-dictionary-file-manually[official PrestaShop Guide^].
+
+Place the translations files on the /translations folder.

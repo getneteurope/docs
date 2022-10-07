@@ -1,0 +1,45 @@
+= Magento
+
+*Step 1:* When you enter the store, the categories of the store and the Hot Sellers will be displayed. In the upper part you can select the currency to be used for the purchase:
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/top_menu.PNG[]
+
+{empty} +
+
+The products can be purchased in two ways: +
+
+* **1)** By placing the indicator on the product select the desired product specifications (if needed) and Add to Cart.
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/desired_product_especications.PNG[]
+
+* **2)** Click on the product and the option to select quantity of products will be opened, then Add to the cart.
+
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/product_option_quantity.PNG[]
+
+{empty} +
+
+*Step 2:* Once you have finished your purchase, To check the products in the cart you can do it by clicking on the Cart, you can update the quantity of products, delete them or click on View and Edit Cart to get a more detailed description and apply a discount code. + 
+If you make an edit in the cart you must update it for the changes to be applied. Then proceed to checkout. +
+If you wish to Check Out with Multiple Addresses you can do so in the View and Edit Cart section mentioned above. +
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/opdate_orderr.PNG[]
+
+{empty} +
+
+*Step 3:* Fill in the requested data and place order clicking Next
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/order_form_and_next.PNG[]
+
+{empty} +
+
+*Step 4:* Select the desired payment method and complete the requested info, for example credit card:
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/payment_method.PNG[]
+
+{empty} +
+
+*Step 5:* At the end you will receive a summary of your order.
+[%hardbreaks]
+image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/thankyou.PNG[]
+
+{empty} +
