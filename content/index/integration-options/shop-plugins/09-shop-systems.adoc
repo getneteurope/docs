@@ -30,7 +30,7 @@ shop.
 
 a| Magento 2
 
-- https://github.com/getneteurope/magento2-getnet/releases[GitHub] |
+- https://github.com/getneteurope/magento-getnet/releases[GitHub] |
       - Credit Card
       - Alipay Cross-border
       - iDEAL
