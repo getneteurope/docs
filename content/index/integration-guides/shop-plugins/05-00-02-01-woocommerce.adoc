@@ -23,7 +23,7 @@ Navigate to the
 https://woocommerce.com/document/configuring-woocommerce-settings/[WooCommerce Settings page^]
 Select the Payments tab, it will show "GetNet" as a payment method.
 [%hardbreaks]
-image::/images/09-02-woocommerce/woocommerce-payments-tab.jpg[]
+image::images/09-02-woocommerce/woocommerce-payments-tab.jpg[]
 
 {empty} +
 
@@ -50,7 +50,7 @@ On "Getnet" click on Manage to configure the settings as follows:
 
 *Visualize Orders:* On WooCommerce section, you will have to drop down the menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]
-image::/images/09-02-woocommerce/visualize_orders.PNG[]
+image::images/09-02-woocommerce/visualize_orders.PNG[]
 
 {empty} +
 
@@ -58,28 +58,28 @@ image::/images/09-02-woocommerce/visualize_orders.PNG[]
 
 *Important: Never Cancel, Refund or capture payments on the Orders screen*
 [%hardbreaks]
-image::/images/09-02-woocommerce/cancel_refund_capture.PNG[]
+image::images/09-02-woocommerce/cancel_refund_capture.PNG[]
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.* +
 
 When you click on the desired option, it will be processed and you will be redirected to the transactions portal.
 [%hardbreaks]
-image::/images/09-02-woocommerce/transaction_detail.PNG[]
+image::images/09-02-woocommerce/transaction_detail.PNG[]
 Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history when you click on the order, you will find the Order Notes section on the right side of the screen: 
 
 [%hardbreaks]
-image::/images/09-02-woocommerce/order_notes.PNG[]
+image::images/09-02-woocommerce/order_notes.PNG[]
 
 {empty} +
 
 *Plugin Usage Rules:*
 [%hardbreaks]
-image::/images/09-02-woocommerce/table.PNG[]
+image::images/09-02-woocommerce/table.PNG[]
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 
 
 *Update Status*
 
-image::/images/09-02-woocommerce/update_status_woo.png[]
+image::images/09-02-woocommerce/update_status_woo.png[]
 
 In the case of offline payment methods, the administrator must click on Update Status for the transaction status to be updated and once the transaction is completed, the cancel and refund buttons will be available if needed.
 

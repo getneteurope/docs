@@ -2,7 +2,7 @@
 
 *Step 1:* When you enter the store, the categories of the store and the popular products will be displayed. In the upper part you can select the currency to be used for the purchase:
 [%hardbreaks]
-image::/images/09-02-prestashop/currency_header.PNG[]
+image::images/09-02-prestashop/currency_header.PNG[]
 
 {empty} +
 
@@ -10,49 +10,49 @@ The products can be purchased in two ways: +
 
 * **1)** By placing the indicator on the product select Quick view, and the option to select the quantity of products will be opened, then Add to the cart: +
 
-image::/images/09-02-prestashop/quick_view.PNG[]
+image::images/09-02-prestashop/quick_view.PNG[]
 
 {empty} +
 
 * **2)** Click on the product and the option to select quantity of products will be opened, then Add to the cart.
 
-image::/images/09-02-prestashop/add_to_cart.PNG[]
+image::images/09-02-prestashop/add_to_cart.PNG[]
 
 {empty} +
 
 Once the product is added to the cart the following message will appear, and you can Continue Shopping or Proceed to Checkout: 
 [%hardbreaks]
-image::/images/09-02-prestashop/proced_to_checkout.PNG[]
+image::images/09-02-prestashop/proced_to_checkout.PNG[]
 
 {empty} +
 
 *Step 2:* Once you have finished your purchase, To check the products in the cart you can do it by clicking on the Cart or Proceed to Checkout button:
 [%hardbreaks]
-image::/images/09-02-prestashop/proced_and_cart_buttons.PNG[]
+image::images/09-02-prestashop/proced_and_cart_buttons.PNG[]
 
 {empty} +
 
 *Step 3:*  When you enter the cart, you can add more pieces of the product, delete items and apply coupons (Have a promo Code?), then proceed to checkout.
 [%hardbreaks]
-image::/images/09-02-prestashop/inside_cart.PNG[]
+image::images/09-02-prestashop/inside_cart.PNG[]
 
 {empty} +
 
 *Step 4:* Fill in the requested data and place order.
 [%hardbreaks]
-image::/images/09-02-prestashop/request_sequence.PNG[]
+image::images/09-02-prestashop/request_sequence.PNG[]
 
 {empty} +
 
 *Step 5:* Select the desired payment method and complete the requested info, for example credit card:
 [%hardbreaks]
-image::/images/09-02-prestashop/payment.PNG[]
+image::images/09-02-prestashop/payment.PNG[]
 
 {empty} +
 
 *Step 6:* At the end you will receive a summary of your order.
 [%hardbreaks]
-image::/images/09-02-prestashop/order_confirm.PNG[]
+image::images/09-02-prestashop/order_confirm.PNG[]
 
 {empty} +
 
