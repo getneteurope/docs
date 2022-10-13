@@ -29,7 +29,7 @@ dependencies{
 }
 ----
 
-[#MobilePaymentSDK_Android_BasicSetup_list_of_payment_method_subspec]
+[#MobilePaymentSDK_Android_List_of_payment_method_subspec]
 === List of supported payment method subspec
 ---
 |===
