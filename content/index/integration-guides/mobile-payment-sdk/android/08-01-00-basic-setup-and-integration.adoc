@@ -1,5 +1,4 @@
 [#MobilePaymentSDK_Android_BasicSetup]
----
 == Basic Setup
 ---
 The device cannot be rooted and must run at least Android 6 for
