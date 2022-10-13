@@ -11,7 +11,7 @@ _paymentSDK_ to work. It is recommended to use the latest stable version
 of Xcode.
 
 Download the pod at
-our link:https://github.com/getneteurope/paymentSDK-iOS[GitHub repository] and
+our link:https://github.com/getneteurope/mobilePaymentSDK-iOS[GitHub repository] and
 add it to your podfile. 
 
 The iOS supports two ways of MPSDK usage:  

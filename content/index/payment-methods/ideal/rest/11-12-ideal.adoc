@@ -166,7 +166,6 @@ website.
 | ABNANL2A | ABN Amro Bank
 | ASNBNL21 | ASN Bank
 | BUNQNL2A | bunq
-| HANDNL2A | Handelsbanken
 | INGBNL2A | ING
 | KNABNL2H | Knab
 | MOYONL21 | Moneyou

@@ -14,7 +14,7 @@ if it's built in the merchant's mobile application.
 This documentation was written for developers who will be integrating
 MPSDK into their mobile application. On this page, you will find general
 information you need to get started. For integration docs, refer to the
-subpage <<MobilePaymentSDK_BasicSetup, Basic Setup and Integration>>.
+subpage <<MobilePaymentSDK_FirstSteps, Basic Setup and Integration>>.
 
 A list of the currently supported payment methods can be found
 in <<MobilePaymentSDK_PaymentMethods, Available Payment Methods>> below.
@@ -22,12 +22,12 @@ in <<MobilePaymentSDK_PaymentMethods, Available Payment Methods>> below.
 [#MobilePaymentSDK_PaymentMethods]
 === Available Payment Methods
 
-It may be more convenient to use link:https://getnetdoc-preview-d1df158fe7c959e31dbb6e001dfc598c.s3.eu-central-1.amazonaws.com/docs.getneteurope.com/branches/mobilesdk/GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN[Instant Payment Notification], instead of the default MPSDK responses. 
+It may be more convenient to use <<GeneralPlatformFeatures_IPN, Instant Payment Notification>>, instead of the default MPSDK responses.
 
 |===
    | Payment Method    | Transaction Type
 
-.4+| Card              | authorization
+.6+| Card              | authorization
                        | authorization-only
                        | purchase
                        | tokenize

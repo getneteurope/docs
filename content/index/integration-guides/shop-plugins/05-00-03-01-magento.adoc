@@ -35,7 +35,7 @@ Copy the Magento_getnet_plugin.zip file into the code folder and unzip
 
 [%hardbreaks]
 [float]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/locate_and_unzip.png[]
+image::images/09-01-magento/locate_and_unzip.png[]
 
 [%hardbreaks]
 When unzipping, you should have the following path inside your Magento root directory: +
@@ -59,7 +59,7 @@ For this step you must enter the terminal of the server where your store is host
 [%hardbreaks]
 Example: 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/term.PNG[]
+image::images/09-01-magento/term.PNG[]
 [%hardbreaks]
 Note: If when you run the compile command it doesn't finish 100%, you should increase your memory limit in php. +
 ``memory_limit 1024M``
@@ -71,14 +71,14 @@ Note: If when you run the compile command it doesn't finish 100%, you should inc
 In the store administrator, you must click on the menu on the left and select the option +
 Stores -> Configuration 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/configure_payment_module.PNG[]
+image::images/09-01-magento/configure_payment_module.PNG[]
 
 {empty} +
 
 [%hardbreaks]
 Go to Sales -> Payment Methods 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/sales_payment_methods.PNG[]
+image::images/09-01-magento/sales_payment_methods.PNG[]
 
 {empty} +
 
@@ -86,12 +86,12 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 The new payment module will appear with the name of Getnet +
 You must enter the credentials that were granted by Getnet 
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/credentials_form.PNG[]
+image::images/09-01-magento/credentials_form.PNG[]
 
 [%hardbreaks]
 Once the activate option has been set on "Yes" and the changes have been saved, it will be shown in Checkout as *_"Pay by Card or Other Payment Methods"_*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/timeline.PNG[]
+image::images/09-01-magento/timeline.PNG[]
 
 {empty} +
 
@@ -99,14 +99,14 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 A Payment link will be generated and then you will be redirected +
 Example:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/payment_choose_method.PNG[]
+image::images/09-01-magento/payment_choose_method.PNG[]
 
 {empty} +
 
 [%hardbreaks]
 Example of approved Order.
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/thank_you_for_your_purchase.PNG[]
+image::images/09-01-magento/thank_you_for_your_purchase.PNG[]
 
 
 [#Orders Administration]
@@ -114,31 +114,31 @@ image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/i
 
 *Visualize Orders:* On "Sales Section" / "Orders" you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/visualize_orders.PNG[]
+image::images/09-01-magento/visualize_orders.PNG[]
 
 {empty} +
 
 *Cancel, Refund and Capture:* On Orders you must click on "View" to see the portal where you will be able to select Cancel, Refund or Capture as needed:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/cancel_refund_capture.PNG[]
+image::images/09-01-magento/cancel_refund_capture.PNG[]
 
 {empty} +
 
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/note_cancellation.PNG[]
+image::images/09-01-magento/note_cancellation.PNG[]
 
 {empty} +
 
 Depending on the selected option the following messages will be displayed, to continue you must click on "Ok":
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/option_messages_displayed.PNG[]
+image::images/09-01-magento/option_messages_displayed.PNG[]
 
 {empty} +
 
 Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history on View Portal below Order Total:
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/notes_for_this_order.PNG[]
+image::images/09-01-magento/notes_for_this_order.PNG[]
 
 {empty} +
 
@@ -151,11 +151,11 @@ For "Offline Bank Transfer" type payments, there is the "Update status" button, 
 
 *Plugin Usage Rules:*
 [%hardbreaks]
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/table.PNG[]
+image::images/09-01-magento/table.PNG[]
 *Note: Cancellations / Voids are made on the same day, Refunds are made the next day.
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/updateStatus.png[]
+image::images/09-01-magento/updateStatus.png[]
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/question_update.png[]
+image::images/09-01-magento/question_update.png[]
 
-image::https://raw.githubusercontent.com/getneteurope/docs/shopplugins/content/images/09-01-magento/comments_update.png[]
+image::images/09-01-magento/comments_update.png[]
