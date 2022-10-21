@@ -1,6 +1,8 @@
 [#PaymentPageSolutions_SP_Magento_Integration]
 = Magento Shop Plugin
- 
+
+video::755099295/46dea23636[vimeo, width=640, height=360]
+
 [#Inroduction]
 == Introduction 
 This document serves as a guide for the integration of the plugin developed by Getnet
