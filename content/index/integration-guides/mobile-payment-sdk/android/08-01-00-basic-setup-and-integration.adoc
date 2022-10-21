@@ -6,7 +6,7 @@ _paymentSDK_ to work. It is recommended to use the latest stable version
 of Android Studio.
 
 Download the libs directory from app/libs
-our link:https://github.com/getneteurope/paymentSDK-Android[GitHub repository] and
+our link:https://github.com/getneteurope/mobilePaymentSDK-Android[GitHub repository] and
 add it to your module.
 
 - You can select payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
