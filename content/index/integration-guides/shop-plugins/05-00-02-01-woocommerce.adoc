@@ -1,6 +1,8 @@
 [#PaymentPageSolutions_SP_WooCommerce_Integration]
 = WooCommerce Shop Plugin
 
+video::755099271?h=11d19caa5b[vimeo, width=640, height=360]
+
 == Requirements
 
 - WooCommerce v6.9.3
