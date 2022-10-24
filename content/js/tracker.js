@@ -1,8 +1,8 @@
 
-const trackingEnabled = true;
+const trackingEnabled = false;
 
 // -- adjust to your matomo configuration --
-const matomoEnabled = true;
+const matomoEnabled = false;
 const matomoSiteID = '1';
 const matomoHostname = 'wirecard.matomo.cloud';
 // -- adjust to your matomo configuration --
