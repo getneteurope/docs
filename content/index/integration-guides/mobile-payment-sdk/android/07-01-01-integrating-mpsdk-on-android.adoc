@@ -4,7 +4,7 @@
 For downloading MPSDK and basic setup, refer to <<MobilePaymentSDK_Android_BasicSetup, Basic Setup>>.
 
 
-[#Mobile paymentSDK Integration Guide for Android]
+[#Mobile_paymentSDK_Integration_Guide_for_Android]
 
 [#Introduction]
 Mobile paymentSDK is divided into a core module and several secondary modules, one for each payment method.
@@ -13,13 +13,13 @@ With this modular approach, you can pick and choose what you need: a few payment
 
 Below, we will briefly go through the basic requirements/dependencies, but also code examples for client initialization and processing the payment response on your end.
 
-[#System Requirements]
+[#System_Requirements]
 The minimal requirement is Android API level 23 (Android 6.0).
 
-[#Device Requirements]
+[#Device_Requirements]
 The IBAN and card number scanning features require a camera with autofocus. If you don't need these features, there are no further requirements.
 
-[#Basic Setup]
+[#Basic_Setup]
 Edit your `build.gradle` file accordingly:
 [source,java]
 ----
@@ -43,13 +43,13 @@ dependencies {
     implementation files('libs/alipay.aar')
 }
 ----
-[#Proguard Rules]
+[#Proguard_Rules]
 
 Each module has a defined set of Proguard rules. They load automatically once you've enabled code obfuscation in your app. This means you can see logs and debug the application until you enable the obfuscation.
 
 You do not need to define any further rules.
 
-[#Client Initialization]
+[#Client_Initialization]
 When creating a payment object, don't forget to initialize the client first:
 
 [source,kotlin]
@@ -80,7 +80,7 @@ For a successful initialization, `Client` requires `Context` or `android.support
 
 Check the SDK javadoc  for details about the constructor and other parameters.
 
-[#Processing the response]
+[#Processing_the_response]
 This is example code for processing the response (to see the result of the transaction), after the payment goes through:
 [source,kotlin]
 ----
@@ -106,7 +106,7 @@ This is example code for processing the response (to see the result of the trans
 }
 ----
 
-[#`PaymentResponse` Object Reference]
+[#PaymentResponse_Object_Reference]
 This is the `PaymentResponse` object model:
 
 **`responseCode`**: `Int` - Returns a response code (documented below)
@@ -117,7 +117,7 @@ This is the `PaymentResponse` object model:
 
 **`throwable`**: `Throwable` - Returned for exceptions
 
-[#Response codes]
+[#Response_codes]
 This is a list of available response codes and their meaning:
 
 **`RESULT_OK`** - Returned after a successful payment
@@ -136,7 +136,7 @@ This is a list of available response codes and their meaning:
 
 **`ERROR_CODE_TRANSACTION_RETRY`** - User has retried a payment (ZAPP payment method only)
 
-[#Error Handling]
+[#Error_Handling]
 The SDK uses default exceptions only. If you decide to use Kotlin, the SDK provides a null check within the IDE (if a field is null, `IllegalArgumentException` is thrown).
 
 We recommend using a try-catch block for SDK initialization and starting a payment using the `startPayment()` method: both actions throw a `RuntimeException`.

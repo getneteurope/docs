@@ -215,8 +215,8 @@ must use the definition in the
 field ``notifications/notification/@url`` in the request (Step 2).
 See <<GeneralPlatformFeatures_IPN, Instant Payment Notification>> for details.
 
-[#blik_void-debit]
-==== void-debit
+[#blik_void_debit]
+==== Void-debit
 
 Void debit flow:  When timeout occurs during void-debit processing and Blik confirms that the void-debit processing is still in progress, the core logic will create an XML response with the void debit in ‘failed’ state  but in fact the void-debit tx will remain in progress in Payment Gateway DB.
 To identify if the void-debit is actually failed, Merchant will need to check if there is an statuses block .
@@ -226,8 +226,8 @@ To identify if the void-debit is actually failed, Merchant will need to check if
 .void Process Using the ReST API
 image::images/diagrams/Blik_void_debit_flow.png[refund Process Using the ReST API]
 
-[#blik_Reversal-Debit]
-==== Reversal-Debit
+[#blik_reversal_debit]
+==== Reversal-debit
 
 Scenario #1: regular run of pending transaction job
 
