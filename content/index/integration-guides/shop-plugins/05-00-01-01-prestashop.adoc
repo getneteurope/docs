@@ -44,7 +44,7 @@ image::images/09-02-prestashop/prestashop-settings-page.jpg[title="Configuration
 
 
 
-[#Orders Administration]
+[#Orders_Administration_PrestaShop]
 == Orders Administration
 
 *Visualize Orders:* On Sell section, you will have to drop down the orders menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.

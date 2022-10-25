@@ -229,7 +229,7 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 // include::{root}/include/fields/api/request/req-device-renderOptions.adoc[]
 
 
-// [#API_Fields_xmlelements_request_device-SDK]
+// [#API_Fields_xmlelements_request_device_SDK]
 // ==== device.SDK
 
 // include::{root}/include/fields/api/request/req-device-SDK.adoc[]

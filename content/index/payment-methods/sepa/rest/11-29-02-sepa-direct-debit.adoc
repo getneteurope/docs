@@ -553,9 +553,11 @@ transaction processing will start on next Monday.
 The capture date influences the validation rule and the calculation
 logic of the due date. The due date is validated and calculated
 according to the same rules as described in the chapter 'Due Date' but
-starting from the capture date. For example, if the capture date is the
-Tuesday 25.11.2015, the next possible due date for the one-off
-transaction is 25.11.2015  + 1 bank working day = Friday 26.11.2015.
+starting from the capture date.
+
+For example, if the capture date is the
+*Tuesday 25.11.2015*, the next possible due date for the one-off
+transaction is 25.11.2015  + 1 bank working day = *Wednesday 26.11.2015*.
 
 The due date may only be used if it passes validation. If validation is
 not passed, system will return a failed transaction (400.1175) and the

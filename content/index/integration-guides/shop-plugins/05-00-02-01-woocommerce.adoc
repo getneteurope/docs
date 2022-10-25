@@ -47,7 +47,7 @@ On "Getnet" click on Manage to configure the settings as follows:
 
 
 
-[#Orders Administration]
+[#Orders_Administration_WooCommerce]
 == Orders Administration
 
 *Visualize Orders:* On WooCommerce section, you will have to drop down the menu and click on "Orders", then you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
