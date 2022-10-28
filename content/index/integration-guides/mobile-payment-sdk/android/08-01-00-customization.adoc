@@ -54,7 +54,7 @@ To change localeUIOnly, override the string resources with name
 
 [source,xml]
 ----
-<string name="sdkpay_localeUIOnly">RU</string>
+<string name="sdkpay_localeUIOnly">ES</string>
 ----
 
 [source,kotlin]
@@ -75,8 +75,8 @@ Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout
 ----
 
 This example shows the 3rd option (dual setting): the backend `locale`
-is set to DE and the frontend `localeUIOnly` to RU. This means that
-although the backend locale backend is DE, the UI language is RU.
+is set to DE and the frontend `localeUIOnly` to ES. This means that
+although the backend locale backend is DE, the UI language is ES.
 
 ==== Override strings
 
