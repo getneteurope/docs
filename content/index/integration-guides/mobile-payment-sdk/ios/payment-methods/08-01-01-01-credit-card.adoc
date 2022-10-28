@@ -81,8 +81,11 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?, 
 
 [TIP]
 ====
-You can set optional parameters after the payment object is
-created. Check the API documentation for more details. Credit Card payment supports recurring type too.
+You can set optional parameters after the payment object is created. Check the documentation <<CC_Fields, Credit Card>> payment method for more details.
+
+Credit Card payment supports
+`SDKPayECPeriodicTypeRecurring`
+recurring type. Check the API documentation <<GeneralPlatformFeatures_Transactions_Recurring, Recurring Transaction>> for more details.
 ====
 
 //-
