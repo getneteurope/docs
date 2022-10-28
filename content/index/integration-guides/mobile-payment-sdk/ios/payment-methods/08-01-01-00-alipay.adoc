@@ -78,8 +78,7 @@ This is a code example for a basic Alipay payment:
 
 [TIP]
 ====
-You can set optional parameters after the payment object is
-created. Check the API documentation for more details.
+You can set optional parameters after the payment object is created. Check the documentation <<API_AlipayCrossBorder_Fields, Alipay Cross Border>> payment method for more details.
 ====
 
 //-

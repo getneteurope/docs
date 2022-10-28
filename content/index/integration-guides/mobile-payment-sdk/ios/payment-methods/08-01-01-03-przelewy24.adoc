@@ -64,8 +64,7 @@ This is a code example for a basic P24 payment:
 
 [TIP]
 ====
-You can set optional parameters after the payment object is
-created. Check the API documentation for more details.
+You can set optional parameters after the payment object is created. Check the documentation <<Przelewy24_Fields, Przelewy24>> payment method for more details.
 ====
 
 //-
