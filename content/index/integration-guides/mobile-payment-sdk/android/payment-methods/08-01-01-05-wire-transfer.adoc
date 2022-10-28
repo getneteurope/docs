@@ -27,13 +27,7 @@ dependencies {
 }
 ----
 
-To disable the IBAN scanner feature, uncomment the `exclude module`
-line.
-
-When adding/removing this feature, perform a full clean build. If you
-intend to use Card Payments module together with the Wiretransfer Direct Debit
-module (with IBAN scanner), you must enable/disable it in *both*
-modules.
+When adding/removing this feature, perform a full clean build.
 
 === Signature
 
