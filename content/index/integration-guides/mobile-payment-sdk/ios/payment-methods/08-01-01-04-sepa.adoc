@@ -24,7 +24,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/SEPA',          '~> {{version}}'
+pod 'mobilePaymentSDK/SEPA',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_SEPA_basic_payment]

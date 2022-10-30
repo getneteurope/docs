@@ -36,7 +36,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/Card',          '~> {{version}}'
+pod 'mobilePaymentSDK/Card',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_payment]
@@ -357,7 +357,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/PayPal',          '~> {{version}}'
+pod 'mobilePaymentSDK/PayPal',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_PayPal_basic_payment]
@@ -576,7 +576,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/SEPA',          '~> {{version}}'
+pod 'mobilePaymentSDK/SEPA',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_SEPA_basic_payment]
@@ -773,7 +773,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/Alipay',          '~> {{version}}'
+pod 'mobilePaymentSDK/Alipay',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_Alipay_basic_payment]
@@ -883,7 +883,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/WireTransfer',          '~> {{version}}'
+pod 'mobilePaymentSDK/WireTransfer',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_WireTransfer]
@@ -910,7 +910,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/WireTransfer',          '~> {{version}}'
+pod 'mobilePaymentSDK/WireTransfer',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_WireTransfer_basic_payment]
@@ -1004,7 +1004,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/P24',          '~> {{version}}'
+pod 'mobilePaymentSDK/P24',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_P24_basic_payment]
@@ -1100,7 +1100,7 @@ The card scanner provides primary the card number detection. When it is possible
 Add to your app’s `Podfile` subspecs: 
 [source,ruby]
 ----
-pod 'paymentSDK/CardScanner',          '~> {{version}}'
+pod 'mobilePaymentSDK/CardScanner',          '~> {{version}}'
 ----
 
 The MPSDK adds the scanner button to the card number's textfield, the cardfield component alebo the keyboard toolbar.
@@ -1233,7 +1233,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/IBANScanner',          '~> {{version}}'
+pod 'mobilePaymentSDK/IBANScanner',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_IBAN_Scanner_Integration]
@@ -1293,8 +1293,8 @@ every module used in the SDK. The cardfield component is fully customizable by c
  
 // [source,ruby]
 // ----
-// pod 'paymentSDK/CardScannerGallery',          '~> {{version}}'
-// pod 'paymentSDK/IBANScannerGallery',          '~> {{version}}'
+// pod 'mobilePaymentSDK/CardScannerGallery',          '~> {{version}}'
+// pod 'mobilePaymentSDK/IBANScannerGallery',          '~> {{version}}'
 // ----
 
 // [#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Integration]

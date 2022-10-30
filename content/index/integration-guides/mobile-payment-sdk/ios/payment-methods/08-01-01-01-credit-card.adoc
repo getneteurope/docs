@@ -33,7 +33,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/Card',          '~> {{version}}'
+pod 'mobilePaymentSDK/Card',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_payment]

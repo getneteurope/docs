@@ -22,7 +22,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/Alipay',          '~> {{version}}'
+pod 'mobilePaymentSDK/Alipay',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_Alipay_basic_payment]
