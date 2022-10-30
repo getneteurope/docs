@@ -1,0 +1,198 @@
+
+[#MobilePaymentSDK_iOS_RatePay]
+---
+== *RatePay Direct Debit and Invoice*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+
+[#MobilePaymentSDK_iOS_RatePay_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_RatePay_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/RatePay',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_RatePay_DirectDebit_basic_payment]
+==== RatePay Direct Debit Payment
+
+This is a code example for a basic RatePay Direct Debit payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECRatePayElvPayment()
+   payment.amount = 1.00
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+
+   payment.creditorID = "skdjhglskdg"
+   payment.mandateID = "dkjghsdljkg"
+   payment.fingerprint = "dkjhglsdkajghlakdsjgasdg"
+
+   let bankAccount = SDKPayECBankAccount()
+   bankAccount.bankName = "HSBC"
+   bankAccount.iban = "DE83203205004989123456"
+   bankAccount.bic = "DABADEHHXXX"
+   payment.bankAccount = bankAccount
+
+   payment.transactionType = SDKPayECTransactionType.authorization
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "joe.doe@email.com"
+   accountHolder.dateOfBirth = Date()
+   accountHolder.gender = SDKPayECGender.male
+   accountHolder.phone = "+00123456789"
+   accountHolder.address = SDKPayECAddress()
+   accountHolder.address?.street1 = "Elm Street !428"
+   accountHolder.address?.city = "Springwood"
+   accountHolder.address?.postalCode = "04001"
+   accountHolder.address?.state = "Ohio"
+   accountHolder.address?.country = SDKPayECCountry.DE
+   payment.accountHolder = accountHolder
+
+   var cartOrder = [SDKPayECOrderItem]()
+
+   let orderItem = SDKPayECOrderItem()
+   orderItem.name = "item name"
+   orderItem.articleNumber = "827523"
+   orderItem.amount = 1
+   orderItem.quantity = NSDecimalNumber(integerLiteral: 1)
+   orderItem.amountCurrency = SDKPayECCurrency.EUR
+   orderItem.taxRate = 1.0
+   cartOrder.append(orderItem)
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = cartOrder
+   payment.order = order
+
+```
+----
+
+
+==== RatePay Direct Invoice
+
+This is a code example for a basic RatePay Invoice payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECRatePayInvoicePayment();
+   payment.amount = 1.00
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+
+   payment.fingerprint = "dkjhglsdkajghlakdsjgasdg"
+   payment.transactionType = SDKPayECTransactionType.authorization
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "joe.doe@email.com"
+   accountHolder.dateOfBirth = Date()
+   accountHolder.gender = SDKPayECGender.male
+   accountHolder.phone = "+00123456789"
+   accountHolder.address = SDKPayECAddress()
+   accountHolder.address?.street1 = "Elm Street !428"
+   accountHolder.address?.city = "Springwood"
+   accountHolder.address?.postalCode = "04001"
+   accountHolder.address?.state = "Ohio"
+   accountHolder.address?.country = SDKPayECCountry.DE
+   payment.accountHolder = accountHolder
+
+   var cartOrder = [SDKPayECOrderItem]()
+
+   let orderItem = SDKPayECOrderItem()
+   orderItem.name = "item name"
+   orderItem.articleNumber = "873521"
+   orderItem.amount = 1
+   orderItem.quantity = NSDecimalNumber(integerLiteral: 1)
+   orderItem.amountCurrency = SDKPayECCurrency.EUR
+   orderItem.taxRate = 1.0
+   cartOrder.append(orderItem)
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = cartOrder
+   payment.order = order
+
+
+```
+----
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<API_RatePay_Fields, RatePay>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_RatePay_Visualisaton]
+=== Visualisation
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Invoice | Elv
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv.png[RatePay Screen, align=center, width=240, height=420]
+|
+|===
+
+
+[NOTE]
+====
+Visualization of RatePay result is up to the merchant applicaton. SDK returns IBAN, BIC, Provider Reference ID and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
+
+//-
