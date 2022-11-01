@@ -184,9 +184,18 @@ You can set optional parameters after the payment object is created. Check the d
 |===
 | Invoice | Elv
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-1.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-1.png[RatePay Screen, align=center, width=240, height=420]
+
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-2.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-2.png[RatePay Screen, align=center, width=240, height=420]
+
+
 |
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-3.png[RatePay Screen, align=center, width=240, height=420]
+|
+
 |===
 
 
