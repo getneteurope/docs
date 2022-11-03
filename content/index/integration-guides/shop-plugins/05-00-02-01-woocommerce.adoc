@@ -1,7 +1,7 @@
 [#PaymentPageSolutions_SP_WooCommerce_Integration]
 = WooCommerce Shop Plugin
 
-image::images/09-02-woocommerce/intro_video.jpg[width=640, height=360, link="https://vimeo.com/755099271/11d19caa5b"]
+image::images/09-02-woocommerce/intro_video.png[width=640, height=360, link="https://vimeo.com/755099271/11d19caa5b"]
 
 == Requirements
 
