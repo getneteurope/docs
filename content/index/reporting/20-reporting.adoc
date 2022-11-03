@@ -131,7 +131,7 @@ data is recorded in the following columns/fields:
 | TRANSACTION CURRENCY            | The currency of the original transaction.
 | SETTLEMENT AMOUNT               | The amount credited to the merchant account.
 | SUM SETTLEMENT AMOUNT           | The total sum of credit and debit type transactions that were booked on the account within one summary booking.
-| SETTLEMENT CURRENCY             | The http://id3.org/ISO%204217[ISO 4217] currency code of the credited amount.
+| SETTLEMENT CURRENCY             | The https://id3.org/ISO%204217[ISO 4217] currency code of the credited amount.
 | EXCHANGE RATE                   | The exchange rate used for this transaction (applicable only if the transaction and settlement currencies differ).
 | EXCHANGE RATE SOURCE            | This is the source of the referenced exchange rate (e.g. Deutsche Bank).
 | USAGE                           | A message sent with the original XML request for the debtor of the transaction that will appear on the debtor's account statement. Also known as "Descriptor".
