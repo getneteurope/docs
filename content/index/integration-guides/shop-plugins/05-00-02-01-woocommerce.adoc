@@ -52,6 +52,7 @@ On "Getnet" click on Manage to configure the settings as follows:
 As an additional step it is necessary to configure the permalinks in the "Post name" option.
 
 Settings / Permalinks
+
 image::images/09-02-woocommerce/Permalinks.png[]
 
 
