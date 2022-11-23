@@ -32,12 +32,12 @@ jobs:
     - name: "Setup ruby 2.6"
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.0
+        ruby-version: 2.6.10
         bundler-cache: false
 
     - name: Bundle install
       run: |
-        gem install bundler:2.1.4
+        gem install bundler:2.3.26
         bundle config path vendor/bundle
         bundle install --jobs 16 --retry 30
 
