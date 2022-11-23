@@ -29,7 +29,7 @@ jobs:
     - name: Setup Ruby 2.6
       uses: actions/setup-ruby@v1.1.2
       with:
-        ruby-version: '2.6.x'
+        ruby-version: '2.6'
 
     - name: Bundle install
       run: |
