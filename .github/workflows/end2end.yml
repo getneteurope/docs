@@ -52,9 +52,10 @@ jobs:
       id: extract
 
     - name: "Setup ruby 2.6"
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6
+        ruby-version: 2.6.0
+        bundler-cache: false
 
     - name: Bundle install
       run: |
