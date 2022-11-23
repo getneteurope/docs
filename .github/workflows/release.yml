@@ -29,10 +29,10 @@ jobs:
       run: echo "::set-output name=build_name::$(bash .scripts/extract_build_name.sh)"
       id: extract
 
-    - name: Setup Ruby 2.6
-      uses: actions/setup-ruby@v1.1.2
+    - name: "Setup ruby 2.6"
+      uses: actions/setup-ruby@v1
       with:
-        ruby-version: '2.6'
+        ruby-version: 2.6
 
     - name: Bundle install
       run: |
