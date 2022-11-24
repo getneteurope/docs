@@ -21,7 +21,7 @@ The iOS supports two ways of MPSDK usage:
 .For example:
 [source,subs=attributes+]
 ----
-pod 'paymentSDK/All'
+pod 'mobilePaymentSDK/All'
 ----
 
 - The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
@@ -29,8 +29,8 @@ pod 'paymentSDK/All'
 .For example:
 [source,subs=attributes+]
 ----
-pod 'paymentSDK/Card' 
-pod 'paymentSDK/SEPA'
+pod 'mobilePaymentSDK/Card' 
+pod 'mobilePaymentSDK/SEPA'
 ----
 
 [#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
@@ -41,31 +41,31 @@ pod 'paymentSDK/SEPA'
 
 |All
 |all payment method frameworks in one
-|pod 'paymentSDK'
+|pod 'mobilePaymentSDK'
 
 |Alipay (Cross Border)
 |alipay payment frameworks
-|pod 'paymentSDK/Alipay' 
+|pod 'mobilePaymentSDK/Alipay' 
 
 |Card
 |Credit Card payment frameworks
-|pod 'paymentSDK/Card' 
+|pod 'mobilePaymentSDK/Card' 
 
 |PayPal
 |PayPal payment frameworks
-|pod 'paymentSDK/PayPal' 
+|pod 'mobilePaymentSDK/PayPal' 
 
 |P24 (Przelewy24)
 |P24 payment frameworks
-|pod 'paymentSDK/P24' 
+|pod 'mobilePaymentSDK/P24' 
 
 |SEPA (Direct Debit)
 |SEPA payment frameworks
-|pod 'paymentSDK/SEPA' 
+|pod 'mobilePaymentSDK/SEPA' 
 
 |WireTransfer
 |Wire-Transfer payment frameworks
-|pod 'paymentSDK/WireTransfer' 
+|pod 'mobilePaymentSDK/WireTransfer' 
 |===
 
 //-
@@ -78,27 +78,27 @@ pod 'paymentSDK/SEPA'
 
 |Scanner
 |Card scanner framework
-|pod 'paymentSDK/Scanner' 
+|pod 'mobilePaymentSDK/Scanner' 
 
 |PhotoGallery
 |Photo Gallery frameworks
-|pod 'paymentSDK/PhotoGallery' 
+|pod 'mobilePaymentSDK/PhotoGallery' 
 
 |CardScanner
 |Credit Card payment frameworks with card scanner
-|pod 'paymentSDK/CardScanner' 
+|pod 'mobilePaymentSDK/CardScanner' 
 
 |CardScannerGallery
 |Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
-|pod 'paymentSDK/CardScannerGallery' 
+|pod 'mobilePaymentSDK/CardScannerGallery' 
 
 |IBANScanner
 |SEPA payment frameworks with IBAN scanner
-|pod 'paymentSDK/IBANScanner' 
+|pod 'mobilePaymentSDK/IBANScanner' 
 
 |IBANScannerGallery
 |SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
-|pod 'paymentSDK/IBANScannerGallery'  
+|pod 'mobilePaymentSDK/IBANScannerGallery'  
 
 |===  
         
