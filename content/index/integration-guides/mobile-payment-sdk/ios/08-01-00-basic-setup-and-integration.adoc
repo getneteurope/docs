@@ -144,6 +144,7 @@ image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User
 
 
 [#MobilePaymentSDK_iOS_Client_Initialization]
+==== Client Intialization
 When creating a payment object, don't forget to initialize the client first (for example in AppDelegate class):
 
 [source,swift]
@@ -175,6 +176,7 @@ When creating a payment object, don't forget to initialize the client first (for
 ----
 
 [#MobilePaymentSDK_iOS_Processing_the_response]
+==== Response processing
 This is example code for processing the response (to see the result of the transaction), after the payment goes through:
 [source,swift]
 ----
@@ -201,7 +203,7 @@ The `SDKPayECPaymentResponse` object is inherited from the SDKPayECPayment objec
 **`providerTransactionReferenceId`**: `String` - A unique identifier assigned for every provider transaction.
 
 [#MobilePaymentSDK_iOS_BasicSetup_Localization]
-=== Localization
+==== Localization
 
 The locale can be realized by a few way steps:
 
