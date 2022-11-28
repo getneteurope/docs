@@ -197,10 +197,10 @@ This is example code for processing the response (to see the result of the trans
 [#obilePaymentSDK_iOS_PaymentResponse_Object_Reference]
 The `SDKPayECPaymentResponse` object is inherited from the SDKPayECPayment object. If the response was succesfull SDKPayECPaymentResponse object contains actual payment response parameters:
 
-**`transactionState`**: `SDKPayECTransactionState` - Returns a transaction state
-**`transactionIdentifier`**: `String` - A unique identifier assigned for every Transaction.
-**`statusMessage`**: `String` - All status messaeges composed into one string
-**`providerTransactionReferenceId`**: `String` - A unique identifier assigned for every provider transaction.
+- **`transactionState`**: `SDKPayECTransactionState` - Returns a transaction state
+- **`transactionIdentifier`**: `String` - A unique identifier assigned for every Transaction.
+- **`statusMessage`**: `String` - All status messaeges composed into one string
+- **`providerTransactionReferenceId`**: `String` - A unique identifier assigned for every provider transaction.
 
 [#MobilePaymentSDK_iOS_BasicSetup_Localization]
 ==== Localization
