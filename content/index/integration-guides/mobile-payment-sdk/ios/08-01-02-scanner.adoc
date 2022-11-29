@@ -19,7 +19,7 @@ The card scanner provides primary the card number detection. When it is possible
 Add to your app’s `Podfile` subspecs: 
 [source,ruby]
 ----
-pod 'paymentSDK/CardScanner',          '~> {{version}}'
+pod 'mobilePaymentSDK/CardScanner',          '~> {{version}}'
 ----
 
 The MPSDK adds the scanner button to the card number's textfield, the cardfield component alebo the keyboard toolbar.
@@ -152,7 +152,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/IBANScanner',          '~> {{version}}'
+pod 'mobilePaymentSDK/IBANScanner',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_IBAN_Scanner_Integration]
@@ -212,8 +212,8 @@ every module used in the SDK. The cardfield component is fully customizable by c
  
 // [source,ruby]
 // ----
-// pod 'paymentSDK/CardScannerGallery',          '~> {{version}}'
-// pod 'paymentSDK/IBANScannerGallery',          '~> {{version}}'
+// pod 'mobilePaymentSDK/CardScannerGallery',          '~> {{version}}'
+// pod 'mobilePaymentSDK/IBANScannerGallery',          '~> {{version}}'
 // ----
 
 // [#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Integration]
