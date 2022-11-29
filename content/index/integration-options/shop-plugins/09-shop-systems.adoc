@@ -12,7 +12,7 @@ All our shop plugins require *only PCI SAQ A* certification for credit
 card payments which you may achieve very easily.
 
 You are able to *test the shop plugin* features and functionality via
-pre-configured test accounts for each payment method. For going live you
+<<PaymentPageSolutions_SP_TestCredentials, pre-configured test accounts>> for each payment method. For going live you
 need your personal credentials which you receive from Getnet after
 concluding a corresponding contract. Please contact our <<ContactUs, Merchant Support>>.
 
