@@ -33,7 +33,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'paymentSDK/Card',          '~> {{version}}'
+pod 'mobilePaymentSDK/Card',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_payment]
@@ -81,9 +81,90 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?, 
 
 [TIP]
 ====
-You can set optional parameters after the payment object is
-created. Check the API documentation for more details. Credit Card payment supports recurring type too.
+You can set optional parameters after the payment object is created. Check the documentation <<CC_Fields, Credit Card>> payment method for more details.
+
+Credit Card payment supports
+`SDKPayECPeriodicTypeRecurring`
+recurring type. Check the API documentation <<GeneralPlatformFeatures_Transactions_Recurring, Recurring Transaction>> for more details.
 ====
+
+//-
+
+[#MobilePaymentSDK_iOS_CreditCard_toeknized_payment]
+=== Tokenized Credit Card Payment
+---
+On a basic level, tokenized payments have two phases:
+
+[arabic]
+. The first request, which must include:
+* `transactionType` parameter set to
+`.tokenize`,
+. The follow-up requests, which must include:
+* `token` parameter set to
+`value od token from the initial request,
+
+So in order to create a toeknized payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate transactionType type,
+. Save the values of `cardToken` parameter generated in this first payment,
+. Reference these values in the follow-up request, then send it in token parameter.
+
+This is a code example for a first tokenized Credit Card payment:
+[source,swift]
+----
+// First payment 
+
+
+let payment = SDKPayECCardPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .tokenize
+payment.signature = signature
+  
+var tokenId: String?
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided;
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+
+// Handle first result
+func handleReponse(_ response: SDKPayECPaymentResponse?) {
+    guard let response = response else { return }
+    self.tokenId = response.cardToken.tokenID
+}
+
+// Second payment using token
+  
+let payment = SDKPayECCardPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.parentTransactionID = self.parentTransactionID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .purchase
+payment.signature = signature
+
+let token = SDKPayECCardToken()
+token.tokenId = tokenId
+payment.token = token
+
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided;
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
 
 //-
 
@@ -95,15 +176,15 @@ On a basic level, recurring payments have two phases:
 [arabic]
 . The initial request, which must include:
 * periodic type set to
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`],
+`SDKPayECPeriodicTypeRecurring`,
 * sequence type set to
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECSequenceType.html[`SDKPayECSequenceTypeFirst`].
+`SDKPayECSequenceTypeFirst`.
 . The follow-up requests, which must include:
 * periodic type set to
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECPeriodicType.html[`SDKPayECPeriodicTypeRecurring`],
+`SDKPayECPeriodicTypeRecurring`,
 * sequence type set to
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Constants/SDKPayECSequenceType.html[`SDKPayECSequenceTypeRecurring`],
-* http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayment.html#//api/name/parentTransactionID[`parentTransactionId`]value
+`SDKPayECSequenceTypeRecurring`,
+* `parentTransactionId` value
 from the initial request.
 
 So in order to create a recurring payment, you need to:
@@ -112,7 +193,7 @@ So in order to create a recurring payment, you need to:
 . Send a initial request with the appropriate periodic and sequence
 flags,
 . Save the values of
-http://wirecard.github.io/paymentSDK-iOS/api/%7B%7Bversion%7D%7D/Classes/SDKPayECPayment.html#//api/name/parentTransactionID[`parentTransactionId`]
+`parentTransactionId`
 field generated in this first payment,
 . Reference these values in the follow-up request, then send it with
 appropriate periodic and sequence flags.
