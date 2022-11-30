@@ -78,6 +78,14 @@ pod 'mobilePaymentSDK/SEPA'
 |WireTransfer
 |Wire-Transfer payment frameworks
 |pod 'mobilePaymentSDK/WireTransfer' 
+
+|Sofort
+|Sofort payment frameworks
+|pod 'mobilePaymentSDK/Sofort' 
+
+|RatePay
+|RatePay payments frameworks
+|pod 'mobilePaymentSDK/RatePay' 
 |===
 
 //-
