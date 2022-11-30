@@ -1,7 +1,7 @@
 [#PaymentPageSolutions_SP_Magento_Integration]
 = Magento Shop Plugin
 
-// video::755099295?h=46dea23636[vimeo, width=640, height=360]
+image::images/09-01-magento/intro_video.png[width=640, height=360, link="https://vimeo.com/755099295/46dea23636"]
 
 [#Inroduction]
 == Introduction 

@@ -1,7 +1,7 @@
 [#PaymentPageSolutions_SP_WooCommerce_Integration]
 = WooCommerce Shop Plugin
 
-// video::755099271?h=11d19caa5b[vimeo, width=640, height=360]
+image::images/09-02-woocommerce/intro_video.png[width=640, height=360, link="https://vimeo.com/755099271/11d19caa5b"]
 
 == Requirements
 
@@ -45,6 +45,15 @@ On "Getnet" click on Manage to configure the settings as follows:
 |Creditor ID|Value provided by GetNet
 |===
 
+
+
+*Permalinks*
+
+As an additional step it is necessary to configure the permalinks in the "Post name" option.
+
+Settings / Permalinks
+
+image::images/09-02-woocommerce/Permalinks.png[]
 
 
 [#Orders_Administration_WooCommerce]
