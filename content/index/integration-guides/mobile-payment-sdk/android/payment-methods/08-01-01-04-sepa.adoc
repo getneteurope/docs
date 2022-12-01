@@ -28,8 +28,8 @@ dependencies {
 }
 ----
 
-To disable the card scanner feature, uncomment the
-`+exclude module+`line.
+To disable the IBAN scanner feature, comment the
+'libs/camera.aar' dependency.
 
 When adding/removing this feature, perform a full clean build. If you
 intend to use Card Payments module together with the SEPA Direct Debit
@@ -233,3 +233,40 @@ image::images/android/sepa2.png[Screen]
 10 - `sdkpay_ecom_iban_3`
 
 11 - `sdkpay_ecom_camera_blue`
+
+==== IBAN scanner
+
+If you include 'libs/camera.aar' dependency you can use IBAN scanner feature.
+IBAN scanning feature works with use of activity results so for simplification we can use ActivityResultContract.
+
+To start the feature and listen for iban use this code.
+[source,kotlin]
+----
+class ScannerActivityContract(private val intent: Intent) : ActivityResultContract<Unit, CameraResult>() {
+
+    override fun parseResult(resultCode: Int, intent: Intent?): CameraResult = when {
+        resultCode != Activity.RESULT_OK -> CameraResult.NoData
+        else -> intent?.getParcelableExtra(EXTRA_SCAN_RESULT) ?: CameraResult.NoData
+    }
+
+    override fun createIntent(context: Context, input: Unit): Intent {
+        return intent
+    }
+
+    companion object {
+        const val EXTRA_SCAN_RESULT = "EXTRA_SCAN_RESULT"
+        const val TAG_LOCALE = "TAG_LOCALE"
+    }
+
+}
+
+val iban = registerForActivityResult(
+    ScannerActivityContract(
+        BaseScannerActivity.createIntent<IbanScannerActivity>(requireContext())
+            .apply { putExtra(ScannerActivityContract.TAG_LOCALE, payment?.locale) }
+    )
+) { result ->
+    val iban = result.iban
+}
+iban.launch()
+----
