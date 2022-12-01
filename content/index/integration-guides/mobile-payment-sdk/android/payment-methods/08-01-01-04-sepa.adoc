@@ -28,7 +28,13 @@ dependencies {
 }
 ----
 
-When adding/removing this feature, perform a full clean build.
+To disable the card scanner feature, uncomment the
+`+exclude module+`line.
+
+When adding/removing this feature, perform a full clean build. If you
+intend to use Card Payments module together with the SEPA Direct Debit
+module (with enabled IBAN scanner), you must enable it in *both*
+modules.
 
 === Signature
 
