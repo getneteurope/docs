@@ -1,7 +1,7 @@
 [#PaymentPageSolutions_SP_PrestaShop_Integration]
 = PrestaShop Shop Plugin
 
-// video::755099329?h=840d3241a9[vimeo, width=640, height=360]
+image::images/09-02-prestashop/intro_video.png[width=640, height=360, link="https://vimeo.com/755099329/840d3241a9"]
 
 == Requirements
 

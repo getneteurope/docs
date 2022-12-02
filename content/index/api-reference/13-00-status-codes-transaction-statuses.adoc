@@ -803,6 +803,14 @@ a| *500.1159*
 | 500.4026 | error       | Issuer: 'Not eligible for OCT' | The Issuer does not support the function.
 | 501.1088 | information | Requested Function Not Supported | The requested function is not supported.
 | 501.1090 | error       | Content Type not Supported. | The content type is not supported.
+| 500.4054 |  error      | 3DS v1.x not supported | 3DS version 1.x is not supported anymore.
+| 500.4056 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 1 hour.
+| 500.4057 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 24 hours.
+| 500.4058 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 2 days.
+| 500.4059 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 4 days.
+| 500.4060 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 6 days.
+| 500.4061 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 8 days.
+| 500.4062 | error       | Insufficient Funds | 3d-acquirer:Insufficient Funds-Retry after 10 days.
 | 999.9998 | error       | Database error | Database error.
 | 999.9999 | error       | System error | System error.
 | A        | information | Street Address Match | Only Street Address match.
