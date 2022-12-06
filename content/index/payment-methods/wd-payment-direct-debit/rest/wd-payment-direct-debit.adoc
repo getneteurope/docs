@@ -566,86 +566,37 @@ Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for correspondi
 [#API_PaymentDirectDebit_Samples_DirectDebit_Authorization]
 ===== _authorization_
 
-.XML authorization Request (Successful)
+.XML authorization 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ratepay-elv_authorization_request_success_de.xml[]
 ----
 
-.XML authorization Response (Successful)
-
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_authorization_response_success_de.xml[]
-----
-
 [#API_PaymentDirectDebit_Samples_DirectDebit_CaptureAuthorization]
 ===== _capture-authorization_
 
-.XML capture-authorization Request (Successful)
+.XML capture-authorization
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ratepay-elv_capture-authorization_request_success_f1ed56d2.xml[]
 ----
 
-.XML capture-authorization Response (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_capture-authorization_response_success_de_f1ed56d2.xml[]
-----
-
 [#API_PaymentDirectDebit_Samples_DirectDebit_RefundCapture]
 ===== _refund-capture_
 
-.XML refund-capture Request (Successful)
+.XML refund-capture
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ratepay-elv_refund-capture_request_success_674f05af.xml[]
 ----
 
-.XML refund-capture Response (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_refund-capture_response_success_de_674f05af.xml[]
-----
-
-[#API_PaymentDirectDebit_Samples_DirectDebit_Credit]
-===== _credit_
-
-.XML credit Request (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_credit_request_success_f1ed56d2.xml[]
-----
-
-.XML credit Response (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_credit_response_success_de_f1ed56d2.xml[]
-----
-
 [#API_PaymentDirectDebit_Samples_DirectDebit_VoidAuthorization]
 ===== _void-authorization_
 
-.XML void-authorization Request (Successful)
+.XML void-authorization
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ratepay-elv_void-authorization_request_success_f1ed56d2.xml[]
-----
-
-.XML void-authorization Response (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_void-authorization_response_success_de_f1ed56d2.xml[]
-----
-
-[#API_PaymentDirectDebit_Samples_DirectDebit_DeviceIdentToken]
-===== _authorization_ Request to Getnet
-
-.deviceIdentToken Transfer
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_authorization_unknown__de.xml[]
 ----
 
 //-
