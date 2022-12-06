@@ -1,19 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>3cfb0fb7-59e2-4d92-847f-37121d633844</merchant-account-id>
+    <merchant-account-id>5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
     <request-id>{{$guid}}</request-id>
     <transaction-type>refund-capture</transaction-type>
-    <payment-methods>
-        <payment-method name="ratepay-elv" />
-    </payment-methods>
-    <requested-amount currency="EUR">50</requested-amount>
-    <parent-transaction-id>674f05af-b289-4e7a-99e3-1ee799c53151</parent-transaction-id>
+    <parent-transaction-id>{{transactionIdCaptAuth1}}</parent-transaction-id>
+    <requested-amount currency="CHF">15.00</requested-amount>
     <order-items>
-    <order-item>
-      <name>Women V-Neck S</name>
-      <article-number>12</article-number>
-      <amount currency="EUR">50</amount>
-      <tax-rate>19</tax-rate>
-      <quantity>1</quantity>
-    </order-item>
-    </order-items></payment>
+        <order-item>
+            <name>Item A</name>
+            <article-number>123</article-number>
+            <amount currency="CHF">5.0</amount>
+            <tax-rate>0.0</tax-rate>
+            <quantity>1</quantity>
+        </order-item>
+        <order-item>
+            <name>Item B</name>
+            <article-number>456</article-number>
+            <amount currency="CHF">10.0</amount>
+            <tax-rate>0.0</tax-rate>
+            <quantity>1</quantity>
+        </order-item>
+    </order-items>
+    <custom-fields>
+        <custom-field field-name="invoice" field-value="12TH67X"/>
+    </custom-fields>
+    <payment-methods>
+        <payment-method name="ratepay-invoice"/>
+    </payment-methods>
+</payment>
