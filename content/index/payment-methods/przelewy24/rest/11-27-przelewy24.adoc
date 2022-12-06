@@ -1,10 +1,10 @@
 
-[#Przelewy24]
+[#e-przelewy]
 == REST API
 
-_Przelewy24_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
+_e-przelewy_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
-[#Przelewy24_PaymentModeCountriesandCurrencies]
+[#e-przelewy_PaymentModeCountriesandCurrencies]
 === Countries and Currencies
 
 [width=75%,cols="1h,3",stripes=none]
@@ -13,7 +13,7 @@ _Przelewy24_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Onlin
 | Currencies   | PLN
 |===
 
-[#Przelewy24_CommunicationFormats]
+[#e-przelewy_CommunicationFormats]
 === Communication Formats
 
 This table illustrates how _P24_ notifications are encoded and which
@@ -26,7 +26,7 @@ formats and methods can be used for requests and responses.
    h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN_NotificationExamples>> to set up IPN.
 |===
 
-[#Przelewy24_TransactionTypes]
+[#e-przelewy_TransactionTypes]
 === Transaction Types
 
 This table lists all transaction types available for _P24_.
@@ -46,7 +46,7 @@ at <<AppendixB,  Transaction Types>>.
 
 |debit | Yes | Yes | Yes | Moves funds from Consumer to Merchant.
 ``debit`` requests to take funds from consumer's bank account. a|
-<<Przelewy24_Samples_debit, debit samples>>
+<<e-przelewy_Samples_debit, debit samples>>
 
 |get-url |No |No |Yes | A step in a group of transactions where the
 URL of P24 landing page is retrieved for the Consumer to be redirected
@@ -54,7 +54,7 @@ to. |
 
 |refund-request |Yes |Yes |Yes | A request to give funds to the
 Consumer's account, referring to an eligible debit transaction.
-|<<Przelewy24_Samples_refund, refund samples>>
+|<<e-przelewy_Samples_refund, refund samples>>
 
 |refund-debit |No |Yes |Yes |Moves funds from the Merchant to the
 Consumer. It follows ``refund-request`` as a final step of the refund
@@ -72,7 +72,7 @@ flow.
 |===
 ====
 
-[#Przelewy24_TestCredentials]
+[#e-przelewy_TestCredentials]
 === Test Credentials
 
 NOTE: Our test environment is connected to _P24_ sandbox which does not
@@ -90,13 +90,13 @@ h| Password            3+| 4cHLRE-Q7YcAP
 h| Secret Key          3+| 6951db91-063a-4f28-b88e-02bde3ae555e
 |===
 
-[#Przelewy24_Workflow]
+[#e-przelewy_Workflow]
 === Workflow
 
-[#Przelewy24_debitTransaction]
+[#e-przelewy_debitTransaction]
 ==== _debit_ Transaction
 
-[#Przelewy24_debitPrerequisites]
+[#e-przelewy_debitPrerequisites]
 ===== Prerequisites
 
 For a successful workflow, please keep the following prerequisites in
@@ -116,10 +116,10 @@ could be successfully finished even after a long time (when the merchant
 could have cancelled the order already).
 * The maximum period to receive notification is 30 days.
 
-[#Przelewy24_debitProcessUsingtheReSTAPI]
+[#e-przelewy_debitProcessUsingtheReSTAPI]
 ===== Payment Process Using the ReST API
 
-image::images/diagrams/przelewy24_debit_rest.svg[Payment Process Using ReST API]
+image::images/diagrams/e-przelewy_debit_rest.svg[Payment Process Using ReST API]
 
 . The consumer initiates a transaction (currency is set to ``PLN``).
 . The merchant sends a request with the consumer's data to the
@@ -142,11 +142,11 @@ receive server-to-server notification, the notification must use the
 definition in the field ``notifications/notification/@url`` in the request
 (Step 2)
 
-[#Przelewy24_debitProcessUsingthePaymentPage]
+[#e-przelewy_debitProcessUsingthePaymentPage]
 ===== Payment Process Using the Payment Page
 
 .Payment Process Using Payment Page
-image::images/diagrams/przelewy24_debit_pp.svg[Payment Process Using Payment Page]
+image::images/diagrams/e-przelewy_debit_pp.svg[Payment Process Using Payment Page]
 
 . The consumer initiates a transaction (currency is set to PLN).
 . The merchant sends a request with the consumer's data to the
@@ -173,14 +173,14 @@ receive a server-to-server notification, the notification must use the
 definition in the field ``notifications/notification/@url`` in the request
 (Step 2).
 
-[#Przelewy24_refundTransaction]
+[#e-przelewy_refundTransaction]
 ==== _refund_ Transaction
 
 A ``refund`` transaction is a backend process. Getnet can only provide a
 process for ReST API. When using Payment Page the merchant must set up a
 refund process.
 
-[#Przelewy24_refundPrerequisites]
+[#e-przelewy_refundPrerequisites]
 ===== Prerequisites
 
 In order to transfer funds back to the consumer you have to be aware of
@@ -198,11 +198,11 @@ of those individual refunds does not exceed original full amount.
 * In order to have a final status of the _refund_, you have to process a
 subsequent notification.
 
-[#Przelewy24_refundProcessUsingtheReSTAPI]
+[#e-przelewy_refundProcessUsingtheReSTAPI]
 ===== _refund_ Process Using the ReST API
 
 .refund Process Using the ReST API
-image::images/diagrams/przelewy24_refund_rest.svg[refund Process Using the ReST API]
+image::images/diagrams/e-przelewy_refund_rest.svg[refund Process Using the ReST API]
 
 . The merchant initiates a ``refund`` transaction.
 . The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request
@@ -228,19 +228,19 @@ must use the definition in the
 field ``notifications/notification/@url`` in the request (Step 2).
 See <<GeneralPlatformFeatures_IPN, Instant Payment Notification>> for details.
 
-[#Przelewy24_BankingStatement]
+[#e-przelewy_BankingStatement]
 ==== Banking Statement
 
 After a successful payment process, a banking statement appears in the
 consumer's transaction history. The statement consists of
 a _Transaction-ID_ generated by P24 (_P24-Transaction-ID_) and a value
-provided in the field ``descriptor`` of the <<Przelewy24_Samples_debit, debit request>>.
+provided in the field ``descriptor`` of the <<e-przelewy_Samples_debit, debit request>>.
 
 The structure of the _P24-Transaction-ID_ is
 ``P24-YXX-XXX-XXX``. _The _P24-Transaction-ID__ is also displayed in
 the _{enterprise-portal-name}_ as _Provider Transaction-ID_.
 
-[#Przelewy24_Fields]
+[#e-przelewy_Fields]
 === Fields
 
 For full reference of allowed fields for Payment Page or REST API can be
@@ -248,7 +248,7 @@ found on <<PaymentPageSolutions_Fields, Fields for Payment Page>> or <<RestApi_F
 The following tables describe only P24 specifics. The following elements
 are either mandatory *M*, optional *O* or conditional *C*.
 
-[#Przelewy24_debit]
+[#e-przelewy_debit]
 ==== debit
 
 .Fields for debit transaction
@@ -278,7 +278,7 @@ which a transaction is received and processed. Always use value ``PLN``
 
 |descriptor |O |Alphanumeric |64 a|
 Describes the transaction. It is shown on the account holder's statement
-along with the _P24-Transaction-ID_. See section <<Przelewy24_BankingStatement, Banking Statement>> for details.
+along with the _P24-Transaction-ID_. See section <<e-przelewy_BankingStatement, Banking Statement>> for details.
 Do not use no more than 20 characters and do not use special chars as it
 can be misinterpreted by a bank system.
 
@@ -296,7 +296,7 @@ following format:
 _Merchant Name_ is taken from the configuration of the merchant's
 profile.
 
-[#Przelewy24_refund]
+[#e-przelewy_refund]
 ==== refund request
 
 .Fields for refund request
@@ -314,12 +314,12 @@ transaction. Always use value ``refund-request``
 which a transaction is received and processed. Always use value ``PLN``
 |===
 
-[#Przelewy24_Samples]
+[#e-przelewy_Samples]
 === Samples
 
 Go to <<GeneralPlatformFeatures_IPN_NotificationExamples, Notification Examples>> if you want to see corresponding notification samples.
 
-[#Przelewy24_Samples_debit]
+[#e-przelewy_Samples_debit]
 ==== debit
 
 .debit Request (Successful)
@@ -334,7 +334,7 @@ include::{root}/samples/xml/p24_debit_request_success.xml[]
 include::{root}/samples/xml/p24_debit_response_success.xml[]
 ----
 
-[#Przelewy24_Samples_refund]
+[#e-przelewy_Samples_refund]
 ==== refund
 
 .refund-request Request (Successful)
