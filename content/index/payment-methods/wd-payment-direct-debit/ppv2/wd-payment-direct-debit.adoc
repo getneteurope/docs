@@ -1,4 +1,4 @@
-:payment-method-name: Guaranteed Direct Debit
+:payment-method-name: Ratepay Guaranteed Direct Debit
 
 [#PPv2_PaymentDirectDebit]
 == {payment-page-v2}
