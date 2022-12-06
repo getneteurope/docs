@@ -1,2 +1,2 @@
 [#PaymentInvoice_Main]
-== Guaranteed Payment on Invoice
+== Ratepay Guaranteed Payment on Invoice
