@@ -1,27 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-  <merchant-account-id>3cfb0fb7-59e2-4d92-847f-37121d633844</merchant-account-id>
-  <request-id>{{$guid}}</request-id>
-  <transaction-type>capture-authorization</transaction-type>
-  <payment-methods>
-    <payment-method name="ratepay-elv" />
-  </payment-methods>
-  <requested-amount currency="EUR">200</requested-amount>
-  <parent-transaction-id>f1ed56d2-08f5-40d8-8b82-82b405cfc3c6</parent-transaction-id>
-  <order-items>
-    <order-item>
-      <name>Denim 753 Blue 27/32</name>
-      <article-number>1</article-number>
-      <amount currency="EUR">150</amount>
-      <tax-rate>19</tax-rate>
-      <quantity>1</quantity>
-    </order-item>
-    <order-item>
-      <name>Women V-Neck S</name>
-      <article-number>12</article-number>
-      <amount currency="EUR">50</amount>
-      <tax-rate>19</tax-rate>
-      <quantity>1</quantity>
-    </order-item>
-  </order-items>
+    <merchant-account-id>5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
+    <request-id>{{$guid}}</request-id>
+    <transaction-type>capture-authorization</transaction-type>
+    <parent-transaction-id>{{transactionIdAuth}}</parent-transaction-id>
+    <requested-amount currency="EUR">10.00</requested-amount>
+    <order-items>
+        <order-item>
+            <name>Item B</name>
+            <article-number>456</article-number>
+            <amount currency="EUR">10.0</amount>
+            <tax-rate>0.0</tax-rate>
+            <quantity>1</quantity>
+        </order-item>
+        <order-item>
+            <name>Shipping Cost</name>
+            <article-number>789</article-number>
+            <amount currency="EUR">5.0</amount>
+            <tax-rate>0.0</tax-rate>
+            <quantity>1</quantity>
+            <order-item-type>shipment_fee</order-item-type>
+        </order-item>
+        <order-item>
+            <name>Discount</name>
+            <article-number>111</article-number>
+            <amount currency="EUR">-5.0</amount>
+            <tax-rate>0.0</tax-rate>
+            <quantity>1</quantity>
+            <order-item-type>discount</order-item-type>
+        </order-item>
+    </order-items>
 </payment>
