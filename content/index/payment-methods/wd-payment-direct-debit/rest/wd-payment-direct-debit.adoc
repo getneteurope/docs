@@ -1,7 +1,7 @@
 [#API_PaymentDirectDebit]
 == REST API
 
-_Guaranteed Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
+_Ratepay Guaranteed Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#API_PaymentDirectDebit_CountriesandCurrencies]
 === Countries and Currencies
@@ -16,7 +16,7 @@ _Guaranteed Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankT
 [#API_PaymentDirectDebit_Communication]
 === Communication Formats
 
-This table illustrates how _Guaranteed Direct Debit_ notifications are encoded and which formats and methods can be
+This table illustrates how _Ratepay Guaranteed Direct Debit_ notifications are encoded and which formats and methods can be
 used for requests and responses.
 
 [width=75%,stripes=none]
@@ -101,10 +101,10 @@ are shipped in separate shipments.
                                   | For transaction types ``capture-authorization``, ``refund-capture``,
                                     ``void-authorization`` and ``credit``  |``\https://{rest-api-test-endpoint}``
    h| Merchant Account ID (MAID)
-                                2+| To be determined
-   h| Username                  2+| To be determined
-   h| Password                  2+| To be determined
-   h| Secret Key                2+| To be determined
+                                2+| 5289ba2d-6094-4f7d-b6c2-346d1af638eb
+   h| Username                  2+| 515225-GetnetEuropeTEST
+   h| Password                  2+| 4cHLRE-Q7YcAP
+   h| Secret Key                2+| bb3ec883-9c5b-4e70-beff-c3151b17ecf4
 |===
 
 [#API_PaymentDirectDebit_Workflow]
@@ -114,12 +114,12 @@ are shipped in separate shipments.
 ==== Standard Process
 
 [#API_PaymentDirectDebit_GuaranteedDirectDebit]
-===== Guaranteed Direct Debit
+===== Ratepay Guaranteed Direct Debit
 
 image::images/diagrams/guaranteed-direct-debit.bmp[{payment-provider-name} Payment Guaranteed Direct Debit Workflow, width=950, align="center"]
 
 . Consumer adds items to shopping basket.
-. Consumer selects the payment method _Guaranteed Direct Debit_.
+. Consumer selects the payment method _Ratepay Guaranteed Direct Debit_.
 . Merchant sends an ``authorization`` request including items to Getnet.
 . Merchant receives an ``authorization`` response, including the
 descriptor (an alphanumerical code, starting with DG).
@@ -140,7 +140,7 @@ are available: ``credit``, ``refund-capture`` or ``void-authorization``.
 === Fields
 
 The following elements are mandatory *M*, optional *O* or conditional
-*C* for sending a request for _Guaranteed Direct Debit_ (complete field
+*C* for sending a request for _Ratepay Guaranteed Direct Debit_ (complete field
 list available in <<RestApi_Fields, REST API field list>>):
 
 [%autowidth.stretch,stripes=none, cols="v,,,,"]
@@ -169,7 +169,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |M
 |Alphanumeric
 |30
-|This is the type for a transaction: ``authorization``, ``capture``, ``void-authorization``, ``refund-capture`` and ``credit`` are supported for _Guaranteed Direct Debit_.
+|This is the type for a transaction: ``authorization``, ``capture``, ``void-authorization``, ``refund-capture`` and ``credit`` are supported for _Ratepay Guaranteed Direct Debit_.
 
 |_requested-amount_
 |M
@@ -547,7 +547,7 @@ During checkout, the consumer has to agree to Ratepay’s terms of payment and d
 [#API_PaymentDirectDebit_AdditionalBusinessContitions]
 ===== Additional business conditions
 
-When the consumers use _Guaranteed Direct Debit,_
+When the consumers use _Ratepay Guaranteed Direct Debit,_
 payments with debt discharging effect can be made solely to Getnet.
 
 [#API_PaymentDirectDebit_Samples]
@@ -556,7 +556,7 @@ payments with debt discharging effect can be made solely to Getnet.
 Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
 
 [#API_PaymentDirectDebit_Samples_DirectDebit]
-==== Guaranteed Direct Debit
+==== Ratepay Guaranteed Direct Debit
 
 [#API_PaymentDirectDebit_Samples_DirectDebit_Authorization]
 ===== _authorization_
