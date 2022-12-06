@@ -95,16 +95,21 @@ are shipped in separate shipments.
 [#API_PaymentDirectDebit_TestCredentials]
 === Test Credentials
 
-[%autowidth.stretch,stripes=none]
+[cols="h,,"]
+[%autowidth]
 |===
-.2+h| URLs (Endpoints)            | For transaction type ``authorization`` | `\https://{rest-api-test-apm-endpoint}`
-                                  | For transaction types ``capture-authorization``, ``refund-capture``,
-                                    ``void-authorization`` and ``credit``  |``\https://{rest-api-test-endpoint}``
-   h| Merchant Account ID (MAID)
-                                2+| 5289ba2d-6094-4f7d-b6c2-346d1af638eb
-   h| Username                  2+| 515225-GetnetEuropeTEST
-   h| Password                  2+| 4cHLRE-Q7YcAP
-   h| Secret Key                2+| bb3ec883-9c5b-4e70-beff-c3151b17ecf4
+| *URL (Endpoint)*
+| For transaction type _get-url._
+|
+``\https://{rest-api-test-apm-endpoint}``
+| *Merchant Account ID (MAID)*
+2+| 5289ba2d-6094-4f7d-b6c2-346d1af638eb
+| *Username*
+2+| 515225-GetnetEuropeTEST
+| *Password*
+2+| 4cHLRE-Q7YcAP
+| *Secret Key*
+2+| bb3ec883-9c5b-4e70-beff-c3151b17ecf4
 |===
 
 [#API_PaymentDirectDebit_Workflow]
