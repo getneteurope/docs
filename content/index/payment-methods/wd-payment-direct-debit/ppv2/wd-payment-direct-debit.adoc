@@ -25,16 +25,16 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 
 |Merchant Account ID (MAID) 
-|5c4ef296-46c5-482c-9143-509d13fcca34
+|5289ba2d-6094-4f7d-b6c2-346d1af638eb
 
 |Username 
-|84320-getneteurope
+|515225-GetnetEuropeTEST
 
 |Password 
-|2NQBnucU19mY
+|4cHLRE-Q7YcAP
 
 |Secret Key (used for response verification) 
-|f4cbabd5-addf-4648-92a0-09f15eed7c2e
+|bb3ec883-9c5b-4e70-beff-c3151b17ecf4
 |===
 
 [#PPv2_PaymentDirectDebit_TestCredentials_Additional]
