@@ -32,11 +32,11 @@ Test Credentials for Transaction Type
 h| URI (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 h| Merchant Account ID (MAID)
-| To be determined
+| 1da76824-e28a-4b64-8f41-c74a0a0e0c0c
 h| Username
-| To be determined
+| 515225-GetnetEuropeTEST
 h| Password
-| To be determined
+| 4cHLRE-Q7YcAP
 |===
 
 [#PPv2_PaymentInvoice_Countries]
