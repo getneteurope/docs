@@ -128,14 +128,14 @@ If {payment-provider-name} is your acquirer, the {payment-gateway} can "grandfat
 | First Transaction | Before 14 September 2019 | a) ``authorization`` or +
                                                  b) ``purchase`` | e.g. 12345 | ``first`` | ``recurring`` or +
                                                                                          ``installment`` or +
-                                                                                         ``UCOF`` | none
+                                                                                         ``COF`` | none
 | Recurring Transactions | After 14 September 2019 a| a) ``authorization`` or +
                                                      a) ``referenced-authorization`` or +
                                                      b) ``purchase`` or +
                                                      b) <<CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions, ``referenced-purchase``>> |e.g. 56789 | ``recurring`` or +
                                            ``final`` | ``recurring`` or +
                                                        ``installment`` or +
-                                                       ``UCOF`` +
+                                                       ``COF`` +
                                                        must be the same as in the first transaction. | e.g. 12345 
 
 |===
