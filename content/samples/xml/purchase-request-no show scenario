@@ -1,0 +1,28 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>b562b4d7-8989-4397-a4e5-849eefe50018</merchant-account-id>
+  <request-id>4ef2c57b-68c0-41ff-9373-94e72dca631c</request-id>
+  <transaction-type>purchase</transaction-type>
+  <requested-amount currency="EUR">1.01</requested-amount>
+  <account-holder>
+    <first-name>John</first-name>
+    <last-name>Doe</last-name>
+    <email>john.doe@test.com</email>
+    <address>
+      <street1>2200 Pacific Hwy</street1>
+      <city>San Diego</city>
+      <state>US</state>
+      <country>CA</country>
+      <postal-code>92101</postal-code>
+    </address>
+  </account-holder>
+  <card selection="cardholder">
+    <account-number>4929101257750154</account-number>
+    <expiration-month>11</expiration-month>
+    <expiration-year>2023</expiration-year>
+    <card-security-code>123</card-security-code>
+    <card-type>visa</card-type>
+  </card>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+  <authorization-reason>no-show</authorization-reason>
