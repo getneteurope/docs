@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>7d7edecb-b008-4f05-9103-308c81cf2ea2</merchant-account-id>
+    <merchant-account-id>1da76824-e28a-4b64-8f41-c74a0a0e0c0c</merchant-account-id>
     <request-id>{{$guid}}</request-id>
     <transaction-type>refund-capture</transaction-type>
     <payment-methods>

@@ -151,6 +151,14 @@ include::index/payment-methods/ideal/ideal-main.adoc[leveloffset=+1]
 include::index/payment-methods/ideal/rest/11-12-ideal.adoc[leveloffset=+2]
 include::index/payment-methods/ideal/ppv2/03-01-04-05-ideal.adoc[leveloffset=+2]
 
+include::index/payment-methods/wd-payment-direct-debit/wd-payment-direct-debit-main.adoc[leveloffset=+1]
+include::index/payment-methods/wd-payment-direct-debit/rest/wd-payment-direct-debit.adoc[leveloffset=+2]
+include::index/payment-methods/wd-payment-direct-debit/ppv2/wd-payment-direct-debit.adoc[leveloffset=+2]
+
+include::index/payment-methods/wd-payment-invoice/wd-payment-invoice-main.adoc[leveloffset=+1]
+include::index/payment-methods/wd-payment-invoice/rest/wd-payment-invoice.adoc[leveloffset=+2]
+include::index/payment-methods/wd-payment-invoice/ppv2/wd-payment-invoice.adoc[leveloffset=+2]
+
 include::index/payment-processing/19-payment-processing.adoc[]
 include::index/payment-processing/3-d-secure-2/11-01-05-3-d-secure-2.adoc[leveloffset=+1]
 include::index/payment-processing/3-d-secure-2/3-d-secure-integration-guide.adoc[leveloffset=+2]

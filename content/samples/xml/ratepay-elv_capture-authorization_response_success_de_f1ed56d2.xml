@@ -1,57 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/3cfb0fb7-59e2-4d92-847f-37121d633844/payments/674f05af-b289-4e7a-99e3-1ee799c53151">
-  <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/3cfb0fb7-59e2-4d92-847f-37121d633844">3cfb0fb7-59e2-4d92-847f-37121d633844</merchant-account-id>
-  <transaction-id>674f05af-b289-4e7a-99e3-1ee799c53151</transaction-id>
-  <request-id>0d32afa6-492a-4228-9edf-169df8ab15db</request-id>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/5289ba2d-6094-4f7d-b6c2-346d1af638eb/payments/76df6bdd-2352-4a08-9da5-6bd174d59f8b">
+  <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/5289ba2d-6094-4f7d-b6c2-346d1af638eb">5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
+  <transaction-id>76df6bdd-2352-4a08-9da5-6bd174d59f8b</transaction-id>
+  <request-id>f07dd7c8-fd54-4ae8-90cc-69d18afde8ec</request-id>
   <transaction-type>capture-authorization</transaction-type>
   <transaction-state>success</transaction-state>
-  <completion-time-stamp>2018-08-01T09:20:30.000Z</completion-time-stamp>
+  <completion-time-stamp>2022-12-08T10:47:18.000Z</completion-time-stamp>
   <statuses>
-    <status code="201.0000" description="ratepay:The resource was successfully created." severity="information" />
+    <status code="201.0000" description="ratepay:The resource was successfully created." severity="information"/>
   </statuses>
-  <requested-amount currency="EUR">200</requested-amount>
-  <parent-transaction-id>f1ed56d2-08f5-40d8-8b82-82b405cfc3c6</parent-transaction-id>
+  <requested-amount currency="EUR">15.00</requested-amount>
+  <parent-transaction-id>8f2827c0-1716-4088-b9d5-dbe3130cd094</parent-transaction-id>
   <account-holder>
-    <first-name>John</first-name>
-    <last-name>Doe</last-name>
-    <email>John@doe.de</email>
+    <first-name>Hans-Jürgen</first-name>
+    <last-name>Wischnewski</last-name>
+    <email>test@test.com</email>
     <phone>03018425165</phone>
     <address>
-      <street1>Nicht versenden Weg 12</street1>
-      <city>Berlin</city>
+      <street1>Nicht Versenden Str. 5</street1>
+      <city>Testhausen</city>
       <state>Berlin</state>
       <country>DE</country>
       <postal-code>13353</postal-code>
     </address>
   </account-holder>
-  <order-number>180801111842579</order-number>
+  <shipping>
+    <first-name>Hans-Jürgen</first-name>
+    <last-name>Wischnewski</last-name>
+    <phone>+49123123123</phone>
+    <address>
+      <street1>Nicht Versenden Str. 5</street1>
+      <city>Testhausen</city>
+      <state>Berlin</state>
+      <country>DE</country>
+      <postal-code>13353</postal-code>
+    </address>
+  </shipping>
+  <order-number>201</order-number>
   <order-items>
     <order-item>
-      <name>Denim 753 Blue 27/32</name>
-      <article-number>1</article-number>
-      <amount currency="EUR">150</amount>
-      <tax-rate>19</tax-rate>
+      <name>Item A</name>
+      <article-number>123</article-number>
+      <amount currency="EUR">5.0</amount>
+      <tax-rate>0.0</tax-rate>
       <quantity>1</quantity>
     </order-item>
     <order-item>
-      <name>Women V-Neck S</name>
-      <article-number>12</article-number>
-      <amount currency="EUR">50</amount>
-      <tax-rate>19</tax-rate>
+      <name>Item B</name>
+      <article-number>456</article-number>
+      <amount currency="EUR">10.0</amount>
+      <tax-rate>0.0</tax-rate>
+      <quantity>1</quantity>
+    </order-item>
+    <order-item>
+      <name>Shipping Cost</name>
+      <article-number>789</article-number>
+      <amount currency="EUR">5.0</amount>
+      <tax-rate>0.0</tax-rate>
+      <quantity>1</quantity>
+    </order-item>
+    <order-item>
+      <name>Discount</name>
+      <article-number>111</article-number>
+      <amount currency="EUR">-5.0</amount>
+      <tax-rate>0.0</tax-rate>
       <quantity>1</quantity>
     </order-item>
   </order-items>
-  <descriptor>DK0073651G0</descriptor>
+  <descriptor>DN2278554S3</descriptor>
   <payment-methods>
-    <payment-method name="ratepay-elv" />
+    <payment-method name="ratepay-elv"/>
   </payment-methods>
-  <parent-transaction-amount currency="EUR">400.000000</parent-transaction-amount>
+  <parent-transaction-amount currency="EUR">15.000000</parent-transaction-amount>
+  <bank-account>
+    <bank-name>Danske Bank Hamburg</bank-name>
+    <iban>DE83203205004989123456</iban>
+    <bic>DABADEHHXXX</bic>
+  </bank-account>
   <mandate>
-    <mandate-id>Wird nach dem Kauf uebermittelt</mandate-id>
-    <signed-date>08-02-2017</signed-date>
+    <mandate-id>25874659562</mandate-id>
+    <signed-date>29-01-2021</signed-date>
   </mandate>
-  <creditor-id>DE98ZZZ09999999999</creditor-id>
+  <creditor-id>DE12345667787</creditor-id>
   <api-id>elastic-api</api-id>
-  <locale>de</locale>
-  <provider-account-id>000000317406A011</provider-account-id>
+  <provider-account-id>GN0000317C3B8F12</provider-account-id>
 </payment>
