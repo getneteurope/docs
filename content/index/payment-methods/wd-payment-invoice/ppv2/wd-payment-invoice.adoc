@@ -1,4 +1,4 @@
-:payment-method-name: Payment on Invoice
+:payment-method-name: Ratepay Payment on Invoice
 
 [#PPv2_PaymentInvoice]
 == {payment-page-v2}
