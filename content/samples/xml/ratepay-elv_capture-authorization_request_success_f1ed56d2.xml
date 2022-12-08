@@ -1,10 +1,17 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
-    <request-id>{{$guid}}</request-id>
+    <request-id>f07dd7c8-fd54-4ae8-90cc-69d18afde8ec</request-id>
     <transaction-type>capture-authorization</transaction-type>
-    <parent-transaction-id>{{transactionIdAuth}}</parent-transaction-id>
-    <requested-amount currency="EUR">10.00</requested-amount>
+    <parent-transaction-id>8f2827c0-1716-4088-b9d5-dbe3130cd094</parent-transaction-id>
+    <requested-amount currency="EUR">15.00</requested-amount>
     <order-items>
+        <order-item>
+            <name>Item A</name>
+            <article-number>123</article-number>
+            <amount currency="EUR">5.0</amount>
+            <tax-rate>0.0</tax-rate>
+            <quantity>1</quantity>
+        </order-item>
         <order-item>
             <name>Item B</name>
             <article-number>456</article-number>

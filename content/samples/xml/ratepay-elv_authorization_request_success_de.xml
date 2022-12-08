@@ -1,6 +1,6 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
-    <request-id>{{$guid}}</request-id>
+    <request-id>c46cc336-cb98-401b-b223-0c29bc9882af</request-id>
     <transaction-type>authorization</transaction-type>
     <requested-amount currency="EUR">15</requested-amount>
     <account-holder>
@@ -29,7 +29,7 @@
             <postal-code>13353</postal-code>
         </address>
     </shipping>
-    <order-number>{{$randomInt}}</order-number>
+    <order-number>201</order-number>
     <order-items>
         <order-item>
             <name>Item A</name>

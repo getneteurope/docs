@@ -1,8 +1,8 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
-    <request-id>{{$guid}}</request-id>
+    <request-id>ad67ce9f-7635-461a-8fd2-7b9d65adabac</request-id>
     <transaction-type>void-authorization</transaction-type>
-    <parent-transaction-id>{{transactionIdAuth}}</parent-transaction-id>
+    <parent-transaction-id>b38b8f70-b17a-4fc6-ab70-dad27c38cf9f</parent-transaction-id>
     <requested-amount currency="EUR">5.00</requested-amount>
     <order-items>
         <order-item>

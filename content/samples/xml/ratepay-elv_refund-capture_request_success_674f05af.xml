@@ -1,21 +1,21 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
     <merchant-account-id>5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
-    <request-id>{{$guid}}</request-id>
+    <request-id>3ebecb19-95e5-4ae5-b98b-9ec5af5aaf46</request-id>
     <transaction-type>refund-capture</transaction-type>
-    <parent-transaction-id>{{transactionIdCaptAuth1}}</parent-transaction-id>
-    <requested-amount currency="CHF">15.00</requested-amount>
+    <parent-transaction-id>76df6bdd-2352-4a08-9da5-6bd174d59f8b</parent-transaction-id>
+    <requested-amount currency="EUR">15.00</requested-amount>
     <order-items>
         <order-item>
             <name>Item A</name>
             <article-number>123</article-number>
-            <amount currency="CHF">5.0</amount>
+            <amount currency="EUR">5.0</amount>
             <tax-rate>0.0</tax-rate>
             <quantity>1</quantity>
         </order-item>
         <order-item>
             <name>Item B</name>
             <article-number>456</article-number>
-            <amount currency="CHF">10.0</amount>
+            <amount currency="EUR">10.0</amount>
             <tax-rate>0.0</tax-rate>
             <quantity>1</quantity>
         </order-item>
@@ -24,6 +24,6 @@
         <custom-field field-name="invoice" field-value="12TH67X"/>
     </custom-fields>
     <payment-methods>
-        <payment-method name="ratepay-invoice"/>
+        <payment-method name="ratepay-elv"/>
     </payment-methods>
 </payment>

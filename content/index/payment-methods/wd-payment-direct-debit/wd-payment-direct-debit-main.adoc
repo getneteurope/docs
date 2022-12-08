@@ -1,2 +1,2 @@
 [#PaymentDirectDebit_Main]
-== Ratepay Guaranteed Direct Debit
+== Ratepay Direct Debit
