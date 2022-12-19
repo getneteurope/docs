@@ -25,15 +25,6 @@ dependencies {
     implementation files('libs/p24.aar')
     ...
 }
-----
-
-To disable the IBAN scanner feature, uncomment the `exclude module`
-line.
-
-When adding/removing this feature, perform a full clean build. If you
-intend to use Card Payments module together with the WIRETRANSFER Direct Debit
-module (with IBAN scanner), you must enable/disable it in *both*
-modules.
 
 === Signature
 
