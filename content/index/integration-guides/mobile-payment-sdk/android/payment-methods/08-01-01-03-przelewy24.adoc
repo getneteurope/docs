@@ -25,6 +25,7 @@ dependencies {
     implementation files('libs/p24.aar')
     ...
 }
+----
 
 === Signature
 
