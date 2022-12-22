@@ -54,8 +54,8 @@ dependencies {
 }
 ----
 
-To disable the card scanner feature, uncomment the
-`+exclude module+`line.
+To disable the card scanner feature, comment the
+`libs/camera.aar` line.
 
 When adding/removing this feature, perform a full clean build. If you
 intend to use Card Payments module together with the SEPA Direct Debit
@@ -227,6 +227,84 @@ above the *consumerId* is mandatory and must be provided within the
 
 Adding card can be done using LoyaltyCard.userId property in the
 CardPayment object.
+
+=== Recurring Credit Card Payment
+---
+On a basic level, recurring payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* periodic type set to PeriodicType.RECURRING,
+* sequence type set to SequenceType.FIRST.
+. The follow-up requests, which must include:
+* periodic type set to PeriodicType.RECURRING,
+* sequence type set to SequenceType.FIRST,
+* parentTransactionId value from the initial request.
+
+So in order to create a recurring payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate periodic and sequence flags,
+. Save the values of parentTransactionId field generated in this first payment,
+. Reference these values in the follow-up request, then send it with appropriate periodic and sequence flags.
+
+This is a code example for a first recurring Credit Card payment:
+[source,kotlin]
+----
+// First payment
+
+var parentTransactionId: String? = null
+
+val cardPayment = CardPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        null,
+        null
+)
+cardPayment.periodic = Periodic().apply {
+   periodicType = PeriodicType.RECURRING.value
+   sequenceType = SequenceType.FIRST.value
+}
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment)
+
+// Handle first result
+
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    if (requestCode == Client.PAYMENT_SDK_REQUEST_CODE) {
+        val paymentSdkResponse = data?.getSerializableExtra(Client.EXTRA_PAYMENT_SDK_RESPONSE)
+        if (paymentSdkResponse is PaymentResponse) {
+            when (paymentSdkResponse.responseCode) {
+                ResponseCode.RESULT_OK -> parentTransactionId = paymentSdkResponse.payment?.parentTransactionId
+                else -> Toast.makeText(this, "${paymentSdkResponse.responseCode}, ${paymentSdkResponse.errorMessage}", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+}
+
+// Second payment using parentTransactionId
+
+val cardPayment = CardPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        null,
+        null
+)
+cardPayment.periodic = Periodic().apply {
+   periodicType = PeriodicType.RECURRING.value
+   sequenceType = SequenceType.RECURRING.value
+}
+cardPayment.parentTransactionId = parentTransactionId
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment)
+```
+----
 
 === Card Field
 
@@ -822,3 +900,46 @@ To show card brand picker UI component over card number input field for
 Card Field, set `+setRequireManualCardBrandSelection+` through it’s
 `+Builder+` class to true. For basic Card Payment, set `+CardPayment+`’s
 property `+requireManualCardBrandSelection+` to true.
+
+
+==== Card scanner
+
+If you include 'libs/camera.aar' dependency you can use card scanner feature.
+Card scanning feature works with use of LocalBroadcastManager.
+
+To start the feature use this code.
+[source,kotlin]
+----
+val intent = Intent(context, CardScannerActivity::class.java)
+intent.putExtra(CardScannerActivity.TAG_LOCALE, mLocale)
+intent.putExtra(CardScannerActivity.TAG_SUPPORTED_CARD_TYPES, supportedCardBrands as Serializable)
+context.startActivity(intent)
+----
+
+To listen for card scanning output you must register a listener which waits for result
+[source,kotlin]
+----
+val mBroadcastReceiver = object : BroadcastReceiver() {
+    override fun onReceive(context: Context, data: Intent) {
+        when (data.action) {
+            CardScannerActivity.E_SDKPAY_SCAN_EVENT -> {
+                val result: CameraResult = data.getParcelableExtra(BaseScannerActivity.EXTRA_SCAN_RESULT)
+                if(result is CameraResult.Card){
+                    val cardNumber = result.cardNumber
+                    val expirationDate = result.expirationDate
+                }
+            }
+        }
+    }
+}
+
+val intentFilter = IntentFilter()
+intentFilter.addAction(CardScannerActivity.E_SDKPAY_SCAN_EVENT)
+LocalBroadcastManager.getInstance(context).registerReceiver(mBroadcastReceiver, intentFilter)
+----
+
+Don't forget to unregister it when its no longer needed
+[source,kotlin]
+----
+LocalBroadcastManager.getInstance(context).unregisterReceiver(mBroadcastReceiver)
+----

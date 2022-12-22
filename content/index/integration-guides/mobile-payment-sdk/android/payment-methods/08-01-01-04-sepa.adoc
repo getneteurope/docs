@@ -28,7 +28,13 @@ dependencies {
 }
 ----
 
-When adding/removing this feature, perform a full clean build.
+To disable the IBAN scanner feature, comment the
+'libs/camera.aar' dependency.
+
+When adding/removing this feature, perform a full clean build. If you
+intend to use Card Payments module together with the SEPA Direct Debit
+module (with enabled IBAN scanner), you must enable it in *both*
+modules.
 
 === Signature
 
@@ -77,6 +83,84 @@ new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPa
 
 You can use Builder to create the payment object and set additional
 properties afterwards.
+
+=== Recurring Sepa Payment
+---
+On a basic level, recurring payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* periodic type set to PeriodicType.RECURRING,
+* sequence type set to SequenceType.FIRST.
+. The follow-up requests, which must include:
+* periodic type set to PeriodicType.RECURRING,
+* sequence type set to SequenceType.FIRST,
+* parentTransactionId value from the initial request.
+
+So in order to create a recurring payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate periodic and sequence flags,
+. Save the values of parentTransactionId field generated in this first payment,
+. Reference these values in the follow-up request, then send it with appropriate periodic and sequence flags.
+
+This is a code example for a first recurring Sepa payment:
+[source,kotlin]
+----
+// First payment
+
+var parentTransactionId: String? = null
+
+val sepaPayment = SepaPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        null,
+        null
+)
+sepaPayment.periodic = Periodic().apply {
+   periodicType = PeriodicType.RECURRING.value
+   sequenceType = SequenceType.FIRST.value
+}
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(sepaPayment)
+
+// Handle first result
+
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    if (requestCode == Client.PAYMENT_SDK_REQUEST_CODE) {
+        val paymentSdkResponse = data?.getSerializableExtra(Client.EXTRA_PAYMENT_SDK_RESPONSE)
+        if (paymentSdkResponse is PaymentResponse) {
+            when (paymentSdkResponse.responseCode) {
+                ResponseCode.RESULT_OK -> parentTransactionId = paymentSdkResponse.payment?.parentTransactionId
+                else -> Toast.makeText(this, "${paymentSdkResponse.responseCode}, ${paymentSdkResponse.errorMessage}", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+}
+
+// Second payment using parentTransactionId
+
+val sepaPayment = SepaPayment(
+        signature,
+        requestID,
+        merchantID,
+        transactionType,
+        null,
+        null
+)
+sepaPayment.periodic = Periodic().apply {
+   periodicType = PeriodicType.RECURRING.value
+   sequenceType = SequenceType.RECURRING.value
+}
+sepaPayment.parentTransactionId = parentTransactionId
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(sepaPayment)
+```
+----
 
 === Customizing Visuals
 
@@ -149,3 +233,40 @@ image::images/android/sepa2.png[Screen]
 10 - `sdkpay_ecom_iban_3`
 
 11 - `sdkpay_ecom_camera_blue`
+
+==== IBAN scanner
+
+If you include 'libs/camera.aar' dependency you can use IBAN scanner feature.
+IBAN scanning feature works with use of activity results so for simplification we can use ActivityResultContract.
+
+To start the feature and listen for iban use this code.
+[source,kotlin]
+----
+class ScannerActivityContract(private val intent: Intent) : ActivityResultContract<Unit, CameraResult>() {
+
+    override fun parseResult(resultCode: Int, intent: Intent?): CameraResult = when {
+        resultCode != Activity.RESULT_OK -> CameraResult.NoData
+        else -> intent?.getParcelableExtra(EXTRA_SCAN_RESULT) ?: CameraResult.NoData
+    }
+
+    override fun createIntent(context: Context, input: Unit): Intent {
+        return intent
+    }
+
+    companion object {
+        const val EXTRA_SCAN_RESULT = "EXTRA_SCAN_RESULT"
+        const val TAG_LOCALE = "TAG_LOCALE"
+    }
+
+}
+
+val iban = registerForActivityResult(
+    ScannerActivityContract(
+        BaseScannerActivity.createIntent<IbanScannerActivity>(requireContext())
+            .apply { putExtra(ScannerActivityContract.TAG_LOCALE, payment?.locale) }
+    )
+) { result ->
+    val iban = result.iban
+}
+iban.launch()
+----
