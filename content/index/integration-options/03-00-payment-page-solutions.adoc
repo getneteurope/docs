@@ -6,6 +6,15 @@ readily available integration options, you decide where and how you want
 your customers to pay, while still enjoying the benefits of a dependable
 payment solution. All you need to get started is PCI SAQ A compliance.
 
+*Payment Page URLs*
+
+[width=75%, cols= "1h,3",stripes=none]
+|===
+|PROD |https://paymentpage.getneteurope.com/api/payment/register
+|TEST |https://paymentpage-test.getneteurope.com/api/payment/register
+|===
+
+
 **{payment-page-v2}**
 
 _{payment-page-v2}_ delivers a highly customizable, secure and

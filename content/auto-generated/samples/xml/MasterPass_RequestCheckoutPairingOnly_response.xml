@@ -15,7 +15,7 @@
     </custom-field>
   </custom-fields>
   <payment-methods>
-    <payment-method url="https://api-test.wirecard.com:443/engine/notification/masterpass/lightBoxPaymentPage?oauth_token=320c91a1499525069ede1de588846d7e14773731&amp;acceptable_cards=master,visa,master,amex,visa,master&amp;checkout_identifier=f5499dfb8d944f108592e9491b5631eb&amp;version=v6&amp;callback=https%3A%2F%2Fapi-test.wirecard.com%3A443%2Fengine%2Fnotification%2Fmasterpass%3Fpayment.transaction-id%3D90da3518-43aa-4afe-b9bd-08a135116649%26payment.transaction-type%3Drequest-checkout%26payment.request-type%3Dpairing%26payment.customer-id%3Dunique-testid-005&amp;lightboxurl=https%3A%2F%2Fsandbox.masterpass.com%2Flightbox%2FSwitch%2Fintegration%2FMasterPass.client.js&amp;merchantOrigin=http%3A%2F%2Flocalhost%2Fshop%2Fmasterpass%2Fpairingredirect%2F" name="masterpass"/>
+    <payment-method url="https://api-test.getneteurope.com:443/engine/notification/masterpass/lightBoxPaymentPage?oauth_token=320c91a1499525069ede1de588846d7e14773731&amp;acceptable_cards=master,visa,master,amex,visa,master&amp;checkout_identifier=f5499dfb8d944f108592e9491b5631eb&amp;version=v6&amp;callback=https%3A%2F%2Fapi-test.getneteurope.com%3A443%2Fengine%2Fnotification%2Fmasterpass%3Fpayment.transaction-id%3D90da3518-43aa-4afe-b9bd-08a135116649%26payment.transaction-type%3Drequest-checkout%26payment.request-type%3Dpairing%26payment.customer-id%3Dunique-testid-005&amp;lightboxurl=https%3A%2F%2Fsandbox.masterpass.com%2Flightbox%2FSwitch%2Fintegration%2FMasterPass.client.js&amp;merchantOrigin=http%3A%2F%2Flocalhost%2Fshop%2Fmasterpass%2Fpairingredirect%2F" name="masterpass"/>
   </payment-methods>
   <redirect-url>http://localhost/shop/rest/masterpass/requestcheckoutresponse/?</redirect-url>
   <wallet>

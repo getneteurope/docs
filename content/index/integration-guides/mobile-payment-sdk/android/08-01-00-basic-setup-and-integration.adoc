@@ -1,0 +1,62 @@
+[#MobilePaymentSDK_Android_BasicSetup]
+== Basic Setup
+---
+The device cannot be rooted and must run at least Android 6 for
+_paymentSDK_ to work. It is recommended to use the latest stable version
+of Android Studio.
+
+Download the libs directory from app/libs
+our link:https://github.com/getneteurope/mobilePaymentSDK-Android[GitHub repository] and
+add it to your module.
+
+- You can select payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
+
+.For example:
+[source,subs=attributes+]
+----
+apply from: 'libs/dependencies.gradle'
+
+dependencies{
+    implementation files('libs/core.aar') //Always
+    implementation files('libs/alipay.aar')
+    implementation files('libs/p24.aar')
+    implementation files('libs/paypal.aar')
+    implementation files('libs/wiretransfer.aar')
+    implementation files('libs/camera.aar') //Only if card or sepa is used
+    implementation files('libs/card.aar')
+    implementation files('libs/sepa.aar')
+}
+----
+
+[#MobilePaymentSDK_Android_List_of_payment_method_subspec]
+=== List of supported payment method subspec
+---
+|===
+|Name|Description|AAR
+
+|Alipay (Cross Border)
+|alipay payment frameworks
+|'libs/alipay.aar'
+
+|Card
+|Credit Card payment frameworks
+|'libs/card.aar'
+
+|PayPal
+|PayPal payment frameworks
+|'libs/paypal.aar'
+
+|P24 (Przelewy24)
+|P24 payment frameworks
+|'libs/p24.aar'
+
+|SEPA (Direct Debit)
+|SEPA payment frameworks
+|'libs/sepa.aar'
+
+|WireTransfer
+|Wire-Transfer payment frameworks
+|'libs/wiretransfer.aar'
+|===
+        
+//-

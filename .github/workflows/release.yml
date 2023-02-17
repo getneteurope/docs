@@ -29,14 +29,15 @@ jobs:
       run: echo "::set-output name=build_name::$(bash .scripts/extract_build_name.sh)"
       id: extract
 
-    - name: Setup Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - name: "Setup ruby 2.6"
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.6.x'
+        ruby-version: 2.6.10
+        bundler-cache: false
 
     - name: Bundle install
       run: |
-        gem install bundler:2.1.4
+        gem install bundler:2.3.26
         bundle config path vendor/bundle
         bundle install --jobs 16 --retry 30
 
@@ -61,3 +62,7 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PUBLIC_GN }}
         AWS_S3_FOLDER: ${{ secrets.AWS_S3_BUCKET_FOLDER_GN }}
 
+    - name: Invalidate Cloudfront
+      run: bash .scripts/invalidate_cache.sh
+      env:
+        AWS_CF_DIST_ID: ${{ secrets.AWS_CF_DIST_ID_PUBLIC_GN }}

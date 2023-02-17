@@ -1,0 +1,398 @@
+
+[#API_PaymentMethods_blik]
+== REST API
+
+[#blik_PaymentModeCountriesandCurrencies]
+=== Countries and Currencies
+
+[width=75%,cols="1h,3",stripes=none]
+|===
+| Countries    | Poland
+| Currencies   | PLN
+|===
+
+[#blik_CommunicationFormats]
+=== Communication Formats
+
+This table illustrates how _blik_ notifications are encoded and which
+formats and methods can be used for requests and responses.
+
+[width=75%,stripes=none]
+|===
+.2+h| Requests/Responses | Format   | XML
+                         | Methods  | POST
+   h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN_NotificationExamples>> to set up IPN.
+|===
+
+[#blik_TransactionTypes]
+=== Transaction Types
+
+This table lists all transaction types available for _blik_.
+
+NOTE: Some transaction types cannot be sent in your request. Refer to columns
+_Request_, _Response/IPN_ and Merchant Portal for details where to expect involved
+transaction types.
+
+NOTE: Recurring mode is not available at the moment.
+
+For <<Glossary_TransactionType, transaction type>> details which are not given here look
+at <<AppendixB,  Transaction Types>>.
+
+[cols="e,,,,,"]
+|===
+|Transaction Type | Request | Response/IPN | Merchant Portal | Description | Link to Samples
+
+|debit | Yes | Yes | Yes | debit is created once direct response is received|see debit sample below
+
+|get URL | No | No | Yes | A step in a group of transactions where the URL of blik landing page is retrieved for the Consumer to be redirected to|see get URL samples below
+
+|refund-request|Yes |Yes |Yes | Sends processTransaction to Blik and upon response, the refund-request is updated with a corresponding state|see refund samples below
+
+|refund-debit|Yes |Yes |Yes | When the notification is sent from Blik to the Payment Gateway, then refund-debit transaction is created|see refund samples below
+
+
+|void-debit  |Yes |Yes |Yes|voids are synchronous. Called by merchant to cancel a transaction.|see void debit samples below
+
+|reversal-debit  |Yes |Yes |Yes|Reversal is internally called by Payment Gateway (cron job) to revoke pending payments that could not be processed due to timeouts or tech issues. The service runs in asynchronous mode|see reversal samples below
+
+|query / GET  |Yes |Yes |Yes||see query samples below
+
+|===
+
+[NOTE]
+====
+[cols="h,"]
+|===
+| Request      | *Yes* means the transaction type can be sent in the request.
+| Response/IPN | *Yes* means the transaction type can appear in either response _or_ notification.
+| Merchant Portal          | *Yes* means the transaction type is visible in _{enterprise-portal-name}_.
+|===
+====
+
+[#blik_TestCredentials]
+=== Test Credentials
+
+NOTE: Our test environment is connected to _blik_ sandbox which does not
+require to enter any additional data. _blik_ landing page will skip
+entering consumer card data or credentials and returns to your shop
+immediately.
+
+|===
+.3+h|URLs (Endpoints) .2+| REST API | For transaction type ``debit``.                              | ``\https://{rest-api-test-apm-endpoint}``
+                                    | For transaction types ``refund-request`` and ``refund-debit``. | ``\https://{rest-api-test-endpoint}``
+                       2+| Payment Page                                                          | https://paymentpage-test.getneteurope.com/api/payment/register
+h| Merchant Account ID 3+| 54c06d30-73a7-45b0-b1f6-6f5ae91cd40c
+h| Username            3+| 515225-GetnetEuropeTEST
+h| Password            3+| 4cHLRE-Q7YcAP
+h| Secret Key          3+| 285fe5af-09f0-4e99-b8a8-439f14d75e20
+|===
+
+[#blik_Workflow]
+=== Workflow
+
+[#blik_debitTransaction]
+==== _debit_ Transaction
+
+[#blik_debitPrerequisites]
+===== Prerequisites
+
+For a successful workflow, please keep the following prerequisites in
+mind:
+
+* A blik payment process is *accomplished successfully only, if {payment-gateway-abbr} has
+sent out a successful notification*. The status ``success`` in the response
+only confirms that the payment was technically accepted.
+* In case the consumer closes the browser before confirming the payment,
+there is *a redirection to shop page* possible. This means, the workflow
+can be accomplished successfully, even when shutting down the browser.
+* As soon as the blik landing page has been opened in a browser,
+the *consumer has 15 minutes to authorize the payment*. However, the
+validity of the received URL is not limited. Try to ensure that the URL
+is opened by the consumer as soon as possible. In edge cases the payment
+could be successfully finished even after a long time (when the merchant
+could have cancelled the order already).
+* The maximum period to receive notification is 30 days.
+
+[#blik_debitProcessUsingtheReSTAPI]
+===== Payment Process Using the ReST API
+
+image::images/diagrams/blik_debit_rest.png[Payment Process Using ReST API]
+
+. The consumer initiates a transaction (currency is set to ``PLN``).
+. The merchant displays the list of payment methods to the consumer 
+. The consumer select blik as a payment method
+. The merchant sends a request with the consumer's data to the
+endpoint of _{payment-gateway-abbr}_.
+. {payment-gateway-abbr} send transaction details to blik
+. The merchant redirects the consumer to the blik landing page (The URL
+for redirection is in the response message, field
+``payment-methods/payment-method/@url``).
+. The consumer authorizes the transaction.
+. {payment-gateway-abbr} performs two actions simultaneously:
+. {payment-gateway-abbr} redirects the consumer (via redirect URLs) back to the shop
+where the information about the status of the payment is displayed. The
+redirect URL uses the definition in ``success-redirect-url`` and
+``fail-redirect-url`` from the request (Step 2). According to success or
+failure during the payment process {payment-gateway-abbr} sends the consumer to the
+corresponding URL. This is the page where the consumer is informed about
+his successful or failed payment.
+. {payment-gateway-abbr} sends a notification (IPN) of the payment outcome. In order to
+receive server-to-server notification, the notification must use the
+definition in the field ``notifications/notification/@url`` in the request
+(Step 2)
+
+[#blik_debitProcessUsingthePaymentPage]
+===== Payment Process Using the Payment Page
+
+.Payment Process Using Payment Page
+image::images/diagrams/blik_debit_PP.png[Payment Process Using Payment Page]
+
+. The consumer initiates a transaction (currency is set to PLN).
+. The merchant redirect the request with the consumer's data to the
+Payment Page
+. Payment Page displays the list of payment methods to the consumer
+. The consumer selects Blik as a payment Method
+. Payment Page initiatesa debit transaction to the payment gateway (called ''EE'')
+. the Payment Gateway send the transactions details to Blik and redirect the consumer to the Blik plateform
+. The consumer confirm the transaction with one time pin (OTP)
+. Blik send the payment confirmation to the Payment Gateway 
+. Blik plateform redirect the consumer back to in progress page
+. The Payment Gateway send the transaction status to the merchant
+. The payment Gateway redirect the consumer back
+. The response  and notification are sent to merchant and Merchant provides the results to the consumer
+
+[#blik_refundTransaction]
+==== _refund_ Transaction
+
+A ``refund`` transaction is a backend process. Getnet can only provide a
+process for ReST API. When using Payment Page the merchant must set up a
+refund process.
+
+[#blik_refundPrerequisites]
+===== Prerequisites
+
+In order to transfer funds back to the consumer you have to be aware of
+the following prerequisites:
+
+* The flow is asynchronous. You have to wait for a notification with the
+result. Usually it takes one day for refunds to be processed.
+* The _refund_ must reference to a successful ``debit`` transaction. In a
+_refund_, a _Transaction ID_ from a ``debit`` notification must be
+used.
+* The refunded amount must be less than or equal to original ``debit``
+transaction
+* Multiple refunds to a single ``debit`` are possible as long as the sum
+of those individual refunds does not exceed original full amount.
+* In order to have a final status of the _refund_, you have to process a
+subsequent notification.
+
+[#blik_refundProcessUsingtheReSTAPI]
+===== _refund_ Process Using the ReST API
+
+.refund Process Using the ReST API
+image::images/diagrams/Blik_refund_flow.png[refund Process Using the ReST API]
+
+. The consumer initiates a ``refund`` transaction.
+. The merchant sends a request to the endpoint of _{payment-gateway-abbr}_. The request
+must contain:
+.. the _TransactionID_ from a previously sent successful ``debit``
+transaction. The _Request ID_ is expected in the
+field ``parent-transaction-id``
+.. a ``payment-methods/payment-method/@name`` set to ``blik``
+.. a ``transaction-type`` set to ``refund-request``
+. Payment Gateway send the refund request to Blik
+. blik processes the refund, once refund request accepted, a processing notification is sent to the payment gateway
++
+NOTE: Processing a refund lasts at least one day!
+
++
+. Payment Gateway sends a notification (IPN) of the ``refund`` outcome to the
+merchant. This notification has the transaction type ``refund-debit``,
+instead of ``refund-request`` which was sent in the merchant's request
+(Step 2).  +
+In order to receive a server-to-server notification, the notification
+must use the definition in the
+field ``notifications/notification/@url`` in the request (Step 2).
+See <<GeneralPlatformFeatures_IPN, Instant Payment Notification>> for details.
+
+[#blik_void_debit]
+==== Void-debit
+
+Void debit flow:  When timeout occurs during void-debit processing and Blik confirms that the void-debit processing is still in progress, the core logic will create an XML response with the void debit in ‘failed’ state  but in fact the void-debit tx will remain in progress in Payment Gateway DB.
+To identify if the void-debit is actually failed, Merchant will need to check if there is an statuses block .
+- If it exists, then the void-debit failed and the corresponding error will be sent
+- if it doesn't exist, then void-debit is still being processed and its state is 'in progress'
+
+.void Process Using the ReST API
+image::images/diagrams/Blik_void_debit_flow.png[refund Process Using the ReST API]
+
+[#blik_reversal_debit]
+==== Reversal-debit
+
+Scenario #1: regular run of pending transaction job
+
+image::images/diagrams/Blik_reversal_flow_triggered_by_job.png[refund Process Using the ReST API]
+
+Scenario #2: initiated by pending transaction job during debit timeout
+
+image::images/diagrams/Blik_reversal_flow_triggered_by_job_timeout.png[refund Process Using the ReST API]
+
+[#blik_Query]
+==== Query
+
+image::images/diagrams/Blik_query_flow.png[refund Process Using the ReST API]
+
+
+[#blik_Fields]
+=== Fields
+
+The following fields are required to send debit request (pure WS) to the provider:
+user-agent
+ip-address
+one-time-password
+The field one-time-password should be added to payment section of Getnet documentation 
+only requests with 'PLN' currency will be sent to the provider
+email should contain the value  based on the pattern: [A-Za-z0-9._'%+-]@[A-Za-z0-9.-]\.[A-Za-z] {2,} (only for Debit)
+Transaction types applicable to Blik: get-url, debit, refund-request, refund-debit, void-debit, reversal-debit
+
+[#blik_debit]
+==== debit
+
+[cols="e,,,,"]
+|===
+|Field |Cardinality |Datatype |Size |Description
+
+|account-holder/email |M |Alphanumeric |64 |The email address of the
+account holder.
+
+|account-holder/address/country |O |Alphanumeric |3 |The Country ID of
+the account holder. It must be ``PL``; if it is not provided, will be
+automatically set to ``PL``.
+
+|order-number |O |Alphanumeric |64 |This is the order number of the
+merchant. If provided, it is displayed on blik landing page as "Order
+Information"
+
+|payment-methods/payment-method-name |M |Alphanumeric |15 |This is the
+name of the payment method. Always use value ``blik``
+
+|transaction-type |M |Alphanumeric |30 |This is the type for a
+transaction. Always use value ``debit``
+
+|requested-amount/@currency |M |Alphanumeric |3 |This is the currency in
+which a transaction is received and processed. Always use value ``PLN``
+
+|descriptor |O |Alphanumeric |64 a|
+Describes the transaction. It is shown on the account holder's statement
+along with the _blik-Transaction-ID_.
+Do not use no more than 20 characters and do not use special chars as it
+can be misinterpreted by a bank system.
+
+|locale |O |Alphanumeric |6 a|
+With this field you can specify language in which blik landing page is
+displayed.
+Possible values: ``pl``, ``en``, ``de``, ``es``, ``it``
+|===
+
+[#blik_refund]
+==== refund request
+
+.Fields for refund request
+[cols="e,,,,"]
+|===
+|Field |Cardinality |Datatype |Size |Description
+
+|payment-methods.payment-method-name |M |Alphanumeric |15 |This is the
+name of the payment method. Always use value ``blik``
+
+|transaction-type |M |Alphanumeric |30 |This is the type for a
+transaction. Always use value ``refund-request``
+
+|requested-amount/@currency |M |Alphanumeric |3 |This is the currency in
+which a transaction is received and processed. Always use value ``PLN``
+|===
+
+[#blik_void]
+==== void request
+
+.Fields for void request
+[cols="e,,,,"]
+|===
+|Field |Cardinality |Datatype |Size |Description
+
+|payment-methods.payment-method-name |M |Alphanumeric |15 |This is the
+name of the payment method. Always use value ``blik``
+
+|transaction-type |M |Alphanumeric |30 |This is the type for a
+transaction. Always use value ``void-request``
+
+|===
+
+[#blik_Samples]
+=== Samples
+
+Go to <<GeneralPlatformFeatures_IPN_NotificationExamples, Notification Examples>> if you want to see corresponding notification samples.
+
+[#blik_Samples_debit]
+==== debit
+
+.Debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_debit_request_success.xml[]
+----
+
+.Debit Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_debit_response_success.xml[]
+----
+
+[#blik_Samples_refund]
+==== refund
+
+.Refund Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_refund-request_request_success_77e8f783.xml[]
+----
+
+.Refund Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_refund-request_response_success_77e8f783.xml[]
+----
+
+.Refund Response (Fail)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_refund-request_response_Fail_77e8f783.xml[]
+----
+.void-debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_void-debit Request.xml[]
+----
+.Query requests for refund tx
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-request_refund-trx.xml[]
+----
+.Query Response for refund tx (Success)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-response_refund-trx-success.xml[]
+----
+
+.Query Request for reversal debit tx
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-request_reversal-trx.xml[]
+----
+
+.Query Response for reversal debit tx (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/blik_query-response_reversal-trx-failure.xml[]
+----
+//-

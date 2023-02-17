@@ -58,10 +58,9 @@ notified via IPN.
 .2+h|URLs (Endpoints) |For transaction types _authorization_, _credit_, _pending-credit_.
 |``\https://{rest-api-test-apm-endpoint}``
 |For transaction type _void-authorization._ |``\https://{rest-api-test-endpoint}``
-h|Merchant Account ID (MAID) 2+| To be determined
-h|Username 2+|To be determined
-h|Password 2+|To be determined
-h|Secret Key 2+|	To be determined
+h|Merchant Account ID (MAID) 2+| 9e035f8f-bf8d-4179-aafb-ca059128e089
+h|Username 2+|Getnet _POI
+h|Secret Key 2+|	c3b39f09-5632-42fc-b1a6-2a1b386613dd
 |===
 
 [#API_POIPIA_Workflow]

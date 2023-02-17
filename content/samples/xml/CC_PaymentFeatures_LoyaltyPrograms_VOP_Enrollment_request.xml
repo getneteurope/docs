@@ -12,7 +12,7 @@
     <card>
         <card-type>visa</card-type>
         <account-number>4200000000000018</account-number>
-        <expiration-year>2023</expiration-year>
+        <expiration-year>2025</expiration-year>
         <expiration-month>01</expiration-month>
     </card>
 </payment>

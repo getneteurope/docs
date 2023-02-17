@@ -1,3 +1,3 @@
 {
-    "payment-redirect-url": "https://{pp-test-instance-hostname}/seamless?wPaymentToken=XUcGTdnxwwCWPEP-YOeDmT05_hg1bKbaibLTpcdR8cU"
+    "payment-redirect-url": "https://{pp-test-instance-hostname}/seamless?wPaymentToken=<DYNAMIC_TOKEN>"
 }

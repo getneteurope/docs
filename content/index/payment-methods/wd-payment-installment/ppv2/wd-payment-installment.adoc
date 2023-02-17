@@ -337,7 +337,7 @@ m|payment-method
 [source,json,subs=attributes+]
 ----
 {
-"payment-redirect-url": "https://{pp-test-instance-hostname}/?wPaymentToken=rhNg8LV9jfUk1Xtq7NEGU1QI2em4YuA-zyPrxmHNdY0"
+"payment-redirect-url": "https://{pp-test-instance-hostname}/?wPaymentToken=<DYNAMIC_TOKEN>"
 }
 ----
 

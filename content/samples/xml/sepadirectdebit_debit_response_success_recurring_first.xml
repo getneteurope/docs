@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-    <merchant-account-id>4c901196-eff7-411e-82a3-5ef6b6860d64</merchant-account-id>
+    <merchant-account-id>5c4ef296-46c5-482c-9143-509d13fcca34</merchant-account-id>
     <transaction-id>e6604f91-663c-11e3-a07b-18037336c0b3</transaction-id>
     <request-id>${response}</request-id>
     <transaction-type>debit</transaction-type>

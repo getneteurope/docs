@@ -11,8 +11,7 @@ sending the payment URL as a part of a newsletter/email, MOTO (Mail
 Order/Telephone Order) payments, etc.
 
 *The maximum allowed value is one
-month in the future*, e.g. if the link is created on 01/05/2020, the latest date for
-the expiration stamp is 01/06/2020.
+month in the future*
 
 NOTE: You can use Pay by Link via API with credit card payments or alternative payment
 methods; both are supported.

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fc1f78eb-4c20-4a8f-8863-8a4d36bab72d",
+		"_postman_id": "448a3801-c764-44a3-943f-fa4c10b82258",
 		"name": "06. 3DS-2 Use-Case: One-Click Checkout - Independend of Purchase",
 		"description": "For one-click checkout transactions, merchants store the consumer’s card details (as a token) for future transactions. Thus, when the consumer returns to the merchant’s shop, they do not need to re-enter their details.\r\n\r\nFor example, a consumer creates an account with an online shop and provides their credit card details upon registration. At the moment of registration, no money is transferred. Alternatelively, the credentials can be stored during the first checkout. \r\n\r\nIf the consumer wants to buy goods at a later point in time, they can do so by using the one-click-checkout option. \r\n\r\nRe-entering their card details is not necessary.\r\n\r\nBefore storing credentials on file, consumers must be clearly informed how the credentials will be used in the future and btain the consumers' consent.\r\n\r\na. Independent of Purchase\r\n\ti. Check-enrollment  (zero amount)\r\n\tii. Authorization-only (zero amount)\r\nb. Subsequent Purchase\r\n\ti. Check-enrollment (payment amount) \r\n\tii. Authorization (transaction amount)\r\n\tiii. Capture (transaction amount)\r\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"// Convert XML output to JSON format\r",
 							"var xml2JsonData = xml2Json(responseBody);\r",
@@ -56,7 +55,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							"",
 							"var guid = (function() {",
@@ -101,12 +99,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -116,7 +114,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -127,14 +125,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-enrollment</transaction-type>\n    <requested-amount currency=\"EUR\">0.00</requested-amount>\n    <notifications format=\"application/json\">\n        <notification url=\"http://www.webhook.site/68f1326e-311d-4ef8-a998-1c3c66cc497a\"></notification>\n    </notifications>\n    <account-holder>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <email>m.mertens@example.com</email>\n        <phone>+3228089336</phone>\n        <mobile-phone>+32496000000</mobile-phone>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <success-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/success</success-redirect-url>\n        <fail-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/error</fail-redirect-url>\n        <cancel-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/cancel</cancel-redirect-url>\n        <iso-transaction-type>01</iso-transaction-type>\n        <merchant-crm-id>XWLfrzuGhpajYxFiFgNScwcLhtIOvXNxMIcrxIPTHqgroaFiPNDqMxGBXYUhMVBZ</merchant-crm-id>\n        <account-info>\n            <authentication-method>01</authentication-method>\n            <authentication-timestamp>2019-05-05T21:46:00.000Z</authentication-timestamp>\n            <challenge-indicator>04</challenge-indicator>\n            <creation-date>2019-05-05Z</creation-date>\n            <update-date>2019-06-07Z</update-date>\n            <password-change-date>2019-06-08Z</password-change-date>\n            <shipping-address-first-use>2019-06-09Z</shipping-address-first-use>\n            <transactions-last-day>1</transactions-last-day>\n            <transactions-last-year>10</transactions-last-year>\n            <card-transactions-last-day>2</card-transactions-last-day>\n            <purchases-last-six-months>4</purchases-last-six-months>\n            <suspicious-activity>false</suspicious-activity>\n            <card-creation-date>2018-06-16Z</card-creation-date>\n        </account-info>\n    </account-holder>\n    <shipping>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <shipping-method>home_delivery</shipping-method>\n    </shipping>\n    <card>\n        <account-number>5413330300201192</account-number>\n        <expiration-month>01</expiration-month>\n        <expiration-year>2023</expiration-year>\n        <card-security-code>192</card-security-code>\n        <card-type>mastercard</card-type>\n        <account-type>02</account-type>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n    <ip-address>127.0.0.1</ip-address>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <payment-methods>\n        <payment-method name=\"creditcard\"/>\n    </payment-methods>\n    <device>\n        <render-options>\n            <interface>01</interface>\n            <ui-type>01</ui-type>\n        </render-options>\n    </device>\n    <browser>\n        <time-zone>360</time-zone>\n        <screen-resolution>800x600</screen-resolution>\n        <challenge-window-size>01</challenge-window-size>\n        <color-depth>48</color-depth>\n        <java-enabled>true</java-enabled>\n        <language>en</language>\n    </browser>\n    <risk-info>\n        <availability>01</availability>\n        <delivery-mail>m.mertens@example.com</delivery-mail>\n        <delivery-timeframe>04</delivery-timeframe>\n        <gift>\n            <gift-card id=\"09754139-a2db-48c0-af1b-c89c4a31b645\">\n                <amount currency=\"EUR\">9.99</amount>\n            </gift-card>\n        </gift>\n        <preorder-date>2019-07-16Z</preorder-date>\n        <reorder-items>01</reorder-items>\n    </risk-info>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>first</sequence-type>\n    </periodic>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-enrollment</transaction-type>\n    <requested-amount currency=\"EUR\">0.00</requested-amount>\n    <notifications format=\"application/json\">\n        <notification url=\"http://www.webhook.site/68f1326e-311d-4ef8-a998-1c3c66cc497a\"></notification>\n    </notifications>\n    <account-holder>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <email>m.mertens@example.com</email>\n        <phone>+3228089336</phone>\n        <mobile-phone>+32496000000</mobile-phone>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <success-redirect-url>https://demoshop-test.getneteurope.com/demoshop/#/success</success-redirect-url>\n        <fail-redirect-url>https://demoshop-test.getneteurope.com/demoshop/#/error</fail-redirect-url>\n        <cancel-redirect-url>https://demoshop-test.getneteurope.com/demoshop/#/cancel</cancel-redirect-url>\n        <iso-transaction-type>01</iso-transaction-type>\n        <merchant-crm-id>XWLfrzuGhpajYxFiFgNScwcLhtIOvXNxMIcrxIPTHqgroaFiPNDqMxGBXYUhMVBZ</merchant-crm-id>\n        <account-info>\n            <authentication-method>01</authentication-method>\n            <authentication-timestamp>2019-05-05T21:46:00.000Z</authentication-timestamp>\n            <challenge-indicator>04</challenge-indicator>\n            <creation-date>2019-05-05Z</creation-date>\n            <update-date>2019-06-07Z</update-date>\n            <password-change-date>2019-06-08Z</password-change-date>\n            <shipping-address-first-use>2019-06-09Z</shipping-address-first-use>\n            <transactions-last-day>1</transactions-last-day>\n            <transactions-last-year>10</transactions-last-year>\n            <card-transactions-last-day>2</card-transactions-last-day>\n            <purchases-last-six-months>4</purchases-last-six-months>\n            <suspicious-activity>false</suspicious-activity>\n            <card-creation-date>2018-06-16Z</card-creation-date>\n        </account-info>\n    </account-holder>\n    <shipping>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <shipping-method>home_delivery</shipping-method>\n    </shipping>\n    <card>\n         <account-number>375987000000013</account-number>\n        <expiration-month>01</expiration-month>\n        <expiration-year>2025</expiration-year>\n        <card-security-code>1013</card-security-code>\n        <card-type>amex</card-type>\n        <account-type>02</account-type>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n    <ip-address>127.0.0.1</ip-address>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <payment-methods>\n        <payment-method name=\"creditcard\"/>\n    </payment-methods>\n    <device>\n        <render-options>\n            <interface>01</interface>\n            <ui-type>01</ui-type>\n        </render-options>\n    </device>\n    <browser>\n        <time-zone>360</time-zone>\n        <screen-resolution>800x600</screen-resolution>\n        <challenge-window-size>01</challenge-window-size>\n        <color-depth>48</color-depth>\n        <java-enabled>true</java-enabled>\n        <language>en</language>\n    </browser>\n    <risk-info>\n        <availability>01</availability>\n        <delivery-mail>m.mertens@example.com</delivery-mail>\n        <delivery-timeframe>04</delivery-timeframe>\n        <gift>\n            <gift-card id=\"09754139-a2db-48c0-af1b-c89c4a31b645\">\n                <amount currency=\"EUR\">9.99</amount>\n            </gift-card>\n        </gift>\n        <preorder-date>2019-07-16Z</preorder-date>\n        <reorder-items>01</reorder-items>\n    </risk-info>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>first</sequence-type>\n    </periodic>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -167,7 +165,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -246,7 +244,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"responseHTML = cheerio(pm.response.text()); console.log(responseHTML.find('[name=\"PaRes\"]').val());\r",
 							"pm.globals.set(\"$pares\", responseHTML.find('[name=\"PaRes\"]').val());\r",
@@ -268,7 +265,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							""
 						],
@@ -285,7 +281,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -343,7 +339,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -422,7 +418,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "c077fed1-54bf-489b-97bb-db5fab20228f",
 						"exec": [
 							""
 						],
@@ -432,7 +427,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0452501a-d310-4418-ad70-a9248b7fc195",
 						"exec": [
 							"// Convert XML output to JSON format",
 							"var xml2JsonData = xml2Json(responseBody);",
@@ -462,7 +456,7 @@
 							"});",
 							"",
 							"pm.test(\"3DS Version: \"+xml(\"payment\").find(\"three-d\").find(\"version\").text(), function(){",
-							"    pm.expect(xml(\"payment\").find(\"three-d\").find(\"version\").text()).to.equal(\"2.1.0\");",
+							"    pm.expect(xml(\"payment\").find(\"three-d\").find(\"version\").text()).to.equal(\"1.0.2\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -475,12 +469,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -490,7 +484,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -501,14 +495,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-payer-response</transaction-type>\n    <parent-transaction-id>{{$p_guwid_enroll}}</parent-transaction-id>\n    <three-d>\n        <pares>{{$pares}}</pares>\n    </three-d>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-payer-response</transaction-type>\n    <parent-transaction-id>{{$p_guwid_enroll}}</parent-transaction-id>\n    <three-d>\n        <pares>{{$pares}}</pares>\n    </three-d>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -537,7 +531,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -616,7 +610,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"// Convert XML output to JSON format\r",
 							"var xml2JsonData = xml2Json(responseBody);\r",
@@ -651,7 +644,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							""
 						],
@@ -665,12 +657,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -680,7 +672,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -691,14 +683,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>authorization-only</transaction-type>\n    <requested-amount currency=\"EUR\">0.00</requested-amount>\n    <parent-transaction-id>{{$p_guwid_check}}</parent-transaction-id>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <card>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>first</sequence-type>\n    </periodic>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>authorization-only</transaction-type>\n    <requested-amount currency=\"EUR\">0.00</requested-amount>\n    <parent-transaction-id>{{$p_guwid_check}}</parent-transaction-id>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <card>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>first</sequence-type>\n    </periodic>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -731,7 +723,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -810,7 +802,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"// Convert XML output to JSON format\r",
 							"var xml2JsonData = xml2Json(responseBody);\r",
@@ -854,7 +845,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							""
 						],
@@ -868,12 +858,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -883,7 +873,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -894,14 +884,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-enrollment</transaction-type>\n    <requested-amount currency=\"EUR\">10.00</requested-amount>\n    <notifications format=\"application/json\">\n        <notification url=\"http://www.webhook.site/68f1326e-311d-4ef8-a998-1c3c66cc497a\"></notification>\n    </notifications>\n    <account-holder>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <email>m.mertens@example.com</email>\n        <phone>+3228089336</phone>\n        <mobile-phone>+32496000000</mobile-phone>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <success-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/success</success-redirect-url>\n        <fail-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/error</fail-redirect-url>\n        <cancel-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/cancel</cancel-redirect-url>\n        <iso-transaction-type>01</iso-transaction-type>\n        <merchant-crm-id>XWLfrzuGhpajYxFiFgNScwcLhtIOvXNxMIcrxIPTHqgroaFiPNDqMxGBXYUhMVBZ</merchant-crm-id>\n        <account-info>\n            <authentication-method>01</authentication-method>\n            <authentication-timestamp>2019-05-05T21:46:00.000Z</authentication-timestamp>\n            <challenge-indicator>01</challenge-indicator>\n            <creation-date>2019-05-05Z</creation-date>\n            <update-date>2019-06-07Z</update-date>\n            <password-change-date>2019-06-08Z</password-change-date>\n            <shipping-address-first-use>2019-06-09Z</shipping-address-first-use>\n            <transactions-last-day>1</transactions-last-day>\n            <transactions-last-year>10</transactions-last-year>\n            <card-transactions-last-day>2</card-transactions-last-day>\n            <purchases-last-six-months>4</purchases-last-six-months>\n            <suspicious-activity>false</suspicious-activity>\n            <card-creation-date>2018-06-16Z</card-creation-date>\n        </account-info>\n    </account-holder>\n    <shipping>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <shipping-method>home_delivery</shipping-method>\n    </shipping>\n    <ip-address>127.0.0.1</ip-address>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <payment-methods>\n        <payment-method name=\"creditcard\"/>\n    </payment-methods>\n    <device>\n        <render-options>\n            <interface>01</interface>\n            <ui-type>01</ui-type>\n        </render-options>\n    </device>\n    <browser>\n        <time-zone>360</time-zone>\n        <screen-resolution>800x600</screen-resolution>\n        <challenge-window-size>01</challenge-window-size>\n        <color-depth>48</color-depth>\n        <java-enabled>true</java-enabled>\n        <language>en</language>\n    </browser>\n    <risk-info>\n        <availability>01</availability>\n        <delivery-mail>m.mertens@example.com</delivery-mail>\n        <delivery-timeframe>04</delivery-timeframe>\n        <gift>\n            <gift-card id=\"09754139-a2db-48c0-af1b-c89c4a31b645\">\n                <amount currency=\"EUR\">9.99</amount>\n            </gift-card>\n        </gift>\n        <preorder-date>2019-07-16Z</preorder-date>\n        <reorder-items>01</reorder-items>\n    </risk-info>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>recurring</sequence-type>\n    </periodic>\n    <card-token>\n        <token-id>{{$p_token_id}}</token-id>\n    </card-token>\n    <card>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-enrollment</transaction-type>\n    <requested-amount currency=\"EUR\">10.00</requested-amount>\n    <notifications format=\"application/json\">\n        <notification url=\"http://www.webhook.site/68f1326e-311d-4ef8-a998-1c3c66cc497a\"></notification>\n    </notifications>\n    <account-holder>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <email>m.mertens@example.com</email>\n        <phone>+3228089336</phone>\n        <mobile-phone>+32496000000</mobile-phone>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <success-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/success</success-redirect-url>\n        <fail-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/error</fail-redirect-url>\n        <cancel-redirect-url>https://demoshop-test.wirecard.com/demoshop/#/cancel</cancel-redirect-url>\n        <iso-transaction-type>01</iso-transaction-type>\n        <merchant-crm-id>XWLfrzuGhpajYxFiFgNScwcLhtIOvXNxMIcrxIPTHqgroaFiPNDqMxGBXYUhMVBZ</merchant-crm-id>\n        <account-info>\n            <authentication-method>01</authentication-method>\n            <authentication-timestamp>2019-05-05T21:46:00.000Z</authentication-timestamp>\n            <challenge-indicator>01</challenge-indicator>\n            <creation-date>2019-05-05Z</creation-date>\n            <update-date>2019-06-07Z</update-date>\n            <password-change-date>2019-06-08Z</password-change-date>\n            <shipping-address-first-use>2019-06-09Z</shipping-address-first-use>\n            <transactions-last-day>1</transactions-last-day>\n            <transactions-last-year>10</transactions-last-year>\n            <card-transactions-last-day>2</card-transactions-last-day>\n            <purchases-last-six-months>4</purchases-last-six-months>\n            <suspicious-activity>false</suspicious-activity>\n            <card-creation-date>2018-06-16Z</card-creation-date>\n        </account-info>\n    </account-holder>\n    <shipping>\n        <first-name>Manon</first-name>\n        <last-name>Mertens</last-name>\n        <address>\n            <street1>Rue de la Loi 1</street1>\n            <city>Brussels</city>\n            <state>BRU</state>\n            <country>BE</country>\n            <postal-code>1000</postal-code>\n        </address>\n        <shipping-method>home_delivery</shipping-method>\n    </shipping>\n    <ip-address>127.0.0.1</ip-address>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <payment-methods>\n        <payment-method name=\"creditcard\"/>\n    </payment-methods>\n    <device>\n        <render-options>\n            <interface>01</interface>\n            <ui-type>01</ui-type>\n        </render-options>\n    </device>\n    <browser>\n        <time-zone>360</time-zone>\n        <screen-resolution>800x600</screen-resolution>\n        <challenge-window-size>01</challenge-window-size>\n        <color-depth>48</color-depth>\n        <java-enabled>true</java-enabled>\n        <language>en</language>\n    </browser>\n    <risk-info>\n        <availability>01</availability>\n        <delivery-mail>m.mertens@example.com</delivery-mail>\n        <delivery-timeframe>04</delivery-timeframe>\n        <gift>\n            <gift-card id=\"09754139-a2db-48c0-af1b-c89c4a31b645\">\n                <amount currency=\"EUR\">9.99</amount>\n            </gift-card>\n        </gift>\n        <preorder-date>2019-07-16Z</preorder-date>\n        <reorder-items>01</reorder-items>\n    </risk-info>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>recurring</sequence-type>\n    </periodic>\n    <card-token>\n        <token-id>{{$p_token_id}}</token-id>\n    </card-token>\n    <card>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -934,7 +924,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -1013,7 +1003,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"responseHTML = cheerio(pm.response.text()); console.log(responseHTML.find('[name=\"PaRes\"]').val());\r",
 							"pm.globals.set(\"$pares\", responseHTML.find('[name=\"PaRes\"]').val());\r",
@@ -1035,7 +1024,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							""
 						],
@@ -1052,7 +1040,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -1110,7 +1098,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -1189,7 +1177,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "c077fed1-54bf-489b-97bb-db5fab20228f",
 						"exec": [
 							""
 						],
@@ -1199,7 +1186,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0452501a-d310-4418-ad70-a9248b7fc195",
 						"exec": [
 							"// Convert XML output to JSON format",
 							"var xml2JsonData = xml2Json(responseBody);",
@@ -1229,7 +1215,7 @@
 							"});",
 							"",
 							"pm.test(\"3DS Version: \"+xml(\"payment\").find(\"three-d\").find(\"version\").text(), function(){",
-							"    pm.expect(xml(\"payment\").find(\"three-d\").find(\"version\").text()).to.equal(\"2.1.0\");",
+							"    pm.expect(xml(\"payment\").find(\"three-d\").find(\"version\").text()).to.equal(\"1.0.2\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1242,12 +1228,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -1257,7 +1243,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -1268,14 +1254,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-payer-response</transaction-type>\n    <parent-transaction-id>{{$p_guwid_enroll}}</parent-transaction-id>\n    <three-d>\n        <pares>{{$pares}}</pares>\n    </three-d>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>check-payer-response</transaction-type>\n    <parent-transaction-id>{{$p_guwid_enroll}}</parent-transaction-id>\n    <three-d>\n        <pares>{{$pares}}</pares>\n    </three-d>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -1304,7 +1290,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -1383,7 +1369,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"// Convert XML output to JSON format\r",
 							"var xml2JsonData = xml2Json(responseBody);\r",
@@ -1416,7 +1401,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							""
 						],
@@ -1430,12 +1414,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -1445,7 +1429,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -1456,14 +1440,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>authorization</transaction-type>\n    <requested-amount currency=\"EUR\">10.00</requested-amount>\n    <parent-transaction-id>{{$p_guwid_check}}</parent-transaction-id>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>recurring</sequence-type>\n    </periodic>\n    <card>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>authorization</transaction-type>\n    <requested-amount currency=\"EUR\">10.00</requested-amount>\n    <parent-transaction-id>{{$p_guwid_check}}</parent-transaction-id>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n    <periodic>\n        <periodic-type>ci</periodic-type>\n        <sequence-type>recurring</sequence-type>\n    </periodic>\n    <card>\n        <merchant-tokenization-flag>true</merchant-tokenization-flag>\n    </card>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -1496,7 +1480,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -1575,7 +1559,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be28bcf2-5fcd-499d-9cc0-fa90af733e3d",
 						"exec": [
 							"// Convert XML output to JSON format\r",
 							"var xml2JsonData = xml2Json(responseBody);\r",
@@ -1608,7 +1591,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f37884bf-d593-4dbb-88e1-08535c4d9354",
 						"exec": [
 							""
 						],
@@ -1622,12 +1604,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "8mhwavKVb91T",
+							"value": "2NQBnucU19mY",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "70000-APILUHN-CARD",
+							"value": "84320-getneteurope",
 							"type": "string"
 						}
 					]
@@ -1637,7 +1619,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": " Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA=="
+						"value": "Basic ODQzMjAtZ2V0bmV0ZXVyb3BlOjJOUUJudWNVMTltWQ=="
 					},
 					{
 						"key": "Content-Type",
@@ -1648,14 +1630,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>33f6d473-3036-4ca5-acb5-8c64dac862d1</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>capture-authorization</transaction-type>\n    <requested-amount currency=\"EUR\">10.00</requested-amount>\n    <parent-transaction-id>{{$p_guwid_auth_1}}</parent-transaction-id>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n</payment>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<payment xmlns=\"http://www.elastic-payments.com/schema/payment\">\n    <merchant-account-id>a3c1ee3b-fca5-4cb8-a5dc-2164a82bdf8b</merchant-account-id>\n    <request-id>{{$guid}}</request-id>\n    <transaction-type>capture-authorization</transaction-type>\n    <requested-amount currency=\"EUR\">10.00</requested-amount>\n    <parent-transaction-id>{{$p_guwid_auth_1}}</parent-transaction-id>\n    <order-detail>{{$handler}}</order-detail>\n    <descriptor>{{$descriptor}}</descriptor>\n</payment>"
 				},
 				"url": {
-					"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+					"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 					"protocol": "https",
 					"host": [
 						"api-test",
-						"wirecard",
+						"getneteurope",
 						"com"
 					],
 					"path": [
@@ -1688,7 +1670,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-test.wirecard.com/engine/rest/payments/",
+							"raw": "https://api-test.getneteurope.com/engine/rest/payments/",
 							"protocol": "https",
 							"host": [
 								"api-test",
@@ -1781,7 +1763,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "477c0205-2596-4fc3-b4ca-fa706e9b8c56",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1791,13 +1772,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "94f08645-7639-4fe0-80ad-dc318a40d44d",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

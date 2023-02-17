@@ -1,0 +1,156 @@
+[#MobilePaymentSDK_Android_Customization]
+=== Theming
+
+For changing colors within the SDK simply override color values in xml
+file.
+
+==== Common Color Resources
+
+Changing these colors would afect all modules used within SDK.
+
+.....
+sdkpay_ecom_color_main - colour tint for icons, header and submit button gradient start colour
+sdkpay_ecom_color_main_light - header and submit button gradient end colour
+sdkpay_ecom_color_main_alpha80 - text input layout title colour
+sdkpay_ecom_color_toolbar_text - toolbar text and back arrow tint
+sdkpay_ecom_color_pay_button_text - pay button text colour
+sdkpay_ecom_color_main_background - background colour for main view
+sdkpay_ecom_color_error - used for all text input layouts to modify error text color including the edit text line
+.....
+
+==== Changing Fonts
+
+To change fonts, override the font path to in string resources with name
+`sdkpay_fontPath': e.g. strings.xml
+
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
+
+_missing JAVA code example here?_
+
+==== Changing Text Size
+
+Use dimen attribute `sdkpay_ecom_text_size` for changing text size within
+all modules except card field fragment - use
+`sdkpay_ecom_cardfield_text_size`.
+
+=== Localization
+
+You can set two types of locale - `locale` and `localeUIOnly`- in 3
+combinations:
+
+[arabic]
+. `locale`is set - selected locale is sent to the backend and the UI is
+set to specified language,
+. `localeUIOnly` is set - locale is *not* sent to backend, but *UI is*
+set to specified language,
+. Both `locale` and `localeUIOnly` are set - the `locale` string is sent
+to backend *and* the UI is set according to `localeUIOnly`.
+
+To change localeUIOnly, override the string resources with name
+`sdkpay_localeUIOnly': e.g. strings.xml
+
+[source,xml]
+----
+<string name="sdkpay_localeUIOnly">ES</string>
+----
+
+[source,kotlin]
+----
+val cardPayment = CardPayment(
+        signature,
+        timestamp,
+        requestID,
+        merchantID,
+        transactionType,
+        amount,
+        currency
+)
+
+cardPayment.locale = "DE"
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(cardPayment)
+----
+
+This example shows the 3rd option (dual setting): the backend `locale`
+is set to DE and the frontend `localeUIOnly` to ES. This means that
+although the backend locale backend is DE, the UI language is ES.
+
+==== Override strings
+
+All strings are saved in the `strings.xml` file for all supported
+languages. In it you can find every possible language key.
+
+*Important:* Do not delete any special characters (e.g. \{0}) to avoid
+errors.
+
+=== Optional Data
+
+Following code snippet shows usage of frequently used optional data.
+Check out example application on GitHub as an demonstration.
+
+[source,java]
+----
+// account holder information
+Address address = new Address();
+address.setStreet1("Einsteinring 35");
+address.setCity("Munich");
+address.setPostalCode("80331");
+address.setCountry("DE");
+
+AccountHolder accountHolder = new AccountHolder("John", "Doe");
+accountHolder.setDateOfBirth("1986-01-01");
+accountHolder.setAddress(address);
+
+cardPayment.setAccountHolder(accountHolder);
+
+// IP address
+cardPayment.setIpAddress("127.0.0.1");
+
+// notifications
+Notification notification = new Notification();
+notification.setUrl("https://server.com");
+
+List<Notification> listOfNotifications = new ArrayList<>();
+listOfNotifications.add(notification);
+
+Notifications notifications = new Notifications();
+notifications.setNotifications(listOfNotifications);
+notifications.setFormat(Notifications.FORMAT_JSON);
+
+cardPayment.setNotifications(notifications);
+
+// order
+OrderItem orderItem = new OrderItem();
+orderItem.setName("Bicycle");
+orderItem.setDescription("Best product ever");
+orderItem.setArticleNumber("BC1234");
+orderItem.setAmount(new RequestedAmount(new BigDecimal(800), "EUR"));
+orderItem.setQuantity(1);
+orderItem.setTaxRate(new BigDecimal(20));
+
+ArrayList<OrderItem> orderItems = new ArrayList<>();
+orderItems.add(orderItem);
+
+cardPayment.setOrderDetail("Test product");
+cardPayment.setOrderNumber("DE11111111");
+cardPayment.setOrderItems(orderItems);
+cardPayment.setOrderItems(orderItems);
+
+// shipping address
+Shipping shipping = new Shipping();
+shipping.setShippingCity("Berlin");
+shipping.setShippingCountry("DE");
+shipping.setShippingPostalCode("04001");
+shipping.setShippingState("Shipped");
+shipping.setShippingStreet1("Street 1");
+shipping.setShippingStreet2("Street 2 info");
+shipping.setShippingStreet3("Street 3 info");
+shipping.setShippingMethod(ShippingMethod.SHIPPING_TO_STORE);
+cardPayment.setShippingAddress(shipping);
+
+// descriptor
+cardPayment.setDescriptor("Demo descriptor");
+----

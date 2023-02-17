@@ -1,5 +1,5 @@
-<payment self="http://127.0.0.1:8080/engine/rest/merchants/c6b58c82-9035-4ddc-9447-6738797610e5/payments/10715235-9cc8-4c62-a798-5af8eb9fb640" xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-  <merchant-account-id ref="http://127.0.0.1:8080/engine/rest/config/merchants/c6b58c82-9035-4ddc-9447-6738797610e5">c6b58c82-9035-4ddc-9447-6738797610e5</merchant-account-id>
+<payment self="http://127.0.0.1:8080/engine/rest/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108/payments/10715235-9cc8-4c62-a798-5af8eb9fb640" xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
+  <merchant-account-id ref="http://127.0.0.1:8080/engine/rest/config/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108">5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
   <transaction-id>10715235-9cc8-4c62-a798-5af8eb9fb640</transaction-id>
   <request-id>a1901424-9791-4f8d-9826-be75d34fbbc1</request-id>
   <transaction-type>pending-purchase</transaction-type>

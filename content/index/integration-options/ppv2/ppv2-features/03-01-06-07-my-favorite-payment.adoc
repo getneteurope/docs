@@ -11,6 +11,7 @@ input their CVV instead of filling out the entire card form.
 There is also an option to use a different card: Consumers can switch
 between the two options freely without leaving the session.
 
+
 [%autowidth]
 [cols=",", frame="none", grid="none"]
 |===
@@ -20,7 +21,7 @@ between the two options freely without leaving the session.
 [#PPv2_Features_MyFavoritePayment_HowDoesItWork]
 [discrete]
 === How does it work?
-Card information is tokenized and returned as the ``token-id`` field in
+Card information is tokenized and returned as the ''token-id'' field in
 the response automatically during a card payment.
 
 Adding the ``token-id`` field with a token value from a previous payment

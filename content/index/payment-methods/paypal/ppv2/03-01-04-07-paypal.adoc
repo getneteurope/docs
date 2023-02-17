@@ -66,13 +66,13 @@ Test credentials for transaction types
 | URL(s) Endpoints
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| To be determined
+| bb342082-9761-4481-802e-20b10d92545d
 | Username
-| To be determined
+| 515225-GetnetEuropeTEST
 | Password
-| To be determined
+| 4cHLRE-Q7YcAP
 | Secret Key (used for response verification)
-| To be determined
+| fd1d35aa-952e-4549-9f3d-ea33c89c86c4
 |===
 
 [#PPv2_PayPal_TestCredentials_Additional]

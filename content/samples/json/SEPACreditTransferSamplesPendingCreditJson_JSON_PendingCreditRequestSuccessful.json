@@ -1,7 +1,7 @@
 {
   "payment" : {
     "merchant-account-id" : {
-      "value" : "4c901196-eff7-411e-82a3-5ef6b6860d64"
+      "value" : "e2998fd1-d99e-410b-a2cb-eacb5e761293"
     },
     "request-id" : "${unique for each request}",
     "transaction-type" : "pending-credit",

@@ -1,0 +1,224 @@
+[#MobilePaymentSDK_iOS_SDK]
+---
+== iOS SDK
+
+For downloading MPSDK and basic setup, refer to <<MobilePaymentSDK_iOS_BasicSetup, Basic Setup>>.
+
+[#MobilePaymentSDK_iOS_Introduction]
+Mobile paymentSDK is divided into a core module and several secondary modules, one for each payment method.
+
+With this modular approach, you can pick and choose what you need: a few payment methods (or even just one) or the full selection.
+
+Below, we will briefly go through the basic requirements/dependencies, but also code examples for client initialization and processing the payment response on your end.
+
+[#MobilePaymentSDK_iOS_System_Requirements]
+The minimal requirement deployment target is 11.0.
+
+[#MobilePaymentSDK_iOS_BasicSetup]
+---
+=== Basic Setup
+---
+The device cannot be jail-broken and must run at least iOS 12.0 for
+_paymentSDK_ to work. It is recommended to use the latest stable version
+of Xcode.
+
+Download the pod at
+our link:https://github.com/getneteurope/mobilePaymentSDK-iOS[GitHub repository] and
+add it to your podfile. 
+
+The iOS supports two ways of MPSDK usage:  
+
+- The first is by selecting all frameworks with payment methods and utilities supported by MPSDK. 
+
+.For example:
+[source,subs=attributes+]
+----
+pod 'mobilePaymentSDK/All'
+----
+
+- The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
+
+.For example:
+[source,subs=attributes+]
+----
+pod 'mobilePaymentSDK/Card' 
+pod 'mobilePaymentSDK/SEPA'
+----
+
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
+==== List of supported payment method subspec
+---
+|===
+|Name|Description|Pods
+
+|All
+|all payment method frameworks in one
+|pod 'mobilePaymentSDK'
+
+|Alipay (Cross Border)
+|alipay payment frameworks
+|pod 'mobilePaymentSDK/Alipay' 
+
+|Card
+|Credit Card payment frameworks
+|pod 'mobilePaymentSDK/Card' 
+
+|PayPal
+|PayPal payment frameworks
+|pod 'mobilePaymentSDK/PayPal' 
+
+|P24 (Przelewy24)
+|P24 payment frameworks
+|pod 'mobilePaymentSDK/P24' 
+
+|SEPA (Direct Debit)
+|SEPA payment frameworks
+|pod 'mobilePaymentSDK/SEPA' 
+
+|WireTransfer
+|Wire-Transfer payment frameworks
+|pod 'mobilePaymentSDK/WireTransfer' 
+|===
+
+//-
+
+[#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_utility_subspec]
+==== List of optional utilities subspec for Card and SEPA payment method 
+---
+|===
+|Name|Description|Pods
+
+|Scanner
+|Card scanner framework
+|pod 'mobilePaymentSDK/Scanner' 
+
+|PhotoGallery
+|Photo Gallery frameworks
+|pod 'mobilePaymentSDK/PhotoGallery' 
+
+|CardScanner
+|Credit Card payment frameworks with card scanner
+|pod 'mobilePaymentSDK/CardScanner' 
+
+|CardScannerGallery
+|Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
+|pod 'mobilePaymentSDK/CardScannerGallery' 
+
+|IBANScanner
+|SEPA payment frameworks with IBAN scanner
+|pod 'mobilePaymentSDK/IBANScanner' 
+
+|IBANScannerGallery
+|SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
+|pod 'mobilePaymentSDK/IBANScannerGallery'  
+
+|===  
+        
+//-
+
+[#MobilePaymentSDK_iOS_BasicSetup_Security]
+==== Security
+---
+[#MobilePaymentSDK_iOS_BasicSetup_Security_Debugging_prevention]
+===== Debugging prevention
+---
+MPSDK cannot prevent debugging during development without also stopping communication with the test Elastic Engine. This means app developers should be able to debug payments E2E in their code in the simulator or mobile device.
+
+But MPSDK prevents debugging in a production application. For customization and simulation of this option, MPSDK supports *Custom settings* in the project setting on the application side.
+
+Steps of customization:
+
+. Add User-Defined Settings *SDKPay_NO_DEBUG_CHECK* in your project's Build Settings for your application target.
+
+image:images/07-01-basic-setup-and-integraton/iOS/target-properties.png[Custom iOS Target Properties] 
+
+. Set the default value for your AdHoc to *NO* 
+. Set other's build configurations by your preferences: 
+     - *YES* - without debugging prevention
+     - *NO* - with debugging prevention
+. Add Custom iOS Target Properties Key to the Info page:
+    - *Key:* 'No debugging check'
+    - *Value* - $(SDKPay_NO_DEBUG_CHECK)
+
+image:images/07-01-basic-setup-and-integraton/iOS/user-defined-settings.png[User-Defined Settings]
+
+
+[#MobilePaymentSDK_iOS_Client_Initialization]
+==== Client Intialization
+When creating a payment object, don't forget to initialize the client first (for example in AppDelegate class):
+
+[source,swift]
+----
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+               
+        do {
+            var hostname:String = "api-test.getneteurope.com"
+            var parameters: SDKPayECClientParameters = SDKPayECClientParameters()
+            parameters.timeoutInterval = 0 //default 30s
+            self.client = try SDKPayECClient.init(hostname: hostname, parameters: parameters)
+        } catch {
+            print(error);
+        }
+
+        return true
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if let client = self.client {
+            let openURL = client.open(url)
+            return openURL
+        }
+        return true
+    }
+
+----
+
+[#MobilePaymentSDK_iOS_Processing_the_response]
+==== Response processing
+This is example code for processing the response (to see the result of the transaction), after the payment goes through:
+[source,swift]
+----
+    @IBAction func onPayAction(_ sender: UIButton!) {
+
+        var payment = self.createCardPayment()
+        self.animatedCardfield.cardPayment = payment 
+        
+        (UIApplication.shared.delegate as! AppDelegate).client?.make(payment, withCompletion: { [weak self] (response: SDKPayECPaymentResponse?,error: Error?) in
+            guard let self = self else { return }
+
+            let alertMessage = error != nil ? error!.localizedDescription : "Success"
+        })
+    }
+
+----
+
+[#obilePaymentSDK_iOS_PaymentResponse_Object_Reference]
+The `SDKPayECPaymentResponse` object is inherited from the SDKPayECPayment object. If the response was succesfull SDKPayECPaymentResponse object contains actual payment response parameters:
+
+- **`transactionState`**: `SDKPayECTransactionState` - Returns a transaction state
+- **`transactionIdentifier`**: `String` - A unique identifier assigned for every Transaction.
+- **`statusMessage`**: `String` - All status messaeges composed into one string
+- **`providerTransactionReferenceId`**: `String` - A unique identifier assigned for every provider transaction.
+
+[#MobilePaymentSDK_iOS_BasicSetup_Localization]
+==== Localization
+
+The locale can be realized by a few way steps:
+
+[arabic]
+. **`locale` parameter in the payment request is set** - selected locale is sent to the backend and SDK UI is set to specified language,
+. **`locale` parameter in the payment request is not set** -  Mobile Payment SDK reads the list of customer localization settings in the mobile device and searches in order of this list for the first available localization supported by SDK. If localization is suitabsetupsset ups it for UI localization. If not the default English SDK localization is set up.
+
+
+This example shows the first option: the backend `locale`:
+[source,swift]
+----
+    let payment = SDKPayECCardPayment()
+    payment.amount = 1.00
+    payment.currency = "EUR"
+    payment.transactionType = .purchase
+
+    payment.locale = "DE"
+----

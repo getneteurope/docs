@@ -1,0 +1,166 @@
+[#ShopSystems]
+== Shop Plugins
+
+We offer you various shop plugins which you are able to
+use *free-of-charge* to add payment functionality to your online shop
+system. Therefore you only need to download/install our shop extension to
+your online shop and to configure it to your needs.
+
+Some shop systems refer to these shop plugins as "app", as "add-on", as “extension” or as "module". However, for the purpose of better legibility, we call all of them "shop plugins" within this documentation.
+
+All our shop plugins require *only PCI SAQ A* certification for credit
+card payments which you may achieve very easily.
+
+You are able to *test the shop plugin* features and functionality via
+<<PaymentPageSolutions_SP_TestCredentials, pre-configured test accounts>> for each payment method. For going live you
+need your personal credentials which you receive from Getnet after
+concluding a corresponding contract. Please contact our <<ContactUs, Merchant Support>>.
+
+All our shop plugins are offered on  link:https://github.com/getneteurope[GitHub]. This means you are able
+to use them free-of-charge and and are given access to the source code.
+
+Please have a look on
+our <<ShopSystems_TermsOfUse, Terms of Use and Legal Notice>> before you use our shop plugins in your online
+shop.
+
+.Currently we offer shop plugins for the following shop systems:
+[cols="30,50a,10a,10a"]
+|===
+|Shop System   |Supported Payment Methods |Supported Languages |Documentation
+
+a| Magento 2
+
+- https://github.com/getneteurope/magento-getnet/releases[GitHub] |
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - PayPal
+      - SEPA Direct Debit
+      - Sofort
+      - przelewy24
+      - BLIK |
+
+      - English
+      - Spanish
+	  - Portuguese
+	  - Polish
+      - German |
+
+      - <<PaymentPageSolutions_SP_Magento_Integration, Magento Shop Plugin>>
+
+a| PrestaShop
+
+
+- https://github.com/getneteurope/prestashop-getnet/releases[GitHub] |
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - PayPal
+      - SEPA Direct Debit
+      - Sofort
+      - przelewy24
+      - BLIK|
+
+      - English
+      - Spanish
+	  - Portuguese
+	  - Polish
+      - German|
+
+      - <<PaymentPageSolutions_SP_PrestaShop_Integration, PrestaShop Shop Plugin>>
+
+a| WooCommerce
+
+
+- https://github.com/getneteurope/woocommerce-getnet/releases[GitHub]|
+      - Credit Card
+      - Alipay Cross-border
+      - iDEAL
+      - PayPal
+      - SEPA Direct Debit
+      - Sofort
+      - przelewy24
+      - BLIK|
+
+      - English
+      - Spanish
+	  - Portuguese
+	  - Polish
+      - German|
+
+      - <<PaymentPageSolutions_SP_WooCommerce_Integration, WooCommerce Shop Plugin>> |
+
+|===
+
+If you require another shop system not listed here or if you need
+additional payment methods or languages,
+please <<ContactUs, contact our sales and support teams>>.
+
+.Our shop plugins offer the following functionalities:
+
+- All the payments are based on a redirection to our Hosted Payment Page.
+- All our shop plugins require *only PCI DSS SAQ A*, which is the
+easiest possible PCI SAQ level, so that you do not need to hassle with
+PCI related details. Our shop plugins support 3DS fully.
+- Post-processing operations (like *capture, refund or cancel*) for each
+payment method are directly supported in the back-end of the shop
+system, so that your transactions within Getnet are synchronized to
+the orders in your online shop.
+- Integration to *Getnet Risk Management*, so that you are able to use
+risk and fraud tools to reduce fraudulent transactions in your online
+shop.
+- Regular *updates of all of our shop plugins* to offer you
+compatibility to the current versions of shop systems.
+
+//-
+
+.Advantages of using shop plugins developed and maintained by Getnet
+
+- You are able to download, install and configure the shop extension and do
+as many *test transactions* as you want to do.
+- All shop plugins are available with their complete *source code* and *history*
+of all changes, so that you are able to change the
+shop plugin to your business need.
+- We offer you *free support by email or phone* if you have any
+questions regarding the installation and configuration of our shop plugins.
+
+//-
+
+[#ShopSystems_TermsOfUse]
+=== Terms of Use
+
+. The plugins offered are provided free of charge by Getnet and
+are explicitly not part of the Getnet range of products and
+services.
+. They have been tested and approved for full functionality in the
+standard configuration (status on delivery) of the corresponding shop
+system. They are under *Academic Free License ("AFL") v. 3.0*  https://opensource.org/licenses/AFL-3.0
+and can be used, developed and passed on to third parties under the same terms.
+. However, Getnet does not provide any guarantee or accept any
+liability for any errors occurring when used in an enhanced, customized
+shop system configuration.
+. Operation in an enhanced, customized configuration is at your own
+risk and requires a comprehensive test phase by the user of the extension.
+. Customers use the plugins at their own risk. Getnet does not
+guarantee their full functionality neither does Getnet assume
+liability for any disadvantages related to the use of the plugins.
+Additionally, Getnet does not guarantee the full functionality for
+customized shop systems or installed plugins of other vendors of plugins
+within the same shop system.
+. Customers are responsible for testing the extension's functionality
+before starting productive operation.
+. By installing the extension into the shop system the customer agrees to
+these terms of use. Please do not use the extension if you do not agree to
+these terms of use!
+. Uninstalling the extension may result in the loss of data.
+
+//-
+
+[#ShopSystems_LegalNotes]
+==== Legal Notes
+
+No warranty whatsoever can be granted on any alterations and/or new
+implementations as well as resulting diverging usage not supported or
+described within this documentation.
+
+//-

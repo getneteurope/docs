@@ -1,4 +1,4 @@
-:payment-method-name: Guaranteed Direct Debit
+:payment-method-name: Ratepay Direct Debit
 
 [#PPv2_PaymentDirectDebit]
 == {payment-page-v2}
@@ -21,20 +21,20 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 
 [cols="20h,80"]
 |===
-|URI (Endpoint) 
+|URI (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 
-|Merchant Account ID (MAID) 
-|To be determined
+|Merchant Account ID (MAID)
+|5289ba2d-6094-4f7d-b6c2-346d1af638eb
 
-|Username 
-|To be determined
+|Username
+|515225-GetnetEuropeTEST
 
-|Password 
-|To be determined
+|Password
+|4cHLRE-Q7YcAP
 
-|Secret Key (used for response verification) 
-|To be determined
+|Secret Key (used for response verification)
+|bb3ec883-9c5b-4e70-beff-c3151b17ecf4
 |===
 
 [#PPv2_PaymentDirectDebit_TestCredentials_Additional]
@@ -42,14 +42,14 @@ include::{root}/include/ppv2-general-information-2.adoc[]
 
 [cols="20h,80"]
 |===
-|IBAN 
-|To be determined
+|IBAN
+|DE83203205004989123456
 
-|BIC 
-|To be determined
+|BIC
+|DABADEHHXXX
 
-|Bank 
-|To be determined
+|Bank
+|Danske Bank Hamburg
 |===
 
 [#PPv2_PaymentDirectDebit_Countries]
@@ -151,7 +151,7 @@ m|payment-method
 |String
 |Optional
 |15
-|The name of the payment method used. Set this value to ``guaranteeddirectdebit``.
+|The name of the payment method used. Set this value to ``ratepay-elv`` for Ratepay Direct Debit``.
 
 .10+m|account-holder
 .5+m|address
@@ -187,31 +187,31 @@ m|payment-method
 
 3+m|first-name
 |String
-|Mandatory 
+|Mandatory
 |32
 |The first name of the consumer.
 
 3+m|last-name
 |String
-|Mandatory 
+|Mandatory
 |32
 |The last name of the consumer.
 
 3+m|email
 |String
-|Mandatory 
+|Mandatory
 |64
 |The email address of the consumer.
 
 3+m|phone
 |String
-|Mandatory 
+|Mandatory
 |32
 |The phone number of the consumer.
 
 3+m|date-of-birth
 |String
-|Mandatory 
+|Mandatory
 |n/a
 |The date of birth of the consumer.
 
@@ -219,11 +219,11 @@ m|payment-method
 |String
 |Optional
 |45
-a|The internet protocol address of the consumer as recorded by the entity receiving the transaction attempt from the consumer. 
+a|The internet protocol address of the consumer as recorded by the entity receiving the transaction attempt from the consumer.
 
 4+|order-number
 |String
-|Mandatory 
+|Mandatory
 |64
 a|String provided by the merchant, to store the 'Order Number' for the transaction.
 
@@ -231,12 +231,12 @@ a|String provided by the merchant, to store the 'Order Number' for the transacti
 .7+m|order-item
 2+m|name
 |Alphanumeric
-|Mandatory 
+|Mandatory
 |
 a|Name of the item in the basket.
 
 2+m|description
-|String 
+|String
 |Mandatory
 |
 a|Description of the item in the basket.
@@ -325,7 +325,7 @@ the merchant to debit the consumer’s bank account.
 [source,json,subs=attributes+]
 ----
 {
-  "payment-redirect-url": "https://{pp-test-instance-hostname}/?wPaymentToken=A_2xknKaa5bl18Rmm1qCVFLBuGhl2eai5stNEtNbTgE"
+  "payment-redirect-url": "https://{pp-test-instance-hostname}/?wPaymentToken=<DYNAMIC_TOKEN>"
 }
 ----
 
@@ -335,7 +335,7 @@ include::{root}/include/ppv2-redirect-instructions.adoc[]
 
 [source,json,subs=attributes+]
 ----
-include::{root}/samples/json/PPv2_GuaranteedDirectDebit_TransactionTypeAuthorization_DecodedPaymentResponse.json[]
+include::{root}/samples/json/PPv2_GuaranteedGuaranteedDirectDebit_TransactionTypeAuthorization_DecodedPaymentResponse.json[]
 ----
 
 [%autowidth]

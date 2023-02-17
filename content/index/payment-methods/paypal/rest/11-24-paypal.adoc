@@ -251,30 +251,14 @@ Parent-Transaction-ID field.
 [#PayPal_TestCredentials]
 === Test Credentials
 
-.Test Credentials
-[%autowidth]
+[cols="30h, 70"]
 |===
-.2+h|URL(s) Endpoints | The transaction types _debit_, _authorization_, _authorization-only_,
-_preauthorization_, _pending-credit_, _credit_ or _order_ use 2+| ``\https://{rest-api-test-apm-endpoint}``
-| The transaction types _capture-authorization_, _refund-capture_,
-_void-authorization_ and _refund-debit_ use
-2+| ``\https://{rest-api-test-endpoint}``
-.3+h|Merchant Account ID (MAID)
-|Show No Address 
-|To be determined
-
-.3+|<<API_PayPal_Configuration_Addresses, See details>>
-|Show Address 
-|To be determined
-|Edit Address |To be determined
-
-h|Username 3+|To be determined
-h|Password 3+|To be determined
-.3+h|Secret Key
-|Show No Address | To be determined
-.3+|<<API_PayPal_Configuration_Addresses, See details>>
-|Show Address | To be determined
-|Edit Address | To be determined
+| URLs (Endpoints) (The transaction types debit, authorization, authorization-only, preauthorization, pending-credit, credit or order use) |``https://api-test.getneteurope.com/engine/rest/paymentmethods/``
+| URLs (Endpoints) (The transaction types capture-authorization, refund-capture, void-authorization and refund-debit use)|``https://api-test.getneteurope.com/engine/rest/payments/``
+| Merchant Account ID (MAID) | bb342082-9761-4481-802e-20b10d92545d
+| Username | 515225-GetnetEuropeTEST
+| Password | 4cHLRE-Q7YcAP
+| Secret Key | fd1d35aa-952e-4549-9f3d-ea33c89c86c4
 |===
 
 [#API_PayPal_TestCredentials_Additional]
@@ -487,7 +471,7 @@ Format must be ``language`` (e.g. ``en``).
 |street1 |O |O |O |String |128 |First part of the shipment recipient's street name.
 |street2 |O |O |O |String |128 |Second part of the shipment recipient's street name.
 |city |O |O |O |String |32 |Name of the shipment recipient's city.
-|country |O |O |O |String |3 |Name of the shipment recipient's country. Please use the list of country codes supported by https://developer.paypal.com/docs/nvp-soap-api/country-codes/[Paypal]
+|country |O |O |O |String |3 |Name of the shipment recipient's country. Please use the list of country codes supported by https://developer.paypal.com/api/nvp-soap/country-codes/[Paypal]
 |state |C |C |C |String |32 a|Name of the shipment recipient's state. It is a mandatory field, if ``shipping.address.country`` is one of the following:
 
 - ``AR`` (Argentina)<<API_PayPal_Fields_Payment_Shipping_Address_footnote, ^(1)^>>
@@ -502,7 +486,7 @@ Format must be ``language`` (e.g. ``en``).
 - ``US`` (USA)
 //-
 
-Please use the list of state codes supported by https://developer.paypal.com/docs/nvp-soap-api/state-codes/[Paypal]
+Please use the list of state codes supported by https://developer.paypal.com/api/nvp-soap/country-codes/[Paypal]
 
 [[API_PayPal_Fields_Payment_Shipping_Address_footnote]] ^(1)^ = For these countries the fields ``shipping.address.postal-code`` and ``shipping.address.state`` are  mandatory.
 |postal-code |C |C |C |String |16 |Postal code of the shipment recipient's city. It is a mandatory field if the shipment recipient's country is marked with <<API_PayPal_Fields_Payment_Shipping_Address_footnote, ^(1)^>> in the field description for ``shipping.address.state``.
@@ -555,9 +539,9 @@ and select the link _Grant API permission_.
 image::images/11-24-paypal/Granting_3rdParty_APIAccess.jpg[Paypal 3rdparty APIaccess]
 +
 . In the textfield _Third Party Permission Username_  enter
-``\payments_api1.getneteurope.com`` and click _Lookup_.
+``paypal_api1.getneteurope.com`` and click _Lookup_.
 +
-image::images/11-24-paypal/Granting_3rdParty_AddNewTPP.jpg[Paypal 3rdparty Newaccess]
+image::images/11-24-paypal/Granting_3rdParty_AddNewTPP_getnet.jpg[Paypal 3rdparty Newaccess]
 +
 . Select from the list of _Available Permissions_ the following
 items:

@@ -18,10 +18,11 @@ a|Indicates the maximum number of authorizations permitted for installment payme
 a| Indicates the recurring payment type. +
 Accepted values: +
 
-* ``recurring``: is used for the recurring payments of a subscription. +
+* ``recurring``: is used for the recurring payments of a subscription with fixed amount and fixed frequency. +
 * ``installment``: is used for the partial payments of an installment payment. +
 * ``ucof``: (<<CreditCard_PaymentFeatures_RecurringTransaction_PeriodicTypes_ucof, Unscheduled Credential on File>>) is used to reference a regularly based transaction to an already successfully submitted transaction. +
-* ``ci``: (Consumer Initiated) identifies the consumer as the initiator of the transaction.
+* ``ci``: (Consumer Initiated) identifies the consumer as the initiator of the transaction. +
+* ``cof``:Standing order used for recurring payment with variable amount and fixed frequency.
 
 //-
 

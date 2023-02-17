@@ -1,0 +1,51 @@
+[#MobilePaymentSDK]
+== Mobile Payment SDK
+
+image:images/07-00-mobile-payment-sdk/android.png[Android Logo] image:images/07-00-mobile-payment-sdk/ios.png[iOS Logo]
+
+[#MobilePaymentSDK_Introduction]
+
+Mobile Payment SDK (MPSDK) is a lightweight user interface for the
+{payment-gateway}.
+
+MPSDK offers a seamless user experience by rendering a payment form as
+if it's built in the merchant's mobile application.
+
+This documentation was written for developers who will be integrating
+MPSDK into their mobile application. On this page, you will find general
+information you need to get started. For integration docs, refer to the
+subpage <<MobilePaymentSDK_FirstSteps, Basic Setup and Integration>>.
+
+A list of the currently supported payment methods can be found
+in <<MobilePaymentSDK_PaymentMethods, Available Payment Methods>> below.
+
+[#MobilePaymentSDK_PaymentMethods]
+=== Available Payment Methods
+
+It may be more convenient to use <<GeneralPlatformFeatures_IPN, Instant Payment Notification>>, instead of the default MPSDK responses.
+
+|===
+   | Payment Method    | Transaction Type
+
+.6+| Card              | authorization
+                       | authorization-only
+                       | purchase
+                       | tokenize
+                       | referenced-purchase
+                       | referenced-authorization
+
+.3+| PayPal            | authorization
+                       | authorization-only
+                       | debit
+
+.3+| SEPA Direct Debit | authorization
+                       | pending-debit
+                       | debit
+
+.1+| POI/PIA (Wire Transfer)	| authorization
+
+.1+| AliPay Cross-border	   | debit
+
+.1+| Przelewy24               | debit
+
+|===

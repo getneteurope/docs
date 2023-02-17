@@ -1,4 +1,4 @@
-:cc-exp-year: 2023
+:cc-exp-year: 2025
 :cc-exp-month: 01
 
 .3D Secure 2 Transactions without Challenge
@@ -90,3 +90,139 @@
 |N/A
 |No consumer interaction
 |===
+
+.4+|Diners
+|6510000000000703
+|703
+| {cc-exp-month}/{cc-exp-year}
+|N
+|Y
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000620
+|620
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|Y
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000042
+|042
+| {cc-exp-month}/{cc-exp-year}
+|U
+|Y
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000463
+|463
+| {cc-exp-month}/{cc-exp-year}
+|N
+|U
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000265
+|265
+| {cc-exp-month}/{cc-exp-year}
+|N
+|A
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000885
+|885
+| {cc-exp-month}/{cc-exp-year}
+|N
+|R
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000240
+|240
+| {cc-exp-month}/{cc-exp-year}
+|N
+|N
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000778
+|778
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|U
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000331
+|331
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|A
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000414
+|414
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|R
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000364
+|364
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|N
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000737
+|737
+| {cc-exp-month}/{cc-exp-year}
+|U
+|U
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000356
+|356
+| {cc-exp-month}/{cc-exp-year}
+|U
+|A
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000604
+|604
+| {cc-exp-month}/{cc-exp-year}
+|U
+|R
+|No
+|N/A
+|No consumer interaction
+
+|6510000000000505
+|505
+| {cc-exp-month}/{cc-exp-year}
+|U
+|N
+|No
+|N/A
+|No consumer interaction

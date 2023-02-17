@@ -4,7 +4,7 @@
 When you want to find out, whether the _{payment-gateway-abbr}_ servers are available, you
 can use a link to the _{payment-gateway-abbr}_ status page:
 
-https://{instance-hostname}/engine/status/
+https://{instance-hostname}/engine/rest/ping
 
 The status page shows the general status of the _{payment-gateway-abbr}_.
 

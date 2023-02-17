@@ -21,7 +21,7 @@ Payment Page stands for secure, flexible, easy and
 transparent payment processing. 
 
 It provides all payment methods and
-related options in one solution: Credit Card (with/without 3D
+related options in one solution: Credit Card (with 3D
 secure), SEPA, online banking payments, alternative
 payment methods, and industry-specific solutions.
 

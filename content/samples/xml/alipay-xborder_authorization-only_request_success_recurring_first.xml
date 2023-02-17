@@ -1,5 +1,5 @@
 <payment xmlns="http://www.elastic-payments.com/schema/payment">
-   <merchant-account-id>09383431-11cf-4eab-9905-a0a84f3c89e0</merchant-account-id>
+   <merchant-account-id>5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
    <request-id>2003495d-5d8b-4afc-9787-860e6713b8f8</request-id>
    <transaction-type>authorization-only</transaction-type>
    <requested-amount currency="USD">0.00</requested-amount>

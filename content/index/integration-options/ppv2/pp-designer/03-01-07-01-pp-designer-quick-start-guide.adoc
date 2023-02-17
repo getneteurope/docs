@@ -35,19 +35,20 @@ Click *Login* to access the <<PPD_{payment-page-v2-anchor}_Manager, {payment-pag
 
 The *Payment Page Designer* menu is divided into eight sections:
 
-* <<PPD_customize_preview, Preview mode>>
-* <<PPD_customize_general, General>>
-* <<PPD_customize_misc, Miscellaneous>>
-* <<PPD_customize_font, Font>>
-* <<PPD_customize_colors, Colors>>
-* <<PPD_customize_effects, Effects>>
-* <<PPD_customize_css, Custom CSS>>
-* <<PPD_customize_PaymentRequest, Payment request (for preview only)>>
+* <<PPD_customize_preview, 1. Preview mode>>
+* <<PPD_customize_general, 2. General>>
+* <<PPD_customize_misc, 3. Miscellaneous>>
+* <<PPD_customize_font, 4. Font>>
+* <<PPD_customize_colors, 5. Colors>>
+* <<PPD_customize_effects, 6. Effects>>
+* <<PPD_customize_css, 7. Custom CSS>>
+* <<PPD_customize_PaymentRequest, 8. Payment request (for preview only)>>
 
 //-
 
 [#PPD_customize_preview]
-.Preview mode
+*1. Preview mode*
+
 The *Live Preview* changes depending on your selection in the *Preview mode*:
 
 * *Payment* displays the payment form according to your settings.
@@ -58,7 +59,7 @@ The *Live Preview* changes depending on your selection in the *Preview mode*:
 //-
 
 [#PPD_customize_general]
-.General
+*2. General*
 
 Expand the *General* section to:
 
@@ -76,7 +77,7 @@ Expand the *General* section to:
 //-
 
 [#PPD_customize_misc]
-.Miscellaneous
+*3. Miscellaneous*
 
 Expand the *Miscellaneous* section to:
 
@@ -91,7 +92,7 @@ Expand the *Miscellaneous* section to:
 //-
 
 [#PPD_customize_font]
-.Font
+*4. Font*
 
 Expand the *Font* section to:
 
@@ -105,7 +106,7 @@ NOTE: Upload only one font at a time in the Web Open Font Format (.woff, .woff2 
 The uploaded font then appears as a custom font in the *Text and buttons* and *Input fields* lists. 
 
 [#PPD_customize_colors]
-.Colors
+*5. Colors*
 
 Expand the *Colors* section to change the color of: 
 
@@ -119,7 +120,7 @@ Expand the *Colors* section to change the color of:
 //-
 
 [#PPD_customize_effects]
-.Effects
+*6. Effects*
 
 Expand the *Effects* section to change the intensity of: 
 
@@ -129,11 +130,12 @@ Expand the *Effects* section to change the intensity of:
 NOTE: *Blur Effect* and *Opacity* can only be used if you have uploaded a logo or a background picture in the <<PPD_customize_general, General>> section, or defined a <<PPD_customize_colors, Color>>.
 
 [#PPD_customize_css]
-.Custom CSS
+*7. Custom CSS*
+
 Expand the *Custom CSS* to further personalize your style sheet and save it (i.e. <<PPD_customize_save, export it to a theme>>).
 
 [#PPD_customize_PaymentRequest]
-.Payment request (for preview only)
+*8. Payment request (for preview only)*
 
 Expand the *Payment request* section to change the values of a potential payment request (e.g. requested-amount.value, requested-amount.currency, order-item.name, order-item.description). The *Live Preview* displays your modifications immediately. +
 If the order items are not visible, display them using the <<PPD_customize_misc, Miscellaneous>> section.

@@ -1,0 +1,55 @@
+[#PaymentPageSolutions_SP_Integration]
+== Shop Plugins Integration Guide
+
+[#PaymentPageSolutions_SP_Integration_Overview]
+=== Overview
+
+In this site you can find the steps to perform a successful integration of the Getnet Shop Plugins on each e-commerce platform.
+
+- <<PaymentPageSolutions_SP_PrestaShop_Integration, Prestashop>>
+- <<PaymentPageSolutions_SP_WooCommerce_Integration, WooCommerce>>
+- <<PaymentPageSolutions_SP_Magento_Integration, Magento>>
+
+
+As well as their main features (Capture, Cancel & Refund) within each administration portal
+
+[#PaymentPageSolutions_SP_TestCredentials]
+=== Test Credentials
+
+==== Super merchant 1
+- Supports all shop plugin payment methods
+- Transactions will be _purchase_ / _debit_
+
+[cols="h,,"]
+[%autowidth]
+|===
+| *Merchant account resolver category*
+2+| 515408-ResShopPluginTest1
+| *Username*
+2+| 515408-ShopPluginTest1
+| *Password*
+2+| 63D4MaNzSYQr
+| *Secret Key*
+2+| 5ee36c55-5802-46a3-858d-3825e5758518
+| *SEPA Credit MAID*
+2+| c1c67377-d423-446d-8a9e-2a7d0c5f29f2
+|===
+
+==== Super merchant 2
+- Supports all shop plugin payment methods
+- Transactions will be of type _authorization_
+
+[cols="h,,"]
+[%autowidth]
+|===
+| *Merchant account resolver category*
+2+| 515411-ResShopPluginTest2
+| *Username*
+2+| 515411-ShopPluginTest2
+| *Password*
+2+| p3z6gz6pAZcv
+| *Secret Key*
+2+| 1af59053-ceae-47b0-94e5-e0dd67404599
+| *SEPA Credit MAID*
+2+| a1ea84d6-b065-43d8-b120-07c4ee5cc73d
+|===

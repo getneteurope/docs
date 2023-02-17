@@ -1,0 +1,201 @@
+[#MobilePaymentSDK_iOS_SEPA]
+---
+== *SEPA Direct Debit*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+* *`SDKPayECTransactionPendingDebit`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
+
+[#MobilePaymentSDK_iOS_SEPA_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_SEPA_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/SEPA',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_SEPA_basic_payment]
+=== SEPA Payment
+---
+This is a code example for a basic SEPA payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECSEPAPayment()
+   payment.appScheme = "example";
+   payment.amount = AMOUNT
+   payment.currency = "EUR"
+   payment.transactionType = .debit
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<SEPADirectDebit_Fields, SEPA Direct Debit>> payment method for more details.
+
+SEPA payment supports
+`SDKPayECPeriodicTypeRecurring`
+recurring type. Check the API documentation <<GeneralPlatformFeatures_Transactions_Recurring, Recurring Transaction>> for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_SEPA_recurring_payment]
+=== Recurring SEPA Payment
+---
+On a basic level, recurring payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* periodic type set to `SDKPayECPeriodicTypeRecurring`,
+* sequence type set to `SDKPayECSequenceTypeFirst`.
+. The follow-up requests, which must include:
+* periodic type set to `SDKPayECPeriodicTypeRecurring`,
+* sequence type set to `SDKPayECSequenceTypeRecurring`,
+* `parentTransactionId`
+value from the initial request.
+
+So in order to create a recurring payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate periodic and sequence
+flags,
+. Save the values of
+`parentTransactionId`
+field generated in this first payment,
+. Reference these values in the follow-up request, then send it with
+appropriate periodic and sequence flags.
+
+
+This is a code example for a first recurring SEPA payment:
+[source,swift]
+----
+// First payment 
+
+   let firstPeriodicType = SDKPayECPeriodic() 
+   firstPeriodicType.periodicType = .recurring
+   firstPeriodicType.sequenceType = .first
+
+   let payment = SDKPayECSEPAPayment()
+   payment.merchantAccountID = merchantAccountID  
+   payment.requestID = requestID
+   payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+   payment.currency = "EUR"
+   payment.transactionType = .debit
+   let periodic = SDKPayECPeriodic()
+   periodic.periodicType = periodicType
+   periodic.sequenceType = sequenceType
+   payment.periodic = firstPeriodicType
+   payment.signature = signature
+   
+   var parentTransactionID: String?
+   self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+      // for each failure error object is provided;
+      if let error = error {
+         return
+      }
+      self.handleResponse(response)
+   })
+
+   // Handle first result
+   func handleReponse(_ response: SDKPayECPaymentResponse?) {
+      guard let response = response else { return }
+      self.parentTransactionID = response.parentTransactionID
+   }
+
+   // Second payment using parentTransactionId
+
+   let firstPeriodicType = SDKPayECPeriodic()
+   firstPeriodicType.periodicType = .recurring
+   firstPeriodicType.sequenceType = .final
+   
+   let payment = SDKPayECSEPAPayment()
+   payment.merchantAccountID = merchantAccountID  
+   payment.requestID = requestID
+   payment.parentTransactionID = self.parentTransactionID
+   payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+   payment.currency = "EUR"
+   payment.transactionType = .autorization
+
+   let periodic = SDKPayECPeriodic()
+   periodic.periodicType = periodicType
+   periodic.sequenceType = sequenceType
+   payment.periodic = firstPeriodicType
+   payment.signature = signature
+
+   self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+      // for each failure error object is provided;
+      if let error = error {
+         return
+      }
+      self.handleResponse(response)
+   })
+```
+----
+
+[#MobilePaymentSDK_iOS_SEPA_Visualisaton]
+=== Visualisation
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-customized.png[Card Screen, align=center, width=240, height=420]
+|
+|===
+
+[#MobilePaymentSDK_iOS_SEPA_Visualisaton_Card_CustomizingVisuals]
+==== Customizing Visuals
+---
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK.
+
+[arabic]
+. `SDKPayECView`
+. `SDKPayECCancelButtonImage`
+. `SDKPayECCancelButton`
+. `SDKPayECSubmitButton`
+. `SDKPayECNavigationBar`
+. `SDKPayECAmountLabel`
+. `SDKPayECTextField`
+. `SDKPayECSwitch` 
+
+
+
+
+//-

@@ -1,4 +1,4 @@
-:cc-exp-year: 2023
+:cc-exp-year: 2025
 :cc-exp-month: 01
 
 [#API_CC_TestCards]

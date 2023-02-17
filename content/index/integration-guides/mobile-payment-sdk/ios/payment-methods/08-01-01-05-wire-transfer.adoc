@@ -1,0 +1,87 @@
+[#MobilePaymentSDK_iOS_WireTransfer]
+---
+== *POA/PIA WireTransfer*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_WireTransfer_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/WireTransfer',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_WireTransfer_basic_payment]
+==== WireTransfer Payment
+
+This is a code example for a basic WireTransfer payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECWireTransferPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.authorization
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.lastName = "Doe"
+   payment.accountHolder = accountHolder
+   
+   let notif = SDKPayECNotification.init()
+   notif.transactionState = SDKPayECTransactionState.success
+   payment.notifications = [notif]
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<API_POIPIA_Fields, POI/PIA>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_WireTransfer_Visualisaton]
+=== Visualisation
+---
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/wire-transfer.png[WireTransfer Screen, align=center, width=240, height=420]
+
+[NOTE]
+====
+Visualization of WireTransfer result is up to the merchant applicaton. SDK returns IBAN, BIC, Provider Reference ID and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
+
+//-

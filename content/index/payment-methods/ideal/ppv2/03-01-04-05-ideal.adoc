@@ -56,7 +56,6 @@ payment transactions.
 |ABNANL2A |ABN Amro Bank
 |ASNBNL21 |ASN Bank
 |BUNQNL2A |bunq
-|HANDNL2A |Handelsbanken
 |INGBNL2A |ING
 |KNABNL2H |Knab
 |MOYONL21 |Moneyou
@@ -79,13 +78,13 @@ Test Credentials for Transaction Type
 | URLI (Endpoint)
 |``\https://{pp-test-instance-hostname}/api/payment/register``
 | Merchant Account ID (MAID)
-| To be determined
+| 76977f95-d929-4870-acee-4ef89fd200cd
 | Username
-| To be determined
+| 515225-GetnetEuropeTEST
 | Password
-| To be determined
+| 4cHLRE-Q7YcAP
 | Secret Key (used for response verification)
-| To be determined
+| 01ab26af-d5c7-46f8-b5dd-8a1516c3e85c
 |===
 
 [#PPv2_ideal_TestCredentials_Additional]
@@ -143,7 +142,7 @@ For a full list of optional fields you can use, see the REST API
 <<iDEAL, _iDEAL_ specification>>.
 
 For a full structure of a request (optional fields included), see the
-<<PPv2_ideal_JSONNVPField, JSON/NVP Field Reference>> section at the bottom.
+<<PPv2_ideal_JSONNVPField, JSON Field Reference>> section at the bottom.
 
 
 .1. Create a Payment Session (Initial Request)
@@ -299,14 +298,9 @@ _iDEAL_ specific post-processing operations.
 
 
 [#PPv2_ideal_JSONNVPField]
-=== JSON/NVP Field Reference
+=== JSON Field Reference
 
-NVP equivalents for JSON fields (for migrating merchants).
-
-Here you can:
-
-- find the NVP equivalents for JSON fields (for migrating merchants),
-- see the structure of a full request (optional fields included).
+Here you can see the structure of a full request (optional fields included).
 
 //-
 
@@ -318,26 +312,26 @@ Here you can:
 include::{root}/samples/json/WPP_IdealJSONNVPFieldRequest_JSON_StructureForiDEALRequests.json[]
 ----
 
-[cols="e,e,e"]
+[cols="e,e"]
 |===
-|Field (NVP) |Field (JSON) |JSON Parent
+|Field (JSON) |JSON Parent
 
-|merchant_account_id |value |merchant-account-id ({ })
-|request-id |request-id |payment ({ })
-|transaction-type |transaction-type |payment ({ })
-|requested_amount_currency |currency |requested-amount ({ })
-|requested_amount |value |requested-amount ({ })
-|payment_method |payment-method ([ ])/name |payment-methods ({ })
-|bank_account_bic |bic |bank-account ({ })
-|bank_account_iban |iban |bank-account ({ })
-|first_name |first-name |account-holder ({ })
-|last_name |last-name |account-holder ({ })
-|descriptor |descriptor |payment ({ })
-|order_number |order-number |payment ({ })
-|locale |locale |payment ({ })
-|success_redirect_url |success-redirect-url |payment ({ })
-|fail_redirect_url |fail-redirect-url |payment ({ })
-|cancel_redirect_url |cancel-redirect-url |payment ({ })
+|value |merchant-account-id ({ })
+|request-id |payment ({ })
+|transaction-type |payment ({ })
+|currency |requested-amount ({ })
+|value |requested-amount ({ })
+|payment-method ([ ])/name |payment-methods ({ })
+|bic |bank-account ({ })
+|iban |bank-account ({ })
+|first-name |account-holder ({ })
+|last-name |account-holder ({ })
+|descriptor |payment ({ })
+|order-number |payment ({ })
+|locale |payment ({ })
+|success-redirect-url |payment ({ })
+|fail-redirect-url |payment ({ })
+|cancel-redirect-url |payment ({ })
 |===
 
 [#PPv2_ideal_JSONNVPField_response]
@@ -350,16 +344,16 @@ include::{root}/samples/json/WPP_IdealJSONNVPFieldResponse_ResponseOnlyFields.js
 
 [cols="e,e"]
 |===
-|Field (NVP) |Field (JSON) |JSON Parent
+|Field (JSON) |JSON Parent
 
-|api_id |api-id |payment ({ })
-|parent_transaction_id |parent-transaction-id |payment ({ })
-|transaction_state |transaction-state |payment ({ })
-|transaction_id |transaction-id |payment ({ })
-|completion_time_stamp |completion-time-stamp |payment ({ })
-|status_description_n |status ([ {} ])/ severity |statuses ({ })
-|status_severity_n |status ([ {} ])/ code |statuses ({ })
-|status_code_n |status ([ {} ])/ description |statuses ({ })
+|api-id |payment ({ })
+|parent-transaction-id |payment ({ })
+|transaction-state |payment ({ })
+|transaction-id |payment ({ })
+|completion-time-stamp |payment ({ })
+|status ([ {} ])/ severity |statuses ({ })
+|status ([ {} ])/ code |statuses ({ })
+|status ([ {} ])/ description |statuses ({ })
 |===
 
 //-

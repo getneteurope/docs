@@ -235,10 +235,10 @@ can be used with both SEPA payment methods: _SEPA Credit Transfer_ and _SEPA Dir
 [cols="30h, 70"]
 |===
 | URLs (Endpoints) |``\https://{rest-api-test-apm-endpoint}``
-| Merchant Account ID (MAID) | To be determined
-| Username | To be determined
-| Password | To be determined
-| Secret Key | To be determined
+| Merchant Account ID (MAID) | 5c4ef296-46c5-482c-9143-509d13fcca34
+| Username | 	515225-GetnetEuropeTEST
+| Password | 4cHLRE-Q7YcAP
+| Secret Key | d60f0ba0-35cd-43f9-a0ef-1dab7880b1d7
 |===
 
 [#SEPADirectDebit_Workflow]
@@ -553,9 +553,11 @@ transaction processing will start on next Monday.
 The capture date influences the validation rule and the calculation
 logic of the due date. The due date is validated and calculated
 according to the same rules as described in the chapter 'Due Date' but
-starting from the capture date. For example, if the capture date is the
-Tuesday 25.11.2015, the next possible due date for the one-off
-transaction is 25.11.2015  + 1 bank working day = Friday 26.11.2015.
+starting from the capture date.
+
+For example, if the capture date is the
+*Tuesday 25.11.2015*, the next possible due date for the one-off
+transaction is 25.11.2015  + 1 bank working day = *Wednesday 26.11.2015*.
 
 The due date may only be used if it passes validation. If validation is
 not passed, system will return a failed transaction (400.1175) and the

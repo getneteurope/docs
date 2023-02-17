@@ -7,10 +7,9 @@ The {payment-gateway} has a built-in _notification_ capability.
 An _Instant Payment Notification_ (IPN) informs the merchant about the
 final status of a transaction.
 
-There are two types of notifications:
+There are one type of notifications:
 
-- *HTTP(S)* (Web Server POST)
-- *SMTP* (Email prefixed with 'mailto')
+- *HTTPS* (Web Server POST)
 
 //-
 
@@ -29,7 +28,7 @@ The following formats are currently supported:
 When the merchant wants to receive a notification, he can either
 
 - specify a URL as part the merchant account setup; or
-- include either an email address or a URL as part of each transaction
+- include an URL as part of each transaction
 request
 
 //-
@@ -162,8 +161,7 @@ to only occur on 'failed' or 'successful' transactions.
 |===
 |Notification Type  | Notification Tag in Request     | Possible Extensions of URL  | Ports         | Possible Extensions of ``transaction-state``
 
-|HTTP(S)            | ``URL``, ``transaction-state``  | any configured URL          | 80, 443, 5500 | if _URL_ <> empty and _`transaction-state`_ = empty all notifications go to that URL or if _URL_ <> empty and _`transaction-state`_ <> empty depending on the _transaction-state_ (success, failed, in-progress, etc) the notification goes to the corresponding _URL_.
-|SMTP               | ``URL``, ``transaction-state``  |                             |               | if _URL_ <> empty and ``transaction-state`` = empty all notifications go to that URL (Email address prefixed with 'mailto'). OR if _URL_ <> empty and ``transaction-state`` <> empty depending on the ``transaction-state`` (success, failed, in-progress, etc) the notification goes to the corresponding _URL_ (Email address prefixed with 'mailto').
+|HTTPS            | ``URL``, ``transaction-state``  | any configured URL          | 80, 443, 5500 | if _URL_ <> empty and _`transaction-state`_ = empty all notifications go to that URL or if _URL_ <> empty and _`transaction-state`_ <> empty depending on the _transaction-state_ (success, failed, in-progress, etc) the notification goes to the corresponding _URL_.
 |===
 
 

@@ -1,0 +1,149 @@
+[#MobilePaymentSDK_Android_Wiretransfer]
+---
+== *POA/PIA WireTransfer*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+*`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
+
+*`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
+
+=== Module Dependency Edit your
+`build.gradle` file accordingly:
+
+[source,java]
+---- 
+dependencies {
+    ...
+    implementation files('libs/core.aar')
+    implementation files('libs/wiretransfer.aar')
+    ...
+}
+----
+
+When adding/removing this feature, perform a full clean build.
+
+=== Signature
+
+Application shall get signature from server where signature shall be
+computed.
+
+=== Simple Wiretransfer Payment
+
+This is a code example for a basic Wiretransfer payment:
+
+[source,kotlin]
+----
+val wiretransferPayment = WiretransferPayment(
+        signature = signature
+        requestID = requestID
+        merchantAccountId = merchantAccountId
+        transactionType = transactionType
+        amount = amount
+        currency = currency
+        accountHolder = accountHolder
+        ipAddress = null
+        orderNumber = null
+        orderDetail = null
+        descriptor = null
+        notifications = null
+        customFields = null
+)
+ 
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(wiretransferPayment)
+----
+
+[source,java]
+----
+wiretransferPayment = new WiretransferPayment.Builder()
+        .setSignature(signature)
+        .setMerchantAccountId(merchantId)
+        .setRequestId(requestId)
+        .setTransactionType(transactionType)
+        .setAmount(amount)
+        .setCurrency(currency)
+        .setAccountHolder(new AccountHolder(null, "Lastname"))
+        .build();
+ 
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(wiretransferPayment);
+----
+
+You can use Builder to create the payment object and set additional
+properties afterwards.
+
+=== Customizing Visuals
+
+To change colors within the SDK, override the default color values in
+the `.xml` file.
+
+==== Color Resources
+
+Changing any of these will affect every module used in the SDK:
+
+*`sdkpay_ecom_color_main`* - color tint for icons, header and submit button
+gradient start color
+
+*`sdkpay_ecom_color_main_light`* - header and submit button gradient end
+color
+
+*`sdkpay_ecom_color_main_alpha80`* - text input layout title color
+
+*`sdkpay_ecom_color_toolbar_text`* - toolbar text and back arrow tint
+
+*`sdkpay_ecom_color_pay_button_text`* - pay button text color
+
+*`sdkpay_ecom_color_main_background`* - background color for main view
+
+*`sdkpay_ecom_color_error`* - used for all text input layouts to modify
+error text color including the edit text line
+
+==== Changing Fonts
+
+To change fonts, override the font path to in string resources with name
+`sdkpay_fontPath': e.g. strings.xml
+
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
+
+==== Changing Text Size
+
+To change the text size use dimensional attribute `sdkpay_ecom_text_size`.
+This affects all the modules, except `cardField`.
+
+==== Customizing Wiretransfer Payments
+
+[.image]##
+
+*Color Resources*
+
+1 - `sdkpay_ecom_color_main`
+
+2 - `sdkpay_ecom_color_light`
+
+3 - `sdkpay_ecom_color_main_alpha80`
+
+4 - `sdkpay_ecom_color_pay_button_text`
+
+5 - `sdkpay_ecom_color_toolbar_text`
+
+6 - `sdkpay_ecom_color_error`
+
+7 - `sdkpay_ecom_color_main_background`
+
+*Icons*
+
+8 - `sdkpay_ecom_arrow_back`
+
+9 - `sdkpay_ecom_cardholder_name`
+
+10 - `sdkpay_ecom_iban_3`
+
+11 - `sdkpay_ecom_camera_blue`

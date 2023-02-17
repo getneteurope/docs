@@ -1,12 +1,12 @@
  {
    "payment":{
       "merchant-account-id":{
-         "value":"7a6dd74f-06ab-4f3f-a864-adc52687270a"
+         "value":"5c4a8a42-04a8-4970-a595-262f0ba0a108"
       },
       "request-id":"{{$guid}}",
       "transaction-type":"authorization",
       "requested-amount":{
-         "value":10,
+         "value":224,
          "currency":"EUR"
       },
       "payment-methods":{

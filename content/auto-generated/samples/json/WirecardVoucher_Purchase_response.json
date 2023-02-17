@@ -43,6 +43,6 @@
       ]
     },
     "provider-account-id": "0000003173E1F10E",
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/7b14cf26-44ae-4bf2-a180-044ac03ff9f6/payments/704292b7-c7d6-4d18-9894-b53d11ba896e"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/7b14cf26-44ae-4bf2-a180-044ac03ff9f6/payments/704292b7-c7d6-4d18-9894-b53d11ba896e"
   }
 }

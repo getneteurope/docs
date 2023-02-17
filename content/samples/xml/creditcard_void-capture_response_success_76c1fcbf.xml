@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/9105bb4f-ae68-4768-9c3b-3eda968f57ea/payments/86198107-a392-4df6-92d3-6bf7a8525e71">
-    <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/9105bb4f-ae68-4768-9c3b-3eda968f57ea">9105bb4f-ae68-4768-9c3b-3eda968f57ea</merchant-account-id>
+    <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108">5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
     <transaction-id>86198107-a392-4df6-92d3-6bf7a8525e71</transaction-id>
     <request-id>b90d6b19-bb56-4272-b794-a6cc94148c6d</request-id>
     <transaction-type>void-capture</transaction-type>

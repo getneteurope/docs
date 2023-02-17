@@ -1,5 +1,5 @@
-<payment self="https://{test-instance-hostname}:443/engine/rest/merchants/3e549fd0-50de-11e0-b8af-0800200c9a66/payments/56fc2135-c629-406b-a912-d71f095b603c" xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
-   <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/3e549fd0-50de-11e0-b8af-0800200c9a66">3e549fd0-50de-11e0-b8af-0800200c9a66</merchant-account-id>
+<payment self="https://{test-instance-hostname}:443/engine/rest/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108/payments/56fc2135-c629-406b-a912-d71f095b603c" xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction">
+   <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/5c4a8a42-04a8-4970-a595-262f0ba0a108">5c4a8a42-04a8-4970-a595-262f0ba0a108</merchant-account-id>
    <transaction-id>56fc2135-c629-406b-a912-d71f095b603c</transaction-id>
    <request-id>{{$guid}}</request-id>
    <transaction-type>check-enrollment</transaction-type>

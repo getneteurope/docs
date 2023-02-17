@@ -22,7 +22,7 @@
     </notification>
   </notifications>
   <payment-methods>
-    <payment-method url="https://sandbox.molpay.com/MOLPay/pay/SB_wirecard/FPX_ABB.php?amount=10&amp;orderid=b140e5bea2ff4463bf2b7f4c105b6a95&amp;cur=MYR&amp;vcode=783b5b1d4d8c03dccfc2124b1f13b5b8&amp;bill_desc=description&amp;bill_mobile=%2B123456789&amp;bill_email=john%40doe.com&amp;bill_name=John+Doe&amp;cancelurl=https%3A%2F%2Fapi-test.wirecard.com%3A443%2Fengine%2Fnotification%2Fmolpay%2Fredirect" name="fpx_abb"/>
+    <payment-method url="https://sandbox.molpay.com/MOLPay/pay/SB_wirecard/FPX_ABB.php?amount=10&amp;orderid=b140e5bea2ff4463bf2b7f4c105b6a95&amp;cur=MYR&amp;vcode=783b5b1d4d8c03dccfc2124b1f13b5b8&amp;bill_desc=description&amp;bill_mobile=%2B123456789&amp;bill_email=john%40doe.com&amp;bill_name=John+Doe&amp;cancelurl=https%3A%2F%2Fapi-test.getneteurope.com%3A443%2Fengine%2Fnotification%2Fmolpay%2Fredirect" name="fpx_abb"/>
   </payment-methods>
   <cancel-redirect-url>https://{pp-redirect-url-cancel}</cancel-redirect-url>
   <fail-redirect-url>https://{pp-redirect-url-error}</fail-redirect-url>

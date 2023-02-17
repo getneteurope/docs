@@ -63,6 +63,6 @@
       "postal-code": "55555"
     },
     "provider-account-id": "70003",
-    "self": "https://api-test.wirecard.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/9efd053c-f74f-4e0c-9851-857c003898bf"
+    "self": "https://api-test.getneteurope.com:443/engine/rest/merchants/33f6d473-3036-4ca5-acb5-8c64dac862d1/payments/9efd053c-f74f-4e0c-9851-857c003898bf"
   }
 }

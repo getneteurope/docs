@@ -27,7 +27,7 @@
     <custom-field field-name="zapp.out.RtrvlExpiryTimeIntrvl" field-value="250"/>
   </custom-fields>
   <payment-methods>
-    <payment-method url="https://api-test.wirecard.com:443/engine/notification/zapp/lightBoxPaymentPage?tkn=182737153267840786&amp;brn=XQSJXB&amp;rtp=250&amp;ctp=150&amp;cks=N&amp;cb=https%3A%2F%2Fapi-test.wirecard.com%3A443%2Fengine%2Fnotification%2Fzapp%2Fcallback%3Ftid%3D7d0e88d7-9cad-47c1-9b49-faf543355d6b%26rid%3D7fd60507-b71c-4459-a5f0-36191b44d272%26mid%3D70055b24-38f1-4500-a3a8-afac4b1e3249%26api%3Delastic-api%26chck%3D0adfa8e2b31ae38d509083ed124b7254a2ab71e6077d0622f9f980de2347dad0&amp;chck=d96405e6962712812907578406b2fe6818675da4fb0a954d19db9f5b91f414c0" name="zapp"/>
+    <payment-method url="https://api-test.getneteurope.com:443/engine/notification/zapp/lightBoxPaymentPage?tkn=182737153267840786&amp;brn=XQSJXB&amp;rtp=250&amp;ctp=150&amp;cks=N&amp;cb=https%3A%2F%2Fapi-test.getneteurope.com%3A443%2Fengine%2Fnotification%2Fzapp%2Fcallback%3Ftid%3D7d0e88d7-9cad-47c1-9b49-faf543355d6b%26rid%3D7fd60507-b71c-4459-a5f0-36191b44d272%26mid%3D70055b24-38f1-4500-a3a8-afac4b1e3249%26api%3Delastic-api%26chck%3D0adfa8e2b31ae38d509083ed124b7254a2ab71e6077d0622f9f980de2347dad0&amp;chck=d96405e6962712812907578406b2fe6818675da4fb0a954d19db9f5b91f414c0" name="zapp"/>
   </payment-methods>
   <api-id>elastic-api</api-id>
   <device>

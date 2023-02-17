@@ -2,10 +2,6 @@
 [#PPv2_Sofort]
 == {payment-page-v2}
 
-====
-{payment-page-v1} image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] is no longer supported. We recommend using {payment-page-v2} integration instead. If you have questions about your existing {payment-page-v1} integration, consult our <<Sofort, REST API>> integration guide.
-====
-
 [#PPv2_Sofort_General]
 === General Information
 
@@ -60,10 +56,10 @@ Test credentials for the transaction type
 [cols="35h,65"]
 |===
 | URI (Endpoint)             | ``\https://{pp-test-instance-hostname}/api/payment/register``
-| Merchant Account ID (MAID) | To be determined
-| Username                   | To be determined
-| Password                   | To be determined
-| Secret Key (used for response verification) | To be determined
+| Merchant Account ID (MAID) | cd553bc0-e8f1-4d4c-8a36-eb9b2040304f
+| Username                   | 515225-GetnetEuropeTEST
+| Password                   | 4cHLRE-Q7YcAP
+| Secret Key (used for response verification) | d069455a-9852-4494-95d1-5caedbdcf6ce
 |===
 
 [#PPv2_Sofort_TestCredentials_Sandbox]

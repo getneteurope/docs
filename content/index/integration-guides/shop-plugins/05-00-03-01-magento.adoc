@@ -1,0 +1,163 @@
+[#PaymentPageSolutions_SP_Magento_Integration]
+= Magento Shop Plugin
+
+image::images/09-01-magento/intro_video.png[width=640, height=360, link="https://vimeo.com/755099295/46dea23636"]
+
+[#Inroduction]
+== Introduction 
+This document serves as a guide for the integration of the plugin developed by Getnet
+about stores with the Magento platform.
+
+[#Requirements]
+== Requirements 
+To integrate the extension in Magento, you must have the following:
+
+- Minimal version: Magento 2.3.4
+- Access to the server console
+- Server ftp access
+- Getnet Credentials
+- Zip installation module (Magento_getnet_plugin.zip)
+
+[#Installation]
+== Installation
+To install the extension, you must perform the following steps:
+
+[%hardbreaks]
+*#1 Copy module*
+
+[%hardbreaks]
+As a first step, we must copy the payment module, for this we must enter the root folder of your Magento installation.
+
+[%hardbreaks]
+Go to:  app /code    _(If you do not have the code folder, you must create it.)_.
+
+[%hardbreaks]
+[float]
+Copy the Magento_getnet_plugin.zip file into the code folder and unzip
+
+[%hardbreaks]
+[float]
+image::images/09-01-magento/locate_and_unzip.png[]
+
+[%hardbreaks]
+When unzipping, you should have the following path inside your Magento root directory: +
+app /code /Getnet  +
+_* The zip will need to be removed after unzipping_ 
+
+[%hardbreaks]
+*#2 How Install:*
+
+[%hardbreaks]
+For this step you must enter the terminal of the server where your store is hosted. +
+- 1.  Enter the initial path of the Magento 2 installation (root folder)
+- 2.  Already in the installation path you must execute the following lines
+
+[%hardbreaks]
+	php bin/magento cache:disable 
+	php bin/magento setup:upgrade 
+	php bin/magento setup:di:compile 
+	php bin/magento cache:enable 
+
+[%hardbreaks]
+Example: 
+[%hardbreaks]
+image::images/09-01-magento/term.PNG[]
+[%hardbreaks]
+Note: If when you run the compile command it doesn't finish 100%, you should increase your memory limit in php. +
+``memory_limit 1024M``
+
+[%hardbreaks]
+*#3 Configure Payment Module*
+
+[%hardbreaks]
+In the store administrator, you must click on the menu on the left and select the option +
+Stores -> Configuration 
+[%hardbreaks]
+image::images/09-01-magento/configure_payment_module.PNG[]
+
+{empty} +
+
+[%hardbreaks]
+Go to Sales -> Payment Methods 
+[%hardbreaks]
+image::images/09-01-magento/sales_payment_methods.PNG[]
+
+{empty} +
+
+[%hardbreaks]
+The new payment module will appear with the name of Getnet +
+You must enter the credentials that were granted by Getnet 
+[%hardbreaks]
+image::images/09-01-magento/credentials_form.PNG[]
+
+[%hardbreaks]
+Once the activate option has been set on "Yes" and the changes have been saved, it will be shown in Checkout as *_"Pay by Card or Other Payment Methods"_*
+[%hardbreaks]
+image::images/09-01-magento/timeline.PNG[]
+
+{empty} +
+
+[%hardbreaks]
+A Payment link will be generated and then you will be redirected +
+Example:
+[%hardbreaks]
+image::images/09-01-magento/payment_choose_method.PNG[]
+
+{empty} +
+
+[%hardbreaks]
+Example of approved Order.
+[%hardbreaks]
+image::images/09-01-magento/thank_you_for_your_purchase.PNG[]
+
+
+[#Orders_Administration_Magento]
+== Orders Administration
+
+*Visualize Orders:* On "Sales Section" / "Orders" you will see the portal where you will be able to review all the orders that have been placed and the status of each one.
+[%hardbreaks]
+image::images/09-01-magento/visualize_orders.PNG[]
+
+{empty} +
+
+*Cancel, Refund and Capture:* On Orders you must click on "View" to see the portal where you will be able to select Cancel, Refund or Capture as needed:
+[%hardbreaks]
+image::images/09-01-magento/cancel_refund_capture.PNG[]
+
+{empty} +
+
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.*
+[%hardbreaks]
+image::images/09-01-magento/note_cancellation.PNG[]
+
+{empty} +
+
+Depending on the selected option the following messages will be displayed, to continue you must click on "Ok":
+[%hardbreaks]
+image::images/09-01-magento/option_messages_displayed.PNG[]
+
+{empty} +
+
+Once an Order has been Cancelled / Voided, Captured or Refunded, the status will be automatically updated, this can be seen on Orders / Status. You can also consult the Orders history on View Portal below Order Total:
+[%hardbreaks]
+image::images/09-01-magento/notes_for_this_order.PNG[]
+
+{empty} +
+
+
+*Status Update*
+For "Offline Bank Transfer" type payments, there is the "Update status" button, in this option, the system will ask if you agree to want to check the status and update, when you accept, the request will be sent to Getnet to check the current status and if it is different from the one in the system, it will be updated.
+
+
+
+
+*Plugin Usage Rules:*
+[%hardbreaks]
+image::images/09-01-magento/table.PNG[]
+*Note: Cancellations / Voids are made on the same day, Refunds are made the next day.
+
+image::images/09-01-magento/updateStatus.png[]
+
+image::images/09-01-magento/question_update.png[]
+
+image::images/09-01-magento/comments_update.png[]
