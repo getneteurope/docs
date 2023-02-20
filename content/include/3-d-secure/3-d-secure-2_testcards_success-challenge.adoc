@@ -91,4 +91,141 @@
 |Yes
 |{password-acs-cc}
 |Testing "Authentication approved"
+
+.4+|Diners
+|6510000000000083
+|083
+| {cc-exp-month}/{cc-exp-year}
+|N
+|Y
+|Yes
+|{password-acs-cc}
+|"Authentication approved"
+
+|6510000000000075
+|075
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|Y
+|Yes
+|{password-acs-cc}
+|"Authentication approved"
+
+|6510000000000000
+|000
+| {cc-exp-month}/{cc-exp-year}
+|U
+|Y
+|Yes
+|{password-acs-cc}
+|"Authentication approved"
+
+|6510000000000026
+|026
+| {cc-exp-month}/{cc-exp-year}
+|N
+|U
+|Yes
+|{password-acs-cc}
+|"Unable to authenticate"
+
+|6510000000000034
+|034
+| {cc-exp-month}/{cc-exp-year}
+|N
+|A
+|Yes
+|{password-acs-cc}
+|"No consumer interaction"
+
+|6510000000000752
+|752
+| {cc-exp-month}/{cc-exp-year}
+|N
+|R
+|Yes
+|{password-acs-cc}
+|"Issuer is rejecting authentication"
+
+|6510000000000018
+|018
+| {cc-exp-month}/{cc-exp-year}
+|N
+|N
+|Yes
+|{password-acs-cc}
+|"Authentication failed"
+
+|6510000000000802
+|802
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|U
+|Yes
+|{password-acs-cc}
+|"Unable to authenticate"
+
+|6510000000000067
+|067
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|A
+|Yes
+|{password-acs-cc}
+|"No consumer interaction"
+
+|6510000000000455
+|455
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|R
+|Yes
+|{password-acs-cc}
+|"Issuer is rejecting authentication"
+
+|6510000000000158
+|158
+| {cc-exp-month}/{cc-exp-year}
+|Y
+|N
+|Yes
+|{password-acs-cc}
+|"Authentication failed"
+
+|6510000000000547
+|547
+| {cc-exp-month}/{cc-exp-year}
+|U
+|U
+|Yes
+|{password-acs-cc}
+|Testing "Unable to authenticate"
+
+|6510000000000117
+|117
+| {cc-exp-month}/{cc-exp-year}
+|U
+|A
+|Yes
+|{password-acs-cc}
+|No consumer interaction
+
+|6510000000000638
+|638
+| {cc-exp-month}/{cc-exp-year}
+|U
+|R
+|Yes
+|{password-acs-cc}
+|Testing "Issuer is rejecting authentication"
+
+|6510000000000562
+|562
+| {cc-exp-month}/{cc-exp-year}
+|U
+|N
+|Yes
+|{password-acs-cc}
+|Testing "Authentication failed"
+
 |===

@@ -1,50 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/3cfb0fb7-59e2-4d92-847f-37121d633844/payments/2881a638-1db5-470f-8f94-7a517cc03d55">
-  <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/3cfb0fb7-59e2-4d92-847f-37121d633844">3cfb0fb7-59e2-4d92-847f-37121d633844</merchant-account-id>
-  <transaction-id>2881a638-1db5-470f-8f94-7a517cc03d55</transaction-id>
-  <request-id>ac840474-67f2-4873-b3b2-8993e06e4fa3</request-id>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/5289ba2d-6094-4f7d-b6c2-346d1af638eb/payments/75d5f2f5-bc92-4d81-8f30-a501e5e1640e">
+  <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/5289ba2d-6094-4f7d-b6c2-346d1af638eb">5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
+  <transaction-id>75d5f2f5-bc92-4d81-8f30-a501e5e1640e</transaction-id>
+  <request-id>ad67ce9f-7635-461a-8fd2-7b9d65adabac</request-id>
   <transaction-type>void-authorization</transaction-type>
   <transaction-state>success</transaction-state>
-  <completion-time-stamp>2018-08-01T09:26:45.000Z</completion-time-stamp>
+  <completion-time-stamp>2022-12-08T10:59:34.000Z</completion-time-stamp>
   <statuses>
-    <status code="201.0000" description="ratepay:The resource was successfully created." severity="information" />
+    <status code="201.0000" description="ratepay:The resource was successfully created." severity="information"/>
   </statuses>
-  <requested-amount currency="EUR">200</requested-amount>
-  <parent-transaction-id>f1ed56d2-08f5-40d8-8b82-82b405cfc3c6</parent-transaction-id>
+  <requested-amount currency="EUR">5.00</requested-amount>
+  <parent-transaction-id>b38b8f70-b17a-4fc6-ab70-dad27c38cf9f</parent-transaction-id>
   <account-holder>
-    <first-name>John</first-name>
-    <last-name>Doe</last-name>
-    <email>John@doe.de</email>
+    <first-name>Hans-Jürgen</first-name>
+    <last-name>Wischnewski</last-name>
+    <email>test@test.com</email>
     <phone>03018425165</phone>
     <address>
-      <street1>Nicht versenden Weg 12</street1>
-      <city>Berlin</city>
+      <street1>Nicht Versenden Str. 5</street1>
+      <city>Testhausen</city>
       <state>Berlin</state>
       <country>DE</country>
       <postal-code>13353</postal-code>
     </address>
   </account-holder>
-  <order-number>180801111842579</order-number>
+  <shipping>
+    <first-name>Hans-Jürgen</first-name>
+    <last-name>Wischnewski</last-name>
+    <phone>+49123123123</phone>
+    <address>
+      <street1>Nicht Versenden Str. 5</street1>
+      <city>Testhausen</city>
+      <state>Berlin</state>
+      <country>DE</country>
+      <postal-code>13353</postal-code>
+    </address>
+  </shipping>
+  <order-number>307</order-number>
   <order-items>
     <order-item>
-      <name>Sneakers Size 44</name>
+      <name>Item A</name>
       <article-number>123</article-number>
-      <amount currency="EUR">200</amount>
-      <tax-rate>19</tax-rate>
+      <amount currency="EUR">5.0</amount>
+      <tax-rate>0.0</tax-rate>
       <quantity>1</quantity>
     </order-item>
   </order-items>
-  <descriptor>DK0073651G0</descriptor>
+  <descriptor>DN2278559L1</descriptor>
   <payment-methods>
-    <payment-method name="ratepay-elv" />
+    <payment-method name="ratepay-elv"/>
   </payment-methods>
-  <parent-transaction-amount currency="EUR">400.000000</parent-transaction-amount>
+  <parent-transaction-amount currency="EUR">15.000000</parent-transaction-amount>
+  <bank-account>
+    <bank-name>Danske Bank Hamburg</bank-name>
+    <iban>DE83203205004989123456</iban>
+    <bic>DABADEHHXXX</bic>
+  </bank-account>
   <mandate>
-    <mandate-id>Wird nach dem Kauf uebermittelt</mandate-id>
-    <signed-date>08-02-2017</signed-date>
+    <mandate-id>25874659562</mandate-id>
+    <signed-date>29-01-2021</signed-date>
   </mandate>
-  <creditor-id>DE98ZZZ09999999999</creditor-id>
+  <creditor-id>DE12345667787</creditor-id>
   <api-id>elastic-api</api-id>
-  <locale>de</locale>
-  <provider-account-id>000000317406A011</provider-account-id>
+  <provider-account-id>GN0000317C3B8F12</provider-account-id>
 </payment>
