@@ -46,7 +46,8 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 
 [cols=",,"]
 |===
-| Transaction Type | Description | Link to the samples
+|Transaction Type |Description |Link to the samples
+
 | _authorization_ | Reserves funds from the cardholder's account. A _capture_ on this transaction must be conducted within 3-30 days, depending on the acquirer and card brand. | <<POSHostToHostIntegrationGuide_Samples_authorization, _authorization_ samples>>
 | _capture-authorization_ | Takes funds from the cardholder's account. Must follow an _authorization_. | <<POSHostToHostIntegrationGuide_Samples_captureauthorization, _capture-authorization_ samples>>
 | _credit_ | Moves funds from the merchant to the cardholder's account. | <<POSHostToHostIntegrationGuide_Samples_credit, _credit_ samples>>
