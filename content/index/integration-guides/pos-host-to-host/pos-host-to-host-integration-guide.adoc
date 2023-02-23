@@ -1,5 +1,5 @@
 [#POSHostToHostIntegrationGuide]
-== POS Host to Host Integration Guide
+== POS Host-to-Host Integration Guide
 
 [#POSHostToHostIntegrationGuide_PaymentModeCountriesCurrencies]
 === Payment Mode, Countries and Currencies
@@ -7,7 +7,7 @@
 [width=75%,stripes=none,cols="1,2"]
 |===
 h| Payment Mode 
-a|Credit card: link:https://docs.getneteurope.com/PaymentMethods.html#PaymentMethods_PaymentMode_OnlineBankTransfer[Online Bank Transfer], link:https://docs.getneteurope.com/PaymentMethods.html#PaymentMethods_PaymentMode_OfflineBankTransfer[Offline Bank Transfer]
+a|Credit card: <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>, <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>
 
 h| Countries 
 | Depends on the licensed area of the financial institution/acquirer.
@@ -42,23 +42,23 @@ The POS setup uses the following workflow to manage transactions between the Pay
 [#POSHostToHostIntegrationGuide_TransactionTypes]
 === Transaction Types
 
-For link:https://docs.getneteurope.com/Glossary.html#Glossary_TransactionType[transaction type] details which are not given here, look at link:https://docs.getneteurope.com/AppendixB.html[Transaction Types].
+For <<Glossary_TransactionType, transaction type>> details which are not given here look at <<AppendixB, Transaction Types>>.
 
 [cols=",,"]
 |===
 | Transaction Type | Description | Link to the samples
-m| authorization | Reserves funds from the cardholder's account. A ``capture`` on this transaction must be conducted within 3-30 days, depending on the acquirer and card brand. | link:#POSHostToHostIntegrationGuide_Samples_authorization[``authorization`` samples]
-m| capture-authorization | Takes funds from the cardholder's account. Must follow an ``authorization``. | link:#POSHostToHostIntegrationGuide_Samples_captureauthorization[``capture-authorization`` samples]
-m| credit | Moves funds from the merchant to the cardholder's account. | link:#POSHostToHostIntegrationGuide_Samples_credit[``credit`` samples]
-m| purchase | Takes funds from the cardholder's account. This is a one-step process to conduct 2 transactions: ``authorization`` and ``capture``. | link:#POSHostToHostIntegrationGuide_Samples_purchaseWithPIN[``purchase`` samples (with PIN)] +
-link:#POSHostToHostIntegrationGuide_Samples_purchaseWithoutPIN[``purchase`` samples (without PIN)] +
-link:#POSHostToHostIntegrationGuide_Samples_purchaseWithTrack2AndICC[``purchase`` samples (with track2 data and ICC data)]
-m| refund-capture | Returns funds to the cardholder's account, referring to an eligible ``capture``. | link:#POSHostToHostIntegrationGuide_Samples_refundcapture[``refund-capture`` samples]
-m| refund-purchase | Returns funds to the cardholder's account, referring to an eligible ``purchase``. | link:#POSHostToHostIntegrationGuide_Samples_refundpurchase[``refund-purchase`` samples]
-m| settlement | Requests the acquirer to close all pending transactions. Used, for example, at the end of the day when the shop closes. | link:#POSHostToHostIntegrationGuide_Samples_settlement[``settlement`` samples]
-m| void-authorization | Frees reserved funds from the cardholder's account due to an ``authorization``. | link:#POSHostToHostIntegrationGuide_Samples_voidauthorization[``void-authorization`` samples]
-m| void-credit | Frees reserved funds from the merchant's account due to a ``credit``. | link:#POSHostToHostIntegrationGuide_Samples_voidcredit[``void-credit`` samples]
-m| void-purchase | 	Frees reserved funds from the cardholder's account due to a ``purchase``. | link:#POSHostToHostIntegrationGuide_Samples_voidpurchase[``void-purchase`` samples]
+| _authorization_ | Reserves funds from the cardholder's account. A _capture_ on this transaction must be conducted within 3-30 days, depending on the acquirer and card brand. | <<POSHostToHostIntegrationGuide_Samples_authorization, _authorization_ samples>>
+| _capture-authorization_ | Takes funds from the cardholder's account. Must follow an _authorization_. | <<POSHostToHostIntegrationGuide_Samples_captureauthorization, _capture-authorization_ samples>>
+| _credit_ | Moves funds from the merchant to the cardholder's account. | <<POSHostToHostIntegrationGuide_Samples_credit, _credit_ samples>>
+| _purchase_ | Takes funds from the cardholder's account. This is a one-step process to conduct 2 transactions: _authorization_ and _capture_. | <<POSHostToHostIntegrationGuide_Samples_purchaseWithPIN, _purchase_ samples (with PIN)>> +
+<<POSHostToHostIntegrationGuide_Samples_purchaseWithoutPIN, _purchase_ samples (without PIN)>> +
+<<POSHostToHostIntegrationGuide_Samples_purchaseWithTrack2AndICC, _purchase_ samples (with track2 data and ICC data)>>
+| _refund-capture_ | Returns funds to the cardholder's account, referring to an eligible _capture_. | <<POSHostToHostIntegrationGuide_Samples_refundcapture, _refund-capture_ samples>>
+| _refund-purchase_ | Returns funds to the cardholder's account, referring to an eligible _purchase_. | <<POSHostToHostIntegrationGuide_Samples_refundpurchase, _refund-purchase_ samples>>
+| _settlement_ | Requests the acquirer to close all pending transactions. Used, for example, at the end of the day when the shop closes. | <<POSHostToHostIntegrationGuide_Samples_settlement, _settlement_ samples>>
+| _void-authorization_ | Frees reserved funds from the cardholder's account due to an _authorization_. | <<#POSHostToHostIntegrationGuide_Samples_voidauthorization, _void-authorization_ samples>>
+| _void-credit_ | Frees reserved funds from the merchant's account due to a _credit_. | <<POSHostToHostIntegrationGuide_Samples_voidcredit, _void-credit_ samples>>
+| _void-purchase_ | 	Frees reserved funds from the cardholder's account due to a _purchase_. | <<POSHostToHostIntegrationGuide_Samples_voidpurchase, _void-purchase_ samples>>
 |===
 
 [#POSHostToHostIntegrationGuide_TestCredentials]
@@ -66,17 +66,17 @@ m| void-purchase | 	Frees reserved funds from the cardholder's account due to a 
 
 [cols="1,1"]
 |===
-| *URLs (Endpoints) for Test Environment* | ``https://api-test.getneteurope.com/engine/rest/payments/``
-| *URLs (Endpoints) for Production Environment* | ``https://api.getneteurope.com/engine/rest/payments/``
+| *URLs (Endpoints) for Test Environment* | ``\https://{rest-api-test-endpoint}`` 
+| *URLs (Endpoints) for Production Environment* | ``\https://{instance-hostname}/engine/rest/payments``
 | *User Name* | 515225-GetnetEuropeTEST
 | *Password* | 4cHLRE-Q7YcAP
-| *Test Cards* | For details on credit cards you can use for testing, see link:https://docs.getneteurope.com/CC_Main.html#API_CC_TestCards[Test Cards].
+| *Test Cards* | For details on credit cards you can use for testing, see <<API_CC_TestCards, Test Cards>>.
 |===
 
 [NOTE]
 ====
-* Contact link:https://docs.getneteurope.com/ContactUs.html[Merchant Support] for production environment credentials.
-* For additional test credentials, see link:https://docs.getneteurope.com/CC_Main.html#CreditCard_TestCredentials[Test Credentials].
+* Contact <<ContactUs, Merchant Support>> for production environment credentials.
+* For additional test credentials, see <<CreditCard_TestCredentials, Test Credentials>>.
 ====
 
 [#POSHostToHostIntegrationGuide_Fields]
@@ -84,7 +84,7 @@ m| void-purchase | 	Frees reserved funds from the cardholder's account due to a 
 
 [cols="4m,2,2,1,6a"]
 |===
-| Field | link:https://docs.getneteurope.com/RestApi_Fields.html#APIRef_FieldDefs_Cardinality[M/O] | link:https://docs.getneteurope.com/RestApi_Fields.html#APIRef_FieldDefs_DataTypes[Data Type] | Size | Description
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
 
 m| account-holder.email
 | Response Only
@@ -283,7 +283,7 @@ m| card.card-type
 | String
 | 19
 | Card brand, such as ``visa``. +
-For a list of supported card types, see link:https://docs.getneteurope.com/CC_Main.html#AppendixD[Card Types].
+For a list of supported card types, see <<AppendixD, Card Types>>.
 
 m| card.expiration-month
 | M (if ``track2`` is not used)
@@ -520,7 +520,7 @@ m| statuses.status@code
 | String
 | 12
 | Status code of a transaction. Primarily used in conjunction with ``transaction-state`` to determine the exact details of the status of the transaction. +
-For a complete list of status codes, see link:https://docs.getneteurope.com/StatusCodes.html#StatusCodes_InDetail[Status Codes in Detail].
+For a complete list of status codes, see <<StatusCodes_InDetail, Status Codes in Detail>>.
 
 m| statuses.status@description
 | Response only
