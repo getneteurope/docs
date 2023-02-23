@@ -1,0 +1,36 @@
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment">
+   <merchant-account-id>f1c5f622-989d-4d3d-a686-fb685c2bff61</merchant-account-id>
+   <request-id>257c8a6e-2b3-47a1-b66e-13beda8f47ec</request-id>
+   <transaction-type>settlement</transaction-type>
+   <requested-amount currency="EUR"/>
+   <card>
+      <card-type>unknown</card-type>
+   </card>
+   <descriptor>description b99938d8-8ccb-4012-8616-339df11528c5</descriptor>
+   <custom-fields>
+      <custom-field field-name="elastic-api.pe.capture.reference" field-value="137"/>
+      <custom-field field-name="elastic-api.pe.last.cutover" field-value="2022-04-05 00:00:00"/>
+   </custom-fields>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <entry-mode>pos</entry-mode>
+   <iso>
+      <merchant-id>100100000000153</merchant-id>
+      <terminal-id>WD004045</terminal-id>
+      <pos-entry-mode>902</pos-entry-mode>
+   </iso>
+   <iso-recon>
+      <captured-sale-count>30</captured-sale-count>
+      <captured-sale-amount>250</captured-sale-amount>
+      <captured-refund-count>12</captured-refund-count>
+      <captured-refund-amount>153</captured-refund-amount>
+   </iso-recon>
+   <iso-recon-host>
+      <captured-sale-count>31</captured-sale-count>
+      <captured-sale-amount>251</captured-sale-amount>
+      <captured-refund-count>12</captured-refund-count>
+      <captured-refund-amount>154</captured-refund-amount>
+   </iso-recon-host>
+</payment>
