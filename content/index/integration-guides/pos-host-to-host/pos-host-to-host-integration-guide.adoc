@@ -298,13 +298,13 @@ m| card.expiration-year
 | Expiration year of the card.
 
 m| card.track-1
-| M (if ``card.track2`` or ``card.account-number``, ``card.expiration-month``, and ``card.expiration-year`` are not used)
+| M (if ``card.account-number``, ``card.expiration-month``, and ``card.expiration-year`` are not used)
 | String
 | 79
 | Track of information on a credit card in the form of a 79-character alphanumeric field. Normally, the credit card number, expiration date, and customer name are contained on track 1.
 
 m| card.track-2
-| M (if ``card.account-number``, ``card.expiration-month``, and ``card.expiration-year`` are not used)
+| M (if ``card-token.token-id`` or ``card.account-number``, ``card.expiration-month``, and ``card.expiration-year`` are not used)
 | String
 | 40
 | Track of information on a credit card in the form of a 40-character alphanumeric field. Normally, the credit card number and expiration date are contained on track 2.
