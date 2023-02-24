@@ -135,11 +135,10 @@ m| authorization-code
 * Input for a capture without reference to an authorization.
 
 m| card.account-number 
-| M  (if ``track2`` is not used) 
+| M  (if ``track2`` or  ``card-token``is not used) 
 | String
 | 19 
-| Embossed or encoded number that identifies the transaction's card issuer and account to be charged (unless specific instructions indicate otherwise). For a credit card, this is the Primary Account Number. +
-Mandatory for credit card transactions if ``card-token`` is not used.
+| Embossed or encoded number that identifies the transaction's card issuer and account to be charged (unless specific instructions indicate otherwise). For a credit card, this is the Primary Account Number.
 
 m| card.card-emv.request-icc-data 
 | M 
@@ -392,25 +391,25 @@ m| iso-recon-host.captured-sale-count
 | Number of all sales transactions on the host.
 
 m| iso-recon.captured-refund-amount
-| O (used in settlement transactions only)
+| M (used in settlement transactions only)
 | String
 | 18
 | Total amount of sales transactions on the terminal (in minor units).
 
 m| iso-recon.captured-refund-count
-| O (used in settlement transactions only)
+| M (used in settlement transactions only)
 | String
 | 4
 | Number of all refund transactions on the terminal.
 
 m| iso-recon.captured-sale-amount
-| O (used in settlement transactions only)
+| M (used in settlement transactions only)
 | String
 | 18
 | Total amount of all sales transactions on the terminal (in minor units).
 
 m| iso-recon.captured-sale-count
-| O (used in settlement transactions only)
+| M (used in settlement transactions only)
 | String
 | 4
 | Number of all sales transactions on the terminal.
@@ -494,7 +493,7 @@ m| provider-account-id
 | Response only
 | String
 | n/a
-| Provider account ID.
+| Account ID of the merchant at the provider side.
 
 m| request-id
 | M
@@ -533,7 +532,7 @@ m| statuses.status@provider-transaction-id
 | Response only
 | String
 | n/a
-| Provider transaction ID.
+| Identifier of the transaction at the provider side.
 
 m| statuses.status@severity
 | Response only
