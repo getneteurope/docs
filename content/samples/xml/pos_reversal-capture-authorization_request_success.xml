@@ -6,11 +6,6 @@
    <transaction-type>reversal-capture-authorization</transaction-type>
    <parent-transaction-id>f28e6a1c-8733-4512-a1ea-b416a6316457</parent-transaction-id>
    <requested-amount currency="SGD">300</requested-amount>
-   <account-holder>
-      <first-name>John</first-name>
-      <last-name>Doe</last-name>
-      <email>john.doe@test.com</email>
-   </account-holder>
    <card>
       <account-number>4539231995271064</account-number>
       <expiration-month>10</expiration-month>
