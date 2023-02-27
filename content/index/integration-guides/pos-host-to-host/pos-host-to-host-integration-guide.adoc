@@ -56,21 +56,21 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 <<POSHostToHostIntegrationGuide_Samples_purchaseWithTrack2AndICC, _purchase_ samples (with track2 data and ICC data)>>
 | _refund-capture_ | Returns funds to the cardholder's account, referring to an eligible _capture_. | <<POSHostToHostIntegrationGuide_Samples_refundcapture, _refund-capture_ samples>>
 | _refund-purchase_ | Returns funds to the cardholder's account, referring to an eligible _purchase_. | <<POSHostToHostIntegrationGuide_Samples_refundpurchase, _refund-purchase_ samples>>
-| _reversal-authorization_ | Reverses an _authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalauthorization, _reversal-authorization_ samples>>
-| _reversal-capture-authorization_ | Reverses a _capture-authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalcaptureauthorization, _reversal-capture-authorization_ samples>>
-| _reversal-credit_ | Reverses a _credit_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalcredit, _reversal-credit_ samples>>
-| _reversal-purchase_ | Reverses a _purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalpurchase, _reversal-purchase_ samples>>
-| _reversal-refund-capture_ | Reverses a _refund-capture_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundcapture, _reversal-refund-capture_ samples>>
-| _reversal-refund-purchase_ | Reverses a _refund-purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase, _reversal-refund-purchase_ samples>>
-| _reversal-void-authorization_ | Reverses a _void-authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization, _reversal-void-authorization_ samples>>
-| _reversal-void-credit_ | Reverses an _void-credit_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidcredit, _reversal-void-credit_ samples>>
-| _reversal-void-purchase_ | Reverses an _authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidpurchase, _reversal-void-purchase_ samples>>
+| _reversal-authorization_ | Reverses an _authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalauthorization, _reversal-authorization_ samples>>
+| _reversal-capture-authorization_ | Reverses a _capture-authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalcaptureauthorization, _reversal-capture-authorization_ samples>>
+| _reversal-credit_ | Reverses a _credit_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalcredit, _reversal-credit_ samples>>
+| _reversal-purchase_ | Reverses a _purchase_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalpurchase, _reversal-purchase_ samples>>
+| _reversal-refund-capture_ | Reverses a _refund-capture_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundcapture, _reversal-refund-capture_ samples>>
+| _reversal-refund-purchase_ | Reverses a _refund-purchase_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase, _reversal-refund-purchase_ samples>>
+| _reversal-void-authorization_ | Reverses a _void-authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization, _reversal-void-authorization_ samples>>
+| _reversal-void-credit_ | Reverses an _void-credit_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidcredit, _reversal-void-credit_ samples>>
+| _reversal-void-purchase_ | Reverses an _authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidpurchase, _reversal-void-purchase_ samples>>
 | _settlement_ | Requests the acquirer to close all pending transactions. Used, for example, at the end of the day when the shop closes. | <<POSHostToHostIntegrationGuide_Samples_settlement, _settlement_ samples>>
 | _void-authorization_ | Frees reserved funds from the cardholder's account due to an _authorization_. | <<#POSHostToHostIntegrationGuide_Samples_voidauthorization, _void-authorization_ samples>>
 | _void-credit_ | Frees reserved funds from the merchant's account due to a _credit_. | <<POSHostToHostIntegrationGuide_Samples_voidcredit, _void-credit_ samples>>
 | _void-purchase_ | Frees reserved funds from the cardholder's account due to a _purchase_. | <<POSHostToHostIntegrationGuide_Samples_voidpurchase, _void-purchase_ samples>>
-| _void-refund-capture_ | Voids a _refund-capture_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundcapture, _void-refund-capture_ samples>>
-| _void-refund-purchase_ | Voids a _refund-purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundpurchase, _void-refund-purchase_ samples>>
+| _void-refund-capture_ | Voids a previous _refund-capture_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundcapture, _void-refund-capture_ samples>>
+| _void-refund-purchase_ | Voids a previous _refund-purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundpurchase, _void-refund-purchase_ samples>>
 |===
 
 [#POSHostToHostIntegrationGuide_TestCredentials]
