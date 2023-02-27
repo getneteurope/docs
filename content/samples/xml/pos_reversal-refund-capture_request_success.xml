@@ -3,13 +3,9 @@
    xmlns="http://www.elastic-payments.com/schema/payment">
    <merchant-account-id>daa1734c-9c38-4140-841f-70f6aac05056</merchant-account-id>
    <request-id>{{$guid}}</request-id>
-   <transaction-type>purchase</transaction-type>
+   <transaction-type>reversal-refund-capture</transaction-type>
    <requested-amount currency="EUR">11.30</requested-amount>
-   <account-holder>
-      <first-name>Bon</first-name>
-      <last-name>Scott</last-name>
-      <email>bon.scott@test.com</email>
-   </account-holder>
+   <parent-transaction-id>145fa3f6-2ed7-4508-8410-93b08125489d</parent-transaction-id>
    <card>
       <card-type>visa</card-type>
       <track-2>4009029195741543=23121010912345678901</track-2>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment">
+   <merchant-account-id>84b0365b-9a80-42c8-847a-468cac9138dd</merchant-account-id>
+   <request-id>5bf38g17-a7b3-4d5u-u24d-9d1od0g17791</request-id>
+   <transaction-type>reversal-void-auth</transaction-type>
+   <parent-transaction-id>b91391c0-6d59-44ee-89e9-027e94667d80</parent-transaction-id>
+   <requested-amount currency="SGD">561</requested-amount>
+   <account-holder>
+      <first-name>John</first-name>
+      <last-name>Doe</last-name>
+      <email>john.doe@test.com</email>
+   </account-holder>
+   <card>
+      <account-number>4539231995271064</account-number>
+      <expiration-month>10</expiration-month>
+      <expiration-year>2022</expiration-year>
+      <card-type>visa</card-type>
+      <card-emv>
+         <request-iccdata>01495F2A0201245F34010182021C008407A0000000031010950580000000009A031102249B0268009C01009F02060000000000009F0
+3060000000000009F0607A00000000310109F0802008C9F0902008C9F100706010A039000009F1A0201249F2608423158936ED6C38F9F270
+1809F3303E0B0C89F34034103029F3501229F360200019F3704ACAC66E89F5800DF0100DF0200DF0400
+         </request-icc-data>
+         <request-icc-data-encoding>HEX</request-icc-data-encoding>
+      </card-emv>
+   </card>
+   <ip-address>127.0.0.1</ip-address>
+   <order-number>327485055778</order-number>
+   <payment-methods>
+      <payment-method name="creditcard" />
+   </payment-methods>
+   <iso>
+      <merchant-id>168168241883</merchant-id>
+      <terminal-id>88710536</terminal-id>
+      <pos-entry-mode>012</pos-entry-mode>
+   </iso>
+</payment>
