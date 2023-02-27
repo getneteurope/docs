@@ -5,11 +5,6 @@
    <request-id>{{$guid}}</request-id>
    <transaction-type>purchase</transaction-type>
    <requested-amount currency="EUR">11.30</requested-amount>
-   <account-holder>
-      <first-name>Bon</first-name>
-      <last-name>Scott</last-name>
-      <email>bon.scott@test.com</email>
-   </account-holder>
    <card>
       <card-type>visa</card-type>
       <track-2>4009029195741543=23121010912345678901</track-2>
