@@ -14,11 +14,6 @@
 information" provider-transaction-id="C518107167533682446621"/>
    </statuses>
    <requested-amount currency="EUR">11.30</requested-amount>
-   <account-holder>
-      <first-name>Bon</first-name>
-      <last-name>Scott</last-name>
-      <email>bon.scott@test.com</email>
-   </account-holder>
    <card>
       <expiration-month>12</expiration-month>
       <expiration-year>2023</expiration-year>
