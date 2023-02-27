@@ -6,11 +6,6 @@
    <transaction-type>reversal-void-auth</transaction-type>
    <parent-transaction-id>b91391c0-6d59-44ee-89e9-027e94667d80</parent-transaction-id>
    <requested-amount currency="SGD">561</requested-amount>
-   <account-holder>
-      <first-name>John</first-name>
-      <last-name>Doe</last-name>
-      <email>john.doe@test.com</email>
-   </account-holder>
    <card>
       <account-number>4539231995271064</account-number>
       <expiration-month>10</expiration-month>
