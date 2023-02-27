@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment" self="http://192.168.11.176:9000/engine/rest
+/merchants/84b0365b-9a80-42c8-847a-468cac9138dd/payments/5dbb9263-24ff-420f-a0a3-cb42a61e085c">
+   <merchant-account-id ref="http://192.168.11.176:9000/engine/rest/config/merchants/84b0365b-9a80-42c8-847a468cac9138dd">84b0365b-9a80-42c8-847a-468cac9138dd</merchant-account-id>
+   <transaction-id>5dbb9263-24ff-420f-a0a3-cb42a61e085c</transaction-id>
+   <request-id>5bf38c17-a7b3-4djf-b25d-9dkod0g17791</request-id>
+   <transaction-type>reversal-void-credit</transaction-type>
+   <transaction-state>success</transaction-state>
+   <completion-time-stamp>2020-07-14T05:33:36.000Z</completion-time-stamp>
+   <statuses>
+      <status code="201.0000" description="acquirer:The resource was successfully created." severity="
+information" provider-transaction-id="053140"/>
+   </statuses>
+   <requested-amount currency="SGD">817</requested-amount>
+   <parent-transaction-id>ee58c40c-1890-463b-ad63-5d90ed30dedd</parent-transaction-id>
+   <card-token>
+      <token-id>4795614756571064</token-id>
+      <masked-account-number>453923******1064</masked-account-number>
+   </card-token>
+   <ip-address>127.0.0.1</ip-address>
+   <order-number>327485055778</order-number>
+   <descriptor>description</descriptor>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <parent-transaction-amount currency="SGD">817.000000</parent-transaction-amount>
+   <authorization-code>449739</authorization-code>
+   <api-id>elastic-api</api-id>
+   <iso>
+      <response-code>00</response-code>
+      <retrieval-reference-number>159470481598</retrieval-reference-number>
+      <pos-transaction-time>133335</pos-transaction-time>
+      <pos-transaction-date>0714</pos-transaction-date>
+   </iso>
+   <provider-account-id>20190103002</provider-account-id>
+</payment>

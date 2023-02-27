@@ -1,0 +1,924 @@
+[#POSHostToHostIntegrationGuide]
+== POS Host-to-Host Integration Guide
+
+[#POSHostToHostIntegrationGuide_PaymentModeCountriesCurrencies]
+=== Payment Mode, Countries and Currencies
+
+[width=75%,stripes=none,cols="1,2"]
+|===
+h| Payment Mode 
+a|Credit card: <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>, <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>
+
+h| Countries 
+| Depends on the licensed area of the financial institution/acquirer.
+
+h| Currencies a|
+VISA and MC support basically all currencies. For more information, go to their respective manuals. JCB and UPI require an explicit setup of transaction currencies as part of the acquirer license agreement.
+|===
+
+[#POSHostToHostIntegrationGuide_CommunicationFormats]
+=== Communication Formats
+
+This table illustrates which formats and methods can be used for requests and responses.
+
+[width=75%,stripes=none]
+|===
+.2+h| Requests | Format | XML
+                | Methods | POST
+.2+h| Responses | Format | XML
+                 | Methods | POST
+|===
+
+[#POSHostToHostIntegrationGuide_Workflow]
+=== Workflow
+
+The POS setup uses the following workflow to manage transactions between the Payment Service Provider (PSP) and the Payment Gateway:
+
+. The PSP's POS terminal sends a request through the Network Service Provider (NSP) to the Payment Gateway.
+. The Payment Gateway processes the request and forwards it to the applicable credit card provider.
+. The Payment Gateway sends a response back to the PSP.
+
+
+[#POSHostToHostIntegrationGuide_TransactionTypes]
+=== Transaction Types
+
+For <<Glossary_TransactionType, transaction type>> details which are not given here look at <<AppendixB, Transaction Types>>.
+
+[cols=",,"]
+|===
+|Transaction Type |Description |Link to the samples
+
+| _authorization_ | Reserves funds from the cardholder's account. A _capture_ on this transaction must be conducted within 3-30 days, depending on the acquirer and card brand. | <<POSHostToHostIntegrationGuide_Samples_authorization, _authorization_ samples>>
+| _capture-authorization_ | Takes funds from the cardholder's account. Must follow an _authorization_. | <<POSHostToHostIntegrationGuide_Samples_captureauthorization, _capture-authorization_ samples>>
+| _credit_ | Moves funds from the merchant to the cardholder's account. | <<POSHostToHostIntegrationGuide_Samples_credit, _credit_ samples>>
+| _purchase_ | Takes funds from the cardholder's account. This is a one-step process to conduct 2 transactions: _authorization_ and _capture_. | <<POSHostToHostIntegrationGuide_Samples_purchaseWithPIN, _purchase_ samples (with PIN)>> +
+<<POSHostToHostIntegrationGuide_Samples_purchaseWithoutPIN, _purchase_ samples (without PIN)>> +
+<<POSHostToHostIntegrationGuide_Samples_purchaseWithTrack2AndICC, _purchase_ samples (with track2 data and ICC data)>>
+| _refund-capture_ | Returns funds to the cardholder's account, referring to an eligible _capture_. | <<POSHostToHostIntegrationGuide_Samples_refundcapture, _refund-capture_ samples>>
+| _refund-purchase_ | Returns funds to the cardholder's account, referring to an eligible _purchase_. | <<POSHostToHostIntegrationGuide_Samples_refundpurchase, _refund-purchase_ samples>>
+| _reversal-authorization_ | Reverses an _authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalauthorization, _reversal-authorization_ samples>>
+| _reversal-capture-authorization_ | Reverses a _capture-authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalcaptureauthorization, _reversal-capture-authorization_ samples>>
+| _reversal-credit_ | Reverses a _credit_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalcredit, _reversal-credit_ samples>>
+| _reversal-purchase_ | Reverses a _purchase_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalpurchase, _reversal-purchase_ samples>>
+| _reversal-refund-capture_ | Reverses a _refund-capture_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundcapture, _reversal-refund-capture_ samples>>
+| _reversal-refund-purchase_ | Reverses a _refund-purchase_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase, _reversal-refund-purchase_ samples>>
+| _reversal-void-authorization_ | Reverses a _void-authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization, _reversal-void-authorization_ samples>>
+| _reversal-void-credit_ | Reverses an _void-credit_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidcredit, _reversal-void-credit_ samples>>
+| _reversal-void-purchase_ | Reverses an _authorization_ transaction. The reversal transaction is initiated by the system, not the merchant. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidpurchase, _reversal-void-purchase_ samples>>
+| _settlement_ | Requests the acquirer to close all pending transactions. Used, for example, at the end of the day when the shop closes. | <<POSHostToHostIntegrationGuide_Samples_settlement, _settlement_ samples>>
+| _void-authorization_ | Frees reserved funds from the cardholder's account due to an _authorization_. | <<#POSHostToHostIntegrationGuide_Samples_voidauthorization, _void-authorization_ samples>>
+| _void-credit_ | Frees reserved funds from the merchant's account due to a _credit_. | <<POSHostToHostIntegrationGuide_Samples_voidcredit, _void-credit_ samples>>
+| _void-purchase_ | Frees reserved funds from the cardholder's account due to a _purchase_. | <<POSHostToHostIntegrationGuide_Samples_voidpurchase, _void-purchase_ samples>>
+| _void-refund-capture_ | Voids a previous _refund-capture_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundcapture, _void-refund-capture_ samples>>
+| _void-refund-purchase_ | Voids a previous _refund-purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundpurchase, _void-refund-purchase_ samples>>
+|===
+
+[#POSHostToHostIntegrationGuide_TestCredentials]
+=== Test Credentials
+
+[cols="1,1"]
+|===
+| *URLs (Endpoints) for Test Environment* | ``\https://{rest-api-test-endpoint}`` 
+| *URLs (Endpoints) for Production Environment* | ``\https://{instance-hostname}/engine/rest/payments``
+| *User Name* | EE_POS
+| *Password* | B!zg56@z6xtG
+| *Merchant account ID* | deb83d64-91d7-425c-8adc-d0813ece1cc1
+| *Test Cards* | For details on credit cards you can use for testing, see <<API_CC_TestCards, Test Cards>>.
+|===
+
+[NOTE]
+====
+* Contact <<ContactUs, Merchant Support>> for production environment credentials.
+* For additional test credentials, see <<CreditCard_TestCredentials, Test Credentials>>.
+====
+
+[#POSHostToHostIntegrationGuide_Fields]
+=== Fields
+
+[cols="4m,2,2,1,6a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
+
+m| api-id
+| Response Only
+| String
+| 36
+| Unique identifier assigned for each API.
+
+m| audit.request-source
+| O
+| String
+| 30
+| Source of the request. + 
+For internal use only.
+
+m| audit.user
+| O
+| String
+| 128
+| User of the request. + 
+For internal use only.
+
+m| authorization-code
+| O
+| String
+| 36
+| Authorization code, which can be one of the following:
+
+* Output of an authorization, generated by the card-issuing bank as proof that the transaction request was acknowledged or declined.
+* Input for a capture without reference to an authorization.
+
+m| card.account-number 
+| M  (if ``track2`` or  ``card-token``is not used) 
+| String
+| 19 
+| Embossed or encoded number that identifies the transaction's card issuer and account to be charged (unless specific instructions indicate otherwise). For a credit card, this is the Primary Account Number.
+
+m| card.card-emv.request-icc-data 
+| M 
+| String 
+| 999 
+| Request data required by the acquirer to complete an EMV (Europay-Mastercard-Visa) transaction with an issuer. The authorization request cryptogram is sent during an authorization request and contains data from the presented chip card.
+
+m| card.card-emv.request-icc-data-encoding 
+| M 
+| String 
+| 6 
+| Encoding method of the request's EMV data. +
+The value is ``hex``.
+
+m| card.card-emv.request-icc-data-format 
+| M 
+| String
+| 6 
+| Format of the request's EMV data. +
+The value is ``gicc`` or ``emvlab``.
+
+m| card.card-emv.response-icc-data 
+| Response Only 
+| String 
+| 999 
+| Response's EMV data from an issuer to the acquirer to complete the EMV transaction. The authorization response cryptogram is sent in an authorization response and contains data from the issuer to be verified by the card.
+
+m| card.card-emv.response-icc-data-encoding 
+| Response Only 
+| String 
+| 6 
+| Encoding method of the response's EMV data. +
+The value is ``hex``.
+
+m| card.card-pin.data 
+| M (for online PIN only) 
+| String 
+| 24 
+| Encrypted PIN received from the PIN pad.
+
+m| card.card-pin.encoding 
+| M (for online PIN only) 
+| String 
+| 6 
+| Encoding method of the PIN data. +
+The value is ``hex`` or ``base64``.
+
+m| card.card-pin.encryption-context.algorithm 
+| M (for online PIN only) 
+| String 
+| 10 
+| Encryption algorithm of the PIN data.
+
+m| card.card-pin.encryption-context.padding
+| M (for online PIN only)
+| String 
+| 5 
+| Encryption padding of the PIN data. +
+The value is ``pkcs``.
+
+m| card.card-pin.encryption-context.parameter
+| M (for online PIN only)
+| String
+| 30
+| Encryption parameter (hex-encoded) to determine the decryption key for the PIN data. If ``dukpt`` is used as the encryption algorithm, this field holds the key serial number (KSN) for PIN management.
+
+m| card.card-pin.encryption-context.value
+| M (for online PIN only)
+| String
+| 40
+| Encryption context value for the PIN data.
+
+m| card.card-pin.encryption-context.version
+| M (for online PIN only)
+| String
+| 3
+| Encryption context version for the PIN data.
+
+m| card.card-pin.format
+| M (for online PIN only)
+| String
+| 5
+| Format of the PIN block. + 
+The possible values are:
+
+* ``ISO-0``
+* ``ISO-1``
+* ``ISO-3``
+
+m| card.card-raw.data
+| O
+| String
+| 256
+| Raw, encrypted card details directly from the card reader.
+
+m| card.card-raw.encoding
+| M (if ``card-raw.data`` is used)
+| String
+| 6
+| Encoding method of the raw card data. +
+The value is ``hex`` or ``base64``.
+
+m| card.card-raw.encryption-context.algorithm
+| M (if ``card-raw.data`` is used)
+| String
+| 10
+| Encryption algorithm of the raw card data.
+
+m| card.card-raw.encryption-context.padding
+| M (if ``card-raw.data`` is used)
+| String
+| 5
+| Encryption padding of the raw card data. +
+The value is ``pkcs``.
+
+m| card.card-raw.encryption-context.parameter
+| M (if ``card-raw.data`` is used)
+| String
+| 30
+| Encryption parameter (hex-encoded) to determine the session decryption key for the raw card data.
+
+m| card.card-raw.encryption-context.value
+| M (if ``card-raw.data`` is used)
+| String
+| 40
+| Encryption context value for the raw card data.
+
+m| card.card-raw.encryption-context.version
+| M (if ``card-raw.data`` is used)
+| String
+| 3
+| Encryption context version for the raw card data.
+
+m| card.card-raw.format
+| M (if ``card-raw.data`` is used)
+| String
+| 30
+| Format of the raw card data.
+
+m| card.card-type
+| M
+| String
+| 19
+| Card brand, such as ``visa``. +
+For a list of supported card types, see <<AppendixD, Card Types>>.
+
+m| card.expiration-month
+| M (if ``track2`` is not used)
+| Number
+| 2
+| Expiration month of the card.
+
+m| card.expiration-year
+| M (if ``track2`` is not used)
+| Number
+| 4
+| Expiration year of the card.
+
+m| card.track-1
+| M (if ``card.account-number``, ``card.expiration-month``, and ``card.expiration-year`` are not used)
+| String
+| 79
+| Track of information on a credit card in the form of a 79-character alphanumeric field. Normally, the credit card number, expiration date, and customer name are contained on track 1.
+
+m| card.track-2
+| M (if ``card-token.token-id`` or ``card.account-number``, ``card.expiration-month``, and ``card.expiration-year`` are not used)
+| String
+| 40
+| Track of information on a credit card in the form of a 40-character alphanumeric field. Normally, the credit card number and expiration date are contained on track 2.
+
+m| card-token.masked-account-number
+| Response only
+| String
+| 36
+| Masked version of ``card.account-number``, e.g. 440804******7893.
+
+m| card-token.token-id
+| M/O
+| String
+| 36
+| Token corresponding to ``card.account-number``. +
+Mandatory if ``card.account-number`` or ``card.track2`` is not specified. Unique per instance.
+
+m| completion-time-stamp
+| Response only
+| Timestamp
+| 20
+| Date and time when the transaction state changes to either ``success`` or ``failed``, in GMT. +
+Uses the ``YYYY-MM-DDThh:mm:ssZ`` format.
+
+m| custom-fields.custom-field@field-name
+| O
+| String
+| 36
+| Name of the merchant-defined custom field.
+
+m| custom-fields.custom-field@field-value
+| O
+| String
+| 256
+| Content of the merchant-defined custom field.
+
+m| descriptor
+| O
+| String
+| 64
+| Text representing an order on the customer’s bank statement issued by their credit card company.
+
+m| entry-mode
+| M
+| Enumeration
+| 24
+| Channel through which the account holder information was collected. +
+The accepted values are:
+
+* ``mail-order`` = Collected via mail order
+* ``telephone-order`` = Collected via telephone
+* ``ecommerce`` = Collected via internet
+* ``mcommerce`` = Collected via mobile devices
+* ``pos`` = Collected by the primary payment instrument (POS terminal)
+
+m| ip-address
+| O
+| String
+| 45 
+| Global (internet) IP address of the customer’s device.
+
+m| iso-recon-host.captured-refund-amount
+| O (used in settlement transactions only)
+| String
+| 18
+| Total amount of all refund transactions on the host (in minor units).
+
+m| iso-recon-host.captured-refund-count
+| O (used in settlement transactions only)
+| String
+| 4
+| Number of all refund transactions on the host.
+
+m| iso-recon-host.captured-sale-amount
+| O (used in settlement transactions only)
+| String
+| 18
+| Total amount of all sales transactions on the host (in minor units).
+
+m| iso-recon-host.captured-sale-count
+| O (used in settlement transactions only)
+| String
+| 4
+| Number of all sales transactions on the host.
+
+m| iso-recon.captured-refund-amount
+| M (used in settlement transactions only)
+| String
+| 18
+| Total amount of sales transactions on the terminal (in minor units).
+
+m| iso-recon.captured-refund-count
+| M (used in settlement transactions only)
+| String
+| 4
+| Number of all refund transactions on the terminal.
+
+m| iso-recon.captured-sale-amount
+| M (used in settlement transactions only)
+| String
+| 18
+| Total amount of all sales transactions on the terminal (in minor units).
+
+m| iso-recon.captured-sale-count
+| M (used in settlement transactions only)
+| String
+| 4
+| Number of all sales transactions on the terminal.
+
+m| iso.duplicated-atc-indicator
+| O (for PIN only)
+| Boolean
+| 5
+| Duplicated ATC (Application Transaction Counter) indicator.
+
+m| iso.merchant-id
+| M
+| String
+| 15
+| Merchant identifier for card-present device processing.
+
+m| iso.pos-entry-mode
+| M
+| String
+| 4
+| Method by which the PAN was entered, according to the first two digits of the ISO 8583:1987 POS Entry Mode.
+
+m| iso.pos-pin-input-length-capability
+| O
+| String
+| 5
+| Maximum terminal PIN length.
+
+m| iso.single-tap-indicator
+| O (for PIN)
+| Boolean
+| 5
+| Single-tap indicator.
+
+m| iso.terminal-id
+| M
+| String
+| 16
+| Terminal identifier for card-present device processing.
+
+m| merchant-account-id
+| M/O
+| String
+| 36
+| Unique identifier assigned to each merchant account. Mandatory unless ``merchant-account-resolver-category`` is used.
+
+m| merchant-account-resolver-category
+| M/O
+| String
+| 32
+| Resolver category that defines the rules used to resolve the merchant account. Mandatory unless the ``merchant-account-id`` is used.
+
+m| order-detail
+| O
+| String
+| 65535
+| Merchant-side order details.
+
+m| order-number
+| O
+| String
+| 32
+| Order number provided by the merchant. +
+Allowed characters: ASCII character codes 32-38 and 40-126.
+
+m| parent-transaction-id
+| O
+| String
+| 36
+| Unique identifier for a preceding transaction. +
+Mandatory when linking a transaction to a previous one in a chain of transactions. For example, a capture transaction includes the transaction ID of the authorization transaction it is capturing.
+
+m| payment-methods.payment-method@name
+| M
+| String
+| 36
+| Name of the payment method. +
+For card-present transactions, the value is ``creditcard``.
+
+m| provider-account-id
+| Response only
+| String
+| n/a
+| Account ID of the merchant at the provider side.
+
+m| request-id
+| M
+| String
+| 150
+| Identification number of the request. It must be unique for each request. +
+Allowed characters: ASCII character code 32-38 and 40-126.
+
+m| requested-amount
+| M (except in settlement transactions)
+| Decimal
+| 18.3
+| Total amount requested in a transaction. The number of decimal places depends on the currency. Use . (decimal point) as a separator.
+
+m| requested-amount.@currency
+| M
+| String
+| 3
+| Currency of the requested transaction amount. +
+Format: 3-character abbreviation according to ISO 4217.
+
+m| statuses.status@code
+| Response only
+| String
+| 12
+| Status code of a transaction. Primarily used in conjunction with ``transaction-state`` to determine the exact details of the status of the transaction. +
+For a complete list of status codes, see <<StatusCodes_InDetail, Status Codes in Detail>>.
+
+m| statuses.status@description
+| Response only
+| String
+| 512
+| Text used to describe the transaction status.
+
+m| statuses.status@provider-transaction-id
+| Response only
+| String
+| n/a
+| Identifier of the transaction at the provider side.
+
+m| statuses.status@severity
+| Response only
+| Enumeration
+| 20
+| Severity of the transaction status. +
+The possible values are:
+
+* ``information``
+* ``warning``
+* ``error``
+
+m| transaction-type
+| M
+| String
+| 30
+| Transaction type, which determines the transaction's behavior during processing and merchant settlement. +
+The possible values are:
+
+* ``authorization``
+* ``capture-authorization``
+* ``credit``
+* ``purchase``
+* ``refund-capture``
+* ``refund-purcase``
+* ``settlement``
+* ``void-authorization``
+* ``void-credit``
+* ``void-purchase``
+
+m| transaction-id
+| Response only
+| String
+| 36
+| Unique identifier assigned to each transaction.
+
+m| transaction-state
+| Response only
+| Enumeration
+| n/a
+| Current status of a transaction. +
+The possible values are:
+
+* ``in-progress`` 
+* ``success``
+* ``failed``
+|===
+
+[#POSHostToHostIntegrationGuide_Samples]
+=== Samples
+
+[#POSHostToHostIntegrationGuide_Samples_authorization]
+==== _authorization_ without PIN
+
+===== _authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_authorization_request_success_en.xml[]
+----
+
+===== _authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_captureauthorization]
+==== _capture-authorization_
+
+===== _capture-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_capture-authorization_request_success_en.xml[]
+----
+
+===== _capture-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_capture-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_credit]
+==== _credit_
+
+===== _credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_credit_request_success_en.xml[]
+----
+
+===== _credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_credit_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_purchaseWithPIN]
+==== _purchase_ with PIN
+
+===== _purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_with_pin_request_success_en.xml[]
+----
+
+===== _purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_with_pin_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_purchaseWithoutPIN]
+==== _purchase_ without PIN
+
+===== _purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_without_pin_request_success_en.xml[]
+----
+
+===== _purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_without_pin_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_purchaseWithTrack2AndICC]
+==== _purchase_ with Track2 Data and ICC Data
+
+===== _purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_with_track2_data_request_success_en.xml[]
+----
+
+===== _purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_with_track2_data_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_refundcapture]
+==== _refund-capture_
+
+===== _refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_refund-capture_request_success_en.xml[]
+----
+
+===== _refund-capture_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_refundpurchase]
+==== _refund-purchase_
+
+===== _refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_refund-purchase_request_success_en.xml[]
+----
+
+===== _refund-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_refund-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalauthorization]
+==== _reversal-authorization_
+
+===== _reversal-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_request_success_en.xml[]
+----
+
+===== _reversal-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalcaptureauthorization]
+==== _reversal-capture-authorization_
+
+===== _reversal-capture-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-capture-authorization_request_success_en.xml[]
+----
+
+===== _reversal-capture-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-capture-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalcredit]
+==== _reversal-credit_
+
+===== _reversal-credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-credit_request_success_en.xml[]
+----
+
+===== _reversal-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-credit_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalpurchase]
+==== _reversal-purchase_
+
+===== _reversal-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-purchase_request_success_en.xml[]
+----
+
+===== _reversal-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalrefundcapture]
+==== _reversal-refund-capture_
+
+===== _reversal-refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-capture_request_success_en.xml[]
+----
+
+===== _reversal-refund-capture_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase]
+==== _reversal-refund-purchase_
+
+===== _reversal-refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-purchase_request_success_en.xml[]
+----
+
+===== _reversal-refund-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization]
+==== _reversal-void-authorization_
+
+===== _reversal-void-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_request_success_en.xml[]
+----
+
+===== _reversal-void-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalvoidcredit]
+==== _reversal-void-credit_
+
+===== _reversal-void-credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-credit_request_success_en.xml[]
+----
+
+===== _reversal-void-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalvoidpurchase]
+==== _reversal-void-purchase_
+
+===== _reversal-void-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-purchase_request_success_en.xml[]
+----
+
+===== _reversal-void-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_settlement]
+==== _settlement_
+
+===== _settlement_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_settlement_request_success_en.xml[]
+----
+
+===== _settlement_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_settlement_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidauthorization]
+==== _void-authorization_
+
+===== _void-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-authorization_request_success_en.xml[]
+----
+
+===== _void-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidcredit]
+==== _void-credit_
+
+===== _void-credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-credit_request_success_en.xml[]
+----
+
+===== _void-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-credit_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidpurchase]
+==== _void-purchase_
+
+===== _void-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-purchase_request_success_en.xml[]
+----
+
+===== _void-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidrefundcapture]
+==== _void-refund-capture_
+
+===== _void-refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-capture_request_success_en.xml[]
+----
+
+===== _void-refund-capture_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidrefundpurchase]
+==== _void-refund-purchase_
+
+===== _void-refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-purchase_request_success_en.xml[]
+----
+
+===== _void-refund-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-purchase_response_success_en.xml[]
+----
