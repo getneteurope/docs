@@ -6,9 +6,6 @@
    <transaction-type>refund-capture</transaction-type>
    <requested-amount currency="EUR">12.00</requested-amount>
    <parent-transaction-id>505f99ca-867e-49c3-9673-2a26d1c197fd</parent-transaction-id>
-   <account-holder>
-      <last-name>Unknown</last-name>
-   </account-holder>
    <card>
       <account-number>4761739001010119</account-number>
       <expiration-month>12</expiration-month>
