@@ -620,7 +620,7 @@ include::{root}/samples/xml/pos_purchase_without_pin_response_success_en.xml[]
 ===== _purchase_ Request (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_purchase_with_track2_data_response_success_en.xml[]
+include::{root}/samples/xml/pos_purchase_with_track2_data_request_success_en.xml[]
 ----
 
 [#POSHostToHostIntegrationGuide_Samples_authorization]
