@@ -577,6 +577,51 @@ The possible values are:
 [#POSHostToHostIntegrationGuide_Samples]
 === Samples
 
+[#POSHostToHostIntegrationGuide_Samples_authorization]
+==== _authorization_ without PIN
+
+===== _authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_authorization_request_success_en.xml[]
+----
+
+===== _authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_captureauthorization]
+==== _capture-authorization_
+
+===== _capture-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_capture-authorization_request_success_en.xml[]
+----
+
+===== _capture-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_capture-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_credit]
+==== _credit_
+
+===== _credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_credit_request_success_en.xml[]
+----
+
+===== _credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_credit_response_success_en.xml[]
+----
+
 [#POSHostToHostIntegrationGuide_Samples_purchaseWithPIN]
 ==== _purchase_ with PIN
 
@@ -622,139 +667,19 @@ include::{root}/samples/xml/pos_purchase_with_track2_data_request_success_en.xml
 include::{root}/samples/xml/pos_purchase_with_track2_data_response_success_en.xml[]
 ----
 
-[#POSHostToHostIntegrationGuide_Samples_authorization]
-==== _authorization_ without PIN
+[#POSHostToHostIntegrationGuide_Samples_refundcapture]
+==== _refund-capture_
 
-===== _authorization_ Request (Successful)
+===== _refund-capture_ Request (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_authorization_request_success_en.xml[]
+include::{root}/samples/xml/pos_refund-capture_request_success_en.xml[]
 ----
 
-===== _authorization_ Response (Successful)
+===== _refund-capture_ Response (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_authorization_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_credit]
-==== _credit_
-
-===== _credit_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_credit_request_success_en.xml[]
-----
-
-===== _credit_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_credit_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_captureauthorization]
-==== _capture-authorization_
-
-===== _capture-authorization_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_capture-authorization_request_success_en.xml[]
-----
-
-===== _capture-authorization_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_capture-authorization_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_voidauthorization]
-==== _void-authorization_
-
-===== _void-authorization_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-authorization_request_success_en.xml[]
-----
-
-===== _void-authorization_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-authorization_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_voidpurchase]
-==== _void-purchase_
-
-===== _void-purchase_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-purchase_request_success_en.xml[]
-----
-
-===== _void-purchase_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-purchase_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_voidcredit]
-==== _void-credit_
-
-===== _void-credit_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-credit_request_success_en.xml[]
-----
-
-===== _void-credit_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-credit_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_voidrefundcapture]
-==== _void-refund-capture_
-
-===== _void-refund-capture_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-refund-capture_request_success_en.xml[]
-----
-
-===== _void-refund-capture_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-refund-capture_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_voidrefundpurchase]
-==== _void-refund-purchase_
-
-===== _void-refund-purchase_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-refund-purchase_request_success_en.xml[]
-----
-
-===== _void-credit_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_void-refund-purchase_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_settlement]
-==== _settlement_
-
-===== _settlement_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_settlement_request_success_en.xml[]
-----
-
-===== _settlement_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_settlement_response_success_en.xml[]
+include::{root}/samples/xml/pos_refund-capture_response_success_en.xml[]
 ----
 
 [#POSHostToHostIntegrationGuide_Samples_refundpurchase]
@@ -770,21 +695,6 @@ include::{root}/samples/xml/pos_refund-purchase_request_success_en.xml[]
 [source,xml]
 ----
 include::{root}/samples/xml/pos_refund-purchase_response_success_en.xml[]
-----
-
-[#POSHostToHostIntegrationGuide_Samples_refundcapture]
-==== _refund-capture_
-
-===== _refund-capture_ Request (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_refund-capture_request_success_en.xml[]
-----
-
-===== _refund-capture_ Response (Successful)
-[source,xml]
-----
-include::{root}/samples/xml/pos_refund-capture_response_success_en.xml[]
 ----
 
 [#POSHostToHostIntegrationGuide_Samples_reversalauthorization]
@@ -841,10 +751,40 @@ include::{root}/samples/xml/pos_reversal-credit_response_success_en.xml[]
 include::{root}/samples/xml/pos_reversal-purchase_request_success_en.xml[]
 ----
 
-===== _reversal-authorization_ Response (Successful)
+===== _reversal-purchase_ Response (Successful)
 [source,xml]
 ----
 include::{root}/samples/xml/pos_reversal-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalrefundcapture]
+==== _reversal-refund-capture_
+
+===== _reversal-refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-capture_request_success_en.xml[]
+----
+
+===== _reversal-void-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase]
+==== _reversal-refund-purchase_
+
+===== _reversal-refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-purchase_request_success_en.xml[]
+----
+
+===== _reversal-refund-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-purchase_response_success_en.xml[]
 ----
 
 [#POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization]
@@ -892,32 +832,92 @@ include::{root}/samples/xml/pos_reversal-void-purchase_request_success_en.xml[]
 include::{root}/samples/xml/pos_reversal-void-purchase_response_success_en.xml[]
 ----
 
-[#POSHostToHostIntegrationGuide_Samples_reversalrefundcapture]
-==== _reversal-refund-capture_
+[#POSHostToHostIntegrationGuide_Samples_settlement]
+==== _settlement_
 
-===== _reversal-refund-capture_ Request (Successful)
+===== _settlement_ Request (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_reversal-refund-capture_request_success_en.xml[]
+include::{root}/samples/xml/pos_settlement_request_success_en.xml[]
 ----
 
-===== _reversal-void-purchase_ Response (Successful)
+===== _settlement_ Response (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_reversal-refund-capture_response_success_en.xml[]
+include::{root}/samples/xml/pos_settlement_response_success_en.xml[]
 ----
 
-[#POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase]
-==== _reversal-refund-purchase_
+[#POSHostToHostIntegrationGuide_Samples_voidauthorization]
+==== _void-authorization_
 
-===== _reversal-refund-purchase_ Request (Successful)
+===== _void-authorization_ Request (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_reversal-refund-purchase_request_success_en.xml[]
+include::{root}/samples/xml/pos_void-authorization_request_success_en.xml[]
 ----
 
-===== _reversal-refund-purchase_ Response (Successful)
+===== _void-authorization_ Response (Successful)
 [source,xml]
 ----
-include::{root}/samples/xml/pos_reversal-refund-purchase_response_success_en.xml[]
+include::{root}/samples/xml/pos_void-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidcredit]
+==== _void-credit_
+
+===== _void-credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-credit_request_success_en.xml[]
+----
+
+===== _void-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-credit_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidpurchase]
+==== _void-purchase_
+
+===== _void-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-purchase_request_success_en.xml[]
+----
+
+===== _void-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidrefundcapture]
+==== _void-refund-capture_
+
+===== _void-refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-capture_request_success_en.xml[]
+----
+
+===== _void-refund-capture_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidrefundpurchase]
+==== _void-refund-purchase_
+
+===== _void-refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-purchase_request_success_en.xml[]
+----
+
+===== _void-refund-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-purchase_response_success_en.xml[]
 ----
