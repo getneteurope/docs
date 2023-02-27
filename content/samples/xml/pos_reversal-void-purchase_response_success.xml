@@ -14,11 +14,6 @@ information" provider-transaction-id="055449"/>
    </statuses>
    <requested-amount currency="SGD">715</requested-amount>
    <parent-transaction-id>042cdd1f-39e4-4ed5-b9df-4d0230b594dc</parent-transaction-id>
-   <account-holder>
-      <first-name>John</first-name>
-      <last-name>Doe</last-name>
-      <email>john.doe@test.com</email>
-   </account-holder>
    <card-token>
       <token-id>4795614756571064</token-id>
       <masked-account-number>453923******1064</masked-account-number>
