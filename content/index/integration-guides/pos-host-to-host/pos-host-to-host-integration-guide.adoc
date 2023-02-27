@@ -80,8 +80,9 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 |===
 | *URLs (Endpoints) for Test Environment* | ``\https://{rest-api-test-endpoint}`` 
 | *URLs (Endpoints) for Production Environment* | ``\https://{instance-hostname}/engine/rest/payments``
-| *User Name* | 515225-GetnetEuropeTEST
-| *Password* | 4cHLRE-Q7YcAP
+| *User Name* | EE_POS
+| *Password* | B!zg56@z6xtG
+| *Merchant account ID* | deb83d64-91d7-425c-8adc-d0813ece1cc1
 | *Test Cards* | For details on credit cards you can use for testing, see <<API_CC_TestCards, Test Cards>>.
 |===
 
