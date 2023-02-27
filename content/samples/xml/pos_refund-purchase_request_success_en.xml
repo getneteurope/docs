@@ -6,9 +6,6 @@
    <transaction-type>refund-purchase</transaction-type>
    <requested-amount currency="EUR">12.00</requested-amount>
    <parent-transaction-id>33f6b1d6-97eb-4b70-adf7-8cde40ee9d7b</parent-transaction-id>
-   <account-holder>
-      <last-name>Unknown</last-name>
-   </account-holder>
    <card>
       <account-number>4761739001010119</account-number>
       <expiration-month>12</expiration-month>
