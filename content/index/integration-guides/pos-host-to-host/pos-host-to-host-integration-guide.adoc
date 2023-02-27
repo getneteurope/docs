@@ -766,7 +766,7 @@ include::{root}/samples/xml/pos_reversal-purchase_response_success_en.xml[]
 include::{root}/samples/xml/pos_reversal-refund-capture_request_success_en.xml[]
 ----
 
-===== _reversal-void-purchase_ Response (Successful)
+===== _reversal-refund-capture_ Response (Successful)
 [source,xml]
 ----
 include::{root}/samples/xml/pos_reversal-refund-capture_response_success_en.xml[]
