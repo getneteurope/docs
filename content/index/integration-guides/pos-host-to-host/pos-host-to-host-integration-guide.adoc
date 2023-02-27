@@ -56,10 +56,21 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 <<POSHostToHostIntegrationGuide_Samples_purchaseWithTrack2AndICC, _purchase_ samples (with track2 data and ICC data)>>
 | _refund-capture_ | Returns funds to the cardholder's account, referring to an eligible _capture_. | <<POSHostToHostIntegrationGuide_Samples_refundcapture, _refund-capture_ samples>>
 | _refund-purchase_ | Returns funds to the cardholder's account, referring to an eligible _purchase_. | <<POSHostToHostIntegrationGuide_Samples_refundpurchase, _refund-purchase_ samples>>
+| _reversal-authorization_ | Reverses an _authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalauthorization, _reversal-authorization_ samples>>
+| _reversal-capture-authorization_ | Reverses a _capture-authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalcaptureauthorization, _reversal-capture-authorization_ samples>>
+| _reversal-credit_ | Reverses a _credit_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalcredit, _reversal-credit_ samples>>
+| _reversal-purchase_ | Reverses a _purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalpurchase, _reversal-purchase_ samples>>
+| _reversal-refund-capture_ | Reverses a _refund-capture_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundcapture, _reversal-refund-capture_ samples>>
+| _reversal-refund-purchase_ | Reverses a _refund-purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase, _reversal-refund-purchase_ samples>>
+| _reversal-void-authorization_ | Reverses a _void-authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization, _reversal-void-authorization_ samples>>
+| _reversal-void-credit_ | Reverses an _void-credit_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidcredit, _reversal-void-credit_ samples>>
+| _reversal-void-purchase_ | Reverses an _authorization_ transaction. | <<POSHostToHostIntegrationGuide_Samples_reversalvoidpurchase, _reversal-void-purchase_ samples>>
 | _settlement_ | Requests the acquirer to close all pending transactions. Used, for example, at the end of the day when the shop closes. | <<POSHostToHostIntegrationGuide_Samples_settlement, _settlement_ samples>>
 | _void-authorization_ | Frees reserved funds from the cardholder's account due to an _authorization_. | <<#POSHostToHostIntegrationGuide_Samples_voidauthorization, _void-authorization_ samples>>
 | _void-credit_ | Frees reserved funds from the merchant's account due to a _credit_. | <<POSHostToHostIntegrationGuide_Samples_voidcredit, _void-credit_ samples>>
-| _void-purchase_ | 	Frees reserved funds from the cardholder's account due to a _purchase_. | <<POSHostToHostIntegrationGuide_Samples_voidpurchase, _void-purchase_ samples>>
+| _void-purchase_ | Frees reserved funds from the cardholder's account due to a _purchase_. | <<POSHostToHostIntegrationGuide_Samples_voidpurchase, _void-purchase_ samples>>
+| _void-refund-capture_ | Voids a _refund-capture_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundcapture, _void-refund-capture_ samples>>
+| _void-refund-purchase_ | Voids a _refund-purchase_ transaction. | <<POSHostToHostIntegrationGuide_Samples_voidrefundpurchase, _void-refund-purchase_ samples>>
 |===
 
 [#POSHostToHostIntegrationGuide_TestCredentials]
@@ -86,24 +97,6 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 [cols="4m,2,2,1,6a"]
 |===
 | Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
-
-m| account-holder.email
-| Response Only
-| String
-| 64
-| Customer's email address.
-
-m| account-holder.first-name
-| Response Only
-| String
-| 32
-| Customer's first name.
-
-m| account-holder.last-name
-| O
-| String
-| 32
-| Customer's last name.
 
 m| api-id
 | Response Only
@@ -310,7 +303,7 @@ m| card.track-2
 | Track of information on a credit card in the form of a 40-character alphanumeric field. Normally, the credit card number and expiration date are contained on track 2.
 
 m| card-token.masked-account-number
-| O
+| Response only
 | String
 | 36
 | Masked version of ``card.account-number``, e.g. 440804******7893.
@@ -349,7 +342,7 @@ m| descriptor
 
 m| entry-mode
 | M
-| String
+| Enumeration
 | 24
 | Channel through which the account holder information was collected. +
 The accepted values are:
@@ -459,7 +452,7 @@ m| merchant-account-id
 m| merchant-account-resolver-category
 | M/O
 | String
-| 36
+| 32
 | Resolver category that defines the rules used to resolve the merchant account. Mandatory unless the ``merchant-account-id`` is used.
 
 m| order-detail
@@ -623,6 +616,12 @@ include::{root}/samples/xml/pos_purchase_without_pin_response_success_en.xml[]
 include::{root}/samples/xml/pos_purchase_with_track2_data_request_success_en.xml[]
 ----
 
+===== _purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_purchase_with_track2_data_response_success_en.xml[]
+----
+
 [#POSHostToHostIntegrationGuide_Samples_authorization]
 ==== _authorization_ without PIN
 
@@ -713,6 +712,36 @@ include::{root}/samples/xml/pos_void-credit_request_success_en.xml[]
 include::{root}/samples/xml/pos_void-credit_response_success_en.xml[]
 ----
 
+[#POSHostToHostIntegrationGuide_Samples_voidrefundcapture]
+==== _void-refund-capture_
+
+===== _void-refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-capture_request_success_en.xml[]
+----
+
+===== _void-refund-capture_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_voidrefundpurchase]
+==== _void-refund-purchase_
+
+===== _void-refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-purchase_request_success_en.xml[]
+----
+
+===== _void-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void-refund-purchase_response_success_en.xml[]
+----
+
 [#POSHostToHostIntegrationGuide_Samples_settlement]
 ==== _settlement_
 
@@ -756,4 +785,139 @@ include::{root}/samples/xml/pos_refund-capture_request_success_en.xml[]
 [source,xml]
 ----
 include::{root}/samples/xml/pos_refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalauthorization]
+==== _reversal-authorization_
+
+===== _reversal-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_request_success_en.xml[]
+----
+
+===== _reversal-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalcaptureauthorization]
+==== _reversal-capture-authorization_
+
+===== _reversal-capture-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-capture-authorization_request_success_en.xml[]
+----
+
+===== _reversal-capture-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-capture-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalcredit]
+==== _reversal-credit_
+
+===== _reversal-credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-credit_request_success_en.xml[]
+----
+
+===== _reversal-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-credit_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalpurchase]
+==== _reversal-purchase_
+
+===== _reversal-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-purchase_request_success_en.xml[]
+----
+
+===== _reversal-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalvoidauthorization]
+==== _reversal-void-authorization_
+
+===== _reversal-void-authorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_request_success_en.xml[]
+----
+
+===== _reversal-void-authorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalvoidcredit]
+==== _reversal-void-credit_
+
+===== _reversal-void-credit_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-credit_request_success_en.xml[]
+----
+
+===== _reversal-void-credit_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-authorization_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalvoidpurchase]
+==== _reversal-void-purchase_
+
+===== _reversal-void-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-purchase_request_success_en.xml[]
+----
+
+===== _reversal-void-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-void-purchase_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalrefundcapture]
+==== _reversal-refund-capture_
+
+===== _reversal-refund-capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-capture_request_success_en.xml[]
+----
+
+===== _reversal-void-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-capture_response_success_en.xml[]
+----
+
+[#POSHostToHostIntegrationGuide_Samples_reversalrefundpurchase]
+==== _reversal-refund-purchase_
+
+===== _reversal-refund-purchase_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-purchase_request_success_en.xml[]
+----
+
+===== _reversal-refund-purchase_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal-refund-purchase_response_success_en.xml[]
 ----
