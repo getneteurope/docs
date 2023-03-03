@@ -116,13 +116,12 @@ a|
 image::images/icons/info.png[note_icon]
 
 2.+a| 
-- Connections to our test and production web sites and services must not be locked on target IP address. The IP addresses of our services will become dynamic, therefore usage of FQDN or URL-based filtering for outgoing connections would be adequate.
- 
-- New digital certificates will be issued and applied on our applications. If your applications use certificate pinning, TLS connections will generate encryption errors. We advise against certificate pinning in general as a practice and kindly ask to allow the new certificates coming from our side.
- 
-- The digital certificates behind our servers will require the usage of SNI (Server Name Indication) feature for which we kindly ask you to make sure that it is activated. Without this option enabled on the client side, TLS encrypted connections may end up with errors. As the Akamai Web Application Firewall (WAF) is a cloud based service, our applications will dynamically resolve in their DNS names therefore the SNI TLS extension is required to be enabled.
- 
-- Customer side applications using HTTP request headers bigger than 32Kbytes will encounter connection errors. As of industry practices, even 16Kbytes is sufficient and we kindly ask to implement this limit. Nevertheless, if your applications require more, kindly contact us for this matter.
+
+- Connections to our test and production web sites and services must not be locked on target IP address. The IP addresses of our services are dynamic, therefore usage of FQDN or URL-based filtering for outgoing connections are adequate in case of outgoing Internet connection control.
+- The digital certificates used by our applications are regularly renewed. If your applications use certificate pinning, TLS connections will generate encryption errors. We advise against certificate pinning in general as a practice and kindly ask to allow new certificates coming from our side.
+- The digital certificates behind our servers require the usage of SNI (Server Name Indication) feature for which we kindly ask you to make sure that it is activated in your applications. Without this option enabled on the client side, TLS encrypted connections may end up with errors. As our Web Application Firewall (WAF) is a cloud based service, our applications will dynamically resolve to cloud provider DNS entries. For TLS connections to succeed, the SNI TLS extension is required to be enabled.
+- Customer side applications using HTTP request headers bigger than 32Kbytes will encounter connection errors. As of industry practices, even 16Kbytes is sufficient and we kindly ask to implement this limit. Nevertheless, if your applications require more, please contact us for this matter.
+
 
 |===
 
