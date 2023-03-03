@@ -1,7 +1,7 @@
 [#API_PaymentDirectDebit]
 == REST API
 
-_Guaranteed Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
+_Ratepay  Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#API_PaymentDirectDebit_CountriesandCurrencies]
 === Countries and Currencies
@@ -16,7 +16,7 @@ _Guaranteed Direct Debit_ is a type of <<PaymentMethods_PaymentMode_OfflineBankT
 [#API_PaymentDirectDebit_Communication]
 === Communication Formats
 
-This table illustrates how _Guaranteed Direct Debit_ notifications are encoded and which formats and methods can be
+This table illustrates how _Ratepay  Direct Debit_ notifications are encoded and which formats and methods can be
 used for requests and responses.
 
 [width=75%,stripes=none]
@@ -95,16 +95,21 @@ are shipped in separate shipments.
 [#API_PaymentDirectDebit_TestCredentials]
 === Test Credentials
 
-[%autowidth.stretch,stripes=none]
+[cols="h,,"]
+[%autowidth]
 |===
-.2+h| URLs (Endpoints)            | For transaction type ``authorization`` | `\https://{rest-api-test-apm-endpoint}`
-                                  | For transaction types ``capture-authorization``, ``refund-capture``,
-                                    ``void-authorization`` and ``credit``  |``\https://{rest-api-test-endpoint}``
-   h| Merchant Account ID (MAID)
-                                2+| To be determined
-   h| Username                  2+| To be determined
-   h| Password                  2+| To be determined
-   h| Secret Key                2+| To be determined
+| *URL (Endpoint)*
+| For transaction type _get-url._
+|
+``\https://{rest-api-test-apm-endpoint}``
+| *Merchant Account ID (MAID)*
+2+| 5289ba2d-6094-4f7d-b6c2-346d1af638eb
+| *Username*
+2+| 515225-GetnetEuropeTEST
+| *Password*
+2+| 4cHLRE-Q7YcAP
+| *Secret Key*
+2+| bb3ec883-9c5b-4e70-beff-c3151b17ecf4
 |===
 
 [#API_PaymentDirectDebit_Workflow]
@@ -113,13 +118,13 @@ are shipped in separate shipments.
 [#API_PaymentDirectDebit_StandardProcess]
 ==== Standard Process
 
-[#API_PaymentDirectDebit_GuaranteedDirectDebit]
-===== Guaranteed Direct Debit
+[#API_PaymentDirectDebit_DirectDebit]
+===== Ratepay  Direct Debit
 
-image::images/diagrams/guaranteed-direct-debit.bmp[{payment-provider-name} Payment Guaranteed Direct Debit Workflow, width=950, align="center"]
+image::images/diagrams/-direct-debit.bmp[{payment-provider-name} Payment  Direct Debit Workflow, width=950, align="center"]
 
 . Consumer adds items to shopping basket.
-. Consumer selects the payment method _Guaranteed Direct Debit_.
+. Consumer selects the payment method _Ratepay  Direct Debit_.
 . Merchant sends an ``authorization`` request including items to Getnet.
 . Merchant receives an ``authorization`` response, including the
 descriptor (an alphanumerical code, starting with DG).
@@ -140,7 +145,7 @@ are available: ``credit``, ``refund-capture`` or ``void-authorization``.
 === Fields
 
 The following elements are mandatory *M*, optional *O* or conditional
-*C* for sending a request for _Guaranteed Direct Debit_ (complete field
+*C* for sending a request for _Ratepay  Direct Debit_ (complete field
 list available in <<RestApi_Fields, REST API field list>>):
 
 [%autowidth.stretch,stripes=none, cols="v,,,,"]
@@ -148,7 +153,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 | Field  | Cardinality  | Datatype  | Size  | Description
 
 5+a|
-[[GuaranteedDirectDebit_Fields_Payment]]
+[[DirectDebit_Fields_Payment]]
 [discrete]
 ==== payment
 
@@ -169,7 +174,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |M
 |Alphanumeric
 |30
-|This is the type for a transaction: ``authorization``, ``capture``, ``void-authorization``, ``refund-capture`` and ``credit`` are supported for _Guaranteed Direct Debit_.
+|This is the type for a transaction: ``authorization``, ``capture``, ``void-authorization``, ``refund-capture`` and ``credit`` are supported for _Ratepay  Direct Debit_.
 
 |_requested-amount_
 |M
@@ -221,7 +226,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 If empty or with wrong value, German language is used by default. The same logic applies for Payment Page integration.
 
 5+a|
-[[GuaranteedDirectDebit_Fields_PaymentMethods]]
+[[DirectDebit_Fields_PaymentMethods]]
 [discrete]
 ==== payment-methods
 
@@ -232,7 +237,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |The name of the Payment Method is ``ratepay-elv``.
 
 5+a|
-[[GuaranteedDirectDebit_Fields_AccountHolder]]
+[[DirectDebit_Fields_AccountHolder]]
 [discrete]
 ==== account-holder
 
@@ -273,7 +278,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |
 
 5+a|
-[[GuaranteedDirectDebit_Fields_AccountHolderAddress]]
+[[DirectDebit_Fields_AccountHolderAddress]]
 [discrete]
 ==== account-holder.address
 
@@ -314,7 +319,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |
 
 4+a|
-[[GuaranteedDirectDebit_Fields_BankAccount]]
+[[DirectDebit_Fields_BankAccount]]
 [discrete]
 ==== bank-account
 
@@ -351,7 +356,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |Mandatory if ``account-number`` is used
 
 5+a|
-[[GuaranteedDirectDebit_Fields_OrderItems]]
+[[DirectDebit_Fields_OrderItems]]
 [discrete]
 ==== order-items
 
@@ -386,7 +391,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |Total count of items in the order.
 
 4+a|
-[[GuaranteedDirectDebit_Fields_Shipping]]
+[[DirectDebit_Fields_Shipping]]
 [discrete]
 ==== shipping
 
@@ -411,7 +416,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |
 
 4+a|
-[[GuaranteedDirectDebit_Fields_ShippingAaddress]]
+[[DirectDebit_Fields_ShippingAaddress]]
 [discrete]
 ==== shipping/address
 
@@ -453,7 +458,7 @@ If empty or with wrong value, German language is used by default. The same logic
 |
 |
 5+a|
-[[GuaranteedDirectDebit_Fields_Device]]
+[[DirectDebit_Fields_Device]]
 [discrete]
 ==== device
 
@@ -465,7 +470,7 @@ If empty or with wrong value, German language is used by default. The same logic
 *It is mandatory for ``authorization``.*
 
 5+a|
-[[GuaranteedDirectDebit_Fields_Mandate]]
+[[DirectDebit_Fields_Mandate]]
 [discrete]
 ==== mandate
 
@@ -547,7 +552,7 @@ During checkout, the consumer has to agree to Ratepay’s terms of payment and d
 [#API_PaymentDirectDebit_AdditionalBusinessContitions]
 ===== Additional business conditions
 
-When the consumers use _Guaranteed Direct Debit,_
+When the consumers use _Ratepay  Direct Debit,_
 payments with debt discharging effect can be made solely to Getnet.
 
 [#API_PaymentDirectDebit_Samples]
@@ -556,7 +561,7 @@ payments with debt discharging effect can be made solely to Getnet.
 Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
 
 [#API_PaymentDirectDebit_Samples_DirectDebit]
-==== Guaranteed Direct Debit
+==== Ratepay  Direct Debit
 
 [#API_PaymentDirectDebit_Samples_DirectDebit_Authorization]
 ===== _authorization_
@@ -568,7 +573,6 @@ include::{root}/samples/xml/ratepay-elv_authorization_request_success_de.xml[]
 ----
 
 .XML authorization Response (Successful)
-
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ratepay-elv_authorization_response_success_de.xml[]
@@ -604,21 +608,6 @@ include::{root}/samples/xml/ratepay-elv_refund-capture_request_success_674f05af.
 include::{root}/samples/xml/ratepay-elv_refund-capture_response_success_de_674f05af.xml[]
 ----
 
-[#API_PaymentDirectDebit_Samples_DirectDebit_Credit]
-===== _credit_
-
-.XML credit Request (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_credit_request_success_f1ed56d2.xml[]
-----
-
-.XML credit Response (Successful)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/ratepay-elv_credit_response_success_de_f1ed56d2.xml[]
-----
-
 [#API_PaymentDirectDebit_Samples_DirectDebit_VoidAuthorization]
 ===== _void-authorization_
 
@@ -634,13 +623,22 @@ include::{root}/samples/xml/ratepay-elv_void-authorization_request_success_f1ed5
 include::{root}/samples/xml/ratepay-elv_void-authorization_response_success_de_f1ed56d2.xml[]
 ----
 
-[#API_PaymentDirectDebit_Samples_DirectDebit_DeviceIdentToken]
-===== _authorization_ Request to Getnet
 
-.deviceIdentToken Transfer
+[#API_PaymentDirectDebit_Samples_DirectDebit_Credit]
+===== _Credit_
+
+.XML Credit Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/ratepay-elv_authorization_unknown__de.xml[]
+include::{root}/samples/xml/ratepay-elv_credit_request_success_f1ed56d2.xml[]
 ----
+
+.XML void-authorization Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/ratepay-elv_credit_response_success_de_f1ed56d2.xml[]
+----
+
+
 
 //-
