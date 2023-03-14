@@ -623,7 +623,8 @@ Card issuer for some reasons, which doesn't fully share with us in details, do n
 | 500.2395 | error       | Authorization transaction cancelled | Authorization transaction cancelled.
 | 500.2396 | error       | Authorization transaction partially cancelled | Authorization transaction partially cancelled.
 | 500.2400 | error       | Debtor account closed | Debtor account closed.
-| 500.2401 | error       | insufficient funds/ no funds |insufficient funds / no funds.
+| 500.2401 | error       | insufficient funds/ no funds | It is related to card issuer limit setup in their side. They could have different limits set (floor limit, total day limit, weekly limits etc.).
+Those limits are not shared with us, cardholder should call their issuer and clarify with them
 | 500.2402 | error       | Direct debit refuse by debtor/ payer disagree | Direct debit refuse by debtor/ payer disagree.
 | 500.2403 | error       | No authorization from debtor to his bank | No authorization from debtor to his bank.
 | 500.2409 | error       | Account blocked | Account blocked.
