@@ -96,6 +96,7 @@ a| *201.0000*
 | 400.1018 | error       | Duplicate Request Id | The same Request Id for the Merchant Account is being tried a second time. Please use another Request Id.
 | 400.1019 | error       | Unrecognized Merchant Account Id | This Merchant Account Identifier does not exist, or is not assigned to this Processing User. Please contact Merchant Support.
 | 400.1020 | error       | Unrecognized Parent Transaction Id | The Parent Transaction Id does not exist. Please check your input and try again.
+The current transaction is referring to another previous transaction which does not exist. This is usually happening with the recurring transactions and merchant did not referred to an existing transaction.
 | 400.1021 | error       | No Parent Transaction Id | The Parent Transaction Id is required, and not provided. Please check your input and try again.
 | 400.1022 | error       | Parent Transaction Id not Successful | The Parent Transaction Id was not successful, the operation is not possible. Please do not try again.
 | 400.1023 | error       | Parent Transaction Transaction Type not Valid for Current Request | The Transaction Type of the Parent Transaction is invalid for the current operation. Please do not try again.
@@ -103,7 +104,8 @@ a| *201.0000*
 | 400.1025 | error       | Parent Transaction Merchant Account Mismatch | The Parent Transaction Id does not exist for this Merchant Account Identifier. Please check your input and try again.
 | 400.1026 | error       | Parent transaction currency mismatch | The Currency of the Parent Transaction ID does not match the Currency of the current operation. Please check your input and try again.
 | 400.1027 | error       | Amount threshold exceeded for the parent transaction | The requested amount exceeds the Parent Transaction Amount. Please check your input and try again.
-| 400.1028 | error       | Token or account number is invalid. | The Token or Account Number is invalid. Please check your input and try again.
+| 400.1028 | error       | Token or account number is invalid. | The Token or Account Number is invalid. Please check your input and try again
+This happen when usually a recurring transaction is performed and the token id used as reference is wrong or when the credit card data provided was wrong. Client should provide correct credit card data or in case the merchant is performing a recurring transaction using a token id as reference, they should check that the token id is correctly provided in the request.
 | 400.1029 | error       | Card token does not match with the masked card number | The Card Token does not match the masked Account Number. Please check your input and try again.
 | 400.1030 | error       | Invalid Currency | The Currency is invalid. Please check your input and try again.
 | 400.1031 | error       | Malformed Request | Malformed request.  Syntax of the request is invalid. Please check your input and try again.
@@ -456,7 +458,9 @@ Supported transaction types:
 a| *500.1054*
 
 <<API_CC_TestCards_Non3D_Error, Non-3D>>
-| error       | Pick Up Card | The acquirer returned Pick up card. Please check with Issuer, or use different card.
+| error       | Pick Up Card | 3d-acquirer:The acquirer returned Pick up card. Please check with Issuer, or use different card.
+It means the issuer refuses to authorize the transaction. The error message “Pick up card” means that the customer's bank has declined the transaction as the issuer wants to retrieve the card.
+The customer can call their issuer for additional information and complete authorization. In some cases, the credit card company simply needs verification that the customer wishes to complete the transaction.
 | 500.1055 | error       | Call Card Center | The acquirer returned Call card center. Please check with Issuer.
 | 500.1056 | error       | Issuer not Available | The acquirer returned Card center is not available. Please try again later.
 | 500.1057 | error       | Ineligible Transaction | The acquirer returned Error or Ineligible Transaction. Please contact Merchant Support.
@@ -525,7 +529,8 @@ a| *500.1091*
 <<API_CC_TestCards_Non3D_Error, Non-3D>>
 | error       | Suspicion of Manipulation | Suspicion of Manipulation. Please check with Issuer, or use different card.
 | 500.1092 | error       | Card not in authorizer's database. | Card not in authorizer's database. Please check with Issuer, or use different card.
-| 500.1093 | error       | Exceeds cash withdrawal floor limit. | Exceeds cash withdrawal floor limit. Please check with Issuer, or use different card.
+| 500.1093 | error       | Exceeds cash withdrawal floor limit. | 3d-acquirer:Exceeds cash withdrawal floor limit. Please check with Issuer, or use different card.
+Card issuer of the client have set some credit limit in their side and this limit was reached and for this reason the transaction was rejected. The card holder should contact their issuer bank to clarify.
 a| *500.1094*
 
 <<API_CC_TestCards_Non3D_Error, Non-3D>>
@@ -589,7 +594,8 @@ a| *500.1159*
 <<API_CC_TestCards_Non3D_Error, Non-3D>>
 | error       | Issuer: Invalid Card | The issuer returned Invalid Card. Please check your input or use different card.
 | 500.1160 | error       | Issuer: Suspected Fraud | The issuer returned Suspected Fraud. Please check with Issuer, or use different card.
-| 500.1161 | error       | Issuer: Transaction Type not accepted | The issuer returned Transaction Type not accepted. Please contact Merchant Support.
+| 500.1161 | error       | Issuer: Transaction Type not accepted | The cardholder is not allowed to make requested transaction
+Card issuer for some reasons, which doesn't fully share with us in details, do not allow this client to perform this transaction. It could be many reasons which client needs to clarify with their issue bank.
 | 500.1162 | error       | Issuer: Expired Card | The issuer returned Expired Card. Please check your input or use different card.
 | 500.1164 | error       | Country not supported | Country is not supported.
 | 500.1166 | error       | Voucher Token Expired | Voucher redemption token is expired.
@@ -653,8 +659,17 @@ a| *500.1159*
 | 500.2604 | error       | Max number of unsuccessful logins exceeded. | Maximum number of unsuccessful logins exceeded.
 | 500.2605 | error       | Requested version of function not supported | Requested version of function is not supported.
 | 500.2606 | error       | Strong customer authentication required. | Strong customer authentication required.
+Here the strong authentication was not provided, therefore the flow cannot be continue. The session expired. Client waited to much to provide or didn't provided at all the authentication data, which is required.
 | 500.2700 | error       | The mobile subscriber not identified | The mobile subscriber id (e.g. ``msisdn`` or ``ip-address``) could not be identified.
 | 500.2701 | error       | SMS delivery failed | The delivery of SMS has failed.
+| 500.2703 | error       | Credentials not Found | Updated credentials were not found in Mastercard ABU database. Do not retry
+ABU means Automatic Billing Update, so it was processed with a card which does not have up to date information (maybe expiry date or CVV has changed). Client should provide up to date data of his credit card
+| 500.2704 | error       | Retry Using Authentication |3d-acquirer:Authentication may improve the likelihood of an approval. Retry using authentication
+The flow used here didn't involved the authentication (for example when a purchase was send without 3DS2 flow which required first the enrollment and authentication to be successfully and after that a purchase can be performed).
+Merchant should check their implementation flow. For example, when our merchants are using Getnet Payment page they need to send customer data and in the background our system performs Enrollment check and also gives to the client
+the possibility to perform the authentication by redirecting him to authentication URL, than the purchase transaction is performed.
+| 500.2705 | error       | Retry later. | 3d-acquirer:Retry the transaction later.
+This could be some system issues or some other technical issue. If it never worked it needs to be checked by providing more data to us (like merchant account id , request id, transaction id etc.)
 | 500.3000 | error       | Risk: Rejected due to Suspicion of Fraud. | Rejected due to Suspicion of Fraud.
 | 500.3001 | warning     | Risk: Insufficient data for the verification. | Error in transaction request, check request data.
 | 500.3002 | error       | Risk: General risk management rejection | Risk: General risk management rejection.
