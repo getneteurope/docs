@@ -34,7 +34,7 @@ For the payment method _Credit Card_ we provide special card numbers for
 Amex, DINERS, DISCOVER, JCB, MAESTRO, Mastercard and VISA to test a variety of status codes.
 
 Those status codes you can test (mostly codes that begin with 500.1xxx),
-are marked bold and provide a link that points directly to the
+are marked *bold* and provide a link that points directly to the
 <<API_CC_TestCards, list of all the possible card numbers>>, 3D and Non-3D,
 associated with the testable status codes.
 
