@@ -17,8 +17,6 @@
       <country>DE</country>
     </address>
   </account-holder>
-  <order-number>45367</order-number>
-  <order-detail>1 XL TShirt (white)</order-detail>
   <descriptor>test product transaction</descriptor>
   <payment-methods>
     <payment-method name="wiretransfer" />
