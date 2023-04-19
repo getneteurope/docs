@@ -16,8 +16,7 @@ You are able to *test the shop plugin* features and functionality via
 need your personal credentials which you receive from Getnet after
 concluding a corresponding contract. Please contact our <<ContactUs, Merchant Support>>.
 
-All our shop plugins are offered on  link:https://github.com/getneteurope[GitHub]. This means you are able
-to use them free-of-charge and and are given access to the source code.
+Magento and Woocommerce can be found in their respective public Github repositories https://github.com/getneteurope/magento-getnet and https://github.com/getneteurope/woocommerce-getnet . To obtain Prestashop contact our merchant support team.
 
 Please have a look on
 our <<ShopSystems_TermsOfUse, Terms of Use and Legal Notice>> before you use our shop plugins in your online
