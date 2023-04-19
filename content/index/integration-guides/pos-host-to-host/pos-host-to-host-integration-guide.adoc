@@ -922,3 +922,87 @@ include::{root}/samples/xml/pos_void-refund-purchase_request_success_en.xml[]
 ----
 include::{root}/samples/xml/pos_void-refund-purchase_response_success_en.xml[]
 ----
+
+===== _preauthorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_preauthorization_request_success_en.xml[]
+----
+
+===== _preauthorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_preauthorization_response_success_en.xml[]
+----
+
+===== _preauthorization_capture_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_capture_preauthorization_request_success_en.xml[]
+----
+
+===== _preauthorization_capture_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_capture_preauthorization_response_success_en.xml[]
+----
+
+===== _preauthorization_supplementary_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_preauthorization_supplementary_request_success_en.xml[]
+----
+
+===== _preauthorization_supplementary_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_preauthorization_supplementary_response_success_en.xml[]
+----
+
+===== _reversal_preauthorization_supplementary_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal_preauth_supplementary_request_en.xml[]
+----
+
+===== _reversal_preauthorization_supplementary_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal_preauth_supplementary_response_en.xml[]
+----
+
+===== _reversal_preauthorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal_preauthorization_request_en.xml[]
+----
+
+===== _reversal_preauthorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_reversal_preauthorization_response_en.xml[]
+----
+
+===== _void_preauthorization_supplementary_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void_preauth_supplementary_resquest_en.xml[]
+----
+
+===== _void_preauthorization_supplementary_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void_preauth_supplementary_response_en.xml[]
+----
+
+===== _void_preauthorization_ Request (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void_preauthorization_request_en.xml[]
+----
+
+===== _void_preauthorization_ Response (Successful)
+[source,xml]
+----
+include::{root}/samples/xml/pos_void_preauthorization_response_en.xml[]
+----
