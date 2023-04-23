@@ -100,6 +100,7 @@ include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-0
 include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-06-sofort.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-07-ratepay.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-08-bizum.adoc[leveloffset=+4]
+include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-09-mbway.adoc[leveloffset=+4]
 
 include::index/integration-guides/mobile-payment-sdk/ios/08-01-02-scanner.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk/ios/08-01-03-third-party-libraries.adoc[leveloffset=+3]
