@@ -128,6 +128,17 @@ You can try it using the authorization headers above.
 include::{root}/samples/json/PaymentPageSolutions_WPP_EPP_IntegrationExampleCreate_CreateAPaymentSessionInitialRequest.json[]
 ----
 
+.Create a Payment Session (Initial Request with resolver category)
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PaymentPageSolutions_WPP_EPP_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategory.json[]
+----
+
+.Create a Payment Session (Initial Request with resolver category and allowed payment methods)
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PaymentPageSolutions_WPP_EPP_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategoryAndPMs.json[]
+----
 .Field Table
 [%autowidth, cols="m,,,,,"]
 |===

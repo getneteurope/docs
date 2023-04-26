@@ -178,6 +178,18 @@ The ``Authorization`` header needs to be formatted as:
 include::{root}/samples/json/WPP_SeamlessIntegrationExampleInitialRequest_CreateAPaymentSessionInitialRequest.json[]
 ----
 
+.Create a Payment Session (Initial Request with resolver category)
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PaymentPageSolutions_WPP_Seamless_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategory.json[]
+----
+
+.Create a Payment Session (Initial Request with resolver category and allowed payment methods)
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PaymentPageSolutions_WPP_Seamless_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategoryAndPMs.json[]
+----
+
 [%autowidth, cols="m,,,,,"]
 |===
  2+|Field (JSON) |Data Type |Required/Optional |Size |Description
