@@ -132,12 +132,14 @@ include::{root}/samples/json/PaymentPageSolutions_WPP_HPP_IntegrationExampleCrea
 ----
 
 .Create a Payment Session (Initial Request with resolver category)
+The request below generates a payment page that includes all payment methods assigned to the specified resolver category.
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/PaymentPageSolutions_WPP_HPP_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategory.json[]
 ----
 
 .Create a Payment Session (Initial Request with resolver category and allowed payment methods)
+It is also possible to generate a payment page with a subset of the payment methods assigned to one resolver category. You just need to list the payment methods as in the sample below.
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/PaymentPageSolutions_WPP_HPP_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategoryAndPMs.json[]
