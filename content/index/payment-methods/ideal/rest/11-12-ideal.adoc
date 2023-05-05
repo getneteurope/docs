@@ -175,6 +175,7 @@ website.
 | TRIONL2U | Triodos Bank
 | FVLBNL22 | Van Lanschot Bankiers
 | REVOLT21 | Revolut Bank
+| BITSNL2A | Yoursafe B.V.
 |===
 
 Frieslandbank merged into Rabobank. They are now available as Rabobank.
