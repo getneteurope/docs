@@ -344,7 +344,7 @@ Bind the function to an interactive UI element, such as a button, in
 your HTML code.
 
 .Seamless payment form rendered into ``wrappingDivId``
-image::images/03-01-03-01-seamless-integration-guide/seamless_iframe.png[Seamless Payment Form]
+image::images/03-01-03-01-seamless-integration-guide/seamless_iframe.PNG[Seamless Payment Form]
 
 
 .Render the Payment Form: Example from {payment-provider-name} Demoshop
