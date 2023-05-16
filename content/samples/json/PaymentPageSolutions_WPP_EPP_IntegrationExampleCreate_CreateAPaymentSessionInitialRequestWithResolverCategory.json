@@ -1,10 +1,8 @@
 {
   "payment": {
-    "merchant-account-id": {
-      "value": "5c4a8a42-04a8-4970-a595-262f0ba0a108"
-    },
+    "merchant-account-resolver-category": "GetnetEuropeTest",
     "request-id": "{{$guid}}",
-    "transaction-type": "authorization",
+    "transaction-type": "auto-sale",
     "requested-amount": {
       "value": 10,
       "currency": "EUR"
@@ -12,13 +10,6 @@
     "account-holder": {
       "first-name": "John",
       "last-name": "Doe"
-    },
-    "payment-methods": {
-      "payment-method": [
-        {
-          "name": "creditcard"
-        }
-      ]
     },
     "success-redirect-url": "https://{pp-redirect-url-success}",
     "fail-redirect-url": "https://{pp-redirect-url-error}",
