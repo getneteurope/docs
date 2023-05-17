@@ -92,7 +92,7 @@
 |{password-acs-cc}
 |Testing "Authentication approved"
 
-.4+|Diners
+.15+|Diners
 |6510000000000083
 |083
 | {cc-exp-month}/{cc-exp-year}
