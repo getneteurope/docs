@@ -85,7 +85,15 @@ pod 'mobilePaymentSDK/SEPA'
 
 |RatePay
 |RatePay payments frameworks
-|pod 'mobilePaymentSDK/RatePay' 
+|pod 'mobilePaymentSDK/RatePay'
+
+|Bizum
+|Bizum payments frameworks
+|pod 'mobilePaymentSDK/Bizum'
+
+|Blick
+|Blick payments frameworks
+|pod 'mobilePaymentSDK/Blick'
 |===
 
 //-

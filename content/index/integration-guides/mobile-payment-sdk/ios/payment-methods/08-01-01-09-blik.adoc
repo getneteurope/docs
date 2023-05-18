@@ -1,4 +1,5 @@
 
+
 [#MobilePaymentSDK_iOS_Blik]
 ---
 == *POA/PIA Blik*
