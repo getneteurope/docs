@@ -83,8 +83,7 @@ include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-
 include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-06-sofort.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-07-ratepay.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-08-bizum.adoc[leveloffset=+4]
-// include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-09-ideal.adoc[leveloffset=+4]
-// include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-10-blik.adoc[leveloffset=+4]
+include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-09-blik.adoc[leveloffset=+4]
 
 include::index/integration-guides/mobile-payment-sdk/android/08-01-02-licence.adoc[leveloffset=+3]
 
