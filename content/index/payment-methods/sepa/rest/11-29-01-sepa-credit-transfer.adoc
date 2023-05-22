@@ -42,12 +42,14 @@ at <<AppendixB,  Transaction Types>>.
 
 | _authorization_ | Verifies payment details for structural validity and /
 or generates a reference ID for the merchant (not mandatory). | 
-| _pending-credit_ | Transaction is processed in the {payment-gateway}.
+| _pending-credit_ | The credit has been accepted by the payment gateway
 | See <<SEPACreditTransfer_Samples_PendingCredit, samples>>.
 | _void-pending-credit_ | Voids a _pending-credit_. +
 Only available when the <<SEPA_TransactionType_Void_Restrictions, restrictions>> are met.
 | See <<SEPACreditTransfer_Samples_VoidPendingCredit, samples>>.
-| _credit_ | Transaction is processed by Santander Bank. |
+| _credit_ | The credit has been processed and confirmed by Santander Bank. A notification will be sent once the transaction reaches this state and the merchant should await the credit transaction, which confirms the fund transfer is successful, before releasing the goods.
+Please note: there can be a delay of 1-2 business days before the transaction is confirmed.
+ |
 | _credit-return_ | The payment is returned by the consumer bank. See <<SEPA_ReturnCodes, Return Codes>>. |
 |===
 

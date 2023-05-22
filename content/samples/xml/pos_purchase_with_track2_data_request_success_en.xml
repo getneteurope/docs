@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment">
+   <merchant-account-id>daa1734c-9c38-4140-841f-70f6aac05056</merchant-account-id>
+   <request-id>{{$guid}}</request-id>
+   <transaction-type>purchase</transaction-type>
+   <requested-amount currency="EUR">11.30</requested-amount>
+   <card>
+      <card-type>visa</card-type>
+      <track-2>4009029195741543=23121010912345678901</track-2>
+      <card-emv>
+         <request-iccdata>f0f0f4f0f50068f0f0f9f1f9a0000000031010f0f0f4f1f00978f0f0f3f0f280f0f0f5f1f5010302f0f0f6f2f100001854f0f0f8f1f
+3000000000000f0f0f9f0f306010c03a40000f0f0f8f0f9000000005000f0f0f4f1f15c00f0f0f4f2f0008cf0f0f6f0f4a63f881ef0f0f4f
+1f20276f0f1f0f1f73235303839303231f0f0f5f1f4e0f0c8f0f1f0f0f1db38bb23fd088de2f0f0f5f0f7110210f0f0f7f0f60040008000f
+0f0f3f1f622f0f0f3f0f800
+         </request-icc-data>
+         <request-icc-data-encoding>hex</request-icc-data-encoding>
+         <request-icc-data-format>gicc</request-icc-data-format>
+      </card-emv>
+      <card-pin>
+         <data>CBFC69A0369B9C3F</data>
+         <encoding>hex</encoding>
+         <format>ISO-0</format>
+         <encryption-context>
+            <value>paymentengine.thor-2</value>
+            <version>0</version>
+            <algorithm>dukpt</algorithm>
+            <parameter>0001999900000200020C</parameter>
+            <padding>pkcs</padding>
+         </encryption-context>
+      </card-pin>
+      <card-raw>
+         <data>586E42A37E2B907384739985767438C678D7B73D376990DF</data>
+         <encoding>hex</encoding>
+         <format>thor-posmate-chip</format>
+         <encryption-context>
+            <value>paymentengine.thor-2</value>
+            <version>0</version>
+            <algorithm>dukpt</algorithm>
+            <parameter>0001999900000200020C</parameter>
+            <padding>pkcs</padding>
+         </encryption-context>
+      </card-raw>
+   </card>
+   <ip-address>10.10.50.233</ip-address>
+   <order-number>380AA6E59B0349ABAB0CB4C076229CBA</order-number>
+   <order-detail>accept.</order-detail>
+   <descriptor>accept.</descriptor>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <iso>
+      <merchant-id>100100000000153</merchant-id>
+      <terminal-id>GC004045</terminal-id>
+      <pos-entry-mode>902</pos-entry-mode>
+      <pos-pin-input-length-capability>6</pos-pin-input-length-capability>
+   </iso>
+</payment>

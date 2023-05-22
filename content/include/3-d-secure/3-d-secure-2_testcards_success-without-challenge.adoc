@@ -89,9 +89,8 @@
 |No
 |N/A
 |No consumer interaction
-|===
 
-.4+|Diners
+.15+|Diners
 |6510000000000703
 |703
 | {cc-exp-month}/{cc-exp-year}
@@ -226,3 +225,4 @@
 |No
 |N/A
 |No consumer interaction
+|===

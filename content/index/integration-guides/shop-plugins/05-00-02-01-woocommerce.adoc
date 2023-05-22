@@ -82,6 +82,8 @@ image::images/09-02-woocommerce/order_notes.PNG[]
 
 {empty} +
 
+**Note: Notice that for Sofort, iDEAL and SEPA DD the refunds are actually SEPA credits. If you refunded from the merchant portal it is still possible to refund again from the plugin.**
+
 *Plugin Usage Rules:*
 [%hardbreaks]
 image::images/09-02-woocommerce/table.PNG[]

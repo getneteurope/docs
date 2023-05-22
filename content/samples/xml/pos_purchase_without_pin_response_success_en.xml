@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-qa.getneteurope.com:443/engine
+/rest/merchants/daa1734c-9c38-4140-841f-70f6aac05056/payments/88b2bd8e-6ec8-4611-b877-f44d7dbdb83f">
+   <merchant-account-id ref="https://api-qa.getneteurope.com:443/engine/rest/config/merchants/daa1734c-9c38-
+4140-841f-70f6aac05056">daa1734c-9c38-4140-841f-70f6aac05056</merchant-account-id>
+   <transaction-id>88b2bd8e-6ec8-4611-b877-f44d7dbdb83f</transaction-id>
+   <request-id>8aea92cc-1d3b-4471-8dbb-5d612e020b50</request-id>
+   <transaction-type>purchase</transaction-type>
+   <transaction-state>success</transaction-state>
+   <completion-time-stamp>2023-02-13T07:50:59.000Z</completion-time-stamp>
+   <statuses>
+      <status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="
+information" provider-transaction-id="C527810167627465866834"/>
+   </statuses>
+   <requested-amount currency="EUR">12.00</requested-amount>
+   <card>
+      <expiration-month
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <expiration-year
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <card-emv>
+         <response-icc-data>F0F0F4F5F43030</response-icc-data>
+         <response-icc-data-encoding>hex</response-icc-data-encoding>
+      </card-emv>
+   </card>
+   <card-token>
+      <token-id>4925447693970119</token-id>
+      <masked-account-number>476173******0119</masked-account-number>
+   </card-token>
+   <ip-address>10.198.152.214</ip-address>
+   <order-number>000000</order-number>
+   <order-detail>000000</order-detail>
+   <descriptor>description</descriptor>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <authorization-code>152314</authorization-code>
+   <api-id>elastic-api</api-id>
+   <entry-mode>pos</entry-mode>
+   <audit>
+      <request-source>csb</request-source>
+      <user>gicc</user>
+   </audit>
+   <iso>
+      <pos-transaction-time>075059</pos-transaction-time>
+      <pos-transaction-date>0213</pos-transaction-date>
+      <response-emv-icc-data>F0F0F4F5F43030</response-emv-icc-data>
+   </iso>
+   <provider-account-id>GN0000317A708D07</provider-account-id>
+</payment>
