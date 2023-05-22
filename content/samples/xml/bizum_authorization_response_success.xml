@@ -30,6 +30,6 @@
         <notification url="https://webhook.site/#!/49f715cd-f958-4926-80aa-f0d2affdc9be/694bf57b-2d27-47d3-ac89-20e57216c1ee/1"></notification>
     </notifications>
     <payment-methods>
-        <payment-method url="https://ppii-i.redsys.es:443/c2er-web/services/autenticacion/solicitud/primer_factor?id=JJZ9GQILM2D0SY5ZM3WO2NAMPN0W2GEPS4BQWA7ZZI6KRVGH&sid=c39837b3-6be0-4952-9df3-fe7e980fbeb0&cn=0004&service=PNX" name="bizum"/>
+        <payment-method url="https://ppii-i.redsys.es:443/c2er-web/services/autenticacion/solicitud/primer_factor?id=JJZ9GQILM2D0SY5ZM3WO2NAMPN0W2GEPS4BQWA7ZZI6KRVGH&amp;sid=c39837b3-6be0-4952-9df3-fe7e980fbeb0&amp;cn=0004&amp;service=PNX" name="bizum"/>
     </payment-methods>
 </payment>
