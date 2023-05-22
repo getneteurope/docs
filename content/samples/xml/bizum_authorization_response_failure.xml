@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>75237619-7053-439f-90c9-273b05cc254a</merchant-account-id>
+    <transaction-type>authorization</transaction-type>
+    <transaction-state>failed</transaction-state>
+    <statuses>
+        <status code="400.1010" description="The Request Identifier has not been provided.  Please check your input and try again." severity="error"/>
+    </statuses>
+    <requested-amount currency="EUR">55.55</requested-amount>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>test@test.com</email>
+        <phone>+3412345678</phone>
+        <address>
+            <street1>Sturova 27/4</street1>
+            <city>Kosice</city>
+            <state>Slovakia</state>
+            <country>CA</country>
+            <postal-code>04011</postal-code>
+        </address>
+    </account-holder>
+    <order-number>3485337cd</order-number>
+    <order-detail>8897063cd</order-detail>
+    <descriptor>description</descriptor>
+    <payment-methods>
+        <payment-method name="bizum"/>
+    </payment-methods>
+</payment>

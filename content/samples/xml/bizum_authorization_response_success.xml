@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>75237619-7053-439f-90c9-273b05cc254a</merchant-account-id>
+    <transaction-id>c39837b3-6be0-4952-9df3-fe7e980fbeb0</transaction-id>
+    <request-id>ba6148ab-0eb0-4d2d-81c9-9840a86f9cd5</request-id>
+    <transaction-type>authorization</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2023-05-02T16:57:18.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="EUR">55.55</requested-amount>
+    <account-holder>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <email>test@test.com</email>
+        <phone>+34700000000</phone>
+        <address>
+            <street1>Sturova 27/4</street1>
+            <city>Kosice</city>
+            <state>Slovakia</state>
+            <country>CA</country>
+            <postal-code>04011</postal-code>
+        </address>
+    </account-holder>
+    <ip-address>185.60.59.247</ip-address>
+    <order-number>123456789_abcdefg</order-number>
+    <descriptor>description123</descriptor>
+    <notifications format="application/xml">
+        <notification url="https://webhook.site/#!/49f715cd-f958-4926-80aa-f0d2affdc9be/694bf57b-2d27-47d3-ac89-20e57216c1ee/1"></notification>
+    </notifications>
+    <payment-methods>
+        <payment-method url="https://ppii-i.redsys.es:443/c2er-web/services/autenticacion/solicitud/primer_factor?id=JJZ9GQILM2D0SY5ZM3WO2NAMPN0W2GEPS4BQWA7ZZI6KRVGH&sid=c39837b3-6be0-4952-9df3-fe7e980fbeb0&cn=0004&service=PNX" name="bizum"/>
+    </payment-methods>
+</payment>

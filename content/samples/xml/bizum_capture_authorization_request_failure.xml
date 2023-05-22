@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>75237619-7053-439f-90c9-273b05cc254a</merchant-account-id>
+  <request-id>bbdc3382-5be8-4a6f-b2a5-5ef518f1efb0</request-id>
+  <transaction-type>capture-authorization</transaction-type>
+  <requested-amount currency="EUR">55.55</requested-amount>
+  <descriptor>test</descriptor>
+  <order-number>6484620cd</order-number>
+  <order-detail>3038681cd</order-detail>
+  <parent-transaction-id>7ab3bdc6-362b-4177-bd86-d310ce990ddc</parent-transaction-id>
+</payment>
