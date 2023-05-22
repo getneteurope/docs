@@ -1,0 +1,29 @@
+{
+    "payment": {
+        "statuses": {
+            "status": [
+                {
+                    "code": "201.0000",
+                    "description": "bizum:The resource was successfully created.",
+                    "severity": "information"
+                }
+            ]
+        },
+        "notifications": {
+            "notification": [
+                {
+                    "url": "https://webhook.site/74a4f377-978d-44ca-84cc-2c4310cdf630"
+                }
+            ]
+        },
+        "merchant-account-id": {
+            "value": "75237619-7053-439f-90c9-273b05cc254a"
+        },
+        "transaction-id": "5b5d9220-3e71-4c71-90a2-7d65f8406b22",
+        "request-id": "0a4f9122-ba34-4506-8709-c80ff68176y7",
+        "transaction-type": "authorization",
+        "transaction-state": "success",
+        "completion-time-stamp": 1684244078000,
+        "api-id": "wpp"
+    }
+}

@@ -1,0 +1,41 @@
+{ 
+    "payment": {
+        "merchant-account-id": {
+            "value": "75237619-7053-439f-90c9-273b05cc254a"
+        },
+        "request-id": "0a4f9122-ba34-4506-8709-c80ff68176c4",
+        "transaction-type": "authorization",
+        "order-number": "125461645",
+        "descriptor": "test",
+        "requested-amount": {
+            "value": "55.55",
+            "currency": "EUR"
+        },
+        "payment-methods": {
+            "payment-method": [
+                {
+                    "name": "bizum"
+                }
+            ]
+        },
+        "account-holder": {
+            "email": "test@test.com",
+            "phone": "+34700000000"
+        },
+        "browser": {
+            "ip-address": "185.60.59.247",
+            "user-agent": "dmytro"
+        },
+        "notifications": {
+            "notification": [
+                {
+                "url": "https://webhook.site/74a4f377-978d-44ca-84cc-2c4310cdf630"
+                }
+            ]
+        },
+        "locale": "DE"
+        "success-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/success",
+        "cancel-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/cancel",
+        "fail-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/error"
+    }
+}
