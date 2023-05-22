@@ -15,7 +15,7 @@ include::{root}/include/ppv2-general-information.adoc[]
 
 The following diagram shows a more detailed process flow for creating ``authorization`` transactions with Bizum:
 
-INSERT IMAGE HERE
+image::images/diagrams/bizum_pp_simple.jpg[Bizum Payment Page authorization workflow, width=950, align="center"]
 
 1. Consumer initiates the checkout process.
 2. Merchant sends a payment session creation request to the Payment Page.
