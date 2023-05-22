@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>75237619-7053-439f-90c9-273b05cc254a</merchant-account-id>
+    <transaction-id>083c057f-6453-4601-baf2-1b3c577e981b</transaction-id>
+    <transaction-type>authorization</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2023-05-02T17:01:40.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="bizum:The resource was successfully created." severity="information"/>
+    </statuses>
+    <notifications format="application/xml">
+        <notification url="https://webhook.site/74a4f377-978d-44ca-84cc-2c4310cdf630"/>
+    </notifications>
+    <api-id>---</api-id>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>i/IWbsmO4P52nNgQHUqz42zngC1mk48iuNvV8Y+UaUU=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>CTuz0lwkt4skLaA8LHafaDQH4OrfbByTXWt4at5Tksng5ploBT15impgtiRAtuT1yz9OgHIJBTl/6NTICDV3guDTmjGorDQu2cv8VU0gfllnRgqkxW3s9BGIHP6JatoB4eGMYkC5GSZIt9LOX59Uc0Yjy5uSAQwNTwxTCN8zzQLw5mq0zVjNSOYZU95kZah+tLIFEsqnXrgfZvHD+DOO0qqr6ShLzMVrtr24c3lshMK0vBuoNaVZz8jFt4QtADnM6LNzh+U6J1W4eW0VY+igGeozYknoaCFBuvZ9iQx5RBlmZGC2aRszL2mToegCVQCwl8pzWhnigBbr5Wg4kxdtvuANYhHSXpTHdaLqSPh78I9o9IZ89i8oN1Ti94RfXfktTvqFSBtcB3bnSmsCLkh6av4yhblkQMbE4Pc5GFZDPbUsgv5EEfsT0NuC4xn9cefp2sddmAlrIvgK7iE0XTYyJDUsBvNFMkXqYMIEHDI38iIOT8OpaKCpKiaCTl7nhWgRw5WkZ4LGd5O4AMSbjCIgk3YUpP0yk6xhzFPWp+a4iJu0t1vdNOS7EBq7G4f167Q3iwZSgxkbaeWb+St6krck7cI1QeOQ6102uRdCkMPziaXyInVUoEd+dqGH7QaoQdvPC1M2eJMBRes2wNvlvJufMAZfE10gwTO4USJaDkmWpvo=</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509SubjectName>L=Ascheim,CN=engine.wirecard.sys,OU=Operations,O=Wirecard Technologies GmbH,C=DE</X509SubjectName>
+                <X509Certificate>MIIF0DCCBLigAwIBAgICK8EwDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCREUxETAPBgNVBAoTCFdpcmVjYXJkMTkwNwYDVQQDFDB3aXJlY2FyZC1EUS1NVUMtaW50ZXJuYWwtd2Vic2VydmljZS1pc3N1aW5nQ0FfMDIwHhcNMTYwNTIwMDc1MDI0WhcNMTgwNTIwMDc1MDI0WjB3MQswCQYDVQQGEwJERTEjMCEGA1UEChMaV2lyZWNhcmQgVGVjaG5vbG9naWVzIEdtYkgxEzARBgNVBAsTCk9wZXJhdGlvbnMxHDAaBgNVBAMTE2VuZ2luZS53aXJlY2FyZC5zeXMxEDAOBgNVBAcTB0FzY2hlaW0wggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDyqm9WQZish8wxW5WOB0m/kunHIcOC5DC8aEk55S4uf9hRi16+Fkg1y626GC//0eXVle+leUhF/e9e4wfqt/2wVNwkjhy2ww5uT2ZqojzvGyCAjnyDIr4C6+6Ezz9FZ1h2lNsbNRuKSoahTdycGAqduj5xjpiuNAnmh1EAZEYWSmR/QvY+PTV6+ltZAl5WlVCmTHuBUqvMUEOfMew5B7iA1BDUZ508l76cfTKHOu15kqA5ajxaAC/DeawCPSCdsdOTsWSVbKvn5FM8VK29Ah699XWi85sG5uniklhyDKuaHPplrL7+9eA1XaFSsaOc+obDRe2lus8YmIUMvaSsDfglZOGq8VLrDIXo2i4WC2AiNFtLNC/bndxrrYRd2+Rb5VviNblcQu1pfWTDd2SWKtyegg558UAAAgM2kJ4EUujCKp2t9EOELJZ2yHABTIySkuCkeLJfpqL6bGQJEZlzgtEE6hS1ywPjPMNg2F1BKGNH79KK8GvehWYDX4VfKoTROVHqc5ODxWGBoZ+mxHWiwLZ96KBniMBnoTuXTi5op7/0sW8F8ykd9kE6yH2d8YQMTQ6PAY4DG6KpsC0J2zE4P+iGfDeMnoud9Zws24ogf/mTag13URkYpYKpAglwuSHcciZgfGXSrmne+MspKbO24Ny0wZP3suY9ssNfyLooSlMfXwIDAQABo4IBgDCCAXwwEQYDVR0OBAoECEDpj0A8MIh/MBMGA1UdIwQMMAqACENsHhbUPQUOMAsGA1UdDwQEAwIE8DCCAUMGA1UdHwSCATowggE2MIIBMqCCAS6gggEqhoHVbGRhcDovL3dpcmVjYXJkLmxhbi9DTj13aXJlY2FyZC1EUS1NVUMtaW50ZXJuYWwtd2Vic2VydmljZS1pc3N1aW5nQ0FfMDIsQ049Q0RQLENOPVB1YmxpYyBLZXkgU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixkYz13aXJlY2FyZCxkYz1sYW4/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPUNSTERpc3RyaWJ1dGlvblBvaW50hlBodHRwOi8vY3JsLndpcmVjYXJkLmxhbi9DUkxfd2lyZWNhcmQtRFEtTVVDLWludGVybmFsLXdlYnNlcnZpY2UtaXNzdWluZ0NBXzAyLmNybDANBgkqhkiG9w0BAQsFAAOCAQEAmCbqd802pphK0hwKDcQ4mctQk1tXXS38+016QDOh/uJTzmG5WqFZfoXZ8GYwMl5zjE6g+ciuVv3q393gLLZdZrUHEOKS1xj8xWjUQd4uNDJPXY1RamPBDptahn6/AIR89UFDaN37L3fI7EfLqTHpbD92ZGVssmt/0cjd9ekNGN66dEJB0YGBZTVEALhwYF1KtcxiLo2b1KnbmKLgnldF6RwP6p93fpO29mQxw4ePU2/+GyWmYW053ObAYqMVNelLc2Fj4W82El2Gbw/rFBiNM9qBpYS8YkMwsmTr0m49AsI2H401KBwfR4Ci1zUXfZjWchIZjjEVeIR7gMTOl+/Cog==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</payment>
