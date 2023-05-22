@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment" self="http://d-nr-ee-engine01.wirecard.diq:9000
+/engine/rest/merchants/f1c5f622-989d-4d3d-a686-fb685c2bff61/payments/4fa2596a-18b1-45ed-8dac-348fbf0b5878">
+   <merchant-account-id ref="http://d-nr-ee-engine01.wirecard.diq:9000/engine/rest/config/merchants/f1c5f622-
+989d-4d3d-a686-fb685c2bff61">f1c5f622-989d-4d3d-a686-fb685c2bff61</merchant-account-id>
+   <transaction-id>4fa2596a-18b1-45ed-8dac-348fbf0b5878</transaction-id>
+   <request-id>257c8a6e-2b3-47a1-b66e-13beda8f47ec</request-id>
+   <transaction-type>settlement</transaction-type>
+   <transaction-state>success</transaction-state>
+   <completion-time-stamp>2023-02-02T15:48:15.000Z</completion-time-stamp>
+   <statuses>
+      <status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="
+information" provider-transaction-id="C630877479577247730791"/>
+   </statuses>
+   <requested-amount currency="EUR"/>
+   <descriptor>description b99938d8-8ccb-4012-8616-339df11528c5</descriptor>
+   <custom-fields>
+      <custom-field field-name="elastic-api.pe.capture.reference" field-value="137"></custom-field>
+      <custom-field field-name="elastic-api.pe.last.cutover" field-value="2022-04-05 00:00:00"></custom-field>
+   </custom-fields>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <authorization-code>839384</authorization-code>
+   <api-id>elastic-api</api-id>
+   <entry-mode>pos</entry-mode>
+   <iso>
+      <pos-transaction-time>154815</pos-transaction-time>
+      <pos-transaction-date>0202</pos-transaction-date>
+   </iso>
+   <iso-recon>
+      <captured-sale-count>30</captured-sale-count>
+      <captured-sale-amount>250</captured-sale-amount>
+      <captured-refund-count>12</captured-refund-count>
+      <captured-refund-amount>153</captured-refund-amount>
+   </iso-recon>
+   <iso-recon-host>
+      <captured-sale-count>31</captured-sale-count>
+      <captured-sale-amount>251</captured-sale-amount>
+      <captured-refund-count>12</captured-refund-count>
+      <captured-refund-amount>154</captured-refund-amount>
+   </iso-recon-host>
+   <provider-account-id>20180801001</provider-account-id>
+</payment>

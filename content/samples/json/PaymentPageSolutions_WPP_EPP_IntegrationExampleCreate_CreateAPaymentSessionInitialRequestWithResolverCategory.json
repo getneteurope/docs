@@ -1,0 +1,22 @@
+{
+  "payment": {
+    "merchant-account-resolver-category": "GetnetEuropeTest",
+    "request-id": "{{$guid}}",
+    "transaction-type": "auto-sale",
+    "requested-amount": {
+      "value": 10,
+      "currency": "EUR"
+    },
+    "account-holder": {
+      "first-name": "John",
+      "last-name": "Doe"
+    },
+    "success-redirect-url": "https://{pp-redirect-url-success}",
+    "fail-redirect-url": "https://{pp-redirect-url-error}",
+    "cancel-redirect-url": "https://{pp-redirect-url-cancel}"
+  },
+  "options": {
+    "mode": "embedded",
+    "frame-ancestor": "https://example.com"
+  }
+}

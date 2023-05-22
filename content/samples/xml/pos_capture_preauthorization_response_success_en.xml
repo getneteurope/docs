@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-qa.getneteurope.com:443/engine
+/rest/merchants/daa1734c-9c38-4140-841f-70f6aac05056/payments/864e6b2e-2214-4826-b410-2ec0ec1bdd72">
+   <merchant-account-id ref="https://api-qa.getneteurope.com:443/engine/rest/config/merchants/daa1734c-9c38-
+4140-841f-70f6aac05056">daa1734c-9c38-4140-841f-70f6aac05056</merchant-account-id>
+   <transaction-id>864e6b2e-2214-4826-b410-2ec0ec1bdd72</transaction-id>
+   <request-id>430f2c58-9b91-4a80-aeac-c070a74790f9</request-id>
+   <transaction-type>capture-preauthorization</transaction-type>
+   <transaction-state>success</transaction-state>
+   <completion-time-stamp>2023-04-17T09:36:34.000Z</completion-time-stamp>
+   <statuses>
+       <status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="
+information" provider-transaction-id="C690539168172419395933"/>
+   </statuses>
+   <requested-amount currency="EUR">12.30</requested-amount>
+   <parent-transaction-id>73de80df-9c90-46f9-985d-95b613d57867</parent-transaction-id>
+   <card>
+       <expiration-month>12</expiration-month>
+       <expiration-year>2023</expiration-year>
+       <card-type>visa</card-type>
+   </card>
+   <card-token>
+       <token-id>4809775583911543</token-id>
+       <masked-account-number>400902******1543</masked-account-number>
+   </card-token>
+   <ip-address>10.10.50.233</ip-address>
+   <order-number>380AA6E59B0349ABAB0CB4C076229CBA</order-number>
+   <order-detail>accept.</order-detail>
+   <descriptor>accept.</descriptor>
+   <payment-methods>
+       <payment-method name="creditcard"/>
+   </payment-methods>
+   <parent-transaction-amount currency="EUR">15.300000</parent-transaction-amount>
+   <authorization-code>152314</authorization-code>
+   <api-id>elastic-api</api-id>
+   <iso>
+       <pos-transaction-time>093634</pos-transaction-time>
+       <pos-transaction-date>0417</pos-transaction-date>
+   </iso>
+   <provider-account-id>GN0000317A708D07</provider-account-id>
+</payment>

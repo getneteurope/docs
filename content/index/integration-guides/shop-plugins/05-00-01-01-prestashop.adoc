@@ -98,7 +98,8 @@ image::images/09-02-prestashop/prestashop-transactions-index.jpg[]
 
 {empty} +
 
-Select the transaction that you wish to refund, then click on the refund button.
+**Note: Notice that for Sofort, iDEAL and SEPA DD the refunds are actually SEPA credits. If you refunded from the merchant portal it is still possible to refund again from the plugin
+Select the transaction that you wish to refund, then click on the refund button.**
 
 [%hardbreaks]
 image::images/09-02-prestashop/prestashop-transaction-refund.jpg[]

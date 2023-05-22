@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment">
+   <merchant-account-id>daa1734c-9c38-4140-841f-70f6aac05056</merchant-account-id>
+   <request-id>d06229a4a12111ed96f70ac698d6a303</request-id>
+   <transaction-type>refund-capture</transaction-type>
+   <requested-amount currency="EUR">12.00</requested-amount>
+   <parent-transaction-id>505f99ca-867e-49c3-9673-2a26d1c197fd</parent-transaction-id>
+   <card>
+      <account-number>4761739001010119</account-number>
+      <expiration-month>12</expiration-month>
+      <expiration-year>2024</expiration-year>
+      <issue-number>3</issue-number>
+      <card-type>visa</card-type>
+      <track-2>4761739001010119=241220117589472</track-2>
+      <card-emv>
+         <request-iccdata>f0f0f4f0f50068f0f0f9f1f9a0000000031010f0f0f4f1f00978f0f0f3f0f280f0f0f5f1f5010302f0f0f6f2f100001854f0f0f8f1f
+3000000000000f0f0f9f0f306010c03a40000f0f0f8f0f9000000005000f0f0f4f1f15c00f0f0f4f2f0008cf0f0f6f0f4a63f881ef0f0f4f
+1f20276f0f1f0f1f73235303839303231f0f0f5f1f4e0f0c8f0f1f0f0f1db38bb23fd088de2f0f0f5f0f7110210f0f0f7f0f60040008000f
+0f0f3f1f622f0f0f3f0f800
+         </request-icc-data>
+         <request-icc-data-encoding>hex</request-icc-data-encoding>
+         <request-icc-data-format>gicc</request-icc-data-format>
+      </card-emv>
+   </card>
+   <ip-address>10.198.152.214</ip-address>
+   <order-number>000001</order-number>
+   <order-detail>000002</order-detail>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <entry-mode>pos</entry-mode>
+   <audit>
+      <request-source>csb</request-source>
+      <user>gicc</user>
+   </audit>
+   <iso>
+      <merchant-id>100100000000153</merchant-id>
+      <terminal-id>GC004045</terminal-id>
+      <pos-entry-mode>052</pos-entry-mode>
+   </iso>
+</payment>

@@ -144,6 +144,8 @@ image::images/09-01-magento/notes_for_this_order.PNG[]
 
 {empty} +
 
+**Note: Notice that for Sofort, iDEAL and SEPA DD the refunds are actually SEPA credits. If you refunded from the merchant portal it is still possible to refund again from the plugin.**
+
 
 *Status Update*
 For "Offline Bank Transfer" type payments, there is the "Update status" button, in this option, the system will ask if you agree to want to check the status and update, when you accept, the request will be sent to Getnet to check the current status and if it is different from the one in the system, it will be updated.

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment
+   xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-qa.getneteurope.com:443/engine
+/rest/merchants/daa1734c-9c38-4140-841f-70f6aac05056/payments/81f84ddd-4bce-40bf-a340-00c81ccbca0b">
+   <merchant-account-id ref="https://api-qa.getneteurope.com:443/engine/rest/config/merchants/daa1734c-9c38-
+4140-841f-70f6aac05056">daa1734c-9c38-4140-841f-70f6aac05056</merchant-account-id>
+   <transaction-id>81f84ddd-4bce-40bf-a340-00c81ccbca0b</transaction-id>
+   <request-id>107242a0-2c6e-4764-afd2-4af4f9b795f4</request-id>
+   <transaction-type>void-purchase</transaction-type>
+   <transaction-state>success</transaction-state>
+   <completion-time-stamp>2023-02-13T08:18:52.000Z</completion-time-stamp>
+   <statuses>
+      <status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="
+information" provider-transaction-id="C561215167627633199813"/>
+   </statuses>
+   <requested-amount currency="EUR">12.00</requested-amount>
+   <parent-transaction-id>588a6a1d-1c23-443b-88b4-4873a89b2971</parent-transaction-id>
+   <card>
+      <expiration-month>12</expiration-month>
+      <expiration-year>2024</expiration-year>
+      <card-type>visa</card-type>
+      <card-emv>
+         <request-iccdata>f0f0f4f0f50068f0f0f9f1f9a0000000031010f0f0f4f1f00978f0f0f3f0f280f0f0f5f1f5010302f0f0f6f2f100001854f0f0f8f1f
+3000000000000f0f0f9f0f306010c03a40000f0f0f8f0f9000000005000f0f0f4f1f15c00f0f0f4f2f0008cf0f0f6f0f4a63f881ef0f0f4f
+1f20276f0f1f0f1f73235303839303231f0f0f5f1f4e0f0c8f0f1f0f0f1db38bb23fd088de2f0f0f5f0f7110210f0f0f7f0f60040008000f
+0f0f3f1f622f0f0f3f0f800
+         </request-icc-data>
+         <request-icc-data-encoding>hex</request-icc-data-encoding>
+         <request-icc-data-format>gicc</request-icc-data-format>
+      </card-emv>
+   </card>
+   <card-token>
+      <token-id>4925447693970119</token-id>
+      <masked-account-number>476173******0119</masked-account-number>
+   </card-token>
+   <ip-address>10.198.152.214</ip-address>
+   <order-number>1000000</order-number>
+   <order-detail>1000000</order-detail>
+   <descriptor>description</descriptor>
+   <payment-methods>
+      <payment-method name="creditcard"/>
+   </payment-methods>
+   <parent-transaction-amount currency="EUR">12.000000</parent-transaction-amount>
+   <authorization-code>152314</authorization-code>
+   <api-id>elastic-api</api-id>
+   <entry-mode>pos</entry-mode>
+   <audit>
+      <request-source>csb</request-source>
+      <user>gicc</user>
+   </audit>
+   <iso>
+      <pos-transaction-time>081852</pos-transaction-time>
+      <pos-transaction-date>0213</pos-transaction-date>
+   </iso>
+   <provider-account-id>GN0000317A708D07</provider-account-id>
+</payment>
