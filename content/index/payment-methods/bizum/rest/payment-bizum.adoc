@@ -1,0 +1,453 @@
+[#API_PaymentBizum]
+== REST API
+
+Bizum is a type of Offline Bank Transfer.
+
+[#API_PaymentBizum_CountriesandCurrencies]
+=== Countries and Currencies
+
+* *Currencies*: EUR (Getnet is the acquirer and uses EUR, but the settlement bank currency may vary)
+* *Countries*: Bizum supports the countries shown in the following table:
+
+[width=75%,cols="3,3,3,3,3",stripes=none]
+|===
+| Afghanistan| Congo (the)| Hungary| Mozambique| Sint Maarten (Dutch part)
+| Albania| Cook Islands (the)| Iceland| Myanmar| Slovakia
+| Algeria| Costa Rica| India| Namibia| Slovenia
+| AmericanSamoa| Croatia| Indonesia| Nauru| Solomon Islands
+| Andorra| Cuba| Iran (Islamic Republic of)| Nepal| Somalia
+| Angola| Curaçao| Iraq| Netherlands (the)| South Africa
+| Anguilla| Cyprus| Ireland| New Caledonia| South Georgia and the SouthSandwichIslands
+| Antarctica| Czechia| Isle of Man| New Zealand| South Sudan
+| Antigua and Barbuda| Côte d'Ivoire| Israel| Nicaragua| Spain
+| Argentina| Denmark| Italy| Niger (the)| Sri Lanka
+| Armenia| Djibouti| Jamaica| Nigeria| Sudan (the)
+| Aruba| Dominica| Japan| Niue| Suriname
+| Australia| Dominican Republic (the)| Jersey| Norfolk Island| Svalbard and Jan Mayen
+| Austria| Ecuador| Jordan| North Macedonia| Sweden
+| Azerbaijan| Egypt| Kazakhstan| Northern Mariana Islands (the)| Switzerland
+| Bahamas (the)| El Salvador| Kenya| Norway| Syrian Arab Republic (the)
+| Bahrain| Equatorial Guinea| Kiribati| Oman| Taiwan (Province of China)
+| Bangladesh| Eritrea| Korea (the Democratic People's Republic of)| Pakistan| Tajikistan
+| Barbados| Estonia| Korea (the Republic of)| Palau| Tanzania, the United Republic of
+| Belarus| Eswatini| Kuwait| Palestine, State of| Thailand
+| Belgium| Ethiopia| Kyrgyzstan| Panama| Timor-Leste
+| Belize| Falkland Islands (the) [Malvinas]| Lao People's Democratic Republic (the)| Papua New Guinea| Togo
+| Benin| Faroe Islands (the)| Latvia| Paraguay| Tokelau
+| Bermuda| Fiji| Lebanon| Peru| Tonga
+| Bhutan| Finland| Lesotho| Philippines (the)| Trinidad and Tobago
+| Bolivia (Plurinational State of)| France| Liberia| Pitcairn| Tunisia
+| Bonaire, Sint Eustatius and Saba| French Guiana| Libya| Poland| Turkey
+| Bosnia and Herzegovina| French Polynesia| Liechtenstein| Portugal| Turkmenistan
+| Botswana| French Southern Territories (the)| Lithuania| Puerto Rico| Turks and Caicos Islands (the)
+| Bouvet Island| Gabon| Luxembourg| Qatar| Tuvalu
+| Brazil| Gambia (the)| Macao| Romania| Uganda
+| British Indian Ocean Territory (the)| Georgia| Madagascar| Russian Federation (the)| Ukraine
+| Brunei Darussalam| Germany| Malawi| Rwanda| United Arab Emirates (the)
+| Bulgaria| Ghana| Malaysia| Réunion| United Kingdom of Great Britain and Northern Ireland (the)
+| Burkina Faso| Gibraltar| Maldives| Saint Barthélemy| United States Minor Outlying Islands (the)
+| Burundi| Greece| Mali| Saint Helena, Ascension and Tristan da Cunha| United States of America (the)
+| Cabo Verde| Greenland| Malta| Saint Kitts and Nevis| Uruguay
+| Cambodia| Grenada| Marshall Islands (the)| Saint Lucia| Uzbekistan
+| Cameroon| Guadeloupe| Martinique| Saint Martin (French part)| Vanuatu
+| Canada| Guam| Mauritania| Saint Pierre and Miquelon| Venezuela (Bolivarian Republic of)
+| Cayman Islands (the)| Guatemala| Mauritius| Saint Vincent and the Grenadines| Viet Nam
+| Central African Republic (the)| Guernsey| Mayotte| Samoa| Virgin Islands (British)
+| Chad| Guinea| Mexico| San Marino| Virgin Islands (U.S.)
+| Chile| Guinea-Bissau| Micronesia (Federated States of)| Sao Tome and Principe| Wallis and Futuna
+| China| Guyana| Moldova (the Republic of)| Saudi Arabia| Western Sahara
+| Christmas Island| Haiti| Monaco| Senegal| Yemen
+| Cocos (Keeling) Islands (the)| Heard Island and McDonald Islands| Mongolia| Serbia| Zambia
+| Colombia| Holy See (the)| Montenegro| Seychelles| Zimbabwe
+| Comoros (the)| Honduras| Montserrat| Sierra Leone| Åland Islands
+| Congo (the Democratic Republic of the)| Hong Kong| Morocco| Singapore| 
+|===
+
+NOTE: You must be registered in the country used for the transaction and must have an account with Santander.
+
+[#API_PaymentBizum_Communication]
+=== Communication Formats
+
+This table illustrates how _Bizum_ notifications are encoded and which formats and methods can be
+used for requests and responses.
+
+[width=75%,stripes=none]
+|===
+.2+h| Requests/Responses | Format  | XML
+                         | Methods | POST
+   h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN_NotificationExamples>> to set up IPN.
+|===
+
+[#API_PaymentBizum_TransactionTypes]
+=== Transaction Types
+
+For <<Glossary_TransactionType, transaction type>> details which are not given here, go to <<AppendixB,  Transaction Types>>.
+
+
+[%autowidth.stretch,stripes=none, cols="e,,"]
+|===
+|Transaction Type | Description | Link to samples
+
+|get-url    |A step in a group of transactions where the URL of the Bizum landing page is retrieved for the consumer to be redirected to.
+                                |
+
+|authorization    |Used to confirm the status of the consumer’s authentication in Bizum. The transaction does not reserve the funds in the account.
+                                | <<API_PaymentBizum_Samples, authorization samples>>
+
+|capture-authorization |Used to debit the consumer’s account. Available only on successful ``authorization`` response. The capture can be for part of or the full authorized amount, but multiple capture requests for the same authorization are not allowed by Bizum. Capture requests can be sent within 30 days from the successful ``authorization`` response.
+                                | <<API_PaymentBizum_Samples, capture-authorization samples>>
+
+|refund-capture |Used to refund the funds to the consumer’s account. Available on a successful ``capture-authorization``. Partial and multiple refunds are allowed.
+                                | <<API_PaymentBizum_Samples, refund-capture samples>>
+
+|query / GET |Used to retrive a transaction, if you have any related information missing in your own records.  Returns the status and details of an ``authorization``, ``capture-authorization``, or ``refund-capture`` transaction.
+                                | <<API_PaymentBizum_Samples, query samples>>
+|===
+
+NOTE: You can also use the ``AUTO-SALE`` pseudo transaction type with the Bizum payment method. For more information, see <<GeneralPlatformFeatures_Transactions, transaction features>>.
+
+[#API_PaymentBizum_TestCredentials]
+=== Test Credentials
+
+[cols="h,"]
+[%autowidth]
+|===
+| *URL (Endpoint)*
+|``\https://{rest-api-test-apm-endpoint}``
+
+| *Merchant Account ID (MAID)*
+| 75237619-7053-439f-90c9-273b05cc254a
+
+| *Username*
+| 515401-NewTestMerchant
+
+| *Password*
+| 8qMW9HI40Hgr
+
+| *Secret Key*
+| 6ce8c641-145b-4607-9f45-3a18dbe073a5
+|===
+
+[#API_PaymentBizum_Workflow]
+=== Workflow
+
+[#API_PaymentBizum_Authorization]
+==== authorization
+
+INSERT IMAGE HERE
+
+1. Consumer initiates the checkout process.
+2. Merchant displays the supported payment methods to the consumer.
+3. Consumer selects Bizum as the payment method.
+4. Merchant sends an``authorization`` request to the Payment Gateway.
+5. The Payment Gateway generates the redirect URL.
+6. Merchant receives the redirect URL from the Payment Gateway.
+7. Consumer is redirected to the Bizum using the redirect URL.
+8. Consumer authenticates and validates the transaction with Bizum.
+9. Consumer is redirected to a processing page and the Payment Gateway is notified.
+10. The Payment Gateway queries the authorization status from Bizum.
+11. Consumer is redirected to the merchant’s shop by the Payment Gateway.
+12. Merchant displays the authorization status to the consumer.
+13. Merchant receives an authorization notification from the Payment Gateway.
+14. Merchant processes the transaction based on the notification.
+
+NOTE: In step 6, you must remove 'amp;' from the redirection URL provided in the ``authorization`` response before using the URL to redirect the consumer to Bizum.
+
+[#API_PaymentBizum_CaptureAuthorization]
+==== capture-authorization
+
+INSERT IMAGE HERE
+
+1. Merchant sends a ``capture-authorization`` request to the Payment Gateway.
+2. The Payment Gateway sends the ``capture-authorization`` request to Bizum.
+3. The Payment Gateway receives a ``capture-authorization`` response containing the capture status from Bizum.
+4. Merchant receives the ``capture-authorization`` response containing the capture status from the Payment Gateway.
+5. Merchant displays the capture status to the consumer.
+6. Merchant receives a capture notification from the Payment Gateway.
+7. Merchant processes the transaction based on the notification.
+
+[NOTE]
+====
+* Any ordered goods should be shipped to the consumer only after a successful capture is received in either step 4 or step 6.
+* Multiple capture requests for the same authorization are not allowed by Bizum. However, if your request fails with a 500.1110, 500.3123, 500.2200, or 500.1999 error, or with an error in the 400.XXXX range, you can fix your request based on what the error says and can resend the capture request. Otherwise, you must create a new authorization and capture it.
+====
+
+[#API_PaymentBizum_RefundCapture]
+==== refund-capture
+
+INSERT IMAGE HERE
+
+1. Consumer requests a refund from the merchant.
+2. Merchant sends a ``refund-capture`` request to the Payment Gateway.
+3. The Payment Gateway sends the ``refund-capture`` request to Bizum.
+4. The Payment Gateway receives a ``refund-capture`` response containing the refund status from Bizum.
+5. Merchant receives a ``refund-capture`` response containing the refund status from the Payment Gateway.
+6. Merchant displays the refund status to the consumer.
+7. Merchant receives an updated refund status from the Payment Gateway.
+8. Merchant processes the updated refund status based on the notification.
+
+[#API_PaymentBizum_Query]
+==== query
+
+INSERT IMAGE HERE
+
+1. Merchant sends a query request to the Payment Gateway.
+2. The Payment Gateway sends a getStatus request to Bizum.
+3. The Payment Gateway receives a getStatus response containing the payment status.
+4. Merchant receives the payment status from the Payment Gateway.
+5. Merchant updates the payment status in their system.
+6. Merchant receives an updated status notification from the Payment Gateway.
+7. Merchant processes the payment status in their system based on the notification.
+
+[#API_PaymentBizum_Fields]
+=== Fields
+
+The following elements are mandatory *M*, optional *O* or conditional
+*C* for sending a request for _Bizum_ (complete field
+list available in <<RestApi_Fields, REST API field list>>):
+
+[%autowidth.stretch,stripes=none, cols="v,,,,"]
+|===
+| Field  | Cardinality  | Datatype  | Size  | Description
+
+5+a|
+[[Bizum_Fields_Payment]]
+[discrete]
+==== payment
+
+|_merchant-account-id_
+|M
+|Alphanumeric
+|36
+|Unique identifier for a merchant account
+
+|_request-id_
+|M
+|Alphanumeric
+|150
+|This is the identification number of the request.
+*It has to be unique for each request.*
+
+|_transaction-type_
+|M
+|Alphanumeric
+|30
+|This is the type for a transaction: ``get-url``, ``authorization``, ``capture-authorization``, and ``refund-capture`` are supported for _Bizum_.
+
+|_requested-amount_
+|M
+|Numeric
+|18.3
+|This is the amount of the transaction. The amount of the decimal place depends on the currency.
+
+|_requested-amount@currency_
+|M
+|
+|
+|This is the currency of the transaction. Only ``EUR`` is allowed.
+
+|_descriptor_
+|C
+|Alphanumeric
+|64
+|This is the text representing an order on the consumer's bank statement. Mandatory for ``authorization`` transactions.
+
+|_order-detail_
+|O
+|Alphanumeric
+|65535
+|Details of the order filled by the merchant.
+
+|_order-number_
+|C
+|Alphanumeric
+|64
+|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed. Mandatory for ``authorization`` transactions but is optional for ``capture-authorization`` and ``refund-capture`` transactions. If used in ``capture-authorization`` or ``refund-capture`` transactions, it must match the order number used in the ``authorization`` request.
+
+|_ip-address_
+|C
+|Alphanumeric
+|45
+|The global (internet) IP address of the consumer’s device. For Bizum, this is the IP of the consumer's browser through which the redirection has or will be made. Mandatory for ``authorization`` transactions.
+
+|_parent-transaction-id_
+|C
+|Alphanumeric
+|36
+|Transaction ID of the first transaction of a payment. Mandatory for ``capture-authorization`` and ``refund-capture`` transactions. In ``refund-capture`` transactions, the value must match the transaction ID of the ``capture-authorization`` request.
+
+|_locale_
+|O
+|Alphanumeric
+|6
+a|Code of the language the Bizum web site is rendered in when the consumer is asked to validate the payment.
+Format can be either ``language`` or ``language_country``, and it is recommended to use one of the following values:
+
+* ``EN`` or ``EN_<any 2-character country code>``
+
+* ``DE`` or ``DE_DE``
+
+* ``FR`` or ``FR_FR``
+
+* ``IT`` or ``IT_IT``
+
+* ``PT`` or ``PT_PT``
+
+* ``CA`` or ``CA_ES``
+
+* ``VA`` or ``VA_ES``
+
+* ``GL`` or ``GL_ES``
+
+* ``EU`` or ``EU_ES``
+
+5+a|
+[[Bizum_Fields_PaymentMethods]]
+[discrete]
+==== payment-methods
+
+|_payment-methods.payment-method@name_
+|M
+|Alphanumeric
+|15
+|The name of the Payment Method is ``bizum``.
+
+5+a|
+[[Bizum_Fields_AccountHolder]]
+[discrete]
+==== account-holder
+
+|_account-holder.phone_
+|M
+|Alphanumeric
+|15
+|Phone number provided by the consumer. It must include the country code, for example, +380980874678.
+
+4+a|
+[[Bizum_Fields_Browser]]
+[discrete]
+==== browser
+
+|
+
+|_ip-address_
+|C
+|Alphanumeric
+|45
+|IP address of the consumer’s browser.
+Accepted format is IPv4.
+
+Mandatory for ``authorization`` requests and where
+
+1. ``deviceChannel`` = ``02`` (BRW) and
+
+2. where regionally acceptable.
+
+|===
+
+[#API_PaymentBizum_Samples]
+=== Samples
+
+Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
+
+[#API_PaymentBizum_Samples_Authorization]
+==== _authorization_
+
+.XML authorization Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_authorization_request_success.xml[]
+----
+
+.XML authorization Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_authorization_response_success.xml[]
+----
+
+.XML authorization Request (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_authorization_request_failure.xml[]
+----
+
+.XML authorization Response (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_authorization_response_failure.xml[]
+----
+
+[#API_PaymentBizum_Samples_CaptureAuthorization]
+==== _capture-authorization_
+
+.XML capture-authorization Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_capture_authorization_request_success.xml[]
+----
+
+.XML capture-authorization Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_capture_authorization_response_success.xml[]
+----
+
+.XML capture-authorization Request (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_capture_authorization_request_failure.xml[]
+----
+
+.XML capture-authorization Response (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_capture_authorization_response_failure.xml[]
+----
+
+[#API_PaymentBizum_Samples_RefundCapture]
+==== _refund-capture_
+
+.XML refund-capture Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_refund_capture_request_success.xml[]
+----
+
+.XML refund-capture Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_refund_capture_response_success.xml[]
+----
+
+.XML refund-capture Request (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_refund_capture_request_failure.xml[]
+----
+
+.XML refund-capture Response (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_refund_capture_response_failure.xml[]
+----
+
+[#API_PaymentBizum_Samples_Queries]
+==== Queries
+
+.XML Query Request for authorization
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_query_authorization_request.xml[]
+----
+
+.XML Query Response for authorization (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_query_authorization_response_success.xml[]
+----
+
+.XML Query Response for authorization (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_query_authorization_response_failure.xml[]
+----
