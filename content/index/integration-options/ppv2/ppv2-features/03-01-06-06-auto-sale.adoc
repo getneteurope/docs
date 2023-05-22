@@ -27,6 +27,7 @@ are the values used:
 |``paypal`` |``debit``
 |``sepadirectdebit`` |``debit``
 |``sofortbanking`` |``debit``
+|``bizum`` |``authorization``
 |===
 
 However, the transaction is not registered as ``auto-sale`` in the database, but as the default transaction type. Look at example request
