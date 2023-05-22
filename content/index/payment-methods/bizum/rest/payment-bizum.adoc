@@ -134,7 +134,7 @@ NOTE: You can also use the ``AUTO-SALE`` pseudo transaction type with the Bizum 
 [#API_PaymentBizum_Authorization]
 ==== authorization
 
-INSERT IMAGE HERE
+image::images/diagrams/bizum_rest_simple.jpg[Bizum REST API authorization workflow, width=950, align="center"]
 
 1. Consumer initiates the checkout process.
 2. Merchant displays the supported payment methods to the consumer.
@@ -156,7 +156,7 @@ NOTE: In step 6, you must remove 'amp;' from the redirection URL provided in the
 [#API_PaymentBizum_CaptureAuthorization]
 ==== capture-authorization
 
-INSERT IMAGE HERE
+image::images/diagrams/bizum_rest_capture.jpg[Bizum REST API capture authorization workflow, width=950, align="center"]
 
 1. Merchant sends a ``capture-authorization`` request to the Payment Gateway.
 2. The Payment Gateway sends the ``capture-authorization`` request to Bizum.
@@ -175,7 +175,7 @@ INSERT IMAGE HERE
 [#API_PaymentBizum_RefundCapture]
 ==== refund-capture
 
-INSERT IMAGE HERE
+image::images/diagrams/bizum_rest_refund.jpg[Bizum REST API refund workflow, width=950, align="center"]
 
 1. Consumer requests a refund from the merchant.
 2. Merchant sends a ``refund-capture`` request to the Payment Gateway.
@@ -189,7 +189,7 @@ INSERT IMAGE HERE
 [#API_PaymentBizum_Query]
 ==== query
 
-INSERT IMAGE HERE
+image::images/diagrams/bizum_rest_query.jpg[Bizum REST API query workflow, width=950, align="center"]
 
 1. Merchant sends a query request to the Payment Gateway.
 2. The Payment Gateway sends a getStatus request to Bizum.
