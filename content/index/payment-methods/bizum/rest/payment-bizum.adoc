@@ -151,7 +151,19 @@ image::images/diagrams/bizum_rest_simple.jpg[Bizum REST API authorization workfl
 13. Merchant receives an authorization notification from the Payment Gateway.
 14. Merchant processes the transaction based on the notification.
 
-NOTE: In step 6, you must remove 'amp;' from the redirection URL provided in the ``authorization`` response before using the URL to redirect the consumer to Bizum.
+[NOTE]
+====
+In step 6, you must remove 'amp;' from the redirection URL provided in the ``authorization`` response before using the URL to redirect the consumer to Bizum. For example:
+
+* Before removing 'amp;':
+
+  http://localhost:9301/bizum/c2er-web/services/autenticacion/solicitud/primer_factor?id=XBXQONT9YWBD5NSAZLXEA4ZZD1MKZKUAV7K8MI8OAUAPA68E&amp;sid=56b5aed9-77a4-4469-8836-19da2cd02b4d&amp;cn=0004&amp;service=PNX
+
+* After removing 'amp;':
+
+  http://localhost:9301/bizum/c2er-web/services/autenticacion/solicitud/primer_factor?id=XBXQONT9YWBD5NSAZLXEA4ZZD1MKZKUAV7K8MI8OAUAPA68E&sid=56b5aed9-77a4-4469-8836-19da2cd02b4d&cn=0004&service=PNX
+
+====
 
 [#API_PaymentBizum_CaptureAuthorization]
 ==== capture-authorization
@@ -197,7 +209,7 @@ image::images/diagrams/bizum_rest_query.jpg[Bizum REST API query workflow, width
 4. Merchant receives the payment status from the Payment Gateway.
 5. Merchant updates the payment status in their system.
 6. Merchant receives an updated status notification from the Payment Gateway.
-7. Merchant processes the payment status in their system based on the notification.
+7. Merchant processes the payment status based on the notification.
 
 [#API_PaymentBizum_Fields]
 === Fields
@@ -262,7 +274,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |C
 |Alphanumeric
 |64
-|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed. Mandatory for ``authorization`` transactions but is optional for ``capture-authorization`` and ``refund-capture`` transactions. If used in ``capture-authorization`` or ``refund-capture`` transactions, it must match the order number used in the ``authorization`` request.
+|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed. Mandatory for ``authorization`` transactions but optional for ``capture-authorization`` and ``refund-capture`` transactions. If used in ``capture-authorization`` or ``refund-capture`` transactions, it must match the order number used in the ``authorization`` request.
 
 |_ip-address_
 |C
@@ -375,6 +387,12 @@ include::{root}/samples/xml/bizum_authorization_request_failure.xml[]
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/bizum_authorization_response_failure.xml[]
+----
+
+.XML authorization Notification (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/bizum_authorization_notification_success.xml[]
 ----
 
 [#API_PaymentBizum_Samples_CaptureAuthorization]
