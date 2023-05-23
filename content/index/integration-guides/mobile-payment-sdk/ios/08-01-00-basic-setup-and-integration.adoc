@@ -12,7 +12,7 @@ With this modular approach, you can pick and choose what you need: a few payment
 Below, we will briefly go through the basic requirements/dependencies, but also code examples for client initialization and processing the payment response on your end.
 
 [#MobilePaymentSDK_iOS_System_Requirements]
-The minimal requirement deployment target is 11.0.
+The minimal requirement deployment target is 12.0.
 
 [#MobilePaymentSDK_iOS_BasicSetup]
 ---
