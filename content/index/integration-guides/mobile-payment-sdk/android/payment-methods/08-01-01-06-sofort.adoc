@@ -112,8 +112,6 @@ This affects all the modules, except `cardField`.
 
 ==== Customizing Sofort Payments
 
-[.image]##
-
 *Color Resources*
 
 1 - `sdkpay_ecom_color_main`
