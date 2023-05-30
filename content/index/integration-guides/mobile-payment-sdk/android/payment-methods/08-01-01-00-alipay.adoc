@@ -116,8 +116,6 @@ This affects all the modules, except `cardField`.
 
 ==== Customizing ALIPAY Payments
 
-[.image]##
-
 *Color Resources*
 
 1 - `sdkpay_ecom_color_main`

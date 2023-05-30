@@ -1,6 +1,6 @@
-[#MobilePaymentSDK_Android_P24]
+[#MobilePaymentSDK_Android_Sofort]
 ---
-== *P24 (Przelewy24)*
+== *Sofort*
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---
@@ -8,11 +8,7 @@ This payment method supports the following
 https://docs.getneteurope.com/AppendixB.html[transaction
 types]:
 
-*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
-
 *`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
-
-*`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
 
 === Module Dependency Edit your
 `build.gradle` file accordingly:
@@ -22,53 +18,52 @@ types]:
 dependencies {
     ...
     implementation files('libs/core.aar')
-    implementation files('libs/p24.aar')
+    implementation files('libs/sofort.aar')
     ...
 }
 ----
+
+When adding/removing this feature, perform a full clean build.
 
 === Signature
 
 Application shall get signature from server where signature shall be
 computed.
 
-=== Simple P24 Payment
+=== Simple Sofort Payment
 
-This is a code example for a basic P24 payment:
+This is a code example for a basic Sofort payment:
 
 [source,kotlin]
 ----
-val p24Payment = P24Payment(
-        signature = signature,
-        requestID = requestID,
-        merchantAccountId = merchantAccountId,
-        transactionType = transactionType,
-        amount = amount,
-        currency = currency,
-        accountHolder = accountHolder,
-        descriptor = null,
+val sofortPayment = SofortPayment(
+        signature = signature
+        requestID = requestID
+        merchantAccountId = merchantAccountId
+        transactionType = transactionType
+        amount = amount
+        currency = currency
+        accountHolder = accountHolder
+        orderNumber = null
+        descriptor = null
 )
  
-Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(p24Payment)
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(sofortPayment)
 ----
 
 [source,java]
 ----
-p24Payment = new P24Payment.Builder()
+sofortPayment = new SofortPayment.Builder()
         .setSignature(signature)
         .setMerchantAccountId(merchantId)
         .setRequestId(requestId)
         .setTransactionType(transactionType)
         .setAmount(amount)
         .setCurrency(currency)
-        .setAccountHolder(new AccountHolder(
-                "Firstname",
-                "Lastname",
-                "email@mail.com"
-        ))
+        .setAccountHolder(new AccountHolder(null, "Lastname"))
         .build();
  
-new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(p24Payment);
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(sofortPayment);
 ----
 
 You can use Builder to create the payment object and set additional
@@ -115,7 +110,7 @@ To change fonts, override the font path to in string resources with name
 To change the text size use dimensional attribute `sdkpay_ecom_text_size`.
 This affects all the modules, except `cardField`.
 
-==== Customizing WIRETRANSFER Payments
+==== Customizing Sofort Payments
 
 *Color Resources*
 
@@ -132,13 +127,3 @@ This affects all the modules, except `cardField`.
 6 - `sdkpay_ecom_color_error`
 
 7 - `sdkpay_ecom_color_main_background`
-
-*Icons*
-
-8 - `sdkpay_ecom_arrow_back`
-
-9 - `sdkpay_ecom_cardholder_name`
-
-10 - `sdkpay_ecom_iban_3`
-
-11 - `sdkpay_ecom_camera_blue`
