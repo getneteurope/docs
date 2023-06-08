@@ -18,8 +18,7 @@ The minimal requirement deployment target is 12.0.
 ---
 === Basic Setup
 ---
-The device cannot be jail-broken and must run at least iOS 12.0 for
-_paymentSDK_ to work. It is recommended to use the latest stable version
+The device cannot be jail-broken. It is recommended to use the latest stable version
 of Xcode.
 
 Download the pod at
