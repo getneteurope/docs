@@ -4,7 +4,7 @@
 
 :payment-method-name: Bizum
 
-_Bizum_ is a free payment system supported by most Spanish banks that allows consumers who have an account with the bank to make payments. Before using the Bizum payment method, consumers must first https://www.bancosantander.es/en/particulares/banca-online/apps/santander[install the Santander app] and https://www.bancosantander.es/en/particulares/banca-online/pagos/bizum/clave-bizum[obtain their Bizum password]. When using Bizum, consumers are redirected to Bizum to verify and complete their payments. For more information on Bizum, see https://www.bancosantander.es/en/particulares/banca-online/pagos/bizum.
+_Bizum_ is a free payment system supported by most Spanish banks that allows consumers who have an account with the bank to make payments. Before using the Bizum payment method, consumers must first https://www.bancosantander.es/en/particulares/banca-online/apps/santander[install the Santander app] and https://www.bancosantander.es/en/particulares/banca-online/pagos/bizum/clave-bizum[obtain their Bizum password]. When using Bizum, consumers are redirected to Bizum to verify and complete their payments using either their Santander app or Bizum password. For more information on Bizum, see https://www.bancosantander.es/en/particulares/banca-online/pagos/bizum.
 
 _Bizum_ is a type of Offline Bank Transfer and can be used by all 3 Payment Page implementations (Hosted Payment Page, Embedded Payment Page, and Seamless).
 
@@ -69,6 +69,8 @@ For a successful transaction:
 . Redirect the consumer to the payment page (initial response URL).
 . Highly recommended: Parse and process the payment response.
 
+NOTE: You can also use the ``AUTO-SALE`` pseudo transaction type with the Bizum payment method. For more information, see <<GeneralPlatformFeatures_Transactions, transaction features>>.
+
 //-
 
 
@@ -124,15 +126,15 @@ a|The requested transaction type. Available transaction types for _{payment-meth
 
 4+|order-number
 |String
-|Optional
+|Mandatory
 |36
-a|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed. If you are using the ``auto-sale`` transaction type, this field is mandatory.
+a|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed.
 
 4+|descriptor
 |String
-|Optional
+|Mandatory
 |36
-a|The description of the transaction displayed on the consumer’s statement. If you are using the ``auto-sale`` transaction type, this field is mandatory.
+a|The description of the transaction displayed on the consumer’s statement.
 
 //-
 
@@ -162,9 +164,9 @@ m|payment-method
 .2+m|account-holder
 3+m|phone
 |String
-|Mandatory
+|Optional
 |32
-|The phone number of the consumer.
+|The phone number of the consumer. If omitted from the request, the customer can provide the value on the Payment Page.
 
 3+m|email
 |String
@@ -175,9 +177,9 @@ m|payment-method
 .2+m|browser
 3+m|ip-address
 |String
-|Mandatory
+|Optional
 |45
-|IP address of the consumer’s browser. Accepted format is IPv4.
+|IP address of the consumer’s browser. Accepted format is IPv4. If omitted from the request, the Payment Page automatically collects the IP address from the customer's device.
 
 3+m|user-agent
 |String
@@ -198,19 +200,19 @@ Typically used in conjunction with Hosted Payment Page.
 
 4+|success-redirect-url
 |String
-|Mandatory
+|Optional
 |256
 |The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``.
 
 4+|cancel-redirect-url
 |String
-|Mandatory
+|Optional
 |256
 |The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``.
 
 4+|fail-redirect-url
 |String
-|Mandatory
+|Optional
 |256
 |The URL to which the consumer is redirected after an unsuccessful payment, e.g. ``\https://{pp-redirect-url-error}``.
 |===
