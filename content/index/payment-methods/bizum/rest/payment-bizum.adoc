@@ -75,7 +75,7 @@ used for requests and responses.
 |===
 .2+h| Requests/Responses | Format  | XML
                          | Methods | POST
-   h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN_NotificationExamples>> to set up IPN.
+   h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN>> to set up IPN.
 |===
 
 [#API_PaymentBizum_TransactionTypes]
@@ -94,10 +94,10 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 |authorization    |Used to confirm the status of the consumer’s authentication in Bizum. The transaction does not reserve the funds in the account.
                                 | <<API_PaymentBizum_Samples, authorization samples>>
 
-|capture-authorization |Used to debit the consumer’s account. Available only on successful ``authorization`` response. The capture can be for part of or the full authorized amount, but multiple capture requests for the same authorization are not allowed by Bizum. Capture requests can be sent within 30 days from the successful ``authorization`` response.
+|capture-authorization |Used to debit the consumer’s account. Available only on successful ``authorization`` response. The capture can be for part of or the full authorized amount, but multiple capture requests for the same authorization are not allowed by Bizum. Capture requests can be sent within 30 calendar days from the successful ``authorization`` response.
                                 | <<API_PaymentBizum_Samples, capture-authorization samples>>
 
-|refund-capture |Used to refund the funds to the consumer’s account. Available on a successful ``capture-authorization``. Partial and multiple refunds are allowed.
+|refund-capture |Used to refund the funds to the consumer’s account. Available on a successful ``capture-authorization``. Partial and multiple refunds are allowed. Refund requests can be sent within 365 calendar days from the successful ``capture-authorization`` response.
                                 | <<API_PaymentBizum_Samples, refund-capture samples>>
 
 |query / GET |Used to retrive a transaction, if you have any related information missing in your own records.  Returns the status and details of an ``authorization``, ``capture-authorization``, or ``refund-capture`` transaction.
@@ -109,23 +109,18 @@ NOTE: You can also use the ``AUTO-SALE`` pseudo transaction type with the Bizum 
 [#API_PaymentBizum_TestCredentials]
 === Test Credentials
 
-[cols="h,"]
-[%autowidth]
+[%autowidth.stretch,stripes=none]
 |===
-| *URL (Endpoint)*
-|``\https://{rest-api-test-apm-endpoint}``
-
-| *Merchant Account ID (MAID)*
-| 75237619-7053-439f-90c9-273b05cc254a
-
-| *Username*
-| 515401-NewTestMerchant
-
-| *Password*
-| 8qMW9HI40Hgr
-
-| *Secret Key*
-| 6ce8c641-145b-4607-9f45-3a18dbe073a5
+.2+h|URL(s) Endpoints |For the transaction type _authorization_: |``\https://{rest-api-test-apm-endpoint}``
+|For the transaction types _capture-authorization_ and _refund-capture_: |``\https://{rest-api-test-endpoint}``
+h|Merchant Account ID (MAID)
+2+| 75237619-7053-439f-90c9-273b05cc254a
+h|Username
+2+| 515401-NewTestMerchant
+h|Password
+2+| 8qMW9HI40Hgr
+h| *Secret Key*
+2+| 6ce8c641-145b-4607-9f45-3a18dbe073a5
 |===
 
 [#API_PaymentBizum_Workflow]
@@ -262,7 +257,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |C
 |Alphanumeric
 |64
-|This is the text representing an order on the consumer's bank statement. Mandatory for ``authorization`` transactions.
+|This is the text representing an order on the consumer's bank statement. Mandatory for ``authorization`` and ``auto-sale`` transactions.
 
 |_order-detail_
 |O
@@ -274,13 +269,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |C
 |Alphanumeric
 |64
-|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed. Mandatory for ``authorization`` transactions but optional for ``capture-authorization`` and ``refund-capture`` transactions. If used in ``capture-authorization`` or ``refund-capture`` transactions, it must match the order number used in the ``authorization`` request.
-
-|_ip-address_
-|C
-|Alphanumeric
-|45
-|The global (internet) IP address of the consumer’s device. For Bizum, this is the IP of the consumer's browser through which the redirection has or will be made. Mandatory for ``authorization`` transactions.
+|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed. Mandatory for ``authorization`` and ``auto-sale`` transactions but optional for ``capture-authorization`` and ``refund-capture`` transactions. If used in ``capture-authorization`` or ``refund-capture`` transactions, it must match the order number used in the ``authorization`` request.
 
 |_parent-transaction-id_
 |C
@@ -343,17 +332,10 @@ Format can be either ``language`` or ``language_country``, and it is recommended
 |
 
 |_ip-address_
-|C
+|M
 |Alphanumeric
 |45
-|IP address of the consumer’s browser.
-Accepted format is IPv4.
-
-Mandatory for ``authorization`` requests and where
-
-1. ``deviceChannel`` = ``02`` (BRW) and
-
-2. where regionally acceptable.
+|The global (internet) IP address of the consumer’s device. For Bizum, this is the IP of the consumer's browser through which the redirection has been or will be made.
 
 |===
 
