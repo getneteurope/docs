@@ -166,12 +166,11 @@ In step 6, you must remove 'amp;' from the redirection URL provided in the ``aut
 image::images/diagrams/bizum_rest_capture.jpg[Bizum REST API capture authorization workflow, width=950, align="center"]
 
 1. Merchant sends a ``capture-authorization`` request to the Payment Gateway.
-2. The Payment Gateway sends the ``capture-authorization`` request to Bizum.
-3. The Payment Gateway receives a ``capture-authorization`` response containing the capture status from Bizum.
-4. Merchant receives the ``capture-authorization`` response containing the capture status from the Payment Gateway.
-5. Merchant displays the capture status to the consumer.
-6. Merchant receives a capture notification from the Payment Gateway.
-7. Merchant processes the transaction based on the notification.
+2. The Payment Gateway sends the ``capture-authorization`` request to Bizum and processes the response containing the capture status.
+3. Merchant receives the ``capture-authorization`` response containing the capture status from the Payment Gateway.
+4. Merchant displays the capture status to the consumer.
+5. Merchant receives a capture notification from the Payment Gateway.
+6. Merchant processes the transaction based on the notification.
 
 [NOTE]
 ====
@@ -186,12 +185,11 @@ image::images/diagrams/bizum_rest_refund.jpg[Bizum REST API refund workflow, wid
 
 1. Consumer requests a refund from the merchant.
 2. Merchant sends a ``refund-capture`` request to the Payment Gateway.
-3. The Payment Gateway sends the ``refund-capture`` request to Bizum.
-4. The Payment Gateway receives a ``refund-capture`` response containing the refund status from Bizum.
-5. Merchant receives a ``refund-capture`` response containing the refund status from the Payment Gateway.
-6. Merchant displays the refund status to the consumer.
-7. Merchant receives an updated refund status from the Payment Gateway.
-8. Merchant processes the updated refund status based on the notification.
+3. The Payment Gateway sends the ``refund-capture`` request to Bizum and processes the response containing the refund status.
+4. Merchant receives a ``refund-capture`` response containing the refund status from the Payment Gateway.
+5. Merchant displays the refund status to the consumer.
+6. Merchant receives an updated refund status from the Payment Gateway.
+7. Merchant processes the updated refund status based on the notification.
 
 [#API_PaymentBizum_Query]
 ==== query
@@ -199,12 +197,11 @@ image::images/diagrams/bizum_rest_refund.jpg[Bizum REST API refund workflow, wid
 image::images/diagrams/bizum_rest_query.jpg[Bizum REST API query workflow, width=950, align="center"]
 
 1. Merchant sends a query request to the Payment Gateway.
-2. The Payment Gateway sends a getStatus request to Bizum.
-3. The Payment Gateway receives a getStatus response containing the payment status.
-4. Merchant receives the payment status from the Payment Gateway.
-5. Merchant updates the payment status in their system.
-6. Merchant receives an updated status notification from the Payment Gateway.
-7. Merchant processes the payment status based on the notification.
+2. The Payment Gateway sends a getStatus request to Bizum and processes the response containing the payment status.
+3. Merchant receives the payment status from the Payment Gateway.
+4. Merchant updates the payment status in their system.
+5. Merchant receives an updated status notification from the Payment Gateway.
+6. Merchant processes the payment status based on the notification.
 
 [#API_PaymentBizum_Fields]
 === Fields
