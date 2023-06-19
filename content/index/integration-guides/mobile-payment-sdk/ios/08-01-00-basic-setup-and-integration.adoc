@@ -32,7 +32,7 @@ The iOS supports two ways of MPSDK usage:
 .For example:
 [source,subs=attributes+]
 ----
-pod 'mobilePaymentSDK/All'
+pod 'Getnet/All'
 ----
 
 - The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
@@ -40,8 +40,8 @@ pod 'mobilePaymentSDK/All'
 .For example:
 [source,subs=attributes+]
 ----
-pod 'mobilePaymentSDK/Card' 
-pod 'mobilePaymentSDK/SEPA'
+pod 'Getnet/Card' 
+pod 'Getnet/SEPA'
 ----
 
 [#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
@@ -56,43 +56,43 @@ pod 'mobilePaymentSDK/SEPA'
 
 |Alipay (Cross Border)
 |alipay payment frameworks
-|pod 'mobilePaymentSDK/Alipay' 
+|pod 'Getnet/Alipay' 
 
 |Card
 |Credit Card payment frameworks
-|pod 'mobilePaymentSDK/Card' 
+|pod 'Getnet/Card' 
 
 |PayPal
 |PayPal payment frameworks
-|pod 'mobilePaymentSDK/PayPal' 
+|pod 'Getnet/PayPal' 
 
 |P24 (Przelewy24)
 |P24 payment frameworks
-|pod 'mobilePaymentSDK/P24' 
+|pod 'Getnet/P24' 
 
 |SEPA (Direct Debit)
 |SEPA payment frameworks
-|pod 'mobilePaymentSDK/SEPA' 
+|pod 'Getnet/SEPA' 
 
 |WireTransfer
 |Wire-Transfer payment frameworks
-|pod 'mobilePaymentSDK/WireTransfer' 
+|pod 'Getnet/WireTransfer' 
 
 |Sofort
 |Sofort payment frameworks
-|pod 'mobilePaymentSDK/Sofort' 
+|pod 'Getnet/Sofort' 
 
 |RatePay
 |RatePay payments frameworks
-|pod 'mobilePaymentSDK/RatePay'
+|pod 'Getnet/RatePay'
 
 |Bizum
 |Bizum payments frameworks
-|pod 'mobilePaymentSDK/Bizum'
+|pod 'Getnet/Bizum'
 
 |Blick
 |Blick payments frameworks
-|pod 'mobilePaymentSDK/Blick'
+|pod 'Getnet/Blick'
 |===
 
 //-
@@ -105,27 +105,27 @@ pod 'mobilePaymentSDK/SEPA'
 
 |Scanner
 |Card scanner framework
-|pod 'mobilePaymentSDK/Scanner' 
+|pod 'Getnet/Scanner' 
 
 |PhotoGallery
 |Photo Gallery frameworks
-|pod 'mobilePaymentSDK/PhotoGallery' 
+|pod 'Getnet/PhotoGallery' 
 
 |CardScanner
 |Credit Card payment frameworks with card scanner
-|pod 'mobilePaymentSDK/CardScanner' 
+|pod 'Getnet/CardScanner' 
 
 |CardScannerGallery
 |Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
-|pod 'mobilePaymentSDK/CardScannerGallery' 
+|pod 'Getnet/CardScannerGallery' 
 
 |IBANScanner
 |SEPA payment frameworks with IBAN scanner
-|pod 'mobilePaymentSDK/IBANScanner' 
+|pod 'Getnet/IBANScanner' 
 
 |IBANScannerGallery
 |SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
-|pod 'mobilePaymentSDK/IBANScannerGallery'  
+|pod 'Getnet/IBANScannerGallery'  
 
 |===  
         
