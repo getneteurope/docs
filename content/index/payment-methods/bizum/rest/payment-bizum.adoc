@@ -7,7 +7,11 @@ Bizum is a type of Offline Bank Transfer.
 === Countries and Currencies
 
 * *Currencies*: EUR (Getnet is the acquirer and uses EUR, but the settlement bank currency may vary)
-* *Countries*: Bizum supports the countries shown in the following table:
+* *Countries*: Bizum supports the countries shown in the following collapsible table:
+
+.Click to show the supported countries
+[%collapsible]
+====
 
 [width=75%,cols="3,3,3,3,3",stripes=none]
 |===
@@ -62,6 +66,8 @@ Bizum is a type of Offline Bank Transfer.
 | Comoros (the)| Honduras| Montserrat| Sierra Leone| Åland Islands
 | Congo (the Democratic Republic of the)| Hong Kong| Morocco| Singapore| 
 |===
+
+====
 
 NOTE: You must be registered in the country used for the transaction and must have an account with Santander.
 
@@ -188,8 +194,8 @@ image::images/diagrams/bizum_rest_refund.jpg[Bizum REST API refund workflow, wid
 3. The Payment Gateway sends the ``refund-capture`` request to Bizum and processes the response containing the refund status.
 4. Merchant receives a ``refund-capture`` response containing the refund status from the Payment Gateway.
 5. Merchant displays the refund status to the consumer.
-6. Merchant receives an updated refund status from the Payment Gateway.
-7. Merchant processes the updated refund status based on the notification.
+6. Merchant receives a refund notification from the Payment Gateway.
+7. Merchant processes the notification and updates the refund status if the ``refund-capture`` response from the Payment Gateway was missing in step 4.
 
 [#API_PaymentBizum_Query]
 ==== query
@@ -200,7 +206,7 @@ image::images/diagrams/bizum_rest_query.jpg[Bizum REST API query workflow, width
 2. The Payment Gateway sends a getStatus request to Bizum and processes the response containing the payment status.
 3. Merchant receives the payment status from the Payment Gateway.
 4. Merchant updates the payment status in their system.
-5. Merchant receives an updated status notification from the Payment Gateway.
+5. Merchant receives a status notification from the Payment Gateway.
 6. Merchant processes the payment status based on the notification.
 
 [#API_PaymentBizum_Fields]
