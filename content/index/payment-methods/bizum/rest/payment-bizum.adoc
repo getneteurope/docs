@@ -176,7 +176,7 @@ image::images/diagrams/bizum_rest_capture.jpg[Bizum REST API capture authorizati
 3. Merchant receives the ``capture-authorization`` response containing the capture status from the Payment Gateway.
 4. Merchant displays the capture status to the consumer.
 5. Merchant receives a capture notification from the Payment Gateway.
-6. Merchant processes the transaction based on the notification.
+6. Merchant processes the notification and updates the capture status if the ``capture-authorization`` response from the Payment Gateway was missing in step 3.
 
 [NOTE]
 ====
