@@ -86,6 +86,23 @@ pod 'mobilePaymentSDK/SEPA'
 |RatePay
 |RatePay payments frameworks
 |pod 'mobilePaymentSDK/RatePay' 
+
+|Ideal
+|Ideal payments frameworks
+|pod 'mobilePaymentSDK/Ideal'
+
+MBWay
+|MBWay payments frameworks
+|pod 'mobilePaymentSDK/MBWay'
+
+Zinia
+|Zinia payments frameworks
+|pod 'mobilePaymentSDK/Zinia'
+
+MBReferencia
+|MB Referencia (Multibanco) payments frameworks
+|pod 'mobilePaymentSDK/MBReferencia'
+
 |===
 
 //-

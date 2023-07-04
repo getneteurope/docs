@@ -1,0 +1,153 @@
+
+[#MobilePaymentSDK_iOS_Zinia]
+---
+== *Zinia*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+[#MobilePaymentSDK_iOS_Zinia_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_Zinia_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/Zinia',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_Zinia_basic_payment]
+==== Zinia Payment
+
+This is a code example for a basic Zinia payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECZiniaPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.authorization
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "john.doe@email.com"
+   accountHolder.phone = "+731675329"
+   accountHolder.gender = SDKPayECGender.female
+   accountHolder.dateOfBirth = Date(timeIntervalSince1970: TimeInterval(arc4random() % 1000000000))
+
+   let address = SDKPayECAddress()
+   address.country = SDKPayECCountry.DE
+   address.city = "Testhausen"
+   address.postalCode = "13353"
+   address.state = "DE"
+   address.street1 = "Nicht Versenden Str. 5"
+
+   accountHolder.address = address
+    
+   payment.accountHolder = accountHolder
+   
+   let orderItem = SDKPayECOrderItem()
+   orderItem.name = "The Watch"
+   orderItem.amount = AMOUNT;
+   orderItem.amountCurrency = .EUR;
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = [orderItem]
+
+   payment.order = order
+   
+   let notif = SDKPayECNotification.init()
+   notif.transactionState = SDKPayECTransactionState.success
+   payment.notifications = [notif]
+        
+  
+```
+----
+
+
+[TIP]
+====
+You can use payment object to create the payment object and set additional properties afterwards.
+
+In case of providing all mandatory fields, payment flow starts directly, otherwise user will be redirected to screen where all mandatory and optional data can be entered.
+
+In case shipping address is not provided, billing address will be used as shipping address.
+====
+
+//-
+[#MobilePaymentSDK_iOS_Zinia_Fields]
+=== *Zinia Fields*
+[arabic]
+. Order number (mandatory)
+. Order items (mandatory)
+. Account holder
+* First Name
+* Last Name
+* Email
+* Billing address details
+** Street Name
+** House Number
+** House extension (optional)
+** Block number  (optional)
+** Level (optional)
+** Unit (optional)
+** City
+** State/region (optional)
+** Postal Code
+** Country
+. Shipping address
+* First Name
+* Last Name
+* Street Name
+* House Number
+* House extension (optional)
+* Block number  (optional)
+* Level (optional)
+* Unit (optional)
+* City
+* State/region (optional)
+* Postal Code
+* Country
+
+
+[#MobilePaymentSDK_iOS_Zinia_Visualisaton]
+=== Visualisation
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-1.png[Zinia Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-2.png[Zinia Screen, align=center, width=240, height=420]
+
+|===
+//-

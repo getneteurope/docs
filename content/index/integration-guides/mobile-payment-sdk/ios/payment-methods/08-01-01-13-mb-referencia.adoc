@@ -1,0 +1,88 @@
+
+[#MobilePaymentSDK_iOS_Multibanco]
+---
+== *MB Referencia (Multibanco)*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypePendingDebit`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed..
+
+[#MobilePaymentSDK_iOS_Multibanco_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_Multibanco_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/MBReferencia',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_Multibanco_basic_payment]
+==== MB Referencia Payment
+
+This is a code example for a basic MB Referencia payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECMBReferenciaPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.pendingDebit
+
+   
+   let order = SDKPayECOrder.init()
+   order.descriptor = "Descriptor"
+   payment.order = [order]
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<API_Multibanco_Fields, MB Referencia>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_Multibanco_Visualisaton]
+=== Visualisation
+---
+
+[NOTE]
+====
+Visualization of MB Referencia result is up to the merchant applicaton. SDK returns 
+
+* *Entity* (which is payment.sub-merchant-info.payment-facilitator-id in the response)
+* *Reference* (which is provider-transaction-reference-id in the response)
+* *Amount* (which is requested-amount in the response)
+* *Expiration date of reference* (which is expiration-date (in UTC) in the response) as additional information so a Consumer would know the due date of the payment
+* *and others parameters* in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
+
+//-
