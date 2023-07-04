@@ -43,7 +43,8 @@ val mbReferenciaPayment = MbreferenciaPayment(
         transactionType = transactionType
         amount = amount
         currency = currency,
-        descriptor = descriptor
+        descriptor = descriptor,
+        expirationDate = expirationDate
 )
  
 Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(mbReferenciaPayment)
@@ -59,6 +60,7 @@ mbReferenciaPayment = new MbreferenciaPayment.Builder()
         .setAmount(amount)
         .setCurrency(currency)
         .setDescriptor(descriptor)
+        .setExpirationDate(expirationDate)
         .build();
 
 new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(mbReferenciaPayment);
