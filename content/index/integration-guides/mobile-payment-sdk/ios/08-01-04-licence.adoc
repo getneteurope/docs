@@ -4,7 +4,7 @@
 == *License*
 ---
 
-=== Payment SDK – MIT License |Open Source
+=== Mobile Payment SDK – MIT License |Open Source
 ---
 
 Recitals: PagoNxt will offer the payment SDK free of charge, to any person obtaining a copy of this software and associated documentation files under the conditions below. User has to verify the effects of Payment SDK on the implemented environment and will do that at its own risk. Digital downloads are software products. Their contents are protected under copyright and intellectual property law.
@@ -33,5 +33,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking/blob/master/LICENSE) - MIT Licence
 * [IBAN](https://github.com/stefan-sedlak/IBAN/blob/master/LICENSE) - BSD 2-Clause "Simplified" License
 * [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
-* [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
-* [Mantle](https://github.com/Mantle/Mantle/blob/master/LICENSE.md) - MIT Licence
+* [MaterialComponents](https://github.com/material-components/material-components-ios/blob/develop/LICENSE) -  Apache Licence 2.0

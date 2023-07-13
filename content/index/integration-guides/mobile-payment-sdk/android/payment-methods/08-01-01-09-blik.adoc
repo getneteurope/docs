@@ -1,0 +1,177 @@
+[#MobilePaymentSDK_Android_Blik]
+---
+== *Blik*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+*`TransactionType.DEBIT`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+=== Module Dependency Edit your
+`build.gradle` file accordingly:
+
+[source,java]
+----
+dependencies {
+    ...
+    implementation files('libs/core.aar')
+    implementation files('libs/blik.aar')
+    ...
+}
+----
+
+Blik module contains two payment types:
+Blik Level0
+Blik Redirect
+
+When adding/removing this feature, perform a full clean build.
+
+=== Signature
+
+Application shall get signature from server where signature shall be
+computed.
+
+=== Simple Blik Level0 Payment
+
+This is a code example for a basic Blik Level0 payment:
+
+[source,kotlin]
+----
+val blikPayment = BlikLevel0Payment(
+        signature = signature,
+        requestID = requestID,
+        merchantAccountId = merchantAccountId,
+        transactionType = transactionType,
+        amount = amount,
+        currency = "PLN",
+        accountHolder = accountHolder,
+        orderNumber = orderNumber,
+        descriptor = descriptor,
+)
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(blikPayment)
+----
+
+[source,java]
+----
+BlikLevel0Payment blikPayment = new BlikLevel0Payment.Builder()
+        .setSignature(signature)
+        .setRequestId(requestId)
+        .setMerchantAccountId(merchantID)
+        .setTransactionType(transactionType)
+        .setAmount(amount)
+        .setCurrency("PLN")
+        .setAccountHolder(new AccountHolder(
+            "email"
+        ))
+        .setOrderNumber("18040037092713285")
+        .setDescriptor("DESC180099798888")
+        .build()
+
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(blikPayment);
+----
+
+You can use Builder to create the payment object and set additional
+properties afterwards.
+
+=== Simple Blik Redirect Payment
+
+This is a code example for a basic Blik Redirect payment:
+
+[source,kotlin]
+----
+val blikPayment = BlikRedirectPayment(
+        signature = signature,
+        requestID = requestID,
+        merchantAccountId = merchantAccountId,
+        transactionType = transactionType,
+        amount = amount,
+        currency = "PLN",
+        accountHolder = accountHolder,
+        orderNumber = orderNumber,
+        descriptor = descriptor,
+)
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(blikPayment)
+----
+
+[source,java]
+----
+BlikRedirectPayment blikPayment = new BlikRedirectPayment.Builder()
+        .setSignature(signature)
+        .setRequestId(requestId)
+        .setMerchantAccountId(merchantID)
+        .setTransactionType(transactionType)
+        .setAmount(amount)
+        .setCurrency("PLN")
+        .setAccountHolder(new AccountHolder(
+            "email"
+        ))
+        .setOrderNumber("18040037092713285")
+        .setDescriptor("DESC180099798888")
+        .build()
+
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(blikPayment);
+----
+
+You can use Builder to create the payment object and set additional
+properties afterwards.
+
+=== Customizing Visuals
+
+To change colors within the SDK, override the default color values in
+the `.xml` file.
+
+==== Color Resources
+
+Changing any of these will affect every module used in the SDK:
+
+*`sdkpay_ecom_color_main_background`* - background color for main view
+
+*`sdkpay_ecom_color_edittext_text`* - color of text within phone number edittext
+
+*`sdkpay_ecom_color_main_alpha80`* - text input layout title color
+
+*`sdkpay_ecom_color_pay_button_text`* - pay button text color
+
+*`sdkpay_ecom_color_main`* - color tint for icons, header and submit button gradient start color
+
+*`sdkpay_ecom_color_main_light`* - header and submit button gradient end color
+
+*`sdkpay_ecom_color_error`* - used for all text input layouts to modify error text color including the edit text line
+
+==== Changing Fonts
+
+To change fonts, override the font path to in string resources with name
+`sdkpay_fontPath': e.g. strings.xml
+
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
+
+==== Changing Text Size
+
+To change the text size use dimensional attribute `sdkpay_ecom_text_size`.
+This affects all the modules, except `cardField`.
+
+==== Customizing Blik Payments
+
+*Color Resources*
+
+1 - `sdkpay_ecom_color_main_background`
+
+2 - `sdkpay_ecom_color_edittext_text`
+
+3 - `sdkpay_ecom_color_main_alpha80`
+
+4 - `sdkpay_ecom_color_pay_button_text`
+
+5 - `sdkpay_ecom_color_main`
+
+6 - `sdkpay_ecom_color_main_light`
+
+7 - `sdkpay_ecom_color_error`

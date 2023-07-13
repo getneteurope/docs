@@ -541,4 +541,18 @@ _Sample_
 include::{root}/samples/xml/creditcard_void-refund-purchase_response_success_87fffba5.xml[]
 ----
 
+.XML purchase request (No-show scenario)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/purchase-request-no show scenario.xml[]
+----
+
+.XML purchase response (No-show scenario)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/purchase-response-no show scenario.xml[]
+----
+
 //-

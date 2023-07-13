@@ -134,7 +134,7 @@ This is a list of available response codes and their meaning:
 
 **`ERROR_CODE_TRANSACTION_TIMEOUT`** - Payment session has timed out
 
-**`ERROR_CODE_TRANSACTION_RETRY`** - User has retried a payment (ZAPP payment method only)
+**`ERROR_CODE_TRANSACTION_RETRY`** - User has retried a payment
 
 [#Error_Handling]
 The SDK uses default exceptions only. If you decide to use Kotlin, the SDK provides a null check within the IDE (if a field is null, `IllegalArgumentException` is thrown).

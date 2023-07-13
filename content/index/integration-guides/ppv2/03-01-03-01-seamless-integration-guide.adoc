@@ -137,9 +137,14 @@ set up your testing tool:
 |MAID             
 |5c4a8a42-04a8-4970-a595-262f0ba0a108
 
+|Resolver Category
+|GetnetEuropeTest
+
 |Secret Key       
 |5ac555d4-e7f7-409f-8147-d82c8c10ed53
-
+|===
+[%autowidth, cols="h,", stripes="none"]
+|===
 2+|Test Card
 |Card Number      
 |4012000300201199
@@ -176,6 +181,20 @@ The ``Authorization`` header needs to be formatted as:
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/WPP_SeamlessIntegrationExampleInitialRequest_CreateAPaymentSessionInitialRequest.json[]
+----
+
+.Create a Payment Session (Initial Request with resolver category)
+The request below generates a payment page that includes all payment methods assigned to the specified resolver category.
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PaymentPageSolutions_WPP_Seamless_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategory.json[]
+----
+
+.Create a Payment Session (Initial Request with resolver category and allowed payment methods)
+It is also possible to generate a payment page with a subset of the payment methods assigned to one resolver category. You just need to list the payment methods as in the sample below.
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PaymentPageSolutions_WPP_Seamless_IntegrationExampleCreate_CreateAPaymentSessionInitialRequestWithResolverCategoryAndPMs.json[]
 ----
 
 [%autowidth, cols="m,,,,,"]

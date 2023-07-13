@@ -1,0 +1,10 @@
+[#POSHostToHostIntegration]
+== POS Host-to-Host
+
+The REST API supports a point-of-sale (POS) host-to-host setup for card-present transactions, by providing additional request elements to cater for card-present data. The transactions can be either point-of-sale (POS) terminal transactions (processed either online or offline) or mobile device transactions initiated using a <<MobilePaymentSDK_IntegrationGuides, mobile SDK>>:
+
+* For PIN transactions, the PIN is first encrypted with the appropriate encryption algorithm and key, and then submitted in the appropriate fields. The PIN can be translated by the Payment Engine (PE), depending on the configuration and the acquirer of the transaction.
+
+* For transactions initiated on a mobile device, there is typically a backend server that integrates to the Payment Gateway for payment transactions processing. This ensures that the credentials for connecting to the gateway are not published in mass consumer devices.
+
+For more information, see the <<POSHostToHostIntegrationGuide, POS Host to Host Integration Guide>>.

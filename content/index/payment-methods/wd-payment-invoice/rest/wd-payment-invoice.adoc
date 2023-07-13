@@ -1,7 +1,7 @@
 [#API_PaymentInvoice]
 == REST API
 
-_Guaranteed Payment on Invoice_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
+_Ratepay Payment on Invoice_ is a type of <<PaymentMethods_PaymentMode_OfflineBankTransfer, Offline Bank Transfer>>.
 
 [#API_PaymentInvoice_CountriesandCurrencies]
 === Countries and Currencies
@@ -16,7 +16,7 @@ _Guaranteed Payment on Invoice_ is a type of <<PaymentMethods_PaymentMode_Offlin
 [#API_PaymentInvoice_Communication]
 ==== Communication Formats
 
-This table illustrates how _Guaranteed Payment on Invoice_ notifications are encoded and which formats and methods can be
+This table illustrates how _Ratepay Payment on Invoice_ notifications are encoded and which formats and methods can be
 used for requests and responses.
 [width=75%,stripes=none]
 |===
@@ -40,7 +40,7 @@ at <<AppendixB,  Transaction Types>>.
                     consumer makes an order. All order items must be listed for the shopping
                     basket. The authorization amount must match the value of the items in
                     the basket.
-                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Guaranteed Payment on Invoice_ samples>>
+                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Ratepay Payment on Invoice_ samples>>
 
 |capture-authorization | Used to capture the reserved funds at the moment
                          when some or all goods are physically delivered to the consumer.
@@ -50,20 +50,20 @@ at <<AppendixB,  Transaction Types>>.
                          items that were delivered to the consumer in this delivery, not the ones
                          that were delivered before or are waiting to be delivered. The total
                          amount of the capture must be the value of the items in the basket.
-                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Guaranteed Payment on Invoice_ samples>>
+                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Ratepay Payment on Invoice_ samples>>
 
 |void-authorization | Used when the consumer wishes to cancel some or all
                       (not yet shipped) items from the order. Available only for a successful
                       ``authorization`` response which was not yet voided or captured. Partial and
                       multiple void are allowed, until all items from the order are canceled
                       or shipped. Basket items only list those items which are being canceled from the order.
-                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Guaranteed Payment on Invoice_ samples>>
+                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Ratepay Payment on Invoice_ samples>>
 
 |refund-capture | Used when the consumer wishes to return some or all
                   delivered goods. Available on a successful ``capture-authorization``.
                   Partial and multiple refunds are allowed, until all delivered items have
                   been returned. Basket items list only those items which are being returned to the merchant.
-                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Guaranteed Payment on Invoice_ samples>>
+                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Ratepay Payment on Invoice_ samples>>
 
 |credit | Used when merchant wishes to grant a discount on an existing
           order. Items from this order may already be delivered to the consumer.
@@ -72,7 +72,7 @@ at <<AppendixB,  Transaction Types>>.
           delivered goods to the consumer. The credit transaction must include a
           basket item representing the discount. The credit transaction must refer
           to the successful authorization transaction ID.
-                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Guaranteed Payment on Invoice_ samples>>
+                                | <<API_PaymentInvoice_Samples_GuaranteedInvoice, _Ratepay Payment on Invoice_ samples>>
 |===
 
 [NOTE]
@@ -96,16 +96,21 @@ are shipped in separate shipments.
 
 [#API_PaymentInvoice_TestCredentials]
 === Test Credentials
-
-[%autowidth,stripes=none]
+[cols="h,,"]
+[%autowidth]
 |===
-.2+h| URLs (Endpoints)            | For transaction type ``authorization`` | `\https://{rest-api-test-apm-endpoint}`
-                                  | For transaction types ``capture-authorization``, ``refund-capture``,
-                                    ``void-authorization`` and ``credit``  |``\https://{rest-api-test-endpoint}``
-   h| Merchant Account ID (MAID) 2+| To be determined
-   h| Username                  2+| To be determined
-   h| Password                  2+| To be determined
-   h| Secret Key                2+| To be determined
+| *URL (Endpoint)*
+| For transaction type _get-url._
+|
+``\https://{rest-api-test-apm-endpoint}``
+| *Merchant Account ID (MAID)*
+2+| 1da76824-e28a-4b64-8f41-c74a0a0e0c0c
+| *Username*
+2+| 515225-GetnetEuropeTEST
+| *Password*
+2+| 4cHLRE-Q7YcAP
+| *Secret Key*
+2+| bb3ec883-9c5b-4e70-beff-c3151b17ecf4
 |===
 
 [#API_PaymentInvoice_Workflow]
@@ -115,12 +120,12 @@ are shipped in separate shipments.
 ==== Standard Process
 
 [#API_PaymentInvoice_GuaranteedInvoice]
-===== Guaranteed Payment on Invoice
+===== Ratepay Payment on Invoice
 
-image::images/diagrams/guaranteed-invoice.svg[Guaranteed Payment on Invoice Workflow, width=950, align="center"]
+image::images/diagrams/guaranteed-invoice.svg[Ratepay Payment on Invoice Workflow, width=950, align="center"]
 
 . Consumer adds items to shopping basket.
-. Consumer selects the payment method _Guaranteed Payment on Invoice._
+. Consumer selects the payment method _Ratepay Payment on Invoice._
 . Merchant sends an ``authorization`` request including items to
 Getnet.
 . Merchant receives an ``authorization`` response, including the
@@ -147,7 +152,7 @@ NOTE: Please provide us with the order number and descriptor for each
 transaction.
 
 [#API_PaymentInvoice_SimpleProcessChainforGuaranteedInvoice]
-===== Simple Process Chain for Guaranteed Payment on Invoice
+===== Simple Process Chain for Ratepay Payment on Invoice
 
 .A: Partial Cancelations
 
@@ -210,7 +215,7 @@ transaction.
 //-
 
 [#API_PaymentInvoice_ComplexProcessChainforGuaranteedInvoice]
-===== Complex Process Chain for Guaranteed Payment on Invoice
+===== Complex Process Chain for Ratepay Payment on Invoice
 
 .X: Reduction & Adjustment Charges
 
@@ -242,7 +247,7 @@ transaction.
 === Fields
 
 The following elements are mandatory *M*, optional *O* or conditional
-*C* for sending a request for the payment method _Guaranteed Payment on Invoice_ (complete field
+*C* for sending a request for the payment method _Ratepay Payment on Invoice_ (complete field
 list available in <<RestApi_Fields, REST API field list>>):
 
 [%autowidth,stripes=none, cols="v,,,,"]
@@ -271,7 +276,7 @@ list available in <<RestApi_Fields, REST API field list>>):
 |M
 |Alphanumeric
 |30
-|This is the type for a transaction: ``authorization``, ``capture``, ``void-authorization``, ``refund-capture`` and ``credit`` are supported for _Guaranteed Payment on Invoice_.
+|This is the type for a transaction: ``authorization``, ``capture``, ``void-authorization``, ``refund-capture`` and ``credit`` are supported for _Ratepay Payment on Invoice_.
 
 |_requested-amount_
 |M
@@ -631,12 +636,12 @@ payment details on provider and they can be obtained from {payment-gateway} late
 |===
 
 [#API_PaymentInvoice_DeviceFingerprint_GuaranteedInvoice]
-==== Device Fingerprint (Guaranteed Payment on Invoice)
+==== Device Fingerprint (Ratepay Payment on Invoice)
 
 [#API_PaymentInvoice_DeviceFingerprint_GuaranteedInvoice_Introduction]
 ===== Introduction
 
-_Device Fingerprint (Guaranteed Payment on Invoice)_ is a method of fraud
+_Device Fingerprint (Ratepay Payment on Invoice)_ is a method of fraud
 protection and able to identify technical devices. Fraudsters learn to
 exploit the weaknesses of traditional fraud prevention tools over time.
 We protect businesses from fraud and loss of revenue with innovative
@@ -697,7 +702,7 @@ Please ensure that this script is executed only one-time per session
 ===== Data Transfer to Getnet
 
 Please transfer the ``deviceIdentToken`` within the authorization request to
-Getnet. You can find a corresponding XML sample for either <<API_PaymentInvoice_Samples_GuaranteedInvoice, Guaranteed Payment on Invoice>> or <<API_PaymentDirectDebit_Samples_DirectDebit, Payment Guaranteed Direct Debit>>.
+Getnet. You can find a corresponding XML sample for either <<API_PaymentInvoice_Samples_GuaranteedInvoice, Ratepay Payment on Invoice>> or <<API_PaymentDirectDebit_Samples_DirectDebit, Payment Guaranteed Direct Debit>>.
 
 [#API_PaymentInvoice_RegularConsumers]
 ==== Regular Consumers
@@ -721,7 +726,7 @@ During checkout, the consumer has to agree to Ratepay’s terms of payment and d
 [#API_PaymentInvoice_AdditionalBusinessContitions]
 ===== Additional Business Conditions
 
-When consumers use _Guaranteed Payment on Invoice,_
+When consumers use _Ratepay Payment on Invoice,_
 payments with debt discharging effect can be made solely to Getnet.
 
 [#API_PaymentInvoice_Samples]
@@ -730,7 +735,7 @@ payments with debt discharging effect can be made solely to Getnet.
 Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
 
 [#API_PaymentInvoice_Samples_GuaranteedInvoice]
-==== Guaranteed Payment on Invoice
+==== Ratepay Payment on Invoice
 
 [#API_PaymentInvoice_Samples_GuaranteedInvoice_Authorization]
 ===== _authorization_

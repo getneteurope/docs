@@ -62,6 +62,8 @@ include::index/integration-options/rest-api/04-04-rest-api-samples.adoc[leveloff
 include::index/integration-options/shop-plugins/09-shop-systems.adoc[leveloffset=+1]
 include::index/integration-options/mobile-payment-sdk/07-00-mobile-payment-sdk.adoc[leveloffset=+1]
 
+include::index/integration-options/pos-host-to-host/pos-host-to-host.adoc[leveloffset=+1]
+
 include::index/integration-guides/22-integration-guides.adoc[]
 include::index/integration-guides/ppv2/03-01-01-01-hpp-integration-guide.adoc[leveloffset=+1]
 include::index/integration-guides/ppv2/03-01-02-01-epp-integration-guide.adoc[leveloffset=+1]
@@ -88,6 +90,7 @@ include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-
 include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-11-mbway-referencia.adoc[leveloffset=+4]
 // include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-09-ideal.adoc[leveloffset=+4]
 // include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-10-blik.adoc[leveloffset=+4]
+include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-09-blik.adoc[leveloffset=+4]
 
 include::index/integration-guides/mobile-payment-sdk/android/08-01-02-licence.adoc[leveloffset=+3]
 
@@ -107,6 +110,7 @@ include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-0
 include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-11-blik.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-12-zinia.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-13-mb-referencia.adoc[leveloffset=+4]
+include::index/integration-guides/mobile-payment-sdk/ios/payment-methods/08-01-01-09-blik.adoc[leveloffset=+4]
 
 include::index/integration-guides/mobile-payment-sdk/ios/08-01-02-scanner.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk/ios/08-01-03-third-party-libraries.adoc[leveloffset=+3]
@@ -118,6 +122,8 @@ include::index/integration-guides/shop-plugins/05-00-00-01-common-intro.adoc[lev
 include::index/integration-guides/shop-plugins/05-00-01-01-prestashop.adoc[leveloffset=+3]
 include::index/integration-guides/shop-plugins/05-00-02-01-woocommerce.adoc[leveloffset=+3]
 include::index/integration-guides/shop-plugins/05-00-03-01-magento.adoc[leveloffset=+3]
+
+include::index/integration-guides/pos-host-to-host/pos-host-to-host-integration-guide.adoc[leveloffset=+1]
 
 include::index/payment-methods/11-00-payment-methods.adoc[]
 include::index/payment-methods/credit-card/credit-card-main.adoc[leveloffset=+1]
@@ -168,6 +174,14 @@ include::index/payment-methods/sofort/ppv2/03-01-04-11-sofort.adoc[leveloffset=+
 include::index/payment-methods/ideal/ideal-main.adoc[leveloffset=+1]
 include::index/payment-methods/ideal/rest/11-12-ideal.adoc[leveloffset=+2]
 include::index/payment-methods/ideal/ppv2/03-01-04-05-ideal.adoc[leveloffset=+2]
+
+include::index/payment-methods/wd-payment-direct-debit/wd-payment-direct-debit-main.adoc[leveloffset=+1]
+include::index/payment-methods/wd-payment-direct-debit/rest/wd-payment-direct-debit.adoc[leveloffset=+2]
+include::index/payment-methods/wd-payment-direct-debit/ppv2/wd-payment-direct-debit.adoc[leveloffset=+2]
+
+include::index/payment-methods/wd-payment-invoice/wd-payment-invoice-main.adoc[leveloffset=+1]
+include::index/payment-methods/wd-payment-invoice/rest/wd-payment-invoice.adoc[leveloffset=+2]
+include::index/payment-methods/wd-payment-invoice/ppv2/wd-payment-invoice.adoc[leveloffset=+2]
 
 include::index/payment-processing/19-payment-processing.adoc[]
 include::index/payment-processing/3-d-secure-2/11-01-05-3-d-secure-2.adoc[leveloffset=+1]

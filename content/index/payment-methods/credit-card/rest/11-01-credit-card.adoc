@@ -58,7 +58,7 @@ credentials:
 |Merchant Account ID (MAID) |5c4a8a42-04a8-4970-a595-262f0ba0a108
 |Merchant Account Name |Getnet __3d
 |Secret Key |5ac555d4-e7f7-409f-8147-d82c8c10ed53
-|Brands     |Visa, MC, AMEX
+|Brands     |Visa, MC, AMEX, Diners
 |===
 
 .MOTO
@@ -67,7 +67,7 @@ credentials:
 |Merchant Account ID (MAID) |d94d34ec-807e-4f5e-a194-73ca15d470f0
 |Merchant Account Name |Getnet _moto
 |Secret Key |c1f62c27-9034-489c-8861-7f99dec54944
-|Brands     |Visa, MC, AMEX
+|Brands     |Visa, MC, AMEX, Diners
 |===
 
 .3D Automatic Card Brand Recognition
@@ -76,7 +76,7 @@ credentials:
 |Merchant Account ID (MAID) |5918caa1-a576-49e3-ae0a-cb677631ee92
 |Merchant Account Name |Getnet 2nd __3d
 |Secret Key |9a6c4f34-4156-47b7-9022-3f6d18147cd2
-|Brands     |Visa, MC, AMEX
+|Brands     |Visa, MC, AMEX, Diners
 |===
 
 [#CreditCard_PaymentSolutions]
