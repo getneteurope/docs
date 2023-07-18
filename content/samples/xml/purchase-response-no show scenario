@@ -1,0 +1,36 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-qa.getneteurope.com:443/engine/rest/merchants/b562b4d7-8989-4397-a4e5-849eefe50018/payments/aa7d6725-babf-467f-a7ec-fd2786b82f4d">
+  <merchant-account-id ref="https://api-qa.getneteurope.com:443/engine/rest/config/merchants/b562b4d7-8989-4397-a4e5-849eefe50018">b562b4d7-8989-4397-a4e5-849eefe50018</merchant-account-id>
+  <transaction-id>aa7d6725-babf-467f-a7ec-fd2786b82f4d</transaction-id>
+  <request-id>7603277b-1de6-4b7a-bb84-c09ae5629718</request-id>
+  <transaction-type>authorization</transaction-type>
+  <transaction-state>success</transaction-state>
+  <completion-time-stamp>2022-10-25T09:38:26.000Z</completion-time-stamp>
+  <statuses>
+    <status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="information" provider-transaction-id="C400920729516997135030"/>
+  </statuses>
+  <requested-amount currency="EUR">1.01</requested-amount>
+  <account-holder>
+    <first-name>John</first-name>
+    <last-name>Doe</last-name>
+    <email>john.doe@test.com</email>
+    <address>
+      <street1>2200 Pacific Hwy</street1>
+      <city>San Diego</city>
+      <state>US</state>
+      <country>CA</country>
+      <postal-code>92101</postal-code>
+    </address>
+  </account-holder>
+  <card-token>
+    <token-id>4456551924350154</token-id>
+    <masked-account-number>492910******0154</masked-account-number>
+  </card-token>
+  <descriptor>description</descriptor>
+  <payment-methods>
+    <payment-method name="creditcard"/>
+  </payment-methods>
+  <authorization-code>773154</authorization-code>
+  <authorization-reason>no-show</authorization-reason>
+  <api-id>elastic-api</api-id>
+  <provider-account-id>0000003168FB4BEC</provider-account-id>
+</payment>

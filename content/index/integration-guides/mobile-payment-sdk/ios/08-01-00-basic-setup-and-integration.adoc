@@ -12,7 +12,7 @@ With this modular approach, you can pick and choose what you need: a few payment
 Below, we will briefly go through the basic requirements/dependencies, but also code examples for client initialization and processing the payment response on your end.
 
 [#MobilePaymentSDK_iOS_System_Requirements]
-The minimal requirement deployment target is 11.0.
+The minimal requirement deployment target is 12.0.
 
 [#MobilePaymentSDK_iOS_BasicSetup]
 ---
@@ -81,11 +81,19 @@ pod 'mobilePaymentSDK/SEPA'
 
 |Sofort
 |Sofort payment frameworks
-|pod 'mobilePaymentSDK/Sofort' 
+|pod 'mobilePaymentSDK/Sofort'
 
 |RatePay
 |RatePay payments frameworks
-|pod 'mobilePaymentSDK/RatePay' 
+|pod 'mobilePaymentSDK/RatePay'
+
+|Bizum
+|Bizum payments frameworks
+|pod 'mobilePaymentSDK/Bizum'
+
+|Blick
+|Blick payments frameworks
+|pod 'mobilePaymentSDK/Blick'
 
 |Ideal
 |Ideal payments frameworks
@@ -176,7 +184,7 @@ When creating a payment object, don't forget to initialize the client first (for
 ----
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-               
+
         do {
             var hostname:String = "api-test.getneteurope.com"
             var parameters: SDKPayECClientParameters = SDKPayECClientParameters()
@@ -190,7 +198,7 @@ When creating a payment object, don't forget to initialize the client first (for
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+
         if let client = self.client {
             let openURL = client.open(url)
             return openURL
@@ -208,8 +216,8 @@ This is example code for processing the response (to see the result of the trans
     @IBAction func onPayAction(_ sender: UIButton!) {
 
         var payment = self.createCardPayment()
-        self.animatedCardfield.cardPayment = payment 
-        
+        self.animatedCardfield.cardPayment = payment
+
         (UIApplication.shared.delegate as! AppDelegate).client?.make(payment, withCompletion: { [weak self] (response: SDKPayECPaymentResponse?,error: Error?) in
             guard let self = self else { return }
 

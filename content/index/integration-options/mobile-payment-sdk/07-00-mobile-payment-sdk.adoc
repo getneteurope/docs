@@ -48,4 +48,14 @@ It may be more convenient to use <<GeneralPlatformFeatures_IPN, Instant Payment 
 
 .1+| Przelewy24               | debit
 
+.1+| Sofort                   | debit
+
+.1+| RatePay Direct Debit     | authorization
+
+.1+| RatePay Invoice          | authorization
+
+.1+| Bizum                    | authorization
+
+.1+| POA/PIA Blik             | debit
+
 |===

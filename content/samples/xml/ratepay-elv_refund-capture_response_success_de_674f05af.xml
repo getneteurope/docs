@@ -1,45 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<payment xmlns="http://www.elastic-payments.com/schema/payment" xmlns:ns2="http://www.elastic-payments.com/schema/epa/transaction" self="https://{test-instance-hostname}:443/engine/rest/merchants/3cfb0fb7-59e2-4d92-847f-37121d633844/payments/037d379c-d168-4088-9af5-c231f03290c6">
-  <merchant-account-id ref="https://{test-instance-hostname}:443/engine/rest/config/merchants/3cfb0fb7-59e2-4d92-847f-37121d633844">3cfb0fb7-59e2-4d92-847f-37121d633844</merchant-account-id>
-  <transaction-id>037d379c-d168-4088-9af5-c231f03290c6</transaction-id>
-  <request-id>97cddb7d-7d92-44c3-9032-836574b84eb1</request-id>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/5289ba2d-6094-4f7d-b6c2-346d1af638eb/payments/8e393b0f-cc1d-496c-95f4-e5b3c1774e56">
+  <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/5289ba2d-6094-4f7d-b6c2-346d1af638eb">5289ba2d-6094-4f7d-b6c2-346d1af638eb</merchant-account-id>
+  <transaction-id>8e393b0f-cc1d-496c-95f4-e5b3c1774e56</transaction-id>
+  <request-id>3ebecb19-95e5-4ae5-b98b-9ec5af5aaf46</request-id>
   <transaction-type>refund-capture</transaction-type>
   <transaction-state>success</transaction-state>
-  <completion-time-stamp>2018-08-01T09:23:08.000Z</completion-time-stamp>
+  <completion-time-stamp>2022-12-08T10:52:06.000Z</completion-time-stamp>
   <statuses>
-    <status code="201.0000" description="ratepay:The resource was successfully created." severity="information" />
+    <status code="201.0000" description="ratepay:The resource was successfully created." severity="information"/>
   </statuses>
-  <requested-amount currency="EUR">50</requested-amount>
-  <parent-transaction-id>674f05af-b289-4e7a-99e3-1ee799c53151</parent-transaction-id>
+  <requested-amount currency="EUR">15.00</requested-amount>
+  <parent-transaction-id>76df6bdd-2352-4a08-9da5-6bd174d59f8b</parent-transaction-id>
   <account-holder>
-    <first-name>John</first-name>
-    <last-name>Doe</last-name>
-    <email>John@doe.de</email>
+    <first-name>Hans-Jürgen</first-name>
+    <last-name>Wischnewski</last-name>
+    <email>test@test.com</email>
     <phone>03018425165</phone>
     <address>
-      <street1>Nicht versenden Weg 12</street1>
-      <city>Berlin</city>
+      <street1>Nicht Versenden Str. 5</street1>
+      <city>Testhausen</city>
       <state>Berlin</state>
       <country>DE</country>
       <postal-code>13353</postal-code>
     </address>
   </account-holder>
-  <order-number>180801111842579</order-number>
+  <shipping>
+    <first-name>Hans-Jürgen</first-name>
+    <last-name>Wischnewski</last-name>
+    <phone>+49123123123</phone>
+    <address>
+      <street1>Nicht Versenden Str. 5</street1>
+      <city>Testhausen</city>
+      <state>Berlin</state>
+      <country>DE</country>
+      <postal-code>13353</postal-code>
+    </address>
+  </shipping>
+  <order-number>201</order-number>
   <order-items>
     <order-item>
-      <name>Women V-Neck S</name>
-      <article-number>12</article-number>
-      <amount currency="EUR">50</amount>
-      <tax-rate>19</tax-rate>
+      <name>Item A</name>
+      <article-number>123</article-number>
+      <amount currency="EUR">5.0</amount>
+      <tax-rate>0.0</tax-rate>
+      <quantity>1</quantity>
+    </order-item>
+    <order-item>
+      <name>Item B</name>
+      <article-number>456</article-number>
+      <amount currency="EUR">10.0</amount>
+      <tax-rate>0.0</tax-rate>
       <quantity>1</quantity>
     </order-item>
   </order-items>
-  <descriptor>DK0073651G0</descriptor>
+  <descriptor>DN2278554S3</descriptor>
+  <custom-fields>
+    <custom-field field-name="invoice" field-value="12TH67X"></custom-field>
+  </custom-fields>
   <payment-methods>
-    <payment-method name="ratepay-elv" />
+    <payment-method name="ratepay-elv"/>
   </payment-methods>
-  <parent-transaction-amount currency="EUR">200.000000</parent-transaction-amount>
+  <parent-transaction-amount currency="EUR">15.000000</parent-transaction-amount>
   <api-id>elastic-api</api-id>
-  <locale>de</locale>
-  <provider-account-id>000000317406A011</provider-account-id>
+  <provider-account-id>GN0000317C3B8F12</provider-account-id>
 </payment>

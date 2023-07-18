@@ -86,5 +86,5 @@ See the list of all supported payment methods below:
 * <<PPv2_Sofort, Sofort.>>
 * <<PPv2_PaymentDirectDebit, Guaranteed Direct Debit>>
 * <<PPv2_PaymentInstallment, Payment in Installments>>
-* <<PPv2_PaymentInvoice, Guaranteed Payment on Invoice>>
+* <<PPv2_PaymentInvoice, Ratepay Payment on Invoice>>
 //-

@@ -2,7 +2,7 @@
 [#Przelewy24]
 == REST API
 
-_Przelewy24_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
+_e-przelewy_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#Przelewy24_PaymentModeCountriesandCurrencies]
 === Countries and Currencies

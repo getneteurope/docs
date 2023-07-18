@@ -1,7 +1,7 @@
 
 [#MobilePaymentSDK_iOS_Bizum]
 ---
-== *POA/PIA Bizum*
+== *Bizum*
 ---
 === Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
 ---

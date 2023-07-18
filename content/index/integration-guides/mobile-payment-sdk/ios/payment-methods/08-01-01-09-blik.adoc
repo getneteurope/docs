@@ -1,0 +1,171 @@
+
+
+[#MobilePaymentSDK_iOS_Blik]
+---
+== *POA/PIA Blik*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+
+[#MobilePaymentSDK_iOS_Blik_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_Blik_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/Blik',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_Blik_LevelZero_basic_payment]
+==== Blik Level Zero Payment
+
+This is a code example for a basic Blik Level Zero payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECBlikPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.debit
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "joe.doe@email.com"
+   accountHolder.dateOfBirth = Date()
+   accountHolder.gender = SDKPayECGender.male
+   accountHolder.phone = "+00123456789"
+   accountHolder.address = SDKPayECAddress()
+   accountHolder.address?.street1 = "Elm Street !428"
+   accountHolder.address?.city = "Springwood"
+   accountHolder.address?.postalCode = "04001"
+   accountHolder.address?.state = "Ohio"
+   accountHolder.address?.country = SDKPayECCountry.DE
+   payment.accountHolder = accountHolder
+ 
+   var cartOrder = [SDKPayECOrderItem]()
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = cartOrder
+   payment.order = order
+
+```
+----
+
+
+[#MobilePaymentSDK_iOS_Blik_Redirect_basic_payment]
+==== Blik Redirect Payment
+
+This is a code example for a basic Blik Redirect payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECBlikPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.debit
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "joe.doe@email.com"
+   accountHolder.dateOfBirth = Date()
+   accountHolder.gender = SDKPayECGender.male
+   accountHolder.phone = "+00123456789"
+   accountHolder.address = SDKPayECAddress()
+   accountHolder.address?.street1 = "Elm Street !428"
+   accountHolder.address?.city = "Springwood"
+   accountHolder.address?.postalCode = "04001"
+   accountHolder.address?.state = "Ohio"
+   accountHolder.address?.country = SDKPayECCountry.DE
+   payment.accountHolder = accountHolder
+ 
+   var cartOrder = [SDKPayECOrderItem]()
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = cartOrder
+   payment.order = order
+   
+   let notif = SDKPayECNotification.init()
+   notif.transactionState = SDKPayECTransactionState.success
+   payment.notifications = [notif]
+
+```
+----
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<API_Blik_Fields, Blik>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_Blik_Visualisaton]
+=== Visualisation
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| ZeroLevel | Redirect
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-zerolevel.png[Blik ZeroLevel Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-redirect.png[Blik Redirect Screen, align=center, width=240, height=420]
+|
+|===
+
+[NOTE]
+====
+Visualization of Blik result is up to the merchant applicaton. SDK returns IBAN, BIC, Provider Reference ID and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
+
+//-

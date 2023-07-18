@@ -177,8 +177,6 @@ This affects all the modules, except `cardField`.
 
 ==== Customizing Zinia Payments
 
-[.image]##
-
 *Color Resources*
 
 1 - `sdkpay_ecom_color_main_background`
