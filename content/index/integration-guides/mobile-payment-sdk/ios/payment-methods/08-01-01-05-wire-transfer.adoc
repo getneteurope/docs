@@ -22,7 +22,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/WireTransfer',          '~> {{version}}'
+pod 'Getnet/WireTransfer',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_WireTransfer_basic_payment]

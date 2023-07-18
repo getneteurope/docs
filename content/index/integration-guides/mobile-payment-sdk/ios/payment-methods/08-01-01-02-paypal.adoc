@@ -29,7 +29,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/PayPal',          '~> {{version}}'
+pod 'Getnet/PayPal',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_PayPal_basic_payment]

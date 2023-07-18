@@ -6,6 +6,8 @@
 
 For the input process of the card data or IBAN to be as quick and professional as possible, use your phone’s camera to scan credit cards and IBAN instead by manual input with scanner frameworks.
 
+As another functionality (Photo Gallery) for customer support, it is possible to scan the card data from the image of the photographed card stored in the mobile device.
+
 [#MobilePaymentSDK_iOS_Card_Scanner]
 === Card Scanner
 ---
@@ -19,7 +21,7 @@ The card scanner provides primary the card number detection. When it is possible
 Add to your app’s `Podfile` subspecs: 
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/CardScanner',          '~> {{version}}'
+pod 'Getnet/CardScanner',          '~> {{version}}'
 ----
 
 The MPSDK adds the scanner button to the card number's textfield, the cardfield component alebo the keyboard toolbar.
@@ -131,13 +133,11 @@ every module used in the SDK. The cardfield component is fully customizable by c
 . `SDKPayECScannerNavigationBar`
 . `SDKPayECScannerCancelButton`
 . `SDKPayECScannerFlashlightButton`
-. `SDKPayECScannerGalleryButton`
 . `SDKPayECCardScannerTitleLabel`
 . `SDKPayECCardScannerHelpLabel`
 . `SDKPayECScannerBrackets`
 . `SDKPayECCardScannerTitleLabel`
 
- 
 
 //-
 
@@ -152,7 +152,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/IBANScanner',          '~> {{version}}'
+pod 'Getnet/IBANScanner',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_IBAN_Scanner_Integration]
@@ -199,40 +199,51 @@ every module used in the SDK. The cardfield component is fully customizable by c
 
 //-
 
-// [#MobilePaymentSDK_iOS_Photo_Gallery]
-// === Photo Gallery
-// ---
+[#MobilePaymentSDK_iOS_Photo_Gallery]
+=== Photo Gallery
+---
 
-// For the input process of the card data or IBAN to be as quick and professional as possible, user can use for detection image of stored card resp. IBAN number to the Photos.  
+For the input process of the card data or IBAN to be as quick and professional as possible, user can use for detection image of stored card resp. IBAN number to the Photos gallery of the mobile device.  
 
-// [#MobilePaymentSDK_iOS_Photo_Gallery_basic_setup]
-// ==== Basic Setup
-// ---
-// Add to your app’s `Podfile` subspecs:
+[#MobilePaymentSDK_iOS_Photo_Gallery_basic_setup]
+==== Basic Setup
+---
+Add to your app’s `Podfile` subspecs:
  
-// [source,ruby]
-// ----
-// pod 'mobilePaymentSDK/CardScannerGallery',          '~> {{version}}'
-// pod 'mobilePaymentSDK/IBANScannerGallery',          '~> {{version}}'
-// ----
+[source,ruby]
+----
 
-// [#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Integration]
-// ==== Integration
-// ---
+pod 'Getnet/CardScannerGallery',          '~> {{version}}'
+pod 'Getnet/IBANScannerGallery',          '~> {{version}}'
+----
 
-// When you use standart SEPA or Card screen MPSDK automatically inserts the photo gallery button to the Scanner screen.
+[#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Integration]
+==== Integration
+---
 
-// [#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Visualisaton]
-// ==== Visualisation
-// ---
+When you use standart SEPA or Card screen MPSDK automatically inserts the photo gallery button to the Scanner screen.
 
-// [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
-// |===
-// | Default | Customized
+[#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Visualisaton]
+==== Visualisation
+---
 
-// | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner-gallery.png[Card Scanner GalleryScreen, align=center, width=240, height=420]
-// | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sepa-scanner-gallery.png[IBAN Scanner Gallery Screen, align=center, width=240, height=420]
-// |
-// |===
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
 
-// //-
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/card-scanner.png[Card Scanner Gallery Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/iban-scanner.png[IBAN Scanner Gallery   Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/photo-gallery.png[Photo Gallery   Screen, align=center, width=240, height=420]
+|
+|===
+
+[#MobilePaymentSDK_iOS_Photo_Gallery_Scanner_Visualisaton_Card_CustomizingVisuals]
+==== Customizing Visuals
+---
+To change colors within the SDK, set properties of the components, that
+conforms to UIAppearance protocol. Changing any of these will affect
+every module used in the SDK. The cardfield component is fully customizable by component propreties and methods.
+
+[arabic]
+. `SDKPayECScannerGalleryButton`
+//-
