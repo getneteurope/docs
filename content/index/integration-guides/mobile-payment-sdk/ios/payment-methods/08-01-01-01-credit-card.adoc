@@ -56,7 +56,7 @@ do {
 // 2. Initialize payment object and set mandatory properties
 // Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
 // and used to generate signature. Signature MUST be generated on server side.
-// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Signature doc: https://docs.getneteurope.com/_mobile_payment_sdk.html#MobilePaymentSDK_BasicSetup_Security_Signaturev2
 // Secret Key shall never be stored in application.
 
 let payment = SDKPayECCardPayment()
