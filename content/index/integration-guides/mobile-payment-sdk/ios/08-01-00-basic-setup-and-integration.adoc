@@ -53,63 +53,63 @@ pod 'mobilePaymentSDK/SEPA'
 
 |All
 |all payment method frameworks in one
-|pod 'mobilePaymentSDK'
+|pod 'Getnet'
 
 |Alipay (Cross Border)
 |alipay payment frameworks
-|pod 'mobilePaymentSDK/Alipay' 
+|pod 'Getnet/Alipay' 
 
 |Card
 |Credit Card payment frameworks
-|pod 'mobilePaymentSDK/Card' 
+|pod 'Getnet/Card' 
 
 |PayPal
 |PayPal payment frameworks
-|pod 'mobilePaymentSDK/PayPal' 
+|pod 'Getnet/PayPal' 
 
 |P24 (Przelewy24)
 |P24 payment frameworks
-|pod 'mobilePaymentSDK/P24' 
+|pod 'mobiGetnetlePaymentSDK/P24' 
 
 |SEPA (Direct Debit)
 |SEPA payment frameworks
-|pod 'mobilePaymentSDK/SEPA' 
+|pod 'Getnet/SEPA' 
 
 |WireTransfer
 |Wire-Transfer payment frameworks
-|pod 'mobilePaymentSDK/WireTransfer' 
+|pod 'Getnet/WireTransfer' 
 
 |Sofort
 |Sofort payment frameworks
-|pod 'mobilePaymentSDK/Sofort'
+|pod 'Getnet/Sofort'
 
 |RatePay
 |RatePay payments frameworks
-|pod 'mobilePaymentSDK/RatePay'
+|pod 'Getnet/RatePay'
 
 |Bizum
 |Bizum payments frameworks
-|pod 'mobilePaymentSDK/Bizum'
+|pod 'Getnet/Bizum'
 
 |Blick
 |Blick payments frameworks
-|pod 'mobilePaymentSDK/Blick'
+|pod 'Getnet/Blick'
 
 |Ideal
 |Ideal payments frameworks
-|pod 'mobilePaymentSDK/Ideal'
+|pod 'Getnet/Ideal'
 
-MBWay
+|MBWay
 |MBWay payments frameworks
-|pod 'mobilePaymentSDK/MBWay'
+|pod 'Getnet/MBWay'
 
-Zinia
+|Zinia
 |Zinia payments frameworks
-|pod 'mobilePaymentSDK/Zinia'
+|pod 'Getnet/Zinia'
 
-MBReferencia
+|MBReferencia
 |MB Referencia (Multibanco) payments frameworks
-|pod 'mobilePaymentSDK/MBReferencia'
+|pod 'Getnet/MBReferencia'
 
 |===
 
@@ -123,27 +123,27 @@ MBReferencia
 
 |Scanner
 |Card scanner framework
-|pod 'mobilePaymentSDK/Scanner' 
+|pod 'Getnet/Scanner' 
 
 |PhotoGallery
 |Photo Gallery frameworks
-|pod 'mobilePaymentSDK/PhotoGallery' 
+|pod 'Getnet/PhotoGallery' 
 
 |CardScanner
 |Credit Card payment frameworks with card scanner
-|pod 'mobilePaymentSDK/CardScanner' 
+|pod 'Getnet/CardScanner' 
 
 |CardScannerGallery
 |Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
-|pod 'mobilePaymentSDK/CardScannerGallery' 
+|pod 'Getnet/CardScannerGallery' 
 
 |IBANScanner
 |SEPA payment frameworks with IBAN scanner
-|pod 'mobilePaymentSDK/IBANScanner' 
+|pod 'Getnet/IBANScanner' 
 
 |IBANScannerGallery
 |SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
-|pod 'mobilePaymentSDK/IBANScannerGallery'  
+|pod 'Getnet/IBANScannerGallery'  
 
 |===  
         

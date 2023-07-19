@@ -51,7 +51,7 @@ This is a code example for a basic SEPA payment:
 // Secret Key shall never be stored in application.
 
    let payment = SDKPayECSEPAPayment()
-   payment.appScheme = "example";
+   payment.appScheme = "example"
    payment.amount = AMOUNT
    payment.currency = "EUR"
    payment.transactionType = .debit

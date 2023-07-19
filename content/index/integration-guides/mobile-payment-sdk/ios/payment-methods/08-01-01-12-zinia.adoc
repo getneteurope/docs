@@ -21,7 +21,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/Zinia',          '~> {{version}}'
+pod 'Getnet/Zinia',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_Zinia_basic_payment]
@@ -74,8 +74,8 @@ This is a code example for a basic Zinia payment:
    
    let orderItem = SDKPayECOrderItem()
    orderItem.name = "The Watch"
-   orderItem.amount = AMOUNT;
-   orderItem.amountCurrency = .EUR;
+   orderItem.amount = AMOUNT
+   orderItem.amountCurrency = .EUR
 
    let order = SDKPayECOrder()
    order.descriptor = "DEMO DESCRIPTOR"
@@ -147,7 +147,10 @@ In case shipping address is not provided, billing address will be used as shippi
 |===
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-1.png[Zinia Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-1-customized.png[Zinia Screen, align=center, width=240, height=420]
+
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-2.png[Zinia Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-2-customized.png[Zinia Screen, align=center, width=240, height=420]
 
 |===
 //-

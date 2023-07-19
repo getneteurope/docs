@@ -45,7 +45,7 @@ This is a code example for a basic Blik Level Zero payment:
 // 2. Initialize payment object and set mandatory properties
 // Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
 // and used to generate signature. Signature MUST be generated on server side.
-// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Signature doc: https://docs.getneteurope.com/_mobile_payment_sdk.html#MobilePaymentSDK_BasicSetup_Security_Signaturev2
 // Secret Key shall never be stored in application.
 
    let payment = SDKPayECBlikPayment()
@@ -102,7 +102,7 @@ This is a code example for a basic Blik Redirect payment:
 // 2. Initialize payment object and set mandatory properties
 // Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
 // and used to generate signature. Signature MUST be generated on server side.
-// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Signature doc: https://docs.getneteurope.com/_mobile_payment_sdk.html#MobilePaymentSDK_BasicSetup_Security_Signaturev2
 // Secret Key shall never be stored in application.
 
    let payment = SDKPayECBlikPayment()
@@ -156,10 +156,19 @@ You can set optional parameters after the payment object is created. Check the d
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
-| ZeroLevel | Redirect
+| Default ZeroLevel | Customized ZeroLevel
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-zerolevel.png[Blik ZeroLevel Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-zerolevel-customized.png[Blik ZeroLevel Screen, align=center, width=240, height=420]
+|
+|===
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default Redirect | Customized Redirect
+
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-redirect.png[Blik Redirect Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-redirect-customized.png[Blik Redirect Screen, align=center, width=240, height=420]
 |
 |===
 

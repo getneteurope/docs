@@ -136,8 +136,6 @@ every module used in the SDK. The cardfield component is fully customizable by c
 . `SDKPayECCardScannerTitleLabel`
 . `SDKPayECCardScannerHelpLabel`
 . `SDKPayECScannerBrackets`
-. `SDKPayECCardScannerTitleLabel`
-
 
 //-
 
@@ -193,7 +191,6 @@ every module used in the SDK. The cardfield component is fully customizable by c
 [arabic]
 . `SDKPayECScannerNavigationBar`
 . `SDKPayECIBANScannerTitleLabel`
-. `SDKPayECIBANScannerHelpLabel`
 . `SDKPayECIBANScannerHelpLabel`
 . `SDKPayECScannerBrackets`
 

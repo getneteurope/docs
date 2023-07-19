@@ -82,8 +82,14 @@ You can set optional parameters after the payment object is created. Check the d
 [#MobilePaymentSDK_iOS_Sofort_Visualisaton]
 === Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sofort.png[Sofort Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
 
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sofort.png[Sofort Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/sofort-customized.png[Sofort Screen, align=center, width=240, height=420]
+|
+|===
 [NOTE]
 ====
 Visualization of Sofort result is up to the merchant applicaton. SDK returns Account holder, Order, Bank Acount and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.

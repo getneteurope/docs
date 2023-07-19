@@ -53,7 +53,7 @@ This is a code example for a basic Alipay payment:
    payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.USD)
 
    let localize = SDKPayECLocalize.appearance()
-   let locale_de = localize.locale == ._de;
+   let locale_de = localize.locale == ._de
 
    payment.transactionType = SDKPayECTransactionType.debit
    payment.ipAddress = "127.0.0.1"

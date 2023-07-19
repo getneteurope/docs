@@ -58,4 +58,13 @@ It may be more convenient to use <<GeneralPlatformFeatures_IPN, Instant Payment 
 
 .1+| POA/PIA Blik             | debit
 
+.1+| iDEAL                    | debit
+
+.2+| MBWay                    | authorization
+                              | debit
+
+.1+| MBReference              | pending-debit
+
+.1+| Zinia                    | authorization
+
 |===

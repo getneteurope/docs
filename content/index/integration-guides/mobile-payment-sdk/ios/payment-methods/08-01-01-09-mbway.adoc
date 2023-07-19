@@ -24,7 +24,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/MBWay',          '~> {{version}}'
+pod 'Getnet/MBWay',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_MBWay_basic_payment]
@@ -84,7 +84,14 @@ You can set optional parameters after the payment object is created. Check the d
 [#MobilePaymentSDK_iOS_MBWay_Visualisaton]
 === Visualisation
 ---
-image::images/07-01-02-integrating-mpsdk-on-ios/iOS/mbway.png[MBWay Screen, align=center, width=240, height=420]
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/mbway.png[MBWay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/mbway-customized.png[MBWay Screen, align=center, width=240, height=420]
+|
+|===
 
 [NOTE]
 ====

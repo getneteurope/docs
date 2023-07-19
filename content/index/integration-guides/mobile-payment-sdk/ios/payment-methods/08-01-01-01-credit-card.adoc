@@ -127,7 +127,7 @@ payment.signature = signature
 var tokenId: String?
 
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -157,7 +157,7 @@ payment.token = token
 
 
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -221,7 +221,7 @@ payment.signature = signature
   
 var parentTransactionID: String?
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -255,7 +255,7 @@ payment.periodic = firstPeriodicType
 payment.signature = signature
 
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
