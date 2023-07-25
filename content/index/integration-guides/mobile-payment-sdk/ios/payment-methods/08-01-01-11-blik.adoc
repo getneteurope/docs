@@ -193,8 +193,8 @@ every module used in the SDK.
       - `.lightContent` - Light content, for use on dark backgrounds, 
       - `.auto` - Custom content, for use on backgrounds by the background color of SDKPayECNavigationBar control
    .. `backgroundColor` - background color
-   .. `firstBackgroundColor` - first gradient background color. It is used when background apearance color is nil. 
-   .. `secondBackgroundColor` - second gradient background color. It is used when background apearance color is nil.
+   .. `firstBackgroundColor` - first gradient background color. It is used when the background appearance color is nil. 
+   .. `secondBackgroundColor` - second gradient background color. It is used when the background appearance color is nil.
    .. `UIView` appearance
 
 . `SDKPayECCancelButton` - cancel button inside the SDKPayECNavigationBar navigation bar
@@ -203,11 +203,14 @@ every module used in the SDK.
 . `SDKPayECHeaderLabel` - title label inside the SDKPayECNavigationBar navigation bar
    .. `UILabel` appearance
 
+. `SDKPayECTextField` - 
+   .. `UITextField` appearance
+
 . `SDKPayECSubmitButton` - submit button inside the SDKPayECNavigationBar navigation bar
    .. `UIButton` appearance
 
-. `SDKPayECTextField` - 
-   .. `UITextField` appearance
+. `SDKPayECTView` - 
+   .. `UIView` appearance
 
 [#MobilePaymentSDK_iOS_Blick_Visualisaton_Card_CustomizingVisuals_Example]
 ==== Customization Example
@@ -246,15 +249,24 @@ This is a code example for a basic Blik screen customization:
       SDKPayECTextField.appearance().underlineEditingColor = red
       SDKPayECTextField.appearance().errorColor = blue
 
-
+      SDKPayECView.appearance().backgroundColor = yellow
 ----
 
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
-| Default | Customized
+| ZeroLevel | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-appearance.png[Alipay Screen Appearance, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-customized-appearance.png[Alipay Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-zerolevel-appearance.png[Blik ZeroLevel Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-zerolevel-customized-appearance.png[Blik ZeroLevel Screen, align=center, width=240, height=420]
+|
+|===
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Redirect | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-redirect-appearance.png[Blik Redirect Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/blik-redirect-customized-appearance.png[Blik Redirect Screen, align=center, width=240, height=420]
 |
 |===
 //-

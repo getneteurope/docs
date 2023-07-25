@@ -73,6 +73,7 @@ You can set optional parameters after the payment object is created. Check the d
 [#MobilePaymentSDK_iOS_Multibanco_Visualisaton]
 === Visualisation
 ---
+MBReferencia (Multibanco) is without UI.
 
 [NOTE]
 ====
