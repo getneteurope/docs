@@ -33,7 +33,7 @@ The iOS supports two ways of MPSDK usage:
 .For example:
 [source,subs=attributes+]
 ----
-pod 'mobilePaymentSDK/All'
+pod 'Getnet/All'
 ----
 
 - The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
@@ -91,9 +91,9 @@ pod 'mobilePaymentSDK/SEPA'
 |Bizum payments frameworks
 |pod 'Getnet/Bizum'
 
-|Blick
-|Blick payments frameworks
-|pod 'Getnet/Blick'
+|Blik
+|Blik payments frameworks
+|pod 'Getnet/Blik'
 
 |Ideal
 |Ideal payments frameworks

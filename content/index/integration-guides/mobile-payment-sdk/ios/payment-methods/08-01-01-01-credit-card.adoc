@@ -495,8 +495,8 @@ This is a code example for a basic animated CardView screen customization:
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-appearance.png[CardField Screen Appearance, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-customized-appearance.png[CardField Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-appearance.png[Card Animated Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-customized-appearance.png[Card Animated Screen Appearance, align=center, width=240, height=420]
 |
 |===
    
@@ -617,8 +617,8 @@ func handleStyle() {
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-screen-appearance.png[CardField Screen Appearance, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-screen-customized-appearance.png[CardField Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-appearance.png[CardField Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized-appearance.png[CardField Appearance, align=center, width=240, height=420]
 |
 |===
    
@@ -730,8 +730,8 @@ func handleStyle() {
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-screen-appearance.png[CardFieldAnimated Screen Appearance, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-screen-customized-appearance.png[CardFieldAnimated Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-appearance.png[CardField Animated Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized-appearance.png[CardField Animated Appearance, align=center, width=240, height=420]
 |
 |===
    
