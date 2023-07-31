@@ -190,14 +190,14 @@ Visualization of RatePay result is up to the merchant applicaton. SDK returns IB
 | Default Elv | Customized Elv
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-1.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-1-customized.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-customized-1.png[RatePay Screen, align=center, width=240, height=420]
 
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-2.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-2-customized.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-customized-2.png[RatePay Screen, align=center, width=240, height=420]
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-3.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-3-customized.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-elv-customized-3.png[RatePay Screen, align=center, width=240, height=420]
 
 
 |===
@@ -207,15 +207,15 @@ Visualization of RatePay result is up to the merchant applicaton. SDK returns IB
 | Default Invoice | Customized Invoice
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-1.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-1-customized.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-customized-1.png[RatePay Screen, align=center, width=240, height=420]
 
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-2.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-2-customized.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-customized-2.png[RatePay Screen, align=center, width=240, height=420]
 
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-3.png[RatePay Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-3-customized.png[RatePay Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ratepay-invoice-customized-3.png[RatePay Screen, align=center, width=240, height=420]
 
 
 |===

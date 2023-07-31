@@ -147,13 +147,13 @@ In case shipping address is not provided, billing address will be used as shippi
 |===
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-1.png[Zinia Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-1-customized.png[Zinia Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-customized-1.png[Zinia Screen, align=center, width=240, height=420]
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-2.png[Zinia Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-2-customized.png[Zinia Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-customized-2.png[Zinia Screen, align=center, width=240, height=420]
 
 | image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-3.png[Zinia Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-3-customized.png[Zinia Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/zinia-customized-3.png[Zinia Screen, align=center, width=240, height=420]
 
 |===
 //-

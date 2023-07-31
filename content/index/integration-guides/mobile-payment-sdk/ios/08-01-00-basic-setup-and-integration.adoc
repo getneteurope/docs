@@ -41,8 +41,8 @@ pod 'Getnet/All'
 .For example:
 [source,subs=attributes+]
 ----
-pod 'mobilePaymentSDK/Card' 
-pod 'mobilePaymentSDK/SEPA'
+pod 'Getnet/Card' 
+pod 'Getnet/SEPA'
 ----
 
 [#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
