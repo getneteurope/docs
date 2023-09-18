@@ -239,6 +239,8 @@ In most of the cases
 
 <<PayPal_Main, PayPal>>
 
+<<MBWay_Main, MB Way>>
+
 |===
 
 //-
