@@ -1,0 +1,390 @@
+[#API_PaymentMBWay]
+== REST API
+
+_MB Way_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
+
+[#API_PaymentMBWay_CountriesandCurrencies]
+=== Countries and Currencies
+
+[width=75%, cols= "1h,3",stripes=none]
+|===
+|Countries |Portugal
+|Currencies |EUR
+|===
+
+[#API_PaymentMBWay_Communication]
+=== Communication Formats
+
+This table illustrates how _MB Way_ notifications are encoded and which formats and methods can be
+used for requests and responses.
+
+[width=75%,stripes=none]
+|===
+.2+h| Requests/Responses | Format  | XML
+                         | Methods | POST
+   h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN>> to set up IPN.
+|===
+
+[#API_PaymentMBWay_TransactionTypes]
+=== Transaction Types
+
+For <<Glossary_TransactionType, transaction type>> details which are not given here, go to <<AppendixB,  Transaction Types>>.
+
+
+[%autowidth.stretch,stripes=none]
+|===
+|Transaction Type | Description | Link to samples
+
+|_get-url_    |A step in a group of transactions where the URL of the _MB Way_ app landing page is retrieved for the consumer to be redirected to. The merchant cannot send this transaction request.
+                                |
+
+|_debit_    |Used to charge the specified amount from the consumer’s application wallet and mark it for immediate transfer once _MB Way_ confirms that the consumer has authorized the payment.
+                                | <<API_PaymentMBWay_Samples_Debit, debit samples>>
+|_authorization_    |Used to reserve funds from the consumer’s application wallet. You have 7 days to conduct a capture on this transaction.
+                                | <<API_PaymentMBWay_Samples_Authorization, authorization samples>>
+
+
+|_void-authorization_ |Used to free funds (reserved due to an authorization) from the consumer’s application wallet. The merchant can use this transaction to initiate the cancellation of the earlier ``authorization``. The cancellation can be for part of or the full authorized amount. 
+                                | <<API_PaymentMBWay_Samples_VoidAuthorization, void-authorization samples>>
+
+|_capture-authorization_ |Used to debit the consumer’s application wallet. Available only on a successful ``authorization``. The capture can be for part of or the full authorized amount, and multiple capture requests for the same authorization are allowed. Capture requests can be sent within 7 days from the successful ``authorization`` response.
+                                | <<API_PaymentMBWay_Samples_CaptureAuthorization, capture-authorization samples>>
+
+|_refund-debit_ |Used to refund the funds to the consumer’s application wallet. Available only on a successful ``debit``. Partial and multiple refunds are allowed.
+                                | <<API_PaymentMBWay_Samples_RefundDebit, refund-debit samples>>
+
+|_refund-capture_ |Used to refund the funds to the consumer’s application wallet. Available only on a successful ``capture-authorization``. Partial and multiple refunds are allowed.
+                                | <<API_PaymentMBWay_Samples_RefundCapture, refund-capture samples>>
+
+|_query_ / GET |Used to retrieve a transaction, if you have any related information missing in your own records.  Returns the status and details of a transaction.
+                                | 
+|===
+
+NOTE: You can also use the ``AUTO-SALE`` pseudo transaction type with the _MB Way_ payment method. For more information, see <<GeneralPlatformFeatures_Transactions, transaction features>>.
+
+NOTE: Recurring payments are not supported for _MB Way_.
+
+[#API_PaymentMBWay_TestCredentials]
+=== Test Credentials
+
+[%autowidth.stretch,stripes=none]
+|===
+.2+h|URL(s) Endpoints |For the transaction type _debit_ and _authorization_: |``\https://{rest-api-test-apm-endpoint}``
+|For the transaction types _void-authorization_, _capture-authorization_, _refund-capture_, and _refund-debit_: |``\https://{rest-api-test-endpoint}``
+h|Merchant Account ID (MAID)
+2+| 5531b677-f707-433d-a907-3cf4acbec1e4
+h|Username
+2+| 515225-GetnetEuropeTEST
+h|Password
+2+| 4cHLRE-Q7YcAP
+h| *Secret Key*
+2+| af145126-5ced-4b82-aa6b-cec488446475
+|===
+
+NOTE: The test environment is connected to the _MB Way_ sandbox, which does not require any additional data. The _MB Way_ landing page skips entering the consumer phone number and redirects to your shop immediately.
+
+[#API_PaymentMBWay_Workflow]
+=== Workflow
+
+[#API_PaymentMBWay_Authorization]
+==== debit and authorization
+
+image::images/diagrams/mbway_rest_simple.jpg[MB Way REST API debit and authorization workflow, width=950, align="center"]
+
+1. Consumer initiates the checkout process.
+2. Merchant sends a request to the Payment Gateway.
+3. The Payment Gateway passes the request to _MB Way_.
+4. _MB Way_ sends a response to the Payment Gateway.
+5. The Payment Gateway sends a response to the merchant.
+6. _MB Way_ sends a notification to the consumer´s MB Way app.
+7. Consumer authorizes the transaction (within 5 minutes) in the MB Way app.
+8. _MB Way_ sends the transaction status to  the Payment Gateway.
+9. The Payment Gateway sends a notification to the merchant who can display the completion of the payment process to the consumer.
+
+NOTE: In case of the ``authorization`` workflow, the merchant must also send the ``capture-authorization`` request to the Payment Gateway when they are ready to deliver the order.
+
+[#API_PaymentMBWay_RefundCapture]
+==== refund-debit and refund-capture
+
+image::images/diagrams/mbway_rest_refund.jpg[MB Way REST API refund workflow, width=950, align="center"]
+
+1. Consumer requests a refund from the merchant.
+2. Merchant sends a ``refund-debit`` or ``refund-capture`` request to the Payment Gateway, depending on the original transaction type. +
+The request must contain the ``parent-transaction-id``, which is the ``transaction-id`` of the transaction to be refunded.
+3. The Payment Gateway processes the transaction.
+4. The Payment Gateway sends the merchant a response that contains the result of the transaction (success or failed).
+5. Merchant displays the refund status to the consumer.
+6. When _MB Way_ has completed processing the transaction, the merchant receives a refund notification from the Payment Gateway and can process the payment status based on the notification, as needed.
+
+
+[#API_PaymentMBWay_Fields]
+=== Fields
+
+The following elements are mandatory *M*, optional *O* or conditional
+*C* for sending a request for _MB Way_ (complete field
+list available in <<RestApi_Fields, REST API field list>>). *NA* means that the field is not included in the request.
+
+[%autowidth.stretch,stripes=none, cols="v,,,,,"]
+|===
+| Field  | Request | Response | Datatype  | Size  | Description
+
+|_merchant-account-id_
+|M
+|M
+|String
+|36
+|Unique identifier for a merchant account
+
+|_transaction-id_
+|NA
+|M
+|String
+|36
+|Unique identifier for a transaction, generated by the system.
+
+|_request-id_
+|M
+|M
+|String
+|192
+|This is the identification number of the request, generated by the merchant.
+*It has to be unique for each request.*
+
+|_transaction-type_
+|M
+|M
+|String
+|30
+|This is the type for a transaction.
+
+|_transaction-state_
+|NA
+|M
+|String
+|12
+|This is the status of a transaction.
+
+|_completion-time-stamp_
+|NA
+|M
+|DateTime
+|
+|This is the completion timestamp of the request.
+|_statuses.status@code_
+|NA
+|M
+|String
+|12
+|This is the status code of a transaction.
+
+|_statuses.status@description_
+|NA
+|M
+|String
+|512
+|This is the description of the transaction status code.
+
+|_requested-amount_
+|C
+|M
+|Numeric
+|11.3
+|This is the amount of the transaction. The amount of the decimal place depends on the currency. The value must at least 0.01 and at most 999999999.99. +
+The field is mandatory for ``debit`` and ``authorization`` requests. In ``void-authorization``, ``capture-authorization``, ``refund-debit``, and ``refund-capture`` requests, it is needed if a partial amount is voided, captured, or refunded (if the value is omitted, the full amount is voided, captured, or refunded).
+
+|_requested-amount@currency_
+|C
+|M
+|String
+|3
+|This is the currency of the transaction. +
+The field is mandatory for ``debit`` and ``authorization`` requests, and optional for ``void-authorization``, ``capture-authorization``, ``refund-debit``, and ``refund-capture`` requests. For _MB Way_ payments, the currency must be set to ``EUR``.
+
+|_account-holder.first-name_
+|O
+|O
+|String
+|32
+|This is the consumer’s first name. +
+The field is used in ``debit`` and ``authorization`` requests only. 
+
+|_account-holder.last-name_
+|O
+|O
+|String
+|32
+|This is the consumer’s last name. +
+The field is used in ``debit`` and ``authorization`` requests only.
+
+|_account-holder.phone_
+|C
+|M
+|String
+|Regexp pattern [0-9]{4,11}
+|This is the consumer’s phone number. +
+The field is mandatory in ``debit`` and ``authorization`` transactions, and returned in the ``void-authorization``, ``capture-authorization``, ``refund-debit``, and ``refund-capture`` responses. 
+
+|_account-holder.phone-country-code_
+|C
+|C
+|String
+|Regexp pattern [+]?[0-9]{1,5}
+|This is the consumer’s phone country code. +
+The field is mandatory in ``debit`` and ``authorization`` transactions, and optional in other transaction types that reference a  ``debit`` or ``authorization`` transaction. 
+
+|_descriptor_
+|O
+|C
+|String
+|100
+|This is the text representing the payment on the consumer's bank statement. +
+The field is used in ``debit`` and ``authorization`` transactions, and returned in the ``void-authorization``, ``capture-authorization``, ``refund-debit``, and ``refund-capture`` responses. 
+
+|_payment-methods.payment-method@name_
+|M
+|C
+|String
+|15
+|The name of the payment method is ``mbway``. +
+The field is mandatory in ``debit`` and ``authorization`` transactions, and optional in other transaction types that reference a  ``debit`` or ``authorization`` transaction.
+
+
+|_parent-transaction-id_
+|C
+|M
+|String
+|100
+|The transaction ID of the parent transaction related to the current transaction. For example, the ``authorization`` transaction related to the current ``capture-authorization``. +
+The field is not used in ``authorization`` and ``debit`` requests, but is mandatory in ``void-authorization``, ``capture-authorization``, ``refund-debit``, and ``refund-capture`` requests.
+
+|_parent-transaction-amount_
+|NA
+|M
+|Numeric
+|11.3
+|This is the amount of the parent transaction. +
+The field is used in responses when the ``parent-transaction-id`` is provided in the request.
+
+|_parent-transaction-amount@currency_
+|NA
+|M
+|String
+|3
+|This is the currency of the parent transaction. +
+The field is used in responses when the ``parent-transaction-id`` is provided in the request.
+
+|_api-id_
+|NA
+|O
+|String
+|
+|A unique identifier assigned to every API.
+
+|===
+
+[#API_PaymentMBWay_Samples]
+=== Samples
+
+Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
+
+[#API_PaymentMBWay_Samples_Debit]
+==== _debit_
+
+.XML debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_debit_request_success.xml[]
+----
+
+.XML debit Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_debit_response_success.xml[]
+----
+
+[#API_PaymentMBWay_Samples_Authorization]
+==== _authorization_
+
+.XML authorization Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_authorization_request_success.xml[]
+----
+
+.XML authorization Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_authorization_response_success.xml[]
+----
+
+.XML authorization Request (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_authorization_request_failure.xml[]
+----
+
+.XML authorization Response (Failure)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_authorization_response_failure.xml[]
+----
+
+[#API_PaymentMBWay_Samples_VoidAuthorization]
+==== _void-authorization_
+
+.XML void-authorization Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_void_authorization_request_success.xml[]
+----
+
+.XML void-authorization Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_void_authorization_response_success.xml[]
+----
+
+[#API_PaymentMBWay_Samples_CaptureAuthorization]
+==== _capture-authorization_
+
+.XML capture-authorization Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_capture_authorization_request_success.xml[]
+----
+
+.XML capture-authorization Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_capture_authorization_response_success.xml[]
+----
+
+[#API_PaymentMBWay_Samples_RefundDebit]
+==== _refund-debit_
+
+.XML refund-debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_refund_debit_request_success.xml[]
+----
+
+.XML refund-debit Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_refund_debit_response_success.xml[]
+----
+
+[#API_PaymentMBWay_Samples_RefundCapture]
+==== _refund-capture_
+
+.XML refund-capture Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_refund_capture_request_success.xml[]
+----
+
+.XML refund-capture Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/mbway_refund_capture_response_success.xml[]
+----
