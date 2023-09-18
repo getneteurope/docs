@@ -1,0 +1,361 @@
+[#PPv2_PaymentMBWay]
+== {payment-page-v2} 
+
+:payment-method-name: MB Way
+
+_MB Way_ is a card-based digital wallet service for Portuguese consumers. It is used for online and in-app purchases, as well as P2P payments, by over 5 million users.
+
+_MB Way_ is easily accessible to almost all consumers with a Portuguese bank account. The consumer shares with you the phone number they have stored in their MB Way app, and you include it in your payment request. _MB Way_ requests the MB Way app associated with the phone number to accept the payment, and the consumer receives the notification to complete the payment directly on their mobile device. The money transfer happens after the user acceptance in the MB Way app.
+
+_MB Way_ can be used by all 3 Payment Page implementations (Hosted Payment Page, Embedded Payment Page, and Seamless).
+
+[#PPv2_PaymentMBWay_GeneralInformation]
+=== General Information
+
+include::{root}/include/ppv2-general-information.adoc[]
+
+Below, we provide a sample request for the transaction type <<PPv2_PaymentMBWay_TransactionType_debit, _debit_>>, including a field list with short descriptions.
+
+include::{root}/include/ppv2-general-information-2.adoc[]
+
+[#PPv2_PaymentMBWay_TestCredentials]
+=== Test Credentials
+
+[cols="20h,80"]
+|===
+|URI (Endpoint)
+|``\https://{pp-test-instance-hostname}/api/payment/register``
+
+|Merchant Account ID (MAID)
+|5531b677-f707-433d-a907-3cf4acbec1e4
+
+|Username
+|515225-GetnetEuropeTEST
+
+|Password
+|4cHLRE-Q7YcAP
+
+|Secret Key (used for response verification)
+|af145126-5ced-4b82-aa6b-cec488446475
+|===
+
+[#PPv2_PaymentMBWay_TransactionType_debit]
+=== Transaction Type _debit_
+
+A _debit_ charges the specified amount from the consumer’s application wallet and marks it for immediate transfer.
+
+For a successful transaction:
+
+. Create a payment session (initial request).
+. Redirect the consumer to the payment page (initial response URL).
+. Highly recommended: Parse and process the payment response.
+
+NOTE: You can also use the ``AUTO-SALE`` pseudo transaction type with the _MB Way_ payment method. For more information, see <<GeneralPlatformFeatures_Transactions, transaction features>>.
+
+//-
+
+
+[#PPv2_PaymentMBWay_Samples]
+
+=== Sample Workflow
+
+We provide JSON examples for each step of this process. You can find them below.
+
+.Request Headers
+
+.Request Headers
+[cols="20h,80"]
+|===
+|Authorization
+|"Authorization"="Basic" + base64 (“username:password”). Use username and password as given in your contract to base64-encode the authorization.
+|Content-Type
+|application/json
+|===
+
+.1. Create a Payment Session (Initial Request)
+
+The initial request creates the payment session. If it is successful, you receive a URL as a response which redirects to the payment form.
+
+You can either send the phone number in the request or allow the payment form to collect it:
+
+* *Request with a phone number*:
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PPv2_mbway_debit_request_with_phone.json[]
+----
+
+* *Request without a phone number*:
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PPv2_mbway_debit_request_without_phone.json[]
+----
+
+[%autowidth, cols="m,,,,,,,"]
+|===
+4+|Field (JSON) |Data Type |Cardinality |Size |Description
+
+3+|merchant-account-id
+m|value
+|String
+|Mandatory
+|36
+|A unique identifier assigned by Getnet to every merchant account.
+
+4+|request-id
+|String
+|Mandatory
+|150
+|A unique identifier assigned to every request (by merchant). Used when searching for or referencing it later. ``{{$guid}}`` serves as a placeholder for a random request ID. +
+Allowed characters: `[a-z0-9-_ ]`
+
+4+|transaction-type
+|String
+|Mandatory
+|30
+a|The requested transaction type. The available transaction type for _{payment-method-name}_ is `debit`.
+
+.2+|requested-amount
+3+m|currency
+|String
+|Mandatory
+|3
+|The currency of the requested/contested transaction amount. For _{payment-method-name}_ payments, the currency must be set to ``EUR``.
+Format: 3-character abbreviation according to ISO 4217.
+
+3+m|value
+|Numeric
+|Mandatory
+|18
+|The full amount that is requested/contested in a transaction. 2 decimal places allowed.
+
+.4+|account-holder
+3+m|first-name
+|String
+|Optional
+|32
+|The consumer's first name.
+
+3+m|last-name
+|String
+|Optional
+|32
+|The consumer's last name.
+
+3+m|email
+|String
+|Optional
+|64
+|The consumer's email address.
+
+3+m|phone
+|String
+|Optional
+|
+|The consumer's phone number. For example: “351#910000000”, with 00 and the + prefix removed from the country code.
+
+|payment-methods
+m|payment-method
+2+m|name
+|String
+|Optional
+|15
+|The name of the payment method used. Set this value to ``mbway`` for _MB Way_.
+
+4+|country
+|String
+|Optional
+|3
+a|The consumer's country ID. It must 
+be set to ``PL``; if it is not provided, it is 
+automatically set to ``PL``.
+
+4+|locale
+|String
+|Optional
+|6
+a|The language in 
+which the _MB Way_ landing page is displayed. +
+Possible values:
+
+- `pl`
+- `en`
+- `de`
+- `es`
+- `it`
+
+4+|descriptor
+|String
+|Optional
+|64
+a|The description of the transaction displayed on the consumer’s statement along with the mbway-Transaction-ID. +
+The length and allowed characters depend on the respective consumer’s bank system and can vary.
+
+4+|success-redirect-url
+|String
+|Optional
+|256
+|The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``.
+
+4+|cancel-redirect-url
+|String
+|Optional
+|256
+|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``.
+
+4+|fail-redirect-url
+|String
+|Optional
+|256
+|The URL to which the consumer is redirected after an unsuccessful payment, e.g. ``\https://{pp-redirect-url-error}``.
+|===
+
+
+.2. Redirect the Consumer to the Payment Page (Sample Response URL)
+
+[source,json,subs=attributes+]
+----
+{
+  "payment-redirect-url": "https://{pp-test-instance-hostname}/?wPaymentToken=<DYNAMIC_TOKEN>"
+}
+----
+
+[cols="e,,"]
+|===
+|Field (JSON) |Data Type |Description
+
+|payment-redirect-url |String |The URL which redirects to the payment
+form. Sent as a response to the initial request.
+|===
+
+include::{root}/include/ppv2-redirect-instructions.adoc[]
+
+
+
+.3. Parse and Process the _pending-debit_ Response (Decoded Payment Response)
+
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PPv2_mbway_debit_response_decoded.json[]
+----
+
+[%autowidth]
+|===
+4+|Field (JSON) |Data Type |Description
+
+4+m|locale
+|String
+a|The language in 
+which the _MB Way_ landing page is displayed. +
+Possible values:
+
+- `pl`
+- `en`
+- `de`
+- `es`
+- `it`
+
+.3+m|statuses
+.3+m|status
+2+m|description
+|String
+|The description of the transaction status message.
+
+2+m|severity
+|String
+a|The definition of the status message. +
+Possible values:
+
+- `information`
+- `warning`
+- `error`
+
+2+m|code
+|String
+|The status code of the status message.
+
+4+m|success-redirect-url
+|String
+|The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``.
+
+4+m|cancel-redirect-url
+|String
+|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``.
+
+4+m|fail-redirect-url
+|String
+|The URL to which the consumer is redirected after an unsuccessful payment, e.g. ``\https://{pp-redirect-url-error}``.
+
+m|account-holder
+3+m|phone
+|String
+|The consumer's phone number.
+
+4+m|request-id
+|String
+|A unique identifier assigned to every request (by merchant). Used when searching for or referencing it later.
+
+4+m|transaction-id
+|String
+|A unique identifier assigned to every transaction. Used when searching for or referencing it later.
+
+4+m|completion-time-stamp
+|DateTime
+|The UTC/ISO time-stamp documents the time & date when the transaction was executed. +
+Format: ``YYYY-MM-DDThh:mm:ss`` (ISO).
+
+.2+m|requested-amount
+3+m|currency
+|String
+|The currency of the requested/contested transaction amount.
+
+3+m|value
+|Numeric
+|The full amount that is requested/contested in a transaction.
+
+
+m|merchant-account-id
+3+m|value
+|String
+|A unique identifier assigned by Getnet to every merchant account.
+
+4+m|transaction-state
+|String
+a|The current transaction state. +
+Possible values:
+
+- ``in-progress``
+- ``success``
+- ``failed``
+//-
+
+Typically, a transaction starts with an "in-progress"
+state and finishes with either the "success" or the "failed" state. This information is returned in the
+response only.
+
+4+m|transaction-type
+|String
+|The requested transaction type. Must be ``debit`` for _MB Way_ payments.
+
+
+m|payment-methods
+m|payment-method
+2+m|name
+|String
+|The name of the payment method used.
+
+4+m|api-id
+|String
+|A unique identifier assigned to every API.
+
+|===
+
+
+[#PPv2_PaymentMBWay_PostProcessing]
+=== Post-Processing Operations
+
+{payment-page-abbr} is best used for one-off payments. It is also best used if you are not PCI compliant, as {payment-page-abbr} collects the necessary data on your behalf.
+However, when it comes to referencing a transaction for any kind of post-processing operation - such as refunding a _debit_ transaction - use our <<RestApi, REST API>> directly.
+
+IMPORTANT: Check the REST API <<API_PaymentMBWay, _{payment-method-name}_ specification>> for details on _{payment-method-name}_ -specific post-processing operations.
+
+//-
