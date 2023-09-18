@@ -1,0 +1,25 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/58349516-e65d-4da7-9f32-d83ff66261df/payments/13f4e80c-d026-4cf9-b052-968643959356">
+  <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/58349516-e65d-4da7-9f32-d83ff66261df">58349516-e65d-4da7-9f32-d83ff66261df</merchant-account-id>
+  <transaction-id>13f4e80c-d026-4cf9-b052-968643959356</transaction-id>
+  <request-id>1164a75d-870c-4169-8a91-84e9b2e3504b</request-id>
+  <transaction-type>void-authorization</transaction-type>
+  <transaction-state>success</transaction-state>
+  <completion-time-stamp>2023-06-21T14:11:04.000Z</completion-time-stamp>
+  <statuses>
+    <status code="201.0000" description="mbway:The resource was successfully created." severity="information"/>
+  </statuses>
+  <requested-amount currency="EUR">2.01</requested-amount>
+  <parent-transaction-id>4ae9649d-387d-4227-821e-ce6ddaa92c4c</parent-transaction-id>
+  <account-holder>
+    <first-name>Sponge</first-name>
+    <last-name>Bob</last-name>
+    <phone>17687985804</phone>
+    <phone-country-code>+49</phone-country-code>
+  </account-holder>
+  <descriptor>Payment description</descriptor>
+  <payment-methods>
+    <payment-method name="mbway"/>
+  </payment-methods>
+  <parent-transaction-amount currency="EUR">2.010000</parent-transaction-amount>
+  <api-id>elastic-api</api-id> 
+</payment>

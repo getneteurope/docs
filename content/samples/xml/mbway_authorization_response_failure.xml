@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>ff958b32-115d-4380-b2b1-ba92c0ea3e0c</merchant-account-id>
+  <transaction-id>c12aebba-0f82-4f2e-8162-a822fdb59443</transaction-id>
+  <request-id>84cc4278-42a2-418b-9c4d-673c705e045c</request-id>
+  <transaction-type>authorization</transaction-type>
+  <transaction-state>failed</transaction-state>
+  <completion-time-stamp>2023-06-29T13:23:01.000Z</completion-time-stamp>
+  <statuses>
+    <status code="400.1202" description="Phone has not been provided. Please check your input and try again." severity="error"/>
+    <status code="400.5054" description="Phone Country Code has not been provided. Please check your input and try again." severity="error"/>
+  </statuses>
+  <requested-amount currency="EUR">6.21</requested-amount>
+  <account-holder>
+    <first-name>Shee</first-name>
+    <last-name>Test</last-name>
+    <email>john.doe@getneteurope.com</email>
+  </account-holder>
+  <descriptor>Test</descriptor>
+  <payment-methods>
+    <payment-method name="mbway"/>
+  </payment-methods>
+</payment>

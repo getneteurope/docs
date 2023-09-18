@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>ff958b32-115d-4380-b2b1-ba92c0ea3e0c</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>authorization</transaction-type>
+  <requested-amount currency="EUR">6.21</requested-amount>
+  <account-holder>
+    <first-name>Shee</first-name>
+    <last-name>Test</last-name>
+    <email>john.doe@getneteurope.com</email>
+  </account-holder>    
+  <descriptor>Test</descriptor>
+  <payment-methods>
+    <payment-method name="mbway"/>
+  </payment-methods>
+</payment>

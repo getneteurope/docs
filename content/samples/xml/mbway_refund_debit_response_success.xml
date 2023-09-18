@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/5531b677-f707-433d-a907-3cf4acbec1e4/payments/187fcc3f-376d-4c3e-8811-40fd6dd15319">
+  <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/5531b677-f707-433d-a907-3cf4acbec1e4">5531b677-f707-433d-a907-3cf4acbec1e4</merchant-account-id>
+  <transaction-id>187fcc3f-376d-4c3e-8811-40fd6dd15319</transaction-id>
+  <request-id>faf41e9f-dde7-4214-b1a7-88591984d3ee</request-id>
+  <transaction-type>refund-debit</transaction-type>
+  <transaction-state>success</transaction-state>
+  <completion-time-stamp>2023-06-29T13:32:46.000Z</completion-time-stamp>
+  <statuses>
+    <status code="201.0000" description="mbway:The resource was successfully created." severity="information"/>
+  </statuses>
+  <requested-amount currency="EUR">5.01</requested-amount>
+  <parent-transaction-id>2d45268b-00b1-47a3-8e31-790c4b75b285</parent-transaction-id>
+  <account-holder>
+    <first-name>Sponge</first-name>
+    <last-name>Bob</last-name>
+    <phone>17645553286</phone>
+  </account-holder>
+  <descriptor>MBWAY Payment description</descriptor>
+  <payment-methods>
+    <payment-method name="mbway"/>
+  </payment-methods>
+  <parent-transaction-amount currency="EUR">10.010000</parent-transaction-amount>
+  <api-id>elastic-api</api-id>
+</payment>

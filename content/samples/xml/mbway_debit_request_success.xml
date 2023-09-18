@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>5531b677-f707-433d-a907-3cf4acbec1e4</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>debit</transaction-type>
+  <requested-amount currency="EUR">10.01</requested-amount>
+  <account-holder>
+    <first-name>Sponge</first-name>
+    <last-name>Bob</last-name>
+    <phone>913951034</phone>
+    <phone-country-code>+351</phone-country-code>
+  </account-holder>
+  <descriptor>MBWAY Payment description</descriptor>
+  <payment-methods>
+    <payment-method name="mbway"/>
+  </payment-methods>
+</payment>

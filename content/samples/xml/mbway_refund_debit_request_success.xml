@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>{{mbwayMaid}}</merchant-account-id>
+  <request-id>{{$guid}}</request-id>
+  <transaction-type>refund-debit</transaction-type>
+  <requested-amount currency="EUR">5.01</requested-amount>
+  <parent-transaction-id>2d45268b-00b1-47a3-8e31-790c4b75b285</parent-transaction-id>
+  <payment-methods>
+    <payment-method name="mbway"/>
+  </payment-methods>
+</payment>
