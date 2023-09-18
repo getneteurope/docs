@@ -1,0 +1,36 @@
+{
+  "payment-methods" : {
+    "payment-method": [ {
+      "name": "mbway"
+    } ]
+  },
+  "account-holder": {
+    "phone": "17645553286",
+    "phone-country-code": "+49"
+  },
+  "transaction-type": "get-url",
+  "merchant-account-id": {
+    "value": "5531b677-f707-433d-a907-3cf4acbec1e4"
+  },
+  "transaction-id": "9fe71fbb-5cb1-4ad8-9bbd-5456e03f3f58",
+  "request-id": "1b584d30-03ee-4887-9cc1-33cf5b77b45e-get-url",
+  "transaction-state": "success",
+  "completion-time-stamp": "2023-07-05T06:19:21",
+  "requested-amount": {
+    "currency": "EUR",
+    "value": 100
+  },
+  "statuses": {
+    "status": [ {
+      "description": "The resource was successfully created.",
+      "severity": "information",
+      "code": "201.0000"
+    } ]
+  },
+  "ip-address": "185.60.58.247",
+  "cancel-redirect-url": "https://demoshoptest.getneteurope.com/demoshop/#/cancel",
+  "fail-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/error",
+  "success-redirect-url": "https://demoshoptest.getneteurope.com/demoshop/#/success",
+  "api-id": "wpp"
+}
+

@@ -1,0 +1,27 @@
+{
+  "payment": {
+    "merchant-account-id": {
+      "value": "5531b677-f707-433d-a907-3cf4acbec1e4"
+    },
+    "request-id": "{{$guid}}",
+    "transaction-type": "debit",
+    "requested-amount": {
+      "value": 100,
+      "currency": "EUR"
+    },
+    "payment-methods": {
+      "payment-method": [
+        {
+          "name": "mbway"
+        }
+      ]
+    },
+    "account-holder": {
+      "phone-country-code": "+49",
+      "phone": "17645553286"
+    },
+    "success-redirect-url": "https://demoshoptest.getneteurope.com/demoshop/#/success",
+    "cancel-redirect-url": "https://demoshoptest.getneteurope.com/demoshop/#/cancel",
+    "fail-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/error"
+  }
+}
