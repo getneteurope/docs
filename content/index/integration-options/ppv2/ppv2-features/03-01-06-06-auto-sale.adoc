@@ -24,6 +24,7 @@ are the values used:
 |Payment method |Default transaction type
 |``creditcard`` |``purchase``
 |``ideal`` |``debit``
+|``multibanco`` |``pending-debit``
 |``paypal`` |``debit``
 |``sepadirectdebit`` |``debit``
 |``sofortbanking`` |``debit``
