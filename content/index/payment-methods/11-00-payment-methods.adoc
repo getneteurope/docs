@@ -203,6 +203,8 @@ satisfaction.
 
 <<API_PaymentInvoice, Payment on Invoice>>
 
+<<API_Multibanco, Multibanco>>
+
 |[[PaymentMethods_PaymentMode_Wallet]]_Wallet_
 |_Wallet_ is a payment mode which enables consumers to pay directly from
 their Wallet to merchants they want to deal with. So like in
