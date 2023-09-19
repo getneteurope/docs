@@ -411,6 +411,7 @@ transaction type for _auto-sale_ per payment method. The default values
 are:
 
 - For credit card, _auto-sale_ corresponds to  _purchase._
+- For Multibanco, _auto-sale_ corresponds to _pending-debit_.
 - For all other alternative payment methods, _auto-sale_ corresponds to
 _debit._
 
