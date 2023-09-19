@@ -36,7 +36,7 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
                                 | <<API_PaymentMultibanco_Samples, pending-debit samples>>
 
 |debit |Automatically created in the system when the consumer pays for a ``pending-debit`` transaction using their online banking or their debit card at a physical ATM, or if the transaction expires. Used to transfer funds from the consumer's bank account to the merchant's, or to notify the merchant that the transaction has expired without payment. A ``debit`` notification is sent to the merchant when a ``debit`` transaction is created.
-                                |
+                                | <<API_PaymentMultibanco_Samples, debit samples>>
 
 |void-pending-debit |Used to cancel a ``pending-debit`` transaction. Available on a successful ``pending-debit``. Partial cancellations are not allowed. Cancellation requests can only be sent while the ``pending-debit`` transaction is active.
                                 | <<API_PaymentMultibanco_Samples, void-pending-debit samples>>
@@ -312,6 +312,9 @@ include::{root}/samples/xml/multibanco_pending_debit_response_success.xml[]
 ----
 include::{root}/samples/xml/multibanco_pending_debit_notification_success.xml[]
 ----
+
+[#API_PaymentMultibanco_Samples_Debit]
+==== _debit_
 
 .XML debit Notification (Successful)
 [source,xml,subs=attributes+]
