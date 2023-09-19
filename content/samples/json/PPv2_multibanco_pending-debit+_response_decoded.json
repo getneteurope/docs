@@ -1,0 +1,44 @@
+{
+    "payment": {
+        "statuses": {
+            "status": [
+                {
+                    "code": "201.0000",
+                    "description": "multibanco:The resource was successfully created.",
+                    "severity": "information"
+                }
+            ]
+        },
+        "descriptor": "test",
+        "merchant-account-id": {
+            "value": "db22a514-b32d-4315-af8c-91626ec2c5e4"
+        },
+        "transaction-id": "b23a452c-59ef-4050-8a73-517434b5f3fa",
+        "request-id": "0a4f9122-ba34-4506-8709-c80ff6817611",
+        "transaction-type": "pending-debit",
+        "transaction-state": "success",
+        "completion-time-stamp": 1694093273000,
+        "requested-amount": {
+            "value": 10.00,
+            "currency": "EUR"
+        },
+        "order-number": "125461645",
+        "payment-methods": {
+            "payment-method": [
+                {
+                    "name": "multibanco",
+                    "payload": ""
+                }
+            ]
+        },
+        "api-id": "wpp",
+        "cancel-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/cancel",
+        "fail-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/error",
+        "success-redirect-url": "https://demoshop-test.getneteurope.com/demoshop/#/success",
+        "expiration-date": 1694352471594,
+        "provider-transaction-reference-id": "412329548",
+        "sub-merchant-info": {
+            "payment-facilitator-id": "45676"
+        }
+    }
+}
