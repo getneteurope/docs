@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment" self="https://api-test.getneteurope.com:443/engine/rest/merchants/db22a514-b32d-4315-af8c-91626ec2c5e4/payments/12463829-2599-4ebc-861b-b3a6a589d0da">
+    <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/db22a514-b32d-4315-af8c-91626ec2c5e4">db22a514-b32d-4315-af8c-91626ec2c5e4</merchant-account-id>
+    <transaction-id>12463829-2599-4ebc-861b-b3a6a589d0da</transaction-id>
+    <request-id>faff3c15-2899-4518-ba04-a082db8731f4</request-id>
+    <transaction-type>void-pending-debit</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2023-09-04T12:16:25.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="multibanco:The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="EUR">10.00</requested-amount>
+    <parent-transaction-id>d72a6bec-7a03-4426-bbf8-bf708150527d</parent-transaction-id>
+    <order-detail>021234</order-detail>
+    <descriptor>description</descriptor>
+    <payment-methods>
+        <payment-method name="multibanco"/>
+    </payment-methods>
+    <parent-transaction-amount currency="EUR">10.000000</parent-transaction-amount>
+    <expiration-date>2023-12-18T00:00:00.000Z</expiration-date>
+    <sub-merchant-info>
+        <payment-facilitator-id>45676</payment-facilitator-id>
+    </sub-merchant-info>
+</payment>

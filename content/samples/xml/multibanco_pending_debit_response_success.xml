@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id>db22a514-b32d-4315-af8c-91626ec2c5e4</merchant-account-id>
+    <transaction-id>bea60808-bc45-4bbc-82a8-9629001ae196</transaction-id>
+    <request-id>628d20a7-88af-429d-bba0-ae04fc614cbb</request-id>
+    <transaction-type>pending-debit</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2023-07-26T05:37:42.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="EUR">10.00</requested-amount>
+    <order-detail>021234</order-detail>
+    <descriptor>description</descriptor>
+    <payment-methods>
+        <payment-method name="multibanco"/>
+    </payment-methods>
+    <expiration-date>2023-12-18T00:00:00.000Z</expiration-date>
+    <provider-transaction-reference-id>572568023</provider-transaction-reference-id>
+    <sub-merchant-info>
+        <payment-facilitator-id>45676</payment-facilitator-id>
+    </sub-merchant-info>
+</payment>

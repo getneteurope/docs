@@ -1,0 +1,16 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>db22a514-b32d-4315-af8c-91626ec2c5e4</merchant-account-id>
+  <request-id>628d20a7-88af-429d-bba0-ae04fc614cbb</request-id>
+  <transaction-type>pending-debit</transaction-type>
+  <requested-amount currency="EUR">10.00</requested-amount>
+  <order-detail>021234</order-detail>
+  <descriptor>description</descriptor>
+  <payment-methods>
+    <payment-method name="multibanco"/>
+  </payment-methods>
+  <browser>
+    <user-agent>dmytro</user-agent>
+    <ip-address>127.0.0.1</ip-address>
+  </browser>
+  <expiration-date>2023-12-18T00:00:00.000Z</expiration-date>
+</payment>

@@ -1,0 +1,11 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>db22a514-b32d-4315-af8c-91626ec2c5e4</merchant-account-id>
+  <request-id>628d20a7-88af-429d-bba0-ae04fc614cb2</request-id>
+  <transaction-type>refund-debit</transaction-type>
+  <requested-amount currency="EUR">10.00</requested-amount>
+  <parent-transaction-id>6690db34-d712-488b-b039-75fe50c4fb3b</parent-transaction-id>
+  <order-detail>021234</order-detail>
+  <payment-methods>
+    <payment-method name="multibanco"/>
+  </payment-methods>
+</payment>

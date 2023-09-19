@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payment self="https://api-test.getneteurope.com:443/engine/rest/merchants/db22a514-b32d-4315-af8c-91626ec2c5e4/payments/6690db34-d712-488b-b039-75fe50c4fb3b" xmlns="http://www.elastic-payments.com/schema/payment">
+    <merchant-account-id ref="https://api-test.getneteurope.com:443/engine/rest/config/merchants/db22a514-b32d-4315-af8c-91626ec2c5e4">db22a514-b32d-4315-af8c-91626ec2c5e4</merchant-account-id>
+    <transaction-id>6690db34-d712-488b-b039-75fe50c4fb3b</transaction-id>
+    <request-id>628d20a7-88af-429d-bba0-ae04fc614cbb</request-id>
+    <transaction-type>debit</transaction-type>
+    <transaction-state>success</transaction-state>
+    <completion-time-stamp>2023-09-04T09:31:40.000Z</completion-time-stamp>
+    <statuses>
+        <status code="201.0000" description="The resource was successfully created." severity="information"/>
+    </statuses>
+    <requested-amount currency="EUR">10.000000</requested-amount>
+    <parent-transaction-id>4064dbc9-3d63-4950-b157-e5eaee15239d</parent-transaction-id>
+    <order-detail>021234</order-detail>
+    <descriptor>description</descriptor>
+    <custom-fields>
+        <custom-field field-name="notificationID" field-value="40759c71-6f87-4019-a2fc-0631ef4c755c"/>
+    </custom-fields>
+    <payment-methods>
+        <payment-method name="multibanco"/>
+    </payment-methods>
+    <expiration-date>2023-12-18T00:00:00.000Z</expiration-date>
+    <sub-merchant-info>
+        <payment-facilitator-id>45676</payment-facilitator-id>
+    </sub-merchant-info>
+</payment>

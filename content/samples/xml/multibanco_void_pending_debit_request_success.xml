@@ -1,0 +1,11 @@
+<payment xmlns="http://www.elastic-payments.com/schema/payment">
+  <merchant-account-id>db22a514-b32d-4315-af8c-91626ec2c5e4</merchant-account-id>
+  <request-id>faff3c15-2899-4518-ba04-a082db8731f4</request-id>
+  <transaction-type>void-pending-debit</transaction-type>
+  <requested-amount currency="EUR">10.00</requested-amount>
+  <parent-transaction-id>d72a6bec-7a03-4426-bbf8-bf708150527d</parent-transaction-id>
+  <order-detail>021234</order-detail>
+  <payment-methods>
+    <payment-method name="multibanco"/>
+  </payment-methods>
+</payment>
