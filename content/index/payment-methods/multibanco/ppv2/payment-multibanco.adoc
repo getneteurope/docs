@@ -1,0 +1,295 @@
+[#PPv2_PaymentMultibanco]
+
+== Payment Page
+
+:payment-method-name: Multibanco
+
+[#PPv2_PaymentMultibanco_GeneralInformation]
+=== General Information
+
+include::{root}/include/ppv2-general-information.adoc[]
+
+[#PPv2_PaymentMultibanco_AboutMultibanco]
+=== About Multibanco
+
+_Multibanco_ is a type of a bank transfer service for Portuguese consumers. It is a post-pay option, which means that when using Multibanco, consumers receive a payment voucher containing the reference number of the payment. The consumer can then pay for their order using their online banking or their debit card at a physical ATM. Multibanco has been around since 1985 and is supported by all banks in Portugal, meaning that all Portuguese consumers can be reached by e-commerce merchants (86% of the Portuguese population carries a Multibanco card). In other words, Multibanco is a core payment method for Portuguese consumers, having established itself as the payments brand with the best brand recognition in the country.
+
+_Multibanco_ is a type of offline bank transfer and can be used by all 3 Payment Page implementations (Hosted Payment Page, Embedded Payment Page, and Seamless).
+
+For more information on Multibanco, see https://www.multibanco.pt/.
+
+[#PPv2_PaymentMultibanco_Workflow]
+=== Workflow
+
+The following diagram shows a more detailed process flow for creating ``pending-debit`` transactions with Multibanco:
+
+image::images/diagrams/multibanco_pp_simple.jpg[Multibanco Payment Page pending-debit workflow, width=950, align="center"]
+
+1. Consumer initiates the checkout process.
+2. Merchant sends a payment session creation request to the Payment Page.
+3. Merchant receives the Payment Page URL from the Payment Page.
+4. Merchant redirects the consumer to the Payment Page.
+5. Payment Page displays the available payment methods to the consumer.
+6. Consumer selects the Multibanco payment method.
+7. Payment Page sends a ``pending-debit`` request to the Payment Gateway.
+8. The Payment Gateway receives the transaction reference from Multibanco.
+9. Payment Page receives the transaction reference from the Payment Gateway.
+10. Payment Page displays the transaction reference to the consumer.
+11. Consumer pays for their order using the transaction reference in their online banking or their debit card at a physical ATM.
+12. The Payment Gateway receives confirmation of the payment from Multibanco.
+13. Merchant receives a ``debit`` notification from the Payment Gateway.
+14. Merchant processes the payment status based on the ``debit`` notification.
+
+Below, we provide a sample request for the transaction type <<PPv2_PaymentMultibanco_TransactionType_pending-debit, _pending-debit_>>, including a field list with short descriptions.
+
+[#PPv2_PaymentMultibanco_TestCredentials]
+=== Test Credentials
+
+[cols="20h,80"]
+|===
+|URI (Endpoint)
+|``\https://{pp-test-instance-hostname}/api/payment/register``
+
+|Merchant Account ID (MAID)
+|db22a514-b32d-4315-af8c-91626ec2c5e4
+
+|Username
+|515456-Testshopplugin1
+
+|Password
+|iry7bW9ngg9u
+
+|Secret Key (used for response verification)
+|e2867982-aa02-4bd7-8a49-9d6b78ba95ca
+|===
+
+[#PPv2_PaymentMultibanco_TransactionType_pending-debit]
+=== Transaction Type _pending-debit_
+
+A _pending-debit_ is used to initiate the payment in Multibanco. The _pending-debit_ does not transfer the funds from the consumer's account to the merchant's. Instead, it retrieves a transaction reference the consumer can use to separately make the payment.
+
+For a successful transaction:
+
+. Create a payment session (initial request).
+. Redirect the consumer to the payment page (initial response URL).
+. Highly recommended: Parse and process the payment response.
+
+[NOTE]
+====
+
+* You can also use the ``AUTO-SALE`` pseudo transaction type with the Multibanco payment method. For more information, see <<GeneralPlatformFeatures_Transactions, transaction features>>.
+
+====
+
+[#PPv2_PaymentMultibanco_Samples]
+
+=== Sample Workflow
+
+We provide JSON examples for each step of this process. You can find them below.
+
+.Request Headers
+
+.Request Headers
+[cols="20h,80"]
+|===
+|Authorization
+|"Authorization"="Basic" + base64 (“username:password”)
+ 
+Use username and password as given in your contract to base64-encode the authorization.
+|Content-Type
+|application/json
+|===
+
+.1. Create a Payment Session (Initial Request)
+
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PPv2_multibanco_pending_debit_request.json[]
+----
+
+[%autowidth, cols="m,,,,,,,"]
+|===
+4+|Field (JSON) |Data Type |Cardinality |Size |Description
+
+3+|merchant-account-id
+m|value
+|String
+|Mandatory
+|36
+|A unique identifier assigned by us to every merchant account.
+
+4+|request-id
+|String
+|Mandatory
+|150
+|A unique identifier assigned to every request (by merchant). Used when searching for or referencing it later. ``{{$guid}}`` serves as a placeholder for a random request-id. +
+Allowed characters: `[a-z0-9-_ ]`
+
+4+|transaction-type
+|String
+|Mandatory
+|36
+a|The requested transaction type. Available transaction types for _{payment-method-name}_:
+
+- `pending-debit`
+
+4+|order-number
+|String
+|Optional
+|36
+a|The order number from the merchant. It is recommended that the order number be a maximum of 12 characters, otherwise it will be truncated. No special characters are allowed.
+
+4+|descriptor
+|String
+|Optional
+|36
+a|The description of the transaction displayed on the consumer’s statement.
+
+//-
+
+.2+|requested-amount
+3+m|currency
+|String
+|Mandatory
+|3
+|The currency of the requested/contested transaction amount. For _{payment-method-name}_ payments, the currency must be set to ``EUR``.
+Format: 3-character abbreviation according to ISO 4217.
+
+3+m|value
+|Numeric
+|Mandatory
+|11
+|The full amount that is requested/contested in a transaction. 2 decimal places allowed. The maximum allowed value for _Multibanco_ is 99,999.99. +
+Use `.` (decimal point) as the separator.
+
+|payment-methods
+m|payment-method
+2+m|name
+|String
+|Optional
+|15
+|The name of the payment method used. Set this value to ``multibanco`` for Multibanco.
+
+4+|expiration-date
+|String
+|Optional
+|24
+a|Expiration date and time of the transaction in Multibanco. If the transaction date and time passes without the consumer paying for their order, a failed ``debit`` transaction is created. If omitted from the request, the expiration date and time is set to 72 hours from when the request was received by Multibanco. The maximum expiration date and time is 17 months from the ``pending-debit`` request, but Multibanco recommends it be no greater than 72 hours. The format is YYYY-MM-DDThh:mm:ss.sssZ and is expressed in UTC time.
+
+4+|success-redirect-url
+|String
+|Optional
+|256
+|The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``.
+
+4+|cancel-redirect-url
+|String
+|Optional
+|256
+|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``.
+
+4+|fail-redirect-url
+|String
+|Optional
+|256
+|The URL to which the consumer is redirected after an unsuccessful payment, e.g. ``\https://{pp-redirect-url-error}``.
+|===
+
+
+.2. Redirect the Consumer to the Payment Page (Sample Response URL)
+
+[source,json,subs=attributes+]
+----
+{
+  "payment-redirect-url": "https://{pp-test-instance-hostname}/?wPaymentToken=<DYNAMIC_TOKEN>"
+}
+----
+
+include::{root}/include/ppv2-redirect-instructions.adoc[]
+
+.3. Parse and Process the _pending-debit_ Response (Decoded Payment Response)
+
+[source,json,subs=attributes+]
+----
+include::{root}/samples/json/PPv2_multibanco_pending-debit+_response_decoded.json[]
+----
+
+[%autowidth]
+|===
+4+|Field (JSON) |Data Type |Description
+
+m|payment-methods
+m|payment-method
+2+m|payload
+|String
+|The value of ``payload`` depends on the payment method. +
+Always empty for _{payment-method-name}_.
+
+4+m|transaction-id
+|String
+a|A unique identifier assigned to every transaction. This information is
+returned in the response only.
+
+4+m|transaction-state
+|Token
+a|The current transaction state. Possible values:
+
+- ``in-progress``
+- ``success``
+- ``failed``
+//-
+
+Typically, a transaction starts with an "in-progress"
+state and finishes with either the "success" or the "failed" state. This information is returned in the
+response only.
+
+4+m|completion-time-stamp
+|DateTime
+|The UTC/ISO time-stamp documents the time & date when the transaction was executed. +
+Format: ``YYYY-MM-DDThh:mm:ss`` (ISO).
+
+.3+m|statuses
+.3+m|status
+2+m|description
+|String
+|Text used to describe the transaction status. This information is returned in the response only.
+
+2+m|severity
+|Token
+|The severity of the transaction, can be information, warning, or error. This information
+is returned in the response only.
+
+2+m|code
+|String
+|The status of a transaction. This is primarily used in conjunction with the transaction state
+to determine the exact details of the status of the transaction. This information is returned in
+the response only.
+
+4+m|api-id
+|Token
+|A unique identifier assigned to every API.
+
+m|device
+3+m|fingerprint
+|String
+|A device fingerprint is information about a remote computing device, collected by the merchant
+for identification purposes. Fingerprints can be used to fully or partially
+identify individual users or devices even when cookies are turned off.
+
+4+m|descriptor
+|String
+|The description of the transaction displayed on the consumer’s statement.
+In the case of a credit card statement, it can be dynamically set per transaction.
+It is only supported by some acquirers.
+|===
+
+
+[#PPv2_PaymentMultibanco_PostProcessing]
+=== Post-Processing Operations
+
+{payment-page-abbr} is best used for one-off payments. It is also best used if you are not PCI compliant, as {payment-page-abbr} collects the necessary data on your behalf.
+However, when it comes to referencing a transaction for any kind of post-processing operation - such as cancelling a _pending-debit_ transaction or refunding a _debit_ transaction that has been automatically generated - use our <<RestApi, REST API>> directly.
+
+IMPORTANT: Check the REST API <<API_PaymentMultibanco, _{payment-method-name}_ specification>> for details on _{payment-method-name}_ -specific post-processing operations.
+
+//-

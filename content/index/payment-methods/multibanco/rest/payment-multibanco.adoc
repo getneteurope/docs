@@ -1,0 +1,377 @@
+[#API_PaymentMultibanco]
+== REST API
+
+Multibanco is a type of Offline Bank Transfer.
+
+[#API_PaymentMultibanco_CountriesandCurrencies]
+=== Countries and Currencies
+
+* *Currencies*: EUR
+* *Countries*: Multibanco supports any country, but the consumer must have a Portuguese bank account.
+
+[#API_PaymentMultibanco_Communication]
+=== Communication Formats
+
+This table illustrates how _Multibanco_ notifications are encoded and which formats and methods can be
+used for requests and responses.
+
+[width=75%,stripes=none]
+|===
+.2+h| Requests/Responses | Format  | XML
+                         | Methods | POST
+   h| IPN Encodement   2+| Please follow the instructions given at <<GeneralPlatformFeatures_IPN>> to set up IPN.
+|===
+
+[#API_PaymentMultibanco_TransactionTypes]
+=== Transaction Types
+
+For <<Glossary_TransactionType, transaction type>> details which are not given here, go to <<AppendixB,  Transaction Types>>.
+
+
+[%autowidth.stretch,stripes=none, cols="e,,"]
+|===
+|Transaction Type | Description | Link to samples
+
+|pending-debit |Used to create the transaction in Multibanco. The response contains the transaction reference and other information that the consumer needs to pay for their order. If the consumer pays for their order before the ``pending-debit`` transaction expires, a successful ``debit`` transaction is automatically created in the system, otherwise a failed ``debit`` transaction is created. When the ``debit`` transaction is created, the ``pending-debit`` transaction is closed.
+                                | <<API_PaymentMultibanco_Samples, pending-debit samples>>
+
+|debit |Automatically created in the system when the consumer pays for a ``pending-debit`` transaction using their online banking or their debit card at a physical ATM, or if the transaction expires. Used to transfer funds from the consumer's bank account to the merchant's, or to notify the merchant that the transaction has expired without payment. A ``debit`` notification is sent to the merchant when a ``debit`` transaction is created.
+                                |
+
+|void-pending-debit |Used to cancel a ``pending-debit`` transaction. Available on a successful ``pending-debit``. Partial cancellations are not allowed. Cancellation requests can only be sent while the ``pending-debit`` transaction is active.
+                                | <<API_PaymentMultibanco_Samples, void-pending-debit samples>>
+
+|reversal-pending-debit | Used internally by Getnet to cancel a ``pending-debit`` transaction if no reference is returned by Multibanco due to a timeout or other issues. Partial cancellations are not allowed. Cancellation requests can only be sent while the ``pending-debit`` transaction is active.
+
+If the ``reversal-pending-debit`` transaction sent by Getnet is not successful due to technical issues, the merchant still receives a ``pending-debit`` response with a state of 'in progress'. Getnet will then retry the ``reversal-pending-debit`` transaction within the next 30 - 60 minutes. The result of the retry is sent via a notification.
+                                |
+
+|refund-debit |Used to refund the funds to the consumer’s account. Partial refunds are allowed. Available on a successful ``debit`` notification.
+                                | <<API_PaymentMultibanco_Samples, refund-debit samples>>
+
+|query / GET |Used to retrieve a transaction, if you have any related information missing in your own records.  Returns the status and details of a ``pending-debit``, ``debit``, ``void-pending-debit``,  or ``refund-debit`` transaction.
+                                | <<API_PaymentMultibanco_Samples, query samples>>
+|===
+
+[NOTE]
+====
+
+* You can also use the ``AUTO-SALE`` pseudo transaction type with the Multibanco payment method. For more information, see <<GeneralPlatformFeatures_Transactions, transaction features>>.
+* Multibanco does not allow chargebacks, or recurring or automated payments.
+
+====
+
+[#API_PaymentMultibanco_TestCredentials]
+=== Test Credentials
+
+[%autowidth.stretch,stripes=none]
+|===
+.2+h|URL(s) Endpoints |For the transaction type _pending-debit_: |``\https://{rest-api-test-apm-endpoint}``
+|For the transaction types _void-pending-debit_ and _refund-debit_: |``\https://{rest-api-test-endpoint}``
+h|Merchant Account ID (MAID)
+2+| db22a514-b32d-4315-af8c-91626ec2c5e4
+h|Username
+2+| 515456-Testshopplugin1
+h|Password
+2+| iry7bW9ngg9u
+h| *Secret Key*
+2+| e2867982-aa02-4bd7-8a49-9d6b78ba95ca
+|===
+
+[#API_PaymentMultibanco_Workflow]
+=== Workflow
+
+[#API_PaymentMultibanco_PendingDebit]
+==== pending-debit
+
+image::images/diagrams/multibanco_rest_simple.jpg[Multibanco REST API pending-debit workflow, width=950, align="center"]
+
+1. Consumer initiates the checkout process.
+2. Merchant displays the supported payment methods to the consumer.
+3. Consumer selects Multibanco as the payment method.
+4. Merchant sends a ``pending-debit`` request to the Payment Gateway.
+5. The Payment Gateway receives the transaction reference from Multibanco.
+6. Merchant receives the transaction reference as a response from the Payment Gateway.
+7. Merchant displays the transaction reference to the consumer.
+8. Consumer pays for their order using the transaction reference in their online banking or their debit card at a physical ATM.
+9. The Payment Gateway receives confirmation of the payment from Multibanco.
+10. Merchant receives a ``debit`` notification from the Payment Gateway.
+11. Merchant processes the payment status based on the ``debit`` notification.
+
+[#API_PaymentMultibanco_VoidPendingDebit]
+==== void-pending-debit
+
+image::images/diagrams/multibanco_rest_cancel.jpg[Multibanco REST API void pending debit workflow, width=950, align="center"]
+
+1. Consumer requests a cancellation from the merchant.
+2. Merchant sends a ``void-pending-debit`` request to the Payment Gateway.
+3. The Payment Gateway sends the ``void-pending-debit`` request to Multibanco and processes the response containing the cancellation status.
+4. Merchant receives a ``void-pending-debit`` response containing the cancellation status from the Payment Gateway.
+5. Merchant displays the cancellation status to the consumer.
+6. Merchant receives a cancellation notification from the Payment Gateway.
+7. Merchant processes the notification and updates the cancellation status if the ``void-pending-debit`` response from the Payment Gateway was missing in step 4.
+
+[#API_PaymentMultibanco_refund-debit]
+==== refund-debit
+
+image::images/diagrams/multibanco_rest_refund.jpg[Multibanco REST API refund debit workflow, width=950, align="center"]
+
+1. Consumer requests a refund from the merchant.
+2. Merchant sends a ``refund-debit`` request to the Payment Gateway.
+3. The Payment Gateway sends the ``refund-debit`` request to Multibanco and processes the response containing the refund status.
+4. Merchant receives a ``refund-debit`` response containing the refund status from the Payment Gateway.
+5. Merchant displays the refund status to the consumer.
+6. Merchant receives a refund notification from the Payment Gateway.
+7. Merchant processes the notification and updates the refund status if the ``refund-debit`` response from the Payment Gateway was missing in step 4.
+
+[#API_PaymentMultibanco_Query]
+==== query
+
+image::images/diagrams/multibanco_rest_query.jpg[Multibanco REST API query workflow, width=950, align="center"]
+
+1. Merchant sends a query request to the Payment Gateway.
+2. The Payment Gateway sends a getStatus request to Multibanco and processes the response containing the payment status.
+3. Merchant receives the payment status from the Payment Gateway.
+4. Merchant updates the payment status in their system.
+5. Merchant receives a status notification from the Payment Gateway.
+6. Merchant processes the payment status based on the notification.
+
+[#API_PaymentMultibanco_Fields]
+=== Fields
+
+The following elements are mandatory *M*, optional *O* or conditional
+*C* for sending a request for _Multibanco_ (complete field
+list available in <<RestApi_Fields, REST API field list>>):
+
+[%autowidth.stretch,stripes=none, cols="v,,,,,"]
+|===
+| Field  | Request  | Response  | Datatype  | Size  | Description
+
+6+a|
+[[Multibanco_Fields_Payment]]
+[discrete]
+==== payment
+
+|_merchant-account-id_
+|M
+|M
+|Alphanumeric
+|36
+|Unique identifier for a merchant account
+
+|_transaction-id_
+|NA
+|M
+|Alphanumeric
+|36
+|A unique identifier assigned to every transaction. This information is returned in the response only.
+
+|_request-id_
+|M
+|M
+|Alphanumeric
+|150
+|This is the identification number of the request.
+*It has to be unique for each request.*
+The ``pending-debit`` response contains the ID used in the ``pending-debit`` request. The ``debit`` notification contains a new ID when then status of the ``pending-debit`` is known, otherwise it contains the ``pending-debit`` ID.
+
+|_transaction-type_
+|M
+|M
+|Alphanumeric
+|30
+|This is the type for a transaction: ``pending-debit``, ``void-pending-debit``, and ``refund-debit`` are supported for _Multibanco_.
+
+|_transaction-state_
+|NA
+|M
+|Enumeration
+|n/a
+|Current status of a transaction. Typically, a transaction starts ``in-progress`` and finishes in either ``success`` or ``failed`` state.
+
+|_completion-time-stamp_
+|NA
+|M
+|DateTime
+|20
+|This is the completion timestamp of the request.
+
+|_statuses.status@code_
+|NA
+|M
+|String
+|12
+|This is the status code of a transaction.
+
+|_statuses.status@description_
+|NA
+|M
+|String
+|512
+|This is the description of the transaction status code.
+
+|_requested-amount_
+|C
+|C
+|Numeric
+|18.3
+|This is the amount of the transaction. The number of the decimal places depends on the currency. Mandatory for ``pending-debit`` transactions. The maximum allowed value for _Multibanco_ is 99,999.99. You are recommended to display this value to the consumer after a ``pending-debit`` transaction so that it can be used to pay for the order.
+
+|_requested-amount@currency_
+|M
+|M
+|
+|
+|This is the currency of the transaction. Only ``EUR`` is allowed.
+
+|_expiration-date_
+|O
+|M
+|Alphanumeric
+|24
+|Expiration date and time of the ``pending-debit`` transaction in Multibanco. If the transaction date and time passes without the consumer paying for their order, a failed ``debit`` transaction is created. If omitted from the ``pending-debit`` request, the expiration date and time is set to 72 hours from when the request was received by Multibanco. The maximum expiration date and time is 17 months from the ``pending-debit`` request, but Multibanco recommends it be no greater than 72 hours. The format is YYYY-MM-DDThh:mm:ss.sssZ and is expressed in UTC time.
+
+You are recommended to display the value that is returned in the ``pending-debit`` response to the consumer in their local time zone so that they are aware of the due date of the payment.
+
+|_descriptor_
+|O
+|O
+|Alphanumeric
+|64
+|This is the text representing an order on the consumer's bank statement.
+
+|_order-detail_
+|O
+|O
+|Alphanumeric
+|65535
+|Details of the order filled by the merchant.
+
+|_parent-transaction-id_
+|C
+|C
+|Alphanumeric
+|36
+|Transaction ID of the first transaction of a payment. Mandatory for ``void-pending-debit`` and ``refund-debit`` transactions. In ``void-pending-debit`` transactions, the value must match the transaction ID of the ``pending-debit`` request. In ``refund-debit`` transactions, the value must match the transaction ID of the ``debit`` transaction.
+
+|_provider-transaction-reference-id_
+|NA
+|M
+|Alphanumeric
+|36
+|Unique transaction reference ID assigned by the provider (Multibanco). You must display this value to the consumer after a ``pending-debit`` transaction so that it can be used to pay for the order.
+
+6+a|
+[[Multibanco_Fields_PaymentMethods]]
+[discrete]
+==== payment-methods
+
+|_payment-methods.payment-method@name_
+|M
+|M
+|Alphanumeric
+|15
+|The name of the Payment Method is ``multibanco``.
+
+6+a|
+[[Multibanco_Fields_SubMerchantInfo]]
+[discrete]
+==== sub-merchant-info
+
+|_payment-facilitator-id_
+|NA
+|M
+|Alphanumeric
+|5
+|Unique identifier of the Payment Facilitator. You are recommended to display this value to the consumer after a ``pending-debit`` transaction so that it can be used to pay for the order.
+
+|===
+
+[#API_PaymentMultibanco_Samples]
+=== Samples
+
+Click <<GeneralPlatformFeatures_IPN_NotificationExamples, here>> for corresponding notification samples.
+
+[#API_PaymentMultibanco_Samples_PendingDebit]
+==== _pending-debit_
+
+.XML pending-debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_pending_debit_request_success.xml[]
+----
+
+.XML pending-debit Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_pending_debit_response_success.xml[]
+----
+
+.XML pending-debit Notification (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_pending_debit_notification_success.xml[]
+----
+
+.XML debit Notification (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_debit_notification_success.xml[]
+----
+
+[#API_PaymentMultibanco_Samples_VoidPendingDebit]
+==== _void-pending-debit_
+
+.XML void-pending-debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_void_pending_debit_request_success.xml[]
+----
+
+.XML void-pending-debit Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_void_pending_debit_response_success.xml[]
+----
+
+.XML void-pending-debit Notification (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_void_pending_debit_notification_success.xml[]
+----
+
+[#API_PaymentMultibanco_Samples_RefundDebit]
+==== _refund-debit_
+
+.XML refund-debit Request (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_refund_debit_request_success.xml[]
+----
+
+.XML refund-debit Response (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_refund_debit_response_success.xml[]
+----
+
+.XML refund-debit Notification (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_refund_debit_notification_success.xml[]
+----
+
+[#API_PaymentMultibanco_Samples_Queries]
+==== Queries
+
+.XML Query Request for debit
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_query_debit_request.xml[]
+----
+
+.XML Query Response for debit (Successful)
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/multibanco_query_debit_response_success.xml[]
+----
