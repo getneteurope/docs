@@ -365,3 +365,26 @@ delivered to each merchant as .csv file via
 Please contact <<ContactUs, Merchant Support>> for details.
 
 //-
+
+[#Reporting_EPAReport]
+=== EPA Report
+
+*An EPA (Electronic Payment Advice)* report is a standard XML-based data file similar in structure to the XML format of the transaction request and response messages exchanged between the merchant and the Getnet processing platform.
+
+By using EPA, merchants can automate the reconciliation of their transaction data to their accounting system. This is particularly important to merchants with large transaction volumes. Based on standard XML, EPA report files provide a speedy and error-free reconciliation of data that cannot be achieved on the basis of PDF invoices and settlement notes.
+
+
+[#StandardEPAMerchantSpecification]
+[discrete]
+=== Standard EPA – Merchant Specification
+
+[#StandardEPAMerchantSpecification_Download]
+You can download Standard EPA – Merchant Specification document here: link:resources/17-08-standard-epa–merchant-specification/Standard EPA merchant specification_1.4.2 (Getnet).pdf[Standard EPA merchant specification_1.4.2 (Getnet).pdf]
+
+
+[source,pdf,subs=attributes+]
+----
+include::{root}/resources/17-08-standard-epa–merchant-specification/Standard EPA merchant specification_1.4.2 (Getnet).pdf[]
+----
+
+//-
