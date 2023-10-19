@@ -1,0 +1,7 @@
+MerchantTransactionID;MerchantFunctionID;GUWID;GUWIDReference;CardHolderName;CardNumber;CardExpiryDate;TransactionAmount;Currency;TransactionTime;Country;TransactionMode;StatusCode;StatusDescription;Customer;BusinessCase;BC_SIG;Affiliate
+2,12225E+16;;C012835112224846836216;;SUPPRESSED;7392;Nov 06;5000;USD;25.07.2005 01:41;DK;3;5;Authorization Declined;Getnet Test;Getnet Test;56500;
+2,12227E+16;;C004047112227079735722;;SUPPRESSED;9269;Oct 06;5000;USD;25.07.2005 07:53;AU;3;5;Authorization Declined;Getnet Test;Getnet Test;56500;
+2,12227E+16;;C023284112227084210443;;SUPPRESSED;9269;Jul 06;5000;USD;25.07.2005 07:54;AU;3;5;Authorization Declined;Getnet Test;Getnet Test;56500;
+2,12227E+16;;C023332112227096680325;;SUPPRESSED;4203;Jul 06;10000;USD;25.07.2005 07:56;US;3;242;Terminal not ready;Getnet Test;Getnet Test;56500;
+2,12228E+16;;C006511112227585914033;;SUPPRESSED;25;Sep 06;50000;USD;25.07.2005 09:17;IT;3;5;Authorization Declined;Getnet Test;Getnet Test;56500;
+2,12229E+16;;C002865112228709594940;;SUPPRESSED;6010;Apr 06;15000;USD;25.07.2005 12:24;ZA;3;0;Transaction OK;Getnet Test;Getnet Test;56500;
