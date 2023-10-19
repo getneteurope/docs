@@ -364,7 +364,6 @@ delivered to each merchant as .csv file via
 
 Please contact <<ContactUs, Merchant Support>> for details.
 
-//-
 
 [#Reporting_EPAReport]
 === EPA Report
@@ -379,12 +378,12 @@ By using EPA, merchants can automate the reconciliation of their transaction dat
 === Standard EPA – Merchant Specification
 
 [#StandardEPAMerchantSpecification_Download]
-You can download Standard EPA – Merchant Specification document here: link:resources/17-08-standard-epa–merchant-specification/Standard EPA merchant specification_1.4.2 (Getnet).pdf[Standard EPA merchant specification_1.4.2 (Getnet).pdf]
+You can download Standard EPA – Merchant Specification document here: link:resources/17-08-standard-epa–merchant-specification/StandardEPAmerchantspecification_1.4.2(Getnet).pdf[Standard EPA merchant specification_1.4.2 (Getnet).pdf]
 
 
-[source,pdf,subs=attributes+]
+[source,pdf]
 ----
-include::{root}/resources/17-08-standard-epa–merchant-specification/Standard EPA merchant specification_1.4.2 (Getnet).pdf[]
+include::{root}/resources/17-08-standard-epa–merchant-specification/StandardEPAmerchantspecification_1.4.2(Getnet).pdf[]
 ----
 
 //-
