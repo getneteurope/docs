@@ -266,6 +266,16 @@ report files on the file server for future reference. Therefore move the
 files to the folder ``processed``. +
 Be aware that it is at your discretion to use this file repository.
 
+Associated documents:
+
+-Reconciliation merchant specification (download the file link:resources/17-08-standard-epa–merchant-specification/CardandEFTReconciliationmerchantspecificationv1.0.pdf[here])
+
+-Sample of "All transaction" reconciliation file (download the file link:resources/17-08-standard-epa–merchant-specification/alltransaction_195.27.175.132_20050725_000000000056500.csv[here])
+
+-Sample of "Chargeback" reconciliation file (download the file link:resources/17-08-standard-epa–merchant-specification/new-version-chargeback_195.27.175.132_20050725_0000000000056500.csv[here])
+
+-Sample of "Successful monetary" reconciliation file (download the file link:resources/17-08-standard-epa–merchant-specification/successfulmonetary_195.27.175.132_20050725_0000000000056500.csv[here])
+
 //-
 
 [#Reporting_IcFeeReport]
