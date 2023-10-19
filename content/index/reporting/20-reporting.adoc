@@ -386,4 +386,4 @@ You can download Standard EPA – Merchant Specification document here: link:res
 include::{root}/resources/17-08-standard-epa–merchant-specification/StandardEPAmerchantspecification_1.4.2(Getnet).pdf[]
 ----
 
-//-
+
