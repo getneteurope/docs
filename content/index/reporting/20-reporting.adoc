@@ -380,10 +380,14 @@ By using EPA, merchants can automate the reconciliation of their transaction dat
 [#StandardEPAMerchantSpecification_Download]
 You can download Standard EPA – Merchant Specification document here: link:resources/17-08-standard-epa–merchant-specification/StandardEPAmerchantspecification_1.4.2(Getnet).pdf[Standard EPA merchant specification_1.4.2 (Getnet).pdf]
 
-
+PDF
 [source,pdf]
 ----
 include::{root}/resources/17-08-standard-epa–merchant-specification/StandardEPAmerchantspecification_1.4.2(Getnet).pdf[]
 ----
+//-
+
+Please contact <<ContactUs, Merchant Support>> for details.
+
 
 
