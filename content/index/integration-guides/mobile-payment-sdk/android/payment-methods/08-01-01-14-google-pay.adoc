@@ -47,12 +47,12 @@ This is a code example for a basic Google Pay payment:
 [source,kotlin]
 ----
 val googlePayPayment = GooglePayPayment(
-        signature = signature
-        requestID = requestID
-        merchantAccountId = merchantAccountId
-        transactionType = transactionType
-        amount = amount
-        currency = currency,
+        signature = signature,
+        requestID = requestID,
+        merchantAccountId = merchantAccountId,
+        transactionType = transactionType,
+        amount = amount,
+        currency = currency
 )
  
 Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(googlePayPayment)
