@@ -10,10 +10,6 @@ types]:
 
 *`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
 
-*`TransactionType.DEBIT`* - Moves funds from the [Account Holder] to the [Merchant].
-
-*`TransactionType.PENDING_DEBIT`* - represents the request for a debit. If the [Transaction State] is success, then the outcome of the debit is not yet known. A further [Transaction Type] of debit follows, whose [Transaction State] indicates the outcome. If the [Transaction State] of the pending-debit is failed, then the request has not been processed.
-
 === Module Dependency Edit your
 `build.gradle` file accordingly:
 
