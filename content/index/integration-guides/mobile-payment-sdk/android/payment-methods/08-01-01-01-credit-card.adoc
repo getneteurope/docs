@@ -893,8 +893,8 @@ _Color resources_
 
 ===== Card Brand Picker
 
-
-image::images/android/cardBrandPicker.png[Screen]
+image::images/android/cardBrandPickerSimple.png[Screen]
+image::images/android/CardPaymentBrandPicker.jpg[Screen]
 
 To show card brand picker UI component over card number input field for
 Card Field, set `+setRequireManualCardBrandSelection+` through it’s
