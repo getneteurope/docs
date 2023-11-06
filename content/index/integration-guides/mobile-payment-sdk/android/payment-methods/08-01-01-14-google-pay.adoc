@@ -74,20 +74,3 @@ new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPa
 
 You can use Builder to create the payment object and set additional
 properties afterwards.
-
-=== Customizing Visuals
-
-To change colors within the SDK, override the default color values in
-the `.xml` file.
-
-==== Color Resources
-
-Changing any of these will affect every module used in the SDK:
-
-*`sdkpay_ecom_color_main`* - color tint for progress bar
-
-==== Customizing Google Pay Payments
-
-*Color Resources*
-
-1 - `sdkpay_ecom_color_main`

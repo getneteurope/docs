@@ -1,0 +1,216 @@
+[#MobilePaymentSDK_Android]
+== Android SDK theming
+
+=== Components
+You can customize each component by overriding resources in your project like styles, colors or drawables.
+
+==== Buttons
+
+To customize buttons you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <style name="SdkPayPrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/sdkpay_ecom_button_background</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/sdkpay_ecom_button_text_color</item>
+        <item name="android:textSize">@dimen/sdkpay_ecom_pay_button_text_size</item>
+        <item name="cornerRadius">@dimen/sdkpay_ecom_pay_button_round_size</item>
+        <item name="textAllCaps">false</item>
+        <item name="autoSizeMaxTextSize">@dimen/sdkpay_ecom_pay_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <color name="sdkpay_ecom_button_background_color_start">@color/primary_boston</color>
+    <color name="sdkpay_ecom_button_background_color_end">@color/primary_santander</color>
+    <color name="sdkpay_ecom_button_text_color">@color/sdkpay_ecom_color_white</color>
+----
+
+==== Inputs
+
+To customize inputs you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <style name="SdkPayEcomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextAppearance">@style/SdkPayEcomHintText</item>
+        <item name="errorTextAppearance">@style/SdkPayEcomErrorTextAppearance</item>
+        <item name="boxBackgroundColor">#fff</item>
+        <item name="boxStrokeColor">@color/sdkpay_ecom_color_edittext_box</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeErrorColor">@color/primary_boston</item>
+        <item name="endIconMode">custom</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconDrawable">@null</item>
+    </style>
+
+    <style name="SdkPayEcomEditText" parent="Paragraph16_Regular">
+        <item name="android:textSize">@dimen/sdkpay_ecom_input_text_size</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/sdkpay_ecom_color_edittext_text</item>
+    </style>
+
+    <style name="SdkPayEcomEditTextAnimatedCard" parent="Paragraph16_Regular">
+        <item name="android:textSize">@dimen/sdkpay_ecom_card_animated_input_text_size</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/sdkpay_ecom_color_edittext_text</item>
+    </style>
+
+    <style name="SdkPayEcomErrorTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/sdkpay_ecom_color_edittext_error</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SdkPayEcomHintText">
+        <item name="android:textSize">@dimen/sdkpay_ecom_input_hint_size</item>
+        <item name="android:textColor">@drawable/sdkpay_ecom_edittext_hint_color_state_list</item>
+        <item name="android:textColorHint">@drawable/sdkpay_ecom_edittext_hint_color_state_list</item>
+    </style>
+
+    <color name="sdkpay_ecom_color_edittext_text_focused">@color/primary_dark_grey</color>
+    <color name="sdkpay_ecom_color_edittext_text_unfocused">@color/primary_dark_grey</color>
+    <color name="sdkpay_ecom_color_edittext_hint_focused">@color/primary_dark_grey</color>
+    <color name="sdkpay_ecom_color_edittext_hint_unfocused">@color/primary_dark_grey</color>
+    <color name="sdkpay_ecom_color_edittext_box">@color/secondary_accessible_dark_turquoise</color>
+    <color name="sdkpay_ecom_color_edittext_error">#FF0000</color>
+----
+
+==== HeaderView / Toolbars
+
+To customize headerView on card payment screens and toolbars on other screens you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <style name="SdkPayEcomHeaderViewTitle" parent="Paragraph20_Bold">
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">@color/sdkpay_ecom_color_headerview_text</item>
+        <item name="android:textSize">@dimen/sdkpay_ecom_header_amount_text_size</item>
+    </style>
+
+    <style name="SdkPayEcomHeaderViewSubTitle" parent="Paragraph12_Regular">
+        <item name="android:textColor">@color/sdkpay_ecom_color_headerview_text</item>
+        <item name="android:textSize">@dimen/sdkpay_ecom_header_subtitle_text_size</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="SdkPayEcomHeaderViewIcon">
+        <item name="tint">@color/sdkpay_ecom_color_headerview_icon</item>
+        <item name="android:tint">@color/sdkpay_ecom_color_headerview_icon</item>
+    </style>
+
+    <style name="SdkPayEcomHeaderViewBackground">
+        <item name="android:background">@drawable/sdkpay_ecom_gradient_background</item>
+    </style>
+
+    <color name="sdkpay_ecom_color_headerview_text">@color/sdkpay_ecom_color_white</color>
+    <color name="sdkpay_ecom_color_headerview_icon">@color/sdkpay_ecom_color_white</color>
+    <color name="sdkpay_ecom_color_headerview_background_start">@color/sdkpay_ecom_color_main_light</color>
+    <color name="sdkpay_ecom_color_headerview_background_end">@color/sdkpay_ecom_color_main</color>
+----
+
+==== Card scanner
+
+To customize card scanner you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+ <color name="sdkpay_ecom_color_cardscanner_gallery_icon">@color/sdkpay_ecom_color_white</color>
+----
+
+==== Icons
+
+To customize icons you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <style name="SdkPayEcomScanCardIcon">
+        <item name="tint">@color/primary_santander</item>
+        <item name="android:tint">@color/primary_santander</item>
+    </style>
+
+----
+
+==== Bank row
+
+To customize bank row you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    android:background="@drawable/bank_row_background"
+----
+
+==== Stepper
+
+To customize stepper you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <color name="sdkpay_ecom_color_ratepay_stepper_text">@color/primary_dark_grey</color>
+    <color name="sdkpay_ecom_color_ratepay_stepper_progress">@color/primary_santander</color>
+----
+
+==== Datepicker
+
+To customize Datepicker you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <style name="SdkPayEcomMaterialDatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/primary_santander</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/primary_santander</item>
+        <item name="colorAccent">@color/primary_santander</item>
+    </style>
+----
+
+==== Animated card
+
+To customize Animated card you can override the following resources and provide your own values.
+The default values are displayed in the code snippet below.
+
+[source,xml]
+----
+    <color name="sdkpay_ecom_color_card_component_back_strip">#939393</color>
+    <color name="sdkpay_ecom_color_card_text">@color/secondary_santander_new_york</color>
+    <color name="sdkpay_ecom_color_card_gradient_start">@color/primary_white</color>
+    <color name="sdkpay_ecom_color_card_gradient_end">@color/primary_white</color>
+    <color name="sdkpay_ecom_color_card_stroke_start">@color/primary_white</color>
+    <color name="sdkpay_ecom_color_card_stroke_end">@color/primary_white</color>
+    <color name="sdkpay_ecom_color_card_back_gradient_start">@color/primary_light_grey</color>
+    <color name="sdkpay_ecom_color_card_back_gradient_end">@color/primary_light_grey</color>
+    <color name="sdkpay_ecom_color_card_back_stroke_start">@color/primary_light_grey</color>
+    <color name="sdkpay_ecom_color_card_back_stroke_end">@color/primary_light_grey</color>
+----
+
+=== Fonts
+
+==== Changing Fonts
+
+To change fonts, override the font path to in string resources with name
+'`sdkpay_fontPath`': e.g. strings.xml
+
+[source,xml]
+----
+<string name="sdkpay_fontPath">fonts/myFont.otf</string>
+----
+
+[source,java]
+----
+----
+
+==== Changing Text Size
+
+To change the text size for link:[`+cardField+`] fragments use the
+dimension attribute `+sdkpay_ecom_cardfield_text_size+`.
+
+To change text size in any other modules use the dimension attribute
+`+sdkpay_ecom_text_size+`.

@@ -75,6 +75,7 @@ include::index/integration-guides/mobile-payment-sdk/08-01-00-basic-setup.adoc[l
 include::index/integration-guides/mobile-payment-sdk/android/07-01-01-integrating-mpsdk-on-android.adoc[leveloffset=+2]
 include::index/integration-guides/mobile-payment-sdk/android/08-01-00-basic-setup-and-integration.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk/android/08-01-00-customization.adoc[leveloffset=+3]
+include::index/integration-guides/mobile-payment-sdk/android/08-01-03-theming-android.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk/android/08-01-01-payment-methods.adoc[leveloffset=+3]
 include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-00-alipay.adoc[leveloffset=+4]
 include::index/integration-guides/mobile-payment-sdk/android/payment-methods/08-01-01-01-credit-card.adoc[leveloffset=+4]
