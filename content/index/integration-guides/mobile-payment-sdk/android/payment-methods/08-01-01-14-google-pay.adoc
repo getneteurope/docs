@@ -67,6 +67,7 @@ googlePayPayment = new GooglePayPayment.Builder()
         .setTransactionType(transactionType)
         .setAmount(amount)
         .setCurrency(currency)
+        .setCountryCode("DE") // The ISO 3166-1 alpha-2 country code where the transaction is processed. This property is required for merchants who process transactions in European Economic Area (EEA) countries and any other countries that are subject to Strong Customer Authentication (SCA). Merchants must specify the acquirer bank country code.
         .build();
 
 new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(googlePayPayment);
