@@ -33,7 +33,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/Card',          '~> {{version}}'
+pod 'Getnet/Card',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_CreditCard_basic_payment]
@@ -56,7 +56,7 @@ do {
 // 2. Initialize payment object and set mandatory properties
 // Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
 // and used to generate signature. Signature MUST be generated on server side.
-// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Signature doc: https://docs.getneteurope.com/_mobile_payment_sdk.html#MobilePaymentSDK_BasicSetup_Security_Signaturev2
 // Secret Key shall never be stored in application.
 
 let payment = SDKPayECCardPayment()
@@ -127,7 +127,7 @@ payment.signature = signature
 var tokenId: String?
 
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -157,7 +157,7 @@ payment.token = token
 
 
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -221,7 +221,7 @@ payment.signature = signature
   
 var parentTransactionID: String?
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -255,7 +255,7 @@ payment.periodic = firstPeriodicType
 payment.signature = signature
 
 self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
-    // for each failure error object is provided;
+    // for each failure error object is provided
     if let error = error {
         return
     }
@@ -267,6 +267,38 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton]
 === Visualisation
 ---
+Credit Card payment supports four types of visualisation (decribed below):
+[arabic]
+. A `Card` view - a internal view controller in forms design. 
+. A `Card Animated` view - a internal view controller with a animated card view with card input text fields.
+. A `CardField` control` - external component in simple line textfield form.
+. A `CardField Animated` view - external component with a animated card view and card input text fields.
+
+The `CardField` view and the `CardField Animated` controls are managed directly by the instance of the control defined by their class(SDKPayECCardField, SDKPayECCardFieldScanner, SDKPayECCardFieldScannerGallery, SDKPayECAnimatedCardField, SDKPayECAnimatedCardFieldScanner, SDKPayECAnimatedCardFieldScannerGallery).
+
+The `Card` view and the `Card Animated` view can be selected by a `SDKPayECCardLayout` appearance control with other appearance properties:
+
+[arabic]
+. `layout` - a SDKPayECCardStyleLayout property defines the animated card in full screen card payment. Setting this property to SDKPayECCardStyleLayout.animated shows the animated card in full screen card payment, default value is SDKPayECCardStyleLayout.default.
+. `supportedCardBrands` - Array of supported card brands. If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to SDKPayECCardFieldStateCardUnsupported. Array can contain NSNumbers with SDKPayECCardBrand values.
+. `manualCardBrandSelectionRequired` - A Boolean value that determines whether the card brand will be selected by cutomer. Default value is NO.
+ 
+This is a code example for the internal screen layout customization:
+
+[source,swift]
+----
+    SDKPayECCardLayout.appearance().layout = .animated
+    var brands: Array<NSNumber> = Array()
+    brands.append(NSNumber(value: SDKPayECCardBrand.amex.rawValue))
+    brands.append(NSNumber(value: SDKPayECCardBrand.maestro.rawValue))
+    brands.append(NSNumber(value: SDKPayECCardBrand.masterCard.rawValue))
+    brands.append(NSNumber(value: SDKPayECCardBrand.visa.rawValue))
+    brands.append(NSNumber(value: SDKPayECCardBrand.diners.rawValue))
+    SDKPayECCardLayout.appearance().supportedCardBrands = brands    
+    SDKPayECCardLayout.appearance().manualCardBrandSelectionRequired = false
+    
+----
+
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card]
 ==== Card 
 ---
@@ -280,22 +312,89 @@ self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,e
 |
 |===
 
-
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_Card_CustomizingVisuals]
-===== Customizing Visuals
+=== Customizing Visuals
 ---
-
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECCancelButtonImage`
-. `SDKPayECCancelButton`
-. `SDKPayECNavigationBar`
+. `SDKPayECNavigationBar control` - a top navigation bar supports the next appearance:
+   .. `preferredStatusBarStyle` - navigation bar style 'SDKPayECNavigationBarStyle' defines the height of the navigation bar top save area of the screen. It can be defined with two possible values:
+      - `.small` - a smaller size navigation bar with a title,
+      - `.big` - a bigger size navigation bar with possibly a title and a subtitle. The big size of the bar is possible when the next content of the screen is fully readable. If not the navigation bar size is automatically changed to the small size of the navigation bar.
+   .. `barStyle` - navigation bar style 'SDKPayECStatusBarStyle' defines the content colors of the navigation bar. It can be defined with three possible values:
+      - `.darkContent` - Dark content, for use on light backgrounds, 
+      - `.lightContent` - Light content, for use on dark backgrounds, 
+      - `.auto` - Custom content, for use on backgrounds by the background color of SDKPayECNavigationBar control
+   .. `backgroundColor` - background color
+   .. `firstBackgroundColor` - first gradient background color. It is used when the background appearance color is nil. 
+   .. `secondBackgroundColor` - second gradient background color. It is used when the background appearance color is nil.
+   .. `UIView` appearance
+
+. `SDKPayECCancelButton` - cancel button inside the SDKPayECNavigationBar navigation bar
+   .. `UIButton` appearance
+
+. `SDKPayECHeaderLabel` - title label inside the SDKPayECNavigationBar navigation bar
+   .. `UILabel` appearance
+
+. `SDKPayECTextField` - 
+   .. `UITextField` appearance
+
+. `SDKPayECSubmitButton` - submit button inside the SDKPayECNavigationBar navigation bar
+   .. `UIButton` appearance
+
+. `SDKPayECTView` - 
+   .. `UIView` appearance
+
+. `SDKPayECAmountLabel` - 
+   .. `UILabel` appearance
 
 
+   
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CustomizingVisuals_Example]
+==== Customization Example
+---
+
+This is a code example for a basic CardView screen customization:
+
+[source,swift]
+----
+      let blue = UIColor(red: 0.0/255.0, green: 90.0/255.0, blue: 160.0/255.0, alpha: 1.0)
+      let yellow = UIColor(red: 251.0/255.0, green: 187.0/255.0, blue: 1.0/255.0, alpha: 1.0)
+      let red = UIColor(red: 237.0/255.0, green: 24.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+      let orange = UIColor(red: 255.0/255.0, green: 155.0/255.0, blue: 4.0/255.0, alpha: 1.0)
+      let firstBgColor = red
+      let secondBgColor = yellow
+
+      SDKPayECNavigationBar.appearance().preferredStatusBarStyle = .auto
+      SDKPayECNavigationBar.appearance().firstBackgroundColor = firstBgColor
+      SDKPayECNavigationBar.appearance().secondBackgroundColor = secondBgColor
+
+      SDKPayECCancelButton.appearance().setTitleColor(yellow, for: .normal)
+      SDKPayECCancelButton.appearance().setTitle("Close", for: .normal)
+      SDKPayECCancelButton.appearance().backgroundColor = nil
+
+      SDKPayECHeaderLabel.appearance().textColor = UIColor.black
+
+      SDKPayECView.appearance().backgroundColor = yellow
+
+      SDKPayECAmountLabel.appearance().textColor = UIColor.darkGray
+      SDKPayECAmountLabel.appearance().text = "Order Amount"
+----
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen-appearance.png[Card Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-screen-customized-appearance.png[Card Screen Appearance, align=center, width=240, height=420]
+|
+|===
+   
 //-
+
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated]
 ==== Card Animated
 ---
@@ -309,22 +408,99 @@ every module used in the SDK.
 |
 |===
 
-
-[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardAnimated_CustomizingVisuals]
-===== Customizing Visuals
+[#MobilePaymentSDK_iOS_CreditCardAnimated_Visualisaton_CustomizingVisuals]
+=== Customizing Visuals
 ---
-
 To change colors within the SDK, set properties of the components, that
 conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECCancelButtonImage`
-. `SDKPayECCancelButton`
-. `SDKPayECNavigationBar`
+. `SDKPayECNavigationBar control` - a top navigation bar supports the next appearance:
+   .. `preferredStatusBarStyle` - navigation bar style 'SDKPayECNavigationBarStyle' defines the height of the navigation bar top save area of the screen. It can be defined with two possible values:
+      - `.small` - a smaller size navigation bar with a title,
+      - `.big` - a bigger size navigation bar with possibly a title and a subtitle. The big size of the bar is possible when the next content of the screen is fully readable. If not the navigation bar size is automatically changed to the small size of the navigation bar.
+   .. `barStyle` - navigation bar style 'SDKPayECStatusBarStyle' defines the content colors of the navigation bar. It can be defined with three possible values:
+      - `.darkContent` - Dark content, for use on light backgrounds, 
+      - `.lightContent` - Light content, for use on dark backgrounds, 
+      - `.auto` - Custom content, for use on backgrounds by the background color of SDKPayECNavigationBar control
+   .. `backgroundColor` - background color
+   .. `firstBackgroundColor` - first gradient background color. It is used when the background appearance color is nil. 
+   .. `secondBackgroundColor` - second gradient background color. It is used when the background appearance color is nil.
+   .. `UIView` appearance
 
+. `SDKPayECCancelButton` - cancel button inside the SDKPayECNavigationBar navigation bar
+   .. `UIButton` appearance
+
+. `SDKPayECHeaderLabel` - title label inside the SDKPayECNavigationBar navigation bar
+   .. `UILabel` appearance
+
+. `SDKPayECTextField` - 
+   .. `UITextField` appearance
+
+. `SDKPayECSubmitButton` - submit button inside the SDKPayECNavigationBar navigation bar
+   .. `UIButton` appearance
+
+. `SDKPayECTView` - 
+   .. `UIView` appearance
+
+. `SDKPayECAmountLabel` - 
+   .. `UILabel` appearance
+
+. `SDKPayECAnimatedCardView` - 
+   .. `color` card color
+   .. `UIView` appearance
+
+
+. `SDKPayECAnimatedCardNewView` - 
+   .. `UIView` appearance
+
+   
+[#MobilePaymentSDK_iOS_CreditCardAnimated_Visualisaton_CustomizingVisuals_Example]
+==== Customization Example
+---
+
+This is a code example for a basic animated CardView screen customization:
+
+[source,swift]
+----
+      let blue = UIColor(red: 0.0/255.0, green: 90.0/255.0, blue: 160.0/255.0, alpha: 1.0)
+      let yellow = UIColor(red: 251.0/255.0, green: 187.0/255.0, blue: 1.0/255.0, alpha: 1.0)
+      let red = UIColor(red: 237.0/255.0, green: 24.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+      let orange = UIColor(red: 255.0/255.0, green: 155.0/255.0, blue: 4.0/255.0, alpha: 1.0)
+      let firstBgColor = red
+      let secondBgColor = yellow
+
+      SDKPayECNavigationBar.appearance().preferredStatusBarStyle = .auto
+      SDKPayECNavigationBar.appearance().firstBackgroundColor = firstBgColor
+      SDKPayECNavigationBar.appearance().secondBackgroundColor = secondBgColor
+
+      SDKPayECCancelButton.appearance().setTitleColor(yellow, for: .normal)
+      SDKPayECCancelButton.appearance().setTitle("Close", for: .normal)
+      SDKPayECCancelButton.appearance().backgroundColor = nil
+
+      SDKPayECHeaderLabel.appearance().textColor = UIColor.black
+
+      SDKPayECView.appearance().backgroundColor = yellow
+
+      SDKPayECAmountLabel.appearance().textColor = UIColor.darkGray
+      SDKPayECAmountLabel.appearance().text = "Order Amount"
+
+      SDKPayECAnimatedCardView.appearance().color = yellow
+
+      SDKPayECAnimatedCardNewView.appearance().backgroundColor = orange
+----
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-appearance.png[Card Animated Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-card-animated-screen-customized-appearance.png[Card Animated Screen Appearance, align=center, width=240, height=420]
+|
+|===
+   
 //-
-
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField]
 ==== CardField
@@ -338,8 +514,8 @@ line and can be used where an ``UITextField`` would be appropriate:
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[Card Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield.png[CardField Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized.png[CardField Screen, align=center, width=240, height=420]
 |
 |===
 
@@ -352,8 +528,11 @@ keep the instance reference in your ``UIViewController``:
 class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
     
     @IBOutlet weak var cardField: SDKPayECCardField!
+    // @IBOutlet weak var cardField: SDKPayECCardFieldScanner!
+    // @IBOutlet weak var cardField: SDKPayECCardFieldScannerGallery!
     @IBOutlet weak var payBtn: UIButton!
-```
+
+...
 }
 ----
 
@@ -361,42 +540,199 @@ class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals]
 ==== Customizing Visuals
 ---
-
-To change colors within the SDK, set properties of the components, that
-conforms to UIAppearance protocol. Changing any of these will affect
-every module used in the SDK.
+To change colors within the SDK, set directly properties of the components.
 
 [arabic]
-. `SDKPayECCancelButtonImage`
-. `SDKPayECCancelButton`
-. `SDKPayECNavigationBar`
+. `SDKPayECCardField control` - control is a field with similar properties to UITextField, but specialized for collecting card data. It manages multiple UITextFields under the hood to collect this data. It's designed to fit on a single line, and from a design perspective can be used anywhere a UITextField would be appropriate.
+   .. `placeholderColor` - The text placeholder color used in each child field. Default is UIColor.lightGray. Set this property to nil to reset to the default.
+   .. `textColor` - The text color to be used when entering valid text. Default is UIColor.black. Set this property to nil to reset to the default.
+   .. `textErrorColor` - The text color to be used when the user has entered invalid information, such as an invalid card number. Default is UIColor.red. Set this property to nil to reset to the default.
+   .. `numberPlaceholder` - The placeholder for the card number field. Default is localized "Credit Card Number".
+   .. `expirationMonthPlaceholder` - The placeholder for the expiration month field. Defaults to localized "MM".
+   .. `expirationYearPlaceholder` - The placeholder for the expiration year field. Defaults to localized "YY".
+   .. `securityCodePlaceholder` - The placeholder for the security code field. Defaults to "CVC".
+   .. `min_last_year` - Minimal expiration year. Defaults to 2000.
+   .. `max_last_year` - Maximal expiration year. Defaults to 2099.
+   .. `manualCardBrandSelectionRequired` - A Boolean value that determines whether the card brand will be selected by cutomer. Default value is NO.
+   .. `supportedCardBrands` - Array of supported card brands. If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to SDKPayECCardFieldStateCardUnsupported. Array can contain NSNumbers with SDKPayECCardBrand values.
+   .. `font` - The font used in each UITextField and number format UILabel. Default is [UIFont fontWithName:@"Menlo-Regular" size:15.0]. Set this property to nil to reset to the default. Monospace fonts are preferred as during number typing number format does not change width.
+   .. `cursorColor` - The cursor color for the field. This is a proxy for the view's tintColor property, exposed for clarity only (in other words, calling setCursorColor is identical to calling setTintColor).
+   .. `cardBrandHidden` - A Boolean value that determines whether the card brand icon is hidden. Default value is NO.
+   .. `keyboardAppearance` - The keyboard appearance for the field. Default is UIKeyboardAppearanceDefault.
+   
 
+. As a SDKPayECCardFieldScanner or SDKPayECCardFieldScannerGallery control, SDKPayECCardField properties plus:
+   
+   .. `scanImage` - The CardField scanner button image. Image/icon customization option. The default is nil, the CardField button shows the default bundle image. If set custom image the CardField replace the default image with a new one.
+   .. `scanImageTintColor` - The scanImage icon tint color. This is a proxy for the imageview's tintColor property.
+   .. `enableScanImageButton` - The scanImage icon visibility option. Default is NO. If set to YES  and the scanner is available, scanImage are visible.
+   .. `scanToolbarButtonTitle` - The scanToolbarButton title. Title customization option. The default is nil, the toolbar button shows the default "Scan" title. If set custom title the toolbar button replace the title.
+   .. `enableScanToolbarButton` - The scanToolbarButton visibility option. Default is YES when the scanner is available. If set to NO the scanToolbar button is hidden.
+
+   
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardField_CustomizingVisuals_Example]
+==== Customization Example
+---
+
+This is a code example for a basic CardField screen customization:
+
+[source,swift]
+----
+func handleStyle() {
+        
+        let orange = UIColor(red: 255.0/255.0, green: 155.0/255.0, blue: 4.0/255.0, alpha: 1.0)
+        let green = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 0.0/255.0, alpha: 0.75)
+
+        self.cardField.textColor = UIColor.red
+        self.cardField.placeholderColor = orange
+        
+        self.cardField.scanImage = UIImage(named: "ic_scan")
+        self.cardField.scanImageTintColor = UIColor.blue
+        self.cardField.enableScanImageButton = true;
+        self.cardField.scanToolbarButtonTitle = "Scan Card"
+        self.cardField.enableScanToolbarButton = true
+
+        self.cardField.locale = ._en
+        self.cardField.manualCardBrandSelectionRequired = false
+        self.cardField.layer.borderColor = green.cgColor
+        self.cardField.layer.borderWidth = 1.0
+        
+        var brands: Array<NSNumber> = Array()
+        brands.append(NSNumber(value: SDKPayECCardBrand.amex.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.maestro.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.masterCard.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.visa.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.diners.rawValue))
+        self.cardField.supportedCardBrands = brands
+        
+        self.cardField.min_last_year = "2020"
+        self.cardField.max_last_year = "2030"
+        self.cardField.cardBrandHidden = true
+
+        self.cardField.becomeFirstResponder()
+    }
+----
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-appearance.png[CardField Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-customized-appearance.png[CardField Appearance, align=center, width=240, height=420]
+|
+|===
+   
 //-
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated]
 ==== CardField Animated Alternative
 ---
 
+Create a ``SDKPayECAnimatedCardField`` (programmatically, or in XIB/Storyboard) and
+keep the instance reference in your ``UIViewController``:
+
+[source,swift]
+----
+class CardfieldVC: UIViewController, SDKPayECCardFieldDelegate {
+    
+    @IBOutlet weak var cardField: SDKPayECAnimatedCardField!
+    // @IBOutlet weak var cardField: SDKPayECAnimatedCardFieldScanner!
+    // @IBOutlet weak var cardField: SDKPayECAnimatedCardFieldScannerGallery!
+    @IBOutlet weak var payBtn: UIButton!
+
+...
+----
+
+}
 [%autowidth, cols="a,a", frame=none, grid=none, role="center"]
 |===
 | Default | Customized
 
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[Card Screen, align=center, width=240, height=420]
-| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized.png[Card Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated.png[CardField Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized.png[CardField Screen, align=center, width=240, height=420]
 |
 |===
 
 [#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals]
 ===== Customizing Visuals
 ---
-
-To change colors within the SDK, set properties of the components, that
-conforms to UIAppearance protocol. Changing any of these will affect
-every module used in the SDK.
+To change colors within the SDK, set directly properties of the components.
 
 [arabic]
-. `SDKPayECCancelButtonImage`
-. `SDKPayECCancelButton`
-. `SDKPayECNavigationBar`
+. `SDKPayECAnimatedCardField control` - control is combination of animated control and fields with inherited from UITextField, but specialized for collecting card data.
+   .. `cardImageColor` - The card color used. Default is UIColor.white. Set this property to nil to reset to the default.
+   .. `placeholderColor` - The text placeholder color used in each child field. Default is UIColor.lightGray. Set this property to nil to reset to the default.
+   .. `textColor` - The text color to be used when entering valid text. Default is UIColor.black. Set this property to nil to reset to the default.
+   .. `textErrorColor` - The text color to be used when the user has entered invalid information, such as an invalid card number. Default is UIColor.red. Set this property to nil to reset to the default.
+   .. `numberPlaceholder` - The placeholder for the card number field. Default is localized "Credit Card Number".
+   .. `expirationMonthPlaceholder` - The placeholder for the expiration month field. Defaults to localized "MM".
+   .. `expirationYearPlaceholder` - The placeholder for the expiration year field. Defaults to localized "YY".
+   .. `cardholderPlaceholder` - The placeholder for the cardholder field. Defaults to "CVC".
+   .. `securityCodePlaceholder` - The placeholder for the security code field. Defaults to "Cardholder".
+   .. `min_last_year` - Minimal expiration year. Defaults to 2000.
+   .. `max_last_year` - Maximal expiration year. Defaults to 2099.
+   .. `animatedTextColor` - The text color to be used for card preview text. Default is UIColor.black. Set this property to nil to reset to the default.
+   .. `manualCardBrandSelectionRequired` - A Boolean value that determines whether the card brand will be selected by cutomer. Default value is NO.
+   .. `supportedCardBrands` - Array of supported card brands. If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to SDKPayECCardFieldStateCardUnsupported. Array can contain NSNumbers with SDKPayECCardBrand values.
+   
 
+. As a SDKPayECAnimatedCardFieldScanner or SDKPayECAnimatedCardFieldScannerGallery control, SDKPayECAnimatedCardField properties plus:
+   
+   .. `scanImage` - The CardField scanner button image. Image/icon customization option. The default is nil, the CardField button shows the default bundle image. If set custom image the CardField replace the default image with a new one.
+   .. `scanImageTintColor` - The scanImage icon tint color. This is a proxy for the imageview's tintColor property.
+   .. `enableScanImageButton` - The scanImage icon visibility option. Default is NO. If set to YES  and the scanner is available, scanImage are visible.
+   .. `scanToolbarButtonTitle` - The scanToolbarButton title. Title customization option. The default is nil, the toolbar button shows the default "Scan" title. If set custom title the toolbar button replace the title.
+   .. `enableScanToolbarButton` - The scanToolbarButton visibility option. Default is YES when the scanner is available. If set to NO the scanToolbar button is hidden.
+
+   
+[#MobilePaymentSDK_iOS_CreditCard_Visualisaton_CardFieldAnimated_CustomizingVisuals_Example]
+==== Customization Example
+---
+
+This is a code example for a basic CardField screen customization:
+
+[source,swift]
+----
+func handleStyle() {
+        
+        let orange = UIColor(red: 236.0/255.0, green: 1.0/255.0, blue: 1.0/255.0, alpha: 1.0)
+        
+        self.cardField.animatedCardTextColor = UIColor.white
+        self.cardField.textColor = UIColor.purple
+        self.cardField.placeholderColor = UIColor.brown
+        self.animatedCard.underlineColor = UIColor.purple
+        self.animatedCard.textErrorColor = UIColor.red;
+        self.animatedCard.cardImageColor = orange;
+
+        self.cardField.scanImage = UIImage(named: "ic_scan")
+        self.cardField.scanImageTintColor = UIColor.blue
+        self.cardField.enableScanImageButton = true;
+        self.cardField.scanToolbarButtonTitle = "Scan Card"
+        self.cardField.enableScanToolbarButton = true
+
+        self.cardField.locale = ._en
+        self.cardField.manualCardBrandSelectionRequired = false
+        
+        var brands: Array<NSNumber> = Array()
+        brands.append(NSNumber(value: SDKPayECCardBrand.amex.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.maestro.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.masterCard.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.visa.rawValue))
+        brands.append(NSNumber(value: SDKPayECCardBrand.diners.rawValue))
+        self.cardField.supportedCardBrands = brands
+        
+        self.cardField.min_last_year = "2020"
+        self.cardField.max_last_year = "2030"
+}
+----
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-appearance.png[CardField Animated Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/credit-cardfield-animated-customized-appearance.png[CardField Animated Appearance, align=center, width=240, height=420]
+|
+|===
+   
 //-

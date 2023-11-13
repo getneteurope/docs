@@ -22,7 +22,7 @@ Add to your app’s `Podfile` subspecs:
  
 [source,ruby]
 ----
-pod 'mobilePaymentSDK/Alipay',          '~> {{version}}'
+pod 'Getnet/Alipay',          '~> {{version}}'
 ----
 
 [#MobilePaymentSDK_iOS_Alipay_basic_payment]
@@ -45,7 +45,7 @@ This is a code example for a basic Alipay payment:
 // 2. Initialize payment object and set mandatory properties
 // Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
 // and used to generate signature. Signature MUST be generated on server side.
-// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Signature doc: https://docs.getneteurope.com/_mobile_payment_sdk.html#MobilePaymentSDK_BasicSetup_Security_Signaturev2
 // Secret Key shall never be stored in application.
 
    let payment = SDKPayECAlipayPayment()
@@ -53,7 +53,7 @@ This is a code example for a basic Alipay payment:
    payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.USD)
 
    let localize = SDKPayECLocalize.appearance()
-   let locale_de = localize.locale == ._de;
+   let locale_de = localize.locale == ._de
 
    payment.transactionType = SDKPayECTransactionType.debit
    payment.ipAddress = "127.0.0.1"
@@ -95,7 +95,7 @@ You can set optional parameters after the payment object is created. Check the d
 |
 |===
 
-[#MobilePaymentSDK_iOS_Alipay_Visualisaton_Card_CustomizingVisuals]
+[#MobilePaymentSDK_iOS_Alipay_Visualisaton_CustomizingVisuals]
 === Customizing Visuals
 ---
 To change colors within the SDK, set properties of the components, that
@@ -103,8 +103,55 @@ conforms to UIAppearance protocol. Changing any of these will affect
 every module used in the SDK.
 
 [arabic]
-. `SDKPayECCancelButtonImage`
-. `SDKPayECCancelButton`
-. `SDKPayECNavigationBar`
+. `SDKPayECNavigationBar control` - a top navigation bar supports the next appearance:
+   .. `preferredStatusBarStyle` - navigation bar style 'SDKPayECNavigationBarStyle' defines the height of the navigation bar top save area of the screen. It can be defined with two possible values:
+      - `.small` - a smaller size navigation bar with a title,
+      - `.big` - a bigger size navigation bar with possibly a title and a subtitle. The big size of the bar is possible when the next content of the screen is fully readable. If not the navigation bar size is automatically changed to the small size of the navigation bar.
+   .. `barStyle` - navigation bar style 'SDKPayECStatusBarStyle' defines the content colors of the navigation bar. It can be defined with three possible values:
+      - `.darkContent` - Dark content, for use on light backgrounds, 
+      - `.lightContent` - Light content, for use on dark backgrounds, 
+      - `.auto` - Custom content, for use on backgrounds by the background color of SDKPayECNavigationBar control
+   .. `backgroundColor` - background color
+   .. `firstBackgroundColor` - first gradient background color. It is used when background apearance color is nil. 
+   .. `secondBackgroundColor` - second gradient background color. It is used when background apearance color is nil.
+   .. `UIView` appearance
 
+. `SDKPayECCancelButton` - cancel button inside the SDKPayECNavigationBar navigation bar
+   .. `UIButton` appearance
+
+
+[#MobilePaymentSDK_iOS_Alipay_Visualisaton_CustomizingVisuals_Example]
+==== Customization Example
+---
+
+This is a code example for a basic Alipay screen customization:
+
+[source,swift]
+----
+      let blue = UIColor(red: 0.0/255.0, green: 90.0/255.0, blue: 160.0/255.0, alpha: 1.0)
+      let yellow = UIColor(red: 251.0/255.0, green: 187.0/255.0, blue: 1.0/255.0, alpha: 1.0)
+      let red = UIColor(red: 237.0/255.0, green: 24.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+      let orange = UIColor(red: 255.0/255.0, green: 155.0/255.0, blue: 4.0/255.0, alpha: 1.0)
+      let firstBgColor = red
+      let secondBgColor = yellow
+
+      SDKPayECNavigationBar.appearance().preferredStatusBarStyle = .auto
+      SDKPayECNavigationBar.appearance().firstBackgroundColor = firstBgColor
+      SDKPayECNavigationBar.appearance().secondBackgroundColor = secondBgColor
+
+      SDKPayECCancelButton.appearance().setTitleColor(yellow, for: .normal)
+      SDKPayECCancelButton.appearance().setTitle("Close", for: .normal)
+      SDKPayECCancelButton.appearance().backgroundColor = nil
+
+----
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default | Customized
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-appearance.png[Alipay Screen Appearance, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/alipay-customized-appearance.png[Alipay Screen Appearance, align=center, width=240, height=420]
+|
+|===
+   
 //-

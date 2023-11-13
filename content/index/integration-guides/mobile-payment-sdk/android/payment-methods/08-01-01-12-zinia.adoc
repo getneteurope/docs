@@ -1,0 +1,137 @@
+[#MobilePaymentSDK_Android_Zinia]
+---
+== *Zinia*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+*`TransactionType.AUTHORIZATION`* - places the account holder’s funds on hold, pending future capture, re-authorization or void transaction.
+
+=== Module Dependency Edit your
+`build.gradle` file accordingly:
+
+[source,java]
+----
+dependencies {
+    ...
+    implementation files('libs/core.aar')
+    implementation files('libs/zinia.aar')
+    ...
+}
+----
+
+=== Signature
+
+Application shall get signature from server where signature shall be
+computed.
+
+=== Simple Zinia Payment
+
+This is a code example for a basic Zinia payment:
+
+[source,kotlin]
+----
+val ziniaPayment = ZiniaPayment(
+        signature = signature,
+        requestID = requestID,
+        merchantAccountId = merchantAccountId,
+        transactionType = transactionType,
+        amount = amount,
+        currency = "EUR",
+        orderNumber = orderNumber,
+        orderItems = orderItems,
+        accountHolder = accountHolder,
+        shippingAddress = shippingAddress
+)
+
+Client(context = this, url = "https://api-test.getneteurope.com", requestTimeout).startPayment(ziniaPayment)
+----
+
+[source,java]
+----
+
+ZiniaPayment ziniaPayment = new ZiniaPayment.Builder()
+            .setSignature(signature)
+            .setRequestId(requestId)
+            .setMerchantAccountId(merchantID)
+            .setTransactionType(transactionType)
+            .setAmount(amount)
+            .setCurrency("EUR")
+            .setAccountHolder(new AccountHolder(
+                        "firstName",
+                        "lastName",
+                        "email",
+                        "phone",
+                        "gender",
+                        "dateOfBirth" // "yyyy-MM-dd",
+                        address
+                    ))
+            .setShippingAddress(new Shipping(
+                        "firstName",
+                        "lastName",
+                        "email",
+                        "phone",
+                        "gender",
+                        "dateOfBirth",
+                        new Address(
+                            "street1",
+                            "street2",
+                            "city",
+                            "state",
+                            "country",
+                            "postal-code",
+                            "house-number",
+                            "house-extension",
+                            "unit",
+                            "level",
+                            "block-no")
+                    ))
+            .setOrderNumber("18040037092713285")
+            .setOrderItems(orderItems)
+            .build()
+
+
+new Client(context, "https://api-test.getneteurope.com", requestTimeout).startPayment(ziniaPayment);
+----
+
+You can use Builder to create the payment object and set additional
+properties afterwards.
+
+In case of providing all mandatory fields, payment flow starts directly, otherwise user will be redirected to screen where all mandatory and optional data can be entered.
+In case shipping address is not provided, billing address will be used as shipping address.
+
+==== Fields
+[arabic]
+. Order number (mandatory)
+. Order items (mandatory)
+. Account holder
+* First Name
+* Last Name
+* Email
+* Billing address details
+** Street Name
+** House Number
+** House extension (optional)
+** Block number  (optional)
+** Level (optional)
+** Unit (optional)
+** City
+** State/region (optional)
+** Postal Code
+** Country
+. Shipping address
+* First Name
+* Last Name
+* Street Name
+* House Number
+* House extension (optional)
+* Block number  (optional)
+* Level (optional)
+* Unit (optional)
+* City
+* State/region (optional)
+* Postal Code
+* Country

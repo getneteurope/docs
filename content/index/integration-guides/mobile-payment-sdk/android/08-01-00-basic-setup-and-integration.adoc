@@ -57,6 +57,34 @@ dependencies{
 |WireTransfer
 |Wire-Transfer payment frameworks
 |'libs/wiretransfer.aar'
+
+|Sofort
+|Sofort payment frameworks
+|'libs/sofort.aar'
+
+|Bizum
+|Bizum payment frameworks
+|'libs/bizum.aar'
+
+|MB Way
+|MB Way payment frameworks
+|'libs/mbway.aar'
+
+|Ideal
+|Ideal payment frameworks
+|'libs/ideal.aar'
+
+|Blik
+|Blik payment frameworks
+|'libs/blik.aar'
+
+|Zinia
+|Zinia payment frameworks
+|'libs/zinia.aar'
+
+|MB Referencia
+|MB Referencia payment frameworks
+|'libs/mbreferencia.aar'
 |===
         
 //-

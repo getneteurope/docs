@@ -33,7 +33,7 @@ The iOS supports two ways of MPSDK usage:
 .For example:
 [source,subs=attributes+]
 ----
-pod 'mobilePaymentSDK/All'
+pod 'Getnet/All'
 ----
 
 - The next is a selection of payment methods and utilities by customer preferences. When the customer application uses the card payment only, it needs the Card framework with dependencies only.
@@ -41,8 +41,8 @@ pod 'mobilePaymentSDK/All'
 .For example:
 [source,subs=attributes+]
 ----
-pod 'mobilePaymentSDK/Card' 
-pod 'mobilePaymentSDK/SEPA'
+pod 'Getnet/Card' 
+pod 'Getnet/SEPA'
 ----
 
 [#MobilePaymentSDK_iOS_BasicSetup_list_of_payment_method_subspec]
@@ -53,47 +53,68 @@ pod 'mobilePaymentSDK/SEPA'
 
 |All
 |all payment method frameworks in one
-|pod 'mobilePaymentSDK'
+|pod 'Getnet'
 
 |Alipay (Cross Border)
 |alipay payment frameworks
-|pod 'mobilePaymentSDK/Alipay' 
+|pod 'Getnet/Alipay' 
 
 |Card
 |Credit Card payment frameworks
-|pod 'mobilePaymentSDK/Card' 
+|pod 'Getnet/Card' 
 
 |PayPal
 |PayPal payment frameworks
-|pod 'mobilePaymentSDK/PayPal' 
+|pod 'Getnet/PayPal' 
 
 |P24 (Przelewy24)
 |P24 payment frameworks
-|pod 'mobilePaymentSDK/P24' 
+|pod 'mobiGetnetlePaymentSDK/P24' 
 
 |SEPA (Direct Debit)
 |SEPA payment frameworks
-|pod 'mobilePaymentSDK/SEPA' 
+|pod 'Getnet/SEPA' 
 
 |WireTransfer
 |Wire-Transfer payment frameworks
-|pod 'mobilePaymentSDK/WireTransfer' 
+|pod 'Getnet/WireTransfer' 
 
 |Sofort
 |Sofort payment frameworks
-|pod 'mobilePaymentSDK/Sofort' 
+|pod 'Getnet/Sofort'
 
 |RatePay
 |RatePay payments frameworks
-|pod 'mobilePaymentSDK/RatePay'
+|pod 'Getnet/RatePay'
 
 |Bizum
 |Bizum payments frameworks
-|pod 'mobilePaymentSDK/Bizum'
+|pod 'Getnet/Bizum'
 
-|Blick
-|Blick payments frameworks
-|pod 'mobilePaymentSDK/Blick'
+|Blik
+|Blik payments frameworks
+|pod 'Getnet/Blik'
+
+|Ideal
+|Ideal payments frameworks
+|pod 'Getnet/Ideal'
+
+|MBWay
+|MBWay payments frameworks
+|pod 'Getnet/MBWay'
+
+|Zinia
+|Zinia payments frameworks
+|pod 'Getnet/Zinia'
+
+|MBReferencia
+|MB Referencia (Multibanco) payments frameworks
+|pod 'Getnet/MBReferencia'
+
+|Apple Pay
+|Apple Pay payments frameworks
+|pod 'Getnet/ApplePay'
+
 |===
 
 //-
@@ -106,27 +127,27 @@ pod 'mobilePaymentSDK/SEPA'
 
 |Scanner
 |Card scanner framework
-|pod 'mobilePaymentSDK/Scanner' 
+|pod 'Getnet/Scanner' 
 
 |PhotoGallery
 |Photo Gallery frameworks
-|pod 'mobilePaymentSDK/PhotoGallery' 
+|pod 'Getnet/PhotoGallery' 
 
 |CardScanner
 |Credit Card payment frameworks with card scanner
-|pod 'mobilePaymentSDK/CardScanner' 
+|pod 'Getnet/CardScanner' 
 
 |CardScannerGallery
 |Credit Card payment frameworks with card scanner and photo gallery for card photo scanning
-|pod 'mobilePaymentSDK/CardScannerGallery' 
+|pod 'Getnet/CardScannerGallery' 
 
 |IBANScanner
 |SEPA payment frameworks with IBAN scanner
-|pod 'mobilePaymentSDK/IBANScanner' 
+|pod 'Getnet/IBANScanner' 
 
 |IBANScannerGallery
 |SEPA payment frameworks with IBAN scanner and photo gallery for card photo scanning
-|pod 'mobilePaymentSDK/IBANScannerGallery'  
+|pod 'Getnet/IBANScannerGallery'  
 
 |===  
         
@@ -167,7 +188,7 @@ When creating a payment object, don't forget to initialize the client first (for
 ----
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-               
+
         do {
             var hostname:String = "api-test.getneteurope.com"
             var parameters: SDKPayECClientParameters = SDKPayECClientParameters()
@@ -181,7 +202,7 @@ When creating a payment object, don't forget to initialize the client first (for
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+
         if let client = self.client {
             let openURL = client.open(url)
             return openURL
@@ -199,8 +220,8 @@ This is example code for processing the response (to see the result of the trans
     @IBAction func onPayAction(_ sender: UIButton!) {
 
         var payment = self.createCardPayment()
-        self.animatedCardfield.cardPayment = payment 
-        
+        self.animatedCardfield.cardPayment = payment
+
         (UIApplication.shared.delegate as! AppDelegate).client?.make(payment, withCompletion: { [weak self] (response: SDKPayECPaymentResponse?,error: Error?) in
             guard let self = self else { return }
 

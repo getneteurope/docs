@@ -1,0 +1,465 @@
+[#MobilePaymentSDK_iOS_ApplePay]
+---
+== *Apple Pay*
+---
+
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAuthorization`* - places the account holder’s
+funds on hold, pending future capture, re-authorization or void
+transaction.
+* *`SDKPayECTransactionTypeCaptureAuthorization`* - takes funds from the [Card Holder]'s account. Must follow an [Authorization] chain.
+* *`SDKPayECTransactionTypePurchase`* - takes funds from the [Card Holder]'s account. A one-step process to conduct two Transaction Types: [Authorization] and [Capture]..
+* *`SDKPayECTransactionTypeReferencedPurchase`* - takes funds from the [Card Holder]'s account. Identical to a [Purchase] except for the fact that it refers to a previous [Purchase] transaction.
+* *`SDKPayECTransactionTypeReferencedAuthorization`* - reserve funds from the [Card Holder]'s account. Identical to a [Authorization] except for the fact that it refers to a previous [Authorization] transaction.
+* *`SDKPayECTransactionTypeReferencedPurchase`* - takes funds from the [Card
+Holder]'s account.  Identical to a [Purchase] except for the fact that
+it refers to a previous [Purchase] transaction.
+
+
+[#MobilePaymentSDK_iOS_ApplePay_basic_setup]
+=== Basic Setup
+---
+
+[#MobilePaymentSDK_iOS_ApplePay_basic_setup_cocoapods]
+==== Cocoapods
+---
+
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'Getnet/ApplePay',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_ApplePay_basic_payment]
+=== Basic Apple Pay Payment
+---
+This is a code example for a basic Apple Pay payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+do {
+    try self.client = SDKPayECClient.init(hostname: hostname)
+} catch {
+    // the device is checked during initialization for jailbreak.
+    // It is risky to make payments on jailbroken devices.
+    return
+}
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://docs.getneteurope.com/_mobile_payment_sdk.html#MobilePaymentSDK_BasicSetup_Security_Signaturev2
+// Secret Key shall never be stored in application.
+
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  // provided by merchant support
+payment.requestID = requestID                  // generated on server; unique for merchantAccountID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .authorization
+payment.requiredBillingAddress = true         // madatory property, must be true
+payment.requiredShippingAddress = false
+payment.appleMerchantID = appleMerchantID     // apple merchant identifier registred in the Apple developer portal
+payment.appleMerchantCountry = .countryDE;
+
+// 3. Initialize payment order item objects and set their mandatory properties
+
+var cartOrder = [SDKPayECOrderItem]()
+
+let orderItem1 = SDKPayECOrderItem()
+orderItem1.name = "item name 1"
+orderItem1.amount = 1
+orderItem1.quantity = NSDecimalNumber(integerLiteral: 1)
+cartOrder.append(orderItem1)
+
+let orderItem2 = SDKPayECOrderItem()
+orderItem2.name = "item name 2"
+orderItem2.amount = 1
+orderItem2.quantity = NSDecimalNumber(integerLiteral: 1)
+cartOrder.append(orderItem2)
+
+// 4. Initialize payment order item objects as shipping method object and set mandatory properties
+
+let shippingItem1 = SDKPayECOrderItem()
+shippingItem1.name = "shipping method 1"
+shippingItem1.itemDescription = @"Recommended (free)";
+shippingItem1.articleNumber = "003"           // madatory property
+shippingItem1.amount = 0
+shippingItem1.quantity = NSDecimalNumber(integerLiteral: 1)
+shipmentItem1.type = .OrderItemTypeShipmentFee; // madatory property, defines shipping method
+cartOrder.append(shippingItem1)
+
+let shipmentItem2 = SDKPayECOrderItem()
+shipmentItem2.name = "shipping method 2"
+shipmentItem2.articleNumber = "004"              // madatory property
+shipmentItem2.amount = 1
+shipmentItem2.quantity = NSDecimalNumber(integerLiteral: 1)
+shipmentItem2.type = .OrderItemTypeShipmentFee; // madatory property, defines shipping method
+cartOrder.append(shipmentItem2)
+
+let order = SDKPayECOrder()
+order.descriptor = "DEMO DESCRIPTOR"
+order.number = NSUUID.init().uuidString
+order.detail = "DEMO ORDER DETAIL"
+order.items = cartOrder
+payment.order = order
+
+
+// 5. Trigger the payment and handle response in payment completion block.
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?, error: Error?) in
+// for each failure error object is provided;
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<CC_Fields, Credit Card>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_ApplePay_Order_payment]
+=== Apple Pay Payment with order items and shipping methods
+---
+This is a code example for a basic Apple Pay payment with order items a possiblity to define more shipping methods:
+
+[source,swift]
+----
+// First payment 
+
+
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .purchase
+payment.signature = signature
+  
+var tokenId: String?
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+
+// Handle first result
+func handleReponse(_ response: SDKPayECPaymentResponse?) {
+    guard let response = response else { return }
+    self.tokenId = response.cardToken.tokenID
+}
+
+// Second payment using token
+  
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.parentTransactionID = self.parentTransactionID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .purchase
+payment.signature = signature
+
+let token = SDKPayECCardToken()
+token.tokenId = tokenId
+payment.token = token
+
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
+
+//-
+
+[#MobilePaymentSDK_iOS_ApplePay_Capture_Authorization_payment]
+=== Capture Apple Pay Payment
+---
+On a basic level, capture payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* transaction type set to
+`SDKPayECTransactionTypeAuthorization`
+
+So in order to create a capture autorization payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate transaction type,
+. Save the values of
+`parentTransactionId`
+field generated in this first payment,
+. Reference these values in the follow-up request, then send it with
+appropriate a amount not a higher as the parent autorization request has it.
+
+This is a code example for a capture Apple Pay payment:
+[source,swift]
+----
+// First payment 
+
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  // provided by merchant support
+payment.requestID = requestID                  // generated on server; unique for merchantAccountID
+payment.amount = NSDecimalNumber(mantissa: 200, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .authorization
+payment.requiredBillingAddress = true         // madatory property, must be true
+payment.requiredShippingAddress = false
+payment.appleMerchantID = appleMerchantID     // apple merchant identifier registred in the Apple developer portal
+payment.appleMerchantCountry = .countryDE;
+
+// 3. Initialize payment order item objects and set their mandatory properties
+
+var cartOrder = [SDKPayECOrderItem]()
+
+let orderItem1 = SDKPayECOrderItem()
+orderItem1.name = "item name 1"
+orderItem1.amount = 1
+orderItem1.quantity = NSDecimalNumber(integerLiteral: 1)
+cartOrder.append(orderItem1)
+
+let orderItem2 = SDKPayECOrderItem()
+orderItem2.name = "item name 2"
+orderItem2.amount = 1
+orderItem2.quantity = NSDecimalNumber(integerLiteral: 1)
+cartOrder.append(orderItem2)
+
+// 4. Initialize payment order item objects as shipping method object and set mandatory properties
+
+let shippingItem1 = SDKPayECOrderItem()
+shippingItem1.name = "shipping method 1"
+shippingItem1.itemDescription = @"Recommended (free)";
+shippingItem1.articleNumber = "003"           // madatory property
+shippingItem1.amount = 0
+shippingItem1.quantity = NSDecimalNumber(integerLiteral: 1)
+shipmentItem1.type = .OrderItemTypeShipmentFee; // madatory property, defines shipping method
+cartOrder.append(shippingItem1)
+
+let shipmentItem2 = SDKPayECOrderItem()
+shipmentItem2.name = "shipping method 2"
+shipmentItem2.articleNumber = "004"              // madatory property
+shipmentItem2.amount = 1
+shipmentItem2.quantity = NSDecimalNumber(integerLiteral: 1)
+shipmentItem2.type = .OrderItemTypeShipmentFee; // madatory property, defines shipping method
+cartOrder.append(shipmentItem2)
+
+let order = SDKPayECOrder()
+order.descriptor = "DEMO DESCRIPTOR"
+order.number = NSUUID.init().uuidString
+order.detail = "DEMO ORDER DETAIL"
+order.items = cartOrder
+payment.order = order
+
+var parentTransactionID: String?
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+
+// Handle first result
+func handleReponse(_ response: SDKPayECPaymentResponse?) {
+    guard let response = response else { return }
+    self.parentTransactionID = response.parentTransactionID
+}
+
+// Second payment using parentTransactionId
+
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  // provided by merchant support
+payment.requestID = requestID                  // generated on server; unique for merchantAccountID
+payment.parentTransactionID = self.parentTransactionID
+payment.amount = NSDecimalNumber(mantissa: 100, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .captureAuthorization
+payment.requiredBillingAddress = true         // madatory property, must be true
+payment.requiredShippingAddress = false
+payment.appleMerchantID = appleMerchantID     // apple merchant identifier registred in the Apple developer portal
+payment.appleMerchantCountry = .countryDE;
+
+// 3. Initialize payment order item objects and set their mandatory properties
+
+var cartOrder = [SDKPayECOrderItem]()
+
+let orderItem1 = SDKPayECOrderItem()
+orderItem1.name = "item name 1"
+orderItem1.amount = 1
+orderItem1.quantity = NSDecimalNumber(integerLiteral: 1)
+cartOrder.append(orderItem1)
+
+
+// 4. Initialize payment order item objects as shipping method object and set mandatory properties
+
+let shippingItem1 = SDKPayECOrderItem()
+shippingItem1.name = "shipping method 1"
+shippingItem1.itemDescription = @"Recommended (free)";
+shippingItem1.articleNumber = "003"           // madatory property
+shippingItem1.amount = 0
+shippingItem1.quantity = NSDecimalNumber(integerLiteral: 1)
+shipmentItem1.type = .OrderItemTypeShipmentFee; // madatory property, defines shipping method
+cartOrder.append(shippingItem1)
+
+let order = SDKPayECOrder()
+order.descriptor = "DEMO DESCRIPTOR"
+order.number = NSUUID.init().uuidString
+order.detail = "DEMO ORDER DETAIL"
+order.items = cartOrder
+payment.order = order
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
+
+
+[TIP]
+====
+Apple Pay payment supports
+`SDKPayECPeriodicTypeRecurring`
+recurring type. Check the API documentation <<GeneralPlatformFeatures_Transactions_Recurring, Recurring Transaction>> for more details.
+====
+
+
+//-
+
+[#MobilePaymentSDK_iOS_ApplePay_recurring_payment]
+=== Recurring Apple Pay Payment
+---
+On a basic level, recurring payments have two phases:
+
+[arabic]
+. The initial request, which must include:
+* periodic type set to
+`SDKPayECPeriodicTypeRecurring`,
+* sequence type set to
+`SDKPayECSequenceTypeFirst`.
+. The follow-up requests, which must include:
+* periodic type set to
+`SDKPayECPeriodicTypeRecurring`,
+* sequence type set to
+`SDKPayECSequenceTypeRecurring`,
+* `parentTransactionId` value
+from the initial request.
+
+So in order to create a recurring payment, you need to:
+
+[arabic]
+. Send a initial request with the appropriate periodic and sequence
+flags,
+. Save the values of
+`parentTransactionId`
+field generated in this first payment,
+. Reference these values in the follow-up request, then send it with
+appropriate periodic and sequence flags.
+
+This is a code example for a first recurring Apple Pay payment:
+[source,swift]
+----
+// First payment 
+
+let firstPeriodicType = SDKPayECPeriodic() 
+firstPeriodicType.periodicType = .recurring
+firstPeriodicType.sequenceType = .first
+
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .authorization
+let periodic = SDKPayECPeriodic()
+periodic.periodicType = periodicType
+periodic.sequenceType = sequenceType
+payment.periodic = firstPeriodicType
+payment.signature = signature
+  
+var parentTransactionID: String?
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+
+// Handle first result
+func handleReponse(_ response: SDKPayECPaymentResponse?) {
+    guard let response = response else { return }
+    self.parentTransactionID = response.parentTransactionID
+}
+
+// Second payment using parentTransactionId
+
+let secondPeriodicType = SDKPayECPeriodic()
+secondPeriodicType.periodicType = .recurring
+secondPeriodicType.sequenceType = .final
+  
+let payment = SDKPayECApplePayManagedPayment()
+payment.merchantAccountID = merchantAccountID  
+payment.requestID = requestID
+payment.parentTransactionID = self.parentTransactionID
+payment.amount = NSDecimalNumber(mantissa: 199, exponent: -2, isNegative: NO)
+payment.currency = "EUR"
+payment.transactionType = .referencedAutorization
+
+payment.periodic = secondPeriodicType
+payment.signature = signature
+
+self.client?.make(payment, withCompletion:{(response: SDKPayECPaymentResponse?,error: Error?) in
+    // for each failure error object is provided
+    if let error = error {
+        return
+    }
+    self.handleResponse(response)
+})
+```
+----
+
+[#MobilePaymentSDK_iOS_ApplePay_Visualisaton]
+=== Visualisation
+---
+Apple Pay payment supports iOS system visualisation without customization.
+
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Default
+
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/apple-pay-screen.png[Apple Pay Screen, align=center, width=240, height=420]
+|
+|===
+   
+//-
