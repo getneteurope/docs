@@ -67,4 +67,10 @@ It may be more convenient to use <<GeneralPlatformFeatures_IPN, Instant Payment 
 
 .1+| Zinia                    | authorization
 
+.5+| Apple Pay         | authorization
+                       | capture-authorization
+                       | purchase
+                       | referenced-purchase
+                       | referenced-authorization
+
 |===

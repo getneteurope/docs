@@ -111,6 +111,10 @@ pod 'Getnet/SEPA'
 |MB Referencia (Multibanco) payments frameworks
 |pod 'Getnet/MBReferencia'
 
+|Apple Pay
+|Apple Pay payments frameworks
+|pod 'Getnet/ApplePay'
+
 |===
 
 //-
