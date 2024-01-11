@@ -13,7 +13,7 @@ h| Countries
 | Depends on the licensed area of the financial institution/acquirer.
 
 h| Currencies a|
-VISA and MC support basically all currencies. For more information, go to their respective manuals. JCB and UPI require an explicit setup of transaction currencies as part of the acquirer license agreement.
+VISA and MC support basically all currencies. For more information, go to their respective manuals.
 |===
 
 [#POSHostToHostIntegrationGuide_CommunicationFormats]

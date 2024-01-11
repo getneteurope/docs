@@ -107,7 +107,6 @@ The resource was successfully created.
 
 | American Express | 375000010000005 | 0005	 | {cc-exp-month}/{cc-exp-year} | ``amex``
 | Diners | 38000001000005 | 005  | {cc-exp-month}/{cc-exp-year} | ``diners``
-| JCB | 3541590100000009	 | 009 | {cc-exp-month}/{cc-exp-year} | ``jcb``
 | Maestro | 6333110100000001 | 001 | {cc-exp-month}/{cc-exp-year} | ``maestro``
 | Mastercard | 5413330100000000 | 999 | {cc-exp-month}/{cc-exp-year} | ``mastercard``
 | VISA | 4012000100000007 | 007 | {cc-exp-month}/{cc-exp-year} | ``visa``

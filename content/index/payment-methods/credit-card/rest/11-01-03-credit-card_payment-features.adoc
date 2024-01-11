@@ -364,8 +364,7 @@ digits allocated to dynamic information will be.
          |Location |13
 .2+|Master Card |Name |22
                 |Location |13
-.2+|JCB |Name |25
-        |Location |13
+
 |===
 
 NOTE: Merchants are advised to consider all these parameters before setting a
@@ -425,7 +424,8 @@ account and adds a new debit item with the dynamic descriptor to the
 credit card statement.
 
 //-
-
+////
+Commented this out - on request form  Tamerlan this section is supposed to be enabled in April 2024.
 [#CreditCard_PaymentFeatures_PaymentFacilitator]
 === Payment Facilitator
 
@@ -458,7 +458,7 @@ image::images/diagrams/cc_payment_facilitator.svg[CreditCard_PaymentFacilitator_
 See the
 <<CreditCard_Samples_PaymentFacilitatorTransactions, corresponding samples for details>>.
 
-
+////
 [#CreditCard_PaymentFeatures_RecurringTransaction]
 === Recurring Transaction
 

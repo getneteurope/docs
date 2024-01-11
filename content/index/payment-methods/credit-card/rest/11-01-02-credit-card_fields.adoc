@@ -697,14 +697,15 @@ include::{root}/include/fields/rest_cc/request/req-shipping.adoc[tag=cc-base]
 
 :!listname:
 
-
+////
+Commented this out - on request form  Tamerlan this section is supposed to be enabled in April 2024.
 [#CC_Fields_xmlelements_request_submerchantinfo]
 .``sub-merchant-info.``
 
 :listname: CC_Fields_xmlelements
 
 include::{root}/include/field-list-headers/rest_cc/request/req-sub-merchant-info.adoc[]
-
+////
 :!listname:
 
 [cols="30m,6,9,7,48a"]
