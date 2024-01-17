@@ -148,7 +148,7 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 
 ``<cryptogram-value>`` and ``<cryptogram-type>`` are mandatory in the ``<authorization>`` or ``<purchase>`` request.
 ``<cryptogram-value>`` is optional in the response.
-
++
 All the other fields used for Google Pay requests, responses and
 notifications are the same as the REST API Fields. Please refer to
 the <<RestApi_Fields, API field list>>.
