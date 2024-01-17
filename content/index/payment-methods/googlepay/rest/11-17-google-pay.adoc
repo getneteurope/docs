@@ -79,7 +79,7 @@ _This property value is set as the GATEWAY_TOKENIZATION_NAME in the merchant goo
 
 [#GooglePay_MerchantEndToEndTesting_Tokenized]
 ==== 1. Testing with a tokenized card (Google Pay™ cryptogram contains a token)
-. Add a 'contactless' enabled credit card using Google Pay™ app in your Android phone. Testing for tokenized cards can only be done via Android phone +
+. Add a 'contactless' enabled credit card using Google Pay™ app in your Android phone. Testing for tokenized cards can only be done via Android phone. +
 . Follow the Google Pay™ instructions to create a test app to generate a test cryptogram. +
 - For in-app integration, please refer to +
 https://developers.google.com/pay/api/android/guides/setup 
@@ -146,7 +146,7 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 [#GooglePay_Fields]
 === Fields
 
-``<cryptogram-value>`` and ```<cryptogram-type> are mandatory in the ``<authorization>`` or ``<purchase>`` request.
+``<cryptogram-value>`` and ``<cryptogram-type>`` are mandatory in the ``<authorization>`` or ``<purchase>`` request.
 ``<cryptogram-value>`` is optional in the response.
 
 All the other fields used for Google Pay requests, responses and
