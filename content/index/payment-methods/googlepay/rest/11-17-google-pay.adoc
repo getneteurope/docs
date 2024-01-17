@@ -94,12 +94,7 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 +
 [source,json,subs=attributes+]
 ----
-{
-"signature":"MEUCIFXY8mm4DSujSeC4LXwi2kECjP/x0ImV0j/4v5VRTZ3sAiEA0L+nBAo6Oa/3z/jKaj1pa1grtK7qshJlpeq3HqU82WU\u003d",
-"protocolVersion":"ECv1",
-"signedMessage":"
-{\"encryptedMessage\":\"a8nDFDlmwnVVWx+WkN49hMaF30Kam7tDr8d4YUjNid/ug0JrWd9f3bCadKWq+aNydcKJIOnUeiyCFCXOSQCnZfXuLu2Xscus8X0VSOijUyj91aKR35aOMPK4Wt7tJDMmfTTph/nUqoeGGu5VFPnP7yz/G6tY5hVqZKLBD9w2WDeOg5h/P/37QsZEJEEzZS8cAEG7uAdXs+ZG/EzKdiQvtH7Awg12tk7kJZbrkFIOf7YN28ntJcBurqYPxR3MedoLIU+GOHVqrO6QH2pB/xw8acRYPL/Sihv1aalpHLL7mmxTAURN/D/pLZLcsQZimtjHa6ZeUeCJyGFNhQ8DF9Rex1hSl1x1SB1bDhJuU2FUCGtSbuNYhhdQ1Az9UD6BAtgNJ/6xecCtASDusRu1pzgZhNJGwAYt1zu77aguvuvVgpVWttlXeeyjzWMPD7w7NytcLDk9+GpNoAf5QLHyEDXbFoJ9DzBDg3vNpu2I8KkUtmf06TOANmsKG4YLKlDr4tT+0gpqVie+jXKu8PL+GpUdODGnQlvDWO3fqkgX1uK417TDxP9FZ4HDG71Rb1RA+JBJ+XSPzkV0HpOCH7giHKkCYwkdLyiPPJPyw7C4Zg7j/vzYFv9NJV2G9w\\u003d\\u003d\",\"ephemeralPublicKey\":\"BHBhrSltfbOtCRFcxrtdbL4JZJt6SFuEuMGjtU8ueRT7ZrR6y02KnTw+dl3LAB+iVzys3sJSC2hVW4PuZXc6tMU\\u003d\",\"tag\":\"hLqNmvlMiHyJbXakq+/gj21VjULzeL2jwqwmCis4qTM\\u003d\"}"
-}
+{\"signature\":\"MEQCIER98b6ibJKGWqn8xgq3Ds\/Aqf0FK7lpD0iV2mPaEBY8AiBw+kpZ9tvz74wtBKOBoUO4YzmpeQrK+ir+HITCoDwpLA\\u003d\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdkKOh+fGMsH7GOqDPtFquXXHVHDhSMLje3h1iCheXj4dNiex1u8MBmzsLybDLdKjTiKgYS0mSF6YU2YgAu0DVg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1698735294051\\\"}\",\"signatures\":[\"MEUCIFaIS9VKeaUdRfGnvWF9WaV01XH0E2PoTkmOpCslNSoEAiEAiolWaWs9e7AufClgPy2AxrzgclxRcupKeRTfeAsT1bA\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"Z1WSe5IiSqTZB\/KtfYYRET4CcGg8\/RxW1XmuH+3nCMgQ53wq2tpSY9dKWKYQsx9AtRDD0N5UaUOyE1LQT4fC8EVeslMVs2CGGAbxyOyxCc91KgVdk02+3QRkthuVogp3GpB0eLiy+qD9B5hs2LluO6lUqJS3zSEYgU7dCI\/PYdDWvmQzJ1K3EyJB4nJbLWBG2o21vIoHNKmDBnlwk4dm42fb2VpPztJ5o41W2rNwyhFhQQMhH9GrpIMp0d9\/8jtxDgs4OtrIJ8VH4HD4cN616ZbKn9JZxKJAbmWLOhMXNt4YiU0sIGBlpBF2rdX+kcVH3lE3qI3xn5wfds+4XRqahvgsIYRZiah5QUqMP3IXJdJWJ0zRh7khYqt34L2hQC05IgccXWJygcobQWx301nL9NvwsqQ\/vREFAfQimOlZCikaKeoni6RmAzyy8KMCXGcW3Js\/FLN0HgO9nb2DfllS892fMn1ZBBO\/jwAAwXKQrzC1JF46EElnFyEu1Zua096Inm\/aNQ6cag\\\\u003d\\\\u003d\\\",\\\"ephemeralPublicKey\\\":\\\"BOxqwyjajw614CFKsS8dvjgY5\/HWG74gu20PfJohOaFn4peoBPoWuwU13g7anrePSuOqh1Kb+6ZZodFTWKE6nbk\\\\u003d\\\",\\\"tag\\\":\\\"J0BAyB8jbJb2cQW9LYt5e2t0Lm942b6HlAQRv40Q0AA\\\\u003d\\\"}\"}
 ----
 +
 . Create an ``authorization`` or ``purchase`` request. In this request you must pass the Google Pay™ payment token response as a *Base64-encoded* value in the ``cryptogram-value`` field. 
@@ -126,12 +121,7 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 [source,json,subs=attributes+]
 ----
 
-{
-"signature":"MEQCIGyEZLxhuh8fgy1x7D94V3iStGxbtCa1+mwBpWRdDN0wAiAspFlGpA4WDxSiczGqaQpBTQkqQx5N9WCZrFeFdSFxlQ\u003d\u003d",
-"protocolVersion":"ECv1",
-"signedMessage":"
-{\"encryptedMessage\":\"WGUmFopxWWCw8q2f3MPhKPB9f5pWlmup/6pHayUryEOWbqeqWb8H6BzcaUjpaRP+zvMdTxxGFkaOCGF+xV2Ri80rK06ROl9cetlmCOqwvyrDF6bg1OE4U/6wiQNSmQQ4HhDRx12yZK8SbfACd3Ne1UqjDAZxghchZ5KhKNi1YDAGeeUNijfBzt0wyoW/P97pRm5jj6NrIxceMIjiMZPS5et/tLJcRbAE0KUR6CnIP+XbBskTZ8k5iG1myEBBai9rM3f7OxddkKQxdO5azEIe4IKcbVweOFhzpKIQxBz/Z6El/18GsWdvaJYcN2fFMNlTnD6EAwxDoQtLqk47vj3GQZMqeLNjaH/Su2HqaxJXIY18M9Wfq2Fe6dhpV/DkzkYSNQlq9vYIyTye3Q/iouas3UuE6O01zCOYOSPGeqvUnxJpLFBa0aVlRVSAmAezcxqQFkMN4lNC47EXB0buF7l9bDiwa22ESpeJszivwoq0fA\\u003d\\u003d\",\"ephemeralPublicKey\":\"BEyGrSxe/7xn8ULcMlhZaJTmGgBlP9Q0H4JnTom4OAB49L5e0BTUnoEuPilEhPmaFQJlVCcuOzI/F5nvojmZyiI\\u003d\",\"tag\":\"auN1jOSVfQY6VPO4IFMzNdDV0kvueGAPi4fNN9IhtX4\\u003d\"}"
-}
+{\"signature\":\"MEQCIER98b6ibJKGWqn8xgq3Ds\/Aqf0FK7lpD0iV2mPaEBY8AiBw+kpZ9tvz74wtBKOBoUO4YzmpeQrK+ir+HITCoDwpLA\\u003d\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdkKOh+fGMsH7GOqDPtFquXXHVHDhSMLje3h1iCheXj4dNiex1u8MBmzsLybDLdKjTiKgYS0mSF6YU2YgAu0DVg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1698735294051\\\"}\",\"signatures\":[\"MEUCIFaIS9VKeaUdRfGnvWF9WaV01XH0E2PoTkmOpCslNSoEAiEAiolWaWs9e7AufClgPy2AxrzgclxRcupKeRTfeAsT1bA\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"Z1WSe5IiSqTZB\/KtfYYRET4CcGg8\/RxW1XmuH+3nCMgQ53wq2tpSY9dKWKYQsx9AtRDD0N5UaUOyE1LQT4fC8EVeslMVs2CGGAbxyOyxCc91KgVdk02+3QRkthuVogp3GpB0eLiy+qD9B5hs2LluO6lUqJS3zSEYgU7dCI\/PYdDWvmQzJ1K3EyJB4nJbLWBG2o21vIoHNKmDBnlwk4dm42fb2VpPztJ5o41W2rNwyhFhQQMhH9GrpIMp0d9\/8jtxDgs4OtrIJ8VH4HD4cN616ZbKn9JZxKJAbmWLOhMXNt4YiU0sIGBlpBF2rdX+kcVH3lE3qI3xn5wfds+4XRqahvgsIYRZiah5QUqMP3IXJdJWJ0zRh7khYqt34L2hQC05IgccXWJygcobQWx301nL9NvwsqQ\/vREFAfQimOlZCikaKeoni6RmAzyy8KMCXGcW3Js\/FLN0HgO9nb2DfllS892fMn1ZBBO\/jwAAwXKQrzC1JF46EElnFyEu1Zua096Inm\/aNQ6cag\\\\u003d\\\\u003d\\\",\\\"ephemeralPublicKey\\\":\\\"BOxqwyjajw614CFKsS8dvjgY5\/HWG74gu20PfJohOaFn4peoBPoWuwU13g7anrePSuOqh1Kb+6ZZodFTWKE6nbk\\\\u003d\\\",\\\"tag\\\":\\\"J0BAyB8jbJb2cQW9LYt5e2t0Lm942b6HlAQRv40Q0AA\\\\u003d\\\"}\"}
 
 ----
 +
@@ -140,13 +130,35 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 . Since the card is non-tokenized (PAN_ONLY), your customer must go through 3DS authentication. Our gateway will automatically perform a ``check-enrollment`` transaction to check if the card is enrolled for 3DS. If yes, Getnet will return an ``acs-url`` and ``pareq`` in the ``authorization`` or ``purchase`` response. You must use these values to redirect your customer as is described in the Credit Card processing flow: https://docs.getneteurope.com/CreditCard_3DS2.html#3DS2_IntegrationGuide_REST
 . When your customer has completed the 3DS authentication, Getnet will be notified and continue the ``authorization`` or ``purchase`` flow. When the transaction is complete, your customer will be redirected to the appropriate URL and you will be notified via IPN as described here: https://docs.getneteurope.com/GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN
  
+//-
+
+[#GooglePay_MerchantEndToEndTesting_Note]
+==== 3. Limitations of TEST Environment
+Google Pay transactions can only be performed with mock test cards provided by Google. You must request access to the Google Pay Test Suite from Google here: https://developers.google.com/pay/api/android/guides/resources/test-card-suite#mock-testing
+
+In the TEST environment, these cards will ultimately be rejected by the acquirer and/or issuer. Unfortunately, that means that "success" responses are not possible on TEST. The follow status and error code combinations indicate that your integration is functioning as expected. It is recommended that you perform a full series of testing in PRODUCTION before making the payment method available to your customers.
+
+*Mastercard*
+ <statuses>
+        <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
+        <status code="500.1156" description="The issuer returned Declined. Please check with Issuer, or use different card." severity="error"/>
+ </statuses>
+
+*Visa*
+ <statuses>
+        <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
+        <status code="500.1178" description="No such Issuer." severity="error"/>
+ </statuses>
+
 
 //-
 
 [#GooglePay_Fields]
 === Fields
 
-``<cryptogram-value>`` and ``<cryptogram-type>`` are mandatory in the ``<authorization>`` or ``<purchase>`` request.
+``<cryptogram-value>``, ``<cryptogram-type>``, and ``<card-type>`` are mandatory in the ``<authorization>`` or ``<purchase>`` request.
+
+Card type is returned by Google as ``cardNetwork`` in the ``paymentMethodData`` object.
 
 ``<cryptogram-value>`` is optional in the response.
 
