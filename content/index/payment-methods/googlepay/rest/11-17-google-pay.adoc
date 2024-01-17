@@ -65,7 +65,7 @@ _This property value is set as the GATEWAY_TOKENIZATION_NAME in the merchant goo
 |IPN Encoding
 2+|Base64
 |Payment Mode
-2+|tokenized cards
+2+|tokenized and non-tokenized cards
 .2+|Requests/Responses
 |Format (Languages)
 |XML
