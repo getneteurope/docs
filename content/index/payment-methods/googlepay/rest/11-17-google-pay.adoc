@@ -136,7 +136,7 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 ==== 3. Limitations of TEST Environment
 Google Pay transactions can only be performed with mock test cards provided by Google. You must request access to the Google Pay Test Suite from Google here: https://developers.google.com/pay/api/android/guides/resources/test-card-suite#mock-testing
 
-In the TEST environment, these cards will ultimately be rejected by the acquirer and/or issuer. Unfortunately, that means that "success" responses are not possible on TEST. The follow status and error code combinations indicate that your integration is functioning as expected. It is recommended that you perform a full series of testing in PRODUCTION before making the payment method available to your customers.
+In the TEST environment, these cards will ultimately be rejected by the acquirer and/or scheme. Unfortunately, that means that "success" responses are not possible on TEST. The following status and error code combinations indicate that your integration is functioning as expected. It is recommended that you perform a full series of testing in PRODUCTION before making the payment method available to your customers.
 
 *Mastercard*
  <statuses>
