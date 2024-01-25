@@ -99,7 +99,7 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 +
 . Create an ``authorization`` or ``purchase`` request. In this request you must pass the Google Pay™ payment token response as a *Base64-encoded* value in the ``cryptogram-value`` field. 
 . Send this request to Getnet’s Payment Gateway for processing. For details see the <<GooglePay_Samples_Authorization, ``authorization``>> or <<GooglePay_Samples_Purchase, ``purchase``>> request containing the *Base64-encoded* Google Pay™ cryptogram.
-. Since the tokenized Google Pay payload already contains authentication values that satisfy 3DS requirements, the transaction can be processed with the acquirer directly. No 3DS step-up flow is required and you will receive the result of the transaction directly.
+. Since the tokenized Google Pay payload already contains authentication values that satisfy 3DS requirements, the transaction can be processed with the acquirer directly. No 3DS step-up flow is required and you will receive the final result of the transaction directly.
 
 //-
 
@@ -128,8 +128,8 @@ https://developers.google.com/pay/api/web/guides/tutorial. +
 . Create an ``authorization`` or ``purchase`` request. In this request you must pass the Google Pay™ payment token response as a *Base64-encoded* value in the ``cryptogram-value`` field. 
 . Send this request to Getnet for processing. For details see the <<GooglePay_Samples_Authorization, ``authorization``>> or <<GooglePay_Samples_Purchase, ``purchase``>> request containing the *Base64-encoded* Google Pay™ cryptogram.
 . Since the card is non-tokenized (PAN_ONLY), your customer must go through 3DS authentication. Our gateway will automatically perform a ``check-enrollment`` transaction to check if the card is enrolled for 3DS. If yes, Getnet will return an ``acs-url`` and ``pareq`` in the ``authorization`` or ``purchase`` response. You must use these values to redirect your customer as is described in the Credit Card processing flow: https://docs.getneteurope.com/CreditCard_3DS2.html#3DS2_IntegrationGuide_REST
-. When your customer has completed the 3DS authentication, Getnet will be notified and continue the ``authorization`` or ``purchase`` flow. When the transaction is complete, your customer will be redirected to the appropriate URL and you will be notified via IPN as described here: https://docs.getneteurope.com/GeneralPlatformFeatures.html#GeneralPlatformFeatures_IPN
- 
+. When your customer has completed the 3DS authentication, you will be notified by the MPI provider and receive a ```PARes```. To continue the ``authorization`` or ``purchase`` flow, you must create a second ``authorization`` or ``purchase`` referencing the original transaction as ``parent-transaction-id``. This response and notification will be the final transaction status.
+
 //-
 
 [#GooglePay_MerchantEndToEndTesting_Note]
@@ -140,8 +140,11 @@ In the TEST environment, these cards will ultimately be rejected by the acquirer
 
 *Mastercard*
  <statuses>
+
         <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
+
         <status code="500.1156" description="The issuer returned Declined. Please check with Issuer, or use different card." severity="error"/>
+
  </statuses>
 
 *Visa*
