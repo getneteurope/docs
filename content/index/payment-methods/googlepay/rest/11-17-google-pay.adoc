@@ -139,15 +139,14 @@ Google Pay transactions can only be performed with mock test cards provided by G
 In the TEST environment, these cards will ultimately be rejected by the acquirer and/or scheme. Unfortunately, that means that "success" responses are not possible on TEST. The following status and error code combinations indicate that your integration is functioning as expected. It is recommended that you perform a full series of testing in PRODUCTION before making the payment method available to your customers.
 
 *Mastercard*
+
  <statuses>
-
         <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
-
         <status code="500.1156" description="The issuer returned Declined. Please check with Issuer, or use different card." severity="error"/>
-
  </statuses>
 
 *Visa*
+
  <statuses>
         <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
         <status code="500.1178" description="No such Issuer." severity="error"/>
@@ -172,7 +171,7 @@ the <<RestApi_Fields, API field list>>.
 [#GooglePay_Workflow]
 === Workflow
 
-image::images/diagrams/google-pay_workflow.svg[Google Pay Workflow, width=950]
+image::images/diagrams/Google_REST_tokenized.png[Google Pay Workflow, width=950]
 
 [#GooglePay_Samples]
 === Samples
@@ -184,7 +183,7 @@ image::images/diagrams/google-pay_workflow.svg[Google Pay Workflow, width=950]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_authorization_request_success.xml[]
+include::{root}/samples/xml/google_authorization_sample.xml[]
 ----
 
 .XML Authorization Response (Successful)
