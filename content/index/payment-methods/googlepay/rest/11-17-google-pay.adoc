@@ -6,7 +6,7 @@
 [#GooglePay_Introduction]
 === Introduction
 
-{payment-provider-name} lets merchants take advantage of fast, cashless payments for
+Getnet lets merchants take advantage of fast, cashless payments for
 products and services via a mobile device with Google Pay™. +
 Google Pay is the fast, simple way to pay at millions of places - online, in apps, and in stores. It brings together everything you need at
 checkout and protects your payment info with multiple layers of
@@ -19,21 +19,22 @@ cards, and get personalized suggestions to help you save time and money.
 
 [%autowidth]
 |===
-|Transaction Type |Transaction Type (Google Pay)
+|Transaction Type
 
-|check-enrollment |Enrollment Check
-|authorization |Authorizations
-|purchase |One-Time
-|capture-authorization |Partial shipment
-|refund-capture, refund-purchase |Refund
-|void-authorization |Void
+|check-enrollment
+|authorization
+|purchase
+|capture-authorization
+|refund-capture
+|refund-purchase
+|void-authorization
 |===
 
 [#GooglePay_TestCredentials]
 === Test Credentials
 
 [#GooglePay_TestCredentials_Tokenized]
-.For GooglePay both tokenized and non-tokenized cards
+.For Google Pay both tokenized and non-tokenized cards
 [%autowidth]
 [cols=",a,v"]
 [stripes=none]
@@ -183,14 +184,38 @@ image::images/diagrams/Google_REST_tokenized.png[Google Pay Workflow, width=950]
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google_authorization_sample.xml[]
+include::{root}/samples/xml/google-pay_creditcard_authorization_request_success_2024.xml[]
 ----
 
-.XML Authorization Response (Successful)
+.XML Authorization Response (Successful) - tokenized card (Cryptogram 3D)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_authorization_response_success.xml[]
+include::{root}/samples/xml/google-pay_creditcard_authorization_response_success_tokenized.xml[]
+----
+
+.XML Authorization Response (Successful) - non-tokenized card (PAN Only)
+
+Note ´´three-d´´ data inthe authorization response
+
+Status 201.0000 and 200.1077
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_authorization_response_success_non-tokenized.xml[]
+----
+
+.XML Second Authorization Request (Successful) - non-tokenized card (PAN Only)
+
+Note the ´´pares´´ data in authorization request
+
+Pares is obtained by you after the customer has completed the 3DS authentication
+
+The second authorization request references the first by ´´parent-transaction-id´´
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_authorization_request_success_non-tokenized.xml[]
 ----
 
 [#GooglePay_Samples_CaptureAuthorization]
