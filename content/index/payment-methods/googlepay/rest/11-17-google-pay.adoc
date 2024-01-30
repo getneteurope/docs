@@ -196,7 +196,7 @@ include::{root}/samples/xml/google-pay_creditcard_authorization_response_success
 
 .XML Authorization Response (Successful) - non-tokenized card (PAN Only)
 
-Note ´´three-d´´ data inthe authorization response
+Note ``three-d`` data inthe authorization response
 
 Status 201.0000 and 200.1077
 
@@ -207,7 +207,7 @@ include::{root}/samples/xml/google-pay_creditcard_authorization_response_success
 
 .XML Second Authorization Request (Successful) - non-tokenized card (PAN Only)
 
-Note the ´´pares´´ data in authorization request
+Note the ``pares`` data in authorization request
 
 Pares is obtained by you after the customer has completed the 3DS authentication
 
