@@ -1,0 +1,40 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment" self="https://d-nr-ee-engine-dev04.getnet.diq:443/engine/rest/merchants/a63d9615-17cb-4f9e-883d-7f5b17194202/payments/e83ee559-646b-4bfa-8a1e-08675493a7b5">
+	<merchant-account-id>a63d9615-17cb-4f9e-883d-7f5b17194202</merchant-account-id>
+	<transaction-id>e83ee559-646b-4bfa-8a1e-08675493a7b5</transaction-id>
+	<request-id>5d152eea-7c3d-4adf-963c-4c8b7eb05620</request-id>
+	<transaction-type>purchase</transaction-type>
+	<transaction-state>success</transaction-state>
+	<completion-time-stamp>2024-01-16T18:32:36.000Z</completion-time-stamp>
+	<statuses>
+		<status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="information"/>
+		<status code="200.1077" description="3d-acquirer:Card is eligible for the ACS authentication process. If the customer has not yet activated his card for 3-D Secure processing his issuer may offer activation during shopping." severity="information"/>
+	</statuses>
+	<requested-amount currency="EUR">1</requested-amount>
+	<card-token>
+		<token-id>4799934021501025</token-id>
+	</card-token>
+	<cryptogram>
+		<cryptogram-type>google-pay</cryptogram-type>
+		<cryptogram-value>eyJzaWduYXR1cmUiOiJNRVlDSVFDWDVWa0Jicm9iVS9vTC9qY29hV29LMWlOV1BXSStCaUI0MC9NTVFwaWs5UUloQUs4VmJSK2VRaXFzckJrdHZIeGpvT0JQQTI2R3h5ZU1xWnpzakFLS2RJQjMiLCJpbnRlcm1lZGlhdGVTaWduaW5nS2V5Ijp7InNpZ25lZEtleSI6IntcImtleVZhbHVlXCI6XCJNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUVVY2ZxTDdoMlV3MzBCbzBoaUxKSWFKeTROdHluSWtJZjlERG56MEd0YUJjVG92TjlONDZXN1ZGTGVsVCt2eEk4UmxLTGVndTBENTA3R2NPZktpSDY0d1xcdTAwM2RcXHUwMDNkXCIsXCJrZXlFeHBpcmF0aW9uXCI6XCIxNzA3MTM0OTg3NDE3XCJ9Iiwic2lnbmF0dXJlcyI6WyJNRVlDSVFERUpReXJQV0d3OGpzaTk3K01KeS9tSW4yd1dmS2ZHNTJNMTdqWGI5VVJqd0loQU1xODVvZ2x6MHlsVUJLQWZNWURjSG9sMzg2aHJGT3Q4L2FWMmNSWXFLWHciXX0sInByb3RvY29sVmVyc2lvbiI6IkVDdjIiLCJzaWduZWRNZXNzYWdlIjoie1wiZW5jcnlwdGVkTWVzc2FnZVwiOlwiK3I4NWppWnlMSlRVb3ZSSDZNWU1VYTJ6ZFZFQUZYNThKOUdvWDlsLzR5N1FCV2RrVGF1Q3hueXB4VDNFZWtiblNwdS9Venc0RFZCM3l1dGttb1FYT2huUVkvV2Vvc1p1L0IwTW5xL1c3dU9uUUtZYzJwczlnNkVsZGJnTFN3OFJzYVYwMklQVXdQeTFYU3ByRFJ0Yk9oMUhMVnh2VnBrTm56Y2JTVVFnN0VlbHRsWEZCRUVlQThvWXV1dVJKYnduSmJidDNMeGxiRUpDQ2E2RjRQWmVUTFRJVml4bndGN1JHdHcrdGVKWmZ5WnM0SEx4OXdKMjVWbUlLQTdsdDJjMlZYOHMyVjcwVXlDMEk4c2dzdHZ5cTJPZXRsS1ZWYXhGVkhzVHpUdkN3d3BzZ0R1TUNNVktheGFKMXhGWWVmK2xtenRIYUF4TmdiaGNrdXhxREM2b0VaYnhOUUpKVVBPSER3c0VZRVpVcllkQVVlUDZhZ0dYNHU2c2tBMGs4SHJmK3cxMW0zclNoSVlCN29jS1F4bG1ORWdZM3NIdlQzN2wzcDhXUVVJWkdxdlZja0ZRZWxnTy85dXdhY0t0OHhhU3lkV0szeDFhWGI1VWZxcW5iT0FYc3RJY0cwMjNlVEVNSHNDVWJsbGQ3eVVwQXdqbXpUTXBXSVRxM3kxOFZVM0RPN08yMG1Gd0FYOTcwL2dcXHUwMDNkXCIsXCJlcGhlbWVyYWxQdWJsaWNLZXlcIjpcIkJMYnA2RGRxeW1Qc0UrZThNaWlMMTRXZmNFK1FBd2dvNnJOUW9kVDBpK0pxU1dpK0QxSGQzejE5akRZaGpkOWx1emxRcEpFQW9QSXlkY1BWQVJ0bGY1TVxcdTAwM2RcIixcInRhZ1wiOlwiZEMrdzVqYUFocnBya2xhdVBnWGtES1ArMFQvdmZGbjhhajdXU1FObENRc1xcdTAwM2RcIn0ifQ==</cryptogram-value>
+	</cryptogram>
+	<descriptor>demo</descriptor>
+	<payment-methods>
+		<payment-method name="creditcard"/>
+	</payment-methods>
+	<authorization-code/>
+	<three-d>
+		<pareq>eJxtk9tu4jAQhu/7FFHui8fOCZBj1F2EthegtpQt7J03GZW0JKFOstC37ySk7UJiKZJn/Dn+5yQnx3Rn/UNTJHkW2nwAtoVZlMdJ9hzaq8fZ9dC2ilJnsd7lGYb2Oxb2RF3Jx61BnC4xqgyqK4uWnGNR6Ge0kji0wQfh0jcK/ECA4wWOC/aJa9i7mwd8+7YbX6tCkYgBl+zTPIfmaKKtzspzd3Oko7cftwvFheN6vmSt2eVSNLdTBc1yuO9OZ95MCMlO/i6f6RTVU2Iw0ia2ppjm1nKb7yVrDrp8lFdZad7VUJCKT6OLVWantmW5HzN2OBwGh/aBQZSnktWH54Gz/sjlXVW7iz4hxyRWy/VCL/hvuF//efn7ujPx6gHm65W3EZtQspro3ot1iUoA5+ByYYE/huHYcSRr/D15T+sY67JR0k/7LrRvZd60MBB84evJZGUMdSOl0iX8y+qCeNxTd9I/qIxf+4v89SdK/vzV20pRSb3AYeiMRgG4gRf4wufUxAC0db1aTwv1qkmo5HwEvJGTXNZfsv9fJWnf01DXuRkjmjF2PmQf7G7ojA==</pareq>
+		<acs-url>http://mucdevs00415.getnet.diq:9000/acssim/app/bank</acs-url>
+		<cardholder-authentication-status>Y</cardholder-authentication-status>
+		<version>1.0.2</version>
+	</three-d>
+	<api-id>elastic-mobile-v2-payment</api-id>
+	<entry-mode>googlepay</entry-mode>
+	<provider-account-id>GN0000317D378AF2</provider-account-id>
+	<shop>
+		<mobile-client-platform>Android</mobile-client-platform>
+		<mobile-client-version>8</mobile-client-version>
+		<mobile-client-id>4</mobile-client-id>
+	</shop>
+</payment>
