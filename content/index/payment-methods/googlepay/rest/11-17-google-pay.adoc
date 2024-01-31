@@ -174,7 +174,7 @@ the <<RestApi_Fields, API field list>>.
 
 Tokenized (Cryptogram 3D) Flow
 
-image::images/diagrams/Google_REST_tokenized.svg[Google Pay Workflow, width=950]
+image::images/diagrams/Google_REST_tokenized.svg[Google Pay Workflow, width=800]
 
 Non-Tokenized (PAN Only) Flow
 
