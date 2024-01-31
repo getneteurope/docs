@@ -1,0 +1,361 @@
+
+[#GooglePay]
+== REST API
+
+
+[#GooglePay_Introduction]
+=== Introduction
+
+Getnet lets merchants take advantage of fast, cashless payments for
+products and services via a mobile device with Google Pay™. +
+Google Pay is the fast, simple way to pay at millions of places - online, in apps, and in stores. It brings together everything you need at
+checkout and protects your payment info with multiple layers of
+security. +
+Additionally, Google Pay makes it easy to redeem loyalty points, manage your
+cards, and get personalized suggestions to help you save time and money.
+
+[#GooglePay_TransactionTypes]
+=== Transaction Types
+
+[%autowidth]
+|===
+|Transaction Type
+
+|check-enrollment
+|authorization
+|purchase
+|capture-authorization
+|refund-capture
+|refund-purchase
+|void-authorization
+|===
+
+[#GooglePay_TestCredentials]
+=== Test Credentials
+
+[#GooglePay_TestCredentials_Tokenized]
+.For Google Pay both tokenized and non-tokenized cards
+[%autowidth]
+[cols=",a,v"]
+[stripes=none]
+|===
+.2+|URLs (Endpoints)
+|*To Test Environment*
+|``\https://api-test.getneteurope.com/engine/rest/payments/``
+|*To Production Environment*
+|``\https://api.getneteurope.com/engine/rest/payments/``
+|Currencies
+2+|All supported Credit Card currencies
+|Countries
+2+|International
+3+|
+.5+|*Test Merchant Account ID*
+|Merchant-Account-ID +
+_This property value is set as the gatewayMerchantId in GATEWAY_TOKENIZATION_PARAMETERS of the merchant google app (eg.merchant google test app)_
+|ca18c682-345d-411f-9663-babccde4b47e
+|Username
+|515225-GetnetEuropeTEST
+|Password
+|4cHLRE-Q7YcAP 
+|Google API Gateway ID +
+_This property value is set as the GATEWAY_TOKENIZATION_NAME in the merchant google app (eg. merchant google test app)_
+|getnet
+|Secret Key
+|78d6da5c-f7b4-4f82-9af1-f7fc144cac66
+3+|
+|IPN Encoding
+2+|Base64
+|Payment Mode
+2+|tokenized and non-tokenized cards
+.2+|Requests/Responses
+|Format (Languages)
+|XML
+|Methods
+|POST, GET
+|===
+
+
+[#GooglePay_MerchantEndToEndTesting]
+=== Merchant End to End Testing
+
+[#GooglePay_MerchantEndToEndTesting_Tokenized]
+==== 1. Testing with a tokenized card (Google Pay™ cryptogram contains a token)
+. Add a 'contactless' enabled credit card using Google Pay™ app in your Android phone. Testing for tokenized cards can only be done via Android phone. +
+. Follow the Google Pay™ instructions to create a test app to generate a test cryptogram. +
+- For in-app integration, please refer to +
+https://developers.google.com/pay/api/android/guides/setup 
+& +
+https://developers.google.com/pay/api/android/guides/tutorial. +
+- For web integration, please refer to +
+https://developers.google.com/pay/api/web/guides/setup 
+& +
+https://developers.google.com/pay/api/web/guides/tutorial. +
+. Modify to use ``getnet`` as the ``GATEWAY_TOKENIZATION_NAME`` and ``merchant-account-id`` as ``gatewayMerchantId`` in ``GATEWAY_TOKENIZATION_PARAMETERS``.
+. Google Pay™ returns a payment token response in JSON format:
++
+[source,json,subs=attributes+]
+----
+{\"signature\":\"MEQCIER98b6ibJKGWqn8xgq3Ds\/Aqf0FK7lpD0iV2mPaEBY8AiBw+kpZ9tvz74wtBKOBoUO4YzmpeQrK+ir+HITCoDwpLA\\u003d\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdkKOh+fGMsH7GOqDPtFquXXHVHDhSMLje3h1iCheXj4dNiex1u8MBmzsLybDLdKjTiKgYS0mSF6YU2YgAu0DVg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1698735294051\\\"}\",\"signatures\":[\"MEUCIFaIS9VKeaUdRfGnvWF9WaV01XH0E2PoTkmOpCslNSoEAiEAiolWaWs9e7AufClgPy2AxrzgclxRcupKeRTfeAsT1bA\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"Z1WSe5IiSqTZB\/KtfYYRET4CcGg8\/RxW1XmuH+3nCMgQ53wq2tpSY9dKWKYQsx9AtRDD0N5UaUOyE1LQT4fC8EVeslMVs2CGGAbxyOyxCc91KgVdk02+3QRkthuVogp3GpB0eLiy+qD9B5hs2LluO6lUqJS3zSEYgU7dCI\/PYdDWvmQzJ1K3EyJB4nJbLWBG2o21vIoHNKmDBnlwk4dm42fb2VpPztJ5o41W2rNwyhFhQQMhH9GrpIMp0d9\/8jtxDgs4OtrIJ8VH4HD4cN616ZbKn9JZxKJAbmWLOhMXNt4YiU0sIGBlpBF2rdX+kcVH3lE3qI3xn5wfds+4XRqahvgsIYRZiah5QUqMP3IXJdJWJ0zRh7khYqt34L2hQC05IgccXWJygcobQWx301nL9NvwsqQ\/vREFAfQimOlZCikaKeoni6RmAzyy8KMCXGcW3Js\/FLN0HgO9nb2DfllS892fMn1ZBBO\/jwAAwXKQrzC1JF46EElnFyEu1Zua096Inm\/aNQ6cag\\\\u003d\\\\u003d\\\",\\\"ephemeralPublicKey\\\":\\\"BOxqwyjajw614CFKsS8dvjgY5\/HWG74gu20PfJohOaFn4peoBPoWuwU13g7anrePSuOqh1Kb+6ZZodFTWKE6nbk\\\\u003d\\\",\\\"tag\\\":\\\"J0BAyB8jbJb2cQW9LYt5e2t0Lm942b6HlAQRv40Q0AA\\\\u003d\\\"}\"}
+----
++
+. Create an ``authorization`` or ``purchase`` request. In this request you must pass the Google Pay™ payment token response as a *Base64-encoded* value in the ``cryptogram-value`` field. 
+. Send this request to Getnet’s Payment Gateway for processing. For details see the <<GooglePay_Samples_Authorization, ``authorization``>> or <<GooglePay_Samples_Purchase, ``purchase``>> request containing the *Base64-encoded* Google Pay™ cryptogram.
+. Since the tokenized Google Pay payload already contains authentication values that satisfy 3DS requirements, the transaction can be processed with the acquirer directly. No 3DS step-up flow is required and you will receive the final result of the transaction directly.
+
+//-
+
+[#GooglePay_MerchantEndToEndTesting_NonTokenized]
+==== 2. Testing with a non-tokenized card (Google Pay™ cryptogram contains the PAN)
+. Add a credit card to your google account.
+. Follow the Google Pay™ instructions to create a test app to generate a test cryptogram. +
+- For in-app integration, please refer to +
+https://developers.google.com/pay/api/android/guides/setup
+& +
+https://developers.google.com/pay/api/android/guides/tutorial. +
+- For web integration, please refer to +
+https://developers.google.com/pay/api/web/guides/setup
+& +
+https://developers.google.com/pay/api/web/guides/tutorial. +
+. Modify to use ``getnet`` as the ``GATEWAY_TOKENIZATION_NAME`` and ``merchant-account-id`` as ``gatewayMerchantId`` in ``GATEWAY_TOKENIZATION_PARAMETERS``. +
+. Google Pay™ returns a payment token response in JSON format:
++
+[source,json,subs=attributes+]
+----
+
+{\"signature\":\"MEQCIER98b6ibJKGWqn8xgq3Ds\/Aqf0FK7lpD0iV2mPaEBY8AiBw+kpZ9tvz74wtBKOBoUO4YzmpeQrK+ir+HITCoDwpLA\\u003d\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdkKOh+fGMsH7GOqDPtFquXXHVHDhSMLje3h1iCheXj4dNiex1u8MBmzsLybDLdKjTiKgYS0mSF6YU2YgAu0DVg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1698735294051\\\"}\",\"signatures\":[\"MEUCIFaIS9VKeaUdRfGnvWF9WaV01XH0E2PoTkmOpCslNSoEAiEAiolWaWs9e7AufClgPy2AxrzgclxRcupKeRTfeAsT1bA\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"Z1WSe5IiSqTZB\/KtfYYRET4CcGg8\/RxW1XmuH+3nCMgQ53wq2tpSY9dKWKYQsx9AtRDD0N5UaUOyE1LQT4fC8EVeslMVs2CGGAbxyOyxCc91KgVdk02+3QRkthuVogp3GpB0eLiy+qD9B5hs2LluO6lUqJS3zSEYgU7dCI\/PYdDWvmQzJ1K3EyJB4nJbLWBG2o21vIoHNKmDBnlwk4dm42fb2VpPztJ5o41W2rNwyhFhQQMhH9GrpIMp0d9\/8jtxDgs4OtrIJ8VH4HD4cN616ZbKn9JZxKJAbmWLOhMXNt4YiU0sIGBlpBF2rdX+kcVH3lE3qI3xn5wfds+4XRqahvgsIYRZiah5QUqMP3IXJdJWJ0zRh7khYqt34L2hQC05IgccXWJygcobQWx301nL9NvwsqQ\/vREFAfQimOlZCikaKeoni6RmAzyy8KMCXGcW3Js\/FLN0HgO9nb2DfllS892fMn1ZBBO\/jwAAwXKQrzC1JF46EElnFyEu1Zua096Inm\/aNQ6cag\\\\u003d\\\\u003d\\\",\\\"ephemeralPublicKey\\\":\\\"BOxqwyjajw614CFKsS8dvjgY5\/HWG74gu20PfJohOaFn4peoBPoWuwU13g7anrePSuOqh1Kb+6ZZodFTWKE6nbk\\\\u003d\\\",\\\"tag\\\":\\\"J0BAyB8jbJb2cQW9LYt5e2t0Lm942b6HlAQRv40Q0AA\\\\u003d\\\"}\"}
+
+----
++
+. Create an ``authorization`` or ``purchase`` request. In this request you must pass the Google Pay™ payment token response as a *Base64-encoded* value in the ``cryptogram-value`` field. 
+. Send this request to Getnet for processing. For details see the <<GooglePay_Samples_Authorization, ``authorization``>> or <<GooglePay_Samples_Purchase, ``purchase``>> request containing the *Base64-encoded* Google Pay™ cryptogram.
+. Since the card is non-tokenized (PAN_ONLY), your customer must go through 3DS authentication. Our gateway will automatically perform a ``check-enrollment`` transaction to check if the card is enrolled for 3DS. If yes, Getnet will return an ``acs-url`` and ``pareq`` in the ``authorization`` or ``purchase`` response. You must use these values to redirect your customer as is described in the Credit Card processing flow: https://docs.getneteurope.com/CreditCard_3DS2.html#3DS2_IntegrationGuide_REST
+. When your customer has completed the 3DS authentication, you will be notified by the MPI provider and receive a ```PARes```. To continue the ``authorization`` or ``purchase`` flow, you must create a second ``authorization`` or ``purchase`` referencing the original transaction as ``parent-transaction-id``. This response and notification will be the final transaction status.
+
+//-
+
+[#GooglePay_MerchantEndToEndTesting_Note]
+==== 3. Limitations of TEST Environment
+Google Pay transactions can only be performed with mock test cards provided by Google. You must request access to the Google Pay Test Suite from Google here: https://developers.google.com/pay/api/android/guides/resources/test-card-suite#mock-testing
+
+In the TEST environment, these cards will ultimately be rejected by the acquirer and/or scheme. Unfortunately, that means that "success" responses are not possible on TEST. The following status and error code combinations indicate that your integration is functioning as expected. It is recommended that you perform a full series of testing in PRODUCTION before making the payment method available to your customers.
+
+*Mastercard*
+
+ <statuses>
+        <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
+        <status code="500.1156" description="The issuer returned Declined. Please check with Issuer, or use different card." severity="error"/>
+ </statuses>
+
+*Visa*
+
+ <statuses>
+        <status code="201.1083" description="Cardholder Successfully authenticated." severity="information"/>
+        <status code="500.1178" description="No such Issuer." severity="error"/>
+ </statuses>
+
+
+//-
+
+[#GooglePay_Fields]
+=== Fields
+
+``<cryptogram-value>``, ``<cryptogram-type>``, and ``<card-type>`` are mandatory in the ``<authorization>`` or ``<purchase>`` request.
+
+Card type is returned by Google as ``cardNetwork`` in the ``paymentMethodData`` object.
+
+``<cryptogram-value>`` is optional in the response.
+
+All the other fields used for Google Pay requests, responses and
+notifications are the same as the REST API Fields. Please refer to
+the <<RestApi_Fields, API field list>>.
+
+[#GooglePay_Workflow]
+=== Workflow
+
+Tokenized (Cryptogram 3D) Flow
+
+image::images/diagrams/Google_REST_tokenized.svg[Google Pay Workflow, width=800]
+
+Non-Tokenized (PAN Only) Flow
+
+image::images/diagrams/Google_REST_non-tokenized.svg[Google Pay Workflow, width=950]
+
+[#GooglePay_Samples]
+=== Samples
+
+[#GooglePay_Samples_Authorization]
+==== _authorization_
+
+.XML Authorization Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_authorization_request_success_2024.xml[]
+----
+
+.XML Authorization Response (Successful) - tokenized card (Cryptogram 3D)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_authorization_response_success_tokenized.xml[]
+----
+
+.XML Authorization Response (Successful) - non-tokenized card (PAN Only)
+
+Note ``three-d`` data inthe authorization response
+
+Status 201.0000 and 200.1077
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_authorization_response_success_non-tokenized.xml[]
+----
+
+.XML Second Authorization Request (Successful) - non-tokenized card (PAN Only)
+
+Note the ``pares`` data in authorization request
+
+Pares is obtained by you after the customer has completed the 3DS authentication
+
+The second authorization request references the first by ´´parent-transaction-id´´
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_authorization_response_success_non-tokenized.xml[]
+----
+
+.XML Second Authorization Response (Successful) - non-tokenized card (PAN Only)
+
+Final transaction status
+
+Status 201.0000 and 200.1083
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_authorization_request_success_non-tokenized.xml[]
+----
+
+[#GooglePay_Samples_CaptureAuthorization]
+==== _capture-authorization_
+
+.XML Capture-Authorization Request (Successful)
+
+No difference for tokenized or non-tokenized transactions
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_capture-authroization_request_success.xml[]
+----
+
+.XML Capture-Authorization Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_capture-authorization_response_success.xml[]
+----
+
+[#GooglePay_Samples_Purchase]
+==== _purchase_
+
+.XML Purchase Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_purchase_request_success_2024.xml[]
+----
+
+.XML Purchase Response (Successful) - tokenized card (Cryptogram 3D)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_purchase_response_success_cryptogram.xml[]
+----
+
+.XML Purchase Response (Successful) - non-tokenized card (PAN Only)
+
+Note ``three-d`` data inthe purhcase response
+
+Status 201.0000 and 200.1077
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_purchase_response_success_non-tokenized.xml[]
+----
+
+.XML Second Purchase Request (Successful) - non-tokenized card (PAN Only)
+
+Note the ``pares`` data in purchase request
+
+Pares is obtained by you after the customer has completed the 3DS authentication
+
+The second purchase request references the first by ´´parent-transaction-id´´
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_purchase_request_success_non-tokenized.xml[]
+----
+
+.XML Second Purchase Response (Successful) - non-tokenized card (PAN Only)
+
+Final transaction status
+
+Status 201.0000 and 200.1083
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_purchase_response_success_non-tokenized.xml[]
+----
+
+[#GooglePay_Samples_Refund]
+==== _refund_
+
+.XML Refund Purchase Request (Successful)
+
+Same for tokenized and non-tokenized cards
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_refund-purchase_request_success.xml[]
+----
+
+.XML Refund Purchase Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_refund-purchase_response_success.xml[]
+----
+
+.XML Refund Capture Request (Successful)
+
+Same for tokenized and non-tokenized cards
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_refund-capture_request_success.xml[]
+----
+
+.XML Refund Capture Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_refund-capture_response_success.xml[]
+----
+
+[#GooglePay_Samples_Void]
+==== _void_
+
+.*XML Void-Authorization Request (Successful)*
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_void-authorization_request_success.xml[]
+----
+
+.XML Void-Authorization Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_void-authorization_response_success.xml[]
+----
+
+//-
