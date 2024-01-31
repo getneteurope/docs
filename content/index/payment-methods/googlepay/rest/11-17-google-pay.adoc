@@ -172,7 +172,13 @@ the <<RestApi_Fields, API field list>>.
 [#GooglePay_Workflow]
 === Workflow
 
+Tokenized (Cryptogram 3D) Flow
+
 image::images/diagrams/Google_REST_tokenized.png[Google Pay Workflow, width=950]
+
+Non-Tokenized (PAN Only) Flow
+
+image::images/diagrams/Google_REST_non-tokenized.svg[Google Pay Workflow, width=950]
 
 [#GooglePay_Samples]
 === Samples
@@ -215,6 +221,17 @@ The second authorization request references the first by ´´parent-transaction-
 
 [source,xml,subs=attributes+]
 ----
+include::{root}/samples/xml/google-pay_creditcard_second_authorization_response_success_non-tokenized.xml[]
+----
+
+.XML Second Authorization Response (Successful) - non-tokenized card (PAN Only)
+
+Final transaction status
+
+Status 201.0000 and 200.1083
+
+[source,xml,subs=attributes+]
+----
 include::{root}/samples/xml/google-pay_creditcard_second_authorization_request_success_non-tokenized.xml[]
 ----
 
@@ -223,16 +240,18 @@ include::{root}/samples/xml/google-pay_creditcard_second_authorization_request_s
 
 .XML Capture-Authorization Request (Successful)
 
+No difference for tokenized or non-tokenized transactions
+
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/GooglePaySamplesCaptureAuthorization_CaptureAuthorizationRequestSuccessful.xml[]
+include::{root}/samples/xml/google-pay_creditcard_capture-authroization_request_success.xml[]
 ----
 
 .XML Capture-Authorization Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_capture-authorization_response_success_a13463f2.xml[]
+include::{root}/samples/xml/google-pay_creditcard_capture-authorization_response_success.xml[]
 ----
 
 [#GooglePay_Samples_Purchase]
@@ -242,31 +261,84 @@ include::{root}/samples/xml/google-pay_creditcard_capture-authorization_response
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_purchase_request_success.xml[]
+include::{root}/samples/xml/google-pay_creditcard_purchase_request_success_2024.xml[]
 ----
 
-.XML Purchase Response (Successful)
+.XML Purchase Response (Successful) - tokenized card (Cryptogram 3D)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_purchase_response_success.xml[]
+include::{root}/samples/xml/google-pay_creditcard_purchase_response_success_cryptogram.xml[]
+----
+
+.XML Purchase Response (Successful) - non-tokenized card (PAN Only)
+
+Note ``three-d`` data inthe purhcase response
+
+Status 201.0000 and 200.1077
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_purchase_response_success_non-tokenized.xml[]
+----
+
+.XML Second Purchase Request (Successful) - non-tokenized card (PAN Only)
+
+Note the ``pares`` data in purchase request
+
+Pares is obtained by you after the customer has completed the 3DS authentication
+
+The second purchase request references the first by ´´parent-transaction-id´´
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_purchase_request_success_non-tokenized.xml[]
+----
+
+.XML Second Purchase Response (Successful) - non-tokenized card (PAN Only)
+
+Final transaction status
+
+Status 201.0000 and 200.1083
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_second_purchase_response_success_non-tokenized.xml[]
 ----
 
 [#GooglePay_Samples_Refund]
 ==== _refund_
 
-.XML Refund Request (Successful)
+.XML Refund Purchase Request (Successful)
+
+Same for tokenized and non-tokenized cards
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/GooglePaySamplesRefund_RefundRequestSuccessful.xml[]
+include::{root}/samples/xml/google-pay_creditcard_refund-purchase_request_success.xml[]
 ----
 
-.XML Refund Response (Successful)
+.XML Refund Purchase Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_refund-capture_response_success_88915dc8.xml[]
+include::{root}/samples/xml/google-pay_creditcard_refund-purchase_response_success.xml[]
+----
+
+.XML Refund Capture Request (Successful)
+
+Same for tokenized and non-tokenized cards
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_refund-capture_request_success.xml[]
+----
+
+.XML Refund Capture Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/google-pay_creditcard_refund-capture_response_success.xml[]
 ----
 
 [#GooglePay_Samples_Void]
@@ -276,14 +348,14 @@ include::{root}/samples/xml/google-pay_creditcard_refund-capture_response_succes
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/GooglePaySamplesVoid.xml[]
+include::{root}/samples/xml/google-pay_creditcard_void-authorization_request_success.xml[]
 ----
 
 .XML Void-Authorization Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/google-pay_creditcard_void-authorization_response_success_b517f83a.xml[]
+include::{root}/samples/xml/google-pay_creditcard_void-authorization_response_success.xml[]
 ----
 
 //-
