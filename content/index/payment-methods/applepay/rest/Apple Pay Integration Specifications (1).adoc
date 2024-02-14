@@ -353,14 +353,14 @@ IMPORTANT: When a tag calls for the Merchant Account ID (MAID), this is the MAID
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_creditcard_authorization_request_success.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_authorization_request_success_2024.xml[]
 ----
 
 .XML _authorization_ Response (Successful)
 
 [source, xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_creditcard_authorization_response_success.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_authorization_response_2024.xml[]
 ----
 
 [#ApplePay_Samples_ReferencedAuthorization]
@@ -371,14 +371,14 @@ include::{root}/samples/xml/apple-pay_creditcard_authorization_response_success.
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/ApplePaySamplesReferencedAuthorization_ReferencedAuthorizationRequestSuccessful.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_referenced-authorization_request_success_2024.xml[]
 ----
 
 .XML _referenced-authorization_ Response (Successful)
 
 [source, xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_creditcard_referenced-authorization_response_success_recurring_126cf4e3.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_referenced-authorization_response_success_2024.xml[]
 ----
 
 [#ApplePay_Samples_CaptureAuthorization]
