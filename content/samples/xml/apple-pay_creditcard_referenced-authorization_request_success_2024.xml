@@ -1,0 +1,10 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment">
+	<merchant-account-id>6aef85a4-c2d3-44c2-8291-edd603e0db80</merchant-account-id>
+	<request-id>00000002</request-id>
+	<transaction-type>referenced-authorization</transaction-type>
+	<parent-transaction-id>8d520ae4-27d2-4242-a472-33fe2055d4c4</parent-transaction-id>
+	<periodic>
+		<periodic-type>recurring</periodic-type>
+	</periodic>
+</payment>
