@@ -389,14 +389,14 @@ include::{root}/samples/xml/apple-pay_creditcard_referenced-authorization_respon
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/ApplePaySamplesCaptureAuthorization_CaptureAuthorizationRequestSuccessful.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_capture-authorization_request_success_2024.xml[]
 ----
 
 .XML _capture-authorization_ Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_creditcard_capture-authorization_response_success_2f0a5103.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_capture-authorization_response_success_2024.xml[]
 ----
 
 [#ApplePay_Samples_Purchase]
