@@ -1,0 +1,693 @@
+== *Apple Pay Integration Specifications*
+
+== REST API 
+
+
+|===
+|Note: Apple Pay is fully PSD2 compliant. +
+Getnet ensures that you will stay PSD2 compliant without any additional
+changes to your existing implementation.
+|===
+
+== Introduction 
+
+_Apple Pay_ is a mobile wallet. Consumers upload their credit or debit
+card information into the wallet, then use this mobile wallet on an
+Apple device in lieu of their card. In-store, the consumer simply taps
+their device to the _Apple Pay_-enabled POS device. On a website or
+in-app, the consumer clicks the *Apple Pay* button and confirms the
+payment with their face or fingerprint on their Mac, iPhone, or iPad.
+
+_Apple Pay_ is a secure and seamless payment method that can be accepted
+across all platforms: in-app, in store, and on the web. _Apple Pay_
+tokenizes all transactions, resulting in your consumers' information
+being securely protected end to end. The use of 2-factor identification
+ensures that this payment method is SCA compliant, resulting in
+negligible fraud rates and ensuring consumers never face a 3DS
+challenge. _Apple Pay_ enables frictionless card payments and eliminates
+the need to manually type card or shipping details, increasing
+conversion rates.
+
+== General Information 
+
+=== Payment Mode, Countries and Currencies 
+
+This table illustrates which payment method _Apple Pay_ belongs to. It
+also provides detailed information about the countries and currencies
+relevant for _Apple Pay_.
+
+
+|===
+|*Payment Method* |Wallet, Mobile Payment
+|*Countries* |International
+|*Currencies* |All major currencies
+|===
+
+*Communication Formats*
+
+This table illustrates how _Apple Pay_ notifications are encoded and
+which languages and methods can be used for requests and responses.
+
+[width="100%",cols="37%,18%,45%",options="header",]
+|===
+|*Requests/Responses* |Format |XML
+| |Methods |POST, GET
+|*IPN Encodement* |Base64 |
+|===
+
+=== Transaction Types 
+
+[width="100%",cols="37%,27%,36%",options="header",]
+|===
+|*Transaction Type (GPG*)* |*Transaction Type (Apple Pay)* |*Link to the
+sample*
+|_authorization_ |Authorizations |[.underline]#_authorization_ sample#
+
+|_purchase_ |One-Time |[.underline]#_purchase_ sample#
+
+|_capture-authorization_ |Partial shipment
+|[.underline]#_capture-authorization_ sample#
+
+|_refund-capture_, _refund-purchase_ |Refund |[.underline]#_refund_
+sample#
+
+|_void-authorization_ |Void |[.underline]#_void_ sample#
+|===
+
+*Getnet Payment Gateway
+
+[width="100%",cols="2%,98%",options="header",]
+|===
+| |Recurring payments are also supported by using "Reference Attribute"
+to reference a previously successful payment.
+|===
+
+For transaction type details that are not given here, go to Transaction
+Types.
+
+== Glossary
+
+[width="100%",cols="26%,74%",options="header",]
+|===
+|*Term* |*Definition*
+|*Apple Merchant ID* |You need an Apple Merchant ID (merchant
+identifier), which can be generated in the Apple Developer Portal. For
+details see *Create a merchant identifier* in
+https://developer.apple.com/documentation/passkit/apple_pay/setting_up_apple_pay_requirements[[.underline]#Setting
+Up Apple Pay Requirements#].
+
+|*Certificate Signing Request File (CSR)* |Required to create your
+Payment Processing Certificate and Merchant Identity Certificate.
+
+|*Payment Processing Certificate* |A Payment Processing Certificate is a
+certificate associated with your Apple Merchant ID, used to secure
+transaction data. _Apple Pay_ servers use the certificate’s public key
+to encrypt payment data. Getnet validates the signature of encrypted
+_Apple Pay_ data for every transaction. The Payment Processing
+Certificate expires every 25 months.
+
+|*Merchant Identity Certificate* |To set up _Apple Pay_ on your webpage,
+you need a Merchant Identity Certificate. A Merchant Identity
+Certificate is a Transport Layer Security (TLS) certificate associated
+with your Apple Merchant ID, used to authenticate your sessions with the
+_Apple Pay_ servers. The merchant identity certificate is only required
+for _Apple Pay_ on the web; it is not needed to accept payments in your
+apps.
+
+|*Payment Sheet* |The _Apple Pay_ Payment Sheet is the screen that
+consumers see when they initiate an _Apple Pay_ payment. It can include
+the user’s name, billing address, shipping address, shipping method,
+phone number, and email address needed to complete the transaction.
+|===
+
+== Getting Set Up 
+
+There are 2 paths to setting up with Apple Pay.
+
+. *Registration via Apple Pay Web Merchant Registration API:*
+
+During onboarding, you will be asked to provide the list of domain(s)
+and subdomain(s) where the Apple Pay button will be displayed. Also, you
+will be provided with a domain verification file that is to be hosted at
+the following path for each domain and sub-domain: +
+https://[DOMAIN_NAME]/.well-known/apple-developer-merchantid-domain-association[https://[DOMAIN_NAME]/.well-known/apple-developer-merchantid-domain-association] +
+ +
+__For example: +
+ +
+https://__myshop.com
+__/.well-known/apple-developer-merchantid-domain-association +
+https://__checkout.myshop.com
+_/.well-known/apple-developer-merchantid-domain-association_
+
+* You should add URL(s) like above to your server for each domain and
+sub-domain (where Apple Pay button is displayed).
+* https://[domain-name]/.well-known/apple-developer-merchantid-domain-association
+URLs should be publicly available so that Apple services can verify the
+domain verification file.
+* The domain verification file needs to be hosted for all domains and
+subdomains at the specified location. The Apple servers are expecting am
+HTTP 200 status, with the content of the file in the body of the
+response.
+* The Getnet platform will trigger your domain(s) and subdomain(s)
+registration in Apple Pay via Apple Pay Web Merchant Registration API. +
+_NOTE: a domain verification file should be placed in a needed location
+within 2 days after the file was provided, otherwise your registration
+via Apple Pay Web Merchant Registration API will fail._
+* After your registration via Apple Pay Web Merchant Registration API is
+completed successfully, you will be provided with Apple Pay Merchant ID
+that you should use in the request to Apple Pay as merchantIdentifier.
+
+[start=2]
+. *Registration via Apple Developer Portal:*
+
+What you need:
+
+* an https://developer.apple.com[[.underline]#Apple Developer account#]
+that is enrolled in the
+https://developer.apple.com/programs/[Apple Developer
+Program], and a Getnet test account.
+
+Please be aware that your consumers will only be able to see the _Apple
+Pay_ payment method if they:
+
+* are using an https://support.apple.com/en-us/HT208531[_Apple
+Pay_-compatible device].
+* are using the https://www.apple.com/safari/[Safari browser] (when
+paying on the web).
+* https://support.apple.com/en-us/HT207957[are located in a country or a
+region where Apple Pay is supported].
+* https://support.apple.com/guide/iphone/set-up-apple-pay-iph9b7f53382/ios[have
+an existing card added to their Apple Pay wallet].
+
+== Overview
+
+To enable _Apple Pay_ on your website or in-app, you need to:
+
+. Register for a Merchant Identifier.
+. Create a Payment Processing Certificate.
+. Enable _Apple Pay_ capabilities.
+
+
+Further steps to enable _Apple Pay_ on the web:
+
+
+[start=4]
+. Register and validate your merchant domain with Apple.
+. Create a Merchant Identity Certificate.
+
+=== *Step 1: Create a Merchant Identifier*
+
+Best practice is to have your Apple Merchant Identifier ready when
+signing your Apple Pay contract.
+
+. https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2Fresources%2F&rv=1[[.underline]#Sign
+in to the Apple Developer Portal#].
+. https://developer.apple.com/help/account/manage-identifiers/register-an-app-id[[.underline]#Follow Apple’s instructions to 
+a Merchant Identifier#]. When entering the merchant descriptor and
+identifier, please be aware of the following:
+* The description is for your personal records and can be changed later.
+Generally, the name of your website/app is a good description. The
+Merchant Identifier should be the value that was provided during
+onboarding.
+
+=== *Step 2: Create a Payment Processing Certificate*
+
+Once you receive your Getnet CSR file, you are ready to create your
+Payment Process Certificate.
+
+. https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2Fresources%2F&rv=1[[.underline]#Sign
+in to the Apple Developer Portal#].
+. Follow Apple’s instructions for creating a Payment Processing
+Certificate, but be aware of the following:
+* Use the Merchant Identifier you created at Step 1.
+* Skip the step where Apple asks you to create a CSR file.
+* When you are prompted to upload a certificate signing request, upload
+the Getnet CSR file you received from the Getnet Customer Relations.
+. Download and save the Payment Processing Certificate (a file with a
+.cer extension).
+
+[width="100%",options="header",]
+|===
+|Once the Payment Processing Certificate is created, _Apple Pay_ can
+encrypt your payment requests and Getnet can validate the payments. No
+further steps are required regarding the certificate. +
+Payment Processing Certificates expire in 25 months.
+|===
+
+=== *Step 3: Enable Apple Pay Capabilities*
+
+. Follow
+https://developer.apple.com/documentation/passkit/apple_pay/setting_up_apple_pay#3735190[[.underline]#Apple’s
+instructions#] for enabling _Apple Pay_ in your app.
+
+Step 4 & 5 below are only required for enabling Apple Pay in-App Payments. 
+ 
+=== *Step 4: Register a Merchant Domain*
+
+_Only required for enabling Apple Pay on the web_
+
+
+. https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2Fresources%2F&rv=1[[.underline]#Sign
+in to the Apple Developer Portal#].
+. Follow Apple’s instructions to register a merchant domain. Use the
+Merchant Identifier you created at Step 1.
+* When entering your domain names, you must register both top-level
+(e.g. getneteurope.com) and all subdomains where the _Apple Pay_ logo
+will be displayed (e.g. checkout.myshop.com).
+** You can register multiple domains under the same Merchant ID. This is
+often necessary if you use different domains in various geographies.
+** Domain registration expires with SSL expiration.
+
+=== *Step 5: Create a Merchant Identity Certificate*
+_Only required for enabling Apple Pay on the web._
+
+The Merchant Identity Certificate is used as a part of the merchant
+validation stage,
+and https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/providing_merchant_validation[passed
+up to the Apple Pay servers when requesting the Merchant Session
+object], which needs to occur every time the Apple Pay.
+
+
+. https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2Fresources%2F&rv=1[[.underline]#Sign
+in to the Apple Developer Portal#].
+. Follow Apple’s instructions to create a
+https://developer.apple.com/help/account/create-certificates/certificates-overview[[.underline]#Merchant
+Identity Certificate#].
+* Use the same Merchant Identifier you created at Step 1.
+* You must follow Apple’s instructions to create an Apple CSR file. The
+CSR file you received from Getnet does *not* work for creating your
+Merchant Identity Certificate.
+. Download and save the Merchant Identity Certificate (a file with a
+.cer extension). +
+Note: Merchant Identity Certificates expire in 25 months.
+
+All web pages that incorporate _Apple Pay_ must support
+https://developer.apple.com/documentation/apple_pay_on_the_web/setting_up_your_server[TLS
+1.2. In addition&#44; _Apple Pay_ must be served over HTTPS.]
+
+If you have any additional questions,
+contact https://docs.getneteurope.com/ContactUs.html[Merchant Support].
+
+== Testing 
+
+Test Account
+
+After you’ve set up your account:
+
+. https://developer.apple.com/apple-pay/sandbox-testing/[[.underline]#Add
+a test card#] to the Wallet app.
+. Integrate paymentSDK into your application.
+. Conduct testing.
+. Add a live card to the Wallet app and set the GetNet instance to
+production mode (do not forget to use production credentials -
+MAID/AppleMerchantID/csr).
+
+=== Test Credentials 
+
+_There is no public merchant account available. Apple Pay can be
+enabled provided that you have a CSR and an Apple Developer Account._
+
+[width="100%",cols="20%,24%,56%"]
+|===
+|URLs (Endpoints) |To Test Environment
+|https://api-test.getneteurope.com/engine/rest/payments/
+
+| |To Production Environment
+|https://api.getneteurope.com/engine/rest/payments/
+|===
+
+=== Apple Pay SDK Integration +
+image::images/diagrams/apple-pay_short.svg[A
+diagram of a Apple Pay SDK integration,width=950]
+
+=== Fields
+
+cryptogram-value is optional in the response.
+
+All the other fields used for _Apple Pay_ requests, responses and
+notifications are the same as the
+https://docs.getneteurope.com/RestApi_Fields.html[[.underline]#REST API
+Fields#].
+
+=== Samples 
+Apple provides payment data in JSON format. This payment data can be
+used as a cryptogram value when using an iOS device. To use the
+cryptogram value with REST API, the merchant must encode it to Base64.
+See _Apple Pay_ encryption details: +
+https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata[[.underline]#https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata#] +
+https://developer.apple.com/documentation/passkit/pkpaymenttoken/1617000-paymentdata?language=objc[[.underline]#https://developer.apple.com/documentation/passkit/pkpaymenttoken/1617000-paymentdata?language=objc#]
+
+
+//-
+
+IMPORTANT: When a tag calls for the Merchant Account ID (MAID), this is the MAID assigned to you by {payment-provider-name} when you signed your contract with us. It is not your Apple Merchant ID. 
+
+//-
+
+
+[#ApplePay_Samples_Authorization]
+
+==== _authorization_
+
+.XML _authorization_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_authorization_request_success_2024.xml[]
+----
+
+.XML _authorization_ Response (Successful)
+
+[source, xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_authorization_response_2024.xml[]
+----
+
+[#ApplePay_Samples_ReferencedAuthorization]
+
+==== _referenced-authorization_
+
+.XML _referenced-authorization_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_referenced-authorization_request_success_2024.xml[]
+----
+
+.XML _referenced-authorization_ Response (Successful)
+
+[source, xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_referenced-authorization_response_success_2024.xml[]
+----
+
+[#ApplePay_Samples_CaptureAuthorization]
+
+==== _capture-authorization_
+
+.XML _capture-authorization_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_capture-authorization_request_success_2024.xml[]
+----
+
+.XML _capture-authorization_ Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_capture-authorization_response_success_2024.xml[]
+----
+
+[#ApplePay_Samples_Purchase]
+
+==== _purchase_
+
+.XML _purchase_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_generic_purchase_request_success.xml[]
+----
+
+.XML _purchase_ Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_purchase_response_success.xml[]
+----
+
+[#ApplePay_Samples_ReferencedPurchase]
+
+==== _referenced-purchase_
+
+.XML _referenced-purchase_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/ApplePaySamplesReferencedPurchase_ReferencedPurchaseRequestSuccessful.xml[]
+----
+
+.XML _referenced-purchase_ Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_referenced-purchase_response_success_recurring_e835c6e2.xml[]
+----
+
+[#ApplePay_Samples_Refund]
+
+==== _refund-capture_
+
+.XML _refund-capture_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/ApplePaySamplesRefund_RefundCaptureRequestSuccessful.xml[]
+----
+
+.XML _refund-capture_ Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_refund-capture_response_success_407288d0.xml[]
+----
+
+[#ApplePay_Samples_Void]
+
+==== _void-authorization_
+
+.XML _void-authorization_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/ApplePaySamplesVoid_VoidAuthorizationRequestSuccessful.xml[]
+----
+
+.XML _void-authorization_ Response (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_void-authorization_response_success_dd9e64b7.xml[]
+----
+
+
+
+== Frequently Asked Questions
+
+==== General
+[width="100%",cols="34%,66%",options="header",]
+|===
+|*Question* |*Answer*
+
+|*Why accept _Apple Pay_?* |Two primary benefits of _Apple Pay_ are
+speed and security. +
+In-store, _Apple Pay_ functions as a NFC-capable credit card, but gets
+consumers through the checkout more quickly. _Apple Pay_ especially
+improves the consumer experience online. It can eliminate the need for
+consumers to create accounts or fill out lengthy forms when making
+purchases on the web in Safari on their iPhone, iPad, or Mac, thereby
+eliminating two of the main causes of cart abandonment.
+
+|*Is _Apple Pay_ secure?* |Tokenization and two-factor authorization,
+requiring a password or authentication through Face ID or Touch ID, mean
+_Apple Pay_ is one of the most secure payment methods available.
+Tokenization means the consumer’s payment details are not stored in the
+Apple Wallet, rather a randomized number (token) is stored instead.
+Apple does not store or have access to the original credit, debit, or
+prepaid card numbers that the consumers use with _Apple Pay_. And when
+they use _Apple Pay_, Apple does not retain any transaction information
+that can be tied back to the consumers.
+
+|*Are there additional fees to accept _Apple Pay_?* |No. _Apple Pay_ is
+processed at the same rate as the credit or debit card your consumer has
+in the Apple Wallet.
+
+|*Will I be liable for fraud on _Apple Pay_ transactions?* |Within
+stores, _Apple Pay_ transactions are treated in the same way as your
+current credit, debit, or prepaid card transactions. You’ll have the
+same liability rules applied to _Apple Pay_ transactions. Within apps
+and on the web, _Apple Pay_ transactions might be treated more favorably
+than standard transactions with a plastic card. Liability for
+transactions might shift to the issuer. +
+It is important to note that fraud is rarely an issue with _Apple Pay_.
+We hear from our partners that chargeback rates for _Apple Pay_ are
+insignificant.
+
+|*Are _Apple Pay_ payments charged as card present or card not present?*
+|Payments made using _Apple Pay_ in stores are card present
+transactions. Payments made using _Apple Pay_ within apps or on the web
+are card not present transactions.
+
+|*How do I let my consumers know that they can pay with _Apple Pay_?* a|
+. Display the
+https://support.apple.com/en-us/HT208087[[.underline]#payment symbols
+for your region and the _Apple Pay_ mark#] prominently on your
+point-of-sale terminal to let your consumers know they can use _Apple
+Pay_ in your store.
+. https://developer.apple.com/apple-pay/marketing/Apple-Pay-Mark.zip[[.underline]#Download
+the _Apple Pay_ mark#] to use within email, on your terminal screen, and
+on your website.
+. https://mapsconnect.apple.com[[.underline]#Add _Apple Pay_ to your
+Maps listing#].
+. https://www.applepaysupplies.com[[.underline]#Order _Apple Pay_
+decals#] to put on your storefront window and register.
+
+Go to https://developer.apple.com/apple-pay[[.underline]#_Apple Pay_
+for developers#] to learn how to let consumers know they can use _Apple
+Pay_ within your app or website.
+
+|*Are there any prohibited uses for _Apple Pay_?* |For prohibited uses
+of _Apple Pay_, please see Apple’s
+https://developer.apple.com/apple-pay/acceptable-use-guidelines-for-websites[[.underline]#Acceptable
+Use Guidelines#].
+
+|*Are there regulations for using _Apple Pay_ APIs?* |For regulations on
+using _Apple Pay_ APIs, please see Apple’s
+https://developer.apple.com/apple-pay/acceptable-use-guidelines-for-websites[[.underline]#Acceptable Use Guidelines#].
+
+|*How do I learn more about _Apple Pay_?* |Check the
+https://www.apple.com/apple-pay[[.underline]#_Apple Pay_ webpage#] or
+mailto:support@getneteurope.com[[.underline]#contact our Customer
+Relations team#].
+|===
+
+==== In-app and on your webpage
+[width="100%",cols="34%,66%",options="header",]
+|===
+|*Question* |*Answer*
+
+|*Will I need an _Apple Pay_ developers account for all countries I
+process payments in?* |One Apple Developer account can be used for all
+markets, so you will not need separate accounts for different markets.
+You can also use the same Apple Merchant ID if you wish.
+
+|*What do I need to sign up for an Apple Developer account?* a|
+* Enrolling as an individual: +
+If you are an individual or sole proprietor/single person business, get
+started by signing in with your Apple ID with
+https://support.apple.com/en-us/HT204915[[.underline]#two-factor
+authentication#] turned on. You will need to provide basic personal
+information, including your legal name and address.
+* Enrolling as an organization: +
+If you are enrolling your organization, you will need an Apple ID with
+https://support.apple.com/en-us/HT204915[[.underline]#two-factor
+authentication#] turned on, as well as the following to get started:
+. [.underline]#A D-U-N-S® Number# - Your organization must have a
+D-U-N-S Number so that we can verify your organization’s identity and
+legal entity status. These unique nine-digit numbers are assigned by Dun
+& Bradstreet and are widely used as standard business identifiers. You
+can check to see if your organization already has a D-U-N-S Number and
+request one if necessary. They are free in most jurisdictions.
+https://developer.apple.com/support/D-U-N-S[[.underline]#Learn more#].
+. [.underline]#Legal Entity Status# - Your organization must be a legal
+entity so that it can enter into contracts with Apple. We do not accept
+DBAs, fictitious businesses, trade names, or branches.
+. [.underline]#Legal Binding Authority# - As the person enrolling your
+organization in the Apple Developer Program, you must have the legal
+authority to bind your organization to legal agreements. You must be the
+organization’s owner/founder, executive team member, senior project
+lead, or have legal authority granted to you by a senior employee.
+. [.underline]#A Website# - Your organization’s website must be publicly
+available and the domain name must be associated with your organization.
+
+|*What consumer information can I pull from _Apple Pay_?* |Consumer
+information includes a phone number and billing, shipping, and email
+addresses. For more details, see
+https://developer.apple.com/documentation/passkit/pkcontactfield[[.underline]#PKContactField#].
+
+|*Where does information come from in the payment sheet?* |The
+information comes from Wallet & Apple Pay defaults in *Settings*.
+
+|*Is the consumer information that comes from _Apple Pay_ verified by
+Apple?* |Consumer information is shared as-is, and is not verified or
+standardized by Apple. You need to validate it on your platform and
+communicate through the _Apple Pay_ API if fields should be corrected.
+
+|*What does the _Apple Pay_ payment token contain?* |The structure,
+format, and data included in the PKPaymentToken can be found in the
+https://developer.apple.com/library/archive/documentation/PassKit/Reference/PaymentTokenJSON/PaymentTokenJSON.html[[.underline]#Payment
+Token Format Reference#]. PKPaymentTokens only contain information on
+processing the payment; the consumer information is included in the
+https://developer.apple.com/documentation/passkit/pkpayment[[.underline]#PKPayment#]
+object. The PKPayment encapsulates the consumer information and the
+PKPaymentToken.
+
+|*What do I do if GetNet is unable to decrypt my payment?* |If this were
+to occur, it might indicate that you need to regenerate your Payment
+Processing Certificate. Payment Processing Certificates from Apple
+expire in 25 months. Contact Getnet support at connect@getneteurope.com
+
+|*Are there design guidelines for using _Apple Pay_?* |Your use of
+_Apple Pay_ must adhere to the branding and user interface guidelines
+described in the
+https://developer.apple.com/apple-pay/marketing[[.underline]#_Apple
+Pay_ Marketing Guidelines#] and
+https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction[[.underline]#Human
+Interface Guidelines#].
+|===
+
+==== In-store
+[width="100%",cols="34%,66%",options="header",]
+|===
+|*Question* |*Answer*
+
+|*How do I start accepting _Apple Pay_ in my store?* |To accept _Apple
+Pay_ in your store, you need to have a contactless payment-capable
+point-of-sale terminal. +
+If you want to learn about available card schemes for your geography,
+reach out to our sales team.
+
+|*My GetNet POS terminal is already NFC/contactless payment capable. Can
+I accept _Apple Pay_ right away?* |If you accept contactless payments
+today, you’re likely able to accept _Apple Pay_ for those networks
+without any changes. If you’re not already accepting contactless
+payments, contact GetNet to make sure that your point-of-sale setup can
+accept _Apple Pay_ and ask us to enable it. To learn more, see our
+https://support.apple.com/en-us/HT205747[[.underline]#_Apple Pay_
+merchant checklist#].
+
+|*When consumers pay with _Apple Pay_, do they need to sign a receipt or
+enter a PIN?* |Generally speaking, no, consumers do not need to enter a
+PIN or sign a receipt, but when paying in stores with _Apple Pay_ in
+some countries and regions,
+https://support.apple.com/en-us/HT207435[[.underline]#if the consumer’s
+transaction exceeds a certain amount#], they might need to enter their
+PIN. In some cases, they might need to sign a receipt or use a different
+payment method.
+
+|*How do I process returns with _Apple Pay_?* |Use the Device Account
+Number to find the purchase and process the return, just like you would
+with a traditional credit, debit, or prepaid card payment. In Japan, you
+can also use the transaction ID on the receipt to find the purchase and
+process the return. To see the last four digits of the Device Account
+Number, ask the consumer to go to Wallet, tap the card, and tap on the
+top-right corner of the display. You can also have the consumer hold
+their iPhone or Apple Watch near the reader, select the card that they
+used to make the original payment, and authorize the return with
+https://support.apple.com/en-us/HT208109[[.underline]#Face ID#], Touch
+ID, or a passcode.
+
+|*Is there a limit to the transaction amount that consumers can use
+_Apple Pay_ for in my store?* |_Apple Pay_ allows your consumers to make
+easy and secure contactless payments of any amount. Read about
+https://support.apple.com/en-us/HT207435[[.underline]#transaction
+limits#].
+|===
+
+==== Business Chat
+[width="100%",cols="34%,66%",options="header",]
+|===
+|*Question* |*Answer*
+
+|*What is Apple Business Chat?* |Business Chat allows consumers to ask
+for information, schedule appointments, and even make purchases right in
+Messages on their iPhone or iPad. This makes connecting with your brand
+as simple as texting any of their favorite contacts.
+
+|*How do I start accepting _Apple Pay_ in Business Chat?* |To accept
+_Apple Pay_ in
+https://support.apple.com/en-us/HT208642[[.underline]#Business Chat#],
+go to https://developer.apple.com/business-chat[[.underline]#Business
+Chat for developers#] to learn how to get started.
+|===
