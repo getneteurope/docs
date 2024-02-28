@@ -209,7 +209,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    yard (0.9.24)
+    yard (0.9.35)
     yell (2.2.2)
 
 PLATFORMS
