@@ -1,0 +1,89 @@
+
+[#MobilePaymentSDK_iOS_Ideal]
+---
+== *Ideal*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeDebit`* - Moves funds from the [Account Holder] to the [Merchant].
+
+[#MobilePaymentSDK_iOS_Ideal_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_Ideal_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/Ideal',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_Ideal_basic_payment]
+==== Ideal Payment
+
+This is a code example for a basic Ideal payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECIdealPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.debit
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "joe.doe@email.com"
+   payment.accountHolder = accountHolder
+   
+   let order = SDKPayECOrder.init()
+   order.number = "12345678"
+   order.descriptor = "Descriptor"
+   payment.order = [order]
+
+```
+----
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<API_Ideal_Fields, iDeal>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_Ideal_Visualisaton]
+=== Visualisation
+---
+image::images/07-01-02-integrating-mpsdk-on-ios/iOS/ideal.png[Ideal Screen, align=center, width=240, height=420]
+
+[NOTE]
+====
+Visualization of Ideal result is up to the merchant applicaton. SDK returns IBAN, BIC, Provider Reference ID and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
+
+//-

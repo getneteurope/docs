@@ -52,6 +52,8 @@ ifndef::backend-pdf[]
 endif::[]
 Mastercard allows up to 30 days to conduct a _capture-preauthorization_
 depending on the configuration.
+
+Diners Club/Discover requires merchants to inform Cardholders that the pre-authorization request is: (1) not final; (2) there may be subsequent Authorization Requests; and (3) the total amount of each pre-authorization request.
 | [[CreditCard_TransactionTypesList_CaptureAuthorization]] <<CreditCard_TransactionTypes_CaptureAuthorization, _capture-authorization_>> 
  a| Takes funds from the cardholder's account. Must follow an _authorization_ or _authorization-supplementary_ chain.
 

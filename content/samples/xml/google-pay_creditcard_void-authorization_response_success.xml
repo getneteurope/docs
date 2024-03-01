@@ -1,0 +1,28 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment" self="https://d-nr-ee-engine-dev04.getnet.diq:443/engine/rest/merchants/a63d9615-17cb-4f9e-883d-7f5b17194202/payments/a0bb3377-e9ec-42d5-bca8-cd40d99faee1">
+	<merchant-account-id>a63d9615-17cb-4f9e-883d-7f5b17194202</merchant-account-id>
+	<transaction-id>a0bb3377-e9ec-42d5-bca8-cd40d99faee1</transaction-id>
+	<request-id>f56b1173-250e-40b6-b33e-5d34c0ef1a2f</request-id>
+	<transaction-type>void-authorization</transaction-type>
+	<transaction-state>success</transaction-state>
+	<completion-time-stamp>2024-01-16T18:54:24.000Z</completion-time-stamp>
+	<statuses>
+		<status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="information"/>
+	</statuses>
+	<requested-amount currency="EUR">1.00</requested-amount>
+	<parent-transaction-id>84734136-46a3-4a19-a8d3-cc83ac568d97</parent-transaction-id>
+	<card-token>
+		<token-id>1246229160696176</token-id>
+		<masked-account-number>448661******2110</masked-account-number>
+	</card-token>
+	<ip-address>127.0.0.1</ip-address>
+	<descriptor>demo</descriptor>
+	<payment-methods>
+		<payment-method name="creditcard"/>
+	</payment-methods>
+	<parent-transaction-amount currency="EUR">1.000000</parent-transaction-amount>
+	<authorization-code>114564</authorization-code>
+	<api-id>elastic-api</api-id>
+	<entry-mode>googlepay</entry-mode>
+	<provider-account-id>GN0000317D378AF2</provider-account-id>
+</payment>

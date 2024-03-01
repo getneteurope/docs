@@ -29,15 +29,15 @@ jobs:
       run: echo "::set-output name=build_name::$(bash .scripts/extract_build_name.sh)"
       id: extract
 
-    - name: "Setup ruby 2.6"
+    - name: "Setup ruby 2.7"
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.10
+        ruby-version: 2.7.8
         bundler-cache: false
 
     - name: Bundle install
       run: |
-        gem install bundler:2.3.26
+        gem install bundler:2.4.21
         bundle config path vendor/bundle
         bundle install --jobs 16 --retry 30
 

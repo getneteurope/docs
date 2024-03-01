@@ -1,0 +1,30 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment">
+	<merchant-account-id>a63d9615-17cb-4f9e-883d-7f5b17194202</merchant-account-id>
+	<request-id>7fb9cb15-1dad-49d2-ab4b-e254a8c6667f</request-id>
+	<transaction-type>authorization</transaction-type>
+	<requested-amount currency="EUR">1</requested-amount>
+	<account-holder>
+		<first-name>John</first-name>
+		<last-name>Doe</last-name>
+		<email>tech.pdi-gw@getnet.com</email>
+		<address>
+			<street1>Any Street</street1>
+			<city>Munich</city>
+			<state>BY</state>
+			<country>DE</country>
+			<postal-code>80339</postal-code>
+		</address>
+	</account-holder>
+	<card>
+		<card-type>visa</card-type>
+	</card>
+	<cryptogram>
+		<cryptogram-type>google-pay</cryptogram-type>
+		<cryptogram-value>eyJzaWduYXR1cmUiOiJNRVlDSVFEdEFuMTF0eDRjRUVHUzFSK3pGUUlhaXRVek9CMWlWVm01SUdIdmJNL2hJUUloQUxpUEYrdEVxQnBwVU43UmhMemgyQ0I2SWJWbEhRR2I0cCt2V0tJT1FBZGwiLCJpbnRlcm1lZGlhdGVTaWduaW5nS2V5Ijp7InNpZ25lZEtleSI6IntcImtleVZhbHVlXCI6XCJNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUVVY2ZxTDdoMlV3MzBCbzBoaUxKSWFKeTROdHluSWtJZjlERG56MEd0YUJjVG92TjlONDZXN1ZGTGVsVCt2eEk4UmxLTGVndTBENTA3R2NPZktpSDY0d1xcdTAwM2RcXHUwMDNkXCIsXCJrZXlFeHBpcmF0aW9uXCI6XCIxNzA3MTEwNDE4NzM3XCJ9Iiwic2lnbmF0dXJlcyI6WyJNRVVDSUZzUDV6SmNaa3ltWjUweGlmVXdlclgvZlh5MlJuSFdIdDJUNUtJQ1VGVzlBaUVBMVBTb1NCZFZsdGRJL2JveHhpOTNkb0UxTXI3blNVTWJjcWJCbHV0b05wNFx1MDAzZCJdfSwicHJvdG9jb2xWZXJzaW9uIjoiRUN2MiIsInNpZ25lZE1lc3NhZ2UiOiJ7XCJlbmNyeXB0ZWRNZXNzYWdlXCI6XCJxMlh1Sk9OOTBvZW5obkdqbUdUVjZLTmkyQWQ0dnRTTEtmdXhVWktmcHlzMkNHbUtabXpRS2JGWU1KL3gzcGRPV2ZVQkYzTzlqM1k2eXlCWDUyT28yN21ocVZBTnRzTGxuajBJK2J3cEpzZk0rUml1aWJUcTVmMWtucGh5aitSNlBFemdXSXN0TVRkU0ZJU0RaTnhRSm9wbCtTeS9vR29obnc3eTY4SEUrWHI3b1NIdXRsTzYwT2luL3hHbGtuUGFLQVVuTU1uTzJucGN3cDE4VmdDRlA0K2MvSGNkMUxCZi9iM3JQOTl0Zld6TzJTd1J0L0VVdFNza3Q4SGkxalJVVlhFbDhxOWNyMUlEOWsyNDBXYkhIZERNVkJJRmxFQzdEYTV1V3NlSUpzYk5zUVVZRG9PUGErS1lob3EzSFYzSEJ3Y3kxcVJOYllrSlhUazJkQk0waDlaWEdtREdDR0hLT3NrNlk3MU51K0pKbmpGQUJNREpXVnJvd1M0aytsZzhvQ1hHMkJ4MXRyWjZQTi9nZFAxRmNVY0kwUEE2YnVuVEIwQk8yWjZoaEV3bmdtQXlGK3VQQ3pmb2VjRmNFWmltTmVlaVJxcmpEd2dwNTd2bXhOaDV5UE1jOVl4czFtK1JXMzhNb2U4Z0VFSStiU2JrSGJydEd4b093UVhEdU96ME9xdWhRT1F1Z0ZORmZXWVxcdTAwM2RcIixcImVwaGVtZXJhbFB1YmxpY0tleVwiOlwiQk04QVU3d2ZmWlF6ZkZlSjBYVnVaVXJOb0d1NnNQQ09iYXl4dlMybFNpc1FsQkVYVVg4U1UxL1k1UTJkNDFzMVFvTTk3MFZyU0JOUHFvb2ZoTnNoSnZZXFx1MDAzZFwiLFwidGFnXCI6XCJnSlJ6NnRrbHVQMWdBL3o1ZEtreXNjc2Z0RWxtQ0pSeG10aExOYzQzWGhJXFx1MDAzZFwifSJ9</cryptogram-value>
+	</cryptogram>
+	<payment-methods>
+		<payment-method name="creditcard"/>
+	</payment-methods>
+	<entry-mode>googlepay</entry-mode>
+</payment>

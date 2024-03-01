@@ -1,0 +1,118 @@
+
+[#MobilePaymentSDK_iOS_Bizum]
+---
+== *Bizum*
+---
+=== Supported https://docs.getneteurope.com/AppendixB.html[Transaction Types]
+---
+This payment method supports the following
+https://docs.getneteurope.com/AppendixB.html[transaction
+types]:
+
+* *`SDKPayECTransactionTypeAutorization`* - Moves funds from the [Account Holder] to the [Merchant].
+
+[#MobilePaymentSDK_iOS_Bizum_basic_setup]
+=== Basic Setup
+---
+[#MobilePaymentSDK_iOS_Bizum_basic_setup_cocoapods]
+==== Cocoapods
+---
+Add to your app’s `Podfile` subspecs:
+ 
+[source,ruby]
+----
+pod 'mobilePaymentSDK/Bizum',          '~> {{version}}'
+----
+
+[#MobilePaymentSDK_iOS_Bizum_basic_payment]
+==== Bizum Payment
+
+This is a code example for a basic Bizum payment:
+
+
+[source,swift]
+----
+// 1. Initialize ``SDKPayECClient``
+   do {
+      try self.client = SDKPayECClient.init(hostname: hostname)
+   } catch {
+      // the device is checked during initialization for jailbreak.
+      // It is risky to make payments on jailbroken devices.
+      return
+   }
+
+// 2. Initialize payment object and set mandatory properties
+// Parameters (amount, currency, transactionType) shall be sent to server for validation or just provided by server
+// and used to generate signature. Signature MUST be generated on server side.
+// Signature doc: https://document-center.getneteurope.com/display/PTD/Signature+v2
+// Secret Key shall never be stored in application.
+
+   let payment = SDKPayECBizumPayment()
+   payment.amount = AMOUNT
+   payment.currency = SDKPayECCurrencyGetISOCode(SDKPayECCurrency.EUR)
+   
+   payment.transactionType = SDKPayECTransactionType.authorization
+
+   let accountHolder = SDKPayECCustomerData.init()
+   accountHolder.firstName = "John"
+   accountHolder.lastName = "Doe"
+   accountHolder.email = "joe.doe@email.com"
+   accountHolder.phone = "+34700000000"
+   accountHolder.address = SDKPayECAddress()
+   accountHolder.address?.street1 = "Elm Street !428"
+   accountHolder.address?.city = "Springwood"
+   accountHolder.address?.postalCode = "04001"
+   accountHolder.address?.state = "Ohio"
+   accountHolder.address?.country = SDKPayECCountry.DE
+   payment.accountHolder = accountHolder
+ 
+   var cartOrder = [SDKPayECOrderItem]()
+
+   let order = SDKPayECOrder()
+   order.descriptor = "DEMO DESCRIPTOR"
+   order.number = NSUUID.init().uuidString
+   order.detail = "DEMO ORDER DETAIL"
+   order.items = cartOrder
+   payment.order = order
+
+   let browser = SDKPayECBrowser()
+   browser.ipAddress = "78.99.158.213"
+
+```
+----
+
+//-
+
+[NOTE]
+====
+In case of providing *`accountHolder.phone`* payment flow starts directly, otherwise user will be redirected to screen where phone number needs to be entered.
+====
+
+//-
+
+[TIP]
+====
+You can set optional parameters after the payment object is created. Check the documentation <<API_Bizum_Fields, Bizum>> payment method for more details.
+====
+
+//-
+
+[#MobilePaymentSDK_iOS_Bizum_Visualisaton]
+=== Visualisation
+---
+
+[%autowidth, cols="a,a", frame=none, grid=none, role="center"]
+|===
+| Bizum 
+|
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/bizum-phone.png[Bizum Phone Screen, align=center, width=240, height=420]
+| image::images/07-01-02-integrating-mpsdk-on-ios/iOS/bizum.png[Bizum Screen, align=center, width=240, height=420]
+|
+|===
+
+[NOTE]
+====
+Visualization of Bizum result is up to the merchant applicaton. SDK returns IBAN, BIC, Provider Reference ID and others parameters in payment response. It should be visualized in order for the consumer to be able to check the bank transfer.
+====
+
+//-
