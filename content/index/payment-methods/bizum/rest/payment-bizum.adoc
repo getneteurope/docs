@@ -6,7 +6,7 @@ Bizum is a type of Offline Bank Transfer.
 [#API_PaymentBizum_CountriesandCurrencies]
 === Countries and Currencies
 
-* *Currencies*: Processing currency is EUR, but the settlement bank currency may vary.
+* *Currencies*: EUR is processing and settlement currencies.
 * *Countries*: Bizum supports the countries shown in the following collapsible table:
 
 .Click to show the supported countries
