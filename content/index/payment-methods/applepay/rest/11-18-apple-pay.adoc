@@ -407,14 +407,14 @@ include::{root}/samples/xml/apple-pay_creditcard_capture-authorization_response_
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_generic_purchase_request_success.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_purchase_request_success_2024.xml[]
 ----
 
 .XML _purchase_ Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_creditcard_purchase_response_success.xml[]
+include::{root}/samples/xml/apple-pay_creditcard_purchase_response_success_2024.xml[]
 ----
 
 [#ApplePay_Samples_ReferencedPurchase]
