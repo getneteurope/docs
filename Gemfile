@@ -28,7 +28,7 @@ gem "pry", "~> 0.12.2"
 gem 'ffi', "~> 1.15.5", git: "https://github.com/ffi/ffi", submodules: true
 
 gem "git", "~> 1.13"
-gem "nokogiri", "~> 1.14.3"
+gem "nokogiri", "~> 1.15.6"
 gem "babel-transpiler", ">= 0.7.0", git: "https://github.com/isantoshsingh/ruby-babel-transpiler"
 gem "therubyracer"
 gem "html-proofer", "~> 3.15"
