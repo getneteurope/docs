@@ -95,7 +95,6 @@ Test Credentials for Transaction Type
 [cols="35,65"]
 |===
 |Bank |BIC
-
 |Rabobank |RABONL2U
 |ING | INGBNL2A
 |===
