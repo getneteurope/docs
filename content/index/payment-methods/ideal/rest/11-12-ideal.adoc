@@ -166,15 +166,17 @@ website.
 | ABNANL2A | ABN Amro Bank
 | ASNBNL21 | ASN Bank
 | BUNQNL2A | bunq
-| INGBNL2A | ING
-| KNABNL2H | Knab
-| MOYONL21 | Moneyou
-| RABONL2U | Rabobank
-| RGGINL21 | Regio Bank
-| SNSBNL2A | SNS Bank
-| TRIONL2U | Triodos Bank
-| FVLBNL22 | Van Lanschot Bankiers
-| REVOLT21 | Revolut Bank
+|INGBNL2A  |ING
+|KNABNL2H  |Knab
+|MOYONL21  |Moneyou
+|NTSBDEB1  |N26
+|NNBANL2G  |Nationale Nederlanden (NN)
+|RABONL2U  |Rabobank
+|RGGINL21  |Regio Bank
+|REVOLT21  |Revolut Bank
+|SNSBNL2A  |SNS Bank
+|TRIONL2U  |Triodos Bank
+|FVLBNL22  |Van Lanschot Kempen
 | BITSNL2A | Yoursafe B.V.
 |===
 
