@@ -52,19 +52,21 @@ payment transactions.
 [width="100",cols="50,50",]
 |===
 |BIC |Name
-
-|ABNANL2A |ABN Amro Bank
-|ASNBNL21 |ASN Bank
-|BUNQNL2A |bunq
-|INGBNL2A |ING
-|KNABNL2H |Knab
-|MOYONL21 |Moneyou
-|RABONL2U |Rabobank
-|RGGINL21 |Regio Bank
-|SNSBNL2A |SNS Bank
-|TRIONL2U |Triodos Bank
-|FVLBNL22 |Van Lanschot Bankiers
-|REVOLT21 |Revolut Bank
+| ABNANL2A | ABN Amro Bank
+| ASNBNL21 | ASN Bank
+| BUNQNL2A | bunq
+|INGBNL2A  |ING
+|KNABNL2H  |Knab
+|MOYONL21  |Moneyou
+|NTSBDEB1  |N26
+|NNBANL2G  |Nationale Nederlanden (NN)
+|RABONL2U  |Rabobank
+|RGGINL21  |Regio Bank
+|REVOLT21  |Revolut Bank
+|SNSBNL2A  |SNS Bank
+|TRIONL2U  |Triodos Bank
+|FVLBNL22  |Van Lanschot Kempen
+| BITSNL2A | Yoursafe B.V.
 |===
 
 [#PPv2_ideal_TestCredentials]
@@ -93,7 +95,6 @@ Test Credentials for Transaction Type
 [cols="35,65"]
 |===
 |Bank |BIC
-
 |Rabobank |RABONL2U
 |ING | INGBNL2A
 |===
@@ -102,7 +103,7 @@ At the moment, only Rabobank (RABONL2U) and ING (INGBNL2A) are available
 for testing purposes. Choosing any other bank from the selection on the
 payment or sending its BIC in the request triggers payment failure.
 
-image::images/03-01-04-05-ideal/order_overview.jpg[image]
+image::images/payment-page-issuers.png[image]
 
 [#PPv2_ideal_TransactionType_debit]
 === Transaction Type _debit_
