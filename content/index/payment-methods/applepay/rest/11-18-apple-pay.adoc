@@ -322,7 +322,7 @@ enabled provided that you have a CSR and an Apple Developer Account._
 
 === Fields
 
-[width="100%",cols="37%,18%,45%",options="header",]
+[width="100%",cols="30%,70%",options="header",]
 |===
 |*Field* |Info
 |_cryptogram-value_ |Optional in response
