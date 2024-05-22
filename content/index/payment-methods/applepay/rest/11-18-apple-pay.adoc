@@ -322,8 +322,12 @@ enabled provided that you have a CSR and an Apple Developer Account._
 
 === Fields
 
-_cryptogram-value_ is optional in the response.
-_token-id_ is not present in response. Subsequent recurring transactions must be done using referenced transaction. 
+[width="100%",cols="37%,18%,45%",options="header",]
+|===
+|*Field* |Info
+|_cryptogram-value_ |Optional in response
+|_token-id_ |Not returned for Apple Pay transactions. Subsequent merchant initiated recurring transactions must be done using referenced transactions. Customer initiated card on file transactions are not possible. Your customer must complete a new Apple Pay transaction by clicking the Apple Pay button.
+|===
 
 All the other fields used for _Apple Pay_ requests, responses and
 notifications are the same as the
