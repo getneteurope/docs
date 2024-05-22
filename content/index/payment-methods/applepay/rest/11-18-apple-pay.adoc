@@ -322,11 +322,13 @@ enabled provided that you have a CSR and an Apple Developer Account._
 
 === Fields
 
-[width="100%",cols="35%,65%",options="header",]
+[width="100%",cols="40%,60%",options="header",]
 |===
 |*Field* |Info
 |_cryptogram-value_ |Optional in response
-|_token-id_ |Not returned for Apple Pay transactions. Subsequent merchant initiated recurring transactions must be done using referenced transactions. 
+|_token-id_ |Not returned for Apple Pay transactions. 
+
+Subsequent merchant initiated recurring transactions must be done using referenced transactions. 
 
 Customer initiated card on file transactions are not possible. Your customer must complete a new Apple Pay transaction by clicking the Apple Pay button.
 |===
