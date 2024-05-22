@@ -128,10 +128,14 @@ phone number, and email address needed to complete the transaction.
 There are 3 paths to getting set up with Apple Pay.
 
 . *Apple Pay via Getnet Payment Page:*
+
 When using the Getnet Payment Page, you will be registered with Apple during your Getnet onboarding process. 
+
 There is no need for you to have an Apple Developer account, handle CSRs, or create Payment Processing/Merchant Identity Certificates.
 
-After onboarding, you will be provided with a _merchant-account-resolver-category_. When sending your payment page registration request, provide your _merchnat-account-resolver-category_ instead of a _merchant-account-id_. Your customer will be presented with the Apple Pay button alongside the standard credit card input fields. When your customer chooses to pay with Apple Pay, Getnet will handle all communication with Apple to retrieve the encrypted payment data, decrypt the payload, and process the transaction automatically. 
+After onboarding, you will be provided with a _merchant-account-resolver-category_. When sending your payment page registration request, provide your _merchnat-account-resolver-category_ instead of a _merchant-account-id_. 
+
+Your customer will be presented with the Apple Pay button alongside the standard credit card input fields. When your customer chooses to pay with Apple Pay, Getnet will handle all communication with Apple to retrieve the encrypted payment data, decrypt the payload, and process the transaction automatically. 
 
 *Note:* With the Payment Page integration it is not possible to retrieve the shipping address data from the customer's Apple Pay wallet. You must collect this information in your shop prior to redirecting the customer to the payment page.
 
