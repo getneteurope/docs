@@ -362,7 +362,7 @@ https://developer.apple.com/documentation/passkit/pkpaymenttoken/1617000-payment
 
 [source,xml,subs=attributes+]
 ----
-include::content/samples/xml/apple-pay_creditcard_authorization-only_request_success.xml.xml
+include::{root}/samples/xml/apple-pay_creditcard_authorization-only_request_success.xml
 ----
 
 ==== _authorization_
