@@ -51,7 +51,8 @@ which languages and methods can be used for requests and responses.
 [width="100%",cols="37%,18%,45%",options="header",]
 |===
 |*Requests/Responses* |Format |Methods
-| |XML |POST, GET
+|REST API |XML |POST, GET
+|Getnet Payment Page |JSON |POST
 |*IPN Encodement* |Base64 |
 |===
 
