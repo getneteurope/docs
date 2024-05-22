@@ -356,6 +356,15 @@ IMPORTANT: When a tag calls for the Merchant Account ID (MAID), this is the MAID
 
 [#ApplePay_Samples_Authorization]
 
+==== _authorization-only_
+
+.XML _authorization-only_ Request (Successful)
+
+[source,xml,subs=attributes+]
+----
+include::{root}/samples/xml/apple-pay_creditcard_authorization-only_request_success.xml[]
+----
+
 ==== _authorization_
 
 .XML _authorization_ Request (Successful)
