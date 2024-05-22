@@ -81,7 +81,7 @@ sample#
 
 [width="100%",cols="2%,98%",options="header",]
 |===
-| |Recurring payments are also supported by using "Reference Attribute"
+|Recurring payments are also supported by using "Reference Attribute"
 to reference a previously successful payment.
 |===
 
@@ -125,23 +125,8 @@ phone number, and email address needed to complete the transaction.
 
 == Getting Set Up 
 
-There are 3 paths to getting set up with Apple Pay.
+There are 2 paths to getting set up with Apple Pay when using a REST integration.
 
-. *Apple Pay via Getnet Payment Page:*
-
-When using the Getnet Payment Page, you will be registered with Apple during your Getnet onboarding process. 
-
-There is no need for you to have an Apple Developer account, handle CSRs, or create Payment Processing/Merchant Identity Certificates.
-
-After onboarding, you will be provided with a _merchant-account-resolver-category_. When sending your payment page registration request, provide your _merchnat-account-resolver-category_ instead of a _merchant-account-id_. 
-
-Your customer will be presented with the Apple Pay button alongside the standard credit card input fields. When your customer chooses to pay with Apple Pay, Getnet will handle all communication with Apple to retrieve the encrypted payment data, decrypt the payload, and process the transaction automatically. 
-
-*Note:* With the Payment Page integration it is not possible to retrieve the shipping address data from the customer's Apple Pay wallet. You must collect this information in your shop prior to redirecting the customer to the payment page.
-
-See Getnet Payment Page Resolver Sample.
-
-[start=2]
 . *Registration via Apple Pay Web Merchant Registration API:*
 
 During onboarding, you will be asked to provide the list of domain(s)
@@ -175,7 +160,7 @@ via Apple Pay Web Merchant Registration API will fail._
 completed successfully, you will be provided with Apple Pay Merchant ID
 that you should use in the request to Apple Pay as merchantIdentifier.
 
-[start=3]
+[start=2]
 . *Registration via Apple Developer Portal:*
 
 What you need:
@@ -312,17 +297,17 @@ Test Account
 
 After you’ve set up your account:
 
-. https://developer.apple.com/apple-pay/sandbox-testing/[[.underline]#Add
+. https://developer.apple.com/apple-pay/sandbox-testing/ [[.underline]#Add
 a test card#] to the Wallet app.
 . Integrate paymentSDK into your application.
 . Conduct testing.
 . Add a live card to the Wallet app and set the GetNet instance to
 production mode (do not forget to use production credentials -
-MAID/AppleMerchantID/csr).
+(MAID/AppleMerchantID/CSR).
 
 === Test Credentials 
 
-_There is no public merchant account available. Apple Pay can be
+_There is no public merchant account available for REST integration. Apple Pay can be
 enabled provided that you have a CSR and an Apple Developer Account._
 
 [width="100%",cols="20%,24%,56%"]
@@ -333,6 +318,10 @@ enabled provided that you have a CSR and an Apple Developer Account._
 | |To Production Environment
 |https://api.getneteurope.com/engine/rest/payments/
 |===
+
+*Payment Page*
+
+
 
 === Apple Pay SDK Integration +
 image::images/diagrams/apple-pay_short.svg[A
