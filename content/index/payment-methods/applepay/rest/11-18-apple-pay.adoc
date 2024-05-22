@@ -349,7 +349,7 @@ https://developer.apple.com/documentation/passkit/pkpaymenttoken/1617000-payment
 
 //-
 
-*IMPORTANT:* When a tag calls for the Merchant Account ID (MAID), this is the MAID assigned to you by {payment-provider-name} when you signed your contract with us. It is not your Apple Merchant ID. 
+IMPORTANT: When a tag calls for the Merchant Account ID (MAID), this is the MAID assigned to you by {payment-provider-name} when you signed your contract with us. It is not your Apple Merchant ID. 
 
 //-
 
@@ -362,7 +362,7 @@ https://developer.apple.com/documentation/passkit/pkpaymenttoken/1617000-payment
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/apple-pay_creditcard_authorization-only_request_success.xml
+include::{root}/samples/xml/apple-pay_creditcard_authorization-only_request_success.xml[]
 ----
 
 ==== _authorization_
