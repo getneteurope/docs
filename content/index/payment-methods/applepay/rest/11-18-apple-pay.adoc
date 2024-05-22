@@ -349,7 +349,7 @@ https://developer.apple.com/documentation/passkit/pkpaymenttoken/1617000-payment
 
 //-
 
-IMPORTANT: When a tag calls for the Merchant Account ID (MAID), this is the MAID assigned to you by {payment-provider-name} when you signed your contract with us. It is not your Apple Merchant ID. 
+*IMPORTANT:* When a tag calls for the Merchant Account ID (MAID), this is the MAID assigned to you by {payment-provider-name} when you signed your contract with us. It is not your Apple Merchant ID. 
 
 //-
 
