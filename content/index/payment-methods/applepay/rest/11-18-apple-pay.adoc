@@ -297,7 +297,7 @@ Test Account
 
 After you’ve set up your account:
 
-. https://developer.apple.com/apple-pay/sandbox-testing/ [[.underline]#Add
+. https://developer.apple.com/apple-pay/sandbox-testing[[.underline]#Add
 a test card#] to the Wallet app.
 . Integrate paymentSDK into your application.
 . Conduct testing.
@@ -319,17 +319,11 @@ enabled provided that you have a CSR and an Apple Developer Account._
 |https://api.getneteurope.com/engine/rest/payments/
 |===
 
-*Payment Page*
-
-
-
-=== Apple Pay SDK Integration +
-image::images/diagrams/apple-pay_short.svg[A
-diagram of a Apple Pay SDK integration,width=950]
 
 === Fields
 
-cryptogram-value is optional in the response.
+_cryptogram-value_ is optional in the response.
+_token-id_ is not present in response. Subsequent recurring transactions must be done using referenced transaction. 
 
 All the other fields used for _Apple Pay_ requests, responses and
 notifications are the same as the
