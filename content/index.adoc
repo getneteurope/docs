@@ -134,6 +134,8 @@ include::index/payment-methods/credit-card/ppv2/ipp/03-01-04-01-01-ipp.adoc[leve
 include::index/payment-methods/applepay/apple-pay-main.adoc[leveloffset=+1]
 include::index/payment-methods/applepay/rest/11-18-apple-pay.adoc[leveloffset=+2][leveloffset=+2]
 
+include::index/payment-methods/googlepay/google-pay-main.adoc[leveloffset=+1]
+include::index/payment-methods/googlepay/rest/11-17-google-pay.adoc[leveloffset=+2]
 
 include::index/payment-methods/alipay-cross-border/alipay-cross-border-main.adoc[leveloffset=+1]
 include::index/payment-methods/alipay-cross-border/rest/11-02-alipay-cross-border.adoc[leveloffset=+2]

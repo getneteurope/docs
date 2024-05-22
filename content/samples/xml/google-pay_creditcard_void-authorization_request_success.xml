@@ -1,0 +1,8 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment">
+	<merchant-account-id>a63d9615-17cb-4f9e-883d-7f5b17194202</merchant-account-id>
+	<request-id>f56b1173-250e-40b6-b33e-5d34c0ef1a2f</request-id>
+	<transaction-type>void-authorization</transaction-type>
+	<parent-transaction-id>84734136-46a3-4a19-a8d3-cc83ac568d97</parent-transaction-id>
+	<requested-amount currency="EUR">1.00</requested-amount>
+</payment>

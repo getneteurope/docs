@@ -1,0 +1,26 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment" self="https://d-nr-ee-engine-dev04.getnet.diq:443/engine/rest/merchants/a63d9615-17cb-4f9e-883d-7f5b17194202/payments/b365f0c0-8288-453c-a9d3-b08ad7f9a1b2">
+	<merchant-account-id>a63d9615-17cb-4f9e-883d-7f5b17194202</merchant-account-id>
+	<transaction-id>b365f0c0-8288-453c-a9d3-b08ad7f9a1b2</transaction-id>
+	<request-id>6e401feb-1ef8-4f43-b1b8-4e47837c85dd</request-id>
+	<transaction-type>authorization</transaction-type>
+	<transaction-state>success</transaction-state>
+	<completion-time-stamp>2024-01-16T14:05:37.000Z</completion-time-stamp>
+	<statuses>
+		<status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="information"/>
+	</statuses>
+	<requested-amount currency="EUR">1</requested-amount>
+	<card-token>
+		<token-id>4799934021501025</token-id>
+	</card-token>
+	<cryptogram>
+		<cryptogram-type>google-pay</cryptogram-type>
+		<cryptogram-value>eyJzaWduYXR1cmUiOiJNRVVDSUVwTHhlRmlHY0ZTQ1p0aHdnZFRwc1BWYi9VdG0wVnBjZG1TNzB2L1BuMjRBaUVBcDFmRGpqcTZ2cm5JSW1VVng4ZGpUbzI1RjBSbFk1RzZkSGdkVnRjVnNiSVx1MDAzZCIsImludGVybWVkaWF0ZVNpZ25pbmdLZXkiOnsic2lnbmVkS2V5Ijoie1wia2V5VmFsdWVcIjpcIk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVVjZnFMN2gyVXczMEJvMGhpTEpJYUp5NE50eW5Ja0lmOUREbnowR3RhQmNUb3ZOOU40Nlc3VkZMZWxUK3Z4SThSbEtMZWd1MEQ1MDdHY09mS2lINjR3XFx1MDAzZFxcdTAwM2RcIixcImtleUV4cGlyYXRpb25cIjpcIjE3MDcxMTg5NjUyMjlcIn0iLCJzaWduYXR1cmVzIjpbIk1FUUNJQlVyUDJqUEQ1bmFOUFRKYzlHSDdLazFESjdwNUZkQjJJL1M0WlE4RnpWZUFpQWZSSjEzMENtOGZVTkFjSmZQZHF4Ykd6bUhmY2l5MTlmLzJnQ3NVUEh1dkFcdTAwM2RcdTAwM2QiXX0sInByb3RvY29sVmVyc2lvbiI6IkVDdjIiLCJzaWduZWRNZXNzYWdlIjoie1wiZW5jcnlwdGVkTWVzc2FnZVwiOlwiME1PUTBtc2JOaW5WYlVRVXhrVFArMjg2NUJBQVo2cHBYRXhrQ2hudSs0Ui9oWVdxSnN0RURIVlRiVjNhRFV6TW1mYjlPdThOVlVoa20xYVRlQ2hUUHAxL0Y4WkF3RWFNa3BiOTVvSHhCMXo0bUh6bEhxbXBuQlNnNVQ5N2JuRDFpeE5ZcWFtMmQ3K3ZzTEs0S1VkRlZaaTg4dHBsM2NqdW42VUpLbGpwK1JiN2pyaFUwVVN3eFd1WGxxMVZGOFpKYzN6aHRKVnRYTWErS1lBa21qa2FBMGV6WFNubE5rZVI5ZFJNUjUvN2ZxVGd4bmk1T1pFdExXbHZLZDhlS0VQL1BGT1FLMHRMZy9leUNMOC9VUGkzRUhETWNieDRvRFRvMXIrZGh6N1IwY1h0WUlLeCs0UXZ4RXQ4VzhzKytTbjRIZWJjQXYwMzdCTDFDZW1JWGlvcDBMSkdVL09NSXVBVU5iRi9KVldtQnhzU3MxaTNxemg1UFp4WEpyQjdEaXFBUFdYZ3p0WDhiQ0xPNGM2OGVVaVp2OHZqUWdlaFhpbHFXOFljVUhPSnB0WHhKTlRmVnZSN1NyOGppOGFtSms4OXlpRENDdXJka1RFRjVNL09NNTZaZCtZRHR3Vzd2UWpBT2tFb3Fwc3ZhRUo5ZllXQm5pVmw2L1BLNGZxSkFZZ1VkY0FPQkM2SUhjZDJteEd2a0V2ZlN3RzZZd29nUDB0RmM0cXhvLzJJOFNMZlFybkp0NnEzN3hWbGNsSUVUL2U4TXE5M1JVM1kwM2lyWlk2VkJqRTkwMnhwS0dHRWVDd3h5RjJGVlc2c3dld1xcdTAwM2RcIixcImVwaGVtZXJhbFB1YmxpY0tleVwiOlwiQkRPcEZZV2M1dUI2ZWVXQUhpRE5sS3lJZkU5RDhpVHNnblB5dWFuZEgxV0gzanpKdzJza08wNkRQMFl2Z21Ma3hIRENVSHdPVGZoNjN1bGJTVWtTdFY0XFx1MDAzZFwiLFwidGFnXCI6XCJCaFNxdWFyNmsvUzZ3WXN0Ym1EQ3RSSU55dmw3ck5CZHN2MXY4R2hHUk5VXFx1MDAzZFwifSJ9</cryptogram-value>
+	</cryptogram>
+	<descriptor>demo</descriptor>
+	<payment-methods>
+		<payment-method name="creditcard"/>
+	</payment-methods>
+	<authorization-code>912417</authorization-code>
+	<provider-account-id>GN0000317D378AF2</provider-account-id>
+</payment>

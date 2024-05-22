@@ -1,0 +1,36 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment" self="https://test.api.getnet.diq:443/engine/rest/merchants/a63d9615-17cb-4f9e-883d-7f5b17194202/payments/84734136-46a3-4a19-a8d3-cc83ac568d97">
+	<merchant-account-id>a63d9615-17cb-4f9e-883d-7f5b17194202</merchant-account-id>
+	<transaction-id>84734136-46a3-4a19-a8d3-cc83ac568d97</transaction-id>
+	<request-id>7fb9cb15-1dad-49d2-ab4b-e254a8c6667f</request-id>
+	<transaction-type>authorization</transaction-type>
+	<transaction-state>success</transaction-state>
+	<completion-time-stamp>2024-01-16T11:43:10.000Z</completion-time-stamp>
+	<statuses>
+		<status code="201.0000" description="3d-acquirer:The resource was successfully created." severity="information"/>
+		<status code="200.1077" description="3d-acquirer:Card is eligible for the ACS authentication process. If the customer has not yet activated his card for 3-D Secure processing his issuer may offer activation during shopping." severity="information"/>
+	</statuses>
+	<requested-amount currency="EUR">1</requested-amount>
+	<card-token>
+		<token-id>4799934021501025</token-id>
+	</card-token>
+	<cryptogram>
+		<cryptogram-type>google-pay</cryptogram-type>
+		<cryptogram-value>eyJzaWduYXR1cmUiOiJNRVlDSVFEdEFuMTF0eDRjRUVHUzFSK3pGUUlhaXRVek9CMWlWVm01SUdIdmJNL2hJUUloQUxpUEYrdEVxQnBwVU43UmhMemgyQ0I2SWJWbEhRR2I0cCt2V0tJT1FBZGwiLCJpbnRlcm1lZGlhdGVTaWduaW5nS2V5Ijp7InNpZ25lZEtleSI6IntcImtleVZhbHVlXCI6XCJNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUVVY2ZxTDdoMlV3MzBCbzBoaUxKSWFKeTROdHluSWtJZjlERG56MEd0YUJjVG92TjlONDZXN1ZGTGVsVCt2eEk4UmxLTGVndTBENTA3R2NPZktpSDY0d1xcdTAwM2RcXHUwMDNkXCIsXCJrZXlFeHBpcmF0aW9uXCI6XCIxNzA3MTEwNDE4NzM3XCJ9Iiwic2lnbmF0dXJlcyI6WyJNRVVDSUZzUDV6SmNaa3ltWjUweGlmVXdlclgvZlh5MlJuSFdIdDJUNUtJQ1VGVzlBaUVBMVBTb1NCZFZsdGRJL2JveHhpOTNkb0UxTXI3blNVTWJjcWJCbHV0b05wNFx1MDAzZCJdfSwicHJvdG9jb2xWZXJzaW9uIjoiRUN2MiIsInNpZ25lZE1lc3NhZ2UiOiJ7XCJlbmNyeXB0ZWRNZXNzYWdlXCI6XCJxMlh1Sk9OOTBvZW5obkdqbUdUVjZLTmkyQWQ0dnRTTEtmdXhVWktmcHlzMkNHbUtabXpRS2JGWU1KL3gzcGRPV2ZVQkYzTzlqM1k2eXlCWDUyT28yN21ocVZBTnRzTGxuajBJK2J3cEpzZk0rUml1aWJUcTVmMWtucGh5aitSNlBFemdXSXN0TVRkU0ZJU0RaTnhRSm9wbCtTeS9vR29obnc3eTY4SEUrWHI3b1NIdXRsTzYwT2luL3hHbGtuUGFLQVVuTU1uTzJucGN3cDE4VmdDRlA0K2MvSGNkMUxCZi9iM3JQOTl0Zld6TzJTd1J0L0VVdFNza3Q4SGkxalJVVlhFbDhxOWNyMUlEOWsyNDBXYkhIZERNVkJJRmxFQzdEYTV1V3NlSUpzYk5zUVVZRG9PUGErS1lob3EzSFYzSEJ3Y3kxcVJOYllrSlhUazJkQk0waDlaWEdtREdDR0hLT3NrNlk3MU51K0pKbmpGQUJNREpXVnJvd1M0aytsZzhvQ1hHMkJ4MXRyWjZQTi9nZFAxRmNVY0kwUEE2YnVuVEIwQk8yWjZoaEV3bmdtQXlGK3VQQ3pmb2VjRmNFWmltTmVlaVJxcmpEd2dwNTd2bXhOaDV5UE1jOVl4czFtK1JXMzhNb2U4Z0VFSStiU2JrSGJydEd4b093UVhEdU96ME9xdWhRT1F1Z0ZORmZXWVxcdTAwM2RcIixcImVwaGVtZXJhbFB1YmxpY0tleVwiOlwiQk04QVU3d2ZmWlF6ZkZlSjBYVnVaVXJOb0d1NnNQQ09iYXl4dlMybFNpc1FsQkVYVVg4U1UxL1k1UTJkNDFzMVFvTTk3MFZyU0JOUHFvb2ZoTnNoSnZZXFx1MDAzZFwiLFwidGFnXCI6XCJnSlJ6NnRrbHVQMWdBL3o1ZEtreXNjc2Z0RWxtQ0pSeG10aExOYzQzWGhJXFx1MDAzZFwifSJ9</cryptogram-value>
+	</cryptogram>
+	<descriptor>demo</descriptor>
+	<notifications>
+		<notification>www.notifucationurl.com</notification>
+	</notifications>
+	<payment-methods>
+		<payment-method name="creditcard"/>
+	</payment-methods>
+	<authorization-code/>
+	<three-d>
+		<pareq>eJxtk9tu4jAQhu/7FFHui8fOCZBj1F2EthegtpQt7J03GZW0JKFOstC37ySk7UJiKZJn/Dn+5yQnx3Rn/UNTJHkW2nwAtoVZlMdJ9hzaq8fZ9dC2ilJnsd7lGYb2Oxb2RF3Jx61BnC4xqgyqK4uWnGNR6Ge0kji0wQfh0jcK/ECA4wWOC/aJa9i7mwd8+7YbX6tCkYgBl+zTPIfmaKKtzspzd3Oko7cftwvFheN6vmSt2eVSNLdTBc1yuO9OZ95MCMlO/i6f6RTVU2Iw0ia2ppjm1nKb7yVrDrp8lFdZad7VUJCKT6OLVWantmW5HzN2OBwGh/aBQZSnktWH54Gz/sjlXVW7iz4hxyRWy/VCL/hvuF//efn7ujPx6gHm65W3EZtQspro3ot1iUoA5+ByYYE/huHYcSRr/D15T+sY67JR0k/7LrRvZd60MBB84evJZGUMdSOl0iX8y+qCeNxTd9I/qIxf+4v89SdK/vzV20pRSb3AYeiMRgG4gRf4wufUxAC0db1aTwv1qkmo5HwEvJGTXNZfsv9fJWnf01DXuRkjmjF2PmQf7G7ojA==</pareq>
+		<acs-url>http://mucdevs00415.getnet.diq:9000/acssim/app/bank</acs-url>
+		<cardholder-authentication-status>Y</cardholder-authentication-status>
+		<version>2.0.2</version>
+	</three-d>
+	<entry-mode>googlepay</entry-mode>
+</payment>
