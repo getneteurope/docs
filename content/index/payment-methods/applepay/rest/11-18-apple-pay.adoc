@@ -50,8 +50,8 @@ which languages and methods can be used for requests and responses.
 
 [width="100%",cols="37%,18%,45%",options="header",]
 |===
-|*Requests/Responses* |Format |XML
-| |Methods |POST, GET
+|*Requests/Responses* |Format |Methods
+| |XML |POST, GET
 |*IPN Encodement* |Base64 |
 |===
 
@@ -61,6 +61,8 @@ which languages and methods can be used for requests and responses.
 |===
 |*Transaction Type (GPG*)* |*Transaction Type (Apple Pay)* |*Link to the
 sample*
+|_authorization-only_ |Authorization Only |[.underline]#_authorization only_ sample#
+
 |_authorization_ |Authorizations |[.underline]#_authorization_ sample#
 
 |_purchase_ |One-Time |[.underline]#_purchase_ sample#
