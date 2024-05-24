@@ -90,7 +90,7 @@ Types.
 
 === Workflow
 
-image::images/11-04-apple-pay/Apple Pay REST Flow.png[debit Workflow]
+image::images/11-04-apple-pay/Apple Pay REST Flow.png[Workflow]
 
 == Glossary
 
