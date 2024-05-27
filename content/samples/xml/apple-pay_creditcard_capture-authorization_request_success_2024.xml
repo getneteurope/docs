@@ -1,0 +1,7 @@
+<payment
+	xmlns="http://www.elastic-payments.com/schema/payment">
+	<merchant-account-id>6aef85a4-c2d3-44c2-8291-edd603e0db80</merchant-account-id>
+	<request-id>{{$guid}}</request-id>
+	<transaction-type>capture-authorization</transaction-type>
+	<parent-transaction-id>{{AUTHORIZATION_TX_ID}}</parent-transaction-id>
+</payment>
